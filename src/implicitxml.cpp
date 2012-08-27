@@ -23,30 +23,50 @@ namespace anl
 		for(pugi::xml_node layer = data.child("layer"); layer; layer = layer.next_sibling("layer")) {
 			type = layer.attribute("type").value();
 			if(strcmp(type, "audocorrect") == 0) {
+				tmp = new anl::CImplicitAutoCorrect();
 
 			} else if (strcmp(type, "basisfunction") == 0) {
+				tmp = new anl::CImplicitBasisFunction();
 
 			} else if (strcmp(type, "bias") == 0) {
+				tmp = new anl::CImplicitBias(
+					layer.attribute("value").as_double()
+					);
 
 			} else if (strcmp(type, "blend") == 0) {
+				tmp = new anl::CImplicitBlend();
 
 			} else if (strcmp(type, "brightcontrast") == 0) {
+				tmp = new anl::CImplicitBrightContrast();
 
 			} else if (strcmp(type, "cache") == 0) {
+				tmp = new anl::CImplicitCache();
 
 			} else if (strcmp(type, "cellular") == 0) {
+				tmp = new anl::CImplicitCellular();
 
 			} else if (strcmp(type, "clamp") == 0) {
+				tmp = new anl::CImplicitClamp(
+					layer.attribute("low").as_double(),
+					layer.attribute("high").as_double()
+					);
 
 			} else if (strcmp(type, "combiner") == 0) {
+				tmp = new anl::CImplicitCombiner(
+					anl::CImplicitCombiner::CombinerMap.find(layer.attribute("combinertype").value())->second
+					);
 
 			} else if (strcmp(type, "constant") == 0) {
+				tmp = new anl::CImplicitConstant();
 
 			} else if (strcmp(type, "cos") == 0) {
+				tmp = new anl::CImplicitCos();
 
 			} else if (strcmp(type, "extractrgbachannel") == 0) {
+				tmp = new anl::CImplicitExtractRGBAChannel();
 
 			} else if (strcmp(type, "floor") == 0) {
+				tmp = new anl::CImplicitFloor();
 
 			} else if (strcmp(type, "fractal") == 0) {
 				tmp = new anl::CImplicitFractal(
@@ -54,27 +74,49 @@ namespace anl
                     anl::CImplicitBasisFunction::BasisMap.find(layer.attribute("basistype").value())->second,
                     anl::CImplicitBasisFunction::InterpMap.find(layer.attribute("interptype").value())->second
                 	);
+
 			} else if (strcmp(type, "functiongradient") == 0) {
+				tmp = new anl::CImplicitFunctionGradient();
 
 			} else if (strcmp(type, "gain") == 0) {
+				tmp = new anl::CImplicitGain(
+					layer.attribute("value").as_double()
+					);
 
 			} else if (strcmp(type, "gradient") == 0) {
+				tmp = new anl::CImplicitGradient();
 
 			} else if (strcmp(type, "invert") == 0) {
+				tmp = new anl::CImplicitInvert();
 
 			} else if (strcmp(type, "pow") == 0) {
+				tmp = new anl::CImplicitPow();
 
 			} else if (strcmp(type, "rgbadotproduct") == 0) {
+				tmp = new anl::CImplicitRGBADocProduct();
 
 			} else if (strcmp(type, "rotatedomain") == 0) {
+				tmp = new anl::CImplicitRotateDomain(
+					layer.attribute("x").as_double(),
+					layer.attribute("y").as_double(),
+					layer.attribute("z").as_double(),
+					layer.attribute("angle").as_double()
+					);
 
 			} else if (strcmp(type, "scaledomain") == 0) {
+				tmp = new anl::CImplicitScaleDomain();
 
 			} else if (strcmp(type, "scaleoffset") == 0) {
+				tmp = new anl::CImplicitScaleOffset(
+					layer.attribute("scale").as_double(),
+					layer.attribute("offset").as_double()
+					);
 
 			} else if (strcmp(type, "select") == 0) {
+				tmp = new anl::CImplicitSelect();
 
 			} else if (strcmp(type, "sin") == 0) {
+				tmp = new anl::CImplicitSin();
 
 			} else if (strcmp(type, "sphere") == 0) {
 				tmp = new anl::CImplicitSphere();
@@ -91,11 +133,13 @@ namespace anl
 				dynamic_cast<anl::CImplicitSphere*>(tmp)->setRadius(layer.child("radius").attribute("value").as_double());
 
 			} else if (strcmp(type, "tiers") == 0) {
+				tmp = new anl::CImplicitTiers();
 
 			} else if (strcmp(type, "translatedomain") == 0) {
+				tmp = new anl::CImplicitTranslateDomain();
 
 			} else if (strcmp(type, "xml") == 0) {
-
+				tmp = new anl::CImplicitXML();
 			} else {
 				printf("Layer type not found %s\n", layer.attribute("type").value());
 			}
