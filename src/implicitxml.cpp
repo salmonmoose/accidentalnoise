@@ -25,12 +25,48 @@ namespace anl
 			if(strcmp(type, "audocorrect") == 0) {
 				tmp = new anl::CImplicitAutoCorrect();
 
+				//TODO: setSource
+
+				dynamic_cast<anl::CImplicitAutoCorrect*>(tmp)->setRange(
+					layer.child("range").attribute("low").as_double(),
+					layer.child("range").attribute("high").as_double()
+					);
+
+				//TODO: Calculate
+
 			} else if (strcmp(type, "basisfunction") == 0) {
 				tmp = new anl::CImplicitBasisFunction();
+
+				dynamic_cast<anl::CImplicitBasisFunction*>(tmp)->setSeed(
+					layer.child("seed").attribute("value").as_int()
+					);
+
+				dynamic_cast<anl::CImplicitBasisFunction*>(tmp)->setType(
+					anl::CImplicitBasisFunction::BasisMap.find(layer.child("basis").attribute("basistype").value())->second
+					);
+
+				dynamic_cast<anl::CImplicitBasisFunction*>(tmp)->setInterp(
+					anl::CImplicitBasisFunction::InterpMap.find(layer.child("interp")attribute("interptype").value())->second
+					);
+
+				dynamic_cast<anl::CImplicitBasisFunction*>(tmp)->setRotationAngle(
+					layer.child("rotation").attribute("x").as_double(),
+					layer.child("rotation").attribute("y").as_double(),
+					layer.child("rotation").attribute("z").as_double(),
+					layer.child("rotation").attribute("angle").as_double()
+					);
 
 			} else if (strcmp(type, "bias") == 0) {
 				tmp = new anl::CImplicitBias(
 					layer.attribute("value").as_double()
+					);
+
+				dynamic_cast<anl::CImplicitBias*>(tmp)->setSource(
+					layer.child("source").attribute("value").as_double()
+					);
+
+				dynamic_cast<anl::CImplicitBias*>(tmp)->setBias(
+					layer.child("bias").attribute("value").as_double()
 					);
 
 			} else if (strcmp(type, "blend") == 0) {
@@ -130,7 +166,9 @@ namespace anl
 					layer.child("center").attribute("v").as_double()
 					);
 
-				dynamic_cast<anl::CImplicitSphere*>(tmp)->setRadius(layer.child("radius").attribute("value").as_double());
+				dynamic_cast<anl::CImplicitSphere*>(tmp)->setRadius(
+					layer.child("radius").attribute("value").as_double()
+					);
 
 			} else if (strcmp(type, "tiers") == 0) {
 				tmp = new anl::CImplicitTiers();
