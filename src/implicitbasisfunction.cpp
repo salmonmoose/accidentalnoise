@@ -58,12 +58,42 @@ void CImplicitBasisFunction::setType(int type)
 {
 	switch(type)
 	{
-	case VALUE: m_2d=value_noise2D; m_3d=value_noise3D; m_4d=value_noise4D; m_6d=value_noise6D; break;
-	case GRADIENT: m_2d=gradient_noise2D; m_3d=gradient_noise3D; m_4d=gradient_noise4D; m_6d=gradient_noise6D; break;
-	case GRADVAL: m_2d=gradval_noise2D; m_3d=gradval_noise3D; m_4d=gradval_noise4D; m_6d=gradval_noise6D; break;
-	case WHITE: m_2d=white_noise2D; m_3d=white_noise3D; m_4d=white_noise4D; m_6d=white_noise6D; break;
-	case SIMPLEX: m_2d=simplex_noise2D; m_3d=simplex_noise3D; m_4d=simplex_noise4D; m_6d=simplex_noise6D; break;
-	default: m_2d=gradient_noise2D; m_3d=gradient_noise3D; m_4d=gradient_noise4D; m_6d=gradient_noise6D; break;
+	case VALUE: 
+        m_2d=value_noise2D; 
+        m_3d=value_noise3D; 
+        m_4d=value_noise4D; 
+        m_6d=value_noise6D; 
+        break;
+	case GRADIENT: 
+        m_2d=gradient_noise2D; 
+        m_3d=gradient_noise3D; 
+        m_4d=gradient_noise4D; 
+        m_6d=gradient_noise6D; 
+        break;
+	case GRADVAL: 
+        m_2d=gradval_noise2D; 
+        m_3d=gradval_noise3D; 
+        m_4d=gradval_noise4D; 
+        m_6d=gradval_noise6D; 
+        break;
+	case WHITE: 
+        m_2d=white_noise2D; 
+        m_3d=white_noise3D; 
+        m_4d=white_noise4D; 
+        m_6d=white_noise6D; 
+        break;
+	case SIMPLEX: 
+        m_2d=simplex_noise2D; 
+        m_3d=simplex_noise3D; 
+        m_4d=simplex_noise4D; 
+        m_6d=simplex_noise6D; 
+        break;
+	default: 
+        m_2d=gradient_noise2D; 
+        m_3d=gradient_noise3D; 
+        m_4d=gradient_noise4D; 
+        m_6d=gradient_noise6D; 
+        break;
 	}
 	setMagicNumbers(type);
 }
