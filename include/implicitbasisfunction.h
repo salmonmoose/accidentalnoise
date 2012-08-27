@@ -2,6 +2,8 @@
 #define IMPLICIT_BASIS_FUNCTION_H
 #include "noise_gen.h"
 #include "implicitmodulebase.h"
+#include <map>
+#include <string>
 
 namespace anl
 {
@@ -29,6 +31,9 @@ namespace anl
         public:
         CImplicitBasisFunction();
         CImplicitBasisFunction(int type, int interp);
+
+        static std::map<std::string, EBasisTypes> BasisMap;
+        static std::map<std::string, EInterpTypes> InterpMap;
 
         void setType(int type);
         void setInterp(int interp);

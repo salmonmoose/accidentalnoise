@@ -3,6 +3,8 @@
 #include "implicitmodulebase.h"
 #include "implicitbasisfunction.h"
 #include "utility.h"
+#include <map>
+#include <string>
 
 namespace anl
 {
@@ -22,6 +24,8 @@ namespace anl
     {
         public:
         CImplicitFractal(unsigned int type, unsigned int basistype, unsigned int interptype);
+
+        static std::map<std::string, EFractalTypes> FractalMap;
 
         void setNumOctaves(int n);
         void setFrequency(double f);

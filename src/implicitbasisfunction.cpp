@@ -1,8 +1,22 @@
 #include "implicitbasisfunction.h"
 #include <cmath>
 #include "random_gen.h"
+#include "boost/assign.hpp"
 
 using namespace anl;
+
+std::map<std::string, EInterpTypes> CImplicitBasisFunction::InterpMap = boost::assign::map_list_of
+    ("NONE", NONE)
+    ("LINEAR", LINEAR)
+    ("CUBIC", CUBIC)
+    ("QUINTIC", QUINTIC);
+
+std::map<std::string, EBasisTypes> CImplicitBasisFunction::BasisMap = boost::assign::map_list_of
+    ("VALUE", VALUE)
+    ("GRADIENT", GRADIENT)
+    ("GRADVAL", GRADVAL)
+    ("SIMPLEX", SIMPLEX)
+    ("WHITE", WHITE);
 
 CImplicitBasisFunction::CImplicitBasisFunction() : CImplicitModuleBase()
 {
