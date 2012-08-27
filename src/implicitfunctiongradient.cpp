@@ -5,6 +5,16 @@ namespace anl
     CImplicitFunctionGradient::CImplicitFunctionGradient() : m_source(0), m_axis(X_AXIS), m_spacing(0.01){}
     CImplicitFunctionGradient::~CImplicitFunctionGradient(){}
 
+    std::map<std::string, EFunctionGradientAxis> CImplicitFunctionGradient::FunctionGradientAxisMap = {
+        {"X_AXIS", X_AXIS},
+        {"Y_AXIS", Y_AXIS},
+        {"Z_AXIS", Z_AXIS},
+        {"W_AXIS", W_AXIS},
+        {"U_AXIS", U_AXIS},
+        {"V_AXIS", V_AXIS}
+    };
+
+
     void CImplicitFunctionGradient::setSource(double v)
     {
         m_source.set(v);

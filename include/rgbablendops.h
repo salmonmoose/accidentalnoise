@@ -1,6 +1,8 @@
 #ifndef RGBA_BLENDOPS_H
 #define RGBA_BLENDOPS_H
 #include "rgbamodulebase.h"
+#include <map>
+#include <string>
 
 /*********************************************************
 CRGBABlendOps
@@ -26,6 +28,8 @@ namespace anl
         CRGBABlendOps();
         CRGBABlendOps(int src1mode, int src2mode);
         ~CRGBABlendOps();
+
+        static std::map<std::string, EBlendOps> BlendOpsMap;
 
         void setSrc1Mode(int mode);
         void setSrc2Mode(int mode);

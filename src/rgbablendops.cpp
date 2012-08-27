@@ -6,6 +6,15 @@ namespace anl
     CRGBABlendOps::CRGBABlendOps(int src1mode, int src2mode) : m_source1(0,0,0,0), m_source2(0,0,0,0), m_src1blend(src1mode), m_src2blend(src2mode){}
     CRGBABlendOps::~CRGBABlendOps(){}
 
+    std::map<std::string, EBlendOps> BlendOpsMap = {
+        {"SRC1_ALPHA", SRC1_ALPHA},
+        {"SRC2_ALPHA", SRC2_ALPHA},
+        {"ONE_MINUS_SRC1_ALPHA", ONE_MINUS_SRC1_ALPHA},
+        {"ONE_MINUS_SRC2_ALPHA", ONE_MINUS_SRC2_ALPHA},
+        {"ONE", ONE},
+        {"ZERO", ZERO}
+    };
+
     void CRGBABlendOps::setSrc1Mode(int mode)
     {
         m_src1blend=mode;

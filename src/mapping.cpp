@@ -5,6 +5,17 @@
 
 namespace anl
 {
+    std::map<std::string, EMappingModes> MappingModesMap = {
+        {"SEAMLESS_NONE", SEAMLESS_NONE},
+        {"SEAMLESS_X", SEAMLESS_X},
+        {"SEAMLESS_Y", SEAMLESS_Y},
+        {"SEAMLESS_Z", SEAMLESS_Z},
+        {"SEAMLESS_XY", SEAMLESS_XY},
+        {"SEAMLESS_XZ", SEAMLESS_XZ},
+        {"SEAMLESS_YZ", SEAMLESS_YZ},
+        {"SEAMLESS_XYZ", SEAMLESS_XYZ}
+    };
+
    void map2D(int seamlessmode, CArray2Dd &a, CImplicitModuleBase &m, SMappingRanges &ranges, double z)
    {
         size_t w=a.width();

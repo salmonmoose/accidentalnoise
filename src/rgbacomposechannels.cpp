@@ -7,6 +7,11 @@ namespace anl
     CRGBACompositeChannels::CRGBACompositeChannels(int mode) : m_c1(0), m_c2(0), m_c3(0), m_c4(1), m_mode(mode){}
     CRGBACompositeChannels::~CRGBACompositeChannels(){}
 
+    std::map<std::string, CompositeChannelsMode> CRGBACompositeChannels::CompositeChannelsModeMap = {
+        {"RGB", RGB},
+        {"HSV", HSV}
+    };
+
     void CRGBACompositeChannels::setRedSource(CImplicitModuleBase *m)
     {
         m_c1.set(m);

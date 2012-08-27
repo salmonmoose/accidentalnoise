@@ -25,7 +25,6 @@ namespace anl
         QUINTIC
     };
 
-
     class CImplicitBasisFunction : public CImplicitModuleBase
     {
         public:

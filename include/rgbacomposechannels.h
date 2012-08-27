@@ -2,6 +2,8 @@
 #define RGBA_COMPOSE_CHANNELS_H
 #include "rgbamodulebase.h"
 #include "implicitmodulebase.h"
+#include <map>
+#include <string>
 
 namespace anl
 {
@@ -17,6 +19,8 @@ namespace anl
         CRGBACompositeChannels();
         CRGBACompositeChannels(int mode);
         ~CRGBACompositeChannels();
+
+        static std::map<std::string, CompositeChannelsMode> CompositeChannelsModeMap;
 
         void setMode(int mode){m_mode=mode;}
 

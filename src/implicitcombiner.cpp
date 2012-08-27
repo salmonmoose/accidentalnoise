@@ -8,6 +8,14 @@ namespace anl
 		clearAllSources();
 	}
 
+	std::map<std::string, ECombinerTypes> CImplicitCombiner::CombinerMap = {
+		{"ADD", ADD},
+		{"MULT", MULT},
+		{"MAX", MAX},
+		{"MIN", MIN},
+		{"AVG", AVG}
+	};
+
 	void CImplicitCombiner::setType(unsigned int type)
 	{
 		m_type=type;

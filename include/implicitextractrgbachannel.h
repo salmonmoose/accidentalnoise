@@ -2,6 +2,8 @@
 #define IMPLICIT_EXTRACTRGBACHANNEL_H
 #include "implicitmodulebase.h"
 #include "rgbamodulebase.h"
+#include <map>
+#include <string>
 
 namespace anl
 {
@@ -18,6 +20,8 @@ namespace anl
         public:
         CImplicitExtractRGBAChannel();
         CImplicitExtractRGBAChannel(int channel);
+
+        static std::map<std::string, EExtractChannel> ExtractChannelMap;
 
         void setSource(CRGBAModuleBase *m);
         void setSource(float r, float g, float b, float a);

@@ -1,6 +1,8 @@
 #ifndef IMPLICIT_FUNCTIONGRADIENT_H
 #define IMPLICIT_FUNCTIONGRADIENT_H
 #include "implicitmodulebase.h"
+#include <map>
+#include <string>
 
 namespace anl
 {
@@ -19,6 +21,8 @@ namespace anl
         public:
         CImplicitFunctionGradient();
         ~CImplicitFunctionGradient();
+
+        static std::map<std::string, EFunctionGradientAxis> FunctionGradientAxisMap;
 
         void setSource(double v);
         void setSource(CImplicitModuleBase *m);

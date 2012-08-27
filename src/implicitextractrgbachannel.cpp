@@ -5,6 +5,13 @@ namespace anl
     CImplicitExtractRGBAChannel::CImplicitExtractRGBAChannel() : m_source(0,0,0,0), m_channel(RED){}
     CImplicitExtractRGBAChannel::CImplicitExtractRGBAChannel(int channel) : m_source(0,0,0,0), m_channel(channel){}
 
+    std::map<std::string, EExtractChannel> CImplicitExtractRGBAChannel::ExtractChannelMap = {
+        {"RED", RED},
+        {"GREEN", GREEN},
+        {"BLUE", BLUE},
+        {"ALPHA", ALPHA}
+    };
+
     void CImplicitExtractRGBAChannel::setSource(CRGBAModuleBase *m)
     {
         m_source.set(m);

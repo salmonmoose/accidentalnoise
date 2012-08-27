@@ -16,9 +16,7 @@ namespace anl
         BILLOW,
         MULTI,
         HYBRIDMULTI
-};
-
-
+    };
 
     class CImplicitFractal : public CImplicitModuleBase
     {

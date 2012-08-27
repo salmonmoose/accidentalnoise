@@ -1,6 +1,8 @@
 #ifndef IMPLICIT_COMBINER_H
 #define IMPLICIT_COMBINER_H
 #include "implicitmodulebase.h"
+#include <map>
+#include <string>
 
 namespace anl
 {
@@ -17,6 +19,9 @@ namespace anl
     {
         public:
         CImplicitCombiner(unsigned int type);
+
+        static std::map<std::string, ECombinerTypes> CombinerMap;
+
         void setType(unsigned int type);
         void clearAllSources();
         void setSource(int which, CImplicitModuleBase *b);

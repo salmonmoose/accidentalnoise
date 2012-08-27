@@ -3,6 +3,9 @@
 #include "templates/tarrays.h"
 #include "implicitmodulebase.h"
 #include "rgbamodulebase.h"
+#include <map>
+#include <string>
+
 typedef TArray2D<double> CArray2Dd;
 typedef TArray3D<double> CArray3Dd;
 typedef TArray2D<anl::SRGBA> CArray2Drgba;

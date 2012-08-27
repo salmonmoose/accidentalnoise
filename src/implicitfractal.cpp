@@ -1,7 +1,6 @@
 #include "implicitfractal.h"
 #include <cmath>
 #include <iostream>
-#include "boost/assign.hpp"
 
 using namespace anl;
 CImplicitFractal::CImplicitFractal(unsigned int type, unsigned int basistype, unsigned int interptype)
@@ -14,12 +13,13 @@ CImplicitFractal::CImplicitFractal(unsigned int type, unsigned int basistype, un
     resetAllSources();
 }
 
-std::map<std::string, EFractalTypes> CImplicitFractal::FractalMap = boost::assign::map_list_of
-    ("FBM", FBM)
-    ("RIDGEDMULTI", RIDGEDMULTI)
-    ("BILLOW", BILLOW)
-    ("MULTI", MULTI)
-    ("HYBRIDMULTI", HYBRIDMULTI);
+std::map<std::string, EFractalTypes> CImplicitFractal::FractalMap = {
+    {"FBM", FBM},
+    {"RIDGEDMULTI", RIDGEDMULTI},
+    {"BILLOW", BILLOW},
+    {"MULTI", MULTI},
+    {"HYBRIDMULTI", HYBRIDMULTI}
+};
 
 void CImplicitFractal::setNumOctaves(int n){if(n>=MaxSources) n=MaxSources-1; m_numoctaves=n;}
 void CImplicitFractal::setFrequency(double f){m_frequency=f;}
