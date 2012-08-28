@@ -8,12 +8,29 @@ namespace anl
     void CImplicitBrightContrast::setSource(CImplicitModuleBase *m){m_source.set(m);}
     void CImplicitBrightContrast::setSource(double v){m_source.set(v);}
 
-    void CImplicitBrightContrast::setBrightness(double b){m_bright.set(b);}
-    void CImplicitBrightContrast::setContrastThreshold(double t){m_threshold.set(t);}
-    void CImplicitBrightContrast::setContrastFactor(double t){m_factor.set(t);}
-    void CImplicitBrightContrast::setBrightness(CImplicitModuleBase *b){m_bright.set(b);}
-    void CImplicitBrightContrast::setContrastThreshold(CImplicitModuleBase *t){m_threshold.set(t);}
-    void CImplicitBrightContrast::setContrastFactor(CImplicitModuleBase *t){m_factor.set(t);}
+    void CImplicitBrightContrast::setBrightness(double b) {
+        m_bright.set(b);
+    }
+
+    void CImplicitBrightContrast::setContrastThreshold(double t){
+        m_threshold.set(t);
+    }
+
+    void CImplicitBrightContrast::setContrastFactor(double t){
+        m_factor.set(t);
+    }
+
+    void CImplicitBrightContrast::setBrightness(CImplicitModuleBase *b){
+        m_bright.set(b);
+    }
+
+    void CImplicitBrightContrast::setContrastThreshold(CImplicitModuleBase *t){
+        m_threshold.set(t);
+    }
+
+    void CImplicitBrightContrast::setContrastFactor(CImplicitModuleBase *t){
+        m_factor.set(t);
+    }
 
     double CImplicitBrightContrast::get(double x, double y)
     {

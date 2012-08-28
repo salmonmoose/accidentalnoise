@@ -1,4 +1,5 @@
-#include "implicitmodulebase.h"
+#include "implicitxml.h"
+#include "string.h"
 
 namespace anl
 {
@@ -10,7 +11,9 @@ namespace anl
 		loadFile(filename);
 	}
 
-	CImplicitXML::loadFile(char * filename) {
+    CImplicitXML::~CImplicitXML(){}
+
+	void CImplicitXML::loadFile(char * filename) {
 		pugi::xml_parse_result result = config.load_file("filename");
 
 		data = config.child("document").child("noise");
@@ -18,16 +21,16 @@ namespace anl
 		setupNoise();
 	}
 
-	void setupNoise() {
-		char * type;
+	void CImplicitXML::setupNoise() {
+		const char * type;
 		for(pugi::xml_node layer = data.child("layer"); layer; layer = layer.next_sibling("layer")) {
 			type = layer.attribute("type").value();
-			if(strcmp(type, "audocorrect") == 0) {
+			if(strcmp(type, "autocorrect") == 0) {
 				tmp = new anl::CImplicitAutoCorrect();
 
 				//TODO: setSource
 
-				dynamic_cast<anl::CImplicitAutoCorrect*>(tmp)->setRange(
+				if (layer.child("range")) dynamic_cast<anl::CImplicitAutoCorrect*>(tmp)->setRange(
 					layer.child("range").attribute("low").as_double(),
 					layer.child("range").attribute("high").as_double()
 					);
@@ -37,19 +40,19 @@ namespace anl
 			} else if (strcmp(type, "basisfunction") == 0) {
 				tmp = new anl::CImplicitBasisFunction();
 
-				dynamic_cast<anl::CImplicitBasisFunction*>(tmp)->setSeed(
+				if (layer.child("seed")) dynamic_cast<anl::CImplicitBasisFunction*>(tmp)->setSeed(
 					layer.child("seed").attribute("value").as_int()
 					);
 
-				dynamic_cast<anl::CImplicitBasisFunction*>(tmp)->setType(
+				if (layer.child("basis")) dynamic_cast<anl::CImplicitBasisFunction*>(tmp)->setType(
 					anl::CImplicitBasisFunction::BasisMap.find(layer.child("basis").attribute("basistype").value())->second
 					);
 
-				dynamic_cast<anl::CImplicitBasisFunction*>(tmp)->setInterp(
-					anl::CImplicitBasisFunction::InterpMap.find(layer.child("interp")attribute("interptype").value())->second
+				if (layer.child("interp")) dynamic_cast<anl::CImplicitBasisFunction*>(tmp)->setInterp(
+					anl::CImplicitBasisFunction::InterpMap.find(layer.child("interp").attribute("interptype").value())->second
 					);
 
-				dynamic_cast<anl::CImplicitBasisFunction*>(tmp)->setRotationAngle(
+				if (layer.child("rotation")) dynamic_cast<anl::CImplicitBasisFunction*>(tmp)->setRotationAngle(
 					layer.child("rotation").attribute("x").as_double(),
 					layer.child("rotation").attribute("y").as_double(),
 					layer.child("rotation").attribute("z").as_double(),
@@ -61,19 +64,35 @@ namespace anl
 					layer.attribute("value").as_double()
 					);
 
-				dynamic_cast<anl::CImplicitBias*>(tmp)->setSource(
+				if (layer.child("source")) dynamic_cast<anl::CImplicitBias*>(tmp)->setSource(
 					layer.child("source").attribute("value").as_double()
 					);
 
-				dynamic_cast<anl::CImplicitBias*>(tmp)->setBias(
+				if (layer.child("bias")) dynamic_cast<anl::CImplicitBias*>(tmp)->setBias(
 					layer.child("bias").attribute("value").as_double()
 					);
 
 			} else if (strcmp(type, "blend") == 0) {
 				tmp = new anl::CImplicitBlend();
 
+				if (layer.child("lowsource")) dynamic_cast<anl::CImplicitBlend*>(tmp)->setLowSource(
+					layer.child("lowsource").attribute("value").as_double()
+					);
+
+				if (layer.child("highsource")) dynamic_cast<anl::CImplicitBlend*>(tmp)->setHighSource(
+					layer.child("highsource").attribute("value").as_double()
+					);
+
+				if (layer.child("controlsource")) dynamic_cast<anl::CImplicitBlend*>(tmp)->setControlSource(
+					layer.child("controlsource").attribute("value").as_double()
+					);
+
 			} else if (strcmp(type, "brightcontrast") == 0) {
 				tmp = new anl::CImplicitBrightContrast();
+
+				if (layer.child("brightness")) dynamic_cast<anl::CImplicitBrightContrast*>(tmp)->setBrightness(
+					layer.child("brightness").attribute("value").as_double()
+					);
 
 			} else if (strcmp(type, "cache") == 0) {
 				tmp = new anl::CImplicitCache();
@@ -129,7 +148,7 @@ namespace anl
 				tmp = new anl::CImplicitPow();
 
 			} else if (strcmp(type, "rgbadotproduct") == 0) {
-				tmp = new anl::CImplicitRGBADocProduct();
+				tmp = new anl::CImplicitRGBADotProduct();
 
 			} else if (strcmp(type, "rotatedomain") == 0) {
 				tmp = new anl::CImplicitRotateDomain(
@@ -157,7 +176,7 @@ namespace anl
 			} else if (strcmp(type, "sphere") == 0) {
 				tmp = new anl::CImplicitSphere();
 
-				dynamic_cast<anl::CImplicitSphere*>(tmp)->setCenter(
+				if (layer.child("center")) dynamic_cast<anl::CImplicitSphere*>(tmp)->setCenter(
 					layer.child("center").attribute("x").as_double(),
 					layer.child("center").attribute("y").as_double(),
 					layer.child("center").attribute("z").as_double(),
@@ -166,7 +185,7 @@ namespace anl
 					layer.child("center").attribute("v").as_double()
 					);
 
-				dynamic_cast<anl::CImplicitSphere*>(tmp)->setRadius(
+				if (layer.child("radius")) dynamic_cast<anl::CImplicitSphere*>(tmp)->setRadius(
 					layer.child("radius").attribute("value").as_double()
 					);
 

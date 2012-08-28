@@ -8,28 +8,30 @@
 
 namespace anl
 {
-	class CImplicitXML : CImplicitModuleBase {
-	private:
-	public:
-		CImplicitXML();
-		CImplicitXML(char * filename);
-		~CImplicitXML();
+	class CImplicitXML : public CImplicitModuleBase 
+    {
+    	private:
+    	public:
+    		CImplicitXML();
+    		CImplicitXML(char * filename);
+    		~CImplicitXML();
 
-		pugi::xml_document config;
-		pugi::xml_node data;
+    		pugi::xml_document config;
+    		pugi::xml_node data;
 
-		anl::CImplicitModuleBase * tmp;
+    		anl::CImplicitModuleBase * tmp;
 
-		void loadFile(char * filename);
+    		void loadFile(char * filename);
+            void setupNoise();
 
-		double get(double x, double y);
-		double get(double x, double y, double z);
-		double get(double x, double y, double z, double w);
-		double get(double x, double y, double z, double w, double u, double v);
+    		double get(double x, double y);
+    		double get(double x, double y, double z);
+    		double get(double x, double y, double z, double w);
+    		double get(double x, double y, double z, double w, double u, double v);
 
-		std::map<std::string, anl::CImplicitModuleBase *> noiseTree;
-		std::map<std::string, anl::CImplicitModuleBase *> :: iterator noiseIterator;
+    		std::map<std::string, anl::CImplicitModuleBase *> noiseTree;
+    		std::map<std::string, anl::CImplicitModuleBase *> :: iterator noiseIterator;
 	};
-}
+};
 
 #endif

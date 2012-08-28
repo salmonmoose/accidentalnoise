@@ -20,6 +20,7 @@
 #include "implicitfunctiongradient.h"
 #include "implicitgain.h"
 #include "implicitgradient.h"
+#include "implicitinvert.h"
 #include "implicitpow.h"
 #include "implicitrgbadotproduct.h"
 #include "implicitrotatedomain.h"
@@ -30,6 +31,7 @@
 #include "implicitsphere.h"
 #include "implicittiers.h"
 #include "implicittranslatedomain.h"
+#include "implicitxml.h"
 
 #include "rgbablend.h"
 #include "rgbablendops.h"
