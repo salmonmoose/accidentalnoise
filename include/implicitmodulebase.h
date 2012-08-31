@@ -1,3 +1,5 @@
+#include <iostream>
+#include <typeinfo>
 #ifndef IMPLICIT_MODULE_BASE_H
 #define IMPLICIT_MODULE_BASE_H
 
@@ -47,8 +49,11 @@ class CScalarParameter
 
     double get(double x, double y, double z)
     {
-        if(m_source) return m_source->get(x,y,z);
-        else return m_val;
+        if(m_source) {
+            return m_source->get(x,y,z);
+        } else {
+            return m_val;
+        }
     }
 
     double get(double x, double y, double z, double w)

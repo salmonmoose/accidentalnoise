@@ -27,10 +27,10 @@ class CImplicitSphere : public CImplicitModuleBase
     void setRadius(double r);
     void setRadius(CImplicitModuleBase *r);
 
-    double get(double x, double y);
-    double get(double x, double y, double z);
-    double get(double x, double y, double z, double w);
-    double get(double x, double y, double z, double w, double u, double v);
+    virtual double get(double x, double y);
+    virtual double get(double x, double y, double z);
+    virtual double get(double x, double y, double z, double w);
+    virtual double get(double x, double y, double z, double w, double u, double v);
 
     protected:
     CImplicitModuleBase *m_source;

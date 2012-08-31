@@ -13,15 +13,16 @@ namespace anl
     	private:
     	public:
     		CImplicitXML();
-    		CImplicitXML(char * filename);
+    		CImplicitXML(const char * filename);
     		~CImplicitXML();
 
     		pugi::xml_document config;
     		pugi::xml_node data;
 
     		anl::CImplicitModuleBase * tmp;
+            anl::CImplicitModuleBase * render;
 
-    		void loadFile(char * filename);
+    		void loadFile(const char * filename);
             void setupNoise();
 
     		double get(double x, double y);

@@ -1,4 +1,5 @@
 #include "implicitsphere.h"
+#include <iostream>
 
 namespace anl
 {
