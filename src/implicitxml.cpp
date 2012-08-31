@@ -13,6 +13,37 @@ namespace anl
 
     CImplicitXML::~CImplicitXML(){}
 
+    std::map<std::string, ENoiseTypes> CImplicitXML::NoiseMap = {
+        {"AutoCorrect", NT_AUTOCORRECT},
+        {"BasisFunction", NT_BASISFUNCTION},
+        {"Bias", NT_BIAS},
+        {"Blend", NT_BLEND},
+        {"BrightContrast", NT_BRIGHTCONTRAST},
+        {"Cache", NT_CACHE},
+        {"Cellular", NT_CELLULAR},
+        {"Clamp", NT_CLAMP},
+        {"Combiner", NT_COMBINER},
+        {"Constant", NT_CONSTANT},
+        {"Cos", NT_COS},
+        {"ExtractRGBAChannel", NT_EXTRACTRGBACHANNEL},
+        {"Floor", NT_FLOOR},
+        {"Fractal", NT_FRACTAL},
+        {"FunctionGradient", NT_FUNCTIONGRADIENT},
+        {"Gain", NT_GAIN},
+        {"Gradient", NT_GRADIENT},
+        {"Invert", NT_INVERT},
+        {"Pow", NT_POW},
+        {"RGBADotProduct", NT_RGBADOTPRODUCT},
+        {"RotateDomain", NT_ROTATEDOMAIN},
+        {"ScaleDomain", NT_SCALEDOMAIN},
+        {"ScaleOffset", NT_SCALEOFFSET},
+        {"Select", NT_SELECT},
+        {"Sin", NT_SIN},
+        {"Sphere", NT_SPHERE},
+        {"Tiers", NT_TIERS},
+        {"TranslateDomain", NT_TRANSLATEDDOMAIN},
+    };
+
 	void CImplicitXML::loadFile(const char * filename) {
         printf("Loading file %s\n", filename);
 		pugi::xml_parse_result result = config.load_file(filename);
@@ -23,202 +54,209 @@ namespace anl
         printf("Setting up Noise\n");
 		setupNoise();
 	}
-
+/*
+ .oooooo..o oooooo   oooooo     oooo ooooo ooooooooooooo   .oooooo.   ooooo   ooooo oooooooooooo ooooooooo.   
+d8P'    `Y8  `888.    `888.     .8'  `888' 8'   888   `8  d8P'  `Y8b  `888'   `888' `888'     `8 `888   `Y88. 
+Y88bo.        `888.   .8888.   .8'    888       888      888           888     888   888          888   .d88' 
+ `"Y8888o.     `888  .8'`888. .8'     888       888      888           888ooooo888   888oooo8     888ooo88P'  
+     `"Y88b     `888.8'  `888.8'      888       888      888           888     888   888    "     888`88b.    
+oo     .d8P      `888'    `888'       888       888      `88b    ooo   888     888   888       o  888  `88b.  
+8""88888P'        `8'      `8'       o888o     o888o      `Y8bood8P'  o888o   o888o o888ooooood8 o888o  o888o 
+*/	                                                                                                                                                                            
 	void CImplicitXML::setupNoise() {
 		const char * type;
 		for(pugi::xml_node layer = data.child("Layer"); layer; layer = layer.next_sibling("Layer")) {
 			type = layer.attribute("Type").value();
             printf("Adding layer type %s\n", type);
-			if(strcmp(type, "AutoCorrect") == 0) {
-				anl::CImplicitAutoCorrect tmp;
-
-				//TODO: setSource
-
-				if (layer.child("Range")) tmp.setRange(
-					layer.child("Range").attribute("Low").as_double(),
-					layer.child("Range").attribute("High").as_double()
-					);
-
-				//TODO: Calculate
-
-			} else if (strcmp(type, "BasisFunction") == 0) {
-				anl::CImplicitBasisFunction tmp;
-
-				if (layer.child("Seed")) tmp.setSeed(
-					layer.child("Seed").attribute("Value").as_int()
-					);
-
-				if (layer.child("Basis")) tmp.setType(
-					anl::CImplicitBasisFunction::BasisMap.find(layer.child("Basis").attribute("BasisType").value())->second
-					);
-
-				if (layer.child("Interp")) tmp.setInterp(
-					anl::CImplicitBasisFunction::InterpMap.find(layer.child("Interp").attribute("InterpType").value())->second
-					);
-
-				if (layer.child("Rotation")) tmp.setRotationAngle(
-					layer.child("Rotation").attribute("X").as_double(),
-					layer.child("Rotation").attribute("Y").as_double(),
-					layer.child("Rotation").attribute("Z").as_double(),
-					layer.child("Rotation").attribute("Angle").as_double()
-					);
-
-			} else if (strcmp(type, "Bias") == 0) {
-				anl::CImplicitBias tmp(
-					layer.attribute("Value").as_double()
-					);
-
-				if (layer.child("Source")) tmp.setSource(
-					layer.child("Source").attribute("Value").as_double()
-					);
-
-				if (layer.child("Bias")) tmp.setBias(
-					layer.child("Bias").attribute("Value").as_double()
-					);
-
-			} else if (strcmp(type, "Blend") == 0) {
-				anl::CImplicitBlend tmp;
-
-				if (layer.child("LowSource")) tmp.setLowSource(
-					layer.child("LowSource").attribute("Value").as_double()
-					);
-
-				if (layer.child("HighSource")) tmp.setHighSource(
-					layer.child("HighSource").attribute("Value").as_double()
-					);
-
-				if (layer.child("ControlSource")) tmp.setControlSource(
-					layer.child("ControlSource").attribute("Value").as_double()
-					);
-
-			} else if (strcmp(type, "BrightContrast") == 0) {
-				anl::CImplicitBrightContrast tmp;
-
-				if (layer.child("Brightness")) tmp.setBrightness(
-					layer.child("Brightness").attribute("Value").as_double()
-					);
-
-			} else if (strcmp(type, "Cache") == 0) {
-				anl::CImplicitCache tmp;
-
-			} else if (strcmp(type, "Cellular") == 0) {
-				anl::CImplicitCellular tmp;
-
-			} else if (strcmp(type, "Clamp") == 0) {
-				anl::CImplicitClamp tmp(
-					layer.attribute("Low").as_double(),
-					layer.attribute("High").as_double()
-					);
-
-			} else if (strcmp(type, "Combiner") == 0) {
-				anl::CImplicitCombiner tmp(
-					anl::CImplicitCombiner::CombinerMap.find(layer.attribute("CombinerType").value())->second
-					);
-
-			} else if (strcmp(type, "Constant") == 0) {
-				tmp = new anl::CImplicitConstant();
-
-			} else if (strcmp(type, "Cos") == 0) {
-				anl::CImplicitCos tmp;
-
-			} else if (strcmp(type, "ExtractRGBAChannel") == 0) {
-				anl::CImplicitExtractRGBAChannel tmp;
-
-			} else if (strcmp(type, "Floor") == 0) {
-				anl::CImplicitFloor tmp;
-
-			} else if (strcmp(type, "Fractal") == 0) {
-				anl::CImplicitFractal tmp(
-                    anl::CImplicitFractal::FractalMap.find(layer.attribute("FractalType").value())->second,
-                    anl::CImplicitBasisFunction::BasisMap.find(layer.attribute("BasisType").value())->second,
-                    anl::CImplicitBasisFunction::InterpMap.find(layer.attribute("InterpType").value())->second
-                	);
-
-			} else if (strcmp(type, "FunctionGradient") == 0) {
-				anl::CImplicitFunctionGradient tmp;
-
-			} else if (strcmp(type, "Gain") == 0) {
-				anl::CImplicitGain tmp(
-					layer.attribute("Value").as_double()
-					);
-
-			} else if (strcmp(type, "Gradient") == 0) {
-				anl::CImplicitGradient tmp;
-
-			} else if (strcmp(type, "Invert") == 0) {
-				anl::CImplicitInvert tmp;
-
-			} else if (strcmp(type, "Pow") == 0) {
-				anl::CImplicitPow tmp;
-
-			} else if (strcmp(type, "RGBADotProduct") == 0) {
-				anl::CImplicitRGBADotProduct tmp;
-
-			} else if (strcmp(type, "RotateDomain") == 0) {
-				anl::CImplicitRotateDomain tmp(
-					layer.attribute("X").as_double(),
-					layer.attribute("Y").as_double(),
-					layer.attribute("Z").as_double(),
-					layer.attribute("Angle").as_double()
-					);
-
-			} else if (strcmp(type, "ScaleDomain") == 0) {
-				anl::CImplicitScaleDomain tmp;
-
-			} else if (strcmp(type, "ScaleOffset") == 0) {
-				anl::CImplicitScaleOffset tmp(
-					layer.attribute("Scale").as_double(),
-					layer.attribute("Offset").as_double()
-					);
-
-			} else if (strcmp(type, "Select") == 0) {
-				anl::CImplicitSelect tmp;
-
-			} else if (strcmp(type, "Sin") == 0) {
-				anl::CImplicitSin tmp;
-
-			} else if (strcmp(type, "Sphere") == 0) {
-				anl::CImplicitSphere tmp;
-
-				if (layer.child("Center")) tmp.setCenter(
-					layer.child("Center").attribute("X").as_double(),
-					layer.child("Center").attribute("Y").as_double(),
-					layer.child("Center").attribute("Z").as_double(),
-					layer.child("Center").attribute("W").as_double(),
-					layer.child("Center").attribute("U").as_double(),
-					layer.child("Center").attribute("V").as_double()
-					);
-
-				if (layer.child("NoiseRadius")) {
-					tmp.setRadius(
-						noiseTree.find(layer.child_value("NoiseRadius"))->second
-					);
-				} else if (layer.child("Radius")) {
-					tmp.setRadius(
-						layer.child("Radius").attribute("Value").as_double()
-					);
-				}
-
-			} else if (strcmp(type, "Tiers") == 0) {
-				anl::CImplicitTiers  tmp;
-
-			} else if (strcmp(type, "TranslateDomain") == 0) {
-				anl::CImplicitTranslateDomain tmp;
-
-			} else if (strcmp(type, "XML") == 0) {
-				anl::CImplicitXML tmp;
-			} else {
-				printf("Layer type not found %s\n", layer.attribute("type").value());
-			}
+            switch(anl::CImplicitXML::NoiseMap.find(layer.attribute("Type").value())->second) {
+		        case NT_AUTOCORRECT: 			{anl::CImplicitAutoCorrect tmp = 			anl::CImplicitXML::AutoCorrect(layer);} break;
+		        case NT_BASISFUNCTION: 			{anl::CImplicitBasisFunction tmp = 			anl::CImplicitXML::BasisFunction(layer);} break;
+		        case NT_BIAS: 					{anl::CImplicitBias tmp = 					anl::CImplicitXML::Bias(layer);} break;
+		        case NT_BLEND: 					{anl::CImplicitBlend tmp = 					anl::CImplicitXML::Blend(layer);} break;
+		        case NT_BRIGHTCONTRAST: 		{anl::CImplicitBrightContrast tmp = 		anl::CImplicitXML::BrightContrast(layer);} break;
+		        case NT_CACHE: 					{anl::CImplicitCache tmp = 					anl::CImplicitXML::Cache(layer);} break;
+		        case NT_CELLULAR: 				{anl::CImplicitCellular tmp = 				anl::CImplicitXML::Cellular(layer);} break;
+		        case NT_CLAMP: 					{anl::CImplicitClamp tmp = 					anl::CImplicitXML::Clamp(layer);} break;
+		        case NT_COMBINER: 				{anl::CImplicitCombiner tmp = 				anl::CImplicitXML::Combiner(layer);} break;
+		        case NT_CONSTANT: 				{anl::CImplicitConstant tmp = 				anl::CImplicitXML::Constant(layer);} break;
+		        case NT_COS: 					{anl::CImplicitCos tmp = 					anl::CImplicitXML::Cos(layer);} break;
+		        case NT_EXTRACTRGBACHANNEL: 	{anl::CImplicitExtractRGBAChannel tmp = 	anl::CImplicitXML::ExtractRGBAChannel(layer);} break;
+		        case NT_FLOOR: 					{anl::CImplicitFloor tmp = 					anl::CImplicitXML::Floor(layer);} break;
+		        case NT_FRACTAL: 				{anl::CImplicitFractal tmp = 				anl::CImplicitXML::Fractal(layer);} break;
+		        case NT_FUNCTIONGRADIENT: 		{anl::CImplicitFunctionGradient tmp =		anl::CImplicitXML::FunctionGradient(layer);} break;
+		        case NT_GAIN: 					{anl::CImplicitGain tmp = 					anl::CImplicitXML::Gain(layer);} break;
+		        case NT_GRADIENT: 				{anl::CImplicitGradient tmp = 				anl::CImplicitXML::Gradient(layer);} break;
+		        case NT_INVERT: 				{anl::CImplicitInvert tmp = 				anl::CImplicitXML::Invert(layer);} break;
+		        case NT_POW: 					{anl::CImplicitPow tmp = 					anl::CImplicitXML::Pow(layer);} break;
+		        case NT_RGBADOTPRODUCT: 		{anl::CImplicitRGBADotProduct tmp = 		anl::CImplicitXML::RGBADotProduct(layer);} break;
+		        case NT_ROTATEDOMAIN: 			{anl::CImplicitRotateDomain tmp = 			anl::CImplicitXML::RotateDomain(layer);} break;
+		        case NT_SCALEDOMAIN: 			{anl::CImplicitScaleDomain tmp = 			anl::CImplicitXML::ScaleDomain(layer);} break;
+		        case NT_SCALEOFFSET: 			{anl::CImplicitScaleOffset tmp = 			anl::CImplicitXML::ScaleOffset(layer);} break;
+		        case NT_SELECT: 				{anl::CImplicitSelect tmp = 				anl::CImplicitXML::Select(layer);} break;
+		        case NT_SIN: 					{anl::CImplicitSin tmp = 					anl::CImplicitXML::Sin(layer);} break;
+		        case NT_SPHERE: 				{anl::CImplicitSphere tmp = 				anl::CImplicitXML::Sphere(layer);} break;
+		        case NT_TIERS: 					{anl::CImplicitTiers tmp = 					anl::CImplicitXML::Tiers(layer);} break;
+		        case NT_TRANSLATEDDOMAIN: 		{anl::CImplicitTranslateDomain tmp = 		anl::CImplicitXML::TranslateDomain(layer);} break;
+            }
 			printf("Adding node\n");
 			noiseTree.insert(std::pair<std::string, anl::CImplicitModuleBase *>(layer.child_value("Name"), tmp));
 		}
 
 		if(noiseTree.count(data.child_value("Render")) > 0) {
+			printf("I know about the rendernode\n");
 			render = noiseTree.find(data.child_value("Render"))->second;
 		} else {
 			printf("I don't know about the rednernode\n");
 		}
+	}
+
+
+/*	
+oooooooooo.   oooooooooooo oooooooooooo ooooo ooooo      ooo ooooo ooooooooooooo ooooo   .oooooo.   ooooo      ooo  .oooooo..o 
+`888'   `Y8b  `888'     `8 `888'     `8 `888' `888b.     `8' `888' 8'   888   `8 `888'  d8P'  `Y8b  `888b.     `8' d8P'    `Y8 
+ 888      888  888          888          888   8 `88b.    8   888       888       888  888      888  8 `88b.    8  Y88bo.      
+ 888      888  888oooo8     888oooo8     888   8   `88b.  8   888       888       888  888      888  8   `88b.  8   `"Y8888o.  
+ 888      888  888    "     888    "     888   8     `88b.8   888       888       888  888      888  8     `88b.8       `"Y88b 
+ 888     d88'  888       o  888          888   8       `888   888       888       888  `88b    d88'  8       `888  oo     .d8P 
+o888bood8P'   o888ooooood8 o888o        o888o o8o        `8  o888o     o888o     o888o  `Y8bood8P'  o8o        `8  8""88888P'  
+*/	                                                                                                                               
+	anl::CImplicitAutoCorrect CImplicitXML::AutoCorrect(pugi::xml_node input){
+
+	}
+	
+	anl::CImplicitBasisFunction CImplicitXML::BasisFunction(pugi::xml_node input){
+
+	}
+
+	anl::CImplicitBias CImplicitXML::Bias(pugi::xml_node input){
+
+	}
+
+	anl::CImplicitBlend CImplicitXML::Blend(pugi::xml_node input){
+
+	}
+
+	anl::CImplicitBrightContrast CImplicitXML::BrightContrast(pugi::xml_node input){
+
+	}
+
+	anl::CImplicitCache CImplicitXML::Cache(pugi::xml_node input){
+
+	}
+
+	anl::CImplicitCellular CImplicitXML::Cellular(pugi::xml_node input){
+
+	}
+
+	anl::CImplicitClamp CImplicitXML::Clamp(pugi::xml_node input){
+
+	}
+
+	anl::CImplicitCombiner CImplicitXML::Combiner(pugi::xml_node input){
+
+	}
+
+	anl::CImplicitConstant CImplicitXML::Constant(pugi::xml_node input){
+
+	}
+
+	anl::CImplicitCos CImplicitXML::Cos(pugi::xml_node input){
+
+	}
+
+	anl::CImplicitExtractRGBAChannel CImplicitXML::ExtractRGBAChannel(pugi::xml_node input){
+
+	}
+
+	anl::CImplicitFloor CImplicitXML::Floor(pugi::xml_node input){
+
+	}
+
+	anl::CImplicitFractal CImplicitXML::Fractal(pugi::xml_node input) {
+		anl::CImplicitFractal tmpFractal(
+	        anl::CImplicitFractal::FractalMap.find(input.attribute("FractalType").value())->second,
+	        anl::CImplicitBasisFunction::BasisMap.find(input.attribute("BasisType").value())->second,
+	        anl::CImplicitBasisFunction::InterpMap.find(input.attribute("InterpType").value())->second
+    	);
+
+    	return tmpFractal;
+	}
+
+	anl::CImplicitFunctionGradient CImplicitXML::FunctionGradient(pugi::xml_node input){
+
+	}
+
+	anl::CImplicitGain CImplicitXML::Gain(pugi::xml_node input){
+
+	}
+
+	anl::CImplicitGradient CImplicitXML::Gradient(pugi::xml_node input){
+
+	}
+
+	anl::CImplicitInvert CImplicitXML::Invert(pugi::xml_node input){
+
+	}
+
+	anl::CImplicitPow CImplicitXML::Pow(pugi::xml_node input){
+
+	}
+
+	anl::CImplicitRGBADotProduct CImplicitXML::RGBADotProduct(pugi::xml_node input){
+
+	}
+
+	anl::CImplicitRotateDomain CImplicitXML::RotateDomain(pugi::xml_node input){
+
+	}
+
+	anl::CImplicitScaleDomain CImplicitXML::ScaleDomain(pugi::xml_node input){
+
+	}
+
+	anl::CImplicitScaleOffset CImplicitXML::ScaleOffset(pugi::xml_node input){
+
+	}
+
+	anl::CImplicitSelect CImplicitXML::Select(pugi::xml_node input){
+
+	}
+
+	anl::CImplicitSin CImplicitXML::Sin(pugi::xml_node input){
+
+	}
+
+	anl::CImplicitSphere CImplicitXML::Sphere(pugi::xml_node input) {
+		anl::CImplicitSphere tmpSphere;
+
+		if (input.child("Center")) tmpSphere.setCenter(
+			input.child("Center").attribute("X").as_double(),
+			input.child("Center").attribute("Y").as_double(),
+			input.child("Center").attribute("Z").as_double(),
+			input.child("Center").attribute("W").as_double(),
+			input.child("Center").attribute("U").as_double(),
+			input.child("Center").attribute("V").as_double()
+			);
+
+		if (input.child("NoiseRadius")) {
+			tmpSphere.setRadius(
+				noiseTree.find(input.child_value("NoiseRadius"))->second
+			);
+		} else if (input.child("Radius")) {
+			tmpSphere.setRadius(
+				input.child("Radius").attribute("Value").as_double()
+			);
+		}
+
+		return tmpSphere;
+	}
+
+	anl::CImplicitTiers CImplicitXML::Tiers(pugi::xml_node input){
+
+	}
+
+	anl::CImplicitTranslateDomain CImplicitXML::TranslateDomain(pugi::xml_node input){
+
 	}
 
 	double CImplicitXML::get(double x, double y) {
