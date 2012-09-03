@@ -54,15 +54,7 @@ namespace anl
         printf("Setting up Noise\n");
 		setupNoise();
 	}
-/*
- .oooooo..o oooooo   oooooo     oooo ooooo ooooooooooooo   .oooooo.   ooooo   ooooo oooooooooooo ooooooooo.   
-d8P'    `Y8  `888.    `888.     .8'  `888' 8'   888   `8  d8P'  `Y8b  `888'   `888' `888'     `8 `888   `Y88. 
-Y88bo.        `888.   .8888.   .8'    888       888      888           888     888   888          888   .d88' 
- `"Y8888o.     `888  .8'`888. .8'     888       888      888           888ooooo888   888oooo8     888ooo88P'  
-     `"Y88b     `888.8'  `888.8'      888       888      888           888     888   888    "     888`88b.    
-oo     .d8P      `888'    `888'       888       888      `88b    ooo   888     888   888       o  888  `88b.  
-8""88888P'        `8'      `8'       o888o     o888o      `Y8bood8P'  o888o   o888o o888ooooood8 o888o  o888o 
-*/	                                                                                                                                                                            
+                                                                                                                                                                            
 	void CImplicitXML::setupNoise() {
 		const char * type;
 		for(pugi::xml_node layer = data.child("Layer"); layer; layer = layer.next_sibling("Layer")) {
@@ -98,28 +90,24 @@ oo     .d8P      `888'    `888'       888       888      `88b    ooo   888     8
 		        case NT_TIERS: 					{anl::CImplicitTiers tmp = 					anl::CImplicitXML::Tiers(layer);} break;
 		        case NT_TRANSLATEDDOMAIN: 		{anl::CImplicitTranslateDomain tmp = 		anl::CImplicitXML::TranslateDomain(layer);} break;
             }
+			printf("Getting node point %f\n", tmp->get(0.0,0.0,0.0));
 			printf("Adding node\n");
 			noiseTree.insert(std::pair<std::string, anl::CImplicitModuleBase *>(layer.child_value("Name"), tmp));
 		}
 
 		if(noiseTree.count(data.child_value("Render")) > 0) {
-			printf("I know about the rendernode\n");
-			render = noiseTree.find(data.child_value("Render"))->second;
+			printf("Searching for a node called %s\n", data.child_value("Render"));
+
+			printf("I can get data from last node %f\n", tmp->get(0.0,0.0,0.0));
+
+			printf("Got the render node");
+
 		} else {
 			printf("I don't know about the rednernode\n");
 		}
 	}
 
 
-/*	
-oooooooooo.   oooooooooooo oooooooooooo ooooo ooooo      ooo ooooo ooooooooooooo ooooo   .oooooo.   ooooo      ooo  .oooooo..o 
-`888'   `Y8b  `888'     `8 `888'     `8 `888' `888b.     `8' `888' 8'   888   `8 `888'  d8P'  `Y8b  `888b.     `8' d8P'    `Y8 
- 888      888  888          888          888   8 `88b.    8   888       888       888  888      888  8 `88b.    8  Y88bo.      
- 888      888  888oooo8     888oooo8     888   8   `88b.  8   888       888       888  888      888  8   `88b.  8   `"Y8888o.  
- 888      888  888    "     888    "     888   8     `88b.8   888       888       888  888      888  8     `88b.8       `"Y88b 
- 888     d88'  888       o  888          888   8       `888   888       888       888  `88b    d88'  8       `888  oo     .d8P 
-o888bood8P'   o888ooooood8 o888o        o888o o8o        `8  o888o     o888o     o888o  `Y8bood8P'  o8o        `8  8""88888P'  
-*/	                                                                                                                               
 	anl::CImplicitAutoCorrect CImplicitXML::AutoCorrect(pugi::xml_node input){
 
 	}
@@ -274,4 +262,17 @@ o888bood8P'   o888ooooood8 o888o        o888o o8o        `8  o888o     o888o    
 	double CImplicitXML::get(double x, double y, double z, double w, double u, double v) {
 		return render->get(x,y,z,w,u,v);
 	}
+};
+namespace {
+	bool AutoCorrect_r = noise_factory::instance()->register_type<anl::CImplicitAutoCorrect>("AutoCorrect");
+	/*
+	bool BasisFunction_r = noise_factory::instance()->register_type<CImplicitBasisFunction>("BasisFunction");
+	bool Bias_r = noise_factory::instance()->register_type<CImplicitBias>("Bias");
+	bool Blend_r = noise_factory::instance()->register_type<CImplicitBlend>("Blend");
+	bool BrightContrast_r = noise_factory::instance()->register_type<CImplicitBrightContrast>("BrightContrast");
+	bool Cache_r = noise_factory::instance()->register_type<CImplicitCache>("Cache");
+	bool Cellular_r = noise_factory::instance()->register_type<CImplicitCellular>("Cellular");
+	bool Clamp_r = noise_factory::instance()->register_type<CImplicitClamp>("Clamp");
+	bool Combiner_r = noise_factory::instance()->register_type<CImplicitCombiner>("Combiner");
+	*/
 };

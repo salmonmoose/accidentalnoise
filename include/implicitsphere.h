@@ -36,7 +36,6 @@ class CImplicitSphere : public CImplicitModuleBase
     CImplicitModuleBase *m_source;
     CScalarParameter m_cx, m_cy, m_cz, m_cw, m_cu, m_cv;
     CScalarParameter m_radius;
-
 };
 };
 

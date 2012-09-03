@@ -50,6 +50,8 @@ namespace anl
 
             static std::map<std::string, ENoiseTypes> NoiseMap;
 
+
+
     		pugi::xml_document config;
     		pugi::xml_node data;
 
