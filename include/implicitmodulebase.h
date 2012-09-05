@@ -1,8 +1,7 @@
-#include <iostream>
-#include <typeinfo>
-#include "factory.h"
 #ifndef IMPLICIT_MODULE_BASE_H
 #define IMPLICIT_MODULE_BASE_H
+#include <iostream>
+#include <typeinfo>
 
 // Base class of implicit (2D, 4D, 6D) noise functions
 #define MaxSources 20
@@ -76,7 +75,5 @@ namespace anl
     };
 };
 
-struct noise_factory : generic_factory<std::string, anl::CImplicitModuleBase> {
-    static noise_factory * instance(); // use a singleton version that creates on first call.
-};
+
 #endif
