@@ -4,6 +4,7 @@
 #include <typeinfo>
 #include <functional>
 #include <map>
+#include "factory.h"
 
 // Base class of implicit (2D, 4D, 6D) noise functions
 #define MaxSources 20
@@ -90,6 +91,14 @@ namespace anl
         double m_val;
         CImplicitModuleBase *m_source;
     };
+
+    struct CImplicitModuleFactory : generic_factory<std::string, anl::CImplicitModuleBase> {
+    static CImplicitModuleFactory & instance()
+    {
+        static CImplicitModuleFactory sInstance;
+        return sInstance;
+    } // use a singleton version that creates on first call.
+};
 };
 
 

@@ -6,7 +6,7 @@
 #include "anl.h"
 
 #include "implicitmodulebase.h"
-#include "noisefactory.h"
+
 
 namespace anl
 {
