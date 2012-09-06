@@ -29,9 +29,6 @@ namespace anl
 	void CImplicitXML::setupNoise() {
 		const char * type;
 
-		render = noise_factory::instance().build_object("Sphere");
-		render->setInput("Radius", 2.0);
-/*
 		for(pugi::xml_node layer = data.child("Layer"); layer; layer = layer.next_sibling("Layer")) {
 			printf("Adding %s:%s\n", layer.attribute("Type").value(), layer.attribute("Name").value());
 
@@ -44,7 +41,7 @@ namespace anl
 				)
 			);
 
-			tmp = noiseTree.end()->second.get();
+            tmp = noiseTree.find(layer.attribute("Name").value())->second.get();
 
 			for(pugi::xml_node function: layer.children()) {
 				printf("Applying function: %s with value %f\n", function.name(), function.text().as_double());
@@ -61,7 +58,6 @@ namespace anl
 		} else {
 			printf("I don't know about the rednernode\n");
 		}
-*/
 	}
 
 	double CImplicitXML::get(double x, double y) {
