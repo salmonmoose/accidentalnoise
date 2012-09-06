@@ -26,7 +26,7 @@ struct generic_factory
         creators[key] = creator;
     }
 
-    template < typename T >
+    template <typename T>
     bool register_type(Key const& key) {
         register_creator(key, newT<T>);
     }

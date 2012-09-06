@@ -2,17 +2,20 @@
 #define IMPLICIT_MODULE_BASE_H
 #include <iostream>
 #include <typeinfo>
+#include <functional>
+#include <map>
 
 // Base class of implicit (2D, 4D, 6D) noise functions
 #define MaxSources 20
 namespace anl
 {
-
     class CImplicitModuleBase
     {
     public:
     	CImplicitModuleBase(){}
     	virtual ~CImplicitModuleBase(){}
+
+        typedef std::function<void(double)> double_v;
 
     	virtual void setSeed(unsigned int seed){}
 
@@ -21,7 +24,21 @@ namespace anl
     	virtual double get(double x, double y, double z, double w)=0;
     	virtual double get(double x, double y, double z, double w, double u, double v)=0;
 
+        bool registerInput(std::string const& key, double_v const& input) {
+            functions[key] = input;
+        }
+        
+        void setInput(std::string key, double value) {
+            auto fit = functions.find(key);
+            if (fit == functions.end()) return;
+
+            fit->second(value);
+        }
+
     protected:
+
+    private:
+        std::map<std::string, double_v> functions;
     };
 
     // Scalar parameter class

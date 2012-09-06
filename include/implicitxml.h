@@ -24,6 +24,8 @@ namespace anl
     		anl::CImplicitModuleBase * tmp;
             anl::CImplicitModuleBase * render;
 
+            bool renderNode;
+
     		void loadFile(const char * filename);
             void setupNoise();
 

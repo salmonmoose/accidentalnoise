@@ -6,6 +6,14 @@ using namespace anl;
 
 namespace anl
 {
+    CImplicitFractal::CImplicitFractal() {
+        setNumOctaves(8);
+        setFrequency(1.0);
+        setLacunarity(2.0);
+        setType(FBM);
+        setAllSourceTypes(SIMPLEX, QUINTIC);
+        resetAllSources();
+    }
 
     CImplicitFractal::CImplicitFractal(unsigned int type, unsigned int basistype, unsigned int interptype)
     {
@@ -16,6 +24,8 @@ namespace anl
         setAllSourceTypes(basistype, interptype);
         resetAllSources();
     }
+
+    CImplicitFractal::~CImplicitFractal(){};
 
     std::map<std::string, EFractalTypes> CImplicitFractal::FractalMap = {
         {"FBM", FBM},

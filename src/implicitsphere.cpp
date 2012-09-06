@@ -3,7 +3,14 @@
 
 namespace anl
 {
-    CImplicitSphere::CImplicitSphere() : CImplicitModuleBase(),m_source(0), m_cx(0), m_cy(0), m_cz(0), m_cw(0), m_cu(0), m_cv(0), m_radius(1){}
+    CImplicitSphere::CImplicitSphere() : CImplicitModuleBase(),m_source(0), m_cx(0), m_cy(0), m_cz(0), m_cw(0), m_cu(0), m_cv(0), m_radius(1){
+        auto myself = this;
+        CImplicitModuleBase::registerInput(
+            "Radius", 
+            [myself] (double v) { myself->setRadius (v); }
+        );
+    }
+    
     CImplicitSphere::~CImplicitSphere(){}
 
     void CImplicitSphere::setCenter(double cx,double cy,double cz,double cw,double cu,double cv)
@@ -22,14 +29,18 @@ namespace anl
     void CImplicitSphere::setCenterW(CImplicitModuleBase *cw){m_cw.set(cw);}
     void CImplicitSphere::setCenterU(CImplicitModuleBase *cu){m_cu.set(cu);}
     void CImplicitSphere::setCenterV(CImplicitModuleBase *cv){m_cv.set(cv);}
+    
     void CImplicitSphere::setRadius(double r)
     {
+        printf("Setting sphere radius to %f\n", r);
         m_radius.set(r);
     }
     void CImplicitSphere::setRadius(CImplicitModuleBase *r)
     {
         m_radius.set(r);
     }
+
+
 
     double CImplicitSphere::get(double x, double y)
     {
