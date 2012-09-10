@@ -6,7 +6,7 @@ namespace anl
 {
     bool Sphere_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitSphere>("Sphere");
 
-    CImplicitSphere::CImplicitSphere() : CImplicitModuleBase(),m_source(0), m_cx(0), m_cy(0), m_cz(0), m_cw(0), m_cu(0), m_cv(0), m_radius(1){
+    CImplicitSphere::CImplicitSphere() : CImplicitModuleBase(),m_source(0), m_cx(0), m_cy(0), m_cz(0), m_cw(0), m_cu(0), m_cv(0), m_radius(1) {
         CImplicitModuleBase::registerDoubleInput("Radius",[this] (double d) { this->setRadius (d); });
         CImplicitModuleBase::registerNoiseInput("Radius", [this] (CImplicitModuleBase *n) { this->setRadius (n); });
 

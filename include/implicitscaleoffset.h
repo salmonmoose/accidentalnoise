@@ -7,7 +7,7 @@ namespace anl
     class CImplicitScaleOffset : public CImplicitModuleBase
 {
     public:
-    CImplicitScaleOffset(double scale, double offset);
+    CImplicitScaleOffset();
     ~CImplicitScaleOffset();
 
     void setSource(CImplicitModuleBase *b);

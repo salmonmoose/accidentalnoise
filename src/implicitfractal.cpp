@@ -17,7 +17,7 @@ namespace anl
         CImplicitModuleBase::registerDoubleInput("Offset",[this] (double d) { this->setOffset (d); });
         CImplicitModuleBase::registerDoubleInput("H",[this] (double d) { this->setH (d); });
         
-        CImplicitModuleBase::registerIntInput("Type",[this] (int i) { this->setType (i); });
+        CImplicitModuleBase::registerIntInput("Fractal",[this] (int i) { this->setType (i); });
         CImplicitModuleBase::registerIntInput("Basis",[this] (int i) { this->setAllBasisTypes (i); });
         CImplicitModuleBase::registerIntInput("Interpolation",[this] (int i) { this->setAllInterpolationTypes (i); });
 

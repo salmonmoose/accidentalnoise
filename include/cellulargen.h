@@ -25,27 +25,26 @@ struct SCellularCache
 };
 
 
-class CCellularGenerator
-{
-    public:
-    CCellularGenerator();
-    ~CCellularGenerator();
+    class CCellularGenerator
+    {
+        public:
+        CCellularGenerator();
+        ~CCellularGenerator();
 
-    SCellularCache &get(double x, double y);
-    SCellularCache &get(double x, double y, double z);
-    SCellularCache &get(double x, double y, double z, double w);
-    SCellularCache &get(double x, double y, double z, double w, double u, double v);
+        SCellularCache &get(double x, double y);
+        SCellularCache &get(double x, double y, double z);
+        SCellularCache &get(double x, double y, double z, double w);
+        SCellularCache &get(double x, double y, double z, double w, double u, double v);
 
-    void setSeed(unsigned int seed);
-
-
-    protected:
-    unsigned int m_seed;
-    SCellularCache m_cache2, m_cache3, m_cache4, m_cache6;
+        void setSeed(unsigned int seed);
 
 
-};
+        protected:
+        unsigned int m_seed;
+        SCellularCache m_cache2, m_cache3, m_cache4, m_cache6;
 
+
+    };
 };
 
 #endif

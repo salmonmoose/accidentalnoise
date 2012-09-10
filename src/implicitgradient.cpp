@@ -20,6 +20,7 @@ CImplicitGradient::CImplicitGradient()
     CImplicitModuleBase::registerDoubleInput("U2",[this] (double d) { this->setU2 (d); });
     CImplicitModuleBase::registerDoubleInput("V1",[this] (double d) { this->setV1 (d); });
     CImplicitModuleBase::registerDoubleInput("V2",[this] (double d) { this->setV2 (d); });
+    
     setGradient(0,1,0,1,0,0,0,0,0,0,0,0);
 }
 CImplicitGradient::~CImplicitGradient(){}

@@ -58,7 +58,18 @@ namespace anl
 	void CImplicitXML::setupNoise() {
 		const char * type;
 
-		for(pugi::xml_node layer = data.child("Layer"); layer; layer = layer.next_sibling("Layer")) {
+		for(pugi::xml_node gen = data.child("CellGen"); gen; gen = gen.next_sibling("CellGen")) {
+			printf("Creating Cellular Generator:%s\n", gen.attribute("Name").value());
+
+			cellularTree.insert(
+				std::pair<std::string, anl::CCellularGenerator>(
+					gen.attribute("Name").value(),
+					anl::CCellularGenerator()
+					)
+			);
+		}
+
+		for(pugi::xml_node layer = data.child("Module"); layer; layer = layer.next_sibling("Module")) {
 			printf("Adding %s:%s\n", layer.attribute("Type").value(), layer.attribute("Name").value());
 
 			noiseTree.insert(
@@ -83,17 +94,19 @@ namespace anl
 					break;
 					case ENUM:
 					{
+						printf("ENUM Value %i\n", ENUMMap.find(function.child_value())->second);
 						tmp->setIntInput(function.name(), ENUMMap.find(function.child_value())->second);
 					}
-					case DOUBLE:
-					{
-						tmp->setDoubleInput(function.name(), function.text().as_double());
-					}
-					break;
 					case NOISE:
 					{
 						value = noiseTree.find(function.child_value())->second.get();
 						tmp->setNoiseInput(function.name(), value);
+					}
+					break;
+					case DOUBLE:
+					default:
+					{
+						tmp->setDoubleInput(function.name(), function.text().as_double());
 					}
 					break;
 				}
@@ -146,7 +159,7 @@ namespace anl
 
 
 namespace {
-	bool AutoCorrect_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitAutoCorrect>("AutoCorrect");
+	
 	bool BasisFunction_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitBasisFunction>("BasisFunction");
 	//bool Bias_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitBias>("Bias");
 	bool Blend_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitBlend>("Blend");
@@ -161,7 +174,7 @@ namespace {
 	bool Floor_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitFloor>("Floor");
 	bool FunctionGradient_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitFunctionGradient>("FunctionGradient");
 	//bool Gain_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitGain>("Gain");
-	bool Gradient_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitGradient>("Gradient");
+	
 	bool Invert_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitInvert>("Invert");
 	bool Pow_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitPow>("Pow");
 	bool RGBADotProduct_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitRGBADotProduct>("RGBADotProduct");
@@ -174,5 +187,5 @@ namespace {
 	
 
 	bool Tiers_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitTiers>("Tiers");
-	bool TranslateDomain_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitTranslateDomain>("TranslateDomain");
+	
 };

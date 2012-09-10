@@ -7,6 +7,6 @@ struct noise_factory : generic_factory<std::string, anl::CImplicitModuleBase> {
     {
     	static noise_factory sInstance;
     	return sInstance;
-    } // use a singleton version that creates on first call.
+    }
 };
 #endif

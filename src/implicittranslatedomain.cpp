@@ -2,66 +2,43 @@
 
 namespace anl
 {
-    CImplicitTranslateDomain::CImplicitTranslateDomain() : m_source(0),
-        m_ax(0), m_ay(0), m_az(0), m_aw(0), m_au(0), m_av(0){}
+    bool TranslateDomain_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitTranslateDomain>("TranslateDomain");
+    
+    CImplicitTranslateDomain::CImplicitTranslateDomain() : m_source(0), m_ax(0), m_ay(0), m_az(0), m_aw(0), m_au(0), m_av(0)
+    {
+        CImplicitModuleBase::registerDoubleInput("XAxis",[this] (double d) { this->setXAxisSource (d); });
+        CImplicitModuleBase::registerDoubleInput("YAxis",[this] (double d) { this->setYAxisSource (d); });
+        CImplicitModuleBase::registerDoubleInput("ZAxis",[this] (double d) { this->setZAxisSource (d); });
+        CImplicitModuleBase::registerDoubleInput("WAxis",[this] (double d) { this->setWAxisSource (d); });
+        CImplicitModuleBase::registerDoubleInput("UAxis",[this] (double d) { this->setUAxisSource (d); });
+        CImplicitModuleBase::registerDoubleInput("VAxis",[this] (double d) { this->setVAxisSource (d); });
+        CImplicitModuleBase::registerDoubleInput("Source",[this] (double d) { this->setSource (d); });
+
+        CImplicitModuleBase::registerNoiseInput("XAxis",[this] (CImplicitModuleBase *n) { this->setXAxisSource (n); });
+        CImplicitModuleBase::registerNoiseInput("YAxis",[this] (CImplicitModuleBase *n) { this->setYAxisSource (n); });
+        CImplicitModuleBase::registerNoiseInput("ZAxis",[this] (CImplicitModuleBase *n) { this->setZAxisSource (n); });
+        CImplicitModuleBase::registerNoiseInput("WAxis",[this] (CImplicitModuleBase *n) { this->setWAxisSource (n); });
+        CImplicitModuleBase::registerNoiseInput("UAxis",[this] (CImplicitModuleBase *n) { this->setUAxisSource (n); });
+        CImplicitModuleBase::registerNoiseInput("VAxis",[this] (CImplicitModuleBase *n) { this->setVAxisSource (n); });
+        CImplicitModuleBase::registerNoiseInput("Source",[this] (CImplicitModuleBase *n) { this->setSource (n); });
+    }
     CImplicitTranslateDomain::~CImplicitTranslateDomain(){}
 
-    void CImplicitTranslateDomain::setXAxisSource(CImplicitModuleBase *m)
-    {
-        m_ax.set(m);
-    }
-    void CImplicitTranslateDomain::setYAxisSource(CImplicitModuleBase *m)
-    {
-        m_ay.set(m);
-    }
-    void CImplicitTranslateDomain::setZAxisSource(CImplicitModuleBase *m)
-    {
-        m_az.set(m);
-    }
-    void CImplicitTranslateDomain::setWAxisSource(CImplicitModuleBase *m)
-    {
-        m_aw.set(m);
-    }
-    void CImplicitTranslateDomain::setUAxisSource(CImplicitModuleBase *m)
-    {
-        m_au.set(m);
-    }
-    void CImplicitTranslateDomain::setVAxisSource(CImplicitModuleBase *m)
-    {
-        m_av.set(m);
-    }
-    void CImplicitTranslateDomain::setXAxisSource(double v)
-    {
-        m_ax.set(v);
-    }
-    void CImplicitTranslateDomain::setYAxisSource(double v)
-    {
-        m_ay.set(v);
-    }
-    void CImplicitTranslateDomain::setZAxisSource(double v)
-    {
-        m_az.set(v);
-    }
-    void CImplicitTranslateDomain::setWAxisSource(double v)
-    {
-        m_aw.set(v);
-    }
-    void CImplicitTranslateDomain::setUAxisSource(double v)
-    {
-        m_au.set(v);
-    }
-    void CImplicitTranslateDomain::setVAxisSource(double v)
-    {
-        m_av.set(v);
-    }
-    void CImplicitTranslateDomain::setSource(CImplicitModuleBase *m)
-    {
-        m_source.set(m);
-    }
-    void CImplicitTranslateDomain::setSource(double v)
-    {
-        m_source.set(v);
-    }
+    void CImplicitTranslateDomain::setXAxisSource(CImplicitModuleBase *m) { m_ax.set(m); }
+    void CImplicitTranslateDomain::setYAxisSource(CImplicitModuleBase *m) { m_ay.set(m); }
+    void CImplicitTranslateDomain::setZAxisSource(CImplicitModuleBase *m) { m_az.set(m); }
+    void CImplicitTranslateDomain::setWAxisSource(CImplicitModuleBase *m) { m_aw.set(m); }
+    void CImplicitTranslateDomain::setUAxisSource(CImplicitModuleBase *m) { m_au.set(m); }
+    void CImplicitTranslateDomain::setVAxisSource(CImplicitModuleBase *m) { m_av.set(m); }
+    void CImplicitTranslateDomain::setXAxisSource(double v) { m_ax.set(v); }
+    void CImplicitTranslateDomain::setYAxisSource(double v) { m_ay.set(v); }
+    void CImplicitTranslateDomain::setZAxisSource(double v) { m_az.set(v); }
+    void CImplicitTranslateDomain::setWAxisSource(double v) { m_aw.set(v); }
+    void CImplicitTranslateDomain::setUAxisSource(double v) { m_au.set(v); }
+    void CImplicitTranslateDomain::setVAxisSource(double v) { m_av.set(v); }
+
+    void CImplicitTranslateDomain::setSource(CImplicitModuleBase *m) { m_source.set(m); }
+    void CImplicitTranslateDomain::setSource(double v) { m_source.set(v); }
 
     double CImplicitTranslateDomain::get(double x, double y)
     {

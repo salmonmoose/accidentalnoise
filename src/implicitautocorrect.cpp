@@ -3,9 +3,15 @@
 
 namespace anl
 {
+    bool AutoCorrect_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitAutoCorrect>("AutoCorrect");
 
-    CImplicitAutoCorrect::CImplicitAutoCorrect() : m_source(0), m_low(-1.0), m_high(1.0){}
-    CImplicitAutoCorrect::CImplicitAutoCorrect(double low, double high) : m_source(0), m_low(low), m_high(high){}
+    CImplicitAutoCorrect::CImplicitAutoCorrect() : m_source(0), m_low(-1.0), m_high(1.0)
+    {
+        CImplicitModuleBase::registerDoubleInput("Low", [this] (double d) { this->setLow (d); });
+        CImplicitModuleBase::registerDoubleInput("High", [this] (double d) { this->setHigh (d); });
+
+        CImplicitModuleBase::registerNoiseInput("Source", [this] (CImplicitModuleBase *n) { this->setSource (n); });
+    }
 
     void CImplicitAutoCorrect::setSource(CImplicitModuleBase *m)
     {
@@ -16,6 +22,18 @@ namespace anl
     void CImplicitAutoCorrect::setRange(double low, double high)
     {
         m_low=low; m_high=high;
+        calculate();
+    }
+
+    void CImplicitAutoCorrect::setLow(double low)
+    {
+        m_low=low;
+        calculate();
+    }
+
+    void CImplicitAutoCorrect::setHigh(double high)
+    {
+        m_high=high;
         calculate();
     }
 

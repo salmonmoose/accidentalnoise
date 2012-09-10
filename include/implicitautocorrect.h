@@ -18,11 +18,13 @@ namespace anl
     {
         public:
         CImplicitAutoCorrect();
-        CImplicitAutoCorrect(double low, double high);
         ~CImplicitAutoCorrect(){}
 
         void setSource(CImplicitModuleBase *m);
         void setRange(double low, double high);
+        void setLow(double low);
+        void setHigh(double high);
+    
         void calculate();
 
         double get(double x, double y);

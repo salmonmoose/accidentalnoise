@@ -123,12 +123,12 @@ namespace anl
     };
 
     struct CImplicitModuleFactory : generic_factory<std::string, anl::CImplicitModuleBase> {
-    static CImplicitModuleFactory & instance()
-    {
-        static CImplicitModuleFactory sInstance;
-        return sInstance;
-    } // use a singleton version that creates on first call.
-};
+        static CImplicitModuleFactory & instance()
+        {
+            static CImplicitModuleFactory sInstance;
+            return sInstance;
+        }
+    };
 };
 
 
