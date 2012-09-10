@@ -34,6 +34,7 @@ namespace anl
             anl::CImplicitModuleBase * render;
 
             static std::map<std::string, EInputTypes> InputMap;
+            static std::map<std::string, unsigned int> ENUMMap;
 
             bool renderNode;
 

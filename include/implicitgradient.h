@@ -13,6 +13,20 @@ namespace anl
         void setGradient(double x1, double x2, double y1, double y2, double z1=0, double z2=0,
         double w1=0, double w2=0, double u1=0, double u2=0, double v1=0, double v2=0);
 
+        void updateGradient();
+
+        void setX1(double x1);
+        void setX2(double x2);
+        void setY1(double y1);
+        void setY2(double y2);
+        void setZ1(double z1);
+        void setZ2(double z2);
+        void setW1(double w1);
+        void setW2(double w2);
+        void setU1(double u1);
+        void setU2(double u2);
+        void setV1(double V1);
+        void setV2(double v2);
 
         double get(double x, double y);
         double get(double x, double y, double z);

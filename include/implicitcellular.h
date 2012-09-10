@@ -13,6 +13,12 @@ class CImplicitCellular : public CImplicitModuleBase
     ~CImplicitCellular(){}
 
     void setCoefficients(double a, double b, double c, double d);
+
+    void setCoefficientA(double a);
+    void setCoefficientB(double b);
+    void setCoefficientC(double c);
+    void setCoefficientD(double d);
+
     void setCellularSource(CCellularGenerator *m);
 
     double get(double x, double y);

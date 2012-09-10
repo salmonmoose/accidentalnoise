@@ -21,6 +21,28 @@ namespace anl
     	{"Noise", NOISE}
     };
 
+    std::map<std::string, unsigned int> CImplicitXML::ENUMMap = {
+    	{"FBM", FBM},
+    	{"RIDGEDMULTI", RIDGEDMULTI},
+    	{"BILLOW", BILLOW},
+    	{"MULTI", MULTI},
+    	{"HYBRIDMULTI", HYBRIDMULTI},
+    	{"ADD", ADD},
+    	{"MULT", MULT},
+    	{"MAX", MAX},
+    	{"MIN", MIN},
+    	{"AVG", AVG},
+    	{"VALUE", VALUE},
+    	{"GRADIENT", GRADIENT},
+    	{"GRADVAL", GRADVAL},
+    	{"SIMPLEX", SIMPLEX},
+    	{"WHITE", WHITE},
+    	{"NONE", NONE},
+    	{"LINEAR", LINEAR},
+    	{"CUBIC", CUBIC},
+    	{"QUINTIC", QUINTIC}
+    };
+
 	void CImplicitXML::loadFile(const char * filename) {
         printf("Loading file %s\n", filename);
 		pugi::xml_parse_result result = config.load_file(filename);
@@ -59,6 +81,10 @@ namespace anl
 						tmp->setIntInput(function.name(), function.text().as_int());
 					}
 					break;
+					case ENUM:
+					{
+						tmp->setIntInput(function.name(), ENUMMap.find(function.child_value())->second);
+					}
 					case DOUBLE:
 					{
 						tmp->setDoubleInput(function.name(), function.text().as_double());

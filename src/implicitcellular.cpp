@@ -6,7 +6,7 @@ namespace anl
 {
     setCoefficients(1,0,0,0);
 }
-CImplicitCellular::CImplicitCellular(double a, double b, double c, double d) : m_generator(0)
+CImplicitCellular::CImplicitCellular(double a=1, double b=0, double c=0, double d=0) : m_generator(0)
 {
     setCoefficients(a,b,c,d);
 }
@@ -18,6 +18,11 @@ void CImplicitCellular::setCoefficients(double a, double b, double c, double d)
     m_coefficients[2]=c;
     m_coefficients[3]=d;
 }
+
+void CImplicitCellular::setCoefficientA(double a){ m_coefficients[0]=a; }
+void CImplicitCellular::setCoefficientB(double b){ m_coefficients[1]=b; }
+void CImplicitCellular::setCoefficientC(double c){ m_coefficients[2]=c; }
+void CImplicitCellular::setCoefficientD(double d){ m_coefficients[3]=d; }
 
 void CImplicitCellular::setCellularSource(CCellularGenerator *m)
 {
