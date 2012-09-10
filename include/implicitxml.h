@@ -13,6 +13,7 @@ namespace anl
     enum EInputTypes
     {
         INT,
+        ENUM,
         DOUBLE,
         NOISE
     };

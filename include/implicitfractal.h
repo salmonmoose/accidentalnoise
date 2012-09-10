@@ -21,7 +21,6 @@ namespace anl
     class CImplicitFractal : public CImplicitModuleBase
     {
         public:
-        CImplicitFractal();
         CImplicitFractal(unsigned int type, unsigned int basistype, unsigned int interptype);
         ~CImplicitFractal();
 
@@ -36,6 +35,8 @@ namespace anl
 
         void setType(unsigned int t);
         void setAllSourceTypes(unsigned int basis_type, unsigned int interp);
+        void setAllBasisTypes(unsigned int basis_type);
+        void setAllInterpolationTypes(unsigned int interp);
         void setSourceType(int which, unsigned int type, unsigned int interp);
         void overrideSource(int which, CImplicitModuleBase *b);
         void resetSource(int which);

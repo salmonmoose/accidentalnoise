@@ -16,6 +16,7 @@ namespace anl
 
     std::map<std::string, EInputTypes> CImplicitXML::InputMap = {
     	{"Int", INT},
+    	{"Enum", ENUM},
     	{"Double", DOUBLE},
     	{"Noise", NOISE}
     };
@@ -132,7 +133,6 @@ namespace {
 	bool Cos_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitCos>("Cos");
 	bool ExtractRGBAChannel_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitExtractRGBAChannel>("ExtractRGBAChannel");
 	bool Floor_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitFloor>("Floor");
-	bool Fractal_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitFractal>("Fractal");
 	bool FunctionGradient_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitFunctionGradient>("FunctionGradient");
 	//bool Gain_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitGain>("Gain");
 	bool Gradient_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitGradient>("Gradient");

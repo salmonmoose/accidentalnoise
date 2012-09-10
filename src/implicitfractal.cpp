@@ -6,10 +6,23 @@ using namespace anl;
 
 namespace anl
 {
-    CImplicitFractal::CImplicitFractal() { CImplicitFractal(FBM, SIMPLEX, QUINTIC); }
+    bool Fractal_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitFractal>("Fractal");
 
-    CImplicitFractal::CImplicitFractal(unsigned int type, unsigned int basistype, unsigned int interptype)
+    CImplicitFractal::CImplicitFractal(unsigned int type=FBM, unsigned int basistype=SIMPLEX, unsigned int interptype=QUINTIC)
     {
+        CImplicitModuleBase::registerIntInput("Octaves",[this] (int i) { this->setNumOctaves (i); });
+        CImplicitModuleBase::registerDoubleInput("Frequency",[this] (double d) { this->setFrequency (d); });
+        CImplicitModuleBase::registerDoubleInput("Lacunarity",[this] (double d) { this->setLacunarity (d); });
+        CImplicitModuleBase::registerDoubleInput("Gain",[this] (double d) { this->setGain (d); });
+        CImplicitModuleBase::registerDoubleInput("Offset",[this] (double d) { this->setOffset (d); });
+        CImplicitModuleBase::registerDoubleInput("H",[this] (double d) { this->setH (d); });
+        
+        CImplicitModuleBase::registerIntInput("Type",[this] (int i) { this->setType (i); });
+        CImplicitModuleBase::registerIntInput("Basis",[this] (int i) { this->setAllBasisTypes (i); });
+        CImplicitModuleBase::registerIntInput("Interpolation",[this] (int i) { this->setAllInterpolationTypes (i); });
+
+        CImplicitModuleBase::registerIntInput("Seed",[this] (int i) { this->setSeed (i); });
+
         setNumOctaves(8);
         setFrequency(1.0);
         setLacunarity(2.0);
@@ -49,111 +62,127 @@ namespace anl
     		};
     	}
 
-    	void CImplicitFractal::setAllSourceTypes(unsigned int basis_type, unsigned int interp)
+	void CImplicitFractal::setAllSourceTypes(unsigned int basis_type, unsigned int interp)
+    {
+        for(int i=0; i<MaxSources;++i)
         {
-            for(int i=0; i<MaxSources;++i)
-            {
-                m_basis[i].setType(basis_type);
-                m_basis[i].setInterp(interp);
-            }
+            m_basis[i].setType(basis_type);
+            m_basis[i].setInterp(interp);
         }
+    }
 
-    	void CImplicitFractal::setSourceType(int which, unsigned int type, unsigned int interp)
+    void CImplicitFractal::setAllBasisTypes(unsigned int basis_type)
+    {
+        for(int i=0; i<MaxSources;++i)
         {
-            if(which>=MaxSources || which<0) return;
-            m_basis[which].setType(type);
-            m_basis[which].setInterp(interp);
+            m_basis[i].setType(basis_type);
         }
+    }
 
-    	void CImplicitFractal::overrideSource(int which, CImplicitModuleBase *b)
-    	{
-    		if(which<0 || which>=MaxSources) return;
-    		m_source[which]=b;
-    	}
+    void CImplicitFractal::setAllInterpolationTypes(unsigned int interp) 
+    {
+        for(int i=0; i<MaxSources;++i)
+        {
+            m_basis[i].setInterp(interp);
+        }
+    }
 
-    	void CImplicitFractal::resetSource(int which)
-    	{
-    		if(which<0 || which>=MaxSources) return;
-    		m_source[which]=&m_basis[which];
-    	}
+	void CImplicitFractal::setSourceType(int which, unsigned int type, unsigned int interp)
+    {
+        if(which>=MaxSources || which<0) return;
+        m_basis[which].setType(type);
+        m_basis[which].setInterp(interp);
+    }
 
-    	void CImplicitFractal::resetAllSources()
-    	{
-    		for(int c=0; c<MaxSources; ++c) m_source[c] = &m_basis[c];
-    	}
+	void CImplicitFractal::overrideSource(int which, CImplicitModuleBase *b)
+	{
+		if(which<0 || which>=MaxSources) return;
+		m_source[which]=b;
+	}
+
+	void CImplicitFractal::resetSource(int which) 
+    {
+		if(which<0 || which>=MaxSources) return;
+		m_source[which]=&m_basis[which];
+	}
+
+	void CImplicitFractal::resetAllSources() 
+    {
+		for(int c=0; c<MaxSources; ++c) m_source[c] = &m_basis[c];
+	}
 
 
-    	void CImplicitFractal::setSeed(unsigned int seed)
-    	{
-    		for(int c=0; c<MaxSources; ++c) m_source[c]->setSeed(seed+c*300);
-    	}
+	void CImplicitFractal::setSeed(unsigned int seed)
+	{
+		for(int c=0; c<MaxSources; ++c) m_source[c]->setSeed(seed+c*300);
+	}
 
-    	CImplicitBasisFunction *CImplicitFractal::getBasis(int which)
-    	{
-    		if(which<0 || which>=MaxSources) return 0;
-    		return &m_basis[which];
-    	}
+	CImplicitBasisFunction *CImplicitFractal::getBasis(int which)
+	{
+		if(which<0 || which>=MaxSources) return 0;
+		return &m_basis[which];
+	}
 
-    	double CImplicitFractal::get(double x, double y)
-    	{
-    	    double v;
-    		switch(m_type)
-    		{
-    		case FBM: v=fBm_get(x,y); break;
-    		case RIDGEDMULTI: v=RidgedMulti_get(x,y); break;
-    		case BILLOW: v=Billow_get(x,y); break;
-    		case MULTI: v=Multi_get(x,y); break;
-    		case HYBRIDMULTI: v=HybridMulti_get(x,y); break;
-    		default: v=fBm_get(x,y); break;
-    		}
-    		return clamp(v,-1.0,1.0);
-    	}
+	double CImplicitFractal::get(double x, double y)
+	{
+	    double v;
+		switch(m_type)
+		{
+		case FBM: v=fBm_get(x,y); break;
+		case RIDGEDMULTI: v=RidgedMulti_get(x,y); break;
+		case BILLOW: v=Billow_get(x,y); break;
+		case MULTI: v=Multi_get(x,y); break;
+		case HYBRIDMULTI: v=HybridMulti_get(x,y); break;
+		default: v=fBm_get(x,y); break;
+		}
+		return clamp(v,-1.0,1.0);
+	}
 
-    	double CImplicitFractal::get(double x, double y, double z)
-    	{
-    	    double val;
-    	    switch(m_type)
-    		{
-    		case FBM: val=fBm_get(x,y,z); break;
-    		case RIDGEDMULTI: val=RidgedMulti_get(x,y,z); break;
-    		case BILLOW: val=Billow_get(x,y,z); break;
-    		case MULTI: val=Multi_get(x,y,z); break;
-    		case HYBRIDMULTI: val=HybridMulti_get(x,y,z); break;
-    		default: val=fBm_get(x,y,z); break;
-    		}
-    		return clamp(val,-1.0,1.0);
-    	}
+	double CImplicitFractal::get(double x, double y, double z)
+	{
+	    double val;
+	    switch(m_type)
+		{
+		case FBM: val=fBm_get(x,y,z); break;
+		case RIDGEDMULTI: val=RidgedMulti_get(x,y,z); break;
+		case BILLOW: val=Billow_get(x,y,z); break;
+		case MULTI: val=Multi_get(x,y,z); break;
+		case HYBRIDMULTI: val=HybridMulti_get(x,y,z); break;
+		default: val=fBm_get(x,y,z); break;
+		}
+		return clamp(val,-1.0,1.0);
+	}
 
-    	double CImplicitFractal::get(double x, double y, double z, double w)
-    	{
-    	    double val;
-    		switch(m_type)
-    		{
-    		case FBM: val=fBm_get(x,y,z,w); break;
-    		case RIDGEDMULTI: val=RidgedMulti_get(x,y,z,w); break;
-    		case BILLOW: val=Billow_get(x,y,z,w); break;
-    		case MULTI: val=Multi_get(x,y,z,w); break;
-    		case HYBRIDMULTI: val=HybridMulti_get(x,y,z,w); break;
-    		default: val=fBm_get(x,y,z,w); break;
-    		}
-    		return clamp(val,-1.0,1.0);
-    	}
+	double CImplicitFractal::get(double x, double y, double z, double w)
+	{
+	    double val;
+		switch(m_type)
+		{
+		case FBM: val=fBm_get(x,y,z,w); break;
+		case RIDGEDMULTI: val=RidgedMulti_get(x,y,z,w); break;
+		case BILLOW: val=Billow_get(x,y,z,w); break;
+		case MULTI: val=Multi_get(x,y,z,w); break;
+		case HYBRIDMULTI: val=HybridMulti_get(x,y,z,w); break;
+		default: val=fBm_get(x,y,z,w); break;
+		}
+		return clamp(val,-1.0,1.0);
+	}
 
-    	double CImplicitFractal::get(double x, double y, double z, double w, double u, double v)
-    	{
-    	    double val;
-    		switch(m_type)
-    		{
-    		case FBM: val=fBm_get(x,y,z,w,u,v); break;
-    		case RIDGEDMULTI: val=RidgedMulti_get(x,y,z,w,u,v); break;
-    		case BILLOW: val=Billow_get(x,y,z,w,u,v); break;
-    		case MULTI: val=Multi_get(x,y,z,w,u,v); break;
-    		case HYBRIDMULTI: val=HybridMulti_get(x,y,z,w,u,v); break;
-    		default: val=fBm_get(x,y,z,w,u,v); break;
-    		}
+	double CImplicitFractal::get(double x, double y, double z, double w, double u, double v)
+	{
+	    double val;
+		switch(m_type)
+		{
+		case FBM: val=fBm_get(x,y,z,w,u,v); break;
+		case RIDGEDMULTI: val=RidgedMulti_get(x,y,z,w,u,v); break;
+		case BILLOW: val=Billow_get(x,y,z,w,u,v); break;
+		case MULTI: val=Multi_get(x,y,z,w,u,v); break;
+		case HYBRIDMULTI: val=HybridMulti_get(x,y,z,w,u,v); break;
+		default: val=fBm_get(x,y,z,w,u,v); break;
+		}
 
-    		return clamp(val,-1.0,1.0);
-    	}
+		return clamp(val,-1.0,1.0);
+	}
 
     void CImplicitFractal::fBm_calcWeights()
     {
