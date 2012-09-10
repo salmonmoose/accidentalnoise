@@ -16,7 +16,11 @@ namespace anl
     	CImplicitModuleBase(){}
     	virtual ~CImplicitModuleBase(){}
 
+        typedef std::function<void(int)> int_v;
         typedef std::function<void(double)> double_v;
+
+        typedef std::function<void(anl::CImplicitModuleBase*)> noise_v;
+
 
     	virtual void setSeed(unsigned int seed){}
 
@@ -25,13 +29,37 @@ namespace anl
     	virtual double get(double x, double y, double z, double w)=0;
     	virtual double get(double x, double y, double z, double w, double u, double v)=0;
 
-        bool registerInput(std::string const& key, double_v const& input) {
-            functions[key] = input;
+
+        //TODO: these could all realistically be templated;
+        bool registerDoubleInput(std::string const& key, double_v const& input) {
+            doubleFunctions[key] = input;
+        }
+
+        bool registerIntInput(std::string const& key, int_v const& input) {
+            intFunctions[key] = input;
         }
         
-        void setInput(std::string key, double value) {
-            auto fit = functions.find(key);
-            if (fit == functions.end()) return;
+        bool registerNoiseInput(std::string const& key, noise_v const& input) {
+            noiseFunctions[key] = input;
+        }
+
+        void setDoubleInput(std::string key, double value) {
+            auto fit = doubleFunctions.find(key);
+            if (fit == doubleFunctions.end()) return;
+
+            fit->second(value);
+        }
+
+        void setIntInput(std::string key, int value) {
+            auto fit = intFunctions.find(key);
+            if (fit == intFunctions.end()) return;
+
+            fit->second(value);
+        }
+
+        void setNoiseInput(std::string key, anl::CImplicitModuleBase* value) {
+            auto fit = noiseFunctions.find(key);
+            if(fit == noiseFunctions.end()) return;
 
             fit->second(value);
         }
@@ -39,7 +67,9 @@ namespace anl
     protected:
 
     private:
-        std::map<std::string, double_v> functions;
+        std::map<std::string, double_v> doubleFunctions;
+        std::map<std::string, int_v> intFunctions;
+        std::map<std::string, noise_v> noiseFunctions;
     };
 
     // Scalar parameter class

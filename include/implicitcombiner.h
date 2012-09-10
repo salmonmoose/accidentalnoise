@@ -18,6 +18,7 @@ namespace anl
     class CImplicitCombiner : public CImplicitModuleBase
     {
         public:
+        CImplicitCombiner();
         CImplicitCombiner(unsigned int type);
 
         static std::map<std::string, ECombinerTypes> CombinerMap;

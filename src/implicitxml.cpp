@@ -14,6 +14,12 @@ namespace anl
 
     CImplicitXML::~CImplicitXML(){}
 
+    std::map<std::string, EInputTypes> CImplicitXML::InputMap = {
+    	{"Int", INT},
+    	{"Double", DOUBLE},
+    	{"Noise", NOISE}
+    };
+
 	void CImplicitXML::loadFile(const char * filename) {
         printf("Loading file %s\n", filename);
 		pugi::xml_parse_result result = config.load_file(filename);
@@ -44,8 +50,26 @@ namespace anl
             tmp = noiseTree.find(layer.attribute("Name").value())->second.get();
 
 			for(pugi::xml_node function: layer.children()) {
-				printf("Applying function: %s with value %f\n", function.name(), function.text().as_double());
-				tmp->setInput(function.name(), function.text().as_double());
+				printf("Applying %s function: %s with value %s\n", function.attribute("Type").value(), function.name(), function.child_value());
+
+				switch(InputMap.find(function.attribute("Type").value())->second) {
+					case INT:
+					{
+						tmp->setIntInput(function.name(), function.text().as_int());
+					}
+					break;
+					case DOUBLE:
+					{
+						tmp->setDoubleInput(function.name(), function.text().as_double());
+					}
+					break;
+					case NOISE:
+					{
+						value = noiseTree.find(function.child_value())->second.get();
+						tmp->setNoiseInput(function.name(), value);
+					}
+					break;
+				}
 			}
 		}
 

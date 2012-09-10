@@ -10,6 +10,13 @@
 
 namespace anl
 {
+    enum EInputTypes
+    {
+        INT,
+        DOUBLE,
+        NOISE
+    };
+
     class CImplicitXML : public CImplicitModuleBase 
     {
     	private:
@@ -22,7 +29,10 @@ namespace anl
     		pugi::xml_node data;
 
     		anl::CImplicitModuleBase * tmp;
+            anl::CImplicitModuleBase * value;
             anl::CImplicitModuleBase * render;
+
+            static std::map<std::string, EInputTypes> InputMap;
 
             bool renderNode;
 

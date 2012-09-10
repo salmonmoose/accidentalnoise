@@ -1,19 +1,23 @@
 #include "implicitsphere.h"
 #include <iostream>
+#include <functional>
 
 namespace anl
 {
     bool Sphere_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitSphere>("Sphere");
 
     CImplicitSphere::CImplicitSphere() : CImplicitModuleBase(),m_source(0), m_cx(0), m_cy(0), m_cz(0), m_cw(0), m_cu(0), m_cv(0), m_radius(1){
-        auto myself = this;
-        CImplicitModuleBase::registerInput("Radius",[myself] (double v) { myself->setRadius (v); });
+        CImplicitModuleBase::registerDoubleInput("Radius",[this] (double d) { this->setRadius (d); });
+        CImplicitModuleBase::registerNoiseInput("NoiseRadius", [this] (CImplicitModuleBase *n) { this->setRadius (n); });
+        
+        /*
         CImplicitModuleBase::registerInput("CenterX",[myself] (double v) { myself->setCenterX (v); });
         CImplicitModuleBase::registerInput("CenterY",[myself] (double v) { myself->setCenterY (v); });
         CImplicitModuleBase::registerInput("CenterZ",[myself] (double v) { myself->setCenterZ (v); });
         CImplicitModuleBase::registerInput("CenterU",[myself] (double v) { myself->setCenterU (v); });
         CImplicitModuleBase::registerInput("CenterV",[myself] (double v) { myself->setCenterV (v); });
         CImplicitModuleBase::registerInput("CenterW",[myself] (double v) { myself->setCenterW (v); });
+        */
     }
     
     CImplicitSphere::~CImplicitSphere(){}
@@ -35,13 +39,9 @@ namespace anl
     void CImplicitSphere::setCenterU(CImplicitModuleBase *cu){m_cu.set(cu);}
     void CImplicitSphere::setCenterV(CImplicitModuleBase *cv){m_cv.set(cv);}
     
-    void CImplicitSphere::setRadius(double r)
-    {
-        printf("Setting sphere radius to %f\n", r);
-        m_radius.set(r);
-    }
-    void CImplicitSphere::setRadius(CImplicitModuleBase *r)
-    {
+    void CImplicitSphere::setRadius(double r){m_radius.set(r);}
+    void CImplicitSphere::setRadius(CImplicitModuleBase *r){
+        printf("Adding noise radius\n");
         m_radius.set(r);
     }
 

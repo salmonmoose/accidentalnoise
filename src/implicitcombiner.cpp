@@ -2,8 +2,13 @@
 
 namespace anl
 {
+	CImplicitCombiner::CImplicitCombiner() {
+		CImplicitCombiner(ADD);
+	}
+
     CImplicitCombiner::CImplicitCombiner(unsigned int type)
 	{
+		CImplicitModuleBase::registerIntInput("Type",[this] (unsigned int v) { this->setType (v); });
 		m_type=type;
 		clearAllSources();
 	}
