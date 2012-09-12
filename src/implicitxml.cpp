@@ -89,6 +89,7 @@ namespace anl
 				switch(InputMap.find(function.attribute("Type").value())->second) {
 					case INT:
 					{
+						printf("INT Value %i\n", function.text().as_int());
 						tmp->setIntInput(function.name(), function.text().as_int());
 					}
 					break;
@@ -99,6 +100,7 @@ namespace anl
 					}
 					case NOISE:
 					{
+						printf("NOISE Generator %s\n", function.child_value());
 						value = noiseTree.find(function.child_value())->second.get();
 						tmp->setNoiseInput(function.name(), value);
 					}
@@ -106,6 +108,7 @@ namespace anl
 					case DOUBLE:
 					default:
 					{
+						printf("DOUBLE Value %f\n", function.text().as_double());
 						tmp->setDoubleInput(function.name(), function.text().as_double());
 					}
 					break;

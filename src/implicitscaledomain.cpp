@@ -2,7 +2,27 @@
 
 namespace anl
 {
-    CImplicitScaleDomain::CImplicitScaleDomain() : m_source(0),m_sx(1),m_sy(1),m_sz(1),m_sw(1),m_su(1),m_sv(1){}
+    bool ScaleDomain_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitScaleDomain>("ScaleDomain");
+
+    CImplicitScaleDomain::CImplicitScaleDomain() : m_source(0),m_sx(1),m_sy(1),m_sz(1),m_sw(1),m_su(1),m_sv(1)
+    {
+        CImplicitModuleBase::registerDoubleInput("ScaleX",[this] (double d) { this->setXScale (d); });
+        CImplicitModuleBase::registerDoubleInput("ScaleY",[this] (double d) { this->setYScale (d); });
+        CImplicitModuleBase::registerDoubleInput("ScaleZ",[this] (double d) { this->setZScale (d); });
+        CImplicitModuleBase::registerDoubleInput("ScaleW",[this] (double d) { this->setWScale (d); });
+        CImplicitModuleBase::registerDoubleInput("ScaleU",[this] (double d) { this->setUScale (d); });
+        CImplicitModuleBase::registerDoubleInput("ScaleV",[this] (double d) { this->setVScale (d); });
+        CImplicitModuleBase::registerDoubleInput("Source",[this] (double d) { this->setSource (d); });
+
+        CImplicitModuleBase::registerNoiseInput("ScaleX",[this] (CImplicitModuleBase *n) { this->setXScale (n); });
+        CImplicitModuleBase::registerNoiseInput("ScaleY",[this] (CImplicitModuleBase *n) { this->setYScale (n); });
+        CImplicitModuleBase::registerNoiseInput("ScaleZ",[this] (CImplicitModuleBase *n) { this->setZScale (n); });
+        CImplicitModuleBase::registerNoiseInput("ScaleW",[this] (CImplicitModuleBase *n) { this->setWScale (n); });
+        CImplicitModuleBase::registerNoiseInput("ScaleU",[this] (CImplicitModuleBase *n) { this->setUScale (n); });
+        CImplicitModuleBase::registerNoiseInput("ScaleV",[this] (CImplicitModuleBase *n) { this->setVScale (n); });
+        CImplicitModuleBase::registerNoiseInput("Source",[this] (CImplicitModuleBase *n) { this->setSource (n); });
+    }
+
     CImplicitScaleDomain::CImplicitScaleDomain(double x, double y, double z, double w, double u, double v):m_source(0),
         m_sx(x),m_sy(y),m_sz(z),m_sw(w),m_su(u),m_sv(v){}
 
