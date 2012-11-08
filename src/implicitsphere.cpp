@@ -44,7 +44,11 @@ namespace anl
     void CImplicitSphere::setCenterU(CImplicitModuleBase *cu){m_cu.set(cu);}
     void CImplicitSphere::setCenterV(CImplicitModuleBase *cv){m_cv.set(cv);}
     
-    void CImplicitSphere::setRadius(double r){m_radius.set(r);}
+    void CImplicitSphere::setRadius(double r)
+    {   
+        printf("Radius being set\n");
+        m_radius.set(r);
+    }
     void CImplicitSphere::setRadius(CImplicitModuleBase *r){m_radius.set(r);}
 
     double CImplicitSphere::get(double x, double y)

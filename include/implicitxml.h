@@ -47,6 +47,8 @@ namespace anl
     		double get(double x, double y, double z, double w, double u, double v);
  
     		std::map<std::string, std::unique_ptr<CImplicitModuleBase>> noiseTree;
+            std::map<std::string, std::unique_ptr<CImplicitModuleBase>>::iterator noiseTreeIterator;
+
             std::map<std::string, CCellularGenerator> cellularTree;
 	};
 };

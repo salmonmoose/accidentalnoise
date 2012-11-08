@@ -3,9 +3,10 @@ CXX = g++
 RM = rm -f
 CPPFLAGS = \
 	-g $(shell) \
+	-O3 \
+	-ffast-math \
 	-std=c++0x \
 	-I./include
-
 
 LDFLAGS = $(shell root-config --libs)
 
@@ -59,10 +60,10 @@ SRCS = \
 
 OBJS = $(subst .cpp,.o,$(SRCS))
 
-all: lib_accidentalnoise.a
+all: libAccidentalNoise.a
 
-lib_accidentalnoise.a: $(OBJS)
-	ar rcs lib_accidentalnoise.a $(OBJS)
+libAccidentalNoise.a: $(OBJS)
+	ar rcs ./lib/Linux/libAccidentalNoise.a $(OBJS)
 
 depend: .depend
 

@@ -81,37 +81,48 @@ namespace anl
 				)
 			);
 
-            tmp = noiseTree.find(layer.attribute("Name").value())->second.get();
+			printf("Setting layer to %s\n", layer.attribute("Name").value());
 
-			for(pugi::xml_node function: layer.children()) {
-				printf("Applying %s function: %s with value %s\n", function.attribute("Type").value(), function.name(), function.child_value());
+			noiseTreeIterator = noiseTree.find(layer.attribute("Name").value());
 
-				switch(InputMap.find(function.attribute("Type").value())->second) {
-					case INT:
+			if(noiseTreeIterator != noiseTree.end()) 
+			{
+				printf("Updating %s\n", (*noiseTreeIterator).first.c_str());
+
+				for(pugi::xml_node function: layer.children()) {
+					printf("Applying %s function: %s with value %s\n", function.attribute("Type").value(), function.name(), function.child_value());
+					if((*noiseTreeIterator).second.get())
 					{
-						printf("INT Value %i\n", function.text().as_int());
-						tmp->setIntInput(function.name(), function.text().as_int());
+						switch(InputMap.find(function.attribute("Type").value())->second) {
+							case INT:
+							{
+								printf("INT Value %s=%i\n", function.name(), function.text().as_int());
+								(*noiseTreeIterator).second.get()->setIntInput(function.name(), function.text().as_int());
+							}
+							break;
+							case ENUM:
+							{
+								printf("ENUM Value %s=%i\n", function.name(), ENUMMap.find(function.child_value())->second);
+								(*noiseTreeIterator).second.get()->setIntInput(function.name(), ENUMMap.find(function.child_value())->second);
+							}
+							case NOISE:
+							{
+								printf("NOISE Generator %s=%s\n", function.name(), function.child_value());
+								value = noiseTree.find(function.child_value())->second.get();
+								(*noiseTreeIterator).second.get()->setNoiseInput(function.name(), value);
+							}
+							break;
+							case DOUBLE:
+							default:
+							{
+								printf("DOUBLE Value %s=%f\n", function.name(), function.text().as_double());
+								printf("attempting to set input\n");
+								(*noiseTreeIterator).second.get()->setDoubleInput(function.name(), function.text().as_double());
+								printf("Got the double ok\n");
+							}
+							break;
+						}
 					}
-					break;
-					case ENUM:
-					{
-						printf("ENUM Value %i\n", ENUMMap.find(function.child_value())->second);
-						tmp->setIntInput(function.name(), ENUMMap.find(function.child_value())->second);
-					}
-					case NOISE:
-					{
-						printf("NOISE Generator %s\n", function.child_value());
-						value = noiseTree.find(function.child_value())->second.get();
-						tmp->setNoiseInput(function.name(), value);
-					}
-					break;
-					case DOUBLE:
-					default:
-					{
-						printf("DOUBLE Value %f\n", function.text().as_double());
-						tmp->setDoubleInput(function.name(), function.text().as_double());
-					}
-					break;
 				}
 			}
 		}
@@ -119,9 +130,16 @@ namespace anl
 		printf("Searching for a node called %s\n", data.child_value("Render"));
 		if(noiseTree.count(data.child_value("Render")) > 0) {
 			render = noiseTree.find(data.child_value("Render"))->second.get();
-			renderNode = true;
-			printf("Got the render node\n");
-
+			if(render)
+			{
+				renderNode = true;	
+				printf("Got the render node\n");
+			}
+			else
+			{
+				renderNode = false;
+				printf("I've been told about the render node, but I forgot\n");
+			}
 		} else {
 			printf("I don't know about the rednernode\n");
 		}
