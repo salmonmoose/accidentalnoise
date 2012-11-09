@@ -6,7 +6,10 @@ using namespace anl;
 
 namespace anl
 {
-    bool Fractal_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitFractal>("Fractal");
+    CImplicitFractal::CImplicitFractal()
+    {
+        CImplicitFractal(FBM,SIMPLEX,QUINTIC);
+    }
 
     CImplicitFractal::CImplicitFractal(unsigned int type=FBM, unsigned int basistype=SIMPLEX, unsigned int interptype=QUINTIC)
     {

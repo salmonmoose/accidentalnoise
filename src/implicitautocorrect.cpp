@@ -3,8 +3,6 @@
 
 namespace anl
 {
-    bool AutoCorrect_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitAutoCorrect>("AutoCorrect");
-
     CImplicitAutoCorrect::CImplicitAutoCorrect() : m_source(0), m_low(-1.0), m_high(1.0)
     {
         CImplicitModuleBase::registerDoubleInput("Low", [this] (double d) { this->setLow (d); });

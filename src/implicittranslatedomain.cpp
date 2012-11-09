@@ -2,8 +2,6 @@
 
 namespace anl
 {
-    bool TranslateDomain_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitTranslateDomain>("TranslateDomain");
-
     CImplicitTranslateDomain::CImplicitTranslateDomain() : m_source(0), m_ax(0), m_ay(0), m_az(0), m_aw(0), m_au(0), m_av(0)
     {
         CImplicitModuleBase::registerDoubleInput("TranslateX",[this] (double d) { this->setXAxisSource (d); });

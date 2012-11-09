@@ -4,8 +4,6 @@
 
 namespace anl
 {
-bool Gradient_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitGradient>("Gradient");
-
 CImplicitGradient::CImplicitGradient()
 {
     CImplicitModuleBase::registerDoubleInput("X1",[this] (double d) { this->setX1 (d); });

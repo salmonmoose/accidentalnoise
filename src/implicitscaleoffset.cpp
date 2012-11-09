@@ -2,8 +2,6 @@
 
 namespace anl
 {
-    bool ScaleOffset_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitScaleOffset>("ScaleOffset");
-
     CImplicitScaleOffset::CImplicitScaleOffset():m_source(0), m_scale(1), m_offset(0)
     {
         CImplicitModuleBase::registerDoubleInput("Source",[this] (double d) { this->setSource (d); });
