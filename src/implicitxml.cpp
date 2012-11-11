@@ -146,7 +146,6 @@ namespace anl
 								printf("DOUBLE Value %s=%f\n", function.name(), function.text().as_double());
 								printf("attempting to set input\n");
 								(*noiseTreeIterator).second.get()->setDoubleInput(function.name(), function.text().as_double());
-								printf("Got the double ok\n");
 							}
 							break;
 						}

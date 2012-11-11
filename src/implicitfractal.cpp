@@ -6,12 +6,29 @@ using namespace anl;
 
 namespace anl
 {
-    CImplicitFractal::CImplicitFractal()
+    CImplicitFractal::CImplicitFractal(unsigned int type, unsigned int basistype, unsigned int interptype)
     {
-        CImplicitFractal(FBM,SIMPLEX,QUINTIC);
+        RegisterInputs();
+        setNumOctaves(8);
+        setFrequency(1.0);
+        setLacunarity(2.0);
+        setType(type);
+        setAllSourceTypes(basistype, interptype);
+        resetAllSources();
     }
 
-    CImplicitFractal::CImplicitFractal(unsigned int type=FBM, unsigned int basistype=SIMPLEX, unsigned int interptype=QUINTIC)
+    CImplicitFractal::CImplicitFractal()
+    {
+        RegisterInputs();
+        setNumOctaves(8);
+        setFrequency(1.0);
+        setLacunarity(2.0);
+        setType(FBM);
+        setAllSourceTypes(SIMPLEX, QUINTIC);
+        resetAllSources();
+    }
+
+    void CImplicitFractal::RegisterInputs()
     {
         CImplicitModuleBase::registerIntInput("Octaves",[this] (int i) { this->setNumOctaves (i); });
         CImplicitModuleBase::registerDoubleInput("Frequency",[this] (double d) { this->setFrequency (d); });
@@ -24,14 +41,7 @@ namespace anl
         CImplicitModuleBase::registerIntInput("Basis",[this] (int i) { this->setAllBasisTypes (i); });
         CImplicitModuleBase::registerIntInput("Interpolation",[this] (int i) { this->setAllInterpolationTypes (i); });
 
-        CImplicitModuleBase::registerIntInput("Seed",[this] (int i) { this->setSeed (i); });
-
-        setNumOctaves(8);
-        setFrequency(1.0);
-        setLacunarity(2.0);
-        setType(type);
-        setAllSourceTypes(basistype, interptype);
-        resetAllSources();
+        CImplicitModuleBase::registerIntInput("Seed",[this] (int i) { this->setSeed (i); });   
     }
 
     CImplicitFractal::~CImplicitFractal(){};

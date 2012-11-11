@@ -21,11 +21,13 @@ namespace anl
     class CImplicitFractal : public CImplicitModuleBase
     {
         public:
-        CImplicitFractal();
         CImplicitFractal(unsigned int type, unsigned int basistype, unsigned int interptype);
+        CImplicitFractal();
         ~CImplicitFractal();
 
         static std::map<std::string, EFractalTypes> FractalMap;
+
+        void RegisterInputs();
 
         void setNumOctaves(int n);
         void setFrequency(double f);
