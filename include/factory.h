@@ -31,11 +31,13 @@ struct generic_factory
     bool register_creator(Key const& key, creator_t const& creator) {
         printf("Registering Noise Creator: %s\n", key.c_str());
         creators[key] = creator;
+        return true;
     }
 
     template <typename T>
     bool register_type(Key const& key) {
         register_creator(key, newT<T>);
+        return true;
     }
 
 private:

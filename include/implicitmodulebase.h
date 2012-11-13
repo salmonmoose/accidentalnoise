@@ -33,14 +33,17 @@ namespace anl
         //TODO: these could all realistically be templated;
         bool registerDoubleInput(std::string const& key, double_v const& input) {
             doubleFunctions[key] = input;
+            return true;
         }
 
         bool registerIntInput(std::string const& key, int_v const& input) {
             intFunctions[key] = input;
+            return true;
         }
         
         bool registerNoiseInput(std::string const& key, noise_v const& input) {
             noiseFunctions[key] = input;
+            return true;
         }
 
         void setDoubleInput(std::string key, double value) {

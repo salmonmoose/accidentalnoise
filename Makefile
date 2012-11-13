@@ -45,7 +45,6 @@ SRCS = \
 	./src/mapping.cpp \
 	./src/noise_gen.cpp \
 	./src/noise_lut.cpp \
-	./src/noiselut.h \
 	./src/rgbablend.cpp \
 	./src/rgbablendops.cpp \
 	./src/rgbacomposechannels.cpp \
