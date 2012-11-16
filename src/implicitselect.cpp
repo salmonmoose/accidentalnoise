@@ -3,8 +3,6 @@
 
 namespace anl
 {
-    bool Select_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitSelect>("Select");
-
     CImplicitSelect::CImplicitSelect() : CImplicitModuleBase(), m_low(0), m_high(0), m_control(0), m_threshold(0.0), m_falloff(0.0)
 	{
         CImplicitModuleBase::registerNoiseInput("Low", [this] (CImplicitModuleBase *n) { this->setLowSource (n); });

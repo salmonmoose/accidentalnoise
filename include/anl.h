@@ -29,9 +29,9 @@
 #include "implicitselect.h"
 #include "implicitsin.h"
 #include "implicitsphere.h"
+#include "implicitsequence.h"
 #include "implicittiers.h"
 #include "implicittranslatedomain.h"
-#include "implicitxml.h"
 
 #include "rgbablend.h"
 #include "rgbablendops.h"

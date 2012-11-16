@@ -37,6 +37,7 @@ SRCS = \
 	./src/implicitscaledomain.cpp \
 	./src/implicitscaleoffset.cpp \
 	./src/implicitselect.cpp \
+	./src/implicitsequence.cpp \
 	./src/implicitsin.cpp \
 	./src/implicitsphere.cpp \
 	./src/implicittiers.cpp \

@@ -2,8 +2,6 @@
 
 namespace anl
 {
-    bool ScaleDomain_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitScaleDomain>("ScaleDomain");
-
     CImplicitScaleDomain::CImplicitScaleDomain() : m_source(0),m_sx(1),m_sy(1),m_sz(1),m_sw(1),m_su(1),m_sv(1)
     {
         CImplicitModuleBase::registerDoubleInput("ScaleX",[this] (double d) { this->setXScale (d); });
