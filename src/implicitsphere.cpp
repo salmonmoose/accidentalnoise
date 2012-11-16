@@ -44,7 +44,6 @@ namespace anl
     
     void CImplicitSphere::setRadius(double r)
     {   
-        printf("Radius being set\n");
         m_radius.set(r);
     }
     void CImplicitSphere::setRadius(CImplicitModuleBase *r){m_radius.set(r);}
