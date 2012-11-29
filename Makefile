@@ -1,12 +1,6 @@
 CC = gcc
 CXX = g++
 RM = rm -f
-CPPFLAGS = \
-	-g $(shell) \
-	-O3 \
-	-ffast-math \
-	-std=c++0x \
-	-I./include
 
 LDFLAGS = $(shell root-config --libs)
 
@@ -60,7 +54,23 @@ SRCS = \
 
 OBJS = $(subst .cpp,.o,$(SRCS))
 
-all: libAccidentalNoise.a
+.PHONY: default all release debug
+
+default all: debug
+
+release:	export EXTRA_CPPFLAGS := -O3
+debug:		export EXTRA_CPPFLAGS := -DDEBUG -g
+
+CPPFLAGS = \
+	$(shell) \
+	-ffast-math \
+	-Wall \
+	-Wextra \
+	-std=c++0x \
+	-I./include \
+	$(EXTRA_CPPFLAGS)
+
+release debug: libAccidentalNoise.a
 
 libAccidentalNoise.a: $(OBJS)
 	ar rcs ./lib/Linux/libAccidentalNoise.a $(OBJS)
