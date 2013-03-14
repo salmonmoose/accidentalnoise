@@ -1,8 +1,9 @@
+#ifndef FACTORY_H
+#define FACTORY_H
+
 #include <map>
 #include <functional>
 
-#ifndef FACTORY_H
-#define FACTORY_H
 template <typename T>
 
 T* newT() { 

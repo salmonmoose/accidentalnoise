@@ -1,0 +1,153 @@
+\hypertarget{classanl_1_1CImplicitFunctionGradient}{
+\section{anl::CImplicitFunctionGradient Class Reference}
+\label{classanl_1_1CImplicitFunctionGradient}\index{anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}}
+}
+
+
+{\ttfamily \#include $<$implicitfunctiongradient.h$>$}Inheritance diagram for anl::CImplicitFunctionGradient::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classanl_1_1CImplicitFunctionGradient}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classanl_1_1CImplicitFunctionGradient_a5a4a8b102526ac04409f0d0f3ccb3663}{CImplicitFunctionGradient} ()
+\item 
+\hyperlink{classanl_1_1CImplicitFunctionGradient_a9b620a6f91cadb8aa6df7928d12eb21a}{$\sim$CImplicitFunctionGradient} ()
+\item 
+void \hyperlink{classanl_1_1CImplicitFunctionGradient_a7a9bd61935b3ed907438b3ce36417b82}{setSource} (double v)
+\item 
+void \hyperlink{classanl_1_1CImplicitFunctionGradient_a6a62ce2609113a5f782536fa6dc82f04}{setSource} (\hyperlink{classanl_1_1CImplicitModuleBase}{CImplicitModuleBase} $\ast$m)
+\item 
+void \hyperlink{classanl_1_1CImplicitFunctionGradient_a7e98e47172df7bf0147011f33a9b14b9}{setAxis} (int axis)
+\item 
+void \hyperlink{classanl_1_1CImplicitFunctionGradient_a055fd8a37ba7e686b67b65671f78edd8}{setSpacing} (double s)
+\item 
+double \hyperlink{classanl_1_1CImplicitFunctionGradient_ab9f146161cbb8ab46ee5260467139c8b}{get} (double x, double y)
+\item 
+double \hyperlink{classanl_1_1CImplicitFunctionGradient_a4844ed9eeaa55d149d5f918915a54f12}{get} (double x, double y, double z)
+\item 
+double \hyperlink{classanl_1_1CImplicitFunctionGradient_a31fceb058f6c34b8f63d463de1f3f9a6}{get} (double x, double y, double z, double w)
+\item 
+double \hyperlink{classanl_1_1CImplicitFunctionGradient_ad37b8c002f1b4b44f0dd8af144fa59a8}{get} (double x, double y, double z, double w, double u, double v)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std::map$<$ std::string, \hyperlink{namespaceanl_ab5402e3a50061a6adbf9dce74bfd2c66}{EFunctionGradientAxis} $>$ \hyperlink{classanl_1_1CImplicitFunctionGradient_a6b1075c325651c7a4f9803c2eb18ae09}{FunctionGradientAxisMap}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classanl_1_1CScalarParameter}{CScalarParameter} \hyperlink{classanl_1_1CImplicitFunctionGradient_a13b46a71cb6454ac806b82a104acf7b2}{m\_\-source}
+\item 
+int \hyperlink{classanl_1_1CImplicitFunctionGradient_a083f61a863fe96c228a297c4056dd55d}{m\_\-axis}
+\item 
+double \hyperlink{classanl_1_1CImplicitFunctionGradient_a527780ba24450fedce559f2e791ed647}{m\_\-spacing}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classanl_1_1CImplicitFunctionGradient_a5a4a8b102526ac04409f0d0f3ccb3663}{
+\index{anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}!CImplicitFunctionGradient@{CImplicitFunctionGradient}}
+\index{CImplicitFunctionGradient@{CImplicitFunctionGradient}!anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}}
+\subsubsection[{CImplicitFunctionGradient}]{\setlength{\rightskip}{0pt plus 5cm}anl::CImplicitFunctionGradient::CImplicitFunctionGradient ()}}
+\label{classanl_1_1CImplicitFunctionGradient_a5a4a8b102526ac04409f0d0f3ccb3663}
+\hypertarget{classanl_1_1CImplicitFunctionGradient_a9b620a6f91cadb8aa6df7928d12eb21a}{
+\index{anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}!$\sim$CImplicitFunctionGradient@{$\sim$CImplicitFunctionGradient}}
+\index{$\sim$CImplicitFunctionGradient@{$\sim$CImplicitFunctionGradient}!anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}}
+\subsubsection[{$\sim$CImplicitFunctionGradient}]{\setlength{\rightskip}{0pt plus 5cm}anl::CImplicitFunctionGradient::$\sim$CImplicitFunctionGradient ()}}
+\label{classanl_1_1CImplicitFunctionGradient_a9b620a6f91cadb8aa6df7928d12eb21a}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classanl_1_1CImplicitFunctionGradient_ad37b8c002f1b4b44f0dd8af144fa59a8}{
+\index{anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}!get@{get}}
+\index{get@{get}!anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}double anl::CImplicitFunctionGradient::get (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em w}, \/  double {\em u}, \/  double {\em v})\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classanl_1_1CImplicitFunctionGradient_ad37b8c002f1b4b44f0dd8af144fa59a8}
+
+
+Implements \hyperlink{classanl_1_1CImplicitModuleBase_aa40b7d54572197612a4fea44b63447eb}{anl::CImplicitModuleBase}.\hypertarget{classanl_1_1CImplicitFunctionGradient_a31fceb058f6c34b8f63d463de1f3f9a6}{
+\index{anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}!get@{get}}
+\index{get@{get}!anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}double anl::CImplicitFunctionGradient::get (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em w})\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classanl_1_1CImplicitFunctionGradient_a31fceb058f6c34b8f63d463de1f3f9a6}
+
+
+Implements \hyperlink{classanl_1_1CImplicitModuleBase_a3cf520bdab59631864253c03b4e1723f}{anl::CImplicitModuleBase}.\hypertarget{classanl_1_1CImplicitFunctionGradient_a4844ed9eeaa55d149d5f918915a54f12}{
+\index{anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}!get@{get}}
+\index{get@{get}!anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}double anl::CImplicitFunctionGradient::get (double {\em x}, \/  double {\em y}, \/  double {\em z})\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classanl_1_1CImplicitFunctionGradient_a4844ed9eeaa55d149d5f918915a54f12}
+
+
+Implements \hyperlink{classanl_1_1CImplicitModuleBase_ac17d592612c82ba3d47f9229a00b1fe3}{anl::CImplicitModuleBase}.\hypertarget{classanl_1_1CImplicitFunctionGradient_ab9f146161cbb8ab46ee5260467139c8b}{
+\index{anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}!get@{get}}
+\index{get@{get}!anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}double anl::CImplicitFunctionGradient::get (double {\em x}, \/  double {\em y})\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classanl_1_1CImplicitFunctionGradient_ab9f146161cbb8ab46ee5260467139c8b}
+
+
+Implements \hyperlink{classanl_1_1CImplicitModuleBase_ab88f8a1822dcfbc13ba5230318b0acd1}{anl::CImplicitModuleBase}.\hypertarget{classanl_1_1CImplicitFunctionGradient_a7e98e47172df7bf0147011f33a9b14b9}{
+\index{anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}!setAxis@{setAxis}}
+\index{setAxis@{setAxis}!anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}}
+\subsubsection[{setAxis}]{\setlength{\rightskip}{0pt plus 5cm}void anl::CImplicitFunctionGradient::setAxis (int {\em axis})}}
+\label{classanl_1_1CImplicitFunctionGradient_a7e98e47172df7bf0147011f33a9b14b9}
+\hypertarget{classanl_1_1CImplicitFunctionGradient_a6a62ce2609113a5f782536fa6dc82f04}{
+\index{anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}!setSource@{setSource}}
+\index{setSource@{setSource}!anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}}
+\subsubsection[{setSource}]{\setlength{\rightskip}{0pt plus 5cm}void anl::CImplicitFunctionGradient::setSource ({\bf CImplicitModuleBase} $\ast$ {\em m})}}
+\label{classanl_1_1CImplicitFunctionGradient_a6a62ce2609113a5f782536fa6dc82f04}
+\hypertarget{classanl_1_1CImplicitFunctionGradient_a7a9bd61935b3ed907438b3ce36417b82}{
+\index{anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}!setSource@{setSource}}
+\index{setSource@{setSource}!anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}}
+\subsubsection[{setSource}]{\setlength{\rightskip}{0pt plus 5cm}void anl::CImplicitFunctionGradient::setSource (double {\em v})}}
+\label{classanl_1_1CImplicitFunctionGradient_a7a9bd61935b3ed907438b3ce36417b82}
+\hypertarget{classanl_1_1CImplicitFunctionGradient_a055fd8a37ba7e686b67b65671f78edd8}{
+\index{anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}!setSpacing@{setSpacing}}
+\index{setSpacing@{setSpacing}!anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}}
+\subsubsection[{setSpacing}]{\setlength{\rightskip}{0pt plus 5cm}void anl::CImplicitFunctionGradient::setSpacing (double {\em s})}}
+\label{classanl_1_1CImplicitFunctionGradient_a055fd8a37ba7e686b67b65671f78edd8}
+
+
+\subsection{Field Documentation}
+\hypertarget{classanl_1_1CImplicitFunctionGradient_a6b1075c325651c7a4f9803c2eb18ae09}{
+\index{anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}!FunctionGradientAxisMap@{FunctionGradientAxisMap}}
+\index{FunctionGradientAxisMap@{FunctionGradientAxisMap}!anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}}
+\subsubsection[{FunctionGradientAxisMap}]{\setlength{\rightskip}{0pt plus 5cm}std::map$<$ std::string, {\bf EFunctionGradientAxis} $>$ {\bf anl::CImplicitFunctionGradient::FunctionGradientAxisMap}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classanl_1_1CImplicitFunctionGradient_a6b1075c325651c7a4f9803c2eb18ae09}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ {
+        {"X_AXIS", X_AXIS},
+        {"Y_AXIS", Y_AXIS},
+        {"Z_AXIS", Z_AXIS},
+        {"W_AXIS", W_AXIS},
+        {"U_AXIS", U_AXIS},
+        {"V_AXIS", V_AXIS}
+    }
+\end{DoxyCode}
+\hypertarget{classanl_1_1CImplicitFunctionGradient_a083f61a863fe96c228a297c4056dd55d}{
+\index{anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}!m\_\-axis@{m\_\-axis}}
+\index{m\_\-axis@{m\_\-axis}!anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}}
+\subsubsection[{m\_\-axis}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf anl::CImplicitFunctionGradient::m\_\-axis}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classanl_1_1CImplicitFunctionGradient_a083f61a863fe96c228a297c4056dd55d}
+\hypertarget{classanl_1_1CImplicitFunctionGradient_a13b46a71cb6454ac806b82a104acf7b2}{
+\index{anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}!m\_\-source@{m\_\-source}}
+\index{m\_\-source@{m\_\-source}!anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}}
+\subsubsection[{m\_\-source}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CScalarParameter} {\bf anl::CImplicitFunctionGradient::m\_\-source}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classanl_1_1CImplicitFunctionGradient_a13b46a71cb6454ac806b82a104acf7b2}
+\hypertarget{classanl_1_1CImplicitFunctionGradient_a527780ba24450fedce559f2e791ed647}{
+\index{anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}!m\_\-spacing@{m\_\-spacing}}
+\index{m\_\-spacing@{m\_\-spacing}!anl::CImplicitFunctionGradient@{anl::CImplicitFunctionGradient}}
+\subsubsection[{m\_\-spacing}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf anl::CImplicitFunctionGradient::m\_\-spacing}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classanl_1_1CImplicitFunctionGradient_a527780ba24450fedce559f2e791ed647}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{implicitfunctiongradient_8h}{implicitfunctiongradient.h}\item 
+src/\hyperlink{implicitfunctiongradient_8cpp}{implicitfunctiongradient.cpp}\end{DoxyCompactItemize}

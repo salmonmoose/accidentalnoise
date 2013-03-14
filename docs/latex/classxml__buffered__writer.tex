@@ -1,0 +1,215 @@
+\hypertarget{classxml__buffered__writer}{
+\section{xml\_\-buffered\_\-writer Class Reference}
+\label{classxml__buffered__writer}\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}}
+}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6a9021e7b22ef17fba93b80380f0ffbbc8}{bufcapacitybytes}, 
+\hyperlink{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6ab8b49b73105796783607f1f1ddd382cd}{bufcapacity} =  bufcapacitybytes / (sizeof(char\_\-t) + 4)
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classxml__buffered__writer_a3c22ad246e2aebb6597935baf4a223a7}{xml\_\-buffered\_\-writer} (xml\_\-writer \&writer\_\-, xml\_\-encoding user\_\-encoding)
+\item 
+\hyperlink{classxml__buffered__writer_aa0aaa7ca5b9b61fb0e9dd79502e8d728}{$\sim$xml\_\-buffered\_\-writer} ()
+\item 
+void \hyperlink{classxml__buffered__writer_a74192d6bbee5ea387377537ede483b4f}{flush} ()
+\item 
+void \hyperlink{classxml__buffered__writer_aa733cb2cd0d5fcacec92c67a7f26c553}{flush} (const char\_\-t $\ast$data, size\_\-t size)
+\item 
+void \hyperlink{classxml__buffered__writer_af830f04deffd7e28122d8c8973707c94}{write} (const char\_\-t $\ast$data, size\_\-t length)
+\item 
+void \hyperlink{classxml__buffered__writer_af4181dcf2610619ba4f35d86c3d66372}{write} (const char\_\-t $\ast$data)
+\item 
+void \hyperlink{classxml__buffered__writer_a1aa829bd551a69dd9005d2d46063308f}{write} (char\_\-t d0)
+\item 
+void \hyperlink{classxml__buffered__writer_a4cd6e908908e17c9b07eba34f7317791}{write} (char\_\-t d0, char\_\-t d1)
+\item 
+void \hyperlink{classxml__buffered__writer_af82b277c1ef5c75d1901bb5a8eb4507f}{write} (char\_\-t d0, char\_\-t d1, char\_\-t d2)
+\item 
+void \hyperlink{classxml__buffered__writer_af679f459dfa0af257c190b8db57e7dcb}{write} (char\_\-t d0, char\_\-t d1, char\_\-t d2, char\_\-t d3)
+\item 
+void \hyperlink{classxml__buffered__writer_aad4a4f18223ec3cb1ff607425119b85f}{write} (char\_\-t d0, char\_\-t d1, char\_\-t d2, char\_\-t d3, char\_\-t d4)
+\item 
+void \hyperlink{classxml__buffered__writer_ae6af5067d768c24b9c20422f76737f29}{write} (char\_\-t d0, char\_\-t d1, char\_\-t d2, char\_\-t d3, char\_\-t d4, char\_\-t d5)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+char\_\-t \hyperlink{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{buffer} \mbox{[}bufcapacity\mbox{]}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>uint8\_t \hyperlink{classxml__buffered__writer_ac672c70ba0597cf94d35c352ac563891}{data\_u8} \mbox{[}4 $\ast$bufcapacity\mbox{]}\\
+\>uint16\_t \hyperlink{classxml__buffered__writer_aa969d3724efe221a68927947e3a5196d}{data\_u16} \mbox{[}2 $\ast$bufcapacity\mbox{]}\\
+\>uint32\_t \hyperlink{classxml__buffered__writer_afa54826d8227c4ee661e1a9cc1e1acf2}{data\_u32} \mbox{[}bufcapacity\mbox{]}\\
+\>char\_t \hyperlink{classxml__buffered__writer_a6f21e839a1c66901995c8aae5cc9ad7b}{data\_char} \mbox{[}bufcapacity\mbox{]}\\
+\} \hyperlink{classxml__buffered__writer_a74fd3d695095835afa0f7671ac33037c}{scratch}\\
+
+\end{tabbing}\item 
+xml\_\-writer \& \hyperlink{classxml__buffered__writer_a37cdd45f867937e1978565f5a0fa318b}{writer}
+\item 
+size\_\-t \hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize}
+\item 
+xml\_\-encoding \hyperlink{classxml__buffered__writer_ab810a7286598172e1549561b285f08fb}{encoding}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classxml__buffered__writer_a6ab927cae021733a4b2e9e7cbbb79c13}{xml\_\-buffered\_\-writer} (const \hyperlink{classxml__buffered__writer}{xml\_\-buffered\_\-writer} \&)
+\item 
+\hyperlink{classxml__buffered__writer}{xml\_\-buffered\_\-writer} \& \hyperlink{classxml__buffered__writer_a0aab8cdf0db6269840a0b16319bdb985}{operator=} (const \hyperlink{classxml__buffered__writer}{xml\_\-buffered\_\-writer} \&)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6}{
+\subsubsection[{"@2}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{bufcapacitybytes@{bufcapacitybytes}!xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}}\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!bufcapacitybytes@{bufcapacitybytes}}\item[{\em 
+\hypertarget{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6a9021e7b22ef17fba93b80380f0ffbbc8}{
+bufcapacitybytes}
+\label{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6a9021e7b22ef17fba93b80380f0ffbbc8}
+}]\index{bufcapacity@{bufcapacity}!xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}}\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!bufcapacity@{bufcapacity}}\item[{\em 
+\hypertarget{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6ab8b49b73105796783607f1f1ddd382cd}{
+bufcapacity}
+\label{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6ab8b49b73105796783607f1f1ddd382cd}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classxml__buffered__writer_a6ab927cae021733a4b2e9e7cbbb79c13}{
+\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}}
+\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!xml_buffered_writer@{xml\_\-buffered\_\-writer}}
+\subsubsection[{xml\_\-buffered\_\-writer}]{\setlength{\rightskip}{0pt plus 5cm}xml\_\-buffered\_\-writer::xml\_\-buffered\_\-writer (const {\bf xml\_\-buffered\_\-writer} \&)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classxml__buffered__writer_a6ab927cae021733a4b2e9e7cbbb79c13}
+\hypertarget{classxml__buffered__writer_a3c22ad246e2aebb6597935baf4a223a7}{
+\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}}
+\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!xml_buffered_writer@{xml\_\-buffered\_\-writer}}
+\subsubsection[{xml\_\-buffered\_\-writer}]{\setlength{\rightskip}{0pt plus 5cm}xml\_\-buffered\_\-writer::xml\_\-buffered\_\-writer (xml\_\-writer \& {\em writer\_\-}, \/  xml\_\-encoding {\em user\_\-encoding})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classxml__buffered__writer_a3c22ad246e2aebb6597935baf4a223a7}
+\hypertarget{classxml__buffered__writer_aa0aaa7ca5b9b61fb0e9dd79502e8d728}{
+\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!$\sim$xml\_\-buffered\_\-writer@{$\sim$xml\_\-buffered\_\-writer}}
+\index{$\sim$xml\_\-buffered\_\-writer@{$\sim$xml\_\-buffered\_\-writer}!xml_buffered_writer@{xml\_\-buffered\_\-writer}}
+\subsubsection[{$\sim$xml\_\-buffered\_\-writer}]{\setlength{\rightskip}{0pt plus 5cm}xml\_\-buffered\_\-writer::$\sim$xml\_\-buffered\_\-writer ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classxml__buffered__writer_aa0aaa7ca5b9b61fb0e9dd79502e8d728}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classxml__buffered__writer_aa733cb2cd0d5fcacec92c67a7f26c553}{
+\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!flush@{flush}}
+\index{flush@{flush}!xml_buffered_writer@{xml\_\-buffered\_\-writer}}
+\subsubsection[{flush}]{\setlength{\rightskip}{0pt plus 5cm}void xml\_\-buffered\_\-writer::flush (const char\_\-t $\ast$ {\em data}, \/  size\_\-t {\em size})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classxml__buffered__writer_aa733cb2cd0d5fcacec92c67a7f26c553}
+\hypertarget{classxml__buffered__writer_a74192d6bbee5ea387377537ede483b4f}{
+\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!flush@{flush}}
+\index{flush@{flush}!xml_buffered_writer@{xml\_\-buffered\_\-writer}}
+\subsubsection[{flush}]{\setlength{\rightskip}{0pt plus 5cm}void xml\_\-buffered\_\-writer::flush ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classxml__buffered__writer_a74192d6bbee5ea387377537ede483b4f}
+\hypertarget{classxml__buffered__writer_a0aab8cdf0db6269840a0b16319bdb985}{
+\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!operator=@{operator=}}
+\index{operator=@{operator=}!xml_buffered_writer@{xml\_\-buffered\_\-writer}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xml\_\-buffered\_\-writer}\& xml\_\-buffered\_\-writer::operator= (const {\bf xml\_\-buffered\_\-writer} \&)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classxml__buffered__writer_a0aab8cdf0db6269840a0b16319bdb985}
+\hypertarget{classxml__buffered__writer_ae6af5067d768c24b9c20422f76737f29}{
+\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!write@{write}}
+\index{write@{write}!xml_buffered_writer@{xml\_\-buffered\_\-writer}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}void xml\_\-buffered\_\-writer::write (char\_\-t {\em d0}, \/  char\_\-t {\em d1}, \/  char\_\-t {\em d2}, \/  char\_\-t {\em d3}, \/  char\_\-t {\em d4}, \/  char\_\-t {\em d5})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classxml__buffered__writer_ae6af5067d768c24b9c20422f76737f29}
+\hypertarget{classxml__buffered__writer_aad4a4f18223ec3cb1ff607425119b85f}{
+\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!write@{write}}
+\index{write@{write}!xml_buffered_writer@{xml\_\-buffered\_\-writer}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}void xml\_\-buffered\_\-writer::write (char\_\-t {\em d0}, \/  char\_\-t {\em d1}, \/  char\_\-t {\em d2}, \/  char\_\-t {\em d3}, \/  char\_\-t {\em d4})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classxml__buffered__writer_aad4a4f18223ec3cb1ff607425119b85f}
+\hypertarget{classxml__buffered__writer_af679f459dfa0af257c190b8db57e7dcb}{
+\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!write@{write}}
+\index{write@{write}!xml_buffered_writer@{xml\_\-buffered\_\-writer}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}void xml\_\-buffered\_\-writer::write (char\_\-t {\em d0}, \/  char\_\-t {\em d1}, \/  char\_\-t {\em d2}, \/  char\_\-t {\em d3})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classxml__buffered__writer_af679f459dfa0af257c190b8db57e7dcb}
+\hypertarget{classxml__buffered__writer_af82b277c1ef5c75d1901bb5a8eb4507f}{
+\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!write@{write}}
+\index{write@{write}!xml_buffered_writer@{xml\_\-buffered\_\-writer}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}void xml\_\-buffered\_\-writer::write (char\_\-t {\em d0}, \/  char\_\-t {\em d1}, \/  char\_\-t {\em d2})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classxml__buffered__writer_af82b277c1ef5c75d1901bb5a8eb4507f}
+\hypertarget{classxml__buffered__writer_a4cd6e908908e17c9b07eba34f7317791}{
+\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!write@{write}}
+\index{write@{write}!xml_buffered_writer@{xml\_\-buffered\_\-writer}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}void xml\_\-buffered\_\-writer::write (char\_\-t {\em d0}, \/  char\_\-t {\em d1})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classxml__buffered__writer_a4cd6e908908e17c9b07eba34f7317791}
+\hypertarget{classxml__buffered__writer_a1aa829bd551a69dd9005d2d46063308f}{
+\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!write@{write}}
+\index{write@{write}!xml_buffered_writer@{xml\_\-buffered\_\-writer}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}void xml\_\-buffered\_\-writer::write (char\_\-t {\em d0})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classxml__buffered__writer_a1aa829bd551a69dd9005d2d46063308f}
+\hypertarget{classxml__buffered__writer_af4181dcf2610619ba4f35d86c3d66372}{
+\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!write@{write}}
+\index{write@{write}!xml_buffered_writer@{xml\_\-buffered\_\-writer}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}void xml\_\-buffered\_\-writer::write (const char\_\-t $\ast$ {\em data})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classxml__buffered__writer_af4181dcf2610619ba4f35d86c3d66372}
+\hypertarget{classxml__buffered__writer_af830f04deffd7e28122d8c8973707c94}{
+\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!write@{write}}
+\index{write@{write}!xml_buffered_writer@{xml\_\-buffered\_\-writer}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}void xml\_\-buffered\_\-writer::write (const char\_\-t $\ast$ {\em data}, \/  size\_\-t {\em length})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classxml__buffered__writer_af830f04deffd7e28122d8c8973707c94}
+
+
+\subsection{Field Documentation}
+\hypertarget{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{
+\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!buffer@{buffer}}
+\index{buffer@{buffer}!xml_buffered_writer@{xml\_\-buffered\_\-writer}}
+\subsubsection[{buffer}]{\setlength{\rightskip}{0pt plus 5cm}char\_\-t {\bf xml\_\-buffered\_\-writer::buffer}\mbox{[}bufcapacity\mbox{]}}}
+\label{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}
+\hypertarget{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{
+\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!bufsize@{bufsize}}
+\index{bufsize@{bufsize}!xml_buffered_writer@{xml\_\-buffered\_\-writer}}
+\subsubsection[{bufsize}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf xml\_\-buffered\_\-writer::bufsize}}}
+\label{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}
+\hypertarget{classxml__buffered__writer_a6f21e839a1c66901995c8aae5cc9ad7b}{
+\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!data\_\-char@{data\_\-char}}
+\index{data\_\-char@{data\_\-char}!xml_buffered_writer@{xml\_\-buffered\_\-writer}}
+\subsubsection[{data\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}char\_\-t {\bf xml\_\-buffered\_\-writer::data\_\-char}\mbox{[}bufcapacity\mbox{]}}}
+\label{classxml__buffered__writer_a6f21e839a1c66901995c8aae5cc9ad7b}
+\hypertarget{classxml__buffered__writer_aa969d3724efe221a68927947e3a5196d}{
+\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!data\_\-u16@{data\_\-u16}}
+\index{data\_\-u16@{data\_\-u16}!xml_buffered_writer@{xml\_\-buffered\_\-writer}}
+\subsubsection[{data\_\-u16}]{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t {\bf xml\_\-buffered\_\-writer::data\_\-u16}\mbox{[}2 $\ast$bufcapacity\mbox{]}}}
+\label{classxml__buffered__writer_aa969d3724efe221a68927947e3a5196d}
+\hypertarget{classxml__buffered__writer_afa54826d8227c4ee661e1a9cc1e1acf2}{
+\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!data\_\-u32@{data\_\-u32}}
+\index{data\_\-u32@{data\_\-u32}!xml_buffered_writer@{xml\_\-buffered\_\-writer}}
+\subsubsection[{data\_\-u32}]{\setlength{\rightskip}{0pt plus 5cm}uint32\_\-t {\bf xml\_\-buffered\_\-writer::data\_\-u32}\mbox{[}bufcapacity\mbox{]}}}
+\label{classxml__buffered__writer_afa54826d8227c4ee661e1a9cc1e1acf2}
+\hypertarget{classxml__buffered__writer_ac672c70ba0597cf94d35c352ac563891}{
+\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!data\_\-u8@{data\_\-u8}}
+\index{data\_\-u8@{data\_\-u8}!xml_buffered_writer@{xml\_\-buffered\_\-writer}}
+\subsubsection[{data\_\-u8}]{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf xml\_\-buffered\_\-writer::data\_\-u8}\mbox{[}4 $\ast$bufcapacity\mbox{]}}}
+\label{classxml__buffered__writer_ac672c70ba0597cf94d35c352ac563891}
+\hypertarget{classxml__buffered__writer_ab810a7286598172e1549561b285f08fb}{
+\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!encoding@{encoding}}
+\index{encoding@{encoding}!xml_buffered_writer@{xml\_\-buffered\_\-writer}}
+\subsubsection[{encoding}]{\setlength{\rightskip}{0pt plus 5cm}xml\_\-encoding {\bf xml\_\-buffered\_\-writer::encoding}}}
+\label{classxml__buffered__writer_ab810a7286598172e1549561b285f08fb}
+\hypertarget{classxml__buffered__writer_a74fd3d695095835afa0f7671ac33037c}{
+\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!scratch@{scratch}}
+\index{scratch@{scratch}!xml_buffered_writer@{xml\_\-buffered\_\-writer}}
+\subsubsection[{scratch}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \}   {\bf xml\_\-buffered\_\-writer::scratch}}}
+\label{classxml__buffered__writer_a74fd3d695095835afa0f7671ac33037c}
+\hypertarget{classxml__buffered__writer_a37cdd45f867937e1978565f5a0fa318b}{
+\index{xml\_\-buffered\_\-writer@{xml\_\-buffered\_\-writer}!writer@{writer}}
+\index{writer@{writer}!xml_buffered_writer@{xml\_\-buffered\_\-writer}}
+\subsubsection[{writer}]{\setlength{\rightskip}{0pt plus 5cm}xml\_\-writer\& {\bf xml\_\-buffered\_\-writer::writer}}}
+\label{classxml__buffered__writer_a37cdd45f867937e1978565f5a0fa318b}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{pugixml_8cpp}{pugixml.cpp}\end{DoxyCompactItemize}

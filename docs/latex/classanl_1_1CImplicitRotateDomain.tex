@@ -1,0 +1,240 @@
+\hypertarget{classanl_1_1CImplicitRotateDomain}{
+\section{anl::CImplicitRotateDomain Class Reference}
+\label{classanl_1_1CImplicitRotateDomain}\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+}
+
+
+{\ttfamily \#include $<$implicitrotatedomain.h$>$}Inheritance diagram for anl::CImplicitRotateDomain::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classanl_1_1CImplicitRotateDomain}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classanl_1_1CImplicitRotateDomain_a90c53e09c2018dc921a1ae128644bb7b}{CImplicitRotateDomain} (double ax, double ay, double az, double angle\_\-deg)
+\item 
+\hyperlink{classanl_1_1CImplicitRotateDomain_a1b3be6e3c993c08310dffb8327cfbd3d}{$\sim$CImplicitRotateDomain} ()
+\item 
+void \hyperlink{classanl_1_1CImplicitRotateDomain_a9ce19d8da4b914036a7613441f19869b}{setSource} (\hyperlink{classanl_1_1CImplicitModuleBase}{CImplicitModuleBase} $\ast$m)
+\item 
+void \hyperlink{classanl_1_1CImplicitRotateDomain_a32b3a3eee640bf2e3c10039a8c44fb0e}{setSource} (double v)
+\item 
+void \hyperlink{classanl_1_1CImplicitRotateDomain_ae30695e1ea7d8b089bb446c175f57e4f}{setAxis} (double ax, double ay, double az)
+\item 
+void \hyperlink{classanl_1_1CImplicitRotateDomain_a5e77155db0000d4f97a0c63fb658af10}{setAxis} (\hyperlink{classanl_1_1CImplicitModuleBase}{CImplicitModuleBase} $\ast$ax, \hyperlink{classanl_1_1CImplicitModuleBase}{CImplicitModuleBase} $\ast$ay, \hyperlink{classanl_1_1CImplicitModuleBase}{CImplicitModuleBase} $\ast$az)
+\item 
+void \hyperlink{classanl_1_1CImplicitRotateDomain_aab99f48401bf6544843f22ffbde25d96}{setAxisX} (double ax)
+\item 
+void \hyperlink{classanl_1_1CImplicitRotateDomain_a45fd5e71bdd3506a578426af5733e3a8}{setAxisY} (double ay)
+\item 
+void \hyperlink{classanl_1_1CImplicitRotateDomain_ae6e7a668b829151e981beb38d13e7224}{setAxisZ} (double az)
+\item 
+void \hyperlink{classanl_1_1CImplicitRotateDomain_a1ceef542b5dce3e249ca4a153b74a742}{setAxisX} (\hyperlink{classanl_1_1CImplicitModuleBase}{CImplicitModuleBase} $\ast$ax)
+\item 
+void \hyperlink{classanl_1_1CImplicitRotateDomain_a5c9d2605bad361140c5f84e6e51cf0e9}{setAxisY} (\hyperlink{classanl_1_1CImplicitModuleBase}{CImplicitModuleBase} $\ast$ay)
+\item 
+void \hyperlink{classanl_1_1CImplicitRotateDomain_ab092ff91ebd67fa749000e36b2412f98}{setAxisZ} (\hyperlink{classanl_1_1CImplicitModuleBase}{CImplicitModuleBase} $\ast$az)
+\item 
+void \hyperlink{classanl_1_1CImplicitRotateDomain_a8bee0c761cbf7920b6fd2cb42fb2b38f}{setAngle} (double a)
+\item 
+void \hyperlink{classanl_1_1CImplicitRotateDomain_a3b93250d577c8350ddc8381e494605fb}{setAngle} (\hyperlink{classanl_1_1CImplicitModuleBase}{CImplicitModuleBase} $\ast$a)
+\item 
+double \hyperlink{classanl_1_1CImplicitRotateDomain_a9599a3b576c39197f6807202c7679480}{get} (double x, double y)
+\item 
+double \hyperlink{classanl_1_1CImplicitRotateDomain_a45697c6d5fcd6d5b551219a5520d0db8}{get} (double x, double y, double z)
+\item 
+double \hyperlink{classanl_1_1CImplicitRotateDomain_a094b57aa7d2acfbe3c069540a546be0d}{get} (double x, double y, double z, double w)
+\item 
+double \hyperlink{classanl_1_1CImplicitRotateDomain_a17c9e93ed5a749c490da923c5faf1952}{get} (double x, double y, double z, double w, double u, double v)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classanl_1_1CImplicitRotateDomain_a7f52893ebfcbb22ace8830c073113409}{calculateRotMatrix} (double x, double y)
+\item 
+void \hyperlink{classanl_1_1CImplicitRotateDomain_af442390b1e756deb0f6dd4b49ce53995}{calculateRotMatrix} (double x, double y, double z)
+\item 
+void \hyperlink{classanl_1_1CImplicitRotateDomain_a4a64050cc38be876a234e4b4c33c3533}{calculateRotMatrix} (double x, double y, double z, double w)
+\item 
+void \hyperlink{classanl_1_1CImplicitRotateDomain_a59d57e28efeef32a3d30417a210713a9}{calculateRotMatrix} (double x, double y, double z, double w, double u, double v)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classanl_1_1CImplicitRotateDomain_a9bd8244857bad0dbe9c81095934b1fa1}{m\_\-rotmatrix} \mbox{[}3\mbox{]}\mbox{[}3\mbox{]}
+\item 
+\hyperlink{classanl_1_1CScalarParameter}{CScalarParameter} \hyperlink{classanl_1_1CImplicitRotateDomain_ac765432fbf7db6e3dbd6ebf4228ea649}{m\_\-ax}
+\item 
+\hyperlink{classanl_1_1CScalarParameter}{CScalarParameter} \hyperlink{classanl_1_1CImplicitRotateDomain_ad8e619dec8d0f14b4cd8924834d9f0fb}{m\_\-ay}
+\item 
+\hyperlink{classanl_1_1CScalarParameter}{CScalarParameter} \hyperlink{classanl_1_1CImplicitRotateDomain_aef2125375f4cd5a477cc69dad7750479}{m\_\-az}
+\item 
+\hyperlink{classanl_1_1CScalarParameter}{CScalarParameter} \hyperlink{classanl_1_1CImplicitRotateDomain_a08774fd24861ad6fe2f7b9afe4816b6e}{m\_\-angledeg}
+\item 
+\hyperlink{classanl_1_1CScalarParameter}{CScalarParameter} \hyperlink{classanl_1_1CImplicitRotateDomain_a9cfd7f532e1e1449e16707f37b7d083b}{m\_\-source}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classanl_1_1CImplicitRotateDomain_a90c53e09c2018dc921a1ae128644bb7b}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!CImplicitRotateDomain@{CImplicitRotateDomain}}
+\index{CImplicitRotateDomain@{CImplicitRotateDomain}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{CImplicitRotateDomain}]{\setlength{\rightskip}{0pt plus 5cm}anl::CImplicitRotateDomain::CImplicitRotateDomain (double {\em ax}, \/  double {\em ay}, \/  double {\em az}, \/  double {\em angle\_\-deg})}}
+\label{classanl_1_1CImplicitRotateDomain_a90c53e09c2018dc921a1ae128644bb7b}
+\hypertarget{classanl_1_1CImplicitRotateDomain_a1b3be6e3c993c08310dffb8327cfbd3d}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!$\sim$CImplicitRotateDomain@{$\sim$CImplicitRotateDomain}}
+\index{$\sim$CImplicitRotateDomain@{$\sim$CImplicitRotateDomain}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{$\sim$CImplicitRotateDomain}]{\setlength{\rightskip}{0pt plus 5cm}anl::CImplicitRotateDomain::$\sim$CImplicitRotateDomain ()}}
+\label{classanl_1_1CImplicitRotateDomain_a1b3be6e3c993c08310dffb8327cfbd3d}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classanl_1_1CImplicitRotateDomain_a59d57e28efeef32a3d30417a210713a9}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!calculateRotMatrix@{calculateRotMatrix}}
+\index{calculateRotMatrix@{calculateRotMatrix}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{calculateRotMatrix}]{\setlength{\rightskip}{0pt plus 5cm}void anl::CImplicitRotateDomain::calculateRotMatrix (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em w}, \/  double {\em u}, \/  double {\em v})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classanl_1_1CImplicitRotateDomain_a59d57e28efeef32a3d30417a210713a9}
+\hypertarget{classanl_1_1CImplicitRotateDomain_a4a64050cc38be876a234e4b4c33c3533}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!calculateRotMatrix@{calculateRotMatrix}}
+\index{calculateRotMatrix@{calculateRotMatrix}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{calculateRotMatrix}]{\setlength{\rightskip}{0pt plus 5cm}void anl::CImplicitRotateDomain::calculateRotMatrix (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em w})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classanl_1_1CImplicitRotateDomain_a4a64050cc38be876a234e4b4c33c3533}
+\hypertarget{classanl_1_1CImplicitRotateDomain_af442390b1e756deb0f6dd4b49ce53995}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!calculateRotMatrix@{calculateRotMatrix}}
+\index{calculateRotMatrix@{calculateRotMatrix}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{calculateRotMatrix}]{\setlength{\rightskip}{0pt plus 5cm}void anl::CImplicitRotateDomain::calculateRotMatrix (double {\em x}, \/  double {\em y}, \/  double {\em z})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classanl_1_1CImplicitRotateDomain_af442390b1e756deb0f6dd4b49ce53995}
+\hypertarget{classanl_1_1CImplicitRotateDomain_a7f52893ebfcbb22ace8830c073113409}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!calculateRotMatrix@{calculateRotMatrix}}
+\index{calculateRotMatrix@{calculateRotMatrix}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{calculateRotMatrix}]{\setlength{\rightskip}{0pt plus 5cm}void anl::CImplicitRotateDomain::calculateRotMatrix (double {\em x}, \/  double {\em y})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classanl_1_1CImplicitRotateDomain_a7f52893ebfcbb22ace8830c073113409}
+\hypertarget{classanl_1_1CImplicitRotateDomain_a17c9e93ed5a749c490da923c5faf1952}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!get@{get}}
+\index{get@{get}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}double anl::CImplicitRotateDomain::get (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em w}, \/  double {\em u}, \/  double {\em v})\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classanl_1_1CImplicitRotateDomain_a17c9e93ed5a749c490da923c5faf1952}
+
+
+Implements \hyperlink{classanl_1_1CImplicitModuleBase_aa40b7d54572197612a4fea44b63447eb}{anl::CImplicitModuleBase}.\hypertarget{classanl_1_1CImplicitRotateDomain_a094b57aa7d2acfbe3c069540a546be0d}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!get@{get}}
+\index{get@{get}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}double anl::CImplicitRotateDomain::get (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em w})\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classanl_1_1CImplicitRotateDomain_a094b57aa7d2acfbe3c069540a546be0d}
+
+
+Implements \hyperlink{classanl_1_1CImplicitModuleBase_a3cf520bdab59631864253c03b4e1723f}{anl::CImplicitModuleBase}.\hypertarget{classanl_1_1CImplicitRotateDomain_a45697c6d5fcd6d5b551219a5520d0db8}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!get@{get}}
+\index{get@{get}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}double anl::CImplicitRotateDomain::get (double {\em x}, \/  double {\em y}, \/  double {\em z})\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classanl_1_1CImplicitRotateDomain_a45697c6d5fcd6d5b551219a5520d0db8}
+
+
+Implements \hyperlink{classanl_1_1CImplicitModuleBase_ac17d592612c82ba3d47f9229a00b1fe3}{anl::CImplicitModuleBase}.\hypertarget{classanl_1_1CImplicitRotateDomain_a9599a3b576c39197f6807202c7679480}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!get@{get}}
+\index{get@{get}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}double anl::CImplicitRotateDomain::get (double {\em x}, \/  double {\em y})\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classanl_1_1CImplicitRotateDomain_a9599a3b576c39197f6807202c7679480}
+
+
+Implements \hyperlink{classanl_1_1CImplicitModuleBase_ab88f8a1822dcfbc13ba5230318b0acd1}{anl::CImplicitModuleBase}.\hypertarget{classanl_1_1CImplicitRotateDomain_a3b93250d577c8350ddc8381e494605fb}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!setAngle@{setAngle}}
+\index{setAngle@{setAngle}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{setAngle}]{\setlength{\rightskip}{0pt plus 5cm}void anl::CImplicitRotateDomain::setAngle ({\bf CImplicitModuleBase} $\ast$ {\em a})}}
+\label{classanl_1_1CImplicitRotateDomain_a3b93250d577c8350ddc8381e494605fb}
+\hypertarget{classanl_1_1CImplicitRotateDomain_a8bee0c761cbf7920b6fd2cb42fb2b38f}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!setAngle@{setAngle}}
+\index{setAngle@{setAngle}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{setAngle}]{\setlength{\rightskip}{0pt plus 5cm}void anl::CImplicitRotateDomain::setAngle (double {\em a})}}
+\label{classanl_1_1CImplicitRotateDomain_a8bee0c761cbf7920b6fd2cb42fb2b38f}
+\hypertarget{classanl_1_1CImplicitRotateDomain_a5e77155db0000d4f97a0c63fb658af10}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!setAxis@{setAxis}}
+\index{setAxis@{setAxis}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{setAxis}]{\setlength{\rightskip}{0pt plus 5cm}void anl::CImplicitRotateDomain::setAxis ({\bf CImplicitModuleBase} $\ast$ {\em ax}, \/  {\bf CImplicitModuleBase} $\ast$ {\em ay}, \/  {\bf CImplicitModuleBase} $\ast$ {\em az})}}
+\label{classanl_1_1CImplicitRotateDomain_a5e77155db0000d4f97a0c63fb658af10}
+\hypertarget{classanl_1_1CImplicitRotateDomain_ae30695e1ea7d8b089bb446c175f57e4f}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!setAxis@{setAxis}}
+\index{setAxis@{setAxis}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{setAxis}]{\setlength{\rightskip}{0pt plus 5cm}void anl::CImplicitRotateDomain::setAxis (double {\em ax}, \/  double {\em ay}, \/  double {\em az})}}
+\label{classanl_1_1CImplicitRotateDomain_ae30695e1ea7d8b089bb446c175f57e4f}
+\hypertarget{classanl_1_1CImplicitRotateDomain_a1ceef542b5dce3e249ca4a153b74a742}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!setAxisX@{setAxisX}}
+\index{setAxisX@{setAxisX}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{setAxisX}]{\setlength{\rightskip}{0pt plus 5cm}void anl::CImplicitRotateDomain::setAxisX ({\bf CImplicitModuleBase} $\ast$ {\em ax})}}
+\label{classanl_1_1CImplicitRotateDomain_a1ceef542b5dce3e249ca4a153b74a742}
+\hypertarget{classanl_1_1CImplicitRotateDomain_aab99f48401bf6544843f22ffbde25d96}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!setAxisX@{setAxisX}}
+\index{setAxisX@{setAxisX}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{setAxisX}]{\setlength{\rightskip}{0pt plus 5cm}void anl::CImplicitRotateDomain::setAxisX (double {\em ax})}}
+\label{classanl_1_1CImplicitRotateDomain_aab99f48401bf6544843f22ffbde25d96}
+\hypertarget{classanl_1_1CImplicitRotateDomain_a5c9d2605bad361140c5f84e6e51cf0e9}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!setAxisY@{setAxisY}}
+\index{setAxisY@{setAxisY}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{setAxisY}]{\setlength{\rightskip}{0pt plus 5cm}void anl::CImplicitRotateDomain::setAxisY ({\bf CImplicitModuleBase} $\ast$ {\em ay})}}
+\label{classanl_1_1CImplicitRotateDomain_a5c9d2605bad361140c5f84e6e51cf0e9}
+\hypertarget{classanl_1_1CImplicitRotateDomain_a45fd5e71bdd3506a578426af5733e3a8}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!setAxisY@{setAxisY}}
+\index{setAxisY@{setAxisY}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{setAxisY}]{\setlength{\rightskip}{0pt plus 5cm}void anl::CImplicitRotateDomain::setAxisY (double {\em ay})}}
+\label{classanl_1_1CImplicitRotateDomain_a45fd5e71bdd3506a578426af5733e3a8}
+\hypertarget{classanl_1_1CImplicitRotateDomain_ab092ff91ebd67fa749000e36b2412f98}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!setAxisZ@{setAxisZ}}
+\index{setAxisZ@{setAxisZ}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{setAxisZ}]{\setlength{\rightskip}{0pt plus 5cm}void anl::CImplicitRotateDomain::setAxisZ ({\bf CImplicitModuleBase} $\ast$ {\em az})}}
+\label{classanl_1_1CImplicitRotateDomain_ab092ff91ebd67fa749000e36b2412f98}
+\hypertarget{classanl_1_1CImplicitRotateDomain_ae6e7a668b829151e981beb38d13e7224}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!setAxisZ@{setAxisZ}}
+\index{setAxisZ@{setAxisZ}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{setAxisZ}]{\setlength{\rightskip}{0pt plus 5cm}void anl::CImplicitRotateDomain::setAxisZ (double {\em az})}}
+\label{classanl_1_1CImplicitRotateDomain_ae6e7a668b829151e981beb38d13e7224}
+\hypertarget{classanl_1_1CImplicitRotateDomain_a32b3a3eee640bf2e3c10039a8c44fb0e}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!setSource@{setSource}}
+\index{setSource@{setSource}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{setSource}]{\setlength{\rightskip}{0pt plus 5cm}void anl::CImplicitRotateDomain::setSource (double {\em v})}}
+\label{classanl_1_1CImplicitRotateDomain_a32b3a3eee640bf2e3c10039a8c44fb0e}
+\hypertarget{classanl_1_1CImplicitRotateDomain_a9ce19d8da4b914036a7613441f19869b}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!setSource@{setSource}}
+\index{setSource@{setSource}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{setSource}]{\setlength{\rightskip}{0pt plus 5cm}void anl::CImplicitRotateDomain::setSource ({\bf CImplicitModuleBase} $\ast$ {\em m})}}
+\label{classanl_1_1CImplicitRotateDomain_a9ce19d8da4b914036a7613441f19869b}
+
+
+\subsection{Field Documentation}
+\hypertarget{classanl_1_1CImplicitRotateDomain_a08774fd24861ad6fe2f7b9afe4816b6e}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!m\_\-angledeg@{m\_\-angledeg}}
+\index{m\_\-angledeg@{m\_\-angledeg}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{m\_\-angledeg}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CScalarParameter} {\bf anl::CImplicitRotateDomain::m\_\-angledeg}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classanl_1_1CImplicitRotateDomain_a08774fd24861ad6fe2f7b9afe4816b6e}
+\hypertarget{classanl_1_1CImplicitRotateDomain_ac765432fbf7db6e3dbd6ebf4228ea649}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!m\_\-ax@{m\_\-ax}}
+\index{m\_\-ax@{m\_\-ax}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{m\_\-ax}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CScalarParameter} {\bf anl::CImplicitRotateDomain::m\_\-ax}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classanl_1_1CImplicitRotateDomain_ac765432fbf7db6e3dbd6ebf4228ea649}
+\hypertarget{classanl_1_1CImplicitRotateDomain_ad8e619dec8d0f14b4cd8924834d9f0fb}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!m\_\-ay@{m\_\-ay}}
+\index{m\_\-ay@{m\_\-ay}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{m\_\-ay}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CScalarParameter} {\bf anl::CImplicitRotateDomain::m\_\-ay}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classanl_1_1CImplicitRotateDomain_ad8e619dec8d0f14b4cd8924834d9f0fb}
+\hypertarget{classanl_1_1CImplicitRotateDomain_aef2125375f4cd5a477cc69dad7750479}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!m\_\-az@{m\_\-az}}
+\index{m\_\-az@{m\_\-az}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{m\_\-az}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CScalarParameter} {\bf anl::CImplicitRotateDomain::m\_\-az}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classanl_1_1CImplicitRotateDomain_aef2125375f4cd5a477cc69dad7750479}
+\hypertarget{classanl_1_1CImplicitRotateDomain_a9bd8244857bad0dbe9c81095934b1fa1}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!m\_\-rotmatrix@{m\_\-rotmatrix}}
+\index{m\_\-rotmatrix@{m\_\-rotmatrix}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{m\_\-rotmatrix}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf anl::CImplicitRotateDomain::m\_\-rotmatrix}\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classanl_1_1CImplicitRotateDomain_a9bd8244857bad0dbe9c81095934b1fa1}
+\hypertarget{classanl_1_1CImplicitRotateDomain_a9cfd7f532e1e1449e16707f37b7d083b}{
+\index{anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}!m\_\-source@{m\_\-source}}
+\index{m\_\-source@{m\_\-source}!anl::CImplicitRotateDomain@{anl::CImplicitRotateDomain}}
+\subsubsection[{m\_\-source}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CScalarParameter} {\bf anl::CImplicitRotateDomain::m\_\-source}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classanl_1_1CImplicitRotateDomain_a9cfd7f532e1e1449e16707f37b7d083b}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{implicitrotatedomain_8h}{implicitrotatedomain.h}\item 
+src/\hyperlink{implicitrotatedomain_8cpp}{implicitrotatedomain.cpp}\end{DoxyCompactItemize}

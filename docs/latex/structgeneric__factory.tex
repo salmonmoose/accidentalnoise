@@ -1,0 +1,66 @@
+\hypertarget{structgeneric__factory}{
+\section{generic\_\-factory$<$ Key, Abstraction $>$ Struct Template Reference}
+\label{structgeneric__factory}\index{generic\_\-factory@{generic\_\-factory}}
+}
+
+
+{\ttfamily \#include $<$factory.h$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::function$<$ Abstraction $\ast$()$>$ \hyperlink{structgeneric__factory_a9df30a5e7a264edbc819878ce107841a}{creator\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Abstraction $\ast$ \hyperlink{structgeneric__factory_ac58528ffbeed39f52ed7e97f2f4d946c}{build\_\-object} (Key const \&key)
+\item 
+bool \hyperlink{structgeneric__factory_af6200cfbbc83b6ad06b97f026e66ede6}{register\_\-creator} (Key const \&key, \hyperlink{structgeneric__factory_a9df30a5e7a264edbc819878ce107841a}{creator\_\-t} const \&creator)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \hyperlink{structgeneric__factory_a8b200556fb68870167f60b82221c3be2}{register\_\-type} (Key const \&key)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::map$<$ Key, \hyperlink{structgeneric__factory_a9df30a5e7a264edbc819878ce107841a}{creator\_\-t} $>$ \hyperlink{structgeneric__factory_a80aac7cee498bc332fc08e9ef807a8a1}{creators}
+\end{DoxyCompactItemize}
+\subsubsection*{template$<$typename Key, typename Abstraction$>$ struct generic\_\-factory$<$ Key, Abstraction $>$}
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{structgeneric__factory_a9df30a5e7a264edbc819878ce107841a}{
+\index{generic\_\-factory@{generic\_\-factory}!creator\_\-t@{creator\_\-t}}
+\index{creator\_\-t@{creator\_\-t}!generic_factory@{generic\_\-factory}}
+\subsubsection[{creator\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key, typename Abstraction$>$ typedef std::function$<$Abstraction$\ast$()$>$ {\bf generic\_\-factory}$<$ Key, Abstraction $>$::{\bf creator\_\-t}}}
+\label{structgeneric__factory_a9df30a5e7a264edbc819878ce107841a}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structgeneric__factory_ac58528ffbeed39f52ed7e97f2f4d946c}{
+\index{generic\_\-factory@{generic\_\-factory}!build\_\-object@{build\_\-object}}
+\index{build\_\-object@{build\_\-object}!generic_factory@{generic\_\-factory}}
+\subsubsection[{build\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key, typename Abstraction$>$ Abstraction$\ast$ {\bf generic\_\-factory}$<$ Key, Abstraction $>$::build\_\-object (Key const \& {\em key})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{structgeneric__factory_ac58528ffbeed39f52ed7e97f2f4d946c}
+\hypertarget{structgeneric__factory_af6200cfbbc83b6ad06b97f026e66ede6}{
+\index{generic\_\-factory@{generic\_\-factory}!register\_\-creator@{register\_\-creator}}
+\index{register\_\-creator@{register\_\-creator}!generic_factory@{generic\_\-factory}}
+\subsubsection[{register\_\-creator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key, typename Abstraction$>$ bool {\bf generic\_\-factory}$<$ Key, Abstraction $>$::register\_\-creator (Key const \& {\em key}, \/  {\bf creator\_\-t} const \& {\em creator})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{structgeneric__factory_af6200cfbbc83b6ad06b97f026e66ede6}
+\hypertarget{structgeneric__factory_a8b200556fb68870167f60b82221c3be2}{
+\index{generic\_\-factory@{generic\_\-factory}!register\_\-type@{register\_\-type}}
+\index{register\_\-type@{register\_\-type}!generic_factory@{generic\_\-factory}}
+\subsubsection[{register\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key, typename Abstraction$>$ template$<$typename T $>$ bool {\bf generic\_\-factory}$<$ Key, Abstraction $>$::register\_\-type (Key const \& {\em key})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{structgeneric__factory_a8b200556fb68870167f60b82221c3be2}
+
+
+\subsection{Field Documentation}
+\hypertarget{structgeneric__factory_a80aac7cee498bc332fc08e9ef807a8a1}{
+\index{generic\_\-factory@{generic\_\-factory}!creators@{creators}}
+\index{creators@{creators}!generic_factory@{generic\_\-factory}}
+\subsubsection[{creators}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key, typename Abstraction$>$ std::map$<$Key, {\bf creator\_\-t}$>$ {\bf generic\_\-factory}$<$ Key, Abstraction $>$::{\bf creators}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{structgeneric__factory_a80aac7cee498bc332fc08e9ef807a8a1}
+
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{factory_8h}{factory.h}\end{DoxyCompactItemize}

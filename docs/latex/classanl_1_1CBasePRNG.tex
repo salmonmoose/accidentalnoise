@@ -1,0 +1,86 @@
+\hypertarget{classanl_1_1CBasePRNG}{
+\section{anl::CBasePRNG Class Reference}
+\label{classanl_1_1CBasePRNG}\index{anl::CBasePRNG@{anl::CBasePRNG}}
+}
+
+
+{\ttfamily \#include $<$random\_\-gen.h$>$}Inheritance diagram for anl::CBasePRNG::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.96491cm]{classanl_1_1CBasePRNG}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classanl_1_1CBasePRNG_aa5af1d977bcddc28584a1e0133701c30}{CBasePRNG} ()
+\item 
+virtual \hyperlink{classanl_1_1CBasePRNG_a05752d435025c6cbb29cb5c5e50d2257}{$\sim$CBasePRNG} ()
+\item 
+virtual unsigned int \hyperlink{classanl_1_1CBasePRNG_a7a0fcd0d3c4b0f9f160835b4b254a1ed}{get} ()=0
+\item 
+virtual void \hyperlink{classanl_1_1CBasePRNG_a6e9a81522fe055749739e4d79b5aa27e}{setSeed} (unsigned int s)=0
+\item 
+void \hyperlink{classanl_1_1CBasePRNG_a23758173ff6c4d248d9b619896e9a049}{setSeedTime} ()
+\item 
+unsigned int \hyperlink{classanl_1_1CBasePRNG_a78fb7f29598253f3eb1aaf0a9fc87058}{getTarget} (unsigned int t)
+\item 
+unsigned int \hyperlink{classanl_1_1CBasePRNG_a6427bf7c28728bbe15077c34a2736dbd}{getRange} (unsigned int low, unsigned int high)
+\item 
+double \hyperlink{classanl_1_1CBasePRNG_a82990127f6a4b9cee3b48861f622e4b3}{get01} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classanl_1_1CBasePRNG_aa5af1d977bcddc28584a1e0133701c30}{
+\index{anl::CBasePRNG@{anl::CBasePRNG}!CBasePRNG@{CBasePRNG}}
+\index{CBasePRNG@{CBasePRNG}!anl::CBasePRNG@{anl::CBasePRNG}}
+\subsubsection[{CBasePRNG}]{\setlength{\rightskip}{0pt plus 5cm}anl::CBasePRNG::CBasePRNG ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classanl_1_1CBasePRNG_aa5af1d977bcddc28584a1e0133701c30}
+\hypertarget{classanl_1_1CBasePRNG_a05752d435025c6cbb29cb5c5e50d2257}{
+\index{anl::CBasePRNG@{anl::CBasePRNG}!$\sim$CBasePRNG@{$\sim$CBasePRNG}}
+\index{$\sim$CBasePRNG@{$\sim$CBasePRNG}!anl::CBasePRNG@{anl::CBasePRNG}}
+\subsubsection[{$\sim$CBasePRNG}]{\setlength{\rightskip}{0pt plus 5cm}virtual anl::CBasePRNG::$\sim$CBasePRNG ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classanl_1_1CBasePRNG_a05752d435025c6cbb29cb5c5e50d2257}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classanl_1_1CBasePRNG_a7a0fcd0d3c4b0f9f160835b4b254a1ed}{
+\index{anl::CBasePRNG@{anl::CBasePRNG}!get@{get}}
+\index{get@{get}!anl::CBasePRNG@{anl::CBasePRNG}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned int anl::CBasePRNG::get ()\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classanl_1_1CBasePRNG_a7a0fcd0d3c4b0f9f160835b4b254a1ed}
+
+
+Implemented in \hyperlink{classanl_1_1LCG_a65cb6d076966f0a22afb66ef633166bf}{anl::LCG}, \hyperlink{classanl_1_1Xorshift_a4077fd48d3a6dd1a57a6aa3089441dd7}{anl::Xorshift}, \hyperlink{classanl_1_1MWC256_a7857a5fc425c176743a88062aeddbedf}{anl::MWC256}, \hyperlink{classanl_1_1CMWC4096_a28729ce8c6c8dab8cf551c7ddc2b751b}{anl::CMWC4096}, and \hyperlink{classanl_1_1KISS_a1025043c844dd93d33bedf412fef9cc3}{anl::KISS}.\hypertarget{classanl_1_1CBasePRNG_a82990127f6a4b9cee3b48861f622e4b3}{
+\index{anl::CBasePRNG@{anl::CBasePRNG}!get01@{get01}}
+\index{get01@{get01}!anl::CBasePRNG@{anl::CBasePRNG}}
+\subsubsection[{get01}]{\setlength{\rightskip}{0pt plus 5cm}double anl::CBasePRNG::get01 ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classanl_1_1CBasePRNG_a82990127f6a4b9cee3b48861f622e4b3}
+\hypertarget{classanl_1_1CBasePRNG_a6427bf7c28728bbe15077c34a2736dbd}{
+\index{anl::CBasePRNG@{anl::CBasePRNG}!getRange@{getRange}}
+\index{getRange@{getRange}!anl::CBasePRNG@{anl::CBasePRNG}}
+\subsubsection[{getRange}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int anl::CBasePRNG::getRange (unsigned int {\em low}, \/  unsigned int {\em high})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classanl_1_1CBasePRNG_a6427bf7c28728bbe15077c34a2736dbd}
+\hypertarget{classanl_1_1CBasePRNG_a78fb7f29598253f3eb1aaf0a9fc87058}{
+\index{anl::CBasePRNG@{anl::CBasePRNG}!getTarget@{getTarget}}
+\index{getTarget@{getTarget}!anl::CBasePRNG@{anl::CBasePRNG}}
+\subsubsection[{getTarget}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int anl::CBasePRNG::getTarget (unsigned int {\em t})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classanl_1_1CBasePRNG_a78fb7f29598253f3eb1aaf0a9fc87058}
+\hypertarget{classanl_1_1CBasePRNG_a6e9a81522fe055749739e4d79b5aa27e}{
+\index{anl::CBasePRNG@{anl::CBasePRNG}!setSeed@{setSeed}}
+\index{setSeed@{setSeed}!anl::CBasePRNG@{anl::CBasePRNG}}
+\subsubsection[{setSeed}]{\setlength{\rightskip}{0pt plus 5cm}virtual void anl::CBasePRNG::setSeed (unsigned int {\em s})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classanl_1_1CBasePRNG_a6e9a81522fe055749739e4d79b5aa27e}
+
+
+Implemented in \hyperlink{classanl_1_1LCG_a671261ff641cf73b5929b3ab0d19fe37}{anl::LCG}, \hyperlink{classanl_1_1Xorshift_a0fd07695b4ac9d214db30ce5f896f958}{anl::Xorshift}, \hyperlink{classanl_1_1MWC256_a21991854d1538735f7f47746c5277697}{anl::MWC256}, \hyperlink{classanl_1_1CMWC4096_a6bac258bda47aff87e640cae6145c970}{anl::CMWC4096}, and \hyperlink{classanl_1_1KISS_a975aa76ee0371fc8da9afae199192e04}{anl::KISS}.\hypertarget{classanl_1_1CBasePRNG_a23758173ff6c4d248d9b619896e9a049}{
+\index{anl::CBasePRNG@{anl::CBasePRNG}!setSeedTime@{setSeedTime}}
+\index{setSeedTime@{setSeedTime}!anl::CBasePRNG@{anl::CBasePRNG}}
+\subsubsection[{setSeedTime}]{\setlength{\rightskip}{0pt plus 5cm}void anl::CBasePRNG::setSeedTime ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classanl_1_1CBasePRNG_a23758173ff6c4d248d9b619896e9a049}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{random__gen_8h}{random\_\-gen.h}\end{DoxyCompactItemize}

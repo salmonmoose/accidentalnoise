@@ -1,0 +1,425 @@
+\hypertarget{noise__gen_8cpp}{
+\section{src/noise\_\-gen.cpp File Reference}
+\label{noise__gen_8cpp}\index{src/noise\_\-gen.cpp@{src/noise\_\-gen.cpp}}
+}
+{\ttfamily \#include \char`\"{}noise\_\-gen.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}noise\_\-lut.h\char`\"{}}\par
+{\ttfamily \#include $<$vector$>$}\par
+{\ttfamily \#include $<$algorithm$>$}\par
+{\ttfamily \#include $<$math.h$>$}\par
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structSVectorOrdering4}{SVectorOrdering4}
+\item 
+struct \hyperlink{structSVectorOrdering}{SVectorOrdering}
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{noise__gen_8cpp_ae13a6565bea334e9b6fb19033a392857}{FNV\_\-32\_\-PRIME}~((unsigned int)0x01000193)
+\item 
+\#define \hyperlink{noise__gen_8cpp_a7489fa90eb57a2d7e70485d85490c0cf}{FNV\_\-32\_\-INIT}~((unsigned int )2166136261)
+\item 
+\#define \hyperlink{noise__gen_8cpp_ab3ee621200e3e2a4936208389ca98cc6}{FNV\_\-MASK\_\-8}~(((unsigned int)1$<$$<$8)-\/1)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef double($\ast$ \hyperlink{noise__gen_8cpp_ac82d663f5a282d9380809786c9e875a1}{worker\_\-noise\_\-2} )(double, double, int, int, unsigned int)
+\item 
+typedef double($\ast$ \hyperlink{noise__gen_8cpp_a85efee82bc4c890a88f6b82ef3bfb718}{worker\_\-noise\_\-3} )(double, double, double, int, int, int, unsigned int)
+\item 
+typedef double($\ast$ \hyperlink{noise__gen_8cpp_a441130be7f5a19c0c42d44ca9d203f65}{worker\_\-noise\_\-4} )(double, double, double, double, int, int, int, int, unsigned int)
+\item 
+typedef double($\ast$ \hyperlink{noise__gen_8cpp_a7e4fca4dda1abd2aa9aa06a9f6879770}{worker\_\-noise\_\-6} )(double, double, double, double, double, double, int, int, int, int, int, int, unsigned int)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{noise__gen_8cpp_af7011150ebe2159ce2c8f5bfd525bb3e}{fast\_\-floor} (double t)
+\item 
+double \hyperlink{noise__gen_8cpp_a78e2b2724a41f29c02fa28f91d621ec6}{array\_\-dot2} (double $\ast$arr, double a, double b)
+\item 
+double \hyperlink{noise__gen_8cpp_ae99b0a903834acc285151974a8bd33ab}{array\_\-dot3} (double $\ast$arr, double a, double b, double c)
+\item 
+double \hyperlink{noise__gen_8cpp_a1ef08bf8e89f93208ea7be83e6c8f443}{array\_\-dot4} (double $\ast$arr, double x, double y, double z, double w)
+\item 
+double \hyperlink{noise__gen_8cpp_a19fe180156410dd139e01f604679b0d3}{array\_\-dot6} (double $\ast$arr, double x, double y, double z, double w, double u, double v)
+\item 
+unsigned int \hyperlink{noise__gen_8cpp_a0e682aa93bd4061e8f5885419de26f16}{fnv\_\-32\_\-a\_\-buf} (void $\ast$buf, unsigned int len)
+\item 
+unsigned char \hyperlink{noise__gen_8cpp_af63a262e4a7ba23768ca15f747e931c1}{xor\_\-fold\_\-hash} (unsigned int hash)
+\item 
+unsigned int \hyperlink{noise__gen_8cpp_a1067e4cea1cd209889089173b73bdc61}{hash\_\-coords\_\-2} (int x, int y, unsigned int seed)
+\item 
+unsigned int \hyperlink{noise__gen_8cpp_a265d3fd52a05668080d09358b5af49fa}{hash\_\-coords\_\-3} (int x, int y, int z, unsigned int seed)
+\item 
+unsigned int \hyperlink{noise__gen_8cpp_a8c938ca96cd7acf5f3f223177a5fe65b}{hash\_\-coords\_\-4} (int x, int y, int z, int w, unsigned int seed)
+\item 
+unsigned int \hyperlink{noise__gen_8cpp_a7ddec348b4281397e8ea5efa9fcbeb11}{hash\_\-coords\_\-6} (int x, int y, int z, int w, int u, int v, unsigned int seed)
+\item 
+unsigned int \hyperlink{noise__gen_8cpp_a62b94456aebc11ee6ef57e44c808fd00}{compute\_\-hash\_\-double\_\-2} (double x, double y, unsigned int seed)
+\item 
+unsigned int \hyperlink{noise__gen_8cpp_ac8a44749e5236087d488d0dd121c5e68}{compute\_\-hash\_\-double\_\-3} (double x, double y, double z, unsigned int seed)
+\item 
+unsigned int \hyperlink{noise__gen_8cpp_ae0fa44233ca03d5c16e981e6dde5fc92}{compute\_\-hash\_\-double\_\-4} (double x, double y, double z, double w, unsigned int seed)
+\item 
+unsigned int \hyperlink{noise__gen_8cpp_ae79c3352a140177d9ee7b1421b877e61}{compute\_\-hash\_\-double\_\-6} (double x, double y, double z, double w, double u, double v, unsigned int seed)
+\item 
+double \hyperlink{noise__gen_8cpp_a78428392bdf4b379d872a1ad2c4d0f23}{value\_\-noise\_\-2} (double x, double y, int ix, int iy, unsigned int seed)
+\item 
+double \hyperlink{noise__gen_8cpp_a18db93f296b2885c8e49876d163f93a9}{value\_\-noise\_\-3} (double x, double y, double z, int ix, int iy, int iz, unsigned int seed)
+\item 
+double \hyperlink{noise__gen_8cpp_aa7c56a474a4b3004434d346f83560d8d}{value\_\-noise\_\-4} (double x, double y, double z, double w, int ix, int iy, int iz, int iw, unsigned int seed)
+\item 
+double \hyperlink{noise__gen_8cpp_a8779a7bbc58ada047c294be2d173f729}{value\_\-noise\_\-6} (double x, double y, double z, double w, double u, double v, int ix, int iy, int iz, int iw, int iu, int iv, unsigned int seed)
+\item 
+double \hyperlink{noise__gen_8cpp_a230c4ec29b88a8e641803c7a6c460fcc}{grad\_\-noise\_\-2} (double x, double y, int ix, int iy, unsigned int seed)
+\item 
+double \hyperlink{noise__gen_8cpp_a43746e19cb11324d4f6fd62168207e62}{grad\_\-noise\_\-3} (double x, double y, double z, int ix, int iy, int iz, unsigned int seed)
+\item 
+double \hyperlink{noise__gen_8cpp_a4559df9165f33e18f2b59233291334a3}{grad\_\-noise\_\-4} (double x, double y, double z, double w, int ix, int iy, int iz, int iw, unsigned int seed)
+\item 
+double \hyperlink{noise__gen_8cpp_ab26f06d5ccdf33f825037728481321f8}{grad\_\-noise\_\-6} (double x, double y, double z, double w, double u, double v, int ix, int iy, int iz, int iw, int iu, int iv, unsigned int seed)
+\item 
+double \hyperlink{noise__gen_8cpp_ad76009a3657b109e56123bc986e9b923}{lerp} (double s, double v1, double v2)
+\item 
+double \hyperlink{noise__gen_8cpp_ac7f464157c439040ce13541c2c1da1aa}{interp\_\-X\_\-2} (double x, double y, double xs, int x0, int x1, int iy, unsigned int seed, \hyperlink{noise__gen_8cpp_ac82d663f5a282d9380809786c9e875a1}{worker\_\-noise\_\-2} noisefunc)
+\item 
+double \hyperlink{noise__gen_8cpp_a08189f38e2b6476a6a8f8de74f758ec4}{interp\_\-XY\_\-2} (double x, double y, double xs, double ys, int x0, int x1, int y0, int y1, unsigned int seed, \hyperlink{noise__gen_8cpp_ac82d663f5a282d9380809786c9e875a1}{worker\_\-noise\_\-2} noisefunc)
+\item 
+double \hyperlink{noise__gen_8cpp_a832b0738c422287678a712e7f6a3478e}{interp\_\-X\_\-3} (double x, double y, double z, double xs, int x0, int x1, int iy, int iz, unsigned int seed, \hyperlink{noise__gen_8cpp_a85efee82bc4c890a88f6b82ef3bfb718}{worker\_\-noise\_\-3} noisefunc)
+\item 
+double \hyperlink{noise__gen_8cpp_ae736d1ef0af3df62acdbd24d849e18e3}{interp\_\-XY\_\-3} (double x, double y, double z, double xs, double ys, int x0, int x1, int y0, int y1, int iz, unsigned int seed, \hyperlink{noise__gen_8cpp_a85efee82bc4c890a88f6b82ef3bfb718}{worker\_\-noise\_\-3} noisefunc)
+\item 
+double \hyperlink{noise__gen_8cpp_a8c1ad6db3dd4f3f85a382e9130708c50}{interp\_\-XYZ\_\-3} (double x, double y, double z, double xs, double ys, double zs, int x0, int x1, int y0, int y1, int z0, int z1, unsigned int seed, \hyperlink{noise__gen_8cpp_a85efee82bc4c890a88f6b82ef3bfb718}{worker\_\-noise\_\-3} noisefunc)
+\item 
+double \hyperlink{noise__gen_8cpp_ad4c9d13df09160224609abbdcfbd607b}{interp\_\-X\_\-4} (double x, double y, double z, double w, double xs, int x0, int x1, int iy, int iz, int iw, unsigned int seed, \hyperlink{noise__gen_8cpp_a441130be7f5a19c0c42d44ca9d203f65}{worker\_\-noise\_\-4} noisefunc)
+\item 
+double \hyperlink{noise__gen_8cpp_ac124ec7cbfaf0e817a923d20f515f4a2}{interp\_\-XY\_\-4} (double x, double y, double z, double w, double xs, double ys, int x0, int x1, int y0, int y1, int iz, int iw, unsigned int seed, \hyperlink{noise__gen_8cpp_a441130be7f5a19c0c42d44ca9d203f65}{worker\_\-noise\_\-4} noisefunc)
+\item 
+double \hyperlink{noise__gen_8cpp_a32f0aee75b8f299cb683f3115dbab52b}{interp\_\-XYZ\_\-4} (double x, double y, double z, double w, double xs, double ys, double zs, int x0, int x1, int y0, int y1, int z0, int z1, int iw, unsigned int seed, \hyperlink{noise__gen_8cpp_a441130be7f5a19c0c42d44ca9d203f65}{worker\_\-noise\_\-4} noisefunc)
+\item 
+double \hyperlink{noise__gen_8cpp_ab0ebb76d074a132c52d3ac4b1e6a2bd0}{interp\_\-XYZW\_\-4} (double x, double y, double z, double w, double xs, double ys, double zs, double ws, int x0, int x1, int y0, int y1, int z0, int z1, int w0, int w1, unsigned int seed, \hyperlink{noise__gen_8cpp_a441130be7f5a19c0c42d44ca9d203f65}{worker\_\-noise\_\-4} noisefunc)
+\item 
+double \hyperlink{noise__gen_8cpp_a1abab96c0487df244a9170459ba3ab57}{interp\_\-X\_\-6} (double x, double y, double z, double w, double u, double v, double xs, int x0, int x1, int iy, int iz, int iw, int iu, int iv, unsigned int seed, \hyperlink{noise__gen_8cpp_a7e4fca4dda1abd2aa9aa06a9f6879770}{worker\_\-noise\_\-6} noisefunc)
+\item 
+double \hyperlink{noise__gen_8cpp_aae57ab6f7e6a05186da5dc4efb2603ec}{interp\_\-XY\_\-6} (double x, double y, double z, double w, double u, double v, double xs, double ys, int x0, int x1, int y0, int y1, int iz, int iw, int iu, int iv, unsigned int seed, \hyperlink{noise__gen_8cpp_a7e4fca4dda1abd2aa9aa06a9f6879770}{worker\_\-noise\_\-6} noisefunc)
+\item 
+double \hyperlink{noise__gen_8cpp_ac687b5f59fd88cb97902c9f67ecac17d}{interp\_\-XYZ\_\-6} (double x, double y, double z, double w, double u, double v, double xs, double ys, double zs, int x0, int x1, int y0, int y1, int z0, int z1, int iw, int iu, int iv, unsigned int seed, \hyperlink{noise__gen_8cpp_a7e4fca4dda1abd2aa9aa06a9f6879770}{worker\_\-noise\_\-6} noisefunc)
+\item 
+double \hyperlink{noise__gen_8cpp_a846f56bd160215dbb5855b6b89c5151c}{interp\_\-XYZW\_\-6} (double x, double y, double z, double w, double u, double v, double xs, double ys, double zs, double ws, int x0, int x1, int y0, int y1, int z0, int z1, int w0, int w1, int iu, int iv, unsigned int seed, \hyperlink{noise__gen_8cpp_a7e4fca4dda1abd2aa9aa06a9f6879770}{worker\_\-noise\_\-6} noisefunc)
+\item 
+double \hyperlink{noise__gen_8cpp_a6426fe1f96416cd746df727b0710a0f0}{interp\_\-XYZWU\_\-6} (double x, double y, double z, double w, double u, double v, double xs, double ys, double zs, double ws, double us, int x0, int x1, int y0, int y1, int z0, int z1, int w0, int w1, int u0, int u1, int iv, unsigned int seed, \hyperlink{noise__gen_8cpp_a7e4fca4dda1abd2aa9aa06a9f6879770}{worker\_\-noise\_\-6} noisefunc)
+\item 
+double \hyperlink{noise__gen_8cpp_a250f1ddaf530f18614537987001bb9c9}{interp\_\-XYZWUV\_\-6} (double x, double y, double z, double w, double u, double v, double xs, double ys, double zs, double ws, double us, double vs, int x0, int x1, int y0, int y1, int z0, int z1, int w0, int w1, int u0, int u1, int v0, int v1, unsigned int seed, \hyperlink{noise__gen_8cpp_a7e4fca4dda1abd2aa9aa06a9f6879770}{worker\_\-noise\_\-6} noisefunc)
+\item 
+void \hyperlink{noise__gen_8cpp_ab6889d7059f3f08f75f45bdda5bf0e90}{add\_\-dist} (double $\ast$f, double $\ast$disp, double testdist, double testdisp)
+\item 
+bool \hyperlink{noise__gen_8cpp_ac677b4bdf3a24c6b7fe1585354542598}{svec4Compare} (\hyperlink{structSVectorOrdering4}{SVectorOrdering4} v1, \hyperlink{structSVectorOrdering4}{SVectorOrdering4} v2)
+\item 
+bool \hyperlink{noise__gen_8cpp_af11714c961835e31b3b626aa93cb11a0}{vectorOrderingCompare} (\hyperlink{structSVectorOrdering}{SVectorOrdering} v1, \hyperlink{structSVectorOrdering}{SVectorOrdering} v2)
+\item 
+void \hyperlink{noise__gen_8cpp_aeb08da50fb8593b2f19977271182daac}{sortBy\_\-4} (double $\ast$l1, int $\ast$l2)
+\item 
+void \hyperlink{noise__gen_8cpp_aa17e753a97f1fb51bc1bc427b822e63b}{sortBy\_\-6} (double $\ast$l1, int $\ast$l2)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const double \hyperlink{noise__gen_8cpp_a7b9b54bfc263456a72d313b7de53b06a}{F2} = 0.36602540378443864676372317075294
+\item 
+const double \hyperlink{noise__gen_8cpp_a8a4838dfd683145b55433a059128606b}{G2} = 0.21132486540518711774542560974902
+\item 
+const double \hyperlink{noise__gen_8cpp_a5513c9086ad049ed288214ccaa78eba4}{F3} = 1.0/3.0
+\item 
+const double \hyperlink{noise__gen_8cpp_a7be53fa0ffb9905ae9f4dbd6c98ebd0b}{G3} = 1.0/6.0
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{noise__gen_8cpp_a7489fa90eb57a2d7e70485d85490c0cf}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!FNV\_\-32\_\-INIT@{FNV\_\-32\_\-INIT}}
+\index{FNV\_\-32\_\-INIT@{FNV\_\-32\_\-INIT}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{FNV\_\-32\_\-INIT}]{\setlength{\rightskip}{0pt plus 5cm}\#define FNV\_\-32\_\-INIT~((unsigned int )2166136261)}}
+\label{noise__gen_8cpp_a7489fa90eb57a2d7e70485d85490c0cf}
+\hypertarget{noise__gen_8cpp_ae13a6565bea334e9b6fb19033a392857}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!FNV\_\-32\_\-PRIME@{FNV\_\-32\_\-PRIME}}
+\index{FNV\_\-32\_\-PRIME@{FNV\_\-32\_\-PRIME}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{FNV\_\-32\_\-PRIME}]{\setlength{\rightskip}{0pt plus 5cm}\#define FNV\_\-32\_\-PRIME~((unsigned int)0x01000193)}}
+\label{noise__gen_8cpp_ae13a6565bea334e9b6fb19033a392857}
+\hypertarget{noise__gen_8cpp_ab3ee621200e3e2a4936208389ca98cc6}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!FNV\_\-MASK\_\-8@{FNV\_\-MASK\_\-8}}
+\index{FNV\_\-MASK\_\-8@{FNV\_\-MASK\_\-8}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{FNV\_\-MASK\_\-8}]{\setlength{\rightskip}{0pt plus 5cm}\#define FNV\_\-MASK\_\-8~(((unsigned int)1$<$$<$8)-\/1)}}
+\label{noise__gen_8cpp_ab3ee621200e3e2a4936208389ca98cc6}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{noise__gen_8cpp_ac82d663f5a282d9380809786c9e875a1}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!worker\_\-noise\_\-2@{worker\_\-noise\_\-2}}
+\index{worker\_\-noise\_\-2@{worker\_\-noise\_\-2}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{worker\_\-noise\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}typedef double($\ast$ {\bf worker\_\-noise\_\-2})(double, double, int, int, unsigned int)}}
+\label{noise__gen_8cpp_ac82d663f5a282d9380809786c9e875a1}
+\hypertarget{noise__gen_8cpp_a85efee82bc4c890a88f6b82ef3bfb718}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!worker\_\-noise\_\-3@{worker\_\-noise\_\-3}}
+\index{worker\_\-noise\_\-3@{worker\_\-noise\_\-3}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{worker\_\-noise\_\-3}]{\setlength{\rightskip}{0pt plus 5cm}typedef double($\ast$ {\bf worker\_\-noise\_\-3})(double, double, double, int, int, int, unsigned int)}}
+\label{noise__gen_8cpp_a85efee82bc4c890a88f6b82ef3bfb718}
+\hypertarget{noise__gen_8cpp_a441130be7f5a19c0c42d44ca9d203f65}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!worker\_\-noise\_\-4@{worker\_\-noise\_\-4}}
+\index{worker\_\-noise\_\-4@{worker\_\-noise\_\-4}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{worker\_\-noise\_\-4}]{\setlength{\rightskip}{0pt plus 5cm}typedef double($\ast$ {\bf worker\_\-noise\_\-4})(double, double, double, double, int, int, int, int, unsigned int)}}
+\label{noise__gen_8cpp_a441130be7f5a19c0c42d44ca9d203f65}
+\hypertarget{noise__gen_8cpp_a7e4fca4dda1abd2aa9aa06a9f6879770}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!worker\_\-noise\_\-6@{worker\_\-noise\_\-6}}
+\index{worker\_\-noise\_\-6@{worker\_\-noise\_\-6}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{worker\_\-noise\_\-6}]{\setlength{\rightskip}{0pt plus 5cm}typedef double($\ast$ {\bf worker\_\-noise\_\-6})(double, double, double, double, double, double, int, int, int, int, int, int, unsigned int)}}
+\label{noise__gen_8cpp_a7e4fca4dda1abd2aa9aa06a9f6879770}
+
+
+\subsection{Function Documentation}
+\hypertarget{noise__gen_8cpp_ab6889d7059f3f08f75f45bdda5bf0e90}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!add\_\-dist@{add\_\-dist}}
+\index{add\_\-dist@{add\_\-dist}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{add\_\-dist}]{\setlength{\rightskip}{0pt plus 5cm}void add\_\-dist (double $\ast$ {\em f}, \/  double $\ast$ {\em disp}, \/  double {\em testdist}, \/  double {\em testdisp})}}
+\label{noise__gen_8cpp_ab6889d7059f3f08f75f45bdda5bf0e90}
+\hypertarget{noise__gen_8cpp_a78e2b2724a41f29c02fa28f91d621ec6}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!array\_\-dot2@{array\_\-dot2}}
+\index{array\_\-dot2@{array\_\-dot2}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{array\_\-dot2}]{\setlength{\rightskip}{0pt plus 5cm}double array\_\-dot2 (double $\ast$ {\em arr}, \/  double {\em a}, \/  double {\em b})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{noise__gen_8cpp_a78e2b2724a41f29c02fa28f91d621ec6}
+\hypertarget{noise__gen_8cpp_ae99b0a903834acc285151974a8bd33ab}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!array\_\-dot3@{array\_\-dot3}}
+\index{array\_\-dot3@{array\_\-dot3}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{array\_\-dot3}]{\setlength{\rightskip}{0pt plus 5cm}double array\_\-dot3 (double $\ast$ {\em arr}, \/  double {\em a}, \/  double {\em b}, \/  double {\em c})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{noise__gen_8cpp_ae99b0a903834acc285151974a8bd33ab}
+\hypertarget{noise__gen_8cpp_a1ef08bf8e89f93208ea7be83e6c8f443}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!array\_\-dot4@{array\_\-dot4}}
+\index{array\_\-dot4@{array\_\-dot4}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{array\_\-dot4}]{\setlength{\rightskip}{0pt plus 5cm}double array\_\-dot4 (double $\ast$ {\em arr}, \/  double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em w})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{noise__gen_8cpp_a1ef08bf8e89f93208ea7be83e6c8f443}
+\hypertarget{noise__gen_8cpp_a19fe180156410dd139e01f604679b0d3}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!array\_\-dot6@{array\_\-dot6}}
+\index{array\_\-dot6@{array\_\-dot6}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{array\_\-dot6}]{\setlength{\rightskip}{0pt plus 5cm}double array\_\-dot6 (double $\ast$ {\em arr}, \/  double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em w}, \/  double {\em u}, \/  double {\em v})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{noise__gen_8cpp_a19fe180156410dd139e01f604679b0d3}
+\hypertarget{noise__gen_8cpp_a62b94456aebc11ee6ef57e44c808fd00}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!compute\_\-hash\_\-double\_\-2@{compute\_\-hash\_\-double\_\-2}}
+\index{compute\_\-hash\_\-double\_\-2@{compute\_\-hash\_\-double\_\-2}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{compute\_\-hash\_\-double\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int compute\_\-hash\_\-double\_\-2 (double {\em x}, \/  double {\em y}, \/  unsigned int {\em seed})}}
+\label{noise__gen_8cpp_a62b94456aebc11ee6ef57e44c808fd00}
+\hypertarget{noise__gen_8cpp_ac8a44749e5236087d488d0dd121c5e68}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!compute\_\-hash\_\-double\_\-3@{compute\_\-hash\_\-double\_\-3}}
+\index{compute\_\-hash\_\-double\_\-3@{compute\_\-hash\_\-double\_\-3}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{compute\_\-hash\_\-double\_\-3}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int compute\_\-hash\_\-double\_\-3 (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  unsigned int {\em seed})}}
+\label{noise__gen_8cpp_ac8a44749e5236087d488d0dd121c5e68}
+\hypertarget{noise__gen_8cpp_ae0fa44233ca03d5c16e981e6dde5fc92}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!compute\_\-hash\_\-double\_\-4@{compute\_\-hash\_\-double\_\-4}}
+\index{compute\_\-hash\_\-double\_\-4@{compute\_\-hash\_\-double\_\-4}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{compute\_\-hash\_\-double\_\-4}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int compute\_\-hash\_\-double\_\-4 (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em w}, \/  unsigned int {\em seed})}}
+\label{noise__gen_8cpp_ae0fa44233ca03d5c16e981e6dde5fc92}
+\hypertarget{noise__gen_8cpp_ae79c3352a140177d9ee7b1421b877e61}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!compute\_\-hash\_\-double\_\-6@{compute\_\-hash\_\-double\_\-6}}
+\index{compute\_\-hash\_\-double\_\-6@{compute\_\-hash\_\-double\_\-6}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{compute\_\-hash\_\-double\_\-6}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int compute\_\-hash\_\-double\_\-6 (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em w}, \/  double {\em u}, \/  double {\em v}, \/  unsigned int {\em seed})}}
+\label{noise__gen_8cpp_ae79c3352a140177d9ee7b1421b877e61}
+\hypertarget{noise__gen_8cpp_af7011150ebe2159ce2c8f5bfd525bb3e}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!fast\_\-floor@{fast\_\-floor}}
+\index{fast\_\-floor@{fast\_\-floor}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{fast\_\-floor}]{\setlength{\rightskip}{0pt plus 5cm}int fast\_\-floor (double {\em t})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{noise__gen_8cpp_af7011150ebe2159ce2c8f5bfd525bb3e}
+\hypertarget{noise__gen_8cpp_a0e682aa93bd4061e8f5885419de26f16}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!fnv\_\-32\_\-a\_\-buf@{fnv\_\-32\_\-a\_\-buf}}
+\index{fnv\_\-32\_\-a\_\-buf@{fnv\_\-32\_\-a\_\-buf}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{fnv\_\-32\_\-a\_\-buf}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int fnv\_\-32\_\-a\_\-buf (void $\ast$ {\em buf}, \/  unsigned int {\em len})}}
+\label{noise__gen_8cpp_a0e682aa93bd4061e8f5885419de26f16}
+\hypertarget{noise__gen_8cpp_a230c4ec29b88a8e641803c7a6c460fcc}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!grad\_\-noise\_\-2@{grad\_\-noise\_\-2}}
+\index{grad\_\-noise\_\-2@{grad\_\-noise\_\-2}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{grad\_\-noise\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}double grad\_\-noise\_\-2 (double {\em x}, \/  double {\em y}, \/  int {\em ix}, \/  int {\em iy}, \/  unsigned int {\em seed})}}
+\label{noise__gen_8cpp_a230c4ec29b88a8e641803c7a6c460fcc}
+\hypertarget{noise__gen_8cpp_a43746e19cb11324d4f6fd62168207e62}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!grad\_\-noise\_\-3@{grad\_\-noise\_\-3}}
+\index{grad\_\-noise\_\-3@{grad\_\-noise\_\-3}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{grad\_\-noise\_\-3}]{\setlength{\rightskip}{0pt plus 5cm}double grad\_\-noise\_\-3 (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  int {\em ix}, \/  int {\em iy}, \/  int {\em iz}, \/  unsigned int {\em seed})}}
+\label{noise__gen_8cpp_a43746e19cb11324d4f6fd62168207e62}
+\hypertarget{noise__gen_8cpp_a4559df9165f33e18f2b59233291334a3}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!grad\_\-noise\_\-4@{grad\_\-noise\_\-4}}
+\index{grad\_\-noise\_\-4@{grad\_\-noise\_\-4}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{grad\_\-noise\_\-4}]{\setlength{\rightskip}{0pt plus 5cm}double grad\_\-noise\_\-4 (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em w}, \/  int {\em ix}, \/  int {\em iy}, \/  int {\em iz}, \/  int {\em iw}, \/  unsigned int {\em seed})}}
+\label{noise__gen_8cpp_a4559df9165f33e18f2b59233291334a3}
+\hypertarget{noise__gen_8cpp_ab26f06d5ccdf33f825037728481321f8}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!grad\_\-noise\_\-6@{grad\_\-noise\_\-6}}
+\index{grad\_\-noise\_\-6@{grad\_\-noise\_\-6}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{grad\_\-noise\_\-6}]{\setlength{\rightskip}{0pt plus 5cm}double grad\_\-noise\_\-6 (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em w}, \/  double {\em u}, \/  double {\em v}, \/  int {\em ix}, \/  int {\em iy}, \/  int {\em iz}, \/  int {\em iw}, \/  int {\em iu}, \/  int {\em iv}, \/  unsigned int {\em seed})}}
+\label{noise__gen_8cpp_ab26f06d5ccdf33f825037728481321f8}
+\hypertarget{noise__gen_8cpp_a1067e4cea1cd209889089173b73bdc61}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!hash\_\-coords\_\-2@{hash\_\-coords\_\-2}}
+\index{hash\_\-coords\_\-2@{hash\_\-coords\_\-2}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{hash\_\-coords\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int hash\_\-coords\_\-2 (int {\em x}, \/  int {\em y}, \/  unsigned int {\em seed})}}
+\label{noise__gen_8cpp_a1067e4cea1cd209889089173b73bdc61}
+\hypertarget{noise__gen_8cpp_a265d3fd52a05668080d09358b5af49fa}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!hash\_\-coords\_\-3@{hash\_\-coords\_\-3}}
+\index{hash\_\-coords\_\-3@{hash\_\-coords\_\-3}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{hash\_\-coords\_\-3}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int hash\_\-coords\_\-3 (int {\em x}, \/  int {\em y}, \/  int {\em z}, \/  unsigned int {\em seed})}}
+\label{noise__gen_8cpp_a265d3fd52a05668080d09358b5af49fa}
+\hypertarget{noise__gen_8cpp_a8c938ca96cd7acf5f3f223177a5fe65b}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!hash\_\-coords\_\-4@{hash\_\-coords\_\-4}}
+\index{hash\_\-coords\_\-4@{hash\_\-coords\_\-4}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{hash\_\-coords\_\-4}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int hash\_\-coords\_\-4 (int {\em x}, \/  int {\em y}, \/  int {\em z}, \/  int {\em w}, \/  unsigned int {\em seed})}}
+\label{noise__gen_8cpp_a8c938ca96cd7acf5f3f223177a5fe65b}
+\hypertarget{noise__gen_8cpp_a7ddec348b4281397e8ea5efa9fcbeb11}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!hash\_\-coords\_\-6@{hash\_\-coords\_\-6}}
+\index{hash\_\-coords\_\-6@{hash\_\-coords\_\-6}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{hash\_\-coords\_\-6}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int hash\_\-coords\_\-6 (int {\em x}, \/  int {\em y}, \/  int {\em z}, \/  int {\em w}, \/  int {\em u}, \/  int {\em v}, \/  unsigned int {\em seed})}}
+\label{noise__gen_8cpp_a7ddec348b4281397e8ea5efa9fcbeb11}
+\hypertarget{noise__gen_8cpp_ac7f464157c439040ce13541c2c1da1aa}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!interp\_\-X\_\-2@{interp\_\-X\_\-2}}
+\index{interp\_\-X\_\-2@{interp\_\-X\_\-2}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{interp\_\-X\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}double interp\_\-X\_\-2 (double {\em x}, \/  double {\em y}, \/  double {\em xs}, \/  int {\em x0}, \/  int {\em x1}, \/  int {\em iy}, \/  unsigned int {\em seed}, \/  {\bf worker\_\-noise\_\-2} {\em noisefunc})}}
+\label{noise__gen_8cpp_ac7f464157c439040ce13541c2c1da1aa}
+\hypertarget{noise__gen_8cpp_a832b0738c422287678a712e7f6a3478e}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!interp\_\-X\_\-3@{interp\_\-X\_\-3}}
+\index{interp\_\-X\_\-3@{interp\_\-X\_\-3}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{interp\_\-X\_\-3}]{\setlength{\rightskip}{0pt plus 5cm}double interp\_\-X\_\-3 (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em xs}, \/  int {\em x0}, \/  int {\em x1}, \/  int {\em iy}, \/  int {\em iz}, \/  unsigned int {\em seed}, \/  {\bf worker\_\-noise\_\-3} {\em noisefunc})}}
+\label{noise__gen_8cpp_a832b0738c422287678a712e7f6a3478e}
+\hypertarget{noise__gen_8cpp_ad4c9d13df09160224609abbdcfbd607b}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!interp\_\-X\_\-4@{interp\_\-X\_\-4}}
+\index{interp\_\-X\_\-4@{interp\_\-X\_\-4}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{interp\_\-X\_\-4}]{\setlength{\rightskip}{0pt plus 5cm}double interp\_\-X\_\-4 (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em w}, \/  double {\em xs}, \/  int {\em x0}, \/  int {\em x1}, \/  int {\em iy}, \/  int {\em iz}, \/  int {\em iw}, \/  unsigned int {\em seed}, \/  {\bf worker\_\-noise\_\-4} {\em noisefunc})}}
+\label{noise__gen_8cpp_ad4c9d13df09160224609abbdcfbd607b}
+\hypertarget{noise__gen_8cpp_a1abab96c0487df244a9170459ba3ab57}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!interp\_\-X\_\-6@{interp\_\-X\_\-6}}
+\index{interp\_\-X\_\-6@{interp\_\-X\_\-6}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{interp\_\-X\_\-6}]{\setlength{\rightskip}{0pt plus 5cm}double interp\_\-X\_\-6 (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em w}, \/  double {\em u}, \/  double {\em v}, \/  double {\em xs}, \/  int {\em x0}, \/  int {\em x1}, \/  int {\em iy}, \/  int {\em iz}, \/  int {\em iw}, \/  int {\em iu}, \/  int {\em iv}, \/  unsigned int {\em seed}, \/  {\bf worker\_\-noise\_\-6} {\em noisefunc})}}
+\label{noise__gen_8cpp_a1abab96c0487df244a9170459ba3ab57}
+\hypertarget{noise__gen_8cpp_a08189f38e2b6476a6a8f8de74f758ec4}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!interp\_\-XY\_\-2@{interp\_\-XY\_\-2}}
+\index{interp\_\-XY\_\-2@{interp\_\-XY\_\-2}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{interp\_\-XY\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}double interp\_\-XY\_\-2 (double {\em x}, \/  double {\em y}, \/  double {\em xs}, \/  double {\em ys}, \/  int {\em x0}, \/  int {\em x1}, \/  int {\em y0}, \/  int {\em y1}, \/  unsigned int {\em seed}, \/  {\bf worker\_\-noise\_\-2} {\em noisefunc})}}
+\label{noise__gen_8cpp_a08189f38e2b6476a6a8f8de74f758ec4}
+\hypertarget{noise__gen_8cpp_ae736d1ef0af3df62acdbd24d849e18e3}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!interp\_\-XY\_\-3@{interp\_\-XY\_\-3}}
+\index{interp\_\-XY\_\-3@{interp\_\-XY\_\-3}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{interp\_\-XY\_\-3}]{\setlength{\rightskip}{0pt plus 5cm}double interp\_\-XY\_\-3 (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em xs}, \/  double {\em ys}, \/  int {\em x0}, \/  int {\em x1}, \/  int {\em y0}, \/  int {\em y1}, \/  int {\em iz}, \/  unsigned int {\em seed}, \/  {\bf worker\_\-noise\_\-3} {\em noisefunc})}}
+\label{noise__gen_8cpp_ae736d1ef0af3df62acdbd24d849e18e3}
+\hypertarget{noise__gen_8cpp_ac124ec7cbfaf0e817a923d20f515f4a2}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!interp\_\-XY\_\-4@{interp\_\-XY\_\-4}}
+\index{interp\_\-XY\_\-4@{interp\_\-XY\_\-4}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{interp\_\-XY\_\-4}]{\setlength{\rightskip}{0pt plus 5cm}double interp\_\-XY\_\-4 (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em w}, \/  double {\em xs}, \/  double {\em ys}, \/  int {\em x0}, \/  int {\em x1}, \/  int {\em y0}, \/  int {\em y1}, \/  int {\em iz}, \/  int {\em iw}, \/  unsigned int {\em seed}, \/  {\bf worker\_\-noise\_\-4} {\em noisefunc})}}
+\label{noise__gen_8cpp_ac124ec7cbfaf0e817a923d20f515f4a2}
+\hypertarget{noise__gen_8cpp_aae57ab6f7e6a05186da5dc4efb2603ec}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!interp\_\-XY\_\-6@{interp\_\-XY\_\-6}}
+\index{interp\_\-XY\_\-6@{interp\_\-XY\_\-6}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{interp\_\-XY\_\-6}]{\setlength{\rightskip}{0pt plus 5cm}double interp\_\-XY\_\-6 (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em w}, \/  double {\em u}, \/  double {\em v}, \/  double {\em xs}, \/  double {\em ys}, \/  int {\em x0}, \/  int {\em x1}, \/  int {\em y0}, \/  int {\em y1}, \/  int {\em iz}, \/  int {\em iw}, \/  int {\em iu}, \/  int {\em iv}, \/  unsigned int {\em seed}, \/  {\bf worker\_\-noise\_\-6} {\em noisefunc})}}
+\label{noise__gen_8cpp_aae57ab6f7e6a05186da5dc4efb2603ec}
+\hypertarget{noise__gen_8cpp_a8c1ad6db3dd4f3f85a382e9130708c50}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!interp\_\-XYZ\_\-3@{interp\_\-XYZ\_\-3}}
+\index{interp\_\-XYZ\_\-3@{interp\_\-XYZ\_\-3}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{interp\_\-XYZ\_\-3}]{\setlength{\rightskip}{0pt plus 5cm}double interp\_\-XYZ\_\-3 (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em xs}, \/  double {\em ys}, \/  double {\em zs}, \/  int {\em x0}, \/  int {\em x1}, \/  int {\em y0}, \/  int {\em y1}, \/  int {\em z0}, \/  int {\em z1}, \/  unsigned int {\em seed}, \/  {\bf worker\_\-noise\_\-3} {\em noisefunc})}}
+\label{noise__gen_8cpp_a8c1ad6db3dd4f3f85a382e9130708c50}
+\hypertarget{noise__gen_8cpp_a32f0aee75b8f299cb683f3115dbab52b}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!interp\_\-XYZ\_\-4@{interp\_\-XYZ\_\-4}}
+\index{interp\_\-XYZ\_\-4@{interp\_\-XYZ\_\-4}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{interp\_\-XYZ\_\-4}]{\setlength{\rightskip}{0pt plus 5cm}double interp\_\-XYZ\_\-4 (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em w}, \/  double {\em xs}, \/  double {\em ys}, \/  double {\em zs}, \/  int {\em x0}, \/  int {\em x1}, \/  int {\em y0}, \/  int {\em y1}, \/  int {\em z0}, \/  int {\em z1}, \/  int {\em iw}, \/  unsigned int {\em seed}, \/  {\bf worker\_\-noise\_\-4} {\em noisefunc})}}
+\label{noise__gen_8cpp_a32f0aee75b8f299cb683f3115dbab52b}
+\hypertarget{noise__gen_8cpp_ac687b5f59fd88cb97902c9f67ecac17d}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!interp\_\-XYZ\_\-6@{interp\_\-XYZ\_\-6}}
+\index{interp\_\-XYZ\_\-6@{interp\_\-XYZ\_\-6}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{interp\_\-XYZ\_\-6}]{\setlength{\rightskip}{0pt plus 5cm}double interp\_\-XYZ\_\-6 (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em w}, \/  double {\em u}, \/  double {\em v}, \/  double {\em xs}, \/  double {\em ys}, \/  double {\em zs}, \/  int {\em x0}, \/  int {\em x1}, \/  int {\em y0}, \/  int {\em y1}, \/  int {\em z0}, \/  int {\em z1}, \/  int {\em iw}, \/  int {\em iu}, \/  int {\em iv}, \/  unsigned int {\em seed}, \/  {\bf worker\_\-noise\_\-6} {\em noisefunc})}}
+\label{noise__gen_8cpp_ac687b5f59fd88cb97902c9f67ecac17d}
+\hypertarget{noise__gen_8cpp_ab0ebb76d074a132c52d3ac4b1e6a2bd0}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!interp\_\-XYZW\_\-4@{interp\_\-XYZW\_\-4}}
+\index{interp\_\-XYZW\_\-4@{interp\_\-XYZW\_\-4}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{interp\_\-XYZW\_\-4}]{\setlength{\rightskip}{0pt plus 5cm}double interp\_\-XYZW\_\-4 (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em w}, \/  double {\em xs}, \/  double {\em ys}, \/  double {\em zs}, \/  double {\em ws}, \/  int {\em x0}, \/  int {\em x1}, \/  int {\em y0}, \/  int {\em y1}, \/  int {\em z0}, \/  int {\em z1}, \/  int {\em w0}, \/  int {\em w1}, \/  unsigned int {\em seed}, \/  {\bf worker\_\-noise\_\-4} {\em noisefunc})}}
+\label{noise__gen_8cpp_ab0ebb76d074a132c52d3ac4b1e6a2bd0}
+\hypertarget{noise__gen_8cpp_a846f56bd160215dbb5855b6b89c5151c}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!interp\_\-XYZW\_\-6@{interp\_\-XYZW\_\-6}}
+\index{interp\_\-XYZW\_\-6@{interp\_\-XYZW\_\-6}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{interp\_\-XYZW\_\-6}]{\setlength{\rightskip}{0pt plus 5cm}double interp\_\-XYZW\_\-6 (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em w}, \/  double {\em u}, \/  double {\em v}, \/  double {\em xs}, \/  double {\em ys}, \/  double {\em zs}, \/  double {\em ws}, \/  int {\em x0}, \/  int {\em x1}, \/  int {\em y0}, \/  int {\em y1}, \/  int {\em z0}, \/  int {\em z1}, \/  int {\em w0}, \/  int {\em w1}, \/  int {\em iu}, \/  int {\em iv}, \/  unsigned int {\em seed}, \/  {\bf worker\_\-noise\_\-6} {\em noisefunc})}}
+\label{noise__gen_8cpp_a846f56bd160215dbb5855b6b89c5151c}
+\hypertarget{noise__gen_8cpp_a6426fe1f96416cd746df727b0710a0f0}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!interp\_\-XYZWU\_\-6@{interp\_\-XYZWU\_\-6}}
+\index{interp\_\-XYZWU\_\-6@{interp\_\-XYZWU\_\-6}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{interp\_\-XYZWU\_\-6}]{\setlength{\rightskip}{0pt plus 5cm}double interp\_\-XYZWU\_\-6 (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em w}, \/  double {\em u}, \/  double {\em v}, \/  double {\em xs}, \/  double {\em ys}, \/  double {\em zs}, \/  double {\em ws}, \/  double {\em us}, \/  int {\em x0}, \/  int {\em x1}, \/  int {\em y0}, \/  int {\em y1}, \/  int {\em z0}, \/  int {\em z1}, \/  int {\em w0}, \/  int {\em w1}, \/  int {\em u0}, \/  int {\em u1}, \/  int {\em iv}, \/  unsigned int {\em seed}, \/  {\bf worker\_\-noise\_\-6} {\em noisefunc})}}
+\label{noise__gen_8cpp_a6426fe1f96416cd746df727b0710a0f0}
+\hypertarget{noise__gen_8cpp_a250f1ddaf530f18614537987001bb9c9}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!interp\_\-XYZWUV\_\-6@{interp\_\-XYZWUV\_\-6}}
+\index{interp\_\-XYZWUV\_\-6@{interp\_\-XYZWUV\_\-6}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{interp\_\-XYZWUV\_\-6}]{\setlength{\rightskip}{0pt plus 5cm}double interp\_\-XYZWUV\_\-6 (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em w}, \/  double {\em u}, \/  double {\em v}, \/  double {\em xs}, \/  double {\em ys}, \/  double {\em zs}, \/  double {\em ws}, \/  double {\em us}, \/  double {\em vs}, \/  int {\em x0}, \/  int {\em x1}, \/  int {\em y0}, \/  int {\em y1}, \/  int {\em z0}, \/  int {\em z1}, \/  int {\em w0}, \/  int {\em w1}, \/  int {\em u0}, \/  int {\em u1}, \/  int {\em v0}, \/  int {\em v1}, \/  unsigned int {\em seed}, \/  {\bf worker\_\-noise\_\-6} {\em noisefunc})}}
+\label{noise__gen_8cpp_a250f1ddaf530f18614537987001bb9c9}
+\hypertarget{noise__gen_8cpp_ad76009a3657b109e56123bc986e9b923}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!lerp@{lerp}}
+\index{lerp@{lerp}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{lerp}]{\setlength{\rightskip}{0pt plus 5cm}double lerp (double {\em s}, \/  double {\em v1}, \/  double {\em v2})}}
+\label{noise__gen_8cpp_ad76009a3657b109e56123bc986e9b923}
+\hypertarget{noise__gen_8cpp_aeb08da50fb8593b2f19977271182daac}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!sortBy\_\-4@{sortBy\_\-4}}
+\index{sortBy\_\-4@{sortBy\_\-4}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{sortBy\_\-4}]{\setlength{\rightskip}{0pt plus 5cm}void sortBy\_\-4 (double $\ast$ {\em l1}, \/  int $\ast$ {\em l2})}}
+\label{noise__gen_8cpp_aeb08da50fb8593b2f19977271182daac}
+\hypertarget{noise__gen_8cpp_aa17e753a97f1fb51bc1bc427b822e63b}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!sortBy\_\-6@{sortBy\_\-6}}
+\index{sortBy\_\-6@{sortBy\_\-6}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{sortBy\_\-6}]{\setlength{\rightskip}{0pt plus 5cm}void sortBy\_\-6 (double $\ast$ {\em l1}, \/  int $\ast$ {\em l2})}}
+\label{noise__gen_8cpp_aa17e753a97f1fb51bc1bc427b822e63b}
+\hypertarget{noise__gen_8cpp_ac677b4bdf3a24c6b7fe1585354542598}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!svec4Compare@{svec4Compare}}
+\index{svec4Compare@{svec4Compare}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{svec4Compare}]{\setlength{\rightskip}{0pt plus 5cm}bool svec4Compare ({\bf SVectorOrdering4} {\em v1}, \/  {\bf SVectorOrdering4} {\em v2})}}
+\label{noise__gen_8cpp_ac677b4bdf3a24c6b7fe1585354542598}
+\hypertarget{noise__gen_8cpp_a78428392bdf4b379d872a1ad2c4d0f23}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!value\_\-noise\_\-2@{value\_\-noise\_\-2}}
+\index{value\_\-noise\_\-2@{value\_\-noise\_\-2}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{value\_\-noise\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}double value\_\-noise\_\-2 (double {\em x}, \/  double {\em y}, \/  int {\em ix}, \/  int {\em iy}, \/  unsigned int {\em seed})}}
+\label{noise__gen_8cpp_a78428392bdf4b379d872a1ad2c4d0f23}
+\hypertarget{noise__gen_8cpp_a18db93f296b2885c8e49876d163f93a9}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!value\_\-noise\_\-3@{value\_\-noise\_\-3}}
+\index{value\_\-noise\_\-3@{value\_\-noise\_\-3}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{value\_\-noise\_\-3}]{\setlength{\rightskip}{0pt plus 5cm}double value\_\-noise\_\-3 (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  int {\em ix}, \/  int {\em iy}, \/  int {\em iz}, \/  unsigned int {\em seed})}}
+\label{noise__gen_8cpp_a18db93f296b2885c8e49876d163f93a9}
+\hypertarget{noise__gen_8cpp_aa7c56a474a4b3004434d346f83560d8d}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!value\_\-noise\_\-4@{value\_\-noise\_\-4}}
+\index{value\_\-noise\_\-4@{value\_\-noise\_\-4}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{value\_\-noise\_\-4}]{\setlength{\rightskip}{0pt plus 5cm}double value\_\-noise\_\-4 (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em w}, \/  int {\em ix}, \/  int {\em iy}, \/  int {\em iz}, \/  int {\em iw}, \/  unsigned int {\em seed})}}
+\label{noise__gen_8cpp_aa7c56a474a4b3004434d346f83560d8d}
+\hypertarget{noise__gen_8cpp_a8779a7bbc58ada047c294be2d173f729}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!value\_\-noise\_\-6@{value\_\-noise\_\-6}}
+\index{value\_\-noise\_\-6@{value\_\-noise\_\-6}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{value\_\-noise\_\-6}]{\setlength{\rightskip}{0pt plus 5cm}double value\_\-noise\_\-6 (double {\em x}, \/  double {\em y}, \/  double {\em z}, \/  double {\em w}, \/  double {\em u}, \/  double {\em v}, \/  int {\em ix}, \/  int {\em iy}, \/  int {\em iz}, \/  int {\em iw}, \/  int {\em iu}, \/  int {\em iv}, \/  unsigned int {\em seed})}}
+\label{noise__gen_8cpp_a8779a7bbc58ada047c294be2d173f729}
+\hypertarget{noise__gen_8cpp_af11714c961835e31b3b626aa93cb11a0}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!vectorOrderingCompare@{vectorOrderingCompare}}
+\index{vectorOrderingCompare@{vectorOrderingCompare}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{vectorOrderingCompare}]{\setlength{\rightskip}{0pt plus 5cm}bool vectorOrderingCompare ({\bf SVectorOrdering} {\em v1}, \/  {\bf SVectorOrdering} {\em v2})}}
+\label{noise__gen_8cpp_af11714c961835e31b3b626aa93cb11a0}
+\hypertarget{noise__gen_8cpp_af63a262e4a7ba23768ca15f747e931c1}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!xor\_\-fold\_\-hash@{xor\_\-fold\_\-hash}}
+\index{xor\_\-fold\_\-hash@{xor\_\-fold\_\-hash}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{xor\_\-fold\_\-hash}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char xor\_\-fold\_\-hash (unsigned int {\em hash})}}
+\label{noise__gen_8cpp_af63a262e4a7ba23768ca15f747e931c1}
+
+
+\subsection{Variable Documentation}
+\hypertarget{noise__gen_8cpp_a7b9b54bfc263456a72d313b7de53b06a}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!F2@{F2}}
+\index{F2@{F2}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{F2}]{\setlength{\rightskip}{0pt plus 5cm}const double {\bf F2} = 0.36602540378443864676372317075294}}
+\label{noise__gen_8cpp_a7b9b54bfc263456a72d313b7de53b06a}
+\hypertarget{noise__gen_8cpp_a5513c9086ad049ed288214ccaa78eba4}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!F3@{F3}}
+\index{F3@{F3}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{F3}]{\setlength{\rightskip}{0pt plus 5cm}const double {\bf F3} = 1.0/3.0}}
+\label{noise__gen_8cpp_a5513c9086ad049ed288214ccaa78eba4}
+\hypertarget{noise__gen_8cpp_a8a4838dfd683145b55433a059128606b}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!G2@{G2}}
+\index{G2@{G2}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{G2}]{\setlength{\rightskip}{0pt plus 5cm}const double {\bf G2} = 0.21132486540518711774542560974902}}
+\label{noise__gen_8cpp_a8a4838dfd683145b55433a059128606b}
+\hypertarget{noise__gen_8cpp_a7be53fa0ffb9905ae9f4dbd6c98ebd0b}{
+\index{noise\_\-gen.cpp@{noise\_\-gen.cpp}!G3@{G3}}
+\index{G3@{G3}!noise_gen.cpp@{noise\_\-gen.cpp}}
+\subsubsection[{G3}]{\setlength{\rightskip}{0pt plus 5cm}const double {\bf G3} = 1.0/6.0}}
+\label{noise__gen_8cpp_a7be53fa0ffb9905ae9f4dbd6c98ebd0b}

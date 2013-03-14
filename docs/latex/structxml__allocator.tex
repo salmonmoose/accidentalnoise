@@ -1,0 +1,103 @@
+\hypertarget{structxml__allocator}{
+\section{xml\_\-allocator Struct Reference}
+\label{structxml__allocator}\index{xml\_\-allocator@{xml\_\-allocator}}
+}
+Inheritance diagram for xml\_\-allocator::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{structxml__allocator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structxml__allocator_ad41b1a18595953aa71a470b45921c0fd}{xml\_\-allocator} (\hyperlink{structxml__memory__page}{xml\_\-memory\_\-page} $\ast$root)
+\item 
+\hyperlink{structxml__memory__page}{xml\_\-memory\_\-page} $\ast$ \hyperlink{structxml__allocator_a4b399b01e530220ec5849b912b84063b}{allocate\_\-page} (size\_\-t data\_\-size)
+\item 
+void $\ast$ \hyperlink{structxml__allocator_a30bb557bc040de54c041c6d3dca6772e}{allocate\_\-memory\_\-oob} (size\_\-t size, \hyperlink{structxml__memory__page}{xml\_\-memory\_\-page} $\ast$\&out\_\-page)
+\item 
+void $\ast$ \hyperlink{structxml__allocator_afac0b9fac2c2962972f60d0346eb4f39}{allocate\_\-memory} (size\_\-t size, \hyperlink{structxml__memory__page}{xml\_\-memory\_\-page} $\ast$\&out\_\-page)
+\item 
+void \hyperlink{structxml__allocator_a5df417155487cce4e0460b123ac33dc6}{deallocate\_\-memory} (void $\ast$ptr, size\_\-t size, \hyperlink{structxml__memory__page}{xml\_\-memory\_\-page} $\ast$page)
+\item 
+char\_\-t $\ast$ \hyperlink{structxml__allocator_ac5ec2b5d41672d6494a2742e95e525b3}{allocate\_\-string} (size\_\-t length)
+\item 
+void \hyperlink{structxml__allocator_af32c538db4d562c2d0bfe15f7c0aa879}{deallocate\_\-string} (char\_\-t $\ast$string)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{structxml__allocator_a1c6bfe15a257a094f55659f8d71c209e}{deallocate\_\-page} (\hyperlink{structxml__memory__page}{xml\_\-memory\_\-page} $\ast$page)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structxml__memory__page}{xml\_\-memory\_\-page} $\ast$ \hyperlink{structxml__allocator_a38082e85b23743620a257f997a00bb69}{\_\-root}
+\item 
+size\_\-t \hyperlink{structxml__allocator_a4908b4aaa8cbbc3bf936ab8a938053c0}{\_\-busy\_\-size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structxml__allocator_ad41b1a18595953aa71a470b45921c0fd}{
+\index{xml\_\-allocator@{xml\_\-allocator}!xml\_\-allocator@{xml\_\-allocator}}
+\index{xml\_\-allocator@{xml\_\-allocator}!xml_allocator@{xml\_\-allocator}}
+\subsubsection[{xml\_\-allocator}]{\setlength{\rightskip}{0pt plus 5cm}xml\_\-allocator::xml\_\-allocator ({\bf xml\_\-memory\_\-page} $\ast$ {\em root})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{structxml__allocator_ad41b1a18595953aa71a470b45921c0fd}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structxml__allocator_afac0b9fac2c2962972f60d0346eb4f39}{
+\index{xml\_\-allocator@{xml\_\-allocator}!allocate\_\-memory@{allocate\_\-memory}}
+\index{allocate\_\-memory@{allocate\_\-memory}!xml_allocator@{xml\_\-allocator}}
+\subsubsection[{allocate\_\-memory}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ xml\_\-allocator::allocate\_\-memory (size\_\-t {\em size}, \/  {\bf xml\_\-memory\_\-page} $\ast$\& {\em out\_\-page})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{structxml__allocator_afac0b9fac2c2962972f60d0346eb4f39}
+\hypertarget{structxml__allocator_a30bb557bc040de54c041c6d3dca6772e}{
+\index{xml\_\-allocator@{xml\_\-allocator}!allocate\_\-memory\_\-oob@{allocate\_\-memory\_\-oob}}
+\index{allocate\_\-memory\_\-oob@{allocate\_\-memory\_\-oob}!xml_allocator@{xml\_\-allocator}}
+\subsubsection[{allocate\_\-memory\_\-oob}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN\_\-NO\_\-INLINE void $\ast$ xml\_\-allocator::allocate\_\-memory\_\-oob (size\_\-t {\em size}, \/  {\bf xml\_\-memory\_\-page} $\ast$\& {\em out\_\-page})}}
+\label{structxml__allocator_a30bb557bc040de54c041c6d3dca6772e}
+\hypertarget{structxml__allocator_a4b399b01e530220ec5849b912b84063b}{
+\index{xml\_\-allocator@{xml\_\-allocator}!allocate\_\-page@{allocate\_\-page}}
+\index{allocate\_\-page@{allocate\_\-page}!xml_allocator@{xml\_\-allocator}}
+\subsubsection[{allocate\_\-page}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xml\_\-memory\_\-page}$\ast$ xml\_\-allocator::allocate\_\-page (size\_\-t {\em data\_\-size})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{structxml__allocator_a4b399b01e530220ec5849b912b84063b}
+\hypertarget{structxml__allocator_ac5ec2b5d41672d6494a2742e95e525b3}{
+\index{xml\_\-allocator@{xml\_\-allocator}!allocate\_\-string@{allocate\_\-string}}
+\index{allocate\_\-string@{allocate\_\-string}!xml_allocator@{xml\_\-allocator}}
+\subsubsection[{allocate\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}char\_\-t$\ast$ xml\_\-allocator::allocate\_\-string (size\_\-t {\em length})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{structxml__allocator_ac5ec2b5d41672d6494a2742e95e525b3}
+\hypertarget{structxml__allocator_a5df417155487cce4e0460b123ac33dc6}{
+\index{xml\_\-allocator@{xml\_\-allocator}!deallocate\_\-memory@{deallocate\_\-memory}}
+\index{deallocate\_\-memory@{deallocate\_\-memory}!xml_allocator@{xml\_\-allocator}}
+\subsubsection[{deallocate\_\-memory}]{\setlength{\rightskip}{0pt plus 5cm}void xml\_\-allocator::deallocate\_\-memory (void $\ast$ {\em ptr}, \/  size\_\-t {\em size}, \/  {\bf xml\_\-memory\_\-page} $\ast$ {\em page})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{structxml__allocator_a5df417155487cce4e0460b123ac33dc6}
+\hypertarget{structxml__allocator_a1c6bfe15a257a094f55659f8d71c209e}{
+\index{xml\_\-allocator@{xml\_\-allocator}!deallocate\_\-page@{deallocate\_\-page}}
+\index{deallocate\_\-page@{deallocate\_\-page}!xml_allocator@{xml\_\-allocator}}
+\subsubsection[{deallocate\_\-page}]{\setlength{\rightskip}{0pt plus 5cm}static void xml\_\-allocator::deallocate\_\-page ({\bf xml\_\-memory\_\-page} $\ast$ {\em page})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{structxml__allocator_a1c6bfe15a257a094f55659f8d71c209e}
+\hypertarget{structxml__allocator_af32c538db4d562c2d0bfe15f7c0aa879}{
+\index{xml\_\-allocator@{xml\_\-allocator}!deallocate\_\-string@{deallocate\_\-string}}
+\index{deallocate\_\-string@{deallocate\_\-string}!xml_allocator@{xml\_\-allocator}}
+\subsubsection[{deallocate\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}void xml\_\-allocator::deallocate\_\-string (char\_\-t $\ast$ {\em string})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{structxml__allocator_af32c538db4d562c2d0bfe15f7c0aa879}
+
+
+\subsection{Field Documentation}
+\hypertarget{structxml__allocator_a4908b4aaa8cbbc3bf936ab8a938053c0}{
+\index{xml\_\-allocator@{xml\_\-allocator}!\_\-busy\_\-size@{\_\-busy\_\-size}}
+\index{\_\-busy\_\-size@{\_\-busy\_\-size}!xml_allocator@{xml\_\-allocator}}
+\subsubsection[{\_\-busy\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf xml\_\-allocator::\_\-busy\_\-size}}}
+\label{structxml__allocator_a4908b4aaa8cbbc3bf936ab8a938053c0}
+\hypertarget{structxml__allocator_a38082e85b23743620a257f997a00bb69}{
+\index{xml\_\-allocator@{xml\_\-allocator}!\_\-root@{\_\-root}}
+\index{\_\-root@{\_\-root}!xml_allocator@{xml\_\-allocator}}
+\subsubsection[{\_\-root}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xml\_\-memory\_\-page}$\ast$ {\bf xml\_\-allocator::\_\-root}}}
+\label{structxml__allocator_a38082e85b23743620a257f997a00bb69}
+
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{pugixml_8cpp}{pugixml.cpp}\end{DoxyCompactItemize}

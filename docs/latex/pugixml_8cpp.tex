@@ -1,0 +1,2033 @@
+\hypertarget{pugixml_8cpp}{
+\section{src/pugixml.cpp File Reference}
+\label{pugixml_8cpp}\index{src/pugixml.cpp@{src/pugixml.cpp}}
+}
+{\ttfamily \#include \char`\"{}pugixml.hpp\char`\"{}}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include $<$assert.h$>$}\par
+{\ttfamily \#include $<$wchar.h$>$}\par
+{\ttfamily \#include $<$math.h$>$}\par
+{\ttfamily \#include $<$float.h$>$}\par
+{\ttfamily \#include $<$istream$>$}\par
+{\ttfamily \#include $<$ostream$>$}\par
+{\ttfamily \#include $<$string$>$}\par
+{\ttfamily \#include $<$new$>$}\par
+{\ttfamily \#include $<$stdint.h$>$}\par
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structxml__memory__management__function__storage}{xml\_\-memory\_\-management\_\-function\_\-storage$<$ T $>$}
+\item 
+struct \hyperlink{structbuffer__holder}{buffer\_\-holder}
+\item 
+struct \hyperlink{structxml__memory__page}{xml\_\-memory\_\-page}
+\item 
+struct \hyperlink{structxml__memory__string__header}{xml\_\-memory\_\-string\_\-header}
+\item 
+struct \hyperlink{structxml__allocator}{xml\_\-allocator}
+\item 
+struct \hyperlink{structpugi_1_1xml__attribute__struct}{pugi::xml\_\-attribute\_\-struct}
+\begin{DoxyCompactList}\small\item\em A 'name=value' XML attribute structure. \item\end{DoxyCompactList}\item 
+struct \hyperlink{structpugi_1_1xml__node__struct}{pugi::xml\_\-node\_\-struct}
+\begin{DoxyCompactList}\small\item\em An XML document tree node. \item\end{DoxyCompactList}\item 
+struct \hyperlink{structxml__document__struct}{xml\_\-document\_\-struct}
+\item 
+struct \hyperlink{structopt__false}{opt\_\-false}
+\item 
+struct \hyperlink{structopt__true}{opt\_\-true}
+\item 
+struct \hyperlink{structutf8__counter}{utf8\_\-counter}
+\item 
+struct \hyperlink{structutf8__writer}{utf8\_\-writer}
+\item 
+struct \hyperlink{structutf16__counter}{utf16\_\-counter}
+\item 
+struct \hyperlink{structutf16__writer}{utf16\_\-writer}
+\item 
+struct \hyperlink{structutf32__counter}{utf32\_\-counter}
+\item 
+struct \hyperlink{structutf32__writer}{utf32\_\-writer}
+\item 
+struct \hyperlink{structlatin1__writer}{latin1\_\-writer}
+\item 
+struct \hyperlink{structwchar__selector_3_012_01_4}{wchar\_\-selector$<$ 2 $>$}
+\item 
+struct \hyperlink{structwchar__selector_3_014_01_4}{wchar\_\-selector$<$ 4 $>$}
+\item 
+struct \hyperlink{structutf__decoder}{utf\_\-decoder$<$ Traits, opt\_\-swap $>$}
+\item 
+struct \hyperlink{structgap}{gap}
+\item 
+struct \hyperlink{structstrconv__pcdata__impl}{strconv\_\-pcdata\_\-impl$<$ opt\_\-eol, opt\_\-escape $>$}
+\item 
+struct \hyperlink{structstrconv__attribute__impl}{strconv\_\-attribute\_\-impl$<$ opt\_\-escape $>$}
+\item 
+struct \hyperlink{structxml__parser}{xml\_\-parser}
+\item 
+class \hyperlink{classxml__buffered__writer}{xml\_\-buffered\_\-writer}
+\item 
+struct \hyperlink{structxml__stream__chunk}{xml\_\-stream\_\-chunk$<$ T $>$}
+\item 
+struct \hyperlink{structequal__to}{equal\_\-to}
+\item 
+struct \hyperlink{structnot__equal__to}{not\_\-equal\_\-to}
+\item 
+struct \hyperlink{structless}{less}
+\item 
+struct \hyperlink{structless__equal}{less\_\-equal}
+\item 
+struct \hyperlink{structxpath__memory__block}{xpath\_\-memory\_\-block}
+\item 
+class \hyperlink{classxpath__allocator}{xpath\_\-allocator}
+\item 
+struct \hyperlink{structxpath__allocator__capture}{xpath\_\-allocator\_\-capture}
+\item 
+struct \hyperlink{structxpath__stack}{xpath\_\-stack}
+\item 
+struct \hyperlink{structxpath__stack__data}{xpath\_\-stack\_\-data}
+\item 
+class \hyperlink{classxpath__string}{xpath\_\-string}
+\item 
+struct \hyperlink{structdocument__order__comparator}{document\_\-order\_\-comparator}
+\item 
+struct \hyperlink{structduplicate__comparator}{duplicate\_\-comparator}
+\item 
+struct \hyperlink{structnamespace__uri__predicate}{namespace\_\-uri\_\-predicate}
+\item 
+struct \hyperlink{structxpath__variable__boolean}{xpath\_\-variable\_\-boolean}
+\item 
+struct \hyperlink{structxpath__variable__number}{xpath\_\-variable\_\-number}
+\item 
+struct \hyperlink{structxpath__variable__string}{xpath\_\-variable\_\-string}
+\item 
+struct \hyperlink{structxpath__variable__node__set}{xpath\_\-variable\_\-node\_\-set}
+\item 
+class \hyperlink{classxpath__node__set__raw}{xpath\_\-node\_\-set\_\-raw}
+\item 
+struct \hyperlink{structxpath__context}{xpath\_\-context}
+\item 
+struct \hyperlink{structxpath__lexer__string}{xpath\_\-lexer\_\-string}
+\item 
+class \hyperlink{classxpath__lexer}{xpath\_\-lexer}
+\item 
+struct \hyperlink{structaxis__to__type}{axis\_\-to\_\-type$<$ N $>$}
+\item 
+class \hyperlink{classxpath__ast__node}{xpath\_\-ast\_\-node}
+\item 
+struct \hyperlink{structxpath__parser}{xpath\_\-parser}
+\item 
+struct \hyperlink{structxpath__query__impl}{xpath\_\-query\_\-impl}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespacepugi}{pugi}
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{pugixml_8cpp_afd532a3c78b5b7c68f199a24fbc4adb5}{PUGI\_\-\_\-NO\_\-INLINE}
+\item 
+\#define \hyperlink{pugixml_8cpp_a7d1280c499f3355965242c431435a695}{PUGI\_\-\_\-STATIC\_\-ASSERT}(cond)~\{ static const char condition\_\-failed\mbox{[}(cond) ? 1 : -\/1\mbox{]} = \{0\}; (void)condition\_\-failed\mbox{[}0\mbox{]}; \}
+\item 
+\#define \hyperlink{pugixml_8cpp_a88b7ffa81185df00606d7f2f1dad938b}{PUGI\_\-\_\-DMC\_\-VOLATILE}
+\item 
+\#define \hyperlink{pugixml_8cpp_a7e613f6e5b9aa563d9d2d1f079d9be29}{PUGI\_\-\_\-NS\_\-BEGIN}~namespace pugi \{ namespace impl \{ namespace \{
+\item 
+\#define \hyperlink{pugixml_8cpp_aa426d55daea96845bc154f5a7a71ecc4}{PUGI\_\-\_\-NS\_\-END}~\} \} \}
+\item 
+\#define \hyperlink{pugixml_8cpp_a82c335af3ca48cdb209c506bf8dd6ad2}{PUGI\_\-\_\-FN}
+\item 
+\#define \hyperlink{pugixml_8cpp_a7c7ac48a50c2216e26d1c089d42b0b86}{PUGI\_\-\_\-FN\_\-NO\_\-INLINE}~PUGI\_\-\_\-NO\_\-INLINE
+\item 
+\#define \hyperlink{pugixml_8cpp_abc4e05b3f9f04b44e6bd3ba6a7f1b24d}{PUGI\_\-\_\-IS\_\-CHARTYPE\_\-IMPL}(c, ct, table)~(table\mbox{[}static\_\-cast$<$unsigned char$>$(c)\mbox{]} \& (ct))
+\item 
+\#define \hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\-\_\-IS\_\-CHARTYPE}(c, ct)~PUGI\_\-\_\-IS\_\-CHARTYPE\_\-IMPL(c, ct, \hyperlink{pugixml_8cpp_a6acb2529321dd30b6f3a8c34e88edb1c}{chartype\_\-table})
+\item 
+\#define \hyperlink{pugixml_8cpp_a4ce684b35edc78e6fda91e836f29a46c}{PUGI\_\-\_\-IS\_\-CHARTYPEX}(c, ct)~PUGI\_\-\_\-IS\_\-CHARTYPE\_\-IMPL(c, ct, \hyperlink{pugixml_8cpp_a5671e1188ce92b80a289fc6b9bf72598}{chartypex\_\-table})
+\item 
+\#define \hyperlink{pugixml_8cpp_a3a72d0b2c0e7f99940ce8fbcc69e532f}{ENDSWITH}(c, e)~((c) == (e) $|$$|$ ((c) == 0 \&\& endch == (e)))
+\item 
+\#define \hyperlink{pugixml_8cpp_a87d9805caf644d370bb8e8faa2a1f887}{PUGI\_\-\_\-SKIPWS}()~\{ while (PUGI\_\-\_\-IS\_\-CHARTYPE($\ast$s, ct\_\-space)) ++s; \}
+\item 
+\#define \hyperlink{pugixml_8cpp_a06966692c7864407ceffff065b4d7da2}{PUGI\_\-\_\-OPTSET}(OPT)~( optmsk \& (OPT) )
+\item 
+\#define \hyperlink{pugixml_8cpp_accdd212cd2831662c3c2dda668246f8a}{PUGI\_\-\_\-PUSHNODE}(TYPE)~\{ cursor = append\_\-node(cursor, alloc, TYPE); if (!cursor) PUGI\_\-\_\-THROW\_\-ERROR(status\_\-out\_\-of\_\-memory, s); \}
+\item 
+\#define \hyperlink{pugixml_8cpp_ab82f13ed99cc2d22c5ecb6e18b5dfe17}{PUGI\_\-\_\-POPNODE}()~\{ cursor = cursor-\/$>$parent; \}
+\item 
+\#define \hyperlink{pugixml_8cpp_a98386e86f2c7e7e477939d209a5bbf7e}{PUGI\_\-\_\-SCANFOR}(X)~\{ while ($\ast$s != 0 \&\& !(X)) ++s; \}
+\item 
+\#define \hyperlink{pugixml_8cpp_adfcdc54e9f7e0f2d3927b4a7690abf2a}{PUGI\_\-\_\-SCANWHILE}(X)~\{ while ((X)) ++s; \}
+\item 
+\#define \hyperlink{pugixml_8cpp_a39554337dd1d0fef32ddf9926ee4e4ae}{PUGI\_\-\_\-ENDSEG}()~\{ ch = $\ast$s; $\ast$s = 0; ++s; \}
+\item 
+\#define \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\-\_\-THROW\_\-ERROR}(err, m)~return error\_\-offset = m, error\_\-status = err, static\_\-cast$<$char\_\-t$\ast$$>$(0)
+\item 
+\#define \hyperlink{pugixml_8cpp_a03531d9b3c74f0843567257537edfd53}{PUGI\_\-\_\-CHECK\_\-ERROR}(err, m)~\{ if ($\ast$s == 0) PUGI\_\-\_\-THROW\_\-ERROR(err, m); \}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structxml__memory__management__function__storage}{xml\_\-memory\_\-management\_\-function\_\-storage}$<$ int $>$ \hyperlink{pugixml_8cpp_a619af209df810abfa72ce738336d7b88}{xml\_\-memory}
+\item 
+typedef wchar\_\-selector$<$ sizeof(wchar\_\-t)$>$::counter \hyperlink{pugixml_8cpp_a48af51bcb239f88a85b75a71229c5876}{wchar\_\-counter}
+\item 
+typedef wchar\_\-selector$<$ sizeof(wchar\_\-t)$>$::writer \hyperlink{pugixml_8cpp_a1cf0e4fd8c6a8fb58bb0378e86c36936}{wchar\_\-writer}
+\item 
+typedef char\_\-t $\ast$($\ast$ \hyperlink{pugixml_8cpp_aafccd3afb496514b0e76d81164955c28}{strconv\_\-pcdata\_\-t} )(char\_\-t $\ast$)
+\item 
+typedef char\_\-t $\ast$($\ast$ \hyperlink{pugixml_8cpp_ab7ee7f946a7c5e9821fab22ef05fc0ed}{strconv\_\-attribute\_\-t} )(char\_\-t $\ast$, char\_\-t)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108}{chartype\_\-t} \{ \par
+\hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108aa0f09a99c3d76641d00d0ad11f4f2fa1}{ct\_\-parse\_\-pcdata} =  1, 
+\hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108a884462ea84ab1e7745a2bf69fc2edf75}{ct\_\-parse\_\-attr} =  2, 
+\hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108a8ac9b7ded4827803524b87f772f17c51}{ct\_\-parse\_\-attr\_\-ws} =  4, 
+\hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108ac957a1774b6a4430e583bcb881909372}{ct\_\-space} =  8, 
+\par
+\hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108a9cc4f987cc929305369312be69d01be2}{ct\_\-parse\_\-cdata} =  16, 
+\hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108a1b5ce7d3f1f80e5514b64d57774ec342}{ct\_\-parse\_\-comment} =  32, 
+\hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108af8e561bd4654ab93d82193fdd3727915}{ct\_\-symbol} =  64, 
+\hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108a25a043d6a8b5a269b3cd8f512d712798}{ct\_\-start\_\-symbol} =  128
+ \}
+\item 
+enum \hyperlink{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26}{chartypex\_\-t} \{ \par
+\hyperlink{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a946d28c1ff054ef1d9dceb8e0ade57ee}{ctx\_\-special\_\-pcdata} =  1, 
+\hyperlink{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a1f0fb9ca7471c6e0824b576001175c3c}{ctx\_\-special\_\-attr} =  2, 
+\hyperlink{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a934b9be54f1b4446a7a6665373d50ad6}{ctx\_\-start\_\-symbol} =  4, 
+\hyperlink{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a1e66040284fe331a2ec2162b6b9fee6a}{ctx\_\-digit} =  8, 
+\par
+\hyperlink{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a7f60ee1dbb91625306756d7b8289162e}{ctx\_\-symbol} =  16
+ \}
+\item 
+enum \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9}{lexeme\_\-t} \{ \par
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a6696dceb02e4d282197154d3805e8ce1}{lex\_\-none} =  0, 
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a5c2d9372cf8440a68eff3c16eeac8027}{lex\_\-equal}, 
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a266a8f8365e61873ecb66c78d363f156}{lex\_\-not\_\-equal}, 
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a51a5852f31a8c2bd889f340ac3ab9fe4}{lex\_\-less}, 
+\par
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9abef050e09f087253f62bd3b4b6b435af}{lex\_\-greater}, 
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9acd542cd6bfd08efcfa647426a7d577b8}{lex\_\-less\_\-or\_\-equal}, 
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a6308ad256806534e1cd586574718a562}{lex\_\-greater\_\-or\_\-equal}, 
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9ab165cbd439d1c24dd336e02645c98727}{lex\_\-plus}, 
+\par
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aa0a1d6df3298c5b043daa6ad9afa2733}{lex\_\-minus}, 
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a095a092388d76a21ccfc1338c875fe54}{lex\_\-multiply}, 
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a751c2248d5cb85f4ba650a78281923a1}{lex\_\-union}, 
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a933a0fd7c93a22506dc917d0868e05d1}{lex\_\-var\_\-ref}, 
+\par
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aea53091cdb9dce7a878792f2c8d4d17b}{lex\_\-open\_\-brace}, 
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a8a39009230ffa4187d22c91412f7fcd7}{lex\_\-close\_\-brace}, 
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a1f793e76227244d2ae78acf451b82808}{lex\_\-quoted\_\-string}, 
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9abe562e581d64a34b55b3d9b38db2e480}{lex\_\-number}, 
+\par
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a8be0786f2c3130ad30b61bbac70fa809}{lex\_\-slash}, 
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a0988911f62781c4a1e8831a76c1e1fe8}{lex\_\-double\_\-slash}, 
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9ad9321b18d06078ecc38ad112ce654ce9}{lex\_\-open\_\-square\_\-brace}, 
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9ad572f5fa18506a8bf523425d075cac5d}{lex\_\-close\_\-square\_\-brace}, 
+\par
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aa18bda8e798cdf55d88ed65fd025e67c}{lex\_\-string}, 
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a78c1259369ef92b19f0ea2701d9c1d60}{lex\_\-comma}, 
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a408fe857bc6c9b3a148ab798d0ad34e7}{lex\_\-axis\_\-attribute}, 
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aa0709f7aad925098c9b62379206a536b}{lex\_\-dot}, 
+\par
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9abf40f90b4cc064d49394e974962b111b}{lex\_\-double\_\-dot}, 
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9afbd9c771f4154c9cf363ff3c0b9f7b9c}{lex\_\-double\_\-colon}, 
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aade5d69e447274d8785ebc7d438be522}{lex\_\-eof}
+ \}
+\item 
+enum \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330d}{ast\_\-type\_\-t} \{ \par
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dae9da7f765cd2c72f580c86f06e0ab0a0}{ast\_\-op\_\-or}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da0459a344c7cfda000e4c987449ea1e09}{ast\_\-op\_\-and}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da2dec9732f911df2eba44fef4e50c89f4}{ast\_\-op\_\-equal}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da75624fef27d23fd3a97f82d24027c583}{ast\_\-op\_\-not\_\-equal}, 
+\par
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daf968d4e04b9f634f2466ec66f5a7b85f}{ast\_\-op\_\-less}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da844979e65e0a70ebc59efa5bbdd42cc4}{ast\_\-op\_\-greater}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa616495e1f242635e7538da36645ca2a}{ast\_\-op\_\-less\_\-or\_\-equal}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daec36ceed90ddf0bc022935266093c31e}{ast\_\-op\_\-greater\_\-or\_\-equal}, 
+\par
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dae52031dbbbd974aaa12ce304f58d6ca6}{ast\_\-op\_\-add}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa087aabd06e3c7df72d3159ccb53f718}{ast\_\-op\_\-subtract}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dab0bf6ee67928daf76a761ca028c56d9b}{ast\_\-op\_\-multiply}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da196364baec820eeb5970d3a36ac7a10e}{ast\_\-op\_\-divide}, 
+\par
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daf1b22f2953ec8782c50b2ab39366cd07}{ast\_\-op\_\-mod}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da8a1e59b48b67221da14fe292a232da26}{ast\_\-op\_\-negate}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da57012874ae8f1fe371ecd68677feb277}{ast\_\-op\_\-union}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da39bc72aba9792b10763caa7c526b9ed5}{ast\_\-predicate}, 
+\par
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da0c9430d6adbe88945efa5a1cb100d843}{ast\_\-filter}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da3d009066e8b19be4c62cc378edcaf541}{ast\_\-filter\_\-posinv}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da9062d53478f8a445ed281f1af75b9ab0}{ast\_\-string\_\-constant}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da09494df03f6c34c5431cb9851a1259ba}{ast\_\-number\_\-constant}, 
+\par
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da3e16540ee352944686b90794e0c94260}{ast\_\-variable}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa463c85b53c42378d421cbcf5eaf6009}{ast\_\-func\_\-last}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da8e32686d2d4ee9157d6ca389d7715998}{ast\_\-func\_\-position}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dab7169d72ddafbb8e64bad8e9e28cf2da}{ast\_\-func\_\-count}, 
+\par
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daf858fa45ee843ccfe4c7d2ae226a5e8c}{ast\_\-func\_\-id}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daf12ccfa2490b679e1338d211e4f96c43}{ast\_\-func\_\-local\_\-name\_\-0}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da5d016b2c68613b3016415bcfeefbf2d5}{ast\_\-func\_\-local\_\-name\_\-1}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da5e6ac5151480d36a3a5469c6d17f8b24}{ast\_\-func\_\-namespace\_\-uri\_\-0}, 
+\par
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dabaab13e8fc9981d54c1d10d47c1ade2b}{ast\_\-func\_\-namespace\_\-uri\_\-1}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da354fdbfef6c16cc50e82c0c920cfd709}{ast\_\-func\_\-name\_\-0}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da12636568edce481fcb128064b25002b1}{ast\_\-func\_\-name\_\-1}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da478e1f441c013c69a95053844e900924}{ast\_\-func\_\-string\_\-0}, 
+\par
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da40f79d68b93d0068942664ad1cd73703}{ast\_\-func\_\-string\_\-1}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da2b60b6562585b1e6f1bb2b60901503a7}{ast\_\-func\_\-concat}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dade6b0e6cf600fd5462ff141dc924a152}{ast\_\-func\_\-starts\_\-with}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da7ebe6f7042d21758eb74a8e1652d61ee}{ast\_\-func\_\-contains}, 
+\par
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da57968ecb15bcbfa4c6a1cf69183d18f8}{ast\_\-func\_\-substring\_\-before}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dab9cf1d6dbc207ac0d5421cc5f6d78c19}{ast\_\-func\_\-substring\_\-after}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da8bef77aeae6e5aa6d00d6f57ce9d7e13}{ast\_\-func\_\-substring\_\-2}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da108fa4adbb640058d5042a324d15020f}{ast\_\-func\_\-substring\_\-3}, 
+\par
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da5bc4366fd91243376b21e0bd585418ec}{ast\_\-func\_\-string\_\-length\_\-0}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dad2e8b9497c0d63eac59c19129a2a79c7}{ast\_\-func\_\-string\_\-length\_\-1}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa46c67b12851bceec7f56d2bef299145}{ast\_\-func\_\-normalize\_\-space\_\-0}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da6ec954cce9f9c7a4119b280160c253da}{ast\_\-func\_\-normalize\_\-space\_\-1}, 
+\par
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dac2296a32ef88a1416f52def407024601}{ast\_\-func\_\-translate}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa4d2882f2dfec6908671fd01bf626965}{ast\_\-func\_\-boolean}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da3d65825af60c39c5dd31ab710202f369}{ast\_\-func\_\-not}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da6cfca54a1db508b01b3a70b60a117bdf}{ast\_\-func\_\-true}, 
+\par
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daf02fc3e0bd1c3695759342d0d051922c}{ast\_\-func\_\-false}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da666d33d475c216b35e0eae756955729e}{ast\_\-func\_\-lang}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da4bba091feebb6ddbb1c3fd143b0defb4}{ast\_\-func\_\-number\_\-0}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daceb768b882e131cfb485dfd4a0cdd6dc}{ast\_\-func\_\-number\_\-1}, 
+\par
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da11d81217d62ac719fce24834025750dc}{ast\_\-func\_\-sum}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da14388195af9fb91660f721911f4decaf}{ast\_\-func\_\-floor}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da9352aabce4fc3f97d5a439acd0347b13}{ast\_\-func\_\-ceiling}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dac896699d30b94232d7a5ffc7fe82fd2c}{ast\_\-func\_\-round}, 
+\par
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa6229c263d2e6f239a78d56b6f8aaf19}{ast\_\-step}, 
+\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dabee572296f3d4f85d8ebfffca4c2d3bd}{ast\_\-step\_\-root}
+ \}
+\item 
+enum \hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189a}{axis\_\-t} \{ \par
+\hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aad6f039a708acaaf1f7404cb061aac86f}{axis\_\-ancestor}, 
+\hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa22656c644b010657ddc2635d97e7b4a3}{axis\_\-ancestor\_\-or\_\-self}, 
+\hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa3e7282ac37732c350a6f4890a3ab6401}{axis\_\-attribute}, 
+\hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa6919787a75cb4c83edb15f11fbe98faa}{axis\_\-child}, 
+\par
+\hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa835de5174f348c3a6b926f3467827ab9}{axis\_\-descendant}, 
+\hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aaa4371804013320e9798cea401cffa22d}{axis\_\-descendant\_\-or\_\-self}, 
+\hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aacb21ff57ba23bbf8e9bb3aa6e6d47106}{axis\_\-following}, 
+\hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa57a9f91a01f40c54aae642eefb9523c0}{axis\_\-following\_\-sibling}, 
+\par
+\hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aaf530e34cb512f4b88fbb4b2caec602a0}{axis\_\-namespace}, 
+\hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aafa5cf248a5e26f36caf8163293db25a9}{axis\_\-parent}, 
+\hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa0b356ec6c3e3dec19179067e73db7089}{axis\_\-preceding}, 
+\hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aaef80578171e44825bd50265feb9a32dc}{axis\_\-preceding\_\-sibling}, 
+\par
+\hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aac3dba2fdf066d765a93e20508450e924}{axis\_\-self}
+ \}
+\item 
+enum \hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275}{nodetest\_\-t} \{ \par
+\hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275a6c7184af99feffae4eb898b764e93649}{nodetest\_\-none}, 
+\hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275a48897ee9908e5282657f6499c23b5caf}{nodetest\_\-name}, 
+\hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275aef6cad334993e832458e028decb18c85}{nodetest\_\-type\_\-node}, 
+\hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275aad06f521ae05b1d06d3d23ca7c1381e6}{nodetest\_\-type\_\-comment}, 
+\par
+\hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275aff02fd24afbb268bc0c40cb45ea9e0f6}{nodetest\_\-type\_\-pi}, 
+\hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275a86e4bcba2f6202e9fd8001c33b92800b}{nodetest\_\-type\_\-text}, 
+\hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275a96311576befbea6bcdb8c7b098ab7031}{nodetest\_\-pi}, 
+\hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275a414f38524d511536350bcc69fea49ef9}{nodetest\_\-all}, 
+\par
+\hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275a92953acde5a4d8f8ab80fa3082dfa8af}{nodetest\_\-all\_\-in\_\-namespace}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+PUGI\_\-\_\-NS\_\-BEGIN PUGI\_\-\_\-FN void $\ast$ \hyperlink{pugixml_8cpp_a5c5a3cf417e46e0b3f5207fb9c6a5c18}{default\_\-allocate} (size\_\-t size)
+\item 
+PUGI\_\-\_\-FN void \hyperlink{pugixml_8cpp_a04da64bb4806c0b7491d5d9d73d50100}{default\_\-deallocate} (void $\ast$ptr)
+\item 
+PUGI\_\-\_\-NS\_\-END PUGI\_\-\_\-NS\_\-BEGIN PUGI\_\-\_\-FN size\_\-t \hyperlink{pugixml_8cpp_aab9e1f034d085b663d146fcceabb1c48}{strlength} (const char\_\-t $\ast$s)
+\item 
+PUGI\_\-\_\-FN bool \hyperlink{pugixml_8cpp_af682718c79fea7fc666a593dc70764c1}{strequal} (const char\_\-t $\ast$src, const char\_\-t $\ast$dst)
+\item 
+PUGI\_\-\_\-FN bool \hyperlink{pugixml_8cpp_abbf171d1eb53f93f1fa710de5673f889}{strequalrange} (const char\_\-t $\ast$lhs, const char\_\-t $\ast$rhs, size\_\-t count)
+\item 
+\hyperlink{structxml__allocator}{xml\_\-allocator} \& \hyperlink{pugixml_8cpp_ab194763af6dca2d07ad5139dc2a75f60}{get\_\-allocator} (const xml\_\-node\_\-struct $\ast$node)
+\item 
+PUGI\_\-\_\-NS\_\-END PUGI\_\-\_\-NS\_\-BEGIN xml\_\-attribute\_\-struct $\ast$ \hyperlink{pugixml_8cpp_aa5c147125f246a331c4a30df8e096960}{allocate\_\-attribute} (\hyperlink{structxml__allocator}{xml\_\-allocator} \&alloc)
+\item 
+xml\_\-node\_\-struct $\ast$ \hyperlink{pugixml_8cpp_a6e4b9f37c4ab9fb598758530d69d8611}{allocate\_\-node} (\hyperlink{structxml__allocator}{xml\_\-allocator} \&alloc, xml\_\-node\_\-type type)
+\item 
+void \hyperlink{pugixml_8cpp_a451a69801ffa96a6389bb7d4c8099bd9}{destroy\_\-attribute} (xml\_\-attribute\_\-struct $\ast$a, \hyperlink{structxml__allocator}{xml\_\-allocator} \&alloc)
+\item 
+void \hyperlink{pugixml_8cpp_a00ae2c226db329ac858206e646251867}{destroy\_\-node} (xml\_\-node\_\-struct $\ast$n, \hyperlink{structxml__allocator}{xml\_\-allocator} \&alloc)
+\item 
+PUGI\_\-\_\-FN\_\-NO\_\-INLINE xml\_\-node\_\-struct $\ast$ \hyperlink{pugixml_8cpp_add30251379f717a3ebd53171dbb12f3c}{append\_\-node} (xml\_\-node\_\-struct $\ast$node, \hyperlink{structxml__allocator}{xml\_\-allocator} \&alloc, xml\_\-node\_\-type type=node\_\-element)
+\item 
+PUGI\_\-\_\-FN\_\-NO\_\-INLINE xml\_\-attribute\_\-struct $\ast$ \hyperlink{pugixml_8cpp_aad3b67164b1e0fe8b1e9c57fe55dc8bc}{append\_\-attribute\_\-ll} (xml\_\-node\_\-struct $\ast$node, \hyperlink{structxml__allocator}{xml\_\-allocator} \&alloc)
+\item 
+PUGI\_\-\_\-NS\_\-END PUGI\_\-\_\-NS\_\-BEGIN uint16\_\-t \hyperlink{pugixml_8cpp_a6d31b21cfa4167d79865a7797b33f3f1}{endian\_\-swap} (uint16\_\-t value)
+\item 
+uint32\_\-t \hyperlink{pugixml_8cpp_a3333e3a194e23ccf6f0409e7ef45e639}{endian\_\-swap} (uint32\_\-t value)
+\item 
+{\footnotesize template$<$typename T $>$ }\\PUGI\_\-\_\-FN void \hyperlink{pugixml_8cpp_a6a6d64c793f8e54f94b19898116b77ff}{convert\_\-utf\_\-endian\_\-swap} (T $\ast$result, const T $\ast$data, size\_\-t length)
+\item 
+PUGI\_\-\_\-FN bool \hyperlink{pugixml_8cpp_a282e2854710450f313ea03bb59a8f681}{is\_\-little\_\-endian} ()
+\item 
+PUGI\_\-\_\-FN xml\_\-encoding \hyperlink{pugixml_8cpp_a1d386e9425e75d35b01373e46f186b9c}{get\_\-wchar\_\-encoding} ()
+\item 
+PUGI\_\-\_\-FN xml\_\-encoding \hyperlink{pugixml_8cpp_ac4aca43b7a1cc8918a214f00c7c9af47}{guess\_\-buffer\_\-encoding} (uint8\_\-t d0, uint8\_\-t d1, uint8\_\-t d2, uint8\_\-t d3)
+\item 
+PUGI\_\-\_\-FN xml\_\-encoding \hyperlink{pugixml_8cpp_ae841fafba520d2341dc8386a6f825ac6}{get\_\-buffer\_\-encoding} (xml\_\-encoding encoding, const void $\ast$contents, size\_\-t size)
+\item 
+PUGI\_\-\_\-FN bool \hyperlink{pugixml_8cpp_a23609126eff5820342411bf83b280225}{get\_\-mutable\_\-buffer} (char\_\-t $\ast$\&out\_\-buffer, size\_\-t \&out\_\-length, const void $\ast$contents, size\_\-t size, bool is\_\-mutable)
+\item 
+{\footnotesize template$<$typename opt\_\-swap $>$ }\\PUGI\_\-\_\-FN bool \hyperlink{pugixml_8cpp_af4a3d57bfb19aa8e481470d0ec565746}{convert\_\-buffer\_\-utf16} (char\_\-t $\ast$\&out\_\-buffer, size\_\-t \&out\_\-length, const void $\ast$contents, size\_\-t size, opt\_\-swap)
+\item 
+{\footnotesize template$<$typename opt\_\-swap $>$ }\\PUGI\_\-\_\-FN bool \hyperlink{pugixml_8cpp_a1a8b6463e317a85dca2dabceb775a2f2}{convert\_\-buffer\_\-utf32} (char\_\-t $\ast$\&out\_\-buffer, size\_\-t \&out\_\-length, const void $\ast$contents, size\_\-t size, opt\_\-swap)
+\item 
+PUGI\_\-\_\-FN size\_\-t \hyperlink{pugixml_8cpp_a0c28347bb885f60693b5d594cfc3dbd5}{get\_\-latin1\_\-7bit\_\-prefix\_\-length} (const uint8\_\-t $\ast$data, size\_\-t size)
+\item 
+PUGI\_\-\_\-FN bool \hyperlink{pugixml_8cpp_aab8dd109bccbb59a8a2c3f5b638cd16a}{convert\_\-buffer\_\-latin1} (char\_\-t $\ast$\&out\_\-buffer, size\_\-t \&out\_\-length, const void $\ast$contents, size\_\-t size, bool is\_\-mutable)
+\item 
+PUGI\_\-\_\-FN bool \hyperlink{pugixml_8cpp_a307f5fbb9d87b5938c0b442458185ca6}{convert\_\-buffer} (char\_\-t $\ast$\&out\_\-buffer, size\_\-t \&out\_\-length, xml\_\-encoding encoding, const void $\ast$contents, size\_\-t size, bool is\_\-mutable)
+\item 
+PUGI\_\-\_\-FN size\_\-t \hyperlink{pugixml_8cpp_acf5b48bb1e377e9583eec8ba0e607898}{as\_\-utf8\_\-begin} (const wchar\_\-t $\ast$str, size\_\-t length)
+\item 
+PUGI\_\-\_\-FN void \hyperlink{pugixml_8cpp_a1bc09bbcdecde39207659ed351487999}{as\_\-utf8\_\-end} (char $\ast$buffer, size\_\-t size, const wchar\_\-t $\ast$str, size\_\-t length)
+\item 
+PUGI\_\-\_\-FN std::string \hyperlink{pugixml_8cpp_a5ff37130284fc41f3cb91b7351392ca0}{as\_\-utf8\_\-impl} (const wchar\_\-t $\ast$str, size\_\-t length)
+\item 
+PUGI\_\-\_\-FN std::basic\_\-string$<$ wchar\_\-t $>$ \hyperlink{pugixml_8cpp_accfe3171da9b8a6cf354aca524a5c079}{as\_\-wide\_\-impl} (const char $\ast$str, size\_\-t size)
+\item 
+bool \hyperlink{pugixml_8cpp_a230775a8b2b7883f8dffc32b550a267c}{strcpy\_\-insitu\_\-allow} (size\_\-t length, uintptr\_\-t allocated, char\_\-t $\ast$target)
+\item 
+PUGI\_\-\_\-FN bool \hyperlink{pugixml_8cpp_ab9527027631039c4e2361e30f2c0788e}{strcpy\_\-insitu} (char\_\-t $\ast$\&dest, uintptr\_\-t \&header, uintptr\_\-t header\_\-mask, const char\_\-t $\ast$source)
+\item 
+PUGI\_\-\_\-FN char\_\-t $\ast$ \hyperlink{pugixml_8cpp_a7cf2b6da7b109a11f8cb1c7e1a09bf7e}{strconv\_\-escape} (char\_\-t $\ast$s, \hyperlink{structgap}{gap} \&g)
+\item 
+PUGI\_\-\_\-FN char\_\-t $\ast$ \hyperlink{pugixml_8cpp_acd89f6b92cd5a83b4e8a56bff9e55118}{strconv\_\-comment} (char\_\-t $\ast$s, char\_\-t endch)
+\item 
+PUGI\_\-\_\-FN char\_\-t $\ast$ \hyperlink{pugixml_8cpp_a9caa489db9fff49dc8819a48849627c0}{strconv\_\-cdata} (char\_\-t $\ast$s, char\_\-t endch)
+\item 
+PUGI\_\-\_\-FN \hyperlink{pugixml_8cpp_aafccd3afb496514b0e76d81164955c28}{strconv\_\-pcdata\_\-t} \hyperlink{pugixml_8cpp_a2f80cbdc79c199f54f617b8c42a37bec}{get\_\-strconv\_\-pcdata} (unsigned int optmask)
+\item 
+PUGI\_\-\_\-FN \hyperlink{pugixml_8cpp_ab7ee7f946a7c5e9821fab22ef05fc0ed}{strconv\_\-attribute\_\-t} \hyperlink{pugixml_8cpp_a2ea43b65ff9cfdf86459c60a1a0849ec}{get\_\-strconv\_\-attribute} (unsigned int optmask)
+\item 
+xml\_\-parse\_\-result \hyperlink{pugixml_8cpp_a9081c36df7470451a2a067677ee9e423}{make\_\-parse\_\-result} (xml\_\-parse\_\-status status, ptrdiff\_\-t offset=0)
+\item 
+PUGI\_\-\_\-FN xml\_\-encoding \hyperlink{pugixml_8cpp_a12b9d6cff4d37c68755263d0687c62b1}{get\_\-write\_\-native\_\-encoding} ()
+\item 
+PUGI\_\-\_\-FN xml\_\-encoding \hyperlink{pugixml_8cpp_aa7c85cfc84db7ee4b4eb887366365479}{get\_\-write\_\-encoding} (xml\_\-encoding encoding)
+\item 
+PUGI\_\-\_\-FN size\_\-t \hyperlink{pugixml_8cpp_a5dfd2dce8fc6dd9268a19ed553884234}{get\_\-valid\_\-length} (const char\_\-t $\ast$data, size\_\-t length)
+\item 
+PUGI\_\-\_\-FN size\_\-t \hyperlink{pugixml_8cpp_a1a3132117f2328ff3f805f48dc33cec1}{convert\_\-buffer} (char\_\-t $\ast$, uint8\_\-t $\ast$r\_\-u8, uint16\_\-t $\ast$r\_\-u16, uint32\_\-t $\ast$r\_\-u32, const char\_\-t $\ast$data, size\_\-t length, xml\_\-encoding encoding)
+\item 
+PUGI\_\-\_\-FN void \hyperlink{pugixml_8cpp_affde71fa96c9fca0c49b21e22ba197c5}{text\_\-output\_\-escaped} (\hyperlink{classxml__buffered__writer}{xml\_\-buffered\_\-writer} \&writer, const char\_\-t $\ast$s, \hyperlink{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26}{chartypex\_\-t} type)
+\item 
+PUGI\_\-\_\-FN void \hyperlink{pugixml_8cpp_ad40396398fcbab11c9283b516f766413}{text\_\-output} (\hyperlink{classxml__buffered__writer}{xml\_\-buffered\_\-writer} \&writer, const char\_\-t $\ast$s, \hyperlink{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26}{chartypex\_\-t} type, unsigned int flags)
+\item 
+PUGI\_\-\_\-FN void \hyperlink{pugixml_8cpp_a21f7b54b5d3837583ca0da632f7c27fc}{text\_\-output\_\-cdata} (\hyperlink{classxml__buffered__writer}{xml\_\-buffered\_\-writer} \&writer, const char\_\-t $\ast$s)
+\item 
+PUGI\_\-\_\-FN void \hyperlink{pugixml_8cpp_ab1fa07dbea11b2e8484159f5114a292a}{node\_\-output\_\-attributes} (\hyperlink{classxml__buffered__writer}{xml\_\-buffered\_\-writer} \&writer, const xml\_\-node \&node, unsigned int flags)
+\item 
+PUGI\_\-\_\-FN void \hyperlink{pugixml_8cpp_a7f5dd565c9321db184119a5f337333e7}{node\_\-output} (\hyperlink{classxml__buffered__writer}{xml\_\-buffered\_\-writer} \&writer, const xml\_\-node \&node, const char\_\-t $\ast$indent, unsigned int flags, unsigned int depth)
+\item 
+bool \hyperlink{pugixml_8cpp_a51b27832195cf2345f65119f07056743}{has\_\-declaration} (const xml\_\-node \&node)
+\item 
+bool \hyperlink{pugixml_8cpp_a9a76bd4417ac5f4778004bbd1658175e}{allow\_\-insert\_\-child} (xml\_\-node\_\-type parent, xml\_\-node\_\-type child)
+\item 
+PUGI\_\-\_\-FN void \hyperlink{pugixml_8cpp_aada7f66bd2b77338ef8b8089e7139f08}{recursive\_\-copy\_\-skip} (xml\_\-node \&dest, const xml\_\-node \&source, const xml\_\-node \&skip)
+\item 
+bool \hyperlink{pugixml_8cpp_a78cb6a1f92159f3649ac191400feb3a2}{is\_\-text\_\-node} (xml\_\-node\_\-struct $\ast$node)
+\item 
+PUGI\_\-\_\-FN int \hyperlink{pugixml_8cpp_afe79ce7d93b358eb7f503cc5eb7fd7df}{get\_\-value\_\-int} (const char\_\-t $\ast$value, int def)
+\item 
+PUGI\_\-\_\-FN unsigned int \hyperlink{pugixml_8cpp_ae610c0c654729981dd58b2d2d19f6f07}{get\_\-value\_\-uint} (const char\_\-t $\ast$value, unsigned int def)
+\item 
+PUGI\_\-\_\-FN double \hyperlink{pugixml_8cpp_a89d53cca88a1787eaff695225c52ac9e}{get\_\-value\_\-double} (const char\_\-t $\ast$value, double def)
+\item 
+PUGI\_\-\_\-FN float \hyperlink{pugixml_8cpp_ae8ed6162cf7a98281598daa4d858c757}{get\_\-value\_\-float} (const char\_\-t $\ast$value, float def)
+\item 
+PUGI\_\-\_\-FN bool \hyperlink{pugixml_8cpp_a8458bf6b4828301059456c3ea00e7331}{get\_\-value\_\-bool} (const char\_\-t $\ast$value, bool def)
+\item 
+PUGI\_\-\_\-FN bool \hyperlink{pugixml_8cpp_ab5661e636fc32d2d065fb10a58fedd10}{set\_\-value\_\-buffer} (char\_\-t $\ast$\&dest, uintptr\_\-t \&header, uintptr\_\-t header\_\-mask, char(\&buf)\mbox{[}128\mbox{]})
+\item 
+PUGI\_\-\_\-FN bool \hyperlink{pugixml_8cpp_a376292f4d74bfb179f38bd30dd66c2e4}{set\_\-value\_\-convert} (char\_\-t $\ast$\&dest, uintptr\_\-t \&header, uintptr\_\-t header\_\-mask, int value)
+\item 
+PUGI\_\-\_\-FN bool \hyperlink{pugixml_8cpp_ab2ee9a440a1447d7e7fa57e38eef068b}{set\_\-value\_\-convert} (char\_\-t $\ast$\&dest, uintptr\_\-t \&header, uintptr\_\-t header\_\-mask, unsigned int value)
+\item 
+PUGI\_\-\_\-FN bool \hyperlink{pugixml_8cpp_a1c12c65da3412c2603390e1a51772537}{set\_\-value\_\-convert} (char\_\-t $\ast$\&dest, uintptr\_\-t \&header, uintptr\_\-t header\_\-mask, double value)
+\item 
+PUGI\_\-\_\-FN bool \hyperlink{pugixml_8cpp_aae5ad520a997bd3b9350f264be945d59}{set\_\-value\_\-convert} (char\_\-t $\ast$\&dest, uintptr\_\-t \&header, uintptr\_\-t header\_\-mask, bool value)
+\item 
+PUGI\_\-\_\-FN xml\_\-parse\_\-status \hyperlink{pugixml_8cpp_a62a3aaae374ea438f3b13324b1254b2d}{get\_\-file\_\-size} (FILE $\ast$file, size\_\-t \&out\_\-result)
+\item 
+PUGI\_\-\_\-FN xml\_\-parse\_\-result \hyperlink{pugixml_8cpp_a79f0e2f9483c87a85ec4873a20caaa12}{load\_\-file\_\-impl} (xml\_\-document \&doc, FILE $\ast$file, unsigned int options, xml\_\-encoding encoding)
+\item 
+{\footnotesize template$<$typename T $>$ }\\PUGI\_\-\_\-FN xml\_\-parse\_\-status \hyperlink{pugixml_8cpp_a62b8582304716e603726f468cfab244a}{load\_\-stream\_\-data\_\-noseek} (std::basic\_\-istream$<$ T $>$ \&stream, void $\ast$$\ast$out\_\-buffer, size\_\-t $\ast$out\_\-size)
+\item 
+{\footnotesize template$<$typename T $>$ }\\PUGI\_\-\_\-FN xml\_\-parse\_\-status \hyperlink{pugixml_8cpp_accd4fa597b32f02ca0c4409f7f57df23}{load\_\-stream\_\-data\_\-seek} (std::basic\_\-istream$<$ T $>$ \&stream, void $\ast$$\ast$out\_\-buffer, size\_\-t $\ast$out\_\-size)
+\item 
+{\footnotesize template$<$typename T $>$ }\\PUGI\_\-\_\-FN xml\_\-parse\_\-result \hyperlink{pugixml_8cpp_ad7af43e998b181fd0f7229f981d5ad9e}{load\_\-stream\_\-impl} (xml\_\-document \&doc, std::basic\_\-istream$<$ T $>$ \&stream, unsigned int options, xml\_\-encoding encoding)
+\item 
+PUGI\_\-\_\-FN char $\ast$ \hyperlink{pugixml_8cpp_ae2a4ab9dd26f40adbf2174fe5fc079a9}{convert\_\-path\_\-heap} (const wchar\_\-t $\ast$str)
+\item 
+PUGI\_\-\_\-FN FILE $\ast$ \hyperlink{pugixml_8cpp_a6a347080c51ac7c992a32cde66a43801}{open\_\-file\_\-wide} (const wchar\_\-t $\ast$path, const wchar\_\-t $\ast$mode)
+\item 
+PUGI\_\-\_\-FN bool \hyperlink{pugixml_8cpp_abde253604bc33c829133fdbc5d2b4dba}{save\_\-file\_\-impl} (const xml\_\-document \&doc, FILE $\ast$file, const char\_\-t $\ast$indent, unsigned int flags, xml\_\-encoding encoding)
+\item 
+static PUGI\_\-\_\-FN void \hyperlink{namespacepugi_a8effe3a6fc7cc9c1cf2550739dbdc438}{pugi::unspecified\_\-bool\_\-xml\_\-attribute} (xml\_\-attribute $\ast$$\ast$$\ast$)
+\item 
+static PUGI\_\-\_\-FN void \hyperlink{namespacepugi_a487b2e720a3808d6fd5730d7c97bcdac}{pugi::unspecified\_\-bool\_\-xml\_\-node} (xml\_\-node $\ast$$\ast$$\ast$)
+\item 
+static PUGI\_\-\_\-FN void \hyperlink{namespacepugi_acfae514de3abac05ed155e531a401c15}{pugi::unspecified\_\-bool\_\-xml\_\-text} (xml\_\-text $\ast$$\ast$$\ast$)
+\item 
+PUGI\_\-\_\-FN std::string PUGIXML\_\-FUNCTION \hyperlink{namespacepugi_a390bb44f7ba92b1a8a4f9157799d2ca8}{pugi::as\_\-utf8} (const wchar\_\-t $\ast$str)
+\item 
+PUGI\_\-\_\-FN std::string PUGIXML\_\-FUNCTION \hyperlink{namespacepugi_ab4be9ab3dc86b13599b9f2fd2f778dfb}{pugi::as\_\-utf8} (const std::basic\_\-string$<$ wchar\_\-t $>$ \&str)
+\item 
+PUGI\_\-\_\-FN std::basic\_\-string$<$ wchar\_\-t $>$ PUGIXML\_\-FUNCTION \hyperlink{namespacepugi_ac2a9782a1c3c725703c6e4533e735d9b}{pugi::as\_\-wide} (const char $\ast$str)
+\item 
+PUGI\_\-\_\-FN std::basic\_\-string$<$ wchar\_\-t $>$ PUGIXML\_\-FUNCTION \hyperlink{namespacepugi_af33046c0db1ff7b3f63327d32fc6dca7}{pugi::as\_\-wide} (const std::string \&str)
+\item 
+PUGI\_\-\_\-FN void PUGIXML\_\-FUNCTION \hyperlink{namespacepugi_a993c6b7947c1dec98936510d9e5fe778}{pugi::set\_\-memory\_\-management\_\-functions} (allocation\_\-function allocate, deallocation\_\-function deallocate)
+\item 
+PUGI\_\-\_\-FN allocation\_\-function PUGIXML\_\-FUNCTION \hyperlink{namespacepugi_ab36e5aed4e5c952687b42d69daf981eb}{pugi::get\_\-memory\_\-allocation\_\-function} ()
+\item 
+PUGI\_\-\_\-FN deallocation\_\-function PUGIXML\_\-FUNCTION \hyperlink{namespacepugi_a9fcabe4b52fbef0f133fab9ff97652ca}{pugi::get\_\-memory\_\-deallocation\_\-function} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{pugixml_8cpp_a64dc0aa45172e5bfdfe70d46b49b1049}{swap} (T \&lhs, T \&rhs)
+\item 
+{\footnotesize template$<$typename I , typename Pred $>$ }\\I \hyperlink{pugixml_8cpp_a3a1f3346d4572489c20de698288cb35a}{min\_\-element} (I begin, I end, const Pred \&pred)
+\item 
+{\footnotesize template$<$typename I $>$ }\\void \hyperlink{pugixml_8cpp_a8ea266f77d651d4f798cfaf5e9f6e28e}{reverse} (I begin, I end)
+\item 
+{\footnotesize template$<$typename I $>$ }\\I \hyperlink{pugixml_8cpp_a1a25efc160e5b672f61fd3a849ab4ddc}{unique} (I begin, I end)
+\item 
+{\footnotesize template$<$typename I $>$ }\\void \hyperlink{pugixml_8cpp_a1efb5cae27aeed9634098c20ce3af75a}{copy\_\-backwards} (I begin, I end, I target)
+\item 
+{\footnotesize template$<$typename I , typename Pred , typename T $>$ }\\void \hyperlink{pugixml_8cpp_a7561a6c77c4f242e1f5b1fbb449fbc9b}{insertion\_\-sort} (I begin, I end, const Pred \&pred, T $\ast$)
+\item 
+{\footnotesize template$<$typename I , typename Pred $>$ }\\void \hyperlink{pugixml_8cpp_a48bf1d0684d4f96edd2c487f60e78db7}{partition} (I begin, I middle, I end, const Pred \&pred, I $\ast$out\_\-eqbeg, I $\ast$out\_\-eqend)
+\item 
+{\footnotesize template$<$typename I , typename Pred $>$ }\\void \hyperlink{pugixml_8cpp_a691ffc5ff521031703c0a05b7b086ad6}{median3} (I first, I middle, I last, const Pred \&pred)
+\item 
+{\footnotesize template$<$typename I , typename Pred $>$ }\\void \hyperlink{pugixml_8cpp_aec3b1bb121fad2f6a3207e60f820fbd0}{median} (I first, I middle, I last, const Pred \&pred)
+\item 
+{\footnotesize template$<$typename I , typename Pred $>$ }\\void \hyperlink{pugixml_8cpp_a1c62a6e4589a19a442e62889c36bf29e}{sort} (I begin, I end, const Pred \&pred)
+\item 
+PUGI\_\-\_\-FN \hyperlink{classxpath__string}{xpath\_\-string} \hyperlink{pugixml_8cpp_af98444c6604376907823f1d20acac2bd}{xpath\_\-string\_\-const} (const char\_\-t $\ast$str)
+\item 
+PUGI\_\-\_\-NS\_\-END PUGI\_\-\_\-NS\_\-BEGIN PUGI\_\-\_\-FN bool \hyperlink{pugixml_8cpp_a4ab3a20f90bd9a6d4d050b7438fe83e3}{starts\_\-with} (const char\_\-t $\ast$string, const char\_\-t $\ast$pattern)
+\item 
+PUGI\_\-\_\-FN const char\_\-t $\ast$ \hyperlink{pugixml_8cpp_a490922f92ed98e972a13ffb410400a57}{find\_\-char} (const char\_\-t $\ast$s, char\_\-t c)
+\item 
+PUGI\_\-\_\-FN const char\_\-t $\ast$ \hyperlink{pugixml_8cpp_a3dee0e9c414704e194aedeef90fdb33f}{find\_\-substring} (const char\_\-t $\ast$s, const char\_\-t $\ast$p)
+\item 
+PUGI\_\-\_\-FN char\_\-t \hyperlink{pugixml_8cpp_afeba7a7ade93e89bc9c83aa616ea7ad6}{tolower\_\-ascii} (char\_\-t ch)
+\item 
+PUGI\_\-\_\-FN \hyperlink{classxpath__string}{xpath\_\-string} \hyperlink{pugixml_8cpp_a7983b03f2dd06eb98951cd2dde03cd87}{string\_\-value} (const xpath\_\-node \&na, \hyperlink{classxpath__allocator}{xpath\_\-allocator} $\ast$alloc)
+\item 
+PUGI\_\-\_\-FN unsigned int \hyperlink{pugixml_8cpp_a71b769adcc2bf76bd8b2902980605082}{node\_\-height} (xml\_\-node n)
+\item 
+PUGI\_\-\_\-FN bool \hyperlink{pugixml_8cpp_a64dbb9cc2216106e19248c7d5770525d}{node\_\-is\_\-before} (xml\_\-node ln, unsigned int lh, xml\_\-node rn, unsigned int rh)
+\item 
+PUGI\_\-\_\-FN bool \hyperlink{pugixml_8cpp_afe5e132153aa01551d56a2fc999f4483}{node\_\-is\_\-ancestor} (xml\_\-node parent, xml\_\-node node)
+\item 
+PUGI\_\-\_\-FN const void $\ast$ \hyperlink{pugixml_8cpp_af28012d575e412e524d54e911266d548}{document\_\-order} (const xpath\_\-node \&xnode)
+\item 
+PUGI\_\-\_\-FN double \hyperlink{pugixml_8cpp_a2d2fd408a346e00cc39c418d81f4341c}{gen\_\-nan} ()
+\item 
+PUGI\_\-\_\-FN bool \hyperlink{pugixml_8cpp_ac5a4735a6c75f496aa9e2868216ad32e}{is\_\-nan} (double value)
+\item 
+PUGI\_\-\_\-FN const char\_\-t $\ast$ \hyperlink{pugixml_8cpp_acc28dfcad999710b36daa33cd8d984d8}{convert\_\-number\_\-to\_\-string\_\-special} (double value)
+\item 
+PUGI\_\-\_\-FN bool \hyperlink{pugixml_8cpp_a15ed2feda8a764a64c49b203e093d996}{convert\_\-number\_\-to\_\-boolean} (double value)
+\item 
+PUGI\_\-\_\-FN void \hyperlink{pugixml_8cpp_ae4e5418ba6b9fb37fd27eb89a00de148}{truncate\_\-zeros} (char $\ast$begin, char $\ast$end)
+\item 
+PUGI\_\-\_\-FN void \hyperlink{pugixml_8cpp_aa9ac35e635a595b6ff7b3fa1b2dac90e}{convert\_\-number\_\-to\_\-mantissa\_\-exponent} (double value, char $\ast$buffer, size\_\-t buffer\_\-size, char $\ast$$\ast$out\_\-mantissa, int $\ast$out\_\-exponent)
+\item 
+PUGI\_\-\_\-FN \hyperlink{classxpath__string}{xpath\_\-string} \hyperlink{pugixml_8cpp_a26ed30b05a22acb22dc6eed1cefc7570}{convert\_\-number\_\-to\_\-string} (double value, \hyperlink{classxpath__allocator}{xpath\_\-allocator} $\ast$alloc)
+\item 
+PUGI\_\-\_\-FN bool \hyperlink{pugixml_8cpp_a57ad1b0f2d749266d4ef08149b9fb012}{check\_\-string\_\-to\_\-number\_\-format} (const char\_\-t $\ast$string)
+\item 
+PUGI\_\-\_\-FN double \hyperlink{pugixml_8cpp_ac5908a6e73e3b0c5b4ab667a42f413f9}{convert\_\-string\_\-to\_\-number} (const char\_\-t $\ast$string)
+\item 
+PUGI\_\-\_\-FN bool \hyperlink{pugixml_8cpp_a33ff28798ddad210477dea0fb8e897ba}{convert\_\-string\_\-to\_\-number} (const char\_\-t $\ast$begin, const char\_\-t $\ast$end, double $\ast$out\_\-result)
+\item 
+PUGI\_\-\_\-FN double \hyperlink{pugixml_8cpp_aaeb62784a181c44f2ee34c0172e00240}{round\_\-nearest} (double value)
+\item 
+PUGI\_\-\_\-FN double \hyperlink{pugixml_8cpp_a08148576c17009ae574e2fc8cd3d17a9}{round\_\-nearest\_\-nzero} (double value)
+\item 
+PUGI\_\-\_\-FN const char\_\-t $\ast$ \hyperlink{pugixml_8cpp_af4c8365a5d8bae7540276768ddbd3eb5}{qualified\_\-name} (const xpath\_\-node \&node)
+\item 
+PUGI\_\-\_\-FN const char\_\-t $\ast$ \hyperlink{pugixml_8cpp_a4046fdbf867e469eb899a6a17cfaafa9}{local\_\-name} (const xpath\_\-node \&node)
+\item 
+PUGI\_\-\_\-FN const char\_\-t $\ast$ \hyperlink{pugixml_8cpp_afb842719fceb1fbb8ada527cd208e885}{namespace\_\-uri} (const xml\_\-node \&node)
+\item 
+PUGI\_\-\_\-FN const char\_\-t $\ast$ \hyperlink{pugixml_8cpp_acf4023d95b1a79deda69366a9c83dade}{namespace\_\-uri} (const xml\_\-attribute \&attr, const xml\_\-node \&parent)
+\item 
+PUGI\_\-\_\-FN const char\_\-t $\ast$ \hyperlink{pugixml_8cpp_a8211d5881db5ad1afa4b45d935ecc8ed}{namespace\_\-uri} (const xpath\_\-node \&node)
+\item 
+PUGI\_\-\_\-FN void \hyperlink{pugixml_8cpp_aba6b04ce493ae6df9e4dbc901b964b90}{normalize\_\-space} (char\_\-t $\ast$buffer)
+\item 
+PUGI\_\-\_\-FN void \hyperlink{pugixml_8cpp_ad4a1dbcf50be703f147af6fa20c76ff7}{translate} (char\_\-t $\ast$buffer, const char\_\-t $\ast$from, const char\_\-t $\ast$to)
+\item 
+PUGI\_\-\_\-FN unsigned int \hyperlink{pugixml_8cpp_a2925a12bcdf39684733293ef195ae7e8}{hash\_\-string} (const char\_\-t $\ast$str)
+\item 
+{\footnotesize template$<$typename T $>$ }\\PUGI\_\-\_\-FN T $\ast$ \hyperlink{pugixml_8cpp_a40e5116a46952e8fb4d67dba1448757c}{new\_\-xpath\_\-variable} (const char\_\-t $\ast$name)
+\item 
+PUGI\_\-\_\-FN xpath\_\-variable $\ast$ \hyperlink{pugixml_8cpp_a6301d8a3514e0f724a51d9c38fa1cfec}{new\_\-xpath\_\-variable} (xpath\_\-value\_\-type type, const char\_\-t $\ast$name)
+\item 
+{\footnotesize template$<$typename T $>$ }\\PUGI\_\-\_\-FN void \hyperlink{pugixml_8cpp_a2467cd3717797d18416b46ce0557ed34}{delete\_\-xpath\_\-variable} (T $\ast$var)
+\item 
+PUGI\_\-\_\-FN void \hyperlink{pugixml_8cpp_a7849f92cf1fb611f65e35760fe040998}{delete\_\-xpath\_\-variable} (xpath\_\-value\_\-type type, xpath\_\-variable $\ast$var)
+\item 
+PUGI\_\-\_\-FN xpath\_\-variable $\ast$ \hyperlink{pugixml_8cpp_aa6b1912c612e1ba4ebd66c5f3e45094a}{get\_\-variable} (xpath\_\-variable\_\-set $\ast$set, const char\_\-t $\ast$begin, const char\_\-t $\ast$end)
+\item 
+PUGI\_\-\_\-NS\_\-END PUGI\_\-\_\-NS\_\-BEGIN PUGI\_\-\_\-FN xpath\_\-node\_\-set::type\_\-t \hyperlink{pugixml_8cpp_a8cb0eb3d56ad07f31e10d66d23fbc66d}{xpath\_\-sort} (xpath\_\-node $\ast$begin, xpath\_\-node $\ast$end, xpath\_\-node\_\-set::type\_\-t type, bool rev)
+\item 
+PUGI\_\-\_\-FN xpath\_\-node \hyperlink{pugixml_8cpp_aca111b93f54ac52bd9a932ffda372368}{xpath\_\-first} (const xpath\_\-node $\ast$begin, const xpath\_\-node $\ast$end, xpath\_\-node\_\-set::type\_\-t type)
+\item 
+PUGI\_\-\_\-FN \hyperlink{classxpath__string}{xpath\_\-string} \hyperlink{pugixml_8cpp_a0ed220563fd15a1211ce33941feb6ae3}{evaluate\_\-string\_\-impl} (\hyperlink{structxpath__query__impl}{xpath\_\-query\_\-impl} $\ast$impl, const xpath\_\-node \&n, \hyperlink{structxpath__stack__data}{xpath\_\-stack\_\-data} \&sd)
+\item 
+static PUGI\_\-\_\-FN void \hyperlink{namespacepugi_abca519e72b848d2ebadf5250727da6c5}{pugi::unspecified\_\-bool\_\-xpath\_\-node} (xpath\_\-node $\ast$$\ast$$\ast$)
+\item 
+static PUGI\_\-\_\-FN void \hyperlink{namespacepugi_a41b925609dde7657664cf68c6506838b}{pugi::unspecified\_\-bool\_\-xpath\_\-query} (xpath\_\-query $\ast$$\ast$$\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+PUGI\_\-\_\-NS\_\-END static PUGI\_\-\_\-NS\_\-BEGIN const size\_\-t \hyperlink{pugixml_8cpp_aa040c77beb7349f7473f072b6dd364b9}{xml\_\-memory\_\-page\_\-size}
+\item 
+static const uintptr\_\-t \hyperlink{pugixml_8cpp_ab551909bf50e9db29cce783b3ecfc102}{xml\_\-memory\_\-page\_\-alignment} = 32
+\item 
+static const uintptr\_\-t \hyperlink{pugixml_8cpp_a3dcb4e19abd7c83d2008e512ae557931}{xml\_\-memory\_\-page\_\-pointer\_\-mask} = $\sim$(\hyperlink{pugixml_8cpp_ab551909bf50e9db29cce783b3ecfc102}{xml\_\-memory\_\-page\_\-alignment} -\/ 1)
+\item 
+static const uintptr\_\-t \hyperlink{pugixml_8cpp_a9fe438ab2ab20f7ebf6be4a140eccc7d}{xml\_\-memory\_\-page\_\-name\_\-allocated\_\-mask} = 16
+\item 
+static const uintptr\_\-t \hyperlink{pugixml_8cpp_ac6bd2c90078386db01e2551c0d11441f}{xml\_\-memory\_\-page\_\-value\_\-allocated\_\-mask} = 8
+\item 
+static const uintptr\_\-t \hyperlink{pugixml_8cpp_a24c7f234d1f6628ccf3d07bd1bf878b3}{xml\_\-memory\_\-page\_\-type\_\-mask} = 7
+\item 
+static const unsigned char \hyperlink{pugixml_8cpp_a6acb2529321dd30b6f3a8c34e88edb1c}{chartype\_\-table} \mbox{[}256\mbox{]}
+\item 
+static const unsigned char \hyperlink{pugixml_8cpp_a5671e1188ce92b80a289fc6b9bf72598}{chartypex\_\-table} \mbox{[}256\mbox{]}
+\item 
+static const xpath\_\-node\_\-set \hyperlink{pugixml_8cpp_ace94b7b2616c35a34bb5fc96f0b53706}{dummy\_\-node\_\-set}
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{pugixml_8cpp_a3a72d0b2c0e7f99940ce8fbcc69e532f}{
+\index{pugixml.cpp@{pugixml.cpp}!ENDSWITH@{ENDSWITH}}
+\index{ENDSWITH@{ENDSWITH}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{ENDSWITH}]{\setlength{\rightskip}{0pt plus 5cm}\#define ENDSWITH(c, \/  e)~((c) == (e) $|$$|$ ((c) == 0 \&\& endch == (e)))}}
+\label{pugixml_8cpp_a3a72d0b2c0e7f99940ce8fbcc69e532f}
+\hypertarget{pugixml_8cpp_a03531d9b3c74f0843567257537edfd53}{
+\index{pugixml.cpp@{pugixml.cpp}!PUGI\_\-\_\-CHECK\_\-ERROR@{PUGI\_\-\_\-CHECK\_\-ERROR}}
+\index{PUGI\_\-\_\-CHECK\_\-ERROR@{PUGI\_\-\_\-CHECK\_\-ERROR}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{PUGI\_\-\_\-CHECK\_\-ERROR}]{\setlength{\rightskip}{0pt plus 5cm}\#define PUGI\_\-\_\-CHECK\_\-ERROR(err, \/  m)~\{ if ($\ast$s == 0) PUGI\_\-\_\-THROW\_\-ERROR(err, m); \}}}
+\label{pugixml_8cpp_a03531d9b3c74f0843567257537edfd53}
+\hypertarget{pugixml_8cpp_a88b7ffa81185df00606d7f2f1dad938b}{
+\index{pugixml.cpp@{pugixml.cpp}!PUGI\_\-\_\-DMC\_\-VOLATILE@{PUGI\_\-\_\-DMC\_\-VOLATILE}}
+\index{PUGI\_\-\_\-DMC\_\-VOLATILE@{PUGI\_\-\_\-DMC\_\-VOLATILE}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{PUGI\_\-\_\-DMC\_\-VOLATILE}]{\setlength{\rightskip}{0pt plus 5cm}\#define PUGI\_\-\_\-DMC\_\-VOLATILE}}
+\label{pugixml_8cpp_a88b7ffa81185df00606d7f2f1dad938b}
+\hypertarget{pugixml_8cpp_a39554337dd1d0fef32ddf9926ee4e4ae}{
+\index{pugixml.cpp@{pugixml.cpp}!PUGI\_\-\_\-ENDSEG@{PUGI\_\-\_\-ENDSEG}}
+\index{PUGI\_\-\_\-ENDSEG@{PUGI\_\-\_\-ENDSEG}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{PUGI\_\-\_\-ENDSEG}]{\setlength{\rightskip}{0pt plus 5cm}\#define PUGI\_\-\_\-ENDSEG()~\{ ch = $\ast$s; $\ast$s = 0; ++s; \}}}
+\label{pugixml_8cpp_a39554337dd1d0fef32ddf9926ee4e4ae}
+\hypertarget{pugixml_8cpp_a82c335af3ca48cdb209c506bf8dd6ad2}{
+\index{pugixml.cpp@{pugixml.cpp}!PUGI\_\-\_\-FN@{PUGI\_\-\_\-FN}}
+\index{PUGI\_\-\_\-FN@{PUGI\_\-\_\-FN}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{PUGI\_\-\_\-FN}]{\setlength{\rightskip}{0pt plus 5cm}\#define PUGI\_\-\_\-FN}}
+\label{pugixml_8cpp_a82c335af3ca48cdb209c506bf8dd6ad2}
+\hypertarget{pugixml_8cpp_a7c7ac48a50c2216e26d1c089d42b0b86}{
+\index{pugixml.cpp@{pugixml.cpp}!PUGI\_\-\_\-FN\_\-NO\_\-INLINE@{PUGI\_\-\_\-FN\_\-NO\_\-INLINE}}
+\index{PUGI\_\-\_\-FN\_\-NO\_\-INLINE@{PUGI\_\-\_\-FN\_\-NO\_\-INLINE}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{PUGI\_\-\_\-FN\_\-NO\_\-INLINE}]{\setlength{\rightskip}{0pt plus 5cm}\#define PUGI\_\-\_\-FN\_\-NO\_\-INLINE~PUGI\_\-\_\-NO\_\-INLINE}}
+\label{pugixml_8cpp_a7c7ac48a50c2216e26d1c089d42b0b86}
+\hypertarget{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{
+\index{pugixml.cpp@{pugixml.cpp}!PUGI\_\-\_\-IS\_\-CHARTYPE@{PUGI\_\-\_\-IS\_\-CHARTYPE}}
+\index{PUGI\_\-\_\-IS\_\-CHARTYPE@{PUGI\_\-\_\-IS\_\-CHARTYPE}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{PUGI\_\-\_\-IS\_\-CHARTYPE}]{\setlength{\rightskip}{0pt plus 5cm}\#define PUGI\_\-\_\-IS\_\-CHARTYPE(c, \/  ct)~PUGI\_\-\_\-IS\_\-CHARTYPE\_\-IMPL(c, ct, {\bf chartype\_\-table})}}
+\label{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}
+\hypertarget{pugixml_8cpp_abc4e05b3f9f04b44e6bd3ba6a7f1b24d}{
+\index{pugixml.cpp@{pugixml.cpp}!PUGI\_\-\_\-IS\_\-CHARTYPE\_\-IMPL@{PUGI\_\-\_\-IS\_\-CHARTYPE\_\-IMPL}}
+\index{PUGI\_\-\_\-IS\_\-CHARTYPE\_\-IMPL@{PUGI\_\-\_\-IS\_\-CHARTYPE\_\-IMPL}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{PUGI\_\-\_\-IS\_\-CHARTYPE\_\-IMPL}]{\setlength{\rightskip}{0pt plus 5cm}\#define PUGI\_\-\_\-IS\_\-CHARTYPE\_\-IMPL(c, \/  ct, \/  table)~(table\mbox{[}static\_\-cast$<$unsigned char$>$(c)\mbox{]} \& (ct))}}
+\label{pugixml_8cpp_abc4e05b3f9f04b44e6bd3ba6a7f1b24d}
+\hypertarget{pugixml_8cpp_a4ce684b35edc78e6fda91e836f29a46c}{
+\index{pugixml.cpp@{pugixml.cpp}!PUGI\_\-\_\-IS\_\-CHARTYPEX@{PUGI\_\-\_\-IS\_\-CHARTYPEX}}
+\index{PUGI\_\-\_\-IS\_\-CHARTYPEX@{PUGI\_\-\_\-IS\_\-CHARTYPEX}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{PUGI\_\-\_\-IS\_\-CHARTYPEX}]{\setlength{\rightskip}{0pt plus 5cm}\#define PUGI\_\-\_\-IS\_\-CHARTYPEX(c, \/  ct)~PUGI\_\-\_\-IS\_\-CHARTYPE\_\-IMPL(c, ct, {\bf chartypex\_\-table})}}
+\label{pugixml_8cpp_a4ce684b35edc78e6fda91e836f29a46c}
+\hypertarget{pugixml_8cpp_afd532a3c78b5b7c68f199a24fbc4adb5}{
+\index{pugixml.cpp@{pugixml.cpp}!PUGI\_\-\_\-NO\_\-INLINE@{PUGI\_\-\_\-NO\_\-INLINE}}
+\index{PUGI\_\-\_\-NO\_\-INLINE@{PUGI\_\-\_\-NO\_\-INLINE}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{PUGI\_\-\_\-NO\_\-INLINE}]{\setlength{\rightskip}{0pt plus 5cm}\#define PUGI\_\-\_\-NO\_\-INLINE}}
+\label{pugixml_8cpp_afd532a3c78b5b7c68f199a24fbc4adb5}
+pugixml parser -\/ version 1.2 -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Copyright (C) 2006-\/2012, by Arseny Kapoulkine (\href{mailto:arseny.kapoulkine@gmail.com}{\tt arseny.kapoulkine@gmail.com}) Report bugs and download new versions at \href{http://pugixml.org/}{\tt http://pugixml.org/}
+
+This library is distributed under the MIT License. See notice at the end of this file.
+
+This work is based on the pugxml parser, which is: Copyright (C) 2003, by Kristen Wegner (\href{mailto:kristen@tima.net}{\tt kristen@tima.net}) \hypertarget{pugixml_8cpp_a7e613f6e5b9aa563d9d2d1f079d9be29}{
+\index{pugixml.cpp@{pugixml.cpp}!PUGI\_\-\_\-NS\_\-BEGIN@{PUGI\_\-\_\-NS\_\-BEGIN}}
+\index{PUGI\_\-\_\-NS\_\-BEGIN@{PUGI\_\-\_\-NS\_\-BEGIN}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{PUGI\_\-\_\-NS\_\-BEGIN}]{\setlength{\rightskip}{0pt plus 5cm}\#define PUGI\_\-\_\-NS\_\-BEGIN~namespace pugi \{ namespace impl \{ namespace \{}}
+\label{pugixml_8cpp_a7e613f6e5b9aa563d9d2d1f079d9be29}
+\hypertarget{pugixml_8cpp_aa426d55daea96845bc154f5a7a71ecc4}{
+\index{pugixml.cpp@{pugixml.cpp}!PUGI\_\-\_\-NS\_\-END@{PUGI\_\-\_\-NS\_\-END}}
+\index{PUGI\_\-\_\-NS\_\-END@{PUGI\_\-\_\-NS\_\-END}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{PUGI\_\-\_\-NS\_\-END}]{\setlength{\rightskip}{0pt plus 5cm}\#define PUGI\_\-\_\-NS\_\-END~\} \} \}}}
+\label{pugixml_8cpp_aa426d55daea96845bc154f5a7a71ecc4}
+\hypertarget{pugixml_8cpp_a06966692c7864407ceffff065b4d7da2}{
+\index{pugixml.cpp@{pugixml.cpp}!PUGI\_\-\_\-OPTSET@{PUGI\_\-\_\-OPTSET}}
+\index{PUGI\_\-\_\-OPTSET@{PUGI\_\-\_\-OPTSET}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{PUGI\_\-\_\-OPTSET}]{\setlength{\rightskip}{0pt plus 5cm}\#define PUGI\_\-\_\-OPTSET(OPT)~( optmsk \& (OPT) )}}
+\label{pugixml_8cpp_a06966692c7864407ceffff065b4d7da2}
+\hypertarget{pugixml_8cpp_ab82f13ed99cc2d22c5ecb6e18b5dfe17}{
+\index{pugixml.cpp@{pugixml.cpp}!PUGI\_\-\_\-POPNODE@{PUGI\_\-\_\-POPNODE}}
+\index{PUGI\_\-\_\-POPNODE@{PUGI\_\-\_\-POPNODE}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{PUGI\_\-\_\-POPNODE}]{\setlength{\rightskip}{0pt plus 5cm}\#define PUGI\_\-\_\-POPNODE()~\{ cursor = cursor-\/$>$parent; \}}}
+\label{pugixml_8cpp_ab82f13ed99cc2d22c5ecb6e18b5dfe17}
+\hypertarget{pugixml_8cpp_accdd212cd2831662c3c2dda668246f8a}{
+\index{pugixml.cpp@{pugixml.cpp}!PUGI\_\-\_\-PUSHNODE@{PUGI\_\-\_\-PUSHNODE}}
+\index{PUGI\_\-\_\-PUSHNODE@{PUGI\_\-\_\-PUSHNODE}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{PUGI\_\-\_\-PUSHNODE}]{\setlength{\rightskip}{0pt plus 5cm}\#define PUGI\_\-\_\-PUSHNODE(TYPE)~\{ cursor = append\_\-node(cursor, alloc, TYPE); if (!cursor) PUGI\_\-\_\-THROW\_\-ERROR(status\_\-out\_\-of\_\-memory, s); \}}}
+\label{pugixml_8cpp_accdd212cd2831662c3c2dda668246f8a}
+\hypertarget{pugixml_8cpp_a98386e86f2c7e7e477939d209a5bbf7e}{
+\index{pugixml.cpp@{pugixml.cpp}!PUGI\_\-\_\-SCANFOR@{PUGI\_\-\_\-SCANFOR}}
+\index{PUGI\_\-\_\-SCANFOR@{PUGI\_\-\_\-SCANFOR}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{PUGI\_\-\_\-SCANFOR}]{\setlength{\rightskip}{0pt plus 5cm}\#define PUGI\_\-\_\-SCANFOR(X)~\{ while ($\ast$s != 0 \&\& !(X)) ++s; \}}}
+\label{pugixml_8cpp_a98386e86f2c7e7e477939d209a5bbf7e}
+\hypertarget{pugixml_8cpp_adfcdc54e9f7e0f2d3927b4a7690abf2a}{
+\index{pugixml.cpp@{pugixml.cpp}!PUGI\_\-\_\-SCANWHILE@{PUGI\_\-\_\-SCANWHILE}}
+\index{PUGI\_\-\_\-SCANWHILE@{PUGI\_\-\_\-SCANWHILE}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{PUGI\_\-\_\-SCANWHILE}]{\setlength{\rightskip}{0pt plus 5cm}\#define PUGI\_\-\_\-SCANWHILE(X)~\{ while ((X)) ++s; \}}}
+\label{pugixml_8cpp_adfcdc54e9f7e0f2d3927b4a7690abf2a}
+\hypertarget{pugixml_8cpp_a87d9805caf644d370bb8e8faa2a1f887}{
+\index{pugixml.cpp@{pugixml.cpp}!PUGI\_\-\_\-SKIPWS@{PUGI\_\-\_\-SKIPWS}}
+\index{PUGI\_\-\_\-SKIPWS@{PUGI\_\-\_\-SKIPWS}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{PUGI\_\-\_\-SKIPWS}]{\setlength{\rightskip}{0pt plus 5cm}\#define PUGI\_\-\_\-SKIPWS()~\{ while (PUGI\_\-\_\-IS\_\-CHARTYPE($\ast$s, ct\_\-space)) ++s; \}}}
+\label{pugixml_8cpp_a87d9805caf644d370bb8e8faa2a1f887}
+\hypertarget{pugixml_8cpp_a7d1280c499f3355965242c431435a695}{
+\index{pugixml.cpp@{pugixml.cpp}!PUGI\_\-\_\-STATIC\_\-ASSERT@{PUGI\_\-\_\-STATIC\_\-ASSERT}}
+\index{PUGI\_\-\_\-STATIC\_\-ASSERT@{PUGI\_\-\_\-STATIC\_\-ASSERT}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{PUGI\_\-\_\-STATIC\_\-ASSERT}]{\setlength{\rightskip}{0pt plus 5cm}\#define PUGI\_\-\_\-STATIC\_\-ASSERT(cond)~\{ static const char condition\_\-failed\mbox{[}(cond) ? 1 : -\/1\mbox{]} = \{0\}; (void)condition\_\-failed\mbox{[}0\mbox{]}; \}}}
+\label{pugixml_8cpp_a7d1280c499f3355965242c431435a695}
+\hypertarget{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{
+\index{pugixml.cpp@{pugixml.cpp}!PUGI\_\-\_\-THROW\_\-ERROR@{PUGI\_\-\_\-THROW\_\-ERROR}}
+\index{PUGI\_\-\_\-THROW\_\-ERROR@{PUGI\_\-\_\-THROW\_\-ERROR}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{PUGI\_\-\_\-THROW\_\-ERROR}]{\setlength{\rightskip}{0pt plus 5cm}\#define PUGI\_\-\_\-THROW\_\-ERROR(err, \/  m)~return error\_\-offset = m, error\_\-status = err, static\_\-cast$<$char\_\-t$\ast$$>$(0)}}
+\label{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{pugixml_8cpp_ab7ee7f946a7c5e9821fab22ef05fc0ed}{
+\index{pugixml.cpp@{pugixml.cpp}!strconv\_\-attribute\_\-t@{strconv\_\-attribute\_\-t}}
+\index{strconv\_\-attribute\_\-t@{strconv\_\-attribute\_\-t}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{strconv\_\-attribute\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef char\_\-t$\ast$($\ast$ {\bf strconv\_\-attribute\_\-t})(char\_\-t $\ast$, char\_\-t)}}
+\label{pugixml_8cpp_ab7ee7f946a7c5e9821fab22ef05fc0ed}
+\hypertarget{pugixml_8cpp_aafccd3afb496514b0e76d81164955c28}{
+\index{pugixml.cpp@{pugixml.cpp}!strconv\_\-pcdata\_\-t@{strconv\_\-pcdata\_\-t}}
+\index{strconv\_\-pcdata\_\-t@{strconv\_\-pcdata\_\-t}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{strconv\_\-pcdata\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef char\_\-t$\ast$($\ast$ {\bf strconv\_\-pcdata\_\-t})(char\_\-t $\ast$)}}
+\label{pugixml_8cpp_aafccd3afb496514b0e76d81164955c28}
+\hypertarget{pugixml_8cpp_a48af51bcb239f88a85b75a71229c5876}{
+\index{pugixml.cpp@{pugixml.cpp}!wchar\_\-counter@{wchar\_\-counter}}
+\index{wchar\_\-counter@{wchar\_\-counter}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{wchar\_\-counter}]{\setlength{\rightskip}{0pt plus 5cm}typedef wchar\_\-selector$<$sizeof(wchar\_\-t)$>$::counter {\bf wchar\_\-counter}}}
+\label{pugixml_8cpp_a48af51bcb239f88a85b75a71229c5876}
+\hypertarget{pugixml_8cpp_a1cf0e4fd8c6a8fb58bb0378e86c36936}{
+\index{pugixml.cpp@{pugixml.cpp}!wchar\_\-writer@{wchar\_\-writer}}
+\index{wchar\_\-writer@{wchar\_\-writer}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{wchar\_\-writer}]{\setlength{\rightskip}{0pt plus 5cm}typedef wchar\_\-selector$<$sizeof(wchar\_\-t)$>$::writer {\bf wchar\_\-writer}}}
+\label{pugixml_8cpp_a1cf0e4fd8c6a8fb58bb0378e86c36936}
+\hypertarget{pugixml_8cpp_a619af209df810abfa72ce738336d7b88}{
+\index{pugixml.cpp@{pugixml.cpp}!xml\_\-memory@{xml\_\-memory}}
+\index{xml\_\-memory@{xml\_\-memory}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{xml\_\-memory}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf xml\_\-memory\_\-management\_\-function\_\-storage}$<$int$>$ {\bf xml\_\-memory}}}
+\label{pugixml_8cpp_a619af209df810abfa72ce738336d7b88}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330d}{
+\index{pugixml.cpp@{pugixml.cpp}!ast\_\-type\_\-t@{ast\_\-type\_\-t}}
+\index{ast\_\-type\_\-t@{ast\_\-type\_\-t}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{ast\_\-type\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ast\_\-type\_\-t}}}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330d}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{ast\_\-op\_\-or@{ast\_\-op\_\-or}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-op\_\-or@{ast\_\-op\_\-or}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dae9da7f765cd2c72f580c86f06e0ab0a0}{
+ast\_\-op\_\-or}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dae9da7f765cd2c72f580c86f06e0ab0a0}
+}]\index{ast\_\-op\_\-and@{ast\_\-op\_\-and}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-op\_\-and@{ast\_\-op\_\-and}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da0459a344c7cfda000e4c987449ea1e09}{
+ast\_\-op\_\-and}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da0459a344c7cfda000e4c987449ea1e09}
+}]\index{ast\_\-op\_\-equal@{ast\_\-op\_\-equal}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-op\_\-equal@{ast\_\-op\_\-equal}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da2dec9732f911df2eba44fef4e50c89f4}{
+ast\_\-op\_\-equal}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da2dec9732f911df2eba44fef4e50c89f4}
+}]\index{ast\_\-op\_\-not\_\-equal@{ast\_\-op\_\-not\_\-equal}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-op\_\-not\_\-equal@{ast\_\-op\_\-not\_\-equal}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da75624fef27d23fd3a97f82d24027c583}{
+ast\_\-op\_\-not\_\-equal}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da75624fef27d23fd3a97f82d24027c583}
+}]\index{ast\_\-op\_\-less@{ast\_\-op\_\-less}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-op\_\-less@{ast\_\-op\_\-less}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daf968d4e04b9f634f2466ec66f5a7b85f}{
+ast\_\-op\_\-less}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daf968d4e04b9f634f2466ec66f5a7b85f}
+}]\index{ast\_\-op\_\-greater@{ast\_\-op\_\-greater}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-op\_\-greater@{ast\_\-op\_\-greater}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da844979e65e0a70ebc59efa5bbdd42cc4}{
+ast\_\-op\_\-greater}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da844979e65e0a70ebc59efa5bbdd42cc4}
+}]\index{ast\_\-op\_\-less\_\-or\_\-equal@{ast\_\-op\_\-less\_\-or\_\-equal}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-op\_\-less\_\-or\_\-equal@{ast\_\-op\_\-less\_\-or\_\-equal}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa616495e1f242635e7538da36645ca2a}{
+ast\_\-op\_\-less\_\-or\_\-equal}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa616495e1f242635e7538da36645ca2a}
+}]\index{ast\_\-op\_\-greater\_\-or\_\-equal@{ast\_\-op\_\-greater\_\-or\_\-equal}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-op\_\-greater\_\-or\_\-equal@{ast\_\-op\_\-greater\_\-or\_\-equal}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daec36ceed90ddf0bc022935266093c31e}{
+ast\_\-op\_\-greater\_\-or\_\-equal}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daec36ceed90ddf0bc022935266093c31e}
+}]\index{ast\_\-op\_\-add@{ast\_\-op\_\-add}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-op\_\-add@{ast\_\-op\_\-add}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dae52031dbbbd974aaa12ce304f58d6ca6}{
+ast\_\-op\_\-add}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dae52031dbbbd974aaa12ce304f58d6ca6}
+}]\index{ast\_\-op\_\-subtract@{ast\_\-op\_\-subtract}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-op\_\-subtract@{ast\_\-op\_\-subtract}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa087aabd06e3c7df72d3159ccb53f718}{
+ast\_\-op\_\-subtract}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa087aabd06e3c7df72d3159ccb53f718}
+}]\index{ast\_\-op\_\-multiply@{ast\_\-op\_\-multiply}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-op\_\-multiply@{ast\_\-op\_\-multiply}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dab0bf6ee67928daf76a761ca028c56d9b}{
+ast\_\-op\_\-multiply}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dab0bf6ee67928daf76a761ca028c56d9b}
+}]\index{ast\_\-op\_\-divide@{ast\_\-op\_\-divide}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-op\_\-divide@{ast\_\-op\_\-divide}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da196364baec820eeb5970d3a36ac7a10e}{
+ast\_\-op\_\-divide}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da196364baec820eeb5970d3a36ac7a10e}
+}]\index{ast\_\-op\_\-mod@{ast\_\-op\_\-mod}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-op\_\-mod@{ast\_\-op\_\-mod}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daf1b22f2953ec8782c50b2ab39366cd07}{
+ast\_\-op\_\-mod}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daf1b22f2953ec8782c50b2ab39366cd07}
+}]\index{ast\_\-op\_\-negate@{ast\_\-op\_\-negate}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-op\_\-negate@{ast\_\-op\_\-negate}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da8a1e59b48b67221da14fe292a232da26}{
+ast\_\-op\_\-negate}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da8a1e59b48b67221da14fe292a232da26}
+}]\index{ast\_\-op\_\-union@{ast\_\-op\_\-union}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-op\_\-union@{ast\_\-op\_\-union}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da57012874ae8f1fe371ecd68677feb277}{
+ast\_\-op\_\-union}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da57012874ae8f1fe371ecd68677feb277}
+}]\index{ast\_\-predicate@{ast\_\-predicate}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-predicate@{ast\_\-predicate}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da39bc72aba9792b10763caa7c526b9ed5}{
+ast\_\-predicate}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da39bc72aba9792b10763caa7c526b9ed5}
+}]\index{ast\_\-filter@{ast\_\-filter}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-filter@{ast\_\-filter}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da0c9430d6adbe88945efa5a1cb100d843}{
+ast\_\-filter}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da0c9430d6adbe88945efa5a1cb100d843}
+}]\index{ast\_\-filter\_\-posinv@{ast\_\-filter\_\-posinv}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-filter\_\-posinv@{ast\_\-filter\_\-posinv}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da3d009066e8b19be4c62cc378edcaf541}{
+ast\_\-filter\_\-posinv}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da3d009066e8b19be4c62cc378edcaf541}
+}]\index{ast\_\-string\_\-constant@{ast\_\-string\_\-constant}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-string\_\-constant@{ast\_\-string\_\-constant}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da9062d53478f8a445ed281f1af75b9ab0}{
+ast\_\-string\_\-constant}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da9062d53478f8a445ed281f1af75b9ab0}
+}]\index{ast\_\-number\_\-constant@{ast\_\-number\_\-constant}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-number\_\-constant@{ast\_\-number\_\-constant}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da09494df03f6c34c5431cb9851a1259ba}{
+ast\_\-number\_\-constant}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da09494df03f6c34c5431cb9851a1259ba}
+}]\index{ast\_\-variable@{ast\_\-variable}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-variable@{ast\_\-variable}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da3e16540ee352944686b90794e0c94260}{
+ast\_\-variable}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da3e16540ee352944686b90794e0c94260}
+}]\index{ast\_\-func\_\-last@{ast\_\-func\_\-last}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-last@{ast\_\-func\_\-last}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa463c85b53c42378d421cbcf5eaf6009}{
+ast\_\-func\_\-last}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa463c85b53c42378d421cbcf5eaf6009}
+}]\index{ast\_\-func\_\-position@{ast\_\-func\_\-position}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-position@{ast\_\-func\_\-position}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da8e32686d2d4ee9157d6ca389d7715998}{
+ast\_\-func\_\-position}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da8e32686d2d4ee9157d6ca389d7715998}
+}]\index{ast\_\-func\_\-count@{ast\_\-func\_\-count}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-count@{ast\_\-func\_\-count}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dab7169d72ddafbb8e64bad8e9e28cf2da}{
+ast\_\-func\_\-count}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dab7169d72ddafbb8e64bad8e9e28cf2da}
+}]\index{ast\_\-func\_\-id@{ast\_\-func\_\-id}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-id@{ast\_\-func\_\-id}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daf858fa45ee843ccfe4c7d2ae226a5e8c}{
+ast\_\-func\_\-id}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daf858fa45ee843ccfe4c7d2ae226a5e8c}
+}]\index{ast\_\-func\_\-local\_\-name\_\-0@{ast\_\-func\_\-local\_\-name\_\-0}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-local\_\-name\_\-0@{ast\_\-func\_\-local\_\-name\_\-0}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daf12ccfa2490b679e1338d211e4f96c43}{
+ast\_\-func\_\-local\_\-name\_\-0}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daf12ccfa2490b679e1338d211e4f96c43}
+}]\index{ast\_\-func\_\-local\_\-name\_\-1@{ast\_\-func\_\-local\_\-name\_\-1}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-local\_\-name\_\-1@{ast\_\-func\_\-local\_\-name\_\-1}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da5d016b2c68613b3016415bcfeefbf2d5}{
+ast\_\-func\_\-local\_\-name\_\-1}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da5d016b2c68613b3016415bcfeefbf2d5}
+}]\index{ast\_\-func\_\-namespace\_\-uri\_\-0@{ast\_\-func\_\-namespace\_\-uri\_\-0}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-namespace\_\-uri\_\-0@{ast\_\-func\_\-namespace\_\-uri\_\-0}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da5e6ac5151480d36a3a5469c6d17f8b24}{
+ast\_\-func\_\-namespace\_\-uri\_\-0}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da5e6ac5151480d36a3a5469c6d17f8b24}
+}]\index{ast\_\-func\_\-namespace\_\-uri\_\-1@{ast\_\-func\_\-namespace\_\-uri\_\-1}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-namespace\_\-uri\_\-1@{ast\_\-func\_\-namespace\_\-uri\_\-1}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dabaab13e8fc9981d54c1d10d47c1ade2b}{
+ast\_\-func\_\-namespace\_\-uri\_\-1}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dabaab13e8fc9981d54c1d10d47c1ade2b}
+}]\index{ast\_\-func\_\-name\_\-0@{ast\_\-func\_\-name\_\-0}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-name\_\-0@{ast\_\-func\_\-name\_\-0}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da354fdbfef6c16cc50e82c0c920cfd709}{
+ast\_\-func\_\-name\_\-0}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da354fdbfef6c16cc50e82c0c920cfd709}
+}]\index{ast\_\-func\_\-name\_\-1@{ast\_\-func\_\-name\_\-1}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-name\_\-1@{ast\_\-func\_\-name\_\-1}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da12636568edce481fcb128064b25002b1}{
+ast\_\-func\_\-name\_\-1}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da12636568edce481fcb128064b25002b1}
+}]\index{ast\_\-func\_\-string\_\-0@{ast\_\-func\_\-string\_\-0}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-string\_\-0@{ast\_\-func\_\-string\_\-0}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da478e1f441c013c69a95053844e900924}{
+ast\_\-func\_\-string\_\-0}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da478e1f441c013c69a95053844e900924}
+}]\index{ast\_\-func\_\-string\_\-1@{ast\_\-func\_\-string\_\-1}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-string\_\-1@{ast\_\-func\_\-string\_\-1}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da40f79d68b93d0068942664ad1cd73703}{
+ast\_\-func\_\-string\_\-1}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da40f79d68b93d0068942664ad1cd73703}
+}]\index{ast\_\-func\_\-concat@{ast\_\-func\_\-concat}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-concat@{ast\_\-func\_\-concat}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da2b60b6562585b1e6f1bb2b60901503a7}{
+ast\_\-func\_\-concat}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da2b60b6562585b1e6f1bb2b60901503a7}
+}]\index{ast\_\-func\_\-starts\_\-with@{ast\_\-func\_\-starts\_\-with}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-starts\_\-with@{ast\_\-func\_\-starts\_\-with}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dade6b0e6cf600fd5462ff141dc924a152}{
+ast\_\-func\_\-starts\_\-with}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dade6b0e6cf600fd5462ff141dc924a152}
+}]\index{ast\_\-func\_\-contains@{ast\_\-func\_\-contains}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-contains@{ast\_\-func\_\-contains}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da7ebe6f7042d21758eb74a8e1652d61ee}{
+ast\_\-func\_\-contains}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da7ebe6f7042d21758eb74a8e1652d61ee}
+}]\index{ast\_\-func\_\-substring\_\-before@{ast\_\-func\_\-substring\_\-before}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-substring\_\-before@{ast\_\-func\_\-substring\_\-before}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da57968ecb15bcbfa4c6a1cf69183d18f8}{
+ast\_\-func\_\-substring\_\-before}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da57968ecb15bcbfa4c6a1cf69183d18f8}
+}]\index{ast\_\-func\_\-substring\_\-after@{ast\_\-func\_\-substring\_\-after}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-substring\_\-after@{ast\_\-func\_\-substring\_\-after}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dab9cf1d6dbc207ac0d5421cc5f6d78c19}{
+ast\_\-func\_\-substring\_\-after}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dab9cf1d6dbc207ac0d5421cc5f6d78c19}
+}]\index{ast\_\-func\_\-substring\_\-2@{ast\_\-func\_\-substring\_\-2}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-substring\_\-2@{ast\_\-func\_\-substring\_\-2}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da8bef77aeae6e5aa6d00d6f57ce9d7e13}{
+ast\_\-func\_\-substring\_\-2}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da8bef77aeae6e5aa6d00d6f57ce9d7e13}
+}]\index{ast\_\-func\_\-substring\_\-3@{ast\_\-func\_\-substring\_\-3}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-substring\_\-3@{ast\_\-func\_\-substring\_\-3}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da108fa4adbb640058d5042a324d15020f}{
+ast\_\-func\_\-substring\_\-3}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da108fa4adbb640058d5042a324d15020f}
+}]\index{ast\_\-func\_\-string\_\-length\_\-0@{ast\_\-func\_\-string\_\-length\_\-0}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-string\_\-length\_\-0@{ast\_\-func\_\-string\_\-length\_\-0}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da5bc4366fd91243376b21e0bd585418ec}{
+ast\_\-func\_\-string\_\-length\_\-0}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da5bc4366fd91243376b21e0bd585418ec}
+}]\index{ast\_\-func\_\-string\_\-length\_\-1@{ast\_\-func\_\-string\_\-length\_\-1}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-string\_\-length\_\-1@{ast\_\-func\_\-string\_\-length\_\-1}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dad2e8b9497c0d63eac59c19129a2a79c7}{
+ast\_\-func\_\-string\_\-length\_\-1}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dad2e8b9497c0d63eac59c19129a2a79c7}
+}]\index{ast\_\-func\_\-normalize\_\-space\_\-0@{ast\_\-func\_\-normalize\_\-space\_\-0}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-normalize\_\-space\_\-0@{ast\_\-func\_\-normalize\_\-space\_\-0}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa46c67b12851bceec7f56d2bef299145}{
+ast\_\-func\_\-normalize\_\-space\_\-0}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa46c67b12851bceec7f56d2bef299145}
+}]\index{ast\_\-func\_\-normalize\_\-space\_\-1@{ast\_\-func\_\-normalize\_\-space\_\-1}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-normalize\_\-space\_\-1@{ast\_\-func\_\-normalize\_\-space\_\-1}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da6ec954cce9f9c7a4119b280160c253da}{
+ast\_\-func\_\-normalize\_\-space\_\-1}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da6ec954cce9f9c7a4119b280160c253da}
+}]\index{ast\_\-func\_\-translate@{ast\_\-func\_\-translate}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-translate@{ast\_\-func\_\-translate}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dac2296a32ef88a1416f52def407024601}{
+ast\_\-func\_\-translate}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dac2296a32ef88a1416f52def407024601}
+}]\index{ast\_\-func\_\-boolean@{ast\_\-func\_\-boolean}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-boolean@{ast\_\-func\_\-boolean}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa4d2882f2dfec6908671fd01bf626965}{
+ast\_\-func\_\-boolean}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa4d2882f2dfec6908671fd01bf626965}
+}]\index{ast\_\-func\_\-not@{ast\_\-func\_\-not}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-not@{ast\_\-func\_\-not}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da3d65825af60c39c5dd31ab710202f369}{
+ast\_\-func\_\-not}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da3d65825af60c39c5dd31ab710202f369}
+}]\index{ast\_\-func\_\-true@{ast\_\-func\_\-true}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-true@{ast\_\-func\_\-true}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da6cfca54a1db508b01b3a70b60a117bdf}{
+ast\_\-func\_\-true}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da6cfca54a1db508b01b3a70b60a117bdf}
+}]\index{ast\_\-func\_\-false@{ast\_\-func\_\-false}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-false@{ast\_\-func\_\-false}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daf02fc3e0bd1c3695759342d0d051922c}{
+ast\_\-func\_\-false}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daf02fc3e0bd1c3695759342d0d051922c}
+}]\index{ast\_\-func\_\-lang@{ast\_\-func\_\-lang}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-lang@{ast\_\-func\_\-lang}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da666d33d475c216b35e0eae756955729e}{
+ast\_\-func\_\-lang}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da666d33d475c216b35e0eae756955729e}
+}]\index{ast\_\-func\_\-number\_\-0@{ast\_\-func\_\-number\_\-0}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-number\_\-0@{ast\_\-func\_\-number\_\-0}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da4bba091feebb6ddbb1c3fd143b0defb4}{
+ast\_\-func\_\-number\_\-0}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da4bba091feebb6ddbb1c3fd143b0defb4}
+}]\index{ast\_\-func\_\-number\_\-1@{ast\_\-func\_\-number\_\-1}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-number\_\-1@{ast\_\-func\_\-number\_\-1}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daceb768b882e131cfb485dfd4a0cdd6dc}{
+ast\_\-func\_\-number\_\-1}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daceb768b882e131cfb485dfd4a0cdd6dc}
+}]\index{ast\_\-func\_\-sum@{ast\_\-func\_\-sum}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-sum@{ast\_\-func\_\-sum}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da11d81217d62ac719fce24834025750dc}{
+ast\_\-func\_\-sum}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da11d81217d62ac719fce24834025750dc}
+}]\index{ast\_\-func\_\-floor@{ast\_\-func\_\-floor}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-floor@{ast\_\-func\_\-floor}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da14388195af9fb91660f721911f4decaf}{
+ast\_\-func\_\-floor}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da14388195af9fb91660f721911f4decaf}
+}]\index{ast\_\-func\_\-ceiling@{ast\_\-func\_\-ceiling}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-ceiling@{ast\_\-func\_\-ceiling}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da9352aabce4fc3f97d5a439acd0347b13}{
+ast\_\-func\_\-ceiling}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da9352aabce4fc3f97d5a439acd0347b13}
+}]\index{ast\_\-func\_\-round@{ast\_\-func\_\-round}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-func\_\-round@{ast\_\-func\_\-round}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dac896699d30b94232d7a5ffc7fe82fd2c}{
+ast\_\-func\_\-round}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dac896699d30b94232d7a5ffc7fe82fd2c}
+}]\index{ast\_\-step@{ast\_\-step}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-step@{ast\_\-step}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa6229c263d2e6f239a78d56b6f8aaf19}{
+ast\_\-step}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa6229c263d2e6f239a78d56b6f8aaf19}
+}]\index{ast\_\-step\_\-root@{ast\_\-step\_\-root}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ast\_\-step\_\-root@{ast\_\-step\_\-root}}\item[{\em 
+\hypertarget{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dabee572296f3d4f85d8ebfffca4c2d3bd}{
+ast\_\-step\_\-root}
+\label{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dabee572296f3d4f85d8ebfffca4c2d3bd}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189a}{
+\index{pugixml.cpp@{pugixml.cpp}!axis\_\-t@{axis\_\-t}}
+\index{axis\_\-t@{axis\_\-t}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{axis\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf axis\_\-t}}}
+\label{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189a}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{axis\_\-ancestor@{axis\_\-ancestor}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!axis\_\-ancestor@{axis\_\-ancestor}}\item[{\em 
+\hypertarget{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aad6f039a708acaaf1f7404cb061aac86f}{
+axis\_\-ancestor}
+\label{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aad6f039a708acaaf1f7404cb061aac86f}
+}]\index{axis\_\-ancestor\_\-or\_\-self@{axis\_\-ancestor\_\-or\_\-self}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!axis\_\-ancestor\_\-or\_\-self@{axis\_\-ancestor\_\-or\_\-self}}\item[{\em 
+\hypertarget{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa22656c644b010657ddc2635d97e7b4a3}{
+axis\_\-ancestor\_\-or\_\-self}
+\label{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa22656c644b010657ddc2635d97e7b4a3}
+}]\index{axis\_\-attribute@{axis\_\-attribute}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!axis\_\-attribute@{axis\_\-attribute}}\item[{\em 
+\hypertarget{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa3e7282ac37732c350a6f4890a3ab6401}{
+axis\_\-attribute}
+\label{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa3e7282ac37732c350a6f4890a3ab6401}
+}]\index{axis\_\-child@{axis\_\-child}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!axis\_\-child@{axis\_\-child}}\item[{\em 
+\hypertarget{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa6919787a75cb4c83edb15f11fbe98faa}{
+axis\_\-child}
+\label{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa6919787a75cb4c83edb15f11fbe98faa}
+}]\index{axis\_\-descendant@{axis\_\-descendant}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!axis\_\-descendant@{axis\_\-descendant}}\item[{\em 
+\hypertarget{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa835de5174f348c3a6b926f3467827ab9}{
+axis\_\-descendant}
+\label{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa835de5174f348c3a6b926f3467827ab9}
+}]\index{axis\_\-descendant\_\-or\_\-self@{axis\_\-descendant\_\-or\_\-self}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!axis\_\-descendant\_\-or\_\-self@{axis\_\-descendant\_\-or\_\-self}}\item[{\em 
+\hypertarget{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aaa4371804013320e9798cea401cffa22d}{
+axis\_\-descendant\_\-or\_\-self}
+\label{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aaa4371804013320e9798cea401cffa22d}
+}]\index{axis\_\-following@{axis\_\-following}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!axis\_\-following@{axis\_\-following}}\item[{\em 
+\hypertarget{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aacb21ff57ba23bbf8e9bb3aa6e6d47106}{
+axis\_\-following}
+\label{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aacb21ff57ba23bbf8e9bb3aa6e6d47106}
+}]\index{axis\_\-following\_\-sibling@{axis\_\-following\_\-sibling}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!axis\_\-following\_\-sibling@{axis\_\-following\_\-sibling}}\item[{\em 
+\hypertarget{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa57a9f91a01f40c54aae642eefb9523c0}{
+axis\_\-following\_\-sibling}
+\label{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa57a9f91a01f40c54aae642eefb9523c0}
+}]\index{axis\_\-namespace@{axis\_\-namespace}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!axis\_\-namespace@{axis\_\-namespace}}\item[{\em 
+\hypertarget{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aaf530e34cb512f4b88fbb4b2caec602a0}{
+axis\_\-namespace}
+\label{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aaf530e34cb512f4b88fbb4b2caec602a0}
+}]\index{axis\_\-parent@{axis\_\-parent}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!axis\_\-parent@{axis\_\-parent}}\item[{\em 
+\hypertarget{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aafa5cf248a5e26f36caf8163293db25a9}{
+axis\_\-parent}
+\label{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aafa5cf248a5e26f36caf8163293db25a9}
+}]\index{axis\_\-preceding@{axis\_\-preceding}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!axis\_\-preceding@{axis\_\-preceding}}\item[{\em 
+\hypertarget{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa0b356ec6c3e3dec19179067e73db7089}{
+axis\_\-preceding}
+\label{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa0b356ec6c3e3dec19179067e73db7089}
+}]\index{axis\_\-preceding\_\-sibling@{axis\_\-preceding\_\-sibling}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!axis\_\-preceding\_\-sibling@{axis\_\-preceding\_\-sibling}}\item[{\em 
+\hypertarget{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aaef80578171e44825bd50265feb9a32dc}{
+axis\_\-preceding\_\-sibling}
+\label{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aaef80578171e44825bd50265feb9a32dc}
+}]\index{axis\_\-self@{axis\_\-self}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!axis\_\-self@{axis\_\-self}}\item[{\em 
+\hypertarget{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aac3dba2fdf066d765a93e20508450e924}{
+axis\_\-self}
+\label{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aac3dba2fdf066d765a93e20508450e924}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108}{
+\index{pugixml.cpp@{pugixml.cpp}!chartype\_\-t@{chartype\_\-t}}
+\index{chartype\_\-t@{chartype\_\-t}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{chartype\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf chartype\_\-t}}}
+\label{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{ct\_\-parse\_\-pcdata@{ct\_\-parse\_\-pcdata}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ct\_\-parse\_\-pcdata@{ct\_\-parse\_\-pcdata}}\item[{\em 
+\hypertarget{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108aa0f09a99c3d76641d00d0ad11f4f2fa1}{
+ct\_\-parse\_\-pcdata}
+\label{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108aa0f09a99c3d76641d00d0ad11f4f2fa1}
+}]\index{ct\_\-parse\_\-attr@{ct\_\-parse\_\-attr}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ct\_\-parse\_\-attr@{ct\_\-parse\_\-attr}}\item[{\em 
+\hypertarget{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108a884462ea84ab1e7745a2bf69fc2edf75}{
+ct\_\-parse\_\-attr}
+\label{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108a884462ea84ab1e7745a2bf69fc2edf75}
+}]\index{ct\_\-parse\_\-attr\_\-ws@{ct\_\-parse\_\-attr\_\-ws}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ct\_\-parse\_\-attr\_\-ws@{ct\_\-parse\_\-attr\_\-ws}}\item[{\em 
+\hypertarget{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108a8ac9b7ded4827803524b87f772f17c51}{
+ct\_\-parse\_\-attr\_\-ws}
+\label{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108a8ac9b7ded4827803524b87f772f17c51}
+}]\index{ct\_\-space@{ct\_\-space}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ct\_\-space@{ct\_\-space}}\item[{\em 
+\hypertarget{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108ac957a1774b6a4430e583bcb881909372}{
+ct\_\-space}
+\label{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108ac957a1774b6a4430e583bcb881909372}
+}]\index{ct\_\-parse\_\-cdata@{ct\_\-parse\_\-cdata}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ct\_\-parse\_\-cdata@{ct\_\-parse\_\-cdata}}\item[{\em 
+\hypertarget{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108a9cc4f987cc929305369312be69d01be2}{
+ct\_\-parse\_\-cdata}
+\label{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108a9cc4f987cc929305369312be69d01be2}
+}]\index{ct\_\-parse\_\-comment@{ct\_\-parse\_\-comment}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ct\_\-parse\_\-comment@{ct\_\-parse\_\-comment}}\item[{\em 
+\hypertarget{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108a1b5ce7d3f1f80e5514b64d57774ec342}{
+ct\_\-parse\_\-comment}
+\label{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108a1b5ce7d3f1f80e5514b64d57774ec342}
+}]\index{ct\_\-symbol@{ct\_\-symbol}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ct\_\-symbol@{ct\_\-symbol}}\item[{\em 
+\hypertarget{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108af8e561bd4654ab93d82193fdd3727915}{
+ct\_\-symbol}
+\label{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108af8e561bd4654ab93d82193fdd3727915}
+}]\index{ct\_\-start\_\-symbol@{ct\_\-start\_\-symbol}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ct\_\-start\_\-symbol@{ct\_\-start\_\-symbol}}\item[{\em 
+\hypertarget{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108a25a043d6a8b5a269b3cd8f512d712798}{
+ct\_\-start\_\-symbol}
+\label{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108a25a043d6a8b5a269b3cd8f512d712798}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26}{
+\index{pugixml.cpp@{pugixml.cpp}!chartypex\_\-t@{chartypex\_\-t}}
+\index{chartypex\_\-t@{chartypex\_\-t}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{chartypex\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf chartypex\_\-t}}}
+\label{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{ctx\_\-special\_\-pcdata@{ctx\_\-special\_\-pcdata}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ctx\_\-special\_\-pcdata@{ctx\_\-special\_\-pcdata}}\item[{\em 
+\hypertarget{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a946d28c1ff054ef1d9dceb8e0ade57ee}{
+ctx\_\-special\_\-pcdata}
+\label{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a946d28c1ff054ef1d9dceb8e0ade57ee}
+}]\index{ctx\_\-special\_\-attr@{ctx\_\-special\_\-attr}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ctx\_\-special\_\-attr@{ctx\_\-special\_\-attr}}\item[{\em 
+\hypertarget{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a1f0fb9ca7471c6e0824b576001175c3c}{
+ctx\_\-special\_\-attr}
+\label{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a1f0fb9ca7471c6e0824b576001175c3c}
+}]\index{ctx\_\-start\_\-symbol@{ctx\_\-start\_\-symbol}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ctx\_\-start\_\-symbol@{ctx\_\-start\_\-symbol}}\item[{\em 
+\hypertarget{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a934b9be54f1b4446a7a6665373d50ad6}{
+ctx\_\-start\_\-symbol}
+\label{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a934b9be54f1b4446a7a6665373d50ad6}
+}]\index{ctx\_\-digit@{ctx\_\-digit}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ctx\_\-digit@{ctx\_\-digit}}\item[{\em 
+\hypertarget{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a1e66040284fe331a2ec2162b6b9fee6a}{
+ctx\_\-digit}
+\label{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a1e66040284fe331a2ec2162b6b9fee6a}
+}]\index{ctx\_\-symbol@{ctx\_\-symbol}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!ctx\_\-symbol@{ctx\_\-symbol}}\item[{\em 
+\hypertarget{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a7f60ee1dbb91625306756d7b8289162e}{
+ctx\_\-symbol}
+\label{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a7f60ee1dbb91625306756d7b8289162e}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9}{
+\index{pugixml.cpp@{pugixml.cpp}!lexeme\_\-t@{lexeme\_\-t}}
+\index{lexeme\_\-t@{lexeme\_\-t}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{lexeme\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf lexeme\_\-t}}}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{lex\_\-none@{lex\_\-none}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-none@{lex\_\-none}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a6696dceb02e4d282197154d3805e8ce1}{
+lex\_\-none}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a6696dceb02e4d282197154d3805e8ce1}
+}]\index{lex\_\-equal@{lex\_\-equal}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-equal@{lex\_\-equal}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a5c2d9372cf8440a68eff3c16eeac8027}{
+lex\_\-equal}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a5c2d9372cf8440a68eff3c16eeac8027}
+}]\index{lex\_\-not\_\-equal@{lex\_\-not\_\-equal}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-not\_\-equal@{lex\_\-not\_\-equal}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a266a8f8365e61873ecb66c78d363f156}{
+lex\_\-not\_\-equal}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a266a8f8365e61873ecb66c78d363f156}
+}]\index{lex\_\-less@{lex\_\-less}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-less@{lex\_\-less}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a51a5852f31a8c2bd889f340ac3ab9fe4}{
+lex\_\-less}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a51a5852f31a8c2bd889f340ac3ab9fe4}
+}]\index{lex\_\-greater@{lex\_\-greater}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-greater@{lex\_\-greater}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9abef050e09f087253f62bd3b4b6b435af}{
+lex\_\-greater}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9abef050e09f087253f62bd3b4b6b435af}
+}]\index{lex\_\-less\_\-or\_\-equal@{lex\_\-less\_\-or\_\-equal}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-less\_\-or\_\-equal@{lex\_\-less\_\-or\_\-equal}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9acd542cd6bfd08efcfa647426a7d577b8}{
+lex\_\-less\_\-or\_\-equal}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9acd542cd6bfd08efcfa647426a7d577b8}
+}]\index{lex\_\-greater\_\-or\_\-equal@{lex\_\-greater\_\-or\_\-equal}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-greater\_\-or\_\-equal@{lex\_\-greater\_\-or\_\-equal}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a6308ad256806534e1cd586574718a562}{
+lex\_\-greater\_\-or\_\-equal}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a6308ad256806534e1cd586574718a562}
+}]\index{lex\_\-plus@{lex\_\-plus}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-plus@{lex\_\-plus}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9ab165cbd439d1c24dd336e02645c98727}{
+lex\_\-plus}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9ab165cbd439d1c24dd336e02645c98727}
+}]\index{lex\_\-minus@{lex\_\-minus}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-minus@{lex\_\-minus}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aa0a1d6df3298c5b043daa6ad9afa2733}{
+lex\_\-minus}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aa0a1d6df3298c5b043daa6ad9afa2733}
+}]\index{lex\_\-multiply@{lex\_\-multiply}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-multiply@{lex\_\-multiply}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a095a092388d76a21ccfc1338c875fe54}{
+lex\_\-multiply}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a095a092388d76a21ccfc1338c875fe54}
+}]\index{lex\_\-union@{lex\_\-union}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-union@{lex\_\-union}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a751c2248d5cb85f4ba650a78281923a1}{
+lex\_\-union}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a751c2248d5cb85f4ba650a78281923a1}
+}]\index{lex\_\-var\_\-ref@{lex\_\-var\_\-ref}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-var\_\-ref@{lex\_\-var\_\-ref}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a933a0fd7c93a22506dc917d0868e05d1}{
+lex\_\-var\_\-ref}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a933a0fd7c93a22506dc917d0868e05d1}
+}]\index{lex\_\-open\_\-brace@{lex\_\-open\_\-brace}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-open\_\-brace@{lex\_\-open\_\-brace}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aea53091cdb9dce7a878792f2c8d4d17b}{
+lex\_\-open\_\-brace}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aea53091cdb9dce7a878792f2c8d4d17b}
+}]\index{lex\_\-close\_\-brace@{lex\_\-close\_\-brace}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-close\_\-brace@{lex\_\-close\_\-brace}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a8a39009230ffa4187d22c91412f7fcd7}{
+lex\_\-close\_\-brace}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a8a39009230ffa4187d22c91412f7fcd7}
+}]\index{lex\_\-quoted\_\-string@{lex\_\-quoted\_\-string}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-quoted\_\-string@{lex\_\-quoted\_\-string}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a1f793e76227244d2ae78acf451b82808}{
+lex\_\-quoted\_\-string}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a1f793e76227244d2ae78acf451b82808}
+}]\index{lex\_\-number@{lex\_\-number}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-number@{lex\_\-number}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9abe562e581d64a34b55b3d9b38db2e480}{
+lex\_\-number}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9abe562e581d64a34b55b3d9b38db2e480}
+}]\index{lex\_\-slash@{lex\_\-slash}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-slash@{lex\_\-slash}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a8be0786f2c3130ad30b61bbac70fa809}{
+lex\_\-slash}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a8be0786f2c3130ad30b61bbac70fa809}
+}]\index{lex\_\-double\_\-slash@{lex\_\-double\_\-slash}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-double\_\-slash@{lex\_\-double\_\-slash}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a0988911f62781c4a1e8831a76c1e1fe8}{
+lex\_\-double\_\-slash}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a0988911f62781c4a1e8831a76c1e1fe8}
+}]\index{lex\_\-open\_\-square\_\-brace@{lex\_\-open\_\-square\_\-brace}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-open\_\-square\_\-brace@{lex\_\-open\_\-square\_\-brace}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9ad9321b18d06078ecc38ad112ce654ce9}{
+lex\_\-open\_\-square\_\-brace}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9ad9321b18d06078ecc38ad112ce654ce9}
+}]\index{lex\_\-close\_\-square\_\-brace@{lex\_\-close\_\-square\_\-brace}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-close\_\-square\_\-brace@{lex\_\-close\_\-square\_\-brace}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9ad572f5fa18506a8bf523425d075cac5d}{
+lex\_\-close\_\-square\_\-brace}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9ad572f5fa18506a8bf523425d075cac5d}
+}]\index{lex\_\-string@{lex\_\-string}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-string@{lex\_\-string}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aa18bda8e798cdf55d88ed65fd025e67c}{
+lex\_\-string}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aa18bda8e798cdf55d88ed65fd025e67c}
+}]\index{lex\_\-comma@{lex\_\-comma}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-comma@{lex\_\-comma}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a78c1259369ef92b19f0ea2701d9c1d60}{
+lex\_\-comma}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a78c1259369ef92b19f0ea2701d9c1d60}
+}]\index{lex\_\-axis\_\-attribute@{lex\_\-axis\_\-attribute}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-axis\_\-attribute@{lex\_\-axis\_\-attribute}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a408fe857bc6c9b3a148ab798d0ad34e7}{
+lex\_\-axis\_\-attribute}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a408fe857bc6c9b3a148ab798d0ad34e7}
+}]\index{lex\_\-dot@{lex\_\-dot}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-dot@{lex\_\-dot}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aa0709f7aad925098c9b62379206a536b}{
+lex\_\-dot}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aa0709f7aad925098c9b62379206a536b}
+}]\index{lex\_\-double\_\-dot@{lex\_\-double\_\-dot}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-double\_\-dot@{lex\_\-double\_\-dot}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9abf40f90b4cc064d49394e974962b111b}{
+lex\_\-double\_\-dot}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9abf40f90b4cc064d49394e974962b111b}
+}]\index{lex\_\-double\_\-colon@{lex\_\-double\_\-colon}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-double\_\-colon@{lex\_\-double\_\-colon}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9afbd9c771f4154c9cf363ff3c0b9f7b9c}{
+lex\_\-double\_\-colon}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9afbd9c771f4154c9cf363ff3c0b9f7b9c}
+}]\index{lex\_\-eof@{lex\_\-eof}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!lex\_\-eof@{lex\_\-eof}}\item[{\em 
+\hypertarget{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aade5d69e447274d8785ebc7d438be522}{
+lex\_\-eof}
+\label{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aade5d69e447274d8785ebc7d438be522}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{pugixml_8cpp_ab268b4264276130baeb17ab629015275}{
+\index{pugixml.cpp@{pugixml.cpp}!nodetest\_\-t@{nodetest\_\-t}}
+\index{nodetest\_\-t@{nodetest\_\-t}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{nodetest\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf nodetest\_\-t}}}
+\label{pugixml_8cpp_ab268b4264276130baeb17ab629015275}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{nodetest\_\-none@{nodetest\_\-none}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!nodetest\_\-none@{nodetest\_\-none}}\item[{\em 
+\hypertarget{pugixml_8cpp_ab268b4264276130baeb17ab629015275a6c7184af99feffae4eb898b764e93649}{
+nodetest\_\-none}
+\label{pugixml_8cpp_ab268b4264276130baeb17ab629015275a6c7184af99feffae4eb898b764e93649}
+}]\index{nodetest\_\-name@{nodetest\_\-name}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!nodetest\_\-name@{nodetest\_\-name}}\item[{\em 
+\hypertarget{pugixml_8cpp_ab268b4264276130baeb17ab629015275a48897ee9908e5282657f6499c23b5caf}{
+nodetest\_\-name}
+\label{pugixml_8cpp_ab268b4264276130baeb17ab629015275a48897ee9908e5282657f6499c23b5caf}
+}]\index{nodetest\_\-type\_\-node@{nodetest\_\-type\_\-node}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!nodetest\_\-type\_\-node@{nodetest\_\-type\_\-node}}\item[{\em 
+\hypertarget{pugixml_8cpp_ab268b4264276130baeb17ab629015275aef6cad334993e832458e028decb18c85}{
+nodetest\_\-type\_\-node}
+\label{pugixml_8cpp_ab268b4264276130baeb17ab629015275aef6cad334993e832458e028decb18c85}
+}]\index{nodetest\_\-type\_\-comment@{nodetest\_\-type\_\-comment}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!nodetest\_\-type\_\-comment@{nodetest\_\-type\_\-comment}}\item[{\em 
+\hypertarget{pugixml_8cpp_ab268b4264276130baeb17ab629015275aad06f521ae05b1d06d3d23ca7c1381e6}{
+nodetest\_\-type\_\-comment}
+\label{pugixml_8cpp_ab268b4264276130baeb17ab629015275aad06f521ae05b1d06d3d23ca7c1381e6}
+}]\index{nodetest\_\-type\_\-pi@{nodetest\_\-type\_\-pi}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!nodetest\_\-type\_\-pi@{nodetest\_\-type\_\-pi}}\item[{\em 
+\hypertarget{pugixml_8cpp_ab268b4264276130baeb17ab629015275aff02fd24afbb268bc0c40cb45ea9e0f6}{
+nodetest\_\-type\_\-pi}
+\label{pugixml_8cpp_ab268b4264276130baeb17ab629015275aff02fd24afbb268bc0c40cb45ea9e0f6}
+}]\index{nodetest\_\-type\_\-text@{nodetest\_\-type\_\-text}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!nodetest\_\-type\_\-text@{nodetest\_\-type\_\-text}}\item[{\em 
+\hypertarget{pugixml_8cpp_ab268b4264276130baeb17ab629015275a86e4bcba2f6202e9fd8001c33b92800b}{
+nodetest\_\-type\_\-text}
+\label{pugixml_8cpp_ab268b4264276130baeb17ab629015275a86e4bcba2f6202e9fd8001c33b92800b}
+}]\index{nodetest\_\-pi@{nodetest\_\-pi}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!nodetest\_\-pi@{nodetest\_\-pi}}\item[{\em 
+\hypertarget{pugixml_8cpp_ab268b4264276130baeb17ab629015275a96311576befbea6bcdb8c7b098ab7031}{
+nodetest\_\-pi}
+\label{pugixml_8cpp_ab268b4264276130baeb17ab629015275a96311576befbea6bcdb8c7b098ab7031}
+}]\index{nodetest\_\-all@{nodetest\_\-all}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!nodetest\_\-all@{nodetest\_\-all}}\item[{\em 
+\hypertarget{pugixml_8cpp_ab268b4264276130baeb17ab629015275a414f38524d511536350bcc69fea49ef9}{
+nodetest\_\-all}
+\label{pugixml_8cpp_ab268b4264276130baeb17ab629015275a414f38524d511536350bcc69fea49ef9}
+}]\index{nodetest\_\-all\_\-in\_\-namespace@{nodetest\_\-all\_\-in\_\-namespace}!pugixml.cpp@{pugixml.cpp}}\index{pugixml.cpp@{pugixml.cpp}!nodetest\_\-all\_\-in\_\-namespace@{nodetest\_\-all\_\-in\_\-namespace}}\item[{\em 
+\hypertarget{pugixml_8cpp_ab268b4264276130baeb17ab629015275a92953acde5a4d8f8ab80fa3082dfa8af}{
+nodetest\_\-all\_\-in\_\-namespace}
+\label{pugixml_8cpp_ab268b4264276130baeb17ab629015275a92953acde5a4d8f8ab80fa3082dfa8af}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{pugixml_8cpp_aa5c147125f246a331c4a30df8e096960}{
+\index{pugixml.cpp@{pugixml.cpp}!allocate\_\-attribute@{allocate\_\-attribute}}
+\index{allocate\_\-attribute@{allocate\_\-attribute}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{allocate\_\-attribute}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-NS\_\-END PUGI\_\-\_\-NS\_\-BEGIN xml\_\-attribute\_\-struct$\ast$ allocate\_\-attribute ({\bf xml\_\-allocator} \& {\em alloc})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_aa5c147125f246a331c4a30df8e096960}
+\hypertarget{pugixml_8cpp_a6e4b9f37c4ab9fb598758530d69d8611}{
+\index{pugixml.cpp@{pugixml.cpp}!allocate\_\-node@{allocate\_\-node}}
+\index{allocate\_\-node@{allocate\_\-node}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{allocate\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}xml\_\-node\_\-struct$\ast$ allocate\_\-node ({\bf xml\_\-allocator} \& {\em alloc}, \/  xml\_\-node\_\-type {\em type})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_a6e4b9f37c4ab9fb598758530d69d8611}
+\hypertarget{pugixml_8cpp_a9a76bd4417ac5f4778004bbd1658175e}{
+\index{pugixml.cpp@{pugixml.cpp}!allow\_\-insert\_\-child@{allow\_\-insert\_\-child}}
+\index{allow\_\-insert\_\-child@{allow\_\-insert\_\-child}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{allow\_\-insert\_\-child}]{\setlength{\rightskip}{0pt plus 5cm}bool allow\_\-insert\_\-child (xml\_\-node\_\-type {\em parent}, \/  xml\_\-node\_\-type {\em child})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_a9a76bd4417ac5f4778004bbd1658175e}
+\hypertarget{pugixml_8cpp_aad3b67164b1e0fe8b1e9c57fe55dc8bc}{
+\index{pugixml.cpp@{pugixml.cpp}!append\_\-attribute\_\-ll@{append\_\-attribute\_\-ll}}
+\index{append\_\-attribute\_\-ll@{append\_\-attribute\_\-ll}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{append\_\-attribute\_\-ll}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN\_\-NO\_\-INLINE xml\_\-attribute\_\-struct$\ast$ append\_\-attribute\_\-ll (xml\_\-node\_\-struct $\ast$ {\em node}, \/  {\bf xml\_\-allocator} \& {\em alloc})}}
+\label{pugixml_8cpp_aad3b67164b1e0fe8b1e9c57fe55dc8bc}
+\hypertarget{pugixml_8cpp_add30251379f717a3ebd53171dbb12f3c}{
+\index{pugixml.cpp@{pugixml.cpp}!append\_\-node@{append\_\-node}}
+\index{append\_\-node@{append\_\-node}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{append\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN\_\-NO\_\-INLINE xml\_\-node\_\-struct$\ast$ append\_\-node (xml\_\-node\_\-struct $\ast$ {\em node}, \/  {\bf xml\_\-allocator} \& {\em alloc}, \/  xml\_\-node\_\-type {\em type} = {\ttfamily node\_\-element})}}
+\label{pugixml_8cpp_add30251379f717a3ebd53171dbb12f3c}
+\hypertarget{pugixml_8cpp_acf5b48bb1e377e9583eec8ba0e607898}{
+\index{pugixml.cpp@{pugixml.cpp}!as\_\-utf8\_\-begin@{as\_\-utf8\_\-begin}}
+\index{as\_\-utf8\_\-begin@{as\_\-utf8\_\-begin}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{as\_\-utf8\_\-begin}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN size\_\-t as\_\-utf8\_\-begin (const wchar\_\-t $\ast$ {\em str}, \/  size\_\-t {\em length})}}
+\label{pugixml_8cpp_acf5b48bb1e377e9583eec8ba0e607898}
+\hypertarget{pugixml_8cpp_a1bc09bbcdecde39207659ed351487999}{
+\index{pugixml.cpp@{pugixml.cpp}!as\_\-utf8\_\-end@{as\_\-utf8\_\-end}}
+\index{as\_\-utf8\_\-end@{as\_\-utf8\_\-end}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{as\_\-utf8\_\-end}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN void as\_\-utf8\_\-end (char $\ast$ {\em buffer}, \/  size\_\-t {\em size}, \/  const wchar\_\-t $\ast$ {\em str}, \/  size\_\-t {\em length})}}
+\label{pugixml_8cpp_a1bc09bbcdecde39207659ed351487999}
+\hypertarget{pugixml_8cpp_a5ff37130284fc41f3cb91b7351392ca0}{
+\index{pugixml.cpp@{pugixml.cpp}!as\_\-utf8\_\-impl@{as\_\-utf8\_\-impl}}
+\index{as\_\-utf8\_\-impl@{as\_\-utf8\_\-impl}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{as\_\-utf8\_\-impl}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN std::string as\_\-utf8\_\-impl (const wchar\_\-t $\ast$ {\em str}, \/  size\_\-t {\em length})}}
+\label{pugixml_8cpp_a5ff37130284fc41f3cb91b7351392ca0}
+\hypertarget{pugixml_8cpp_accfe3171da9b8a6cf354aca524a5c079}{
+\index{pugixml.cpp@{pugixml.cpp}!as\_\-wide\_\-impl@{as\_\-wide\_\-impl}}
+\index{as\_\-wide\_\-impl@{as\_\-wide\_\-impl}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{as\_\-wide\_\-impl}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN std::basic\_\-string$<$wchar\_\-t$>$ as\_\-wide\_\-impl (const char $\ast$ {\em str}, \/  size\_\-t {\em size})}}
+\label{pugixml_8cpp_accfe3171da9b8a6cf354aca524a5c079}
+\hypertarget{pugixml_8cpp_a57ad1b0f2d749266d4ef08149b9fb012}{
+\index{pugixml.cpp@{pugixml.cpp}!check\_\-string\_\-to\_\-number\_\-format@{check\_\-string\_\-to\_\-number\_\-format}}
+\index{check\_\-string\_\-to\_\-number\_\-format@{check\_\-string\_\-to\_\-number\_\-format}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{check\_\-string\_\-to\_\-number\_\-format}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN bool check\_\-string\_\-to\_\-number\_\-format (const char\_\-t $\ast$ {\em string})}}
+\label{pugixml_8cpp_a57ad1b0f2d749266d4ef08149b9fb012}
+\hypertarget{pugixml_8cpp_a1a3132117f2328ff3f805f48dc33cec1}{
+\index{pugixml.cpp@{pugixml.cpp}!convert\_\-buffer@{convert\_\-buffer}}
+\index{convert\_\-buffer@{convert\_\-buffer}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{convert\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN size\_\-t convert\_\-buffer (char\_\-t $\ast$, \/  uint8\_\-t $\ast$ {\em r\_\-u8}, \/  uint16\_\-t $\ast$ {\em r\_\-u16}, \/  uint32\_\-t $\ast$ {\em r\_\-u32}, \/  const char\_\-t $\ast$ {\em data}, \/  size\_\-t {\em length}, \/  xml\_\-encoding {\em encoding})}}
+\label{pugixml_8cpp_a1a3132117f2328ff3f805f48dc33cec1}
+\hypertarget{pugixml_8cpp_a307f5fbb9d87b5938c0b442458185ca6}{
+\index{pugixml.cpp@{pugixml.cpp}!convert\_\-buffer@{convert\_\-buffer}}
+\index{convert\_\-buffer@{convert\_\-buffer}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{convert\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN bool convert\_\-buffer (char\_\-t $\ast$\& {\em out\_\-buffer}, \/  size\_\-t \& {\em out\_\-length}, \/  xml\_\-encoding {\em encoding}, \/  const void $\ast$ {\em contents}, \/  size\_\-t {\em size}, \/  bool {\em is\_\-mutable})}}
+\label{pugixml_8cpp_a307f5fbb9d87b5938c0b442458185ca6}
+\hypertarget{pugixml_8cpp_aab8dd109bccbb59a8a2c3f5b638cd16a}{
+\index{pugixml.cpp@{pugixml.cpp}!convert\_\-buffer\_\-latin1@{convert\_\-buffer\_\-latin1}}
+\index{convert\_\-buffer\_\-latin1@{convert\_\-buffer\_\-latin1}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{convert\_\-buffer\_\-latin1}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN bool convert\_\-buffer\_\-latin1 (char\_\-t $\ast$\& {\em out\_\-buffer}, \/  size\_\-t \& {\em out\_\-length}, \/  const void $\ast$ {\em contents}, \/  size\_\-t {\em size}, \/  bool {\em is\_\-mutable})}}
+\label{pugixml_8cpp_aab8dd109bccbb59a8a2c3f5b638cd16a}
+\hypertarget{pugixml_8cpp_af4a3d57bfb19aa8e481470d0ec565746}{
+\index{pugixml.cpp@{pugixml.cpp}!convert\_\-buffer\_\-utf16@{convert\_\-buffer\_\-utf16}}
+\index{convert\_\-buffer\_\-utf16@{convert\_\-buffer\_\-utf16}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{convert\_\-buffer\_\-utf16}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename opt\_\-swap $>$ PUGI\_\-\_\-FN bool convert\_\-buffer\_\-utf16 (char\_\-t $\ast$\& {\em out\_\-buffer}, \/  size\_\-t \& {\em out\_\-length}, \/  const void $\ast$ {\em contents}, \/  size\_\-t {\em size}, \/  opt\_\-swap)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_af4a3d57bfb19aa8e481470d0ec565746}
+\hypertarget{pugixml_8cpp_a1a8b6463e317a85dca2dabceb775a2f2}{
+\index{pugixml.cpp@{pugixml.cpp}!convert\_\-buffer\_\-utf32@{convert\_\-buffer\_\-utf32}}
+\index{convert\_\-buffer\_\-utf32@{convert\_\-buffer\_\-utf32}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{convert\_\-buffer\_\-utf32}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename opt\_\-swap $>$ PUGI\_\-\_\-FN bool convert\_\-buffer\_\-utf32 (char\_\-t $\ast$\& {\em out\_\-buffer}, \/  size\_\-t \& {\em out\_\-length}, \/  const void $\ast$ {\em contents}, \/  size\_\-t {\em size}, \/  opt\_\-swap)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_a1a8b6463e317a85dca2dabceb775a2f2}
+\hypertarget{pugixml_8cpp_a15ed2feda8a764a64c49b203e093d996}{
+\index{pugixml.cpp@{pugixml.cpp}!convert\_\-number\_\-to\_\-boolean@{convert\_\-number\_\-to\_\-boolean}}
+\index{convert\_\-number\_\-to\_\-boolean@{convert\_\-number\_\-to\_\-boolean}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{convert\_\-number\_\-to\_\-boolean}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN bool convert\_\-number\_\-to\_\-boolean (double {\em value})}}
+\label{pugixml_8cpp_a15ed2feda8a764a64c49b203e093d996}
+\hypertarget{pugixml_8cpp_aa9ac35e635a595b6ff7b3fa1b2dac90e}{
+\index{pugixml.cpp@{pugixml.cpp}!convert\_\-number\_\-to\_\-mantissa\_\-exponent@{convert\_\-number\_\-to\_\-mantissa\_\-exponent}}
+\index{convert\_\-number\_\-to\_\-mantissa\_\-exponent@{convert\_\-number\_\-to\_\-mantissa\_\-exponent}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{convert\_\-number\_\-to\_\-mantissa\_\-exponent}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN void convert\_\-number\_\-to\_\-mantissa\_\-exponent (double {\em value}, \/  char $\ast$ {\em buffer}, \/  size\_\-t {\em buffer\_\-size}, \/  char $\ast$$\ast$ {\em out\_\-mantissa}, \/  int $\ast$ {\em out\_\-exponent})}}
+\label{pugixml_8cpp_aa9ac35e635a595b6ff7b3fa1b2dac90e}
+\hypertarget{pugixml_8cpp_a26ed30b05a22acb22dc6eed1cefc7570}{
+\index{pugixml.cpp@{pugixml.cpp}!convert\_\-number\_\-to\_\-string@{convert\_\-number\_\-to\_\-string}}
+\index{convert\_\-number\_\-to\_\-string@{convert\_\-number\_\-to\_\-string}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{convert\_\-number\_\-to\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN {\bf xpath\_\-string} convert\_\-number\_\-to\_\-string (double {\em value}, \/  {\bf xpath\_\-allocator} $\ast$ {\em alloc})}}
+\label{pugixml_8cpp_a26ed30b05a22acb22dc6eed1cefc7570}
+\hypertarget{pugixml_8cpp_acc28dfcad999710b36daa33cd8d984d8}{
+\index{pugixml.cpp@{pugixml.cpp}!convert\_\-number\_\-to\_\-string\_\-special@{convert\_\-number\_\-to\_\-string\_\-special}}
+\index{convert\_\-number\_\-to\_\-string\_\-special@{convert\_\-number\_\-to\_\-string\_\-special}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{convert\_\-number\_\-to\_\-string\_\-special}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN const char\_\-t$\ast$ convert\_\-number\_\-to\_\-string\_\-special (double {\em value})}}
+\label{pugixml_8cpp_acc28dfcad999710b36daa33cd8d984d8}
+\hypertarget{pugixml_8cpp_ae2a4ab9dd26f40adbf2174fe5fc079a9}{
+\index{pugixml.cpp@{pugixml.cpp}!convert\_\-path\_\-heap@{convert\_\-path\_\-heap}}
+\index{convert\_\-path\_\-heap@{convert\_\-path\_\-heap}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{convert\_\-path\_\-heap}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN char$\ast$ convert\_\-path\_\-heap (const wchar\_\-t $\ast$ {\em str})}}
+\label{pugixml_8cpp_ae2a4ab9dd26f40adbf2174fe5fc079a9}
+\hypertarget{pugixml_8cpp_a33ff28798ddad210477dea0fb8e897ba}{
+\index{pugixml.cpp@{pugixml.cpp}!convert\_\-string\_\-to\_\-number@{convert\_\-string\_\-to\_\-number}}
+\index{convert\_\-string\_\-to\_\-number@{convert\_\-string\_\-to\_\-number}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{convert\_\-string\_\-to\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN bool convert\_\-string\_\-to\_\-number (const char\_\-t $\ast$ {\em begin}, \/  const char\_\-t $\ast$ {\em end}, \/  double $\ast$ {\em out\_\-result})}}
+\label{pugixml_8cpp_a33ff28798ddad210477dea0fb8e897ba}
+\hypertarget{pugixml_8cpp_ac5908a6e73e3b0c5b4ab667a42f413f9}{
+\index{pugixml.cpp@{pugixml.cpp}!convert\_\-string\_\-to\_\-number@{convert\_\-string\_\-to\_\-number}}
+\index{convert\_\-string\_\-to\_\-number@{convert\_\-string\_\-to\_\-number}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{convert\_\-string\_\-to\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN double convert\_\-string\_\-to\_\-number (const char\_\-t $\ast$ {\em string})}}
+\label{pugixml_8cpp_ac5908a6e73e3b0c5b4ab667a42f413f9}
+\hypertarget{pugixml_8cpp_a6a6d64c793f8e54f94b19898116b77ff}{
+\index{pugixml.cpp@{pugixml.cpp}!convert\_\-utf\_\-endian\_\-swap@{convert\_\-utf\_\-endian\_\-swap}}
+\index{convert\_\-utf\_\-endian\_\-swap@{convert\_\-utf\_\-endian\_\-swap}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{convert\_\-utf\_\-endian\_\-swap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ PUGI\_\-\_\-FN void convert\_\-utf\_\-endian\_\-swap (T $\ast$ {\em result}, \/  const T $\ast$ {\em data}, \/  size\_\-t {\em length})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_a6a6d64c793f8e54f94b19898116b77ff}
+\hypertarget{pugixml_8cpp_a1efb5cae27aeed9634098c20ce3af75a}{
+\index{pugixml.cpp@{pugixml.cpp}!copy\_\-backwards@{copy\_\-backwards}}
+\index{copy\_\-backwards@{copy\_\-backwards}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{copy\_\-backwards}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename I $>$ void copy\_\-backwards (I {\em begin}, \/  I {\em end}, \/  I {\em target})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_a1efb5cae27aeed9634098c20ce3af75a}
+\hypertarget{pugixml_8cpp_a5c5a3cf417e46e0b3f5207fb9c6a5c18}{
+\index{pugixml.cpp@{pugixml.cpp}!default\_\-allocate@{default\_\-allocate}}
+\index{default\_\-allocate@{default\_\-allocate}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{default\_\-allocate}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-NS\_\-BEGIN PUGI\_\-\_\-FN void$\ast$ default\_\-allocate (size\_\-t {\em size})}}
+\label{pugixml_8cpp_a5c5a3cf417e46e0b3f5207fb9c6a5c18}
+\hypertarget{pugixml_8cpp_a04da64bb4806c0b7491d5d9d73d50100}{
+\index{pugixml.cpp@{pugixml.cpp}!default\_\-deallocate@{default\_\-deallocate}}
+\index{default\_\-deallocate@{default\_\-deallocate}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{default\_\-deallocate}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN void default\_\-deallocate (void $\ast$ {\em ptr})}}
+\label{pugixml_8cpp_a04da64bb4806c0b7491d5d9d73d50100}
+\hypertarget{pugixml_8cpp_a7849f92cf1fb611f65e35760fe040998}{
+\index{pugixml.cpp@{pugixml.cpp}!delete\_\-xpath\_\-variable@{delete\_\-xpath\_\-variable}}
+\index{delete\_\-xpath\_\-variable@{delete\_\-xpath\_\-variable}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{delete\_\-xpath\_\-variable}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN void delete\_\-xpath\_\-variable (xpath\_\-value\_\-type {\em type}, \/  xpath\_\-variable $\ast$ {\em var})}}
+\label{pugixml_8cpp_a7849f92cf1fb611f65e35760fe040998}
+\hypertarget{pugixml_8cpp_a2467cd3717797d18416b46ce0557ed34}{
+\index{pugixml.cpp@{pugixml.cpp}!delete\_\-xpath\_\-variable@{delete\_\-xpath\_\-variable}}
+\index{delete\_\-xpath\_\-variable@{delete\_\-xpath\_\-variable}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{delete\_\-xpath\_\-variable}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ PUGI\_\-\_\-FN void delete\_\-xpath\_\-variable (T $\ast$ {\em var})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_a2467cd3717797d18416b46ce0557ed34}
+\hypertarget{pugixml_8cpp_a451a69801ffa96a6389bb7d4c8099bd9}{
+\index{pugixml.cpp@{pugixml.cpp}!destroy\_\-attribute@{destroy\_\-attribute}}
+\index{destroy\_\-attribute@{destroy\_\-attribute}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{destroy\_\-attribute}]{\setlength{\rightskip}{0pt plus 5cm}void destroy\_\-attribute (xml\_\-attribute\_\-struct $\ast$ {\em a}, \/  {\bf xml\_\-allocator} \& {\em alloc})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_a451a69801ffa96a6389bb7d4c8099bd9}
+\hypertarget{pugixml_8cpp_a00ae2c226db329ac858206e646251867}{
+\index{pugixml.cpp@{pugixml.cpp}!destroy\_\-node@{destroy\_\-node}}
+\index{destroy\_\-node@{destroy\_\-node}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{destroy\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}void destroy\_\-node (xml\_\-node\_\-struct $\ast$ {\em n}, \/  {\bf xml\_\-allocator} \& {\em alloc})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_a00ae2c226db329ac858206e646251867}
+\hypertarget{pugixml_8cpp_af28012d575e412e524d54e911266d548}{
+\index{pugixml.cpp@{pugixml.cpp}!document\_\-order@{document\_\-order}}
+\index{document\_\-order@{document\_\-order}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{document\_\-order}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN const void$\ast$ document\_\-order (const xpath\_\-node \& {\em xnode})}}
+\label{pugixml_8cpp_af28012d575e412e524d54e911266d548}
+\hypertarget{pugixml_8cpp_a3333e3a194e23ccf6f0409e7ef45e639}{
+\index{pugixml.cpp@{pugixml.cpp}!endian\_\-swap@{endian\_\-swap}}
+\index{endian\_\-swap@{endian\_\-swap}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{endian\_\-swap}]{\setlength{\rightskip}{0pt plus 5cm}uint32\_\-t endian\_\-swap (uint32\_\-t {\em value})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_a3333e3a194e23ccf6f0409e7ef45e639}
+\hypertarget{pugixml_8cpp_a6d31b21cfa4167d79865a7797b33f3f1}{
+\index{pugixml.cpp@{pugixml.cpp}!endian\_\-swap@{endian\_\-swap}}
+\index{endian\_\-swap@{endian\_\-swap}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{endian\_\-swap}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-NS\_\-END PUGI\_\-\_\-NS\_\-BEGIN uint16\_\-t endian\_\-swap (uint16\_\-t {\em value})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_a6d31b21cfa4167d79865a7797b33f3f1}
+\hypertarget{pugixml_8cpp_a0ed220563fd15a1211ce33941feb6ae3}{
+\index{pugixml.cpp@{pugixml.cpp}!evaluate\_\-string\_\-impl@{evaluate\_\-string\_\-impl}}
+\index{evaluate\_\-string\_\-impl@{evaluate\_\-string\_\-impl}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{evaluate\_\-string\_\-impl}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN {\bf xpath\_\-string} evaluate\_\-string\_\-impl ({\bf xpath\_\-query\_\-impl} $\ast$ {\em impl}, \/  const xpath\_\-node \& {\em n}, \/  {\bf xpath\_\-stack\_\-data} \& {\em sd})}}
+\label{pugixml_8cpp_a0ed220563fd15a1211ce33941feb6ae3}
+\hypertarget{pugixml_8cpp_a490922f92ed98e972a13ffb410400a57}{
+\index{pugixml.cpp@{pugixml.cpp}!find\_\-char@{find\_\-char}}
+\index{find\_\-char@{find\_\-char}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{find\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN const char\_\-t$\ast$ find\_\-char (const char\_\-t $\ast$ {\em s}, \/  char\_\-t {\em c})}}
+\label{pugixml_8cpp_a490922f92ed98e972a13ffb410400a57}
+\hypertarget{pugixml_8cpp_a3dee0e9c414704e194aedeef90fdb33f}{
+\index{pugixml.cpp@{pugixml.cpp}!find\_\-substring@{find\_\-substring}}
+\index{find\_\-substring@{find\_\-substring}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{find\_\-substring}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN const char\_\-t$\ast$ find\_\-substring (const char\_\-t $\ast$ {\em s}, \/  const char\_\-t $\ast$ {\em p})}}
+\label{pugixml_8cpp_a3dee0e9c414704e194aedeef90fdb33f}
+\hypertarget{pugixml_8cpp_a2d2fd408a346e00cc39c418d81f4341c}{
+\index{pugixml.cpp@{pugixml.cpp}!gen\_\-nan@{gen\_\-nan}}
+\index{gen\_\-nan@{gen\_\-nan}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{gen\_\-nan}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN double gen\_\-nan ()}}
+\label{pugixml_8cpp_a2d2fd408a346e00cc39c418d81f4341c}
+\hypertarget{pugixml_8cpp_ab194763af6dca2d07ad5139dc2a75f60}{
+\index{pugixml.cpp@{pugixml.cpp}!get\_\-allocator@{get\_\-allocator}}
+\index{get\_\-allocator@{get\_\-allocator}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{get\_\-allocator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xml\_\-allocator}\& get\_\-allocator (const xml\_\-node\_\-struct $\ast$ {\em node})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_ab194763af6dca2d07ad5139dc2a75f60}
+\hypertarget{pugixml_8cpp_ae841fafba520d2341dc8386a6f825ac6}{
+\index{pugixml.cpp@{pugixml.cpp}!get\_\-buffer\_\-encoding@{get\_\-buffer\_\-encoding}}
+\index{get\_\-buffer\_\-encoding@{get\_\-buffer\_\-encoding}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{get\_\-buffer\_\-encoding}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN xml\_\-encoding get\_\-buffer\_\-encoding (xml\_\-encoding {\em encoding}, \/  const void $\ast$ {\em contents}, \/  size\_\-t {\em size})}}
+\label{pugixml_8cpp_ae841fafba520d2341dc8386a6f825ac6}
+\hypertarget{pugixml_8cpp_a62a3aaae374ea438f3b13324b1254b2d}{
+\index{pugixml.cpp@{pugixml.cpp}!get\_\-file\_\-size@{get\_\-file\_\-size}}
+\index{get\_\-file\_\-size@{get\_\-file\_\-size}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{get\_\-file\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN xml\_\-parse\_\-status get\_\-file\_\-size (FILE $\ast$ {\em file}, \/  size\_\-t \& {\em out\_\-result})}}
+\label{pugixml_8cpp_a62a3aaae374ea438f3b13324b1254b2d}
+\hypertarget{pugixml_8cpp_a0c28347bb885f60693b5d594cfc3dbd5}{
+\index{pugixml.cpp@{pugixml.cpp}!get\_\-latin1\_\-7bit\_\-prefix\_\-length@{get\_\-latin1\_\-7bit\_\-prefix\_\-length}}
+\index{get\_\-latin1\_\-7bit\_\-prefix\_\-length@{get\_\-latin1\_\-7bit\_\-prefix\_\-length}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{get\_\-latin1\_\-7bit\_\-prefix\_\-length}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN size\_\-t get\_\-latin1\_\-7bit\_\-prefix\_\-length (const uint8\_\-t $\ast$ {\em data}, \/  size\_\-t {\em size})}}
+\label{pugixml_8cpp_a0c28347bb885f60693b5d594cfc3dbd5}
+\hypertarget{pugixml_8cpp_a23609126eff5820342411bf83b280225}{
+\index{pugixml.cpp@{pugixml.cpp}!get\_\-mutable\_\-buffer@{get\_\-mutable\_\-buffer}}
+\index{get\_\-mutable\_\-buffer@{get\_\-mutable\_\-buffer}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{get\_\-mutable\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN bool get\_\-mutable\_\-buffer (char\_\-t $\ast$\& {\em out\_\-buffer}, \/  size\_\-t \& {\em out\_\-length}, \/  const void $\ast$ {\em contents}, \/  size\_\-t {\em size}, \/  bool {\em is\_\-mutable})}}
+\label{pugixml_8cpp_a23609126eff5820342411bf83b280225}
+\hypertarget{pugixml_8cpp_a2ea43b65ff9cfdf86459c60a1a0849ec}{
+\index{pugixml.cpp@{pugixml.cpp}!get\_\-strconv\_\-attribute@{get\_\-strconv\_\-attribute}}
+\index{get\_\-strconv\_\-attribute@{get\_\-strconv\_\-attribute}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{get\_\-strconv\_\-attribute}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN {\bf strconv\_\-attribute\_\-t} get\_\-strconv\_\-attribute (unsigned int {\em optmask})}}
+\label{pugixml_8cpp_a2ea43b65ff9cfdf86459c60a1a0849ec}
+\hypertarget{pugixml_8cpp_a2f80cbdc79c199f54f617b8c42a37bec}{
+\index{pugixml.cpp@{pugixml.cpp}!get\_\-strconv\_\-pcdata@{get\_\-strconv\_\-pcdata}}
+\index{get\_\-strconv\_\-pcdata@{get\_\-strconv\_\-pcdata}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{get\_\-strconv\_\-pcdata}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN {\bf strconv\_\-pcdata\_\-t} get\_\-strconv\_\-pcdata (unsigned int {\em optmask})}}
+\label{pugixml_8cpp_a2f80cbdc79c199f54f617b8c42a37bec}
+\hypertarget{pugixml_8cpp_a5dfd2dce8fc6dd9268a19ed553884234}{
+\index{pugixml.cpp@{pugixml.cpp}!get\_\-valid\_\-length@{get\_\-valid\_\-length}}
+\index{get\_\-valid\_\-length@{get\_\-valid\_\-length}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{get\_\-valid\_\-length}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN size\_\-t get\_\-valid\_\-length (const char\_\-t $\ast$ {\em data}, \/  size\_\-t {\em length})}}
+\label{pugixml_8cpp_a5dfd2dce8fc6dd9268a19ed553884234}
+\hypertarget{pugixml_8cpp_a8458bf6b4828301059456c3ea00e7331}{
+\index{pugixml.cpp@{pugixml.cpp}!get\_\-value\_\-bool@{get\_\-value\_\-bool}}
+\index{get\_\-value\_\-bool@{get\_\-value\_\-bool}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{get\_\-value\_\-bool}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN bool get\_\-value\_\-bool (const char\_\-t $\ast$ {\em value}, \/  bool {\em def})}}
+\label{pugixml_8cpp_a8458bf6b4828301059456c3ea00e7331}
+\hypertarget{pugixml_8cpp_a89d53cca88a1787eaff695225c52ac9e}{
+\index{pugixml.cpp@{pugixml.cpp}!get\_\-value\_\-double@{get\_\-value\_\-double}}
+\index{get\_\-value\_\-double@{get\_\-value\_\-double}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{get\_\-value\_\-double}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN double get\_\-value\_\-double (const char\_\-t $\ast$ {\em value}, \/  double {\em def})}}
+\label{pugixml_8cpp_a89d53cca88a1787eaff695225c52ac9e}
+\hypertarget{pugixml_8cpp_ae8ed6162cf7a98281598daa4d858c757}{
+\index{pugixml.cpp@{pugixml.cpp}!get\_\-value\_\-float@{get\_\-value\_\-float}}
+\index{get\_\-value\_\-float@{get\_\-value\_\-float}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{get\_\-value\_\-float}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN float get\_\-value\_\-float (const char\_\-t $\ast$ {\em value}, \/  float {\em def})}}
+\label{pugixml_8cpp_ae8ed6162cf7a98281598daa4d858c757}
+\hypertarget{pugixml_8cpp_afe79ce7d93b358eb7f503cc5eb7fd7df}{
+\index{pugixml.cpp@{pugixml.cpp}!get\_\-value\_\-int@{get\_\-value\_\-int}}
+\index{get\_\-value\_\-int@{get\_\-value\_\-int}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{get\_\-value\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN int get\_\-value\_\-int (const char\_\-t $\ast$ {\em value}, \/  int {\em def})}}
+\label{pugixml_8cpp_afe79ce7d93b358eb7f503cc5eb7fd7df}
+\hypertarget{pugixml_8cpp_ae610c0c654729981dd58b2d2d19f6f07}{
+\index{pugixml.cpp@{pugixml.cpp}!get\_\-value\_\-uint@{get\_\-value\_\-uint}}
+\index{get\_\-value\_\-uint@{get\_\-value\_\-uint}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{get\_\-value\_\-uint}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN unsigned int get\_\-value\_\-uint (const char\_\-t $\ast$ {\em value}, \/  unsigned int {\em def})}}
+\label{pugixml_8cpp_ae610c0c654729981dd58b2d2d19f6f07}
+\hypertarget{pugixml_8cpp_aa6b1912c612e1ba4ebd66c5f3e45094a}{
+\index{pugixml.cpp@{pugixml.cpp}!get\_\-variable@{get\_\-variable}}
+\index{get\_\-variable@{get\_\-variable}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{get\_\-variable}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN xpath\_\-variable$\ast$ get\_\-variable (xpath\_\-variable\_\-set $\ast$ {\em set}, \/  const char\_\-t $\ast$ {\em begin}, \/  const char\_\-t $\ast$ {\em end})}}
+\label{pugixml_8cpp_aa6b1912c612e1ba4ebd66c5f3e45094a}
+\hypertarget{pugixml_8cpp_a1d386e9425e75d35b01373e46f186b9c}{
+\index{pugixml.cpp@{pugixml.cpp}!get\_\-wchar\_\-encoding@{get\_\-wchar\_\-encoding}}
+\index{get\_\-wchar\_\-encoding@{get\_\-wchar\_\-encoding}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{get\_\-wchar\_\-encoding}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN xml\_\-encoding get\_\-wchar\_\-encoding ()}}
+\label{pugixml_8cpp_a1d386e9425e75d35b01373e46f186b9c}
+\hypertarget{pugixml_8cpp_aa7c85cfc84db7ee4b4eb887366365479}{
+\index{pugixml.cpp@{pugixml.cpp}!get\_\-write\_\-encoding@{get\_\-write\_\-encoding}}
+\index{get\_\-write\_\-encoding@{get\_\-write\_\-encoding}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{get\_\-write\_\-encoding}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN xml\_\-encoding get\_\-write\_\-encoding (xml\_\-encoding {\em encoding})}}
+\label{pugixml_8cpp_aa7c85cfc84db7ee4b4eb887366365479}
+\hypertarget{pugixml_8cpp_a12b9d6cff4d37c68755263d0687c62b1}{
+\index{pugixml.cpp@{pugixml.cpp}!get\_\-write\_\-native\_\-encoding@{get\_\-write\_\-native\_\-encoding}}
+\index{get\_\-write\_\-native\_\-encoding@{get\_\-write\_\-native\_\-encoding}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{get\_\-write\_\-native\_\-encoding}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN xml\_\-encoding get\_\-write\_\-native\_\-encoding ()}}
+\label{pugixml_8cpp_a12b9d6cff4d37c68755263d0687c62b1}
+\hypertarget{pugixml_8cpp_ac4aca43b7a1cc8918a214f00c7c9af47}{
+\index{pugixml.cpp@{pugixml.cpp}!guess\_\-buffer\_\-encoding@{guess\_\-buffer\_\-encoding}}
+\index{guess\_\-buffer\_\-encoding@{guess\_\-buffer\_\-encoding}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{guess\_\-buffer\_\-encoding}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN xml\_\-encoding guess\_\-buffer\_\-encoding (uint8\_\-t {\em d0}, \/  uint8\_\-t {\em d1}, \/  uint8\_\-t {\em d2}, \/  uint8\_\-t {\em d3})}}
+\label{pugixml_8cpp_ac4aca43b7a1cc8918a214f00c7c9af47}
+\hypertarget{pugixml_8cpp_a51b27832195cf2345f65119f07056743}{
+\index{pugixml.cpp@{pugixml.cpp}!has\_\-declaration@{has\_\-declaration}}
+\index{has\_\-declaration@{has\_\-declaration}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{has\_\-declaration}]{\setlength{\rightskip}{0pt plus 5cm}bool has\_\-declaration (const xml\_\-node \& {\em node})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_a51b27832195cf2345f65119f07056743}
+\hypertarget{pugixml_8cpp_a2925a12bcdf39684733293ef195ae7e8}{
+\index{pugixml.cpp@{pugixml.cpp}!hash\_\-string@{hash\_\-string}}
+\index{hash\_\-string@{hash\_\-string}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{hash\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN unsigned int hash\_\-string (const char\_\-t $\ast$ {\em str})}}
+\label{pugixml_8cpp_a2925a12bcdf39684733293ef195ae7e8}
+\hypertarget{pugixml_8cpp_a7561a6c77c4f242e1f5b1fbb449fbc9b}{
+\index{pugixml.cpp@{pugixml.cpp}!insertion\_\-sort@{insertion\_\-sort}}
+\index{insertion\_\-sort@{insertion\_\-sort}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{insertion\_\-sort}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename I , typename Pred , typename T $>$ void insertion\_\-sort (I {\em begin}, \/  I {\em end}, \/  const Pred \& {\em pred}, \/  T $\ast$)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_a7561a6c77c4f242e1f5b1fbb449fbc9b}
+\hypertarget{pugixml_8cpp_a282e2854710450f313ea03bb59a8f681}{
+\index{pugixml.cpp@{pugixml.cpp}!is\_\-little\_\-endian@{is\_\-little\_\-endian}}
+\index{is\_\-little\_\-endian@{is\_\-little\_\-endian}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{is\_\-little\_\-endian}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN bool is\_\-little\_\-endian ()}}
+\label{pugixml_8cpp_a282e2854710450f313ea03bb59a8f681}
+\hypertarget{pugixml_8cpp_ac5a4735a6c75f496aa9e2868216ad32e}{
+\index{pugixml.cpp@{pugixml.cpp}!is\_\-nan@{is\_\-nan}}
+\index{is\_\-nan@{is\_\-nan}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{is\_\-nan}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN bool is\_\-nan (double {\em value})}}
+\label{pugixml_8cpp_ac5a4735a6c75f496aa9e2868216ad32e}
+\hypertarget{pugixml_8cpp_a78cb6a1f92159f3649ac191400feb3a2}{
+\index{pugixml.cpp@{pugixml.cpp}!is\_\-text\_\-node@{is\_\-text\_\-node}}
+\index{is\_\-text\_\-node@{is\_\-text\_\-node}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{is\_\-text\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}bool is\_\-text\_\-node (xml\_\-node\_\-struct $\ast$ {\em node})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_a78cb6a1f92159f3649ac191400feb3a2}
+\hypertarget{pugixml_8cpp_a79f0e2f9483c87a85ec4873a20caaa12}{
+\index{pugixml.cpp@{pugixml.cpp}!load\_\-file\_\-impl@{load\_\-file\_\-impl}}
+\index{load\_\-file\_\-impl@{load\_\-file\_\-impl}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{load\_\-file\_\-impl}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN xml\_\-parse\_\-result load\_\-file\_\-impl (xml\_\-document \& {\em doc}, \/  FILE $\ast$ {\em file}, \/  unsigned int {\em options}, \/  xml\_\-encoding {\em encoding})}}
+\label{pugixml_8cpp_a79f0e2f9483c87a85ec4873a20caaa12}
+\hypertarget{pugixml_8cpp_a62b8582304716e603726f468cfab244a}{
+\index{pugixml.cpp@{pugixml.cpp}!load\_\-stream\_\-data\_\-noseek@{load\_\-stream\_\-data\_\-noseek}}
+\index{load\_\-stream\_\-data\_\-noseek@{load\_\-stream\_\-data\_\-noseek}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{load\_\-stream\_\-data\_\-noseek}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ PUGI\_\-\_\-FN xml\_\-parse\_\-status load\_\-stream\_\-data\_\-noseek (std::basic\_\-istream$<$ T $>$ \& {\em stream}, \/  void $\ast$$\ast$ {\em out\_\-buffer}, \/  size\_\-t $\ast$ {\em out\_\-size})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_a62b8582304716e603726f468cfab244a}
+\hypertarget{pugixml_8cpp_accd4fa597b32f02ca0c4409f7f57df23}{
+\index{pugixml.cpp@{pugixml.cpp}!load\_\-stream\_\-data\_\-seek@{load\_\-stream\_\-data\_\-seek}}
+\index{load\_\-stream\_\-data\_\-seek@{load\_\-stream\_\-data\_\-seek}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{load\_\-stream\_\-data\_\-seek}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ PUGI\_\-\_\-FN xml\_\-parse\_\-status load\_\-stream\_\-data\_\-seek (std::basic\_\-istream$<$ T $>$ \& {\em stream}, \/  void $\ast$$\ast$ {\em out\_\-buffer}, \/  size\_\-t $\ast$ {\em out\_\-size})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_accd4fa597b32f02ca0c4409f7f57df23}
+\hypertarget{pugixml_8cpp_ad7af43e998b181fd0f7229f981d5ad9e}{
+\index{pugixml.cpp@{pugixml.cpp}!load\_\-stream\_\-impl@{load\_\-stream\_\-impl}}
+\index{load\_\-stream\_\-impl@{load\_\-stream\_\-impl}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{load\_\-stream\_\-impl}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ PUGI\_\-\_\-FN xml\_\-parse\_\-result load\_\-stream\_\-impl (xml\_\-document \& {\em doc}, \/  std::basic\_\-istream$<$ T $>$ \& {\em stream}, \/  unsigned int {\em options}, \/  xml\_\-encoding {\em encoding})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_ad7af43e998b181fd0f7229f981d5ad9e}
+\hypertarget{pugixml_8cpp_a4046fdbf867e469eb899a6a17cfaafa9}{
+\index{pugixml.cpp@{pugixml.cpp}!local\_\-name@{local\_\-name}}
+\index{local\_\-name@{local\_\-name}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{local\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN const char\_\-t$\ast$ local\_\-name (const xpath\_\-node \& {\em node})}}
+\label{pugixml_8cpp_a4046fdbf867e469eb899a6a17cfaafa9}
+\hypertarget{pugixml_8cpp_a9081c36df7470451a2a067677ee9e423}{
+\index{pugixml.cpp@{pugixml.cpp}!make\_\-parse\_\-result@{make\_\-parse\_\-result}}
+\index{make\_\-parse\_\-result@{make\_\-parse\_\-result}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{make\_\-parse\_\-result}]{\setlength{\rightskip}{0pt plus 5cm}xml\_\-parse\_\-result make\_\-parse\_\-result (xml\_\-parse\_\-status {\em status}, \/  ptrdiff\_\-t {\em offset} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_a9081c36df7470451a2a067677ee9e423}
+\hypertarget{pugixml_8cpp_aec3b1bb121fad2f6a3207e60f820fbd0}{
+\index{pugixml.cpp@{pugixml.cpp}!median@{median}}
+\index{median@{median}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{median}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename I , typename Pred $>$ void median (I {\em first}, \/  I {\em middle}, \/  I {\em last}, \/  const Pred \& {\em pred})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_aec3b1bb121fad2f6a3207e60f820fbd0}
+\hypertarget{pugixml_8cpp_a691ffc5ff521031703c0a05b7b086ad6}{
+\index{pugixml.cpp@{pugixml.cpp}!median3@{median3}}
+\index{median3@{median3}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{median3}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename I , typename Pred $>$ void median3 (I {\em first}, \/  I {\em middle}, \/  I {\em last}, \/  const Pred \& {\em pred})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_a691ffc5ff521031703c0a05b7b086ad6}
+\hypertarget{pugixml_8cpp_a3a1f3346d4572489c20de698288cb35a}{
+\index{pugixml.cpp@{pugixml.cpp}!min\_\-element@{min\_\-element}}
+\index{min\_\-element@{min\_\-element}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{min\_\-element}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename I , typename Pred $>$ I min\_\-element (I {\em begin}, \/  I {\em end}, \/  const Pred \& {\em pred})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_a3a1f3346d4572489c20de698288cb35a}
+\hypertarget{pugixml_8cpp_a8211d5881db5ad1afa4b45d935ecc8ed}{
+\index{pugixml.cpp@{pugixml.cpp}!namespace\_\-uri@{namespace\_\-uri}}
+\index{namespace\_\-uri@{namespace\_\-uri}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{namespace\_\-uri}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN const char\_\-t$\ast$ namespace\_\-uri (const xpath\_\-node \& {\em node})}}
+\label{pugixml_8cpp_a8211d5881db5ad1afa4b45d935ecc8ed}
+\hypertarget{pugixml_8cpp_acf4023d95b1a79deda69366a9c83dade}{
+\index{pugixml.cpp@{pugixml.cpp}!namespace\_\-uri@{namespace\_\-uri}}
+\index{namespace\_\-uri@{namespace\_\-uri}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{namespace\_\-uri}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN const char\_\-t$\ast$ namespace\_\-uri (const xml\_\-attribute \& {\em attr}, \/  const xml\_\-node \& {\em parent})}}
+\label{pugixml_8cpp_acf4023d95b1a79deda69366a9c83dade}
+\hypertarget{pugixml_8cpp_afb842719fceb1fbb8ada527cd208e885}{
+\index{pugixml.cpp@{pugixml.cpp}!namespace\_\-uri@{namespace\_\-uri}}
+\index{namespace\_\-uri@{namespace\_\-uri}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{namespace\_\-uri}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN const char\_\-t$\ast$ namespace\_\-uri (const xml\_\-node \& {\em node})}}
+\label{pugixml_8cpp_afb842719fceb1fbb8ada527cd208e885}
+\hypertarget{pugixml_8cpp_a6301d8a3514e0f724a51d9c38fa1cfec}{
+\index{pugixml.cpp@{pugixml.cpp}!new\_\-xpath\_\-variable@{new\_\-xpath\_\-variable}}
+\index{new\_\-xpath\_\-variable@{new\_\-xpath\_\-variable}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{new\_\-xpath\_\-variable}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN xpath\_\-variable$\ast$ new\_\-xpath\_\-variable (xpath\_\-value\_\-type {\em type}, \/  const char\_\-t $\ast$ {\em name})}}
+\label{pugixml_8cpp_a6301d8a3514e0f724a51d9c38fa1cfec}
+\hypertarget{pugixml_8cpp_a40e5116a46952e8fb4d67dba1448757c}{
+\index{pugixml.cpp@{pugixml.cpp}!new\_\-xpath\_\-variable@{new\_\-xpath\_\-variable}}
+\index{new\_\-xpath\_\-variable@{new\_\-xpath\_\-variable}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{new\_\-xpath\_\-variable}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ PUGI\_\-\_\-FN T$\ast$ new\_\-xpath\_\-variable (const char\_\-t $\ast$ {\em name})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_a40e5116a46952e8fb4d67dba1448757c}
+\hypertarget{pugixml_8cpp_a71b769adcc2bf76bd8b2902980605082}{
+\index{pugixml.cpp@{pugixml.cpp}!node\_\-height@{node\_\-height}}
+\index{node\_\-height@{node\_\-height}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{node\_\-height}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN unsigned int node\_\-height (xml\_\-node {\em n})}}
+\label{pugixml_8cpp_a71b769adcc2bf76bd8b2902980605082}
+\hypertarget{pugixml_8cpp_afe5e132153aa01551d56a2fc999f4483}{
+\index{pugixml.cpp@{pugixml.cpp}!node\_\-is\_\-ancestor@{node\_\-is\_\-ancestor}}
+\index{node\_\-is\_\-ancestor@{node\_\-is\_\-ancestor}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{node\_\-is\_\-ancestor}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN bool node\_\-is\_\-ancestor (xml\_\-node {\em parent}, \/  xml\_\-node {\em node})}}
+\label{pugixml_8cpp_afe5e132153aa01551d56a2fc999f4483}
+\hypertarget{pugixml_8cpp_a64dbb9cc2216106e19248c7d5770525d}{
+\index{pugixml.cpp@{pugixml.cpp}!node\_\-is\_\-before@{node\_\-is\_\-before}}
+\index{node\_\-is\_\-before@{node\_\-is\_\-before}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{node\_\-is\_\-before}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN bool node\_\-is\_\-before (xml\_\-node {\em ln}, \/  unsigned int {\em lh}, \/  xml\_\-node {\em rn}, \/  unsigned int {\em rh})}}
+\label{pugixml_8cpp_a64dbb9cc2216106e19248c7d5770525d}
+\hypertarget{pugixml_8cpp_a7f5dd565c9321db184119a5f337333e7}{
+\index{pugixml.cpp@{pugixml.cpp}!node\_\-output@{node\_\-output}}
+\index{node\_\-output@{node\_\-output}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{node\_\-output}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN void node\_\-output ({\bf xml\_\-buffered\_\-writer} \& {\em writer}, \/  const xml\_\-node \& {\em node}, \/  const char\_\-t $\ast$ {\em indent}, \/  unsigned int {\em flags}, \/  unsigned int {\em depth})}}
+\label{pugixml_8cpp_a7f5dd565c9321db184119a5f337333e7}
+\hypertarget{pugixml_8cpp_ab1fa07dbea11b2e8484159f5114a292a}{
+\index{pugixml.cpp@{pugixml.cpp}!node\_\-output\_\-attributes@{node\_\-output\_\-attributes}}
+\index{node\_\-output\_\-attributes@{node\_\-output\_\-attributes}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{node\_\-output\_\-attributes}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN void node\_\-output\_\-attributes ({\bf xml\_\-buffered\_\-writer} \& {\em writer}, \/  const xml\_\-node \& {\em node}, \/  unsigned int {\em flags})}}
+\label{pugixml_8cpp_ab1fa07dbea11b2e8484159f5114a292a}
+\hypertarget{pugixml_8cpp_aba6b04ce493ae6df9e4dbc901b964b90}{
+\index{pugixml.cpp@{pugixml.cpp}!normalize\_\-space@{normalize\_\-space}}
+\index{normalize\_\-space@{normalize\_\-space}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{normalize\_\-space}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN void normalize\_\-space (char\_\-t $\ast$ {\em buffer})}}
+\label{pugixml_8cpp_aba6b04ce493ae6df9e4dbc901b964b90}
+\hypertarget{pugixml_8cpp_a6a347080c51ac7c992a32cde66a43801}{
+\index{pugixml.cpp@{pugixml.cpp}!open\_\-file\_\-wide@{open\_\-file\_\-wide}}
+\index{open\_\-file\_\-wide@{open\_\-file\_\-wide}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{open\_\-file\_\-wide}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN FILE$\ast$ open\_\-file\_\-wide (const wchar\_\-t $\ast$ {\em path}, \/  const wchar\_\-t $\ast$ {\em mode})}}
+\label{pugixml_8cpp_a6a347080c51ac7c992a32cde66a43801}
+\hypertarget{pugixml_8cpp_a48bf1d0684d4f96edd2c487f60e78db7}{
+\index{pugixml.cpp@{pugixml.cpp}!partition@{partition}}
+\index{partition@{partition}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{partition}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename I , typename Pred $>$ void partition (I {\em begin}, \/  I {\em middle}, \/  I {\em end}, \/  const Pred \& {\em pred}, \/  I $\ast$ {\em out\_\-eqbeg}, \/  I $\ast$ {\em out\_\-eqend})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_a48bf1d0684d4f96edd2c487f60e78db7}
+\hypertarget{pugixml_8cpp_af4c8365a5d8bae7540276768ddbd3eb5}{
+\index{pugixml.cpp@{pugixml.cpp}!qualified\_\-name@{qualified\_\-name}}
+\index{qualified\_\-name@{qualified\_\-name}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{qualified\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN const char\_\-t$\ast$ qualified\_\-name (const xpath\_\-node \& {\em node})}}
+\label{pugixml_8cpp_af4c8365a5d8bae7540276768ddbd3eb5}
+\hypertarget{pugixml_8cpp_aada7f66bd2b77338ef8b8089e7139f08}{
+\index{pugixml.cpp@{pugixml.cpp}!recursive\_\-copy\_\-skip@{recursive\_\-copy\_\-skip}}
+\index{recursive\_\-copy\_\-skip@{recursive\_\-copy\_\-skip}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{recursive\_\-copy\_\-skip}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN void recursive\_\-copy\_\-skip (xml\_\-node \& {\em dest}, \/  const xml\_\-node \& {\em source}, \/  const xml\_\-node \& {\em skip})}}
+\label{pugixml_8cpp_aada7f66bd2b77338ef8b8089e7139f08}
+\hypertarget{pugixml_8cpp_a8ea266f77d651d4f798cfaf5e9f6e28e}{
+\index{pugixml.cpp@{pugixml.cpp}!reverse@{reverse}}
+\index{reverse@{reverse}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{reverse}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename I $>$ void reverse (I {\em begin}, \/  I {\em end})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_a8ea266f77d651d4f798cfaf5e9f6e28e}
+\hypertarget{pugixml_8cpp_aaeb62784a181c44f2ee34c0172e00240}{
+\index{pugixml.cpp@{pugixml.cpp}!round\_\-nearest@{round\_\-nearest}}
+\index{round\_\-nearest@{round\_\-nearest}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{round\_\-nearest}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN double round\_\-nearest (double {\em value})}}
+\label{pugixml_8cpp_aaeb62784a181c44f2ee34c0172e00240}
+\hypertarget{pugixml_8cpp_a08148576c17009ae574e2fc8cd3d17a9}{
+\index{pugixml.cpp@{pugixml.cpp}!round\_\-nearest\_\-nzero@{round\_\-nearest\_\-nzero}}
+\index{round\_\-nearest\_\-nzero@{round\_\-nearest\_\-nzero}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{round\_\-nearest\_\-nzero}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN double round\_\-nearest\_\-nzero (double {\em value})}}
+\label{pugixml_8cpp_a08148576c17009ae574e2fc8cd3d17a9}
+\hypertarget{pugixml_8cpp_abde253604bc33c829133fdbc5d2b4dba}{
+\index{pugixml.cpp@{pugixml.cpp}!save\_\-file\_\-impl@{save\_\-file\_\-impl}}
+\index{save\_\-file\_\-impl@{save\_\-file\_\-impl}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{save\_\-file\_\-impl}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN bool save\_\-file\_\-impl (const xml\_\-document \& {\em doc}, \/  FILE $\ast$ {\em file}, \/  const char\_\-t $\ast$ {\em indent}, \/  unsigned int {\em flags}, \/  xml\_\-encoding {\em encoding})}}
+\label{pugixml_8cpp_abde253604bc33c829133fdbc5d2b4dba}
+\hypertarget{pugixml_8cpp_ab5661e636fc32d2d065fb10a58fedd10}{
+\index{pugixml.cpp@{pugixml.cpp}!set\_\-value\_\-buffer@{set\_\-value\_\-buffer}}
+\index{set\_\-value\_\-buffer@{set\_\-value\_\-buffer}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{set\_\-value\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN bool set\_\-value\_\-buffer (char\_\-t $\ast$\& {\em dest}, \/  uintptr\_\-t \& {\em header}, \/  uintptr\_\-t {\em header\_\-mask}, \/  char(\&) {\em buf}\mbox{[}128\mbox{]})}}
+\label{pugixml_8cpp_ab5661e636fc32d2d065fb10a58fedd10}
+\hypertarget{pugixml_8cpp_aae5ad520a997bd3b9350f264be945d59}{
+\index{pugixml.cpp@{pugixml.cpp}!set\_\-value\_\-convert@{set\_\-value\_\-convert}}
+\index{set\_\-value\_\-convert@{set\_\-value\_\-convert}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{set\_\-value\_\-convert}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN bool set\_\-value\_\-convert (char\_\-t $\ast$\& {\em dest}, \/  uintptr\_\-t \& {\em header}, \/  uintptr\_\-t {\em header\_\-mask}, \/  bool {\em value})}}
+\label{pugixml_8cpp_aae5ad520a997bd3b9350f264be945d59}
+\hypertarget{pugixml_8cpp_a1c12c65da3412c2603390e1a51772537}{
+\index{pugixml.cpp@{pugixml.cpp}!set\_\-value\_\-convert@{set\_\-value\_\-convert}}
+\index{set\_\-value\_\-convert@{set\_\-value\_\-convert}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{set\_\-value\_\-convert}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN bool set\_\-value\_\-convert (char\_\-t $\ast$\& {\em dest}, \/  uintptr\_\-t \& {\em header}, \/  uintptr\_\-t {\em header\_\-mask}, \/  double {\em value})}}
+\label{pugixml_8cpp_a1c12c65da3412c2603390e1a51772537}
+\hypertarget{pugixml_8cpp_ab2ee9a440a1447d7e7fa57e38eef068b}{
+\index{pugixml.cpp@{pugixml.cpp}!set\_\-value\_\-convert@{set\_\-value\_\-convert}}
+\index{set\_\-value\_\-convert@{set\_\-value\_\-convert}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{set\_\-value\_\-convert}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN bool set\_\-value\_\-convert (char\_\-t $\ast$\& {\em dest}, \/  uintptr\_\-t \& {\em header}, \/  uintptr\_\-t {\em header\_\-mask}, \/  unsigned int {\em value})}}
+\label{pugixml_8cpp_ab2ee9a440a1447d7e7fa57e38eef068b}
+\hypertarget{pugixml_8cpp_a376292f4d74bfb179f38bd30dd66c2e4}{
+\index{pugixml.cpp@{pugixml.cpp}!set\_\-value\_\-convert@{set\_\-value\_\-convert}}
+\index{set\_\-value\_\-convert@{set\_\-value\_\-convert}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{set\_\-value\_\-convert}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN bool set\_\-value\_\-convert (char\_\-t $\ast$\& {\em dest}, \/  uintptr\_\-t \& {\em header}, \/  uintptr\_\-t {\em header\_\-mask}, \/  int {\em value})}}
+\label{pugixml_8cpp_a376292f4d74bfb179f38bd30dd66c2e4}
+\hypertarget{pugixml_8cpp_a1c62a6e4589a19a442e62889c36bf29e}{
+\index{pugixml.cpp@{pugixml.cpp}!sort@{sort}}
+\index{sort@{sort}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{sort}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename I , typename Pred $>$ void sort (I {\em begin}, \/  I {\em end}, \/  const Pred \& {\em pred})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_a1c62a6e4589a19a442e62889c36bf29e}
+\hypertarget{pugixml_8cpp_a4ab3a20f90bd9a6d4d050b7438fe83e3}{
+\index{pugixml.cpp@{pugixml.cpp}!starts\_\-with@{starts\_\-with}}
+\index{starts\_\-with@{starts\_\-with}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{starts\_\-with}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-NS\_\-END PUGI\_\-\_\-NS\_\-BEGIN PUGI\_\-\_\-FN bool starts\_\-with (const char\_\-t $\ast$ {\em string}, \/  const char\_\-t $\ast$ {\em pattern})}}
+\label{pugixml_8cpp_a4ab3a20f90bd9a6d4d050b7438fe83e3}
+\hypertarget{pugixml_8cpp_a9caa489db9fff49dc8819a48849627c0}{
+\index{pugixml.cpp@{pugixml.cpp}!strconv\_\-cdata@{strconv\_\-cdata}}
+\index{strconv\_\-cdata@{strconv\_\-cdata}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{strconv\_\-cdata}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN char\_\-t$\ast$ strconv\_\-cdata (char\_\-t $\ast$ {\em s}, \/  char\_\-t {\em endch})}}
+\label{pugixml_8cpp_a9caa489db9fff49dc8819a48849627c0}
+\hypertarget{pugixml_8cpp_acd89f6b92cd5a83b4e8a56bff9e55118}{
+\index{pugixml.cpp@{pugixml.cpp}!strconv\_\-comment@{strconv\_\-comment}}
+\index{strconv\_\-comment@{strconv\_\-comment}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{strconv\_\-comment}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN char\_\-t$\ast$ strconv\_\-comment (char\_\-t $\ast$ {\em s}, \/  char\_\-t {\em endch})}}
+\label{pugixml_8cpp_acd89f6b92cd5a83b4e8a56bff9e55118}
+\hypertarget{pugixml_8cpp_a7cf2b6da7b109a11f8cb1c7e1a09bf7e}{
+\index{pugixml.cpp@{pugixml.cpp}!strconv\_\-escape@{strconv\_\-escape}}
+\index{strconv\_\-escape@{strconv\_\-escape}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{strconv\_\-escape}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN char\_\-t$\ast$ strconv\_\-escape (char\_\-t $\ast$ {\em s}, \/  {\bf gap} \& {\em g})}}
+\label{pugixml_8cpp_a7cf2b6da7b109a11f8cb1c7e1a09bf7e}
+\hypertarget{pugixml_8cpp_ab9527027631039c4e2361e30f2c0788e}{
+\index{pugixml.cpp@{pugixml.cpp}!strcpy\_\-insitu@{strcpy\_\-insitu}}
+\index{strcpy\_\-insitu@{strcpy\_\-insitu}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{strcpy\_\-insitu}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN bool strcpy\_\-insitu (char\_\-t $\ast$\& {\em dest}, \/  uintptr\_\-t \& {\em header}, \/  uintptr\_\-t {\em header\_\-mask}, \/  const char\_\-t $\ast$ {\em source})}}
+\label{pugixml_8cpp_ab9527027631039c4e2361e30f2c0788e}
+\hypertarget{pugixml_8cpp_a230775a8b2b7883f8dffc32b550a267c}{
+\index{pugixml.cpp@{pugixml.cpp}!strcpy\_\-insitu\_\-allow@{strcpy\_\-insitu\_\-allow}}
+\index{strcpy\_\-insitu\_\-allow@{strcpy\_\-insitu\_\-allow}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{strcpy\_\-insitu\_\-allow}]{\setlength{\rightskip}{0pt plus 5cm}bool strcpy\_\-insitu\_\-allow (size\_\-t {\em length}, \/  uintptr\_\-t {\em allocated}, \/  char\_\-t $\ast$ {\em target})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_a230775a8b2b7883f8dffc32b550a267c}
+\hypertarget{pugixml_8cpp_af682718c79fea7fc666a593dc70764c1}{
+\index{pugixml.cpp@{pugixml.cpp}!strequal@{strequal}}
+\index{strequal@{strequal}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{strequal}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN bool strequal (const char\_\-t $\ast$ {\em src}, \/  const char\_\-t $\ast$ {\em dst})}}
+\label{pugixml_8cpp_af682718c79fea7fc666a593dc70764c1}
+\hypertarget{pugixml_8cpp_abbf171d1eb53f93f1fa710de5673f889}{
+\index{pugixml.cpp@{pugixml.cpp}!strequalrange@{strequalrange}}
+\index{strequalrange@{strequalrange}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{strequalrange}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN bool strequalrange (const char\_\-t $\ast$ {\em lhs}, \/  const char\_\-t $\ast$ {\em rhs}, \/  size\_\-t {\em count})}}
+\label{pugixml_8cpp_abbf171d1eb53f93f1fa710de5673f889}
+\hypertarget{pugixml_8cpp_a7983b03f2dd06eb98951cd2dde03cd87}{
+\index{pugixml.cpp@{pugixml.cpp}!string\_\-value@{string\_\-value}}
+\index{string\_\-value@{string\_\-value}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{string\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN {\bf xpath\_\-string} string\_\-value (const xpath\_\-node \& {\em na}, \/  {\bf xpath\_\-allocator} $\ast$ {\em alloc})}}
+\label{pugixml_8cpp_a7983b03f2dd06eb98951cd2dde03cd87}
+\hypertarget{pugixml_8cpp_aab9e1f034d085b663d146fcceabb1c48}{
+\index{pugixml.cpp@{pugixml.cpp}!strlength@{strlength}}
+\index{strlength@{strlength}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{strlength}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-NS\_\-END PUGI\_\-\_\-NS\_\-BEGIN PUGI\_\-\_\-FN size\_\-t strlength (const char\_\-t $\ast$ {\em s})}}
+\label{pugixml_8cpp_aab9e1f034d085b663d146fcceabb1c48}
+\hypertarget{pugixml_8cpp_a64dc0aa45172e5bfdfe70d46b49b1049}{
+\index{pugixml.cpp@{pugixml.cpp}!swap@{swap}}
+\index{swap@{swap}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{swap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void swap (T \& {\em lhs}, \/  T \& {\em rhs})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_a64dc0aa45172e5bfdfe70d46b49b1049}
+\hypertarget{pugixml_8cpp_ad40396398fcbab11c9283b516f766413}{
+\index{pugixml.cpp@{pugixml.cpp}!text\_\-output@{text\_\-output}}
+\index{text\_\-output@{text\_\-output}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{text\_\-output}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN void text\_\-output ({\bf xml\_\-buffered\_\-writer} \& {\em writer}, \/  const char\_\-t $\ast$ {\em s}, \/  {\bf chartypex\_\-t} {\em type}, \/  unsigned int {\em flags})}}
+\label{pugixml_8cpp_ad40396398fcbab11c9283b516f766413}
+\hypertarget{pugixml_8cpp_a21f7b54b5d3837583ca0da632f7c27fc}{
+\index{pugixml.cpp@{pugixml.cpp}!text\_\-output\_\-cdata@{text\_\-output\_\-cdata}}
+\index{text\_\-output\_\-cdata@{text\_\-output\_\-cdata}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{text\_\-output\_\-cdata}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN void text\_\-output\_\-cdata ({\bf xml\_\-buffered\_\-writer} \& {\em writer}, \/  const char\_\-t $\ast$ {\em s})}}
+\label{pugixml_8cpp_a21f7b54b5d3837583ca0da632f7c27fc}
+\hypertarget{pugixml_8cpp_affde71fa96c9fca0c49b21e22ba197c5}{
+\index{pugixml.cpp@{pugixml.cpp}!text\_\-output\_\-escaped@{text\_\-output\_\-escaped}}
+\index{text\_\-output\_\-escaped@{text\_\-output\_\-escaped}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{text\_\-output\_\-escaped}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN void text\_\-output\_\-escaped ({\bf xml\_\-buffered\_\-writer} \& {\em writer}, \/  const char\_\-t $\ast$ {\em s}, \/  {\bf chartypex\_\-t} {\em type})}}
+\label{pugixml_8cpp_affde71fa96c9fca0c49b21e22ba197c5}
+\hypertarget{pugixml_8cpp_afeba7a7ade93e89bc9c83aa616ea7ad6}{
+\index{pugixml.cpp@{pugixml.cpp}!tolower\_\-ascii@{tolower\_\-ascii}}
+\index{tolower\_\-ascii@{tolower\_\-ascii}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{tolower\_\-ascii}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN char\_\-t tolower\_\-ascii (char\_\-t {\em ch})}}
+\label{pugixml_8cpp_afeba7a7ade93e89bc9c83aa616ea7ad6}
+\hypertarget{pugixml_8cpp_ad4a1dbcf50be703f147af6fa20c76ff7}{
+\index{pugixml.cpp@{pugixml.cpp}!translate@{translate}}
+\index{translate@{translate}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{translate}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN void translate (char\_\-t $\ast$ {\em buffer}, \/  const char\_\-t $\ast$ {\em from}, \/  const char\_\-t $\ast$ {\em to})}}
+\label{pugixml_8cpp_ad4a1dbcf50be703f147af6fa20c76ff7}
+\hypertarget{pugixml_8cpp_ae4e5418ba6b9fb37fd27eb89a00de148}{
+\index{pugixml.cpp@{pugixml.cpp}!truncate\_\-zeros@{truncate\_\-zeros}}
+\index{truncate\_\-zeros@{truncate\_\-zeros}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{truncate\_\-zeros}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN void truncate\_\-zeros (char $\ast$ {\em begin}, \/  char $\ast$ {\em end})}}
+\label{pugixml_8cpp_ae4e5418ba6b9fb37fd27eb89a00de148}
+\hypertarget{pugixml_8cpp_a1a25efc160e5b672f61fd3a849ab4ddc}{
+\index{pugixml.cpp@{pugixml.cpp}!unique@{unique}}
+\index{unique@{unique}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{unique}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename I $>$ I unique (I {\em begin}, \/  I {\em end})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{pugixml_8cpp_a1a25efc160e5b672f61fd3a849ab4ddc}
+\hypertarget{pugixml_8cpp_aca111b93f54ac52bd9a932ffda372368}{
+\index{pugixml.cpp@{pugixml.cpp}!xpath\_\-first@{xpath\_\-first}}
+\index{xpath\_\-first@{xpath\_\-first}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{xpath\_\-first}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN xpath\_\-node xpath\_\-first (const xpath\_\-node $\ast$ {\em begin}, \/  const xpath\_\-node $\ast$ {\em end}, \/  xpath\_\-node\_\-set::type\_\-t {\em type})}}
+\label{pugixml_8cpp_aca111b93f54ac52bd9a932ffda372368}
+\hypertarget{pugixml_8cpp_a8cb0eb3d56ad07f31e10d66d23fbc66d}{
+\index{pugixml.cpp@{pugixml.cpp}!xpath\_\-sort@{xpath\_\-sort}}
+\index{xpath\_\-sort@{xpath\_\-sort}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{xpath\_\-sort}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-NS\_\-END PUGI\_\-\_\-NS\_\-BEGIN PUGI\_\-\_\-FN xpath\_\-node\_\-set::type\_\-t xpath\_\-sort (xpath\_\-node $\ast$ {\em begin}, \/  xpath\_\-node $\ast$ {\em end}, \/  xpath\_\-node\_\-set::type\_\-t {\em type}, \/  bool {\em rev})}}
+\label{pugixml_8cpp_a8cb0eb3d56ad07f31e10d66d23fbc66d}
+\hypertarget{pugixml_8cpp_af98444c6604376907823f1d20acac2bd}{
+\index{pugixml.cpp@{pugixml.cpp}!xpath\_\-string\_\-const@{xpath\_\-string\_\-const}}
+\index{xpath\_\-string\_\-const@{xpath\_\-string\_\-const}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{xpath\_\-string\_\-const}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-FN {\bf xpath\_\-string} xpath\_\-string\_\-const (const char\_\-t $\ast$ {\em str})}}
+\label{pugixml_8cpp_af98444c6604376907823f1d20acac2bd}
+
+
+\subsection{Variable Documentation}
+\hypertarget{pugixml_8cpp_a6acb2529321dd30b6f3a8c34e88edb1c}{
+\index{pugixml.cpp@{pugixml.cpp}!chartype\_\-table@{chartype\_\-table}}
+\index{chartype\_\-table@{chartype\_\-table}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{chartype\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf chartype\_\-table}\mbox{[}256\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{pugixml_8cpp_a6acb2529321dd30b6f3a8c34e88edb1c}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+
+        {
+                55,  0,   0,   0,   0,   0,   0,   0,      0,   12,  12,  0,   0,
+         63,  0,   0,   
+                0,   0,   0,   0,   0,   0,   0,   0,      0,   0,   0,   0,   0,
+         0,   0,   0,   
+                8,   0,   6,   0,   0,   0,   7,   6,      0,   0,   0,   0,   0,
+         96,  64,  0,   
+                64,  64,  64,  64,  64,  64,  64,  64,     64,  64,  192, 0,   1,
+         0,   48,  0,   
+                0,   192, 192, 192, 192, 192, 192, 192,    192, 192, 192, 192, 19
+      2, 192, 192, 192, 
+                192, 192, 192, 192, 192, 192, 192, 192,    192, 192, 192, 0,   0,
+         16,  0,   192, 
+                0,   192, 192, 192, 192, 192, 192, 192,    192, 192, 192, 192, 19
+      2, 192, 192, 192, 
+                192, 192, 192, 192, 192, 192, 192, 192,    192, 192, 192, 0, 0, 0
+      , 0, 0,           
+
+                192, 192, 192, 192, 192, 192, 192, 192,    192, 192, 192, 192, 19
+      2, 192, 192, 192, 
+                192, 192, 192, 192, 192, 192, 192, 192,    192, 192, 192, 192, 19
+      2, 192, 192, 192,
+                192, 192, 192, 192, 192, 192, 192, 192,    192, 192, 192, 192, 19
+      2, 192, 192, 192,
+                192, 192, 192, 192, 192, 192, 192, 192,    192, 192, 192, 192, 19
+      2, 192, 192, 192,
+                192, 192, 192, 192, 192, 192, 192, 192,    192, 192, 192, 192, 19
+      2, 192, 192, 192,
+                192, 192, 192, 192, 192, 192, 192, 192,    192, 192, 192, 192, 19
+      2, 192, 192, 192,
+                192, 192, 192, 192, 192, 192, 192, 192,    192, 192, 192, 192, 19
+      2, 192, 192, 192,
+                192, 192, 192, 192, 192, 192, 192, 192,    192, 192, 192, 192, 19
+      2, 192, 192, 192
+        }
+\end{DoxyCode}
+\hypertarget{pugixml_8cpp_a5671e1188ce92b80a289fc6b9bf72598}{
+\index{pugixml.cpp@{pugixml.cpp}!chartypex\_\-table@{chartypex\_\-table}}
+\index{chartypex\_\-table@{chartypex\_\-table}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{chartypex\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf chartypex\_\-table}\mbox{[}256\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{pugixml_8cpp_a5671e1188ce92b80a289fc6b9bf72598}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+
+        {
+                3,  3,  3,  3,  3,  3,  3,  3,     3,  0,  2,  3,  3,  2,  3,  3,
+           
+                3,  3,  3,  3,  3,  3,  3,  3,     3,  3,  3,  3,  3,  3,  3,  3,
+           
+                0,  0,  2,  0,  0,  0,  3,  0,     0,  0,  0,  0,  0, 16, 16,  0,
+           
+                24, 24, 24, 24, 24, 24, 24, 24,    24, 24, 0,  0,  3,  0,  3,  0,
+           
+
+                0,  20, 20, 20, 20, 20, 20, 20,    20, 20, 20, 20, 20, 20, 20, 20
+      ,    
+                20, 20, 20, 20, 20, 20, 20, 20,    20, 20, 20, 0,  0,  0,  0,  20
+      ,    
+                0,  20, 20, 20, 20, 20, 20, 20,    20, 20, 20, 20, 20, 20, 20, 20
+      ,    
+                20, 20, 20, 20, 20, 20, 20, 20,    20, 20, 20, 0,  0,  0,  0,  0,
+           
+
+                20, 20, 20, 20, 20, 20, 20, 20,    20, 20, 20, 20, 20, 20, 20, 20
+      ,    
+                20, 20, 20, 20, 20, 20, 20, 20,    20, 20, 20, 20, 20, 20, 20, 20
+      ,
+                20, 20, 20, 20, 20, 20, 20, 20,    20, 20, 20, 20, 20, 20, 20, 20
+      ,
+                20, 20, 20, 20, 20, 20, 20, 20,    20, 20, 20, 20, 20, 20, 20, 20
+      ,
+                20, 20, 20, 20, 20, 20, 20, 20,    20, 20, 20, 20, 20, 20, 20, 20
+      ,
+                20, 20, 20, 20, 20, 20, 20, 20,    20, 20, 20, 20, 20, 20, 20, 20
+      ,
+                20, 20, 20, 20, 20, 20, 20, 20,    20, 20, 20, 20, 20, 20, 20, 20
+      ,
+                20, 20, 20, 20, 20, 20, 20, 20,    20, 20, 20, 20, 20, 20, 20, 20
+      
+        }
+\end{DoxyCode}
+\hypertarget{pugixml_8cpp_ace94b7b2616c35a34bb5fc96f0b53706}{
+\index{pugixml.cpp@{pugixml.cpp}!dummy\_\-node\_\-set@{dummy\_\-node\_\-set}}
+\index{dummy\_\-node\_\-set@{dummy\_\-node\_\-set}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{dummy\_\-node\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}const xpath\_\-node\_\-set {\bf dummy\_\-node\_\-set}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{pugixml_8cpp_ace94b7b2616c35a34bb5fc96f0b53706}
+\hypertarget{pugixml_8cpp_ab551909bf50e9db29cce783b3ecfc102}{
+\index{pugixml.cpp@{pugixml.cpp}!xml\_\-memory\_\-page\_\-alignment@{xml\_\-memory\_\-page\_\-alignment}}
+\index{xml\_\-memory\_\-page\_\-alignment@{xml\_\-memory\_\-page\_\-alignment}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{xml\_\-memory\_\-page\_\-alignment}]{\setlength{\rightskip}{0pt plus 5cm}const uintptr\_\-t {\bf xml\_\-memory\_\-page\_\-alignment} = 32\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{pugixml_8cpp_ab551909bf50e9db29cce783b3ecfc102}
+\hypertarget{pugixml_8cpp_a9fe438ab2ab20f7ebf6be4a140eccc7d}{
+\index{pugixml.cpp@{pugixml.cpp}!xml\_\-memory\_\-page\_\-name\_\-allocated\_\-mask@{xml\_\-memory\_\-page\_\-name\_\-allocated\_\-mask}}
+\index{xml\_\-memory\_\-page\_\-name\_\-allocated\_\-mask@{xml\_\-memory\_\-page\_\-name\_\-allocated\_\-mask}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{xml\_\-memory\_\-page\_\-name\_\-allocated\_\-mask}]{\setlength{\rightskip}{0pt plus 5cm}const uintptr\_\-t {\bf xml\_\-memory\_\-page\_\-name\_\-allocated\_\-mask} = 16\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{pugixml_8cpp_a9fe438ab2ab20f7ebf6be4a140eccc7d}
+\hypertarget{pugixml_8cpp_a3dcb4e19abd7c83d2008e512ae557931}{
+\index{pugixml.cpp@{pugixml.cpp}!xml\_\-memory\_\-page\_\-pointer\_\-mask@{xml\_\-memory\_\-page\_\-pointer\_\-mask}}
+\index{xml\_\-memory\_\-page\_\-pointer\_\-mask@{xml\_\-memory\_\-page\_\-pointer\_\-mask}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{xml\_\-memory\_\-page\_\-pointer\_\-mask}]{\setlength{\rightskip}{0pt plus 5cm}const uintptr\_\-t {\bf xml\_\-memory\_\-page\_\-pointer\_\-mask} = $\sim$({\bf xml\_\-memory\_\-page\_\-alignment} -\/ 1)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{pugixml_8cpp_a3dcb4e19abd7c83d2008e512ae557931}
+\hypertarget{pugixml_8cpp_aa040c77beb7349f7473f072b6dd364b9}{
+\index{pugixml.cpp@{pugixml.cpp}!xml\_\-memory\_\-page\_\-size@{xml\_\-memory\_\-page\_\-size}}
+\index{xml\_\-memory\_\-page\_\-size@{xml\_\-memory\_\-page\_\-size}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{xml\_\-memory\_\-page\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}PUGI\_\-\_\-NS\_\-END static PUGI\_\-\_\-NS\_\-BEGIN const size\_\-t {\bf xml\_\-memory\_\-page\_\-size}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{pugixml_8cpp_aa040c77beb7349f7473f072b6dd364b9}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+
+
+
+
+                32768
+\end{DoxyCode}
+\hypertarget{pugixml_8cpp_a24c7f234d1f6628ccf3d07bd1bf878b3}{
+\index{pugixml.cpp@{pugixml.cpp}!xml\_\-memory\_\-page\_\-type\_\-mask@{xml\_\-memory\_\-page\_\-type\_\-mask}}
+\index{xml\_\-memory\_\-page\_\-type\_\-mask@{xml\_\-memory\_\-page\_\-type\_\-mask}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{xml\_\-memory\_\-page\_\-type\_\-mask}]{\setlength{\rightskip}{0pt plus 5cm}const uintptr\_\-t {\bf xml\_\-memory\_\-page\_\-type\_\-mask} = 7\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{pugixml_8cpp_a24c7f234d1f6628ccf3d07bd1bf878b3}
+\hypertarget{pugixml_8cpp_ac6bd2c90078386db01e2551c0d11441f}{
+\index{pugixml.cpp@{pugixml.cpp}!xml\_\-memory\_\-page\_\-value\_\-allocated\_\-mask@{xml\_\-memory\_\-page\_\-value\_\-allocated\_\-mask}}
+\index{xml\_\-memory\_\-page\_\-value\_\-allocated\_\-mask@{xml\_\-memory\_\-page\_\-value\_\-allocated\_\-mask}!pugixml.cpp@{pugixml.cpp}}
+\subsubsection[{xml\_\-memory\_\-page\_\-value\_\-allocated\_\-mask}]{\setlength{\rightskip}{0pt plus 5cm}const uintptr\_\-t {\bf xml\_\-memory\_\-page\_\-value\_\-allocated\_\-mask} = 8\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{pugixml_8cpp_ac6bd2c90078386db01e2551c0d11441f}

@@ -1,0 +1,133 @@
+\hypertarget{classTArray3D}{
+\section{TArray3D$<$ T $>$ Class Template Reference}
+\label{classTArray3D}\index{TArray3D@{TArray3D}}
+}
+
+
+{\ttfamily \#include $<$tarrays.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTArray3D_aa873df8def017abd44f790af8da75093}{TArray3D} ()
+\item 
+\hyperlink{classTArray3D_a7ac940512cc13a03f59db36304f9a9d9}{TArray3D} (size\_\-t width, size\_\-t height, size\_\-t depth)
+\item 
+\hyperlink{classTArray3D_aab64cc8e256350e80f20366f0388c9f1}{$\sim$TArray3D} ()
+\item 
+size\_\-t \hyperlink{classTArray3D_ac60676bad65591c46ed744bff1694908}{width} ()
+\item 
+size\_\-t \hyperlink{classTArray3D_a5c908ba2b371cc028c028448e9e522ed}{height} ()
+\item 
+size\_\-t \hyperlink{classTArray3D_a14f076bd64b1989e8f65a49366d7823f}{depth} ()
+\item 
+void \hyperlink{classTArray3D_a1679bd8e604f7ee577b4d5948e217ef4}{resize} (size\_\-t width, size\_\-t height, size\_\-t depth)
+\item 
+void \hyperlink{classTArray3D_a7324dc8c8bce78dce247c32a6f861c5f}{set} (size\_\-t x, size\_\-t y, size\_\-t z, T val)
+\item 
+T \hyperlink{classTArray3D_a8b2076b8a594dc5e69b143e12afbce1e}{get} (size\_\-t x, size\_\-t y, size\_\-t z)
+\item 
+\hyperlink{classTArray3D}{TArray3D} \& \hyperlink{classTArray3D_ad9eaf10799832b1ac819caaed368d7c1}{operator=} (const \hyperlink{classTArray2D}{TArray2D}$<$ T $>$ \&v)
+\item 
+\hyperlink{classTArray3D}{TArray3D} \& \hyperlink{classTArray3D_a8ac9b63c65f2ca5e068812f1e69f4900}{operator=} (const T \&v)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\_\-t \hyperlink{classTArray3D_a5834f0bd1cd05ab379e50dd4227a880b}{m\_\-width}
+\item 
+size\_\-t \hyperlink{classTArray3D_a8560a24b0a789251c9093fa98b86dd09}{m\_\-height}
+\item 
+size\_\-t \hyperlink{classTArray3D_a7d1123fcaf6870716640855c3a98aa83}{m\_\-depth}
+\item 
+std::vector$<$ T $>$ \hyperlink{classTArray3D_acb49e26adbdbf0183b7876731a930345}{m\_\-array}
+\end{DoxyCompactItemize}
+\subsubsection*{template$<$class T$>$ class TArray3D$<$ T $>$}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTArray3D_aa873df8def017abd44f790af8da75093}{
+\index{TArray3D@{TArray3D}!TArray3D@{TArray3D}}
+\index{TArray3D@{TArray3D}!TArray3D@{TArray3D}}
+\subsubsection[{TArray3D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf TArray3D}$<$ T $>$::{\bf TArray3D} ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classTArray3D_aa873df8def017abd44f790af8da75093}
+\hypertarget{classTArray3D_a7ac940512cc13a03f59db36304f9a9d9}{
+\index{TArray3D@{TArray3D}!TArray3D@{TArray3D}}
+\index{TArray3D@{TArray3D}!TArray3D@{TArray3D}}
+\subsubsection[{TArray3D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf TArray3D}$<$ T $>$::{\bf TArray3D} (size\_\-t {\em width}, \/  size\_\-t {\em height}, \/  size\_\-t {\em depth})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classTArray3D_a7ac940512cc13a03f59db36304f9a9d9}
+\hypertarget{classTArray3D_aab64cc8e256350e80f20366f0388c9f1}{
+\index{TArray3D@{TArray3D}!$\sim$TArray3D@{$\sim$TArray3D}}
+\index{$\sim$TArray3D@{$\sim$TArray3D}!TArray3D@{TArray3D}}
+\subsubsection[{$\sim$TArray3D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf TArray3D}$<$ T $>$::$\sim${\bf TArray3D} ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classTArray3D_aab64cc8e256350e80f20366f0388c9f1}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTArray3D_a14f076bd64b1989e8f65a49366d7823f}{
+\index{TArray3D@{TArray3D}!depth@{depth}}
+\index{depth@{depth}!TArray3D@{TArray3D}}
+\subsubsection[{depth}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ size\_\-t {\bf TArray3D}$<$ T $>$::depth ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classTArray3D_a14f076bd64b1989e8f65a49366d7823f}
+\hypertarget{classTArray3D_a8b2076b8a594dc5e69b143e12afbce1e}{
+\index{TArray3D@{TArray3D}!get@{get}}
+\index{get@{get}!TArray3D@{TArray3D}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T {\bf TArray3D}$<$ T $>$::get (size\_\-t {\em x}, \/  size\_\-t {\em y}, \/  size\_\-t {\em z})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classTArray3D_a8b2076b8a594dc5e69b143e12afbce1e}
+\hypertarget{classTArray3D_a5c908ba2b371cc028c028448e9e522ed}{
+\index{TArray3D@{TArray3D}!height@{height}}
+\index{height@{height}!TArray3D@{TArray3D}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ size\_\-t {\bf TArray3D}$<$ T $>$::height ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classTArray3D_a5c908ba2b371cc028c028448e9e522ed}
+\hypertarget{classTArray3D_a8ac9b63c65f2ca5e068812f1e69f4900}{
+\index{TArray3D@{TArray3D}!operator=@{operator=}}
+\index{operator=@{operator=}!TArray3D@{TArray3D}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf TArray3D}\& {\bf TArray3D}$<$ T $>$::operator= (const T \& {\em v})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classTArray3D_a8ac9b63c65f2ca5e068812f1e69f4900}
+\hypertarget{classTArray3D_ad9eaf10799832b1ac819caaed368d7c1}{
+\index{TArray3D@{TArray3D}!operator=@{operator=}}
+\index{operator=@{operator=}!TArray3D@{TArray3D}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf TArray3D}\& {\bf TArray3D}$<$ T $>$::operator= (const {\bf TArray2D}$<$ T $>$ \& {\em v})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classTArray3D_ad9eaf10799832b1ac819caaed368d7c1}
+\hypertarget{classTArray3D_a1679bd8e604f7ee577b4d5948e217ef4}{
+\index{TArray3D@{TArray3D}!resize@{resize}}
+\index{resize@{resize}!TArray3D@{TArray3D}}
+\subsubsection[{resize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf TArray3D}$<$ T $>$::resize (size\_\-t {\em width}, \/  size\_\-t {\em height}, \/  size\_\-t {\em depth})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classTArray3D_a1679bd8e604f7ee577b4d5948e217ef4}
+\hypertarget{classTArray3D_a7324dc8c8bce78dce247c32a6f861c5f}{
+\index{TArray3D@{TArray3D}!set@{set}}
+\index{set@{set}!TArray3D@{TArray3D}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf TArray3D}$<$ T $>$::set (size\_\-t {\em x}, \/  size\_\-t {\em y}, \/  size\_\-t {\em z}, \/  T {\em val})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classTArray3D_a7324dc8c8bce78dce247c32a6f861c5f}
+\hypertarget{classTArray3D_ac60676bad65591c46ed744bff1694908}{
+\index{TArray3D@{TArray3D}!width@{width}}
+\index{width@{width}!TArray3D@{TArray3D}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ size\_\-t {\bf TArray3D}$<$ T $>$::width ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classTArray3D_ac60676bad65591c46ed744bff1694908}
+
+
+\subsection{Field Documentation}
+\hypertarget{classTArray3D_acb49e26adbdbf0183b7876731a930345}{
+\index{TArray3D@{TArray3D}!m\_\-array@{m\_\-array}}
+\index{m\_\-array@{m\_\-array}!TArray3D@{TArray3D}}
+\subsubsection[{m\_\-array}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ std::vector$<$T$>$ {\bf TArray3D}$<$ T $>$::{\bf m\_\-array}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classTArray3D_acb49e26adbdbf0183b7876731a930345}
+\hypertarget{classTArray3D_a7d1123fcaf6870716640855c3a98aa83}{
+\index{TArray3D@{TArray3D}!m\_\-depth@{m\_\-depth}}
+\index{m\_\-depth@{m\_\-depth}!TArray3D@{TArray3D}}
+\subsubsection[{m\_\-depth}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ size\_\-t {\bf TArray3D}$<$ T $>$::{\bf m\_\-depth}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classTArray3D_a7d1123fcaf6870716640855c3a98aa83}
+\hypertarget{classTArray3D_a8560a24b0a789251c9093fa98b86dd09}{
+\index{TArray3D@{TArray3D}!m\_\-height@{m\_\-height}}
+\index{m\_\-height@{m\_\-height}!TArray3D@{TArray3D}}
+\subsubsection[{m\_\-height}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ size\_\-t {\bf TArray3D}$<$ T $>$::{\bf m\_\-height}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classTArray3D_a8560a24b0a789251c9093fa98b86dd09}
+\hypertarget{classTArray3D_a5834f0bd1cd05ab379e50dd4227a880b}{
+\index{TArray3D@{TArray3D}!m\_\-width@{m\_\-width}}
+\index{m\_\-width@{m\_\-width}!TArray3D@{TArray3D}}
+\subsubsection[{m\_\-width}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ size\_\-t {\bf TArray3D}$<$ T $>$::{\bf m\_\-width}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classTArray3D_a5834f0bd1cd05ab379e50dd4227a880b}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+include/templates/\hyperlink{tarrays_8h}{tarrays.h}\end{DoxyCompactItemize}

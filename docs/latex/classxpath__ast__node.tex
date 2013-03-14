@@ -1,0 +1,289 @@
+\hypertarget{classxpath__ast__node}{
+\section{xpath\_\-ast\_\-node Class Reference}
+\label{classxpath__ast__node}\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classxpath__ast__node_af155d17a4477a693d37f4e34957dcc21}{xpath\_\-ast\_\-node} (\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330d}{ast\_\-type\_\-t} type, xpath\_\-value\_\-type rettype\_\-, const char\_\-t $\ast$value)
+\item 
+\hyperlink{classxpath__ast__node_ada97458f3fc7d6c87cf70d8084117b0d}{xpath\_\-ast\_\-node} (\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330d}{ast\_\-type\_\-t} type, xpath\_\-value\_\-type rettype\_\-, double value)
+\item 
+\hyperlink{classxpath__ast__node_a8de4244f7b9fc7626049197ddc0afab7}{xpath\_\-ast\_\-node} (\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330d}{ast\_\-type\_\-t} type, xpath\_\-value\_\-type rettype\_\-, xpath\_\-variable $\ast$value)
+\item 
+\hyperlink{classxpath__ast__node_af6f4ffea3f3c7fdb6ef1e759d4b070f4}{xpath\_\-ast\_\-node} (\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330d}{ast\_\-type\_\-t} type, xpath\_\-value\_\-type rettype\_\-, \hyperlink{classxpath__ast__node}{xpath\_\-ast\_\-node} $\ast$left=0, \hyperlink{classxpath__ast__node}{xpath\_\-ast\_\-node} $\ast$right=0)
+\item 
+\hyperlink{classxpath__ast__node_a7cf74b277deba86a6575796c727fe458}{xpath\_\-ast\_\-node} (\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330d}{ast\_\-type\_\-t} type, \hyperlink{classxpath__ast__node}{xpath\_\-ast\_\-node} $\ast$left, \hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189a}{axis\_\-t} axis, \hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275}{nodetest\_\-t} test, const char\_\-t $\ast$contents)
+\item 
+void \hyperlink{classxpath__ast__node_a2764184d076834284eb3ff3182b845cc}{set\_\-next} (\hyperlink{classxpath__ast__node}{xpath\_\-ast\_\-node} $\ast$value)
+\item 
+void \hyperlink{classxpath__ast__node_afe044146db852b7d4dbf188fd2ff6c75}{set\_\-right} (\hyperlink{classxpath__ast__node}{xpath\_\-ast\_\-node} $\ast$value)
+\item 
+bool \hyperlink{classxpath__ast__node_ab7f965a92023bc2704b8e6fd9f3d7c14}{eval\_\-boolean} (const \hyperlink{structxpath__context}{xpath\_\-context} \&c, const \hyperlink{structxpath__stack}{xpath\_\-stack} \&stack)
+\item 
+double \hyperlink{classxpath__ast__node_a92dd7048e28d486bc7f382d1fc6f1de6}{eval\_\-number} (const \hyperlink{structxpath__context}{xpath\_\-context} \&c, const \hyperlink{structxpath__stack}{xpath\_\-stack} \&stack)
+\item 
+\hyperlink{classxpath__string}{xpath\_\-string} \hyperlink{classxpath__ast__node_aaf931a091af0fb91c25e90b205363b4e}{eval\_\-string\_\-concat} (const \hyperlink{structxpath__context}{xpath\_\-context} \&c, const \hyperlink{structxpath__stack}{xpath\_\-stack} \&stack)
+\item 
+\hyperlink{classxpath__string}{xpath\_\-string} \hyperlink{classxpath__ast__node_a6b675237a590548b68d0e0b97518b6df}{eval\_\-string} (const \hyperlink{structxpath__context}{xpath\_\-context} \&c, const \hyperlink{structxpath__stack}{xpath\_\-stack} \&stack)
+\item 
+\hyperlink{classxpath__node__set__raw}{xpath\_\-node\_\-set\_\-raw} \hyperlink{classxpath__ast__node_a30d98ec97e3129e82ac9ec3f2a759855}{eval\_\-node\_\-set} (const \hyperlink{structxpath__context}{xpath\_\-context} \&c, const \hyperlink{structxpath__stack}{xpath\_\-stack} \&stack)
+\item 
+bool \hyperlink{classxpath__ast__node_a9253f88832441a357ea65639c73a34be}{is\_\-posinv} ()
+\item 
+xpath\_\-value\_\-type \hyperlink{classxpath__ast__node_a2c3598521141ed4b763fe6c4f852234f}{rettype} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classxpath__ast__node_ae5a059e41b41505bef1f7dbebda8070b}{xpath\_\-ast\_\-node} (const \hyperlink{classxpath__ast__node}{xpath\_\-ast\_\-node} \&)
+\item 
+\hyperlink{classxpath__ast__node}{xpath\_\-ast\_\-node} \& \hyperlink{classxpath__ast__node_a60fddea92b095c2b8705f12f7309e6aa}{operator=} (const \hyperlink{classxpath__ast__node}{xpath\_\-ast\_\-node} \&)
+\item 
+void \hyperlink{classxpath__ast__node_afcefe6b386c214349c5e23f13828fa1e}{apply\_\-predicate} (\hyperlink{classxpath__node__set__raw}{xpath\_\-node\_\-set\_\-raw} \&ns, size\_\-t first, \hyperlink{classxpath__ast__node}{xpath\_\-ast\_\-node} $\ast$expr, const \hyperlink{structxpath__stack}{xpath\_\-stack} \&stack)
+\item 
+void \hyperlink{classxpath__ast__node_ae5e3b5fec836d9478ebd195dda7fdedd}{apply\_\-predicates} (\hyperlink{classxpath__node__set__raw}{xpath\_\-node\_\-set\_\-raw} \&ns, size\_\-t first, const \hyperlink{structxpath__stack}{xpath\_\-stack} \&stack)
+\item 
+void \hyperlink{classxpath__ast__node_aa141bfbd4d5e42da83f0de8f729eb849}{step\_\-push} (\hyperlink{classxpath__node__set__raw}{xpath\_\-node\_\-set\_\-raw} \&ns, const xml\_\-attribute \&a, const xml\_\-node \&parent, \hyperlink{classxpath__allocator}{xpath\_\-allocator} $\ast$alloc)
+\item 
+void \hyperlink{classxpath__ast__node_a7083f1a6c3d4128bb8a4ac147851a86b}{step\_\-push} (\hyperlink{classxpath__node__set__raw}{xpath\_\-node\_\-set\_\-raw} \&ns, const xml\_\-node \&n, \hyperlink{classxpath__allocator}{xpath\_\-allocator} $\ast$alloc)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{classxpath__ast__node_a2fb0bf78cbdbe0bb032d37f765eab816}{step\_\-fill} (\hyperlink{classxpath__node__set__raw}{xpath\_\-node\_\-set\_\-raw} \&ns, const xml\_\-node \&n, \hyperlink{classxpath__allocator}{xpath\_\-allocator} $\ast$alloc, T)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{classxpath__ast__node_a0da76bbadd9b254cf56649392c686c2a}{step\_\-fill} (\hyperlink{classxpath__node__set__raw}{xpath\_\-node\_\-set\_\-raw} \&ns, const xml\_\-attribute \&a, const xml\_\-node \&p, \hyperlink{classxpath__allocator}{xpath\_\-allocator} $\ast$alloc, T v)
+\item 
+{\footnotesize template$<$class T $>$ }\\\hyperlink{classxpath__node__set__raw}{xpath\_\-node\_\-set\_\-raw} \hyperlink{classxpath__ast__node_a326147ab8def5110e44deafd73b20393}{step\_\-do} (const \hyperlink{structxpath__context}{xpath\_\-context} \&c, const \hyperlink{structxpath__stack}{xpath\_\-stack} \&stack, T v)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Comp $>$ }\\static bool \hyperlink{classxpath__ast__node_a16805022b8f8b8f26061b11d0f8e01b5}{compare\_\-eq} (\hyperlink{classxpath__ast__node}{xpath\_\-ast\_\-node} $\ast$lhs, \hyperlink{classxpath__ast__node}{xpath\_\-ast\_\-node} $\ast$rhs, const \hyperlink{structxpath__context}{xpath\_\-context} \&c, const \hyperlink{structxpath__stack}{xpath\_\-stack} \&stack, const Comp \&comp)
+\item 
+{\footnotesize template$<$class Comp $>$ }\\static bool \hyperlink{classxpath__ast__node_a055805c7365ac7d99174d2bf7a0cd5e2}{compare\_\-rel} (\hyperlink{classxpath__ast__node}{xpath\_\-ast\_\-node} $\ast$lhs, \hyperlink{classxpath__ast__node}{xpath\_\-ast\_\-node} $\ast$rhs, const \hyperlink{structxpath__context}{xpath\_\-context} \&c, const \hyperlink{structxpath__stack}{xpath\_\-stack} \&stack, const Comp \&comp)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{classxpath__ast__node_ad285f423090a0aaee3c4126da65066d1}{\_\-type}
+\item 
+char \hyperlink{classxpath__ast__node_ab84a640f3a0f00d4d611d8cdd1f5c029}{\_\-rettype}
+\item 
+char \hyperlink{classxpath__ast__node_a97b21db6df156c37ef7f2e6f69478b77}{\_\-axis}
+\item 
+char \hyperlink{classxpath__ast__node_a421f6ed5f666ced9d6fe3692e84d7b89}{\_\-test}
+\item 
+\hyperlink{classxpath__ast__node}{xpath\_\-ast\_\-node} $\ast$ \hyperlink{classxpath__ast__node_ad229146ced94be21eb5e4921b43a7ebb}{\_\-left}
+\item 
+\hyperlink{classxpath__ast__node}{xpath\_\-ast\_\-node} $\ast$ \hyperlink{classxpath__ast__node_ab3935ea7e83f4421b20840cd84f0b37d}{\_\-right}
+\item 
+\hyperlink{classxpath__ast__node}{xpath\_\-ast\_\-node} $\ast$ \hyperlink{classxpath__ast__node_a10059a66ecff3384e175e00d9fa2afcd}{\_\-next}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>const char\_t $\ast$ \hyperlink{classxpath__ast__node_a187822d65799b3bbccd8d0522bd14e59}{string}\\
+\>double \hyperlink{classxpath__ast__node_a73870c7a83538e525398855b26154484}{number}\\
+\>xpath\_variable $\ast$ \hyperlink{classxpath__ast__node_a0fd3b0d8f930836105eeff6e2efa5ad3}{variable}\\
+\>const char\_t $\ast$ \hyperlink{classxpath__ast__node_a50f44079b7f3e399e23488f520a34f17}{nodetest}\\
+\} \hyperlink{classxpath__ast__node_a4d08bfca00b137fc5b94314edeed2501}{\_data}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classxpath__ast__node_ae5a059e41b41505bef1f7dbebda8070b}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}}
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{xpath\_\-ast\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}xpath\_\-ast\_\-node::xpath\_\-ast\_\-node (const {\bf xpath\_\-ast\_\-node} \&)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classxpath__ast__node_ae5a059e41b41505bef1f7dbebda8070b}
+\hypertarget{classxpath__ast__node_af155d17a4477a693d37f4e34957dcc21}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}}
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{xpath\_\-ast\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}xpath\_\-ast\_\-node::xpath\_\-ast\_\-node ({\bf ast\_\-type\_\-t} {\em type}, \/  xpath\_\-value\_\-type {\em rettype\_\-}, \/  const char\_\-t $\ast$ {\em value})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classxpath__ast__node_af155d17a4477a693d37f4e34957dcc21}
+\hypertarget{classxpath__ast__node_ada97458f3fc7d6c87cf70d8084117b0d}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}}
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{xpath\_\-ast\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}xpath\_\-ast\_\-node::xpath\_\-ast\_\-node ({\bf ast\_\-type\_\-t} {\em type}, \/  xpath\_\-value\_\-type {\em rettype\_\-}, \/  double {\em value})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classxpath__ast__node_ada97458f3fc7d6c87cf70d8084117b0d}
+\hypertarget{classxpath__ast__node_a8de4244f7b9fc7626049197ddc0afab7}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}}
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{xpath\_\-ast\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}xpath\_\-ast\_\-node::xpath\_\-ast\_\-node ({\bf ast\_\-type\_\-t} {\em type}, \/  xpath\_\-value\_\-type {\em rettype\_\-}, \/  xpath\_\-variable $\ast$ {\em value})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classxpath__ast__node_a8de4244f7b9fc7626049197ddc0afab7}
+\hypertarget{classxpath__ast__node_af6f4ffea3f3c7fdb6ef1e759d4b070f4}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}}
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{xpath\_\-ast\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}xpath\_\-ast\_\-node::xpath\_\-ast\_\-node ({\bf ast\_\-type\_\-t} {\em type}, \/  xpath\_\-value\_\-type {\em rettype\_\-}, \/  {\bf xpath\_\-ast\_\-node} $\ast$ {\em left} = {\ttfamily 0}, \/  {\bf xpath\_\-ast\_\-node} $\ast$ {\em right} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classxpath__ast__node_af6f4ffea3f3c7fdb6ef1e759d4b070f4}
+\hypertarget{classxpath__ast__node_a7cf74b277deba86a6575796c727fe458}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}}
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{xpath\_\-ast\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}xpath\_\-ast\_\-node::xpath\_\-ast\_\-node ({\bf ast\_\-type\_\-t} {\em type}, \/  {\bf xpath\_\-ast\_\-node} $\ast$ {\em left}, \/  {\bf axis\_\-t} {\em axis}, \/  {\bf nodetest\_\-t} {\em test}, \/  const char\_\-t $\ast$ {\em contents})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classxpath__ast__node_a7cf74b277deba86a6575796c727fe458}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classxpath__ast__node_afcefe6b386c214349c5e23f13828fa1e}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!apply\_\-predicate@{apply\_\-predicate}}
+\index{apply\_\-predicate@{apply\_\-predicate}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{apply\_\-predicate}]{\setlength{\rightskip}{0pt plus 5cm}void xpath\_\-ast\_\-node::apply\_\-predicate ({\bf xpath\_\-node\_\-set\_\-raw} \& {\em ns}, \/  size\_\-t {\em first}, \/  {\bf xpath\_\-ast\_\-node} $\ast$ {\em expr}, \/  const {\bf xpath\_\-stack} \& {\em stack})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, private\mbox{]}}}}
+\label{classxpath__ast__node_afcefe6b386c214349c5e23f13828fa1e}
+\hypertarget{classxpath__ast__node_ae5e3b5fec836d9478ebd195dda7fdedd}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!apply\_\-predicates@{apply\_\-predicates}}
+\index{apply\_\-predicates@{apply\_\-predicates}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{apply\_\-predicates}]{\setlength{\rightskip}{0pt plus 5cm}void xpath\_\-ast\_\-node::apply\_\-predicates ({\bf xpath\_\-node\_\-set\_\-raw} \& {\em ns}, \/  size\_\-t {\em first}, \/  const {\bf xpath\_\-stack} \& {\em stack})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, private\mbox{]}}}}
+\label{classxpath__ast__node_ae5e3b5fec836d9478ebd195dda7fdedd}
+\hypertarget{classxpath__ast__node_a16805022b8f8b8f26061b11d0f8e01b5}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!compare\_\-eq@{compare\_\-eq}}
+\index{compare\_\-eq@{compare\_\-eq}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{compare\_\-eq}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comp $>$ static bool xpath\_\-ast\_\-node::compare\_\-eq ({\bf xpath\_\-ast\_\-node} $\ast$ {\em lhs}, \/  {\bf xpath\_\-ast\_\-node} $\ast$ {\em rhs}, \/  const {\bf xpath\_\-context} \& {\em c}, \/  const {\bf xpath\_\-stack} \& {\em stack}, \/  const Comp \& {\em comp})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static, private\mbox{]}}}}
+\label{classxpath__ast__node_a16805022b8f8b8f26061b11d0f8e01b5}
+\hypertarget{classxpath__ast__node_a055805c7365ac7d99174d2bf7a0cd5e2}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!compare\_\-rel@{compare\_\-rel}}
+\index{compare\_\-rel@{compare\_\-rel}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{compare\_\-rel}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comp $>$ static bool xpath\_\-ast\_\-node::compare\_\-rel ({\bf xpath\_\-ast\_\-node} $\ast$ {\em lhs}, \/  {\bf xpath\_\-ast\_\-node} $\ast$ {\em rhs}, \/  const {\bf xpath\_\-context} \& {\em c}, \/  const {\bf xpath\_\-stack} \& {\em stack}, \/  const Comp \& {\em comp})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static, private\mbox{]}}}}
+\label{classxpath__ast__node_a055805c7365ac7d99174d2bf7a0cd5e2}
+\hypertarget{classxpath__ast__node_ab7f965a92023bc2704b8e6fd9f3d7c14}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!eval\_\-boolean@{eval\_\-boolean}}
+\index{eval\_\-boolean@{eval\_\-boolean}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{eval\_\-boolean}]{\setlength{\rightskip}{0pt plus 5cm}bool xpath\_\-ast\_\-node::eval\_\-boolean (const {\bf xpath\_\-context} \& {\em c}, \/  const {\bf xpath\_\-stack} \& {\em stack})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classxpath__ast__node_ab7f965a92023bc2704b8e6fd9f3d7c14}
+\hypertarget{classxpath__ast__node_a30d98ec97e3129e82ac9ec3f2a759855}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!eval\_\-node\_\-set@{eval\_\-node\_\-set}}
+\index{eval\_\-node\_\-set@{eval\_\-node\_\-set}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{eval\_\-node\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\_\-node\_\-set\_\-raw} xpath\_\-ast\_\-node::eval\_\-node\_\-set (const {\bf xpath\_\-context} \& {\em c}, \/  const {\bf xpath\_\-stack} \& {\em stack})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classxpath__ast__node_a30d98ec97e3129e82ac9ec3f2a759855}
+\hypertarget{classxpath__ast__node_a92dd7048e28d486bc7f382d1fc6f1de6}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!eval\_\-number@{eval\_\-number}}
+\index{eval\_\-number@{eval\_\-number}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{eval\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}double xpath\_\-ast\_\-node::eval\_\-number (const {\bf xpath\_\-context} \& {\em c}, \/  const {\bf xpath\_\-stack} \& {\em stack})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classxpath__ast__node_a92dd7048e28d486bc7f382d1fc6f1de6}
+\hypertarget{classxpath__ast__node_a6b675237a590548b68d0e0b97518b6df}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!eval\_\-string@{eval\_\-string}}
+\index{eval\_\-string@{eval\_\-string}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{eval\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\_\-string} xpath\_\-ast\_\-node::eval\_\-string (const {\bf xpath\_\-context} \& {\em c}, \/  const {\bf xpath\_\-stack} \& {\em stack})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classxpath__ast__node_a6b675237a590548b68d0e0b97518b6df}
+\hypertarget{classxpath__ast__node_aaf931a091af0fb91c25e90b205363b4e}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!eval\_\-string\_\-concat@{eval\_\-string\_\-concat}}
+\index{eval\_\-string\_\-concat@{eval\_\-string\_\-concat}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{eval\_\-string\_\-concat}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\_\-string} xpath\_\-ast\_\-node::eval\_\-string\_\-concat (const {\bf xpath\_\-context} \& {\em c}, \/  const {\bf xpath\_\-stack} \& {\em stack})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classxpath__ast__node_aaf931a091af0fb91c25e90b205363b4e}
+\hypertarget{classxpath__ast__node_a9253f88832441a357ea65639c73a34be}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!is\_\-posinv@{is\_\-posinv}}
+\index{is\_\-posinv@{is\_\-posinv}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{is\_\-posinv}]{\setlength{\rightskip}{0pt plus 5cm}bool xpath\_\-ast\_\-node::is\_\-posinv ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classxpath__ast__node_a9253f88832441a357ea65639c73a34be}
+\hypertarget{classxpath__ast__node_a60fddea92b095c2b8705f12f7309e6aa}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!operator=@{operator=}}
+\index{operator=@{operator=}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\_\-ast\_\-node}\& xpath\_\-ast\_\-node::operator= (const {\bf xpath\_\-ast\_\-node} \&)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classxpath__ast__node_a60fddea92b095c2b8705f12f7309e6aa}
+\hypertarget{classxpath__ast__node_a2c3598521141ed4b763fe6c4f852234f}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!rettype@{rettype}}
+\index{rettype@{rettype}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{rettype}]{\setlength{\rightskip}{0pt plus 5cm}xpath\_\-value\_\-type xpath\_\-ast\_\-node::rettype () const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classxpath__ast__node_a2c3598521141ed4b763fe6c4f852234f}
+\hypertarget{classxpath__ast__node_a2764184d076834284eb3ff3182b845cc}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!set\_\-next@{set\_\-next}}
+\index{set\_\-next@{set\_\-next}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{set\_\-next}]{\setlength{\rightskip}{0pt plus 5cm}void xpath\_\-ast\_\-node::set\_\-next ({\bf xpath\_\-ast\_\-node} $\ast$ {\em value})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classxpath__ast__node_a2764184d076834284eb3ff3182b845cc}
+\hypertarget{classxpath__ast__node_afe044146db852b7d4dbf188fd2ff6c75}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!set\_\-right@{set\_\-right}}
+\index{set\_\-right@{set\_\-right}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{set\_\-right}]{\setlength{\rightskip}{0pt plus 5cm}void xpath\_\-ast\_\-node::set\_\-right ({\bf xpath\_\-ast\_\-node} $\ast$ {\em value})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classxpath__ast__node_afe044146db852b7d4dbf188fd2ff6c75}
+\hypertarget{classxpath__ast__node_a326147ab8def5110e44deafd73b20393}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!step\_\-do@{step\_\-do}}
+\index{step\_\-do@{step\_\-do}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{step\_\-do}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf xpath\_\-node\_\-set\_\-raw} xpath\_\-ast\_\-node::step\_\-do (const {\bf xpath\_\-context} \& {\em c}, \/  const {\bf xpath\_\-stack} \& {\em stack}, \/  T {\em v})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, private\mbox{]}}}}
+\label{classxpath__ast__node_a326147ab8def5110e44deafd73b20393}
+\hypertarget{classxpath__ast__node_a0da76bbadd9b254cf56649392c686c2a}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!step\_\-fill@{step\_\-fill}}
+\index{step\_\-fill@{step\_\-fill}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{step\_\-fill}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void xpath\_\-ast\_\-node::step\_\-fill ({\bf xpath\_\-node\_\-set\_\-raw} \& {\em ns}, \/  const xml\_\-attribute \& {\em a}, \/  const xml\_\-node \& {\em p}, \/  {\bf xpath\_\-allocator} $\ast$ {\em alloc}, \/  T {\em v})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, private\mbox{]}}}}
+\label{classxpath__ast__node_a0da76bbadd9b254cf56649392c686c2a}
+\hypertarget{classxpath__ast__node_a2fb0bf78cbdbe0bb032d37f765eab816}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!step\_\-fill@{step\_\-fill}}
+\index{step\_\-fill@{step\_\-fill}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{step\_\-fill}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void xpath\_\-ast\_\-node::step\_\-fill ({\bf xpath\_\-node\_\-set\_\-raw} \& {\em ns}, \/  const xml\_\-node \& {\em n}, \/  {\bf xpath\_\-allocator} $\ast$ {\em alloc}, \/  T)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, private\mbox{]}}}}
+\label{classxpath__ast__node_a2fb0bf78cbdbe0bb032d37f765eab816}
+\hypertarget{classxpath__ast__node_a7083f1a6c3d4128bb8a4ac147851a86b}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!step\_\-push@{step\_\-push}}
+\index{step\_\-push@{step\_\-push}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{step\_\-push}]{\setlength{\rightskip}{0pt plus 5cm}void xpath\_\-ast\_\-node::step\_\-push ({\bf xpath\_\-node\_\-set\_\-raw} \& {\em ns}, \/  const xml\_\-node \& {\em n}, \/  {\bf xpath\_\-allocator} $\ast$ {\em alloc})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, private\mbox{]}}}}
+\label{classxpath__ast__node_a7083f1a6c3d4128bb8a4ac147851a86b}
+\hypertarget{classxpath__ast__node_aa141bfbd4d5e42da83f0de8f729eb849}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!step\_\-push@{step\_\-push}}
+\index{step\_\-push@{step\_\-push}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{step\_\-push}]{\setlength{\rightskip}{0pt plus 5cm}void xpath\_\-ast\_\-node::step\_\-push ({\bf xpath\_\-node\_\-set\_\-raw} \& {\em ns}, \/  const xml\_\-attribute \& {\em a}, \/  const xml\_\-node \& {\em parent}, \/  {\bf xpath\_\-allocator} $\ast$ {\em alloc})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, private\mbox{]}}}}
+\label{classxpath__ast__node_aa141bfbd4d5e42da83f0de8f729eb849}
+
+
+\subsection{Field Documentation}
+\hypertarget{classxpath__ast__node_a97b21db6df156c37ef7f2e6f69478b77}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!\_\-axis@{\_\-axis}}
+\index{\_\-axis@{\_\-axis}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{\_\-axis}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf xpath\_\-ast\_\-node::\_\-axis}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classxpath__ast__node_a97b21db6df156c37ef7f2e6f69478b77}
+\hypertarget{classxpath__ast__node_a4d08bfca00b137fc5b94314edeed2501}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!\_\-data@{\_\-data}}
+\index{\_\-data@{\_\-data}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \}   {\bf xpath\_\-ast\_\-node::\_\-data}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classxpath__ast__node_a4d08bfca00b137fc5b94314edeed2501}
+\hypertarget{classxpath__ast__node_ad229146ced94be21eb5e4921b43a7ebb}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!\_\-left@{\_\-left}}
+\index{\_\-left@{\_\-left}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{\_\-left}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\_\-ast\_\-node}$\ast$ {\bf xpath\_\-ast\_\-node::\_\-left}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classxpath__ast__node_ad229146ced94be21eb5e4921b43a7ebb}
+\hypertarget{classxpath__ast__node_a10059a66ecff3384e175e00d9fa2afcd}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!\_\-next@{\_\-next}}
+\index{\_\-next@{\_\-next}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{\_\-next}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\_\-ast\_\-node}$\ast$ {\bf xpath\_\-ast\_\-node::\_\-next}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classxpath__ast__node_a10059a66ecff3384e175e00d9fa2afcd}
+\hypertarget{classxpath__ast__node_ab84a640f3a0f00d4d611d8cdd1f5c029}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!\_\-rettype@{\_\-rettype}}
+\index{\_\-rettype@{\_\-rettype}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{\_\-rettype}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf xpath\_\-ast\_\-node::\_\-rettype}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classxpath__ast__node_ab84a640f3a0f00d4d611d8cdd1f5c029}
+\hypertarget{classxpath__ast__node_ab3935ea7e83f4421b20840cd84f0b37d}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!\_\-right@{\_\-right}}
+\index{\_\-right@{\_\-right}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{\_\-right}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\_\-ast\_\-node}$\ast$ {\bf xpath\_\-ast\_\-node::\_\-right}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classxpath__ast__node_ab3935ea7e83f4421b20840cd84f0b37d}
+\hypertarget{classxpath__ast__node_a421f6ed5f666ced9d6fe3692e84d7b89}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!\_\-test@{\_\-test}}
+\index{\_\-test@{\_\-test}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{\_\-test}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf xpath\_\-ast\_\-node::\_\-test}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classxpath__ast__node_a421f6ed5f666ced9d6fe3692e84d7b89}
+\hypertarget{classxpath__ast__node_ad285f423090a0aaee3c4126da65066d1}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!\_\-type@{\_\-type}}
+\index{\_\-type@{\_\-type}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf xpath\_\-ast\_\-node::\_\-type}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classxpath__ast__node_ad285f423090a0aaee3c4126da65066d1}
+\hypertarget{classxpath__ast__node_a50f44079b7f3e399e23488f520a34f17}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!nodetest@{nodetest}}
+\index{nodetest@{nodetest}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{nodetest}]{\setlength{\rightskip}{0pt plus 5cm}const char\_\-t$\ast$ {\bf xpath\_\-ast\_\-node::nodetest}}}
+\label{classxpath__ast__node_a50f44079b7f3e399e23488f520a34f17}
+\hypertarget{classxpath__ast__node_a73870c7a83538e525398855b26154484}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!number@{number}}
+\index{number@{number}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{number}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf xpath\_\-ast\_\-node::number}}}
+\label{classxpath__ast__node_a73870c7a83538e525398855b26154484}
+\hypertarget{classxpath__ast__node_a187822d65799b3bbccd8d0522bd14e59}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!string@{string}}
+\index{string@{string}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{string}]{\setlength{\rightskip}{0pt plus 5cm}const char\_\-t$\ast$ {\bf xpath\_\-ast\_\-node::string}}}
+\label{classxpath__ast__node_a187822d65799b3bbccd8d0522bd14e59}
+\hypertarget{classxpath__ast__node_a0fd3b0d8f930836105eeff6e2efa5ad3}{
+\index{xpath\_\-ast\_\-node@{xpath\_\-ast\_\-node}!variable@{variable}}
+\index{variable@{variable}!xpath_ast_node@{xpath\_\-ast\_\-node}}
+\subsubsection[{variable}]{\setlength{\rightskip}{0pt plus 5cm}xpath\_\-variable$\ast$ {\bf xpath\_\-ast\_\-node::variable}}}
+\label{classxpath__ast__node_a0fd3b0d8f930836105eeff6e2efa5ad3}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{pugixml_8cpp}{pugixml.cpp}\end{DoxyCompactItemize}
