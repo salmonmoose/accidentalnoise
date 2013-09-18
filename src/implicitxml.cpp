@@ -8,7 +8,8 @@ namespace anl
 		mCImplicitSequence->RegisterTypes();
 
         printf("Loading file %s ...", filename);
-		pugi::xml_parse_result result = config.load_file(filename);
+		/*pugi::xml_parse_result result = */
+		config.load_file(filename);
 
         printf("Loaded\n");
 

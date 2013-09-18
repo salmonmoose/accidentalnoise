@@ -88,24 +88,24 @@ unsigned char xor_fold_hash(unsigned int hash)
 
 
 // FNV-based coordinate hashes
-unsigned int hash_coords_2(int x, int y, unsigned int seed)
+unsigned int hash_coords_2(unsigned int x, unsigned int y, unsigned int seed)
 {
     unsigned int d[3]={x,y,seed};
     return xor_fold_hash(fnv_32_a_buf(d, sizeof(unsigned int)*3));
 }
-unsigned int hash_coords_3(int x, int y, int z, unsigned int seed)
+unsigned int hash_coords_3(unsigned int x, unsigned int y, unsigned int z, unsigned int seed)
 {
     unsigned int d[4]={x,y,z,seed};
     return xor_fold_hash(fnv_32_a_buf(d, sizeof(unsigned int)*4));
 }
 
-unsigned int hash_coords_4(int x, int y, int z, int w, unsigned int seed)
+unsigned int hash_coords_4(unsigned int x, unsigned int y, unsigned int z, unsigned int w, unsigned int seed)
 {
     unsigned int d[5]={x,y,z,w,seed};
     return xor_fold_hash(fnv_32_a_buf(d, sizeof(unsigned int)*5));
 }
 
-unsigned int hash_coords_6(int x, int y, int z, int w, int u, int v, unsigned int seed)
+unsigned int hash_coords_6(unsigned int x, unsigned int y, unsigned int z, unsigned int w, unsigned int u, unsigned int v, unsigned int seed)
 {
     unsigned int d[7]={x,y,z,w,u,v,seed};
     return xor_fold_hash(fnv_32_a_buf(d, sizeof(unsigned int)*7));

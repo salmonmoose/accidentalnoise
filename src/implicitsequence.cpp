@@ -10,34 +10,34 @@ namespace anl
 	void CImplicitSequence::RegisterTypes()
 	{
 		renderNode = false;
-		bool AutoCorrect_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitAutoCorrect>("AutoCorrect");
-		bool BasisFunction_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitBasisFunction>("BasisFunction");
-		//bool Bias_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitBias>("Bias");
-		bool Blend_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitBlend>("Blend");
-		bool BrightContrast_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitBrightContrast>("BrightContrast");
-		bool Cache_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitCache>("Cache");
-		bool Cellular_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitCellular>("Cellular");
+		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitAutoCorrect>("AutoCorrect");
+		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitBasisFunction>("BasisFunction");
+		//anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitBias>("Bias");
+		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitBlend>("Blend");
+		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitBrightContrast>("BrightContrast");
+		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitCache>("Cache");
+		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitCellular>("Cellular");
 		//bool Clamp_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitClamp>("Clamp");
 		//bool Combiner_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitCombiner>("Combiner");
-		bool Constant_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitConstant>("Constant");
-		bool Cos_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitCos>("Cos");
-		bool ExtractRGBAChannel_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitExtractRGBAChannel>("ExtractRGBAChannel");
-		bool Floor_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitFloor>("Floor");
-		bool Fractal_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitFractal>("Fractal");
-		bool FunctionGradient_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitFunctionGradient>("FunctionGradient");
+		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitConstant>("Constant");
+		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitCos>("Cos");
+		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitExtractRGBAChannel>("ExtractRGBAChannel");
+		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitFloor>("Floor");
+		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitFractal>("Fractal");
+		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitFunctionGradient>("FunctionGradient");
 		//bool Gain_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitGain>("Gain");
-		bool Gradient_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitGradient>("Gradient");
-		bool Invert_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitInvert>("Invert");
-		bool Pow_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitPow>("Pow");
-		bool RGBADotProduct_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitRGBADotProduct>("RGBADotProduct");
+		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitGradient>("Gradient");
+		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitInvert>("Invert");
+		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitPow>("Pow");
+		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitRGBADotProduct>("RGBADotProduct");
 		//bool RotateDomain_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitRotateDomain>("RotateDomain");
-		bool ScaleDomain_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitScaleDomain>("ScaleDomain");
-		bool ScaleOffset_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitScaleOffset>("ScaleOffset");
-		bool Select_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitSelect>("Select");
-		bool Sin_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitSin>("Sin");
-		bool Sphere_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitSphere>("Sphere");
-		bool Tiers_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitTiers>("Tiers");
-		bool TranslateDomain_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitTranslateDomain>("TranslateDomain");
+		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitScaleDomain>("ScaleDomain");
+		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitScaleOffset>("ScaleOffset");
+		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitSelect>("Select");
+		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitSin>("Sin");
+		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitSphere>("Sphere");
+		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitTiers>("Tiers");
+		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitTranslateDomain>("TranslateDomain");
 	}
 
     std::map<std::string, EInputTypes> CImplicitSequence::InputMap = {
