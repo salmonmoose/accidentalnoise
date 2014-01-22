@@ -57,8 +57,6 @@ add_library(
 	pugixml.cpp 
 )
 
-target_link_libraries(accidentalnoise
-
-)
+target_link_libraries(accidentalnoise)
 
 set_target_properties(accidentalnoise PROPERTIES DEBUG_POSTFIX _d)

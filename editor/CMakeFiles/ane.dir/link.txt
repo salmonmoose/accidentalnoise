@@ -1,0 +1,1 @@
+/usr/bin/c++   -g -Wall -std=c++11    CMakeFiles/ane.dir/editor.cpp.o CMakeFiles/ane.dir/widget.cpp.o CMakeFiles/ane.dir/ane.cpp.o  -o ../bin/ane -rdynamic /usr/local/lib/libsfml-system.so /usr/local/lib/libsfml-window.so /usr/local/lib/libsfml-graphics.so /usr/local/lib/libsfml-network.so /usr/local/lib/libsfml-audio.so -Wl,-rpath,/usr/local/lib 
