@@ -31,33 +31,42 @@ bool Editor::IsExiting()
 
 void Editor::EditorLoop()
 {
-	sf::Event currentEvent;
+	sf::Event event;
 
-	while (_mainWindow.pollEvent(currentEvent))
+	switch (_editorState)
 	{
-		switch (_editorState)
+		case Editor::Playing:
 		{
-			case Editor::Playing:
+			std::list<Widget>::iterator it;
+
+			while (_mainWindow.pollEvent(event))
 			{
-				_mainWindow.clear(sf::Color(63,64,50));
-				
-
-				std::list<Widget>::iterator it;
-
 				for ( it = _widgets.begin(); it != _widgets.end(); it++ )
 				{
-					(*it).Draw(_mainWindow);
+					(*it).HandleEvent(event);
 				}
 
-				_mainWindow.display();
-
-				if (currentEvent.type == sf::Event::Closed)
+				if (event.type == sf::Event::Closed)
 				{
 					_editorState = Editor::Exiting;
 				}
-
-				break;
 			}
+
+			_mainWindow.clear(sf::Color(63,64,50));
+
+			for ( it = _widgets.begin(); it != _widgets.end(); it++ )
+			{
+				(*it).Update();
+			}
+
+			for ( it = _widgets.begin(); it != _widgets.end(); it++ )
+			{
+				(*it).Draw(_mainWindow);
+			}
+
+			_mainWindow.display();
+
+			break;
 		}
 	}
 }

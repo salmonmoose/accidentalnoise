@@ -6,15 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/salmonmoose/dev/git/accidentalnoise/editor/editor.cpp
-editor.h
-/home/salmonmoose/dev/git/accidentalnoise/editor/editor.h
-
-/home/salmonmoose/dev/git/accidentalnoise/editor/editor.h
-list
--
-SFML/Graphics.hpp
-/home/salmonmoose/dev/git/accidentalnoise/editor/SFML/Graphics.hpp
+/home/salmonmoose/dev/git/accidentalnoise/editor/widget.cpp
 widget.h
 /home/salmonmoose/dev/git/accidentalnoise/editor/widget.h
 
