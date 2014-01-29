@@ -50,6 +50,19 @@ void Editor::EditorLoop()
 				{
 					_editorState = Editor::Exiting;
 				}
+
+				if (event.type == sf::Event::KeyPressed)
+				{
+					if (event.key.code == sf::Keyboard::Escape)
+					{
+						_editorState = Editor::Exiting;
+					}
+				}
+
+				if (event.type == sf::Event::Resized)
+				{
+					_mainWindow.setView(sf::View(sf::FloatRect(0, 0, event.size.width, event.size.height)));
+				}
 			}
 
 			_mainWindow.clear(sf::Color(63,64,50));
