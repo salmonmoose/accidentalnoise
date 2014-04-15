@@ -1,9 +1,10 @@
 FILE(REMOVE_RECURSE
-  "CMakeFiles/ane.dir/editor.cpp.o"
-  "CMakeFiles/ane.dir/widget.cpp.o"
+  "CMakeFiles/ane.dir/networkaccessmanager.cpp.o"
+  "CMakeFiles/ane.dir/noisereply.cpp.o"
+  "CMakeFiles/ane.dir/noiseview.cpp.o"
   "CMakeFiles/ane.dir/ane.cpp.o"
-  "../bin/ane.pdb"
-  "../bin/ane"
+  "ane.pdb"
+  "ane"
 )
 
 # Per-language clean rules from dependency scanning.

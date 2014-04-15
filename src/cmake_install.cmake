@@ -1,4 +1,4 @@
-# Install script for directory: /home/salmonmoose/dev/git/accidentalnoise/src
+# Install script for directory: /home/salmonmoose/dev/accidentalnoise/src
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)

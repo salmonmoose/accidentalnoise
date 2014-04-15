@@ -47,10 +47,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/salmonmoose/dev/git/accidentalnoise
+CMAKE_SOURCE_DIR = /home/salmonmoose/dev/accidentalnoise
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/salmonmoose/dev/git/accidentalnoise
+CMAKE_BINARY_DIR = /home/salmonmoose/dev/accidentalnoise
 
 #=============================================================================
 # Directory level rules for directory src
@@ -74,7 +74,7 @@ src/preinstall:
 src/CMakeFiles/accidentalnoise.dir/all:
 	$(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/depend
 	$(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/git/accidentalnoise/CMakeFiles  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46
 	@echo "Built target accidentalnoise"
 .PHONY : src/CMakeFiles/accidentalnoise.dir/all
 
@@ -84,9 +84,9 @@ all: src/CMakeFiles/accidentalnoise.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/accidentalnoise.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/salmonmoose/dev/git/accidentalnoise/CMakeFiles 46
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/salmonmoose/dev/accidentalnoise/CMakeFiles 46
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/accidentalnoise.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/salmonmoose/dev/git/accidentalnoise/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/salmonmoose/dev/accidentalnoise/CMakeFiles 0
 .PHONY : src/CMakeFiles/accidentalnoise.dir/rule
 
 # Convenience name for target.
@@ -124,7 +124,7 @@ editor/preinstall:
 editor/CMakeFiles/ane.dir/all:
 	$(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/depend
 	$(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/git/accidentalnoise/CMakeFiles  47 48 49
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles  47 48
 	@echo "Built target ane"
 .PHONY : editor/CMakeFiles/ane.dir/all
 
@@ -134,9 +134,9 @@ all: editor/CMakeFiles/ane.dir/all
 
 # Build rule for subdir invocation for target.
 editor/CMakeFiles/ane.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/salmonmoose/dev/git/accidentalnoise/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/salmonmoose/dev/accidentalnoise/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 editor/CMakeFiles/ane.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/salmonmoose/dev/git/accidentalnoise/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/salmonmoose/dev/accidentalnoise/CMakeFiles 0
 .PHONY : editor/CMakeFiles/ane.dir/rule
 
 # Convenience name for target.

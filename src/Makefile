@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/salmonmoose/dev/git/accidentalnoise
+CMAKE_SOURCE_DIR = /home/salmonmoose/dev/accidentalnoise
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/salmonmoose/dev/git/accidentalnoise
+CMAKE_BINARY_DIR = /home/salmonmoose/dev/accidentalnoise
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -69,14 +69,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(CMAKE_COMMAND) -E cmake_progress_start /home/salmonmoose/dev/git/accidentalnoise/CMakeFiles /home/salmonmoose/dev/git/accidentalnoise/src/CMakeFiles/progress.marks
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/salmonmoose/dev/git/accidentalnoise/CMakeFiles 0
+	cd /home/salmonmoose/dev/accidentalnoise && $(CMAKE_COMMAND) -E cmake_progress_start /home/salmonmoose/dev/accidentalnoise/CMakeFiles /home/salmonmoose/dev/accidentalnoise/src/CMakeFiles/progress.marks
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/salmonmoose/dev/accidentalnoise/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f CMakeFiles/Makefile2 src/clean
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -85,22 +85,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/salmonmoose/dev/accidentalnoise && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/accidentalnoise.dir/rule:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/accidentalnoise.dir/rule
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/accidentalnoise.dir/rule
 .PHONY : src/CMakeFiles/accidentalnoise.dir/rule
 
 # Convenience name for target.
@@ -109,7 +109,7 @@ accidentalnoise: src/CMakeFiles/accidentalnoise.dir/rule
 
 # fast build rule for target.
 accidentalnoise/fast:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/build
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/build
 .PHONY : accidentalnoise/fast
 
 cellulargen.o: cellulargen.cpp.o
@@ -117,7 +117,7 @@ cellulargen.o: cellulargen.cpp.o
 
 # target to build an object file
 cellulargen.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/cellulargen.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/cellulargen.cpp.o
 .PHONY : cellulargen.cpp.o
 
 cellulargen.i: cellulargen.cpp.i
@@ -125,7 +125,7 @@ cellulargen.i: cellulargen.cpp.i
 
 # target to preprocess a source file
 cellulargen.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/cellulargen.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/cellulargen.cpp.i
 .PHONY : cellulargen.cpp.i
 
 cellulargen.s: cellulargen.cpp.s
@@ -133,7 +133,7 @@ cellulargen.s: cellulargen.cpp.s
 
 # target to generate assembly for a file
 cellulargen.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/cellulargen.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/cellulargen.cpp.s
 .PHONY : cellulargen.cpp.s
 
 hsv.o: hsv.cpp.o
@@ -141,7 +141,7 @@ hsv.o: hsv.cpp.o
 
 # target to build an object file
 hsv.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/hsv.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/hsv.cpp.o
 .PHONY : hsv.cpp.o
 
 hsv.i: hsv.cpp.i
@@ -149,7 +149,7 @@ hsv.i: hsv.cpp.i
 
 # target to preprocess a source file
 hsv.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/hsv.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/hsv.cpp.i
 .PHONY : hsv.cpp.i
 
 hsv.s: hsv.cpp.s
@@ -157,7 +157,7 @@ hsv.s: hsv.cpp.s
 
 # target to generate assembly for a file
 hsv.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/hsv.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/hsv.cpp.s
 .PHONY : hsv.cpp.s
 
 implicitautocorrect.o: implicitautocorrect.cpp.o
@@ -165,7 +165,7 @@ implicitautocorrect.o: implicitautocorrect.cpp.o
 
 # target to build an object file
 implicitautocorrect.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitautocorrect.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitautocorrect.cpp.o
 .PHONY : implicitautocorrect.cpp.o
 
 implicitautocorrect.i: implicitautocorrect.cpp.i
@@ -173,7 +173,7 @@ implicitautocorrect.i: implicitautocorrect.cpp.i
 
 # target to preprocess a source file
 implicitautocorrect.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitautocorrect.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitautocorrect.cpp.i
 .PHONY : implicitautocorrect.cpp.i
 
 implicitautocorrect.s: implicitautocorrect.cpp.s
@@ -181,7 +181,7 @@ implicitautocorrect.s: implicitautocorrect.cpp.s
 
 # target to generate assembly for a file
 implicitautocorrect.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitautocorrect.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitautocorrect.cpp.s
 .PHONY : implicitautocorrect.cpp.s
 
 implicitbasisfunction.o: implicitbasisfunction.cpp.o
@@ -189,7 +189,7 @@ implicitbasisfunction.o: implicitbasisfunction.cpp.o
 
 # target to build an object file
 implicitbasisfunction.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitbasisfunction.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitbasisfunction.cpp.o
 .PHONY : implicitbasisfunction.cpp.o
 
 implicitbasisfunction.i: implicitbasisfunction.cpp.i
@@ -197,7 +197,7 @@ implicitbasisfunction.i: implicitbasisfunction.cpp.i
 
 # target to preprocess a source file
 implicitbasisfunction.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitbasisfunction.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitbasisfunction.cpp.i
 .PHONY : implicitbasisfunction.cpp.i
 
 implicitbasisfunction.s: implicitbasisfunction.cpp.s
@@ -205,7 +205,7 @@ implicitbasisfunction.s: implicitbasisfunction.cpp.s
 
 # target to generate assembly for a file
 implicitbasisfunction.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitbasisfunction.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitbasisfunction.cpp.s
 .PHONY : implicitbasisfunction.cpp.s
 
 implicitbias.o: implicitbias.cpp.o
@@ -213,7 +213,7 @@ implicitbias.o: implicitbias.cpp.o
 
 # target to build an object file
 implicitbias.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitbias.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitbias.cpp.o
 .PHONY : implicitbias.cpp.o
 
 implicitbias.i: implicitbias.cpp.i
@@ -221,7 +221,7 @@ implicitbias.i: implicitbias.cpp.i
 
 # target to preprocess a source file
 implicitbias.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitbias.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitbias.cpp.i
 .PHONY : implicitbias.cpp.i
 
 implicitbias.s: implicitbias.cpp.s
@@ -229,7 +229,7 @@ implicitbias.s: implicitbias.cpp.s
 
 # target to generate assembly for a file
 implicitbias.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitbias.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitbias.cpp.s
 .PHONY : implicitbias.cpp.s
 
 implicitblend.o: implicitblend.cpp.o
@@ -237,7 +237,7 @@ implicitblend.o: implicitblend.cpp.o
 
 # target to build an object file
 implicitblend.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitblend.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitblend.cpp.o
 .PHONY : implicitblend.cpp.o
 
 implicitblend.i: implicitblend.cpp.i
@@ -245,7 +245,7 @@ implicitblend.i: implicitblend.cpp.i
 
 # target to preprocess a source file
 implicitblend.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitblend.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitblend.cpp.i
 .PHONY : implicitblend.cpp.i
 
 implicitblend.s: implicitblend.cpp.s
@@ -253,7 +253,7 @@ implicitblend.s: implicitblend.cpp.s
 
 # target to generate assembly for a file
 implicitblend.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitblend.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitblend.cpp.s
 .PHONY : implicitblend.cpp.s
 
 implicitbrightcontrast.o: implicitbrightcontrast.cpp.o
@@ -261,7 +261,7 @@ implicitbrightcontrast.o: implicitbrightcontrast.cpp.o
 
 # target to build an object file
 implicitbrightcontrast.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitbrightcontrast.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitbrightcontrast.cpp.o
 .PHONY : implicitbrightcontrast.cpp.o
 
 implicitbrightcontrast.i: implicitbrightcontrast.cpp.i
@@ -269,7 +269,7 @@ implicitbrightcontrast.i: implicitbrightcontrast.cpp.i
 
 # target to preprocess a source file
 implicitbrightcontrast.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitbrightcontrast.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitbrightcontrast.cpp.i
 .PHONY : implicitbrightcontrast.cpp.i
 
 implicitbrightcontrast.s: implicitbrightcontrast.cpp.s
@@ -277,7 +277,7 @@ implicitbrightcontrast.s: implicitbrightcontrast.cpp.s
 
 # target to generate assembly for a file
 implicitbrightcontrast.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitbrightcontrast.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitbrightcontrast.cpp.s
 .PHONY : implicitbrightcontrast.cpp.s
 
 implicitcache.o: implicitcache.cpp.o
@@ -285,7 +285,7 @@ implicitcache.o: implicitcache.cpp.o
 
 # target to build an object file
 implicitcache.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitcache.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitcache.cpp.o
 .PHONY : implicitcache.cpp.o
 
 implicitcache.i: implicitcache.cpp.i
@@ -293,7 +293,7 @@ implicitcache.i: implicitcache.cpp.i
 
 # target to preprocess a source file
 implicitcache.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitcache.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitcache.cpp.i
 .PHONY : implicitcache.cpp.i
 
 implicitcache.s: implicitcache.cpp.s
@@ -301,7 +301,7 @@ implicitcache.s: implicitcache.cpp.s
 
 # target to generate assembly for a file
 implicitcache.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitcache.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitcache.cpp.s
 .PHONY : implicitcache.cpp.s
 
 implicitcellular.o: implicitcellular.cpp.o
@@ -309,7 +309,7 @@ implicitcellular.o: implicitcellular.cpp.o
 
 # target to build an object file
 implicitcellular.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitcellular.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitcellular.cpp.o
 .PHONY : implicitcellular.cpp.o
 
 implicitcellular.i: implicitcellular.cpp.i
@@ -317,7 +317,7 @@ implicitcellular.i: implicitcellular.cpp.i
 
 # target to preprocess a source file
 implicitcellular.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitcellular.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitcellular.cpp.i
 .PHONY : implicitcellular.cpp.i
 
 implicitcellular.s: implicitcellular.cpp.s
@@ -325,7 +325,7 @@ implicitcellular.s: implicitcellular.cpp.s
 
 # target to generate assembly for a file
 implicitcellular.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitcellular.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitcellular.cpp.s
 .PHONY : implicitcellular.cpp.s
 
 implicitclamp.o: implicitclamp.cpp.o
@@ -333,7 +333,7 @@ implicitclamp.o: implicitclamp.cpp.o
 
 # target to build an object file
 implicitclamp.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitclamp.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitclamp.cpp.o
 .PHONY : implicitclamp.cpp.o
 
 implicitclamp.i: implicitclamp.cpp.i
@@ -341,7 +341,7 @@ implicitclamp.i: implicitclamp.cpp.i
 
 # target to preprocess a source file
 implicitclamp.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitclamp.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitclamp.cpp.i
 .PHONY : implicitclamp.cpp.i
 
 implicitclamp.s: implicitclamp.cpp.s
@@ -349,7 +349,7 @@ implicitclamp.s: implicitclamp.cpp.s
 
 # target to generate assembly for a file
 implicitclamp.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitclamp.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitclamp.cpp.s
 .PHONY : implicitclamp.cpp.s
 
 implicitcombiner.o: implicitcombiner.cpp.o
@@ -357,7 +357,7 @@ implicitcombiner.o: implicitcombiner.cpp.o
 
 # target to build an object file
 implicitcombiner.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitcombiner.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitcombiner.cpp.o
 .PHONY : implicitcombiner.cpp.o
 
 implicitcombiner.i: implicitcombiner.cpp.i
@@ -365,7 +365,7 @@ implicitcombiner.i: implicitcombiner.cpp.i
 
 # target to preprocess a source file
 implicitcombiner.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitcombiner.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitcombiner.cpp.i
 .PHONY : implicitcombiner.cpp.i
 
 implicitcombiner.s: implicitcombiner.cpp.s
@@ -373,7 +373,7 @@ implicitcombiner.s: implicitcombiner.cpp.s
 
 # target to generate assembly for a file
 implicitcombiner.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitcombiner.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitcombiner.cpp.s
 .PHONY : implicitcombiner.cpp.s
 
 implicitconstant.o: implicitconstant.cpp.o
@@ -381,7 +381,7 @@ implicitconstant.o: implicitconstant.cpp.o
 
 # target to build an object file
 implicitconstant.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitconstant.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitconstant.cpp.o
 .PHONY : implicitconstant.cpp.o
 
 implicitconstant.i: implicitconstant.cpp.i
@@ -389,7 +389,7 @@ implicitconstant.i: implicitconstant.cpp.i
 
 # target to preprocess a source file
 implicitconstant.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitconstant.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitconstant.cpp.i
 .PHONY : implicitconstant.cpp.i
 
 implicitconstant.s: implicitconstant.cpp.s
@@ -397,7 +397,7 @@ implicitconstant.s: implicitconstant.cpp.s
 
 # target to generate assembly for a file
 implicitconstant.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitconstant.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitconstant.cpp.s
 .PHONY : implicitconstant.cpp.s
 
 implicitcos.o: implicitcos.cpp.o
@@ -405,7 +405,7 @@ implicitcos.o: implicitcos.cpp.o
 
 # target to build an object file
 implicitcos.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitcos.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitcos.cpp.o
 .PHONY : implicitcos.cpp.o
 
 implicitcos.i: implicitcos.cpp.i
@@ -413,7 +413,7 @@ implicitcos.i: implicitcos.cpp.i
 
 # target to preprocess a source file
 implicitcos.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitcos.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitcos.cpp.i
 .PHONY : implicitcos.cpp.i
 
 implicitcos.s: implicitcos.cpp.s
@@ -421,7 +421,7 @@ implicitcos.s: implicitcos.cpp.s
 
 # target to generate assembly for a file
 implicitcos.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitcos.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitcos.cpp.s
 .PHONY : implicitcos.cpp.s
 
 implicitextractrgbachannel.o: implicitextractrgbachannel.cpp.o
@@ -429,7 +429,7 @@ implicitextractrgbachannel.o: implicitextractrgbachannel.cpp.o
 
 # target to build an object file
 implicitextractrgbachannel.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitextractrgbachannel.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitextractrgbachannel.cpp.o
 .PHONY : implicitextractrgbachannel.cpp.o
 
 implicitextractrgbachannel.i: implicitextractrgbachannel.cpp.i
@@ -437,7 +437,7 @@ implicitextractrgbachannel.i: implicitextractrgbachannel.cpp.i
 
 # target to preprocess a source file
 implicitextractrgbachannel.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitextractrgbachannel.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitextractrgbachannel.cpp.i
 .PHONY : implicitextractrgbachannel.cpp.i
 
 implicitextractrgbachannel.s: implicitextractrgbachannel.cpp.s
@@ -445,7 +445,7 @@ implicitextractrgbachannel.s: implicitextractrgbachannel.cpp.s
 
 # target to generate assembly for a file
 implicitextractrgbachannel.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitextractrgbachannel.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitextractrgbachannel.cpp.s
 .PHONY : implicitextractrgbachannel.cpp.s
 
 implicitfloor.o: implicitfloor.cpp.o
@@ -453,7 +453,7 @@ implicitfloor.o: implicitfloor.cpp.o
 
 # target to build an object file
 implicitfloor.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitfloor.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitfloor.cpp.o
 .PHONY : implicitfloor.cpp.o
 
 implicitfloor.i: implicitfloor.cpp.i
@@ -461,7 +461,7 @@ implicitfloor.i: implicitfloor.cpp.i
 
 # target to preprocess a source file
 implicitfloor.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitfloor.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitfloor.cpp.i
 .PHONY : implicitfloor.cpp.i
 
 implicitfloor.s: implicitfloor.cpp.s
@@ -469,7 +469,7 @@ implicitfloor.s: implicitfloor.cpp.s
 
 # target to generate assembly for a file
 implicitfloor.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitfloor.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitfloor.cpp.s
 .PHONY : implicitfloor.cpp.s
 
 implicitfractal.o: implicitfractal.cpp.o
@@ -477,7 +477,7 @@ implicitfractal.o: implicitfractal.cpp.o
 
 # target to build an object file
 implicitfractal.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitfractal.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitfractal.cpp.o
 .PHONY : implicitfractal.cpp.o
 
 implicitfractal.i: implicitfractal.cpp.i
@@ -485,7 +485,7 @@ implicitfractal.i: implicitfractal.cpp.i
 
 # target to preprocess a source file
 implicitfractal.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitfractal.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitfractal.cpp.i
 .PHONY : implicitfractal.cpp.i
 
 implicitfractal.s: implicitfractal.cpp.s
@@ -493,7 +493,7 @@ implicitfractal.s: implicitfractal.cpp.s
 
 # target to generate assembly for a file
 implicitfractal.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitfractal.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitfractal.cpp.s
 .PHONY : implicitfractal.cpp.s
 
 implicitfunctiongradient.o: implicitfunctiongradient.cpp.o
@@ -501,7 +501,7 @@ implicitfunctiongradient.o: implicitfunctiongradient.cpp.o
 
 # target to build an object file
 implicitfunctiongradient.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitfunctiongradient.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitfunctiongradient.cpp.o
 .PHONY : implicitfunctiongradient.cpp.o
 
 implicitfunctiongradient.i: implicitfunctiongradient.cpp.i
@@ -509,7 +509,7 @@ implicitfunctiongradient.i: implicitfunctiongradient.cpp.i
 
 # target to preprocess a source file
 implicitfunctiongradient.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitfunctiongradient.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitfunctiongradient.cpp.i
 .PHONY : implicitfunctiongradient.cpp.i
 
 implicitfunctiongradient.s: implicitfunctiongradient.cpp.s
@@ -517,7 +517,7 @@ implicitfunctiongradient.s: implicitfunctiongradient.cpp.s
 
 # target to generate assembly for a file
 implicitfunctiongradient.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitfunctiongradient.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitfunctiongradient.cpp.s
 .PHONY : implicitfunctiongradient.cpp.s
 
 implicitgain.o: implicitgain.cpp.o
@@ -525,7 +525,7 @@ implicitgain.o: implicitgain.cpp.o
 
 # target to build an object file
 implicitgain.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitgain.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitgain.cpp.o
 .PHONY : implicitgain.cpp.o
 
 implicitgain.i: implicitgain.cpp.i
@@ -533,7 +533,7 @@ implicitgain.i: implicitgain.cpp.i
 
 # target to preprocess a source file
 implicitgain.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitgain.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitgain.cpp.i
 .PHONY : implicitgain.cpp.i
 
 implicitgain.s: implicitgain.cpp.s
@@ -541,7 +541,7 @@ implicitgain.s: implicitgain.cpp.s
 
 # target to generate assembly for a file
 implicitgain.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitgain.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitgain.cpp.s
 .PHONY : implicitgain.cpp.s
 
 implicitgradient.o: implicitgradient.cpp.o
@@ -549,7 +549,7 @@ implicitgradient.o: implicitgradient.cpp.o
 
 # target to build an object file
 implicitgradient.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitgradient.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitgradient.cpp.o
 .PHONY : implicitgradient.cpp.o
 
 implicitgradient.i: implicitgradient.cpp.i
@@ -557,7 +557,7 @@ implicitgradient.i: implicitgradient.cpp.i
 
 # target to preprocess a source file
 implicitgradient.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitgradient.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitgradient.cpp.i
 .PHONY : implicitgradient.cpp.i
 
 implicitgradient.s: implicitgradient.cpp.s
@@ -565,7 +565,7 @@ implicitgradient.s: implicitgradient.cpp.s
 
 # target to generate assembly for a file
 implicitgradient.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitgradient.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitgradient.cpp.s
 .PHONY : implicitgradient.cpp.s
 
 implicitinvert.o: implicitinvert.cpp.o
@@ -573,7 +573,7 @@ implicitinvert.o: implicitinvert.cpp.o
 
 # target to build an object file
 implicitinvert.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitinvert.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitinvert.cpp.o
 .PHONY : implicitinvert.cpp.o
 
 implicitinvert.i: implicitinvert.cpp.i
@@ -581,7 +581,7 @@ implicitinvert.i: implicitinvert.cpp.i
 
 # target to preprocess a source file
 implicitinvert.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitinvert.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitinvert.cpp.i
 .PHONY : implicitinvert.cpp.i
 
 implicitinvert.s: implicitinvert.cpp.s
@@ -589,7 +589,7 @@ implicitinvert.s: implicitinvert.cpp.s
 
 # target to generate assembly for a file
 implicitinvert.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitinvert.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitinvert.cpp.s
 .PHONY : implicitinvert.cpp.s
 
 implicitpow.o: implicitpow.cpp.o
@@ -597,7 +597,7 @@ implicitpow.o: implicitpow.cpp.o
 
 # target to build an object file
 implicitpow.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitpow.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitpow.cpp.o
 .PHONY : implicitpow.cpp.o
 
 implicitpow.i: implicitpow.cpp.i
@@ -605,7 +605,7 @@ implicitpow.i: implicitpow.cpp.i
 
 # target to preprocess a source file
 implicitpow.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitpow.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitpow.cpp.i
 .PHONY : implicitpow.cpp.i
 
 implicitpow.s: implicitpow.cpp.s
@@ -613,7 +613,7 @@ implicitpow.s: implicitpow.cpp.s
 
 # target to generate assembly for a file
 implicitpow.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitpow.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitpow.cpp.s
 .PHONY : implicitpow.cpp.s
 
 implicitrgbadotproduct.o: implicitrgbadotproduct.cpp.o
@@ -621,7 +621,7 @@ implicitrgbadotproduct.o: implicitrgbadotproduct.cpp.o
 
 # target to build an object file
 implicitrgbadotproduct.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitrgbadotproduct.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitrgbadotproduct.cpp.o
 .PHONY : implicitrgbadotproduct.cpp.o
 
 implicitrgbadotproduct.i: implicitrgbadotproduct.cpp.i
@@ -629,7 +629,7 @@ implicitrgbadotproduct.i: implicitrgbadotproduct.cpp.i
 
 # target to preprocess a source file
 implicitrgbadotproduct.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitrgbadotproduct.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitrgbadotproduct.cpp.i
 .PHONY : implicitrgbadotproduct.cpp.i
 
 implicitrgbadotproduct.s: implicitrgbadotproduct.cpp.s
@@ -637,7 +637,7 @@ implicitrgbadotproduct.s: implicitrgbadotproduct.cpp.s
 
 # target to generate assembly for a file
 implicitrgbadotproduct.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitrgbadotproduct.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitrgbadotproduct.cpp.s
 .PHONY : implicitrgbadotproduct.cpp.s
 
 implicitrotatedomain.o: implicitrotatedomain.cpp.o
@@ -645,7 +645,7 @@ implicitrotatedomain.o: implicitrotatedomain.cpp.o
 
 # target to build an object file
 implicitrotatedomain.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitrotatedomain.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitrotatedomain.cpp.o
 .PHONY : implicitrotatedomain.cpp.o
 
 implicitrotatedomain.i: implicitrotatedomain.cpp.i
@@ -653,7 +653,7 @@ implicitrotatedomain.i: implicitrotatedomain.cpp.i
 
 # target to preprocess a source file
 implicitrotatedomain.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitrotatedomain.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitrotatedomain.cpp.i
 .PHONY : implicitrotatedomain.cpp.i
 
 implicitrotatedomain.s: implicitrotatedomain.cpp.s
@@ -661,7 +661,7 @@ implicitrotatedomain.s: implicitrotatedomain.cpp.s
 
 # target to generate assembly for a file
 implicitrotatedomain.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitrotatedomain.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitrotatedomain.cpp.s
 .PHONY : implicitrotatedomain.cpp.s
 
 implicitscaledomain.o: implicitscaledomain.cpp.o
@@ -669,7 +669,7 @@ implicitscaledomain.o: implicitscaledomain.cpp.o
 
 # target to build an object file
 implicitscaledomain.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitscaledomain.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitscaledomain.cpp.o
 .PHONY : implicitscaledomain.cpp.o
 
 implicitscaledomain.i: implicitscaledomain.cpp.i
@@ -677,7 +677,7 @@ implicitscaledomain.i: implicitscaledomain.cpp.i
 
 # target to preprocess a source file
 implicitscaledomain.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitscaledomain.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitscaledomain.cpp.i
 .PHONY : implicitscaledomain.cpp.i
 
 implicitscaledomain.s: implicitscaledomain.cpp.s
@@ -685,7 +685,7 @@ implicitscaledomain.s: implicitscaledomain.cpp.s
 
 # target to generate assembly for a file
 implicitscaledomain.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitscaledomain.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitscaledomain.cpp.s
 .PHONY : implicitscaledomain.cpp.s
 
 implicitscaleoffset.o: implicitscaleoffset.cpp.o
@@ -693,7 +693,7 @@ implicitscaleoffset.o: implicitscaleoffset.cpp.o
 
 # target to build an object file
 implicitscaleoffset.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitscaleoffset.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitscaleoffset.cpp.o
 .PHONY : implicitscaleoffset.cpp.o
 
 implicitscaleoffset.i: implicitscaleoffset.cpp.i
@@ -701,7 +701,7 @@ implicitscaleoffset.i: implicitscaleoffset.cpp.i
 
 # target to preprocess a source file
 implicitscaleoffset.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitscaleoffset.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitscaleoffset.cpp.i
 .PHONY : implicitscaleoffset.cpp.i
 
 implicitscaleoffset.s: implicitscaleoffset.cpp.s
@@ -709,7 +709,7 @@ implicitscaleoffset.s: implicitscaleoffset.cpp.s
 
 # target to generate assembly for a file
 implicitscaleoffset.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitscaleoffset.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitscaleoffset.cpp.s
 .PHONY : implicitscaleoffset.cpp.s
 
 implicitselect.o: implicitselect.cpp.o
@@ -717,7 +717,7 @@ implicitselect.o: implicitselect.cpp.o
 
 # target to build an object file
 implicitselect.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitselect.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitselect.cpp.o
 .PHONY : implicitselect.cpp.o
 
 implicitselect.i: implicitselect.cpp.i
@@ -725,7 +725,7 @@ implicitselect.i: implicitselect.cpp.i
 
 # target to preprocess a source file
 implicitselect.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitselect.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitselect.cpp.i
 .PHONY : implicitselect.cpp.i
 
 implicitselect.s: implicitselect.cpp.s
@@ -733,7 +733,7 @@ implicitselect.s: implicitselect.cpp.s
 
 # target to generate assembly for a file
 implicitselect.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitselect.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitselect.cpp.s
 .PHONY : implicitselect.cpp.s
 
 implicitsequence.o: implicitsequence.cpp.o
@@ -741,7 +741,7 @@ implicitsequence.o: implicitsequence.cpp.o
 
 # target to build an object file
 implicitsequence.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitsequence.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitsequence.cpp.o
 .PHONY : implicitsequence.cpp.o
 
 implicitsequence.i: implicitsequence.cpp.i
@@ -749,7 +749,7 @@ implicitsequence.i: implicitsequence.cpp.i
 
 # target to preprocess a source file
 implicitsequence.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitsequence.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitsequence.cpp.i
 .PHONY : implicitsequence.cpp.i
 
 implicitsequence.s: implicitsequence.cpp.s
@@ -757,7 +757,7 @@ implicitsequence.s: implicitsequence.cpp.s
 
 # target to generate assembly for a file
 implicitsequence.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitsequence.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitsequence.cpp.s
 .PHONY : implicitsequence.cpp.s
 
 implicitsin.o: implicitsin.cpp.o
@@ -765,7 +765,7 @@ implicitsin.o: implicitsin.cpp.o
 
 # target to build an object file
 implicitsin.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitsin.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitsin.cpp.o
 .PHONY : implicitsin.cpp.o
 
 implicitsin.i: implicitsin.cpp.i
@@ -773,7 +773,7 @@ implicitsin.i: implicitsin.cpp.i
 
 # target to preprocess a source file
 implicitsin.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitsin.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitsin.cpp.i
 .PHONY : implicitsin.cpp.i
 
 implicitsin.s: implicitsin.cpp.s
@@ -781,7 +781,7 @@ implicitsin.s: implicitsin.cpp.s
 
 # target to generate assembly for a file
 implicitsin.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitsin.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitsin.cpp.s
 .PHONY : implicitsin.cpp.s
 
 implicitsphere.o: implicitsphere.cpp.o
@@ -789,7 +789,7 @@ implicitsphere.o: implicitsphere.cpp.o
 
 # target to build an object file
 implicitsphere.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitsphere.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitsphere.cpp.o
 .PHONY : implicitsphere.cpp.o
 
 implicitsphere.i: implicitsphere.cpp.i
@@ -797,7 +797,7 @@ implicitsphere.i: implicitsphere.cpp.i
 
 # target to preprocess a source file
 implicitsphere.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitsphere.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitsphere.cpp.i
 .PHONY : implicitsphere.cpp.i
 
 implicitsphere.s: implicitsphere.cpp.s
@@ -805,7 +805,7 @@ implicitsphere.s: implicitsphere.cpp.s
 
 # target to generate assembly for a file
 implicitsphere.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitsphere.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitsphere.cpp.s
 .PHONY : implicitsphere.cpp.s
 
 implicittiers.o: implicittiers.cpp.o
@@ -813,7 +813,7 @@ implicittiers.o: implicittiers.cpp.o
 
 # target to build an object file
 implicittiers.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicittiers.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicittiers.cpp.o
 .PHONY : implicittiers.cpp.o
 
 implicittiers.i: implicittiers.cpp.i
@@ -821,7 +821,7 @@ implicittiers.i: implicittiers.cpp.i
 
 # target to preprocess a source file
 implicittiers.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicittiers.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicittiers.cpp.i
 .PHONY : implicittiers.cpp.i
 
 implicittiers.s: implicittiers.cpp.s
@@ -829,7 +829,7 @@ implicittiers.s: implicittiers.cpp.s
 
 # target to generate assembly for a file
 implicittiers.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicittiers.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicittiers.cpp.s
 .PHONY : implicittiers.cpp.s
 
 implicittranslatedomain.o: implicittranslatedomain.cpp.o
@@ -837,7 +837,7 @@ implicittranslatedomain.o: implicittranslatedomain.cpp.o
 
 # target to build an object file
 implicittranslatedomain.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicittranslatedomain.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicittranslatedomain.cpp.o
 .PHONY : implicittranslatedomain.cpp.o
 
 implicittranslatedomain.i: implicittranslatedomain.cpp.i
@@ -845,7 +845,7 @@ implicittranslatedomain.i: implicittranslatedomain.cpp.i
 
 # target to preprocess a source file
 implicittranslatedomain.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicittranslatedomain.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicittranslatedomain.cpp.i
 .PHONY : implicittranslatedomain.cpp.i
 
 implicittranslatedomain.s: implicittranslatedomain.cpp.s
@@ -853,7 +853,7 @@ implicittranslatedomain.s: implicittranslatedomain.cpp.s
 
 # target to generate assembly for a file
 implicittranslatedomain.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicittranslatedomain.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicittranslatedomain.cpp.s
 .PHONY : implicittranslatedomain.cpp.s
 
 implicitxml.o: implicitxml.cpp.o
@@ -861,7 +861,7 @@ implicitxml.o: implicitxml.cpp.o
 
 # target to build an object file
 implicitxml.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitxml.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitxml.cpp.o
 .PHONY : implicitxml.cpp.o
 
 implicitxml.i: implicitxml.cpp.i
@@ -869,7 +869,7 @@ implicitxml.i: implicitxml.cpp.i
 
 # target to preprocess a source file
 implicitxml.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitxml.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitxml.cpp.i
 .PHONY : implicitxml.cpp.i
 
 implicitxml.s: implicitxml.cpp.s
@@ -877,7 +877,7 @@ implicitxml.s: implicitxml.cpp.s
 
 # target to generate assembly for a file
 implicitxml.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitxml.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitxml.cpp.s
 .PHONY : implicitxml.cpp.s
 
 mapping.o: mapping.cpp.o
@@ -885,7 +885,7 @@ mapping.o: mapping.cpp.o
 
 # target to build an object file
 mapping.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/mapping.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/mapping.cpp.o
 .PHONY : mapping.cpp.o
 
 mapping.i: mapping.cpp.i
@@ -893,7 +893,7 @@ mapping.i: mapping.cpp.i
 
 # target to preprocess a source file
 mapping.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/mapping.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/mapping.cpp.i
 .PHONY : mapping.cpp.i
 
 mapping.s: mapping.cpp.s
@@ -901,7 +901,7 @@ mapping.s: mapping.cpp.s
 
 # target to generate assembly for a file
 mapping.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/mapping.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/mapping.cpp.s
 .PHONY : mapping.cpp.s
 
 noise_gen.o: noise_gen.cpp.o
@@ -909,7 +909,7 @@ noise_gen.o: noise_gen.cpp.o
 
 # target to build an object file
 noise_gen.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/noise_gen.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/noise_gen.cpp.o
 .PHONY : noise_gen.cpp.o
 
 noise_gen.i: noise_gen.cpp.i
@@ -917,7 +917,7 @@ noise_gen.i: noise_gen.cpp.i
 
 # target to preprocess a source file
 noise_gen.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/noise_gen.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/noise_gen.cpp.i
 .PHONY : noise_gen.cpp.i
 
 noise_gen.s: noise_gen.cpp.s
@@ -925,7 +925,7 @@ noise_gen.s: noise_gen.cpp.s
 
 # target to generate assembly for a file
 noise_gen.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/noise_gen.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/noise_gen.cpp.s
 .PHONY : noise_gen.cpp.s
 
 noise_lut.o: noise_lut.cpp.o
@@ -933,7 +933,7 @@ noise_lut.o: noise_lut.cpp.o
 
 # target to build an object file
 noise_lut.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/noise_lut.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/noise_lut.cpp.o
 .PHONY : noise_lut.cpp.o
 
 noise_lut.i: noise_lut.cpp.i
@@ -941,7 +941,7 @@ noise_lut.i: noise_lut.cpp.i
 
 # target to preprocess a source file
 noise_lut.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/noise_lut.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/noise_lut.cpp.i
 .PHONY : noise_lut.cpp.i
 
 noise_lut.s: noise_lut.cpp.s
@@ -949,7 +949,7 @@ noise_lut.s: noise_lut.cpp.s
 
 # target to generate assembly for a file
 noise_lut.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/noise_lut.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/noise_lut.cpp.s
 .PHONY : noise_lut.cpp.s
 
 pugixml.o: pugixml.cpp.o
@@ -957,7 +957,7 @@ pugixml.o: pugixml.cpp.o
 
 # target to build an object file
 pugixml.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/pugixml.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/pugixml.cpp.o
 .PHONY : pugixml.cpp.o
 
 pugixml.i: pugixml.cpp.i
@@ -965,7 +965,7 @@ pugixml.i: pugixml.cpp.i
 
 # target to preprocess a source file
 pugixml.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/pugixml.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/pugixml.cpp.i
 .PHONY : pugixml.cpp.i
 
 pugixml.s: pugixml.cpp.s
@@ -973,7 +973,7 @@ pugixml.s: pugixml.cpp.s
 
 # target to generate assembly for a file
 pugixml.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/pugixml.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/pugixml.cpp.s
 .PHONY : pugixml.cpp.s
 
 rgbablend.o: rgbablend.cpp.o
@@ -981,7 +981,7 @@ rgbablend.o: rgbablend.cpp.o
 
 # target to build an object file
 rgbablend.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbablend.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbablend.cpp.o
 .PHONY : rgbablend.cpp.o
 
 rgbablend.i: rgbablend.cpp.i
@@ -989,7 +989,7 @@ rgbablend.i: rgbablend.cpp.i
 
 # target to preprocess a source file
 rgbablend.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbablend.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbablend.cpp.i
 .PHONY : rgbablend.cpp.i
 
 rgbablend.s: rgbablend.cpp.s
@@ -997,7 +997,7 @@ rgbablend.s: rgbablend.cpp.s
 
 # target to generate assembly for a file
 rgbablend.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbablend.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbablend.cpp.s
 .PHONY : rgbablend.cpp.s
 
 rgbablendops.o: rgbablendops.cpp.o
@@ -1005,7 +1005,7 @@ rgbablendops.o: rgbablendops.cpp.o
 
 # target to build an object file
 rgbablendops.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbablendops.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbablendops.cpp.o
 .PHONY : rgbablendops.cpp.o
 
 rgbablendops.i: rgbablendops.cpp.i
@@ -1013,7 +1013,7 @@ rgbablendops.i: rgbablendops.cpp.i
 
 # target to preprocess a source file
 rgbablendops.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbablendops.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbablendops.cpp.i
 .PHONY : rgbablendops.cpp.i
 
 rgbablendops.s: rgbablendops.cpp.s
@@ -1021,7 +1021,7 @@ rgbablendops.s: rgbablendops.cpp.s
 
 # target to generate assembly for a file
 rgbablendops.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbablendops.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbablendops.cpp.s
 .PHONY : rgbablendops.cpp.s
 
 rgbacomposechannels.o: rgbacomposechannels.cpp.o
@@ -1029,7 +1029,7 @@ rgbacomposechannels.o: rgbacomposechannels.cpp.o
 
 # target to build an object file
 rgbacomposechannels.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbacomposechannels.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbacomposechannels.cpp.o
 .PHONY : rgbacomposechannels.cpp.o
 
 rgbacomposechannels.i: rgbacomposechannels.cpp.i
@@ -1037,7 +1037,7 @@ rgbacomposechannels.i: rgbacomposechannels.cpp.i
 
 # target to preprocess a source file
 rgbacomposechannels.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbacomposechannels.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbacomposechannels.cpp.i
 .PHONY : rgbacomposechannels.cpp.i
 
 rgbacomposechannels.s: rgbacomposechannels.cpp.s
@@ -1045,7 +1045,7 @@ rgbacomposechannels.s: rgbacomposechannels.cpp.s
 
 # target to generate assembly for a file
 rgbacomposechannels.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbacomposechannels.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbacomposechannels.cpp.s
 .PHONY : rgbacomposechannels.cpp.s
 
 rgbaconstant.o: rgbaconstant.cpp.o
@@ -1053,7 +1053,7 @@ rgbaconstant.o: rgbaconstant.cpp.o
 
 # target to build an object file
 rgbaconstant.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbaconstant.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbaconstant.cpp.o
 .PHONY : rgbaconstant.cpp.o
 
 rgbaconstant.i: rgbaconstant.cpp.i
@@ -1061,7 +1061,7 @@ rgbaconstant.i: rgbaconstant.cpp.i
 
 # target to preprocess a source file
 rgbaconstant.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbaconstant.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbaconstant.cpp.i
 .PHONY : rgbaconstant.cpp.i
 
 rgbaconstant.s: rgbaconstant.cpp.s
@@ -1069,7 +1069,7 @@ rgbaconstant.s: rgbaconstant.cpp.s
 
 # target to generate assembly for a file
 rgbaconstant.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbaconstant.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbaconstant.cpp.s
 .PHONY : rgbaconstant.cpp.s
 
 rgbahsvtorgba.o: rgbahsvtorgba.cpp.o
@@ -1077,7 +1077,7 @@ rgbahsvtorgba.o: rgbahsvtorgba.cpp.o
 
 # target to build an object file
 rgbahsvtorgba.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbahsvtorgba.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbahsvtorgba.cpp.o
 .PHONY : rgbahsvtorgba.cpp.o
 
 rgbahsvtorgba.i: rgbahsvtorgba.cpp.i
@@ -1085,7 +1085,7 @@ rgbahsvtorgba.i: rgbahsvtorgba.cpp.i
 
 # target to preprocess a source file
 rgbahsvtorgba.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbahsvtorgba.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbahsvtorgba.cpp.i
 .PHONY : rgbahsvtorgba.cpp.i
 
 rgbahsvtorgba.s: rgbahsvtorgba.cpp.s
@@ -1093,7 +1093,7 @@ rgbahsvtorgba.s: rgbahsvtorgba.cpp.s
 
 # target to generate assembly for a file
 rgbahsvtorgba.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbahsvtorgba.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbahsvtorgba.cpp.s
 .PHONY : rgbahsvtorgba.cpp.s
 
 rgbaimplicitgrayscale.o: rgbaimplicitgrayscale.cpp.o
@@ -1101,7 +1101,7 @@ rgbaimplicitgrayscale.o: rgbaimplicitgrayscale.cpp.o
 
 # target to build an object file
 rgbaimplicitgrayscale.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbaimplicitgrayscale.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbaimplicitgrayscale.cpp.o
 .PHONY : rgbaimplicitgrayscale.cpp.o
 
 rgbaimplicitgrayscale.i: rgbaimplicitgrayscale.cpp.i
@@ -1109,7 +1109,7 @@ rgbaimplicitgrayscale.i: rgbaimplicitgrayscale.cpp.i
 
 # target to preprocess a source file
 rgbaimplicitgrayscale.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbaimplicitgrayscale.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbaimplicitgrayscale.cpp.i
 .PHONY : rgbaimplicitgrayscale.cpp.i
 
 rgbaimplicitgrayscale.s: rgbaimplicitgrayscale.cpp.s
@@ -1117,7 +1117,7 @@ rgbaimplicitgrayscale.s: rgbaimplicitgrayscale.cpp.s
 
 # target to generate assembly for a file
 rgbaimplicitgrayscale.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbaimplicitgrayscale.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbaimplicitgrayscale.cpp.s
 .PHONY : rgbaimplicitgrayscale.cpp.s
 
 rgbanormalize.o: rgbanormalize.cpp.o
@@ -1125,7 +1125,7 @@ rgbanormalize.o: rgbanormalize.cpp.o
 
 # target to build an object file
 rgbanormalize.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbanormalize.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbanormalize.cpp.o
 .PHONY : rgbanormalize.cpp.o
 
 rgbanormalize.i: rgbanormalize.cpp.i
@@ -1133,7 +1133,7 @@ rgbanormalize.i: rgbanormalize.cpp.i
 
 # target to preprocess a source file
 rgbanormalize.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbanormalize.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbanormalize.cpp.i
 .PHONY : rgbanormalize.cpp.i
 
 rgbanormalize.s: rgbanormalize.cpp.s
@@ -1141,7 +1141,7 @@ rgbanormalize.s: rgbanormalize.cpp.s
 
 # target to generate assembly for a file
 rgbanormalize.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbanormalize.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbanormalize.cpp.s
 .PHONY : rgbanormalize.cpp.s
 
 rgbargbatohsv.o: rgbargbatohsv.cpp.o
@@ -1149,7 +1149,7 @@ rgbargbatohsv.o: rgbargbatohsv.cpp.o
 
 # target to build an object file
 rgbargbatohsv.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbargbatohsv.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbargbatohsv.cpp.o
 .PHONY : rgbargbatohsv.cpp.o
 
 rgbargbatohsv.i: rgbargbatohsv.cpp.i
@@ -1157,7 +1157,7 @@ rgbargbatohsv.i: rgbargbatohsv.cpp.i
 
 # target to preprocess a source file
 rgbargbatohsv.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbargbatohsv.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbargbatohsv.cpp.i
 .PHONY : rgbargbatohsv.cpp.i
 
 rgbargbatohsv.s: rgbargbatohsv.cpp.s
@@ -1165,7 +1165,7 @@ rgbargbatohsv.s: rgbargbatohsv.cpp.s
 
 # target to generate assembly for a file
 rgbargbatohsv.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbargbatohsv.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbargbatohsv.cpp.s
 .PHONY : rgbargbatohsv.cpp.s
 
 rgbarotatecolor.o: rgbarotatecolor.cpp.o
@@ -1173,7 +1173,7 @@ rgbarotatecolor.o: rgbarotatecolor.cpp.o
 
 # target to build an object file
 rgbarotatecolor.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbarotatecolor.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbarotatecolor.cpp.o
 .PHONY : rgbarotatecolor.cpp.o
 
 rgbarotatecolor.i: rgbarotatecolor.cpp.i
@@ -1181,7 +1181,7 @@ rgbarotatecolor.i: rgbarotatecolor.cpp.i
 
 # target to preprocess a source file
 rgbarotatecolor.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbarotatecolor.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbarotatecolor.cpp.i
 .PHONY : rgbarotatecolor.cpp.i
 
 rgbarotatecolor.s: rgbarotatecolor.cpp.s
@@ -1189,7 +1189,7 @@ rgbarotatecolor.s: rgbarotatecolor.cpp.s
 
 # target to generate assembly for a file
 rgbarotatecolor.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbarotatecolor.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbarotatecolor.cpp.s
 .PHONY : rgbarotatecolor.cpp.s
 
 rgbaselect.o: rgbaselect.cpp.o
@@ -1197,7 +1197,7 @@ rgbaselect.o: rgbaselect.cpp.o
 
 # target to build an object file
 rgbaselect.cpp.o:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbaselect.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbaselect.cpp.o
 .PHONY : rgbaselect.cpp.o
 
 rgbaselect.i: rgbaselect.cpp.i
@@ -1205,7 +1205,7 @@ rgbaselect.i: rgbaselect.cpp.i
 
 # target to preprocess a source file
 rgbaselect.cpp.i:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbaselect.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbaselect.cpp.i
 .PHONY : rgbaselect.cpp.i
 
 rgbaselect.s: rgbaselect.cpp.s
@@ -1213,7 +1213,7 @@ rgbaselect.s: rgbaselect.cpp.s
 
 # target to generate assembly for a file
 rgbaselect.cpp.s:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbaselect.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbaselect.cpp.s
 .PHONY : rgbaselect.cpp.s
 
 # Help Target
@@ -1374,6 +1374,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/salmonmoose/dev/accidentalnoise && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

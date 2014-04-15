@@ -35,125 +35,161 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/salmonmoose/dev/git/accidentalnoise
+CMAKE_SOURCE_DIR = /home/salmonmoose/dev/accidentalnoise/editor
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/salmonmoose/dev/git/accidentalnoise
+CMAKE_BINARY_DIR = /home/salmonmoose/dev/accidentalnoise/editor
 
 # Include any dependencies generated for this target.
-include editor/CMakeFiles/ane.dir/depend.make
+include CMakeFiles/ane.dir/depend.make
 
 # Include the progress variables for this target.
-include editor/CMakeFiles/ane.dir/progress.make
+include CMakeFiles/ane.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include editor/CMakeFiles/ane.dir/flags.make
+include CMakeFiles/ane.dir/flags.make
 
-editor/CMakeFiles/ane.dir/editor.cpp.o: editor/CMakeFiles/ane.dir/flags.make
-editor/CMakeFiles/ane.dir/editor.cpp.o: editor/editor.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/git/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object editor/CMakeFiles/ane.dir/editor.cpp.o"
-	cd /home/salmonmoose/dev/git/accidentalnoise/editor && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ane.dir/editor.cpp.o -c /home/salmonmoose/dev/git/accidentalnoise/editor/editor.cpp
+CMakeFiles/ane.dir/networkaccessmanager.cpp.o: CMakeFiles/ane.dir/flags.make
+CMakeFiles/ane.dir/networkaccessmanager.cpp.o: networkaccessmanager.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/editor/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ane.dir/networkaccessmanager.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ane.dir/networkaccessmanager.cpp.o -c /home/salmonmoose/dev/accidentalnoise/editor/networkaccessmanager.cpp
 
-editor/CMakeFiles/ane.dir/editor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ane.dir/editor.cpp.i"
-	cd /home/salmonmoose/dev/git/accidentalnoise/editor && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/salmonmoose/dev/git/accidentalnoise/editor/editor.cpp > CMakeFiles/ane.dir/editor.cpp.i
+CMakeFiles/ane.dir/networkaccessmanager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ane.dir/networkaccessmanager.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/salmonmoose/dev/accidentalnoise/editor/networkaccessmanager.cpp > CMakeFiles/ane.dir/networkaccessmanager.cpp.i
 
-editor/CMakeFiles/ane.dir/editor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ane.dir/editor.cpp.s"
-	cd /home/salmonmoose/dev/git/accidentalnoise/editor && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/salmonmoose/dev/git/accidentalnoise/editor/editor.cpp -o CMakeFiles/ane.dir/editor.cpp.s
+CMakeFiles/ane.dir/networkaccessmanager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ane.dir/networkaccessmanager.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/salmonmoose/dev/accidentalnoise/editor/networkaccessmanager.cpp -o CMakeFiles/ane.dir/networkaccessmanager.cpp.s
 
-editor/CMakeFiles/ane.dir/editor.cpp.o.requires:
-.PHONY : editor/CMakeFiles/ane.dir/editor.cpp.o.requires
+CMakeFiles/ane.dir/networkaccessmanager.cpp.o.requires:
+.PHONY : CMakeFiles/ane.dir/networkaccessmanager.cpp.o.requires
 
-editor/CMakeFiles/ane.dir/editor.cpp.o.provides: editor/CMakeFiles/ane.dir/editor.cpp.o.requires
-	$(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/editor.cpp.o.provides.build
-.PHONY : editor/CMakeFiles/ane.dir/editor.cpp.o.provides
+CMakeFiles/ane.dir/networkaccessmanager.cpp.o.provides: CMakeFiles/ane.dir/networkaccessmanager.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ane.dir/build.make CMakeFiles/ane.dir/networkaccessmanager.cpp.o.provides.build
+.PHONY : CMakeFiles/ane.dir/networkaccessmanager.cpp.o.provides
 
-editor/CMakeFiles/ane.dir/editor.cpp.o.provides.build: editor/CMakeFiles/ane.dir/editor.cpp.o
+CMakeFiles/ane.dir/networkaccessmanager.cpp.o.provides.build: CMakeFiles/ane.dir/networkaccessmanager.cpp.o
 
-editor/CMakeFiles/ane.dir/widget.cpp.o: editor/CMakeFiles/ane.dir/flags.make
-editor/CMakeFiles/ane.dir/widget.cpp.o: editor/widget.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/git/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object editor/CMakeFiles/ane.dir/widget.cpp.o"
-	cd /home/salmonmoose/dev/git/accidentalnoise/editor && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ane.dir/widget.cpp.o -c /home/salmonmoose/dev/git/accidentalnoise/editor/widget.cpp
+CMakeFiles/ane.dir/noisereply.cpp.o: CMakeFiles/ane.dir/flags.make
+CMakeFiles/ane.dir/noisereply.cpp.o: noisereply.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/editor/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ane.dir/noisereply.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ane.dir/noisereply.cpp.o -c /home/salmonmoose/dev/accidentalnoise/editor/noisereply.cpp
 
-editor/CMakeFiles/ane.dir/widget.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ane.dir/widget.cpp.i"
-	cd /home/salmonmoose/dev/git/accidentalnoise/editor && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/salmonmoose/dev/git/accidentalnoise/editor/widget.cpp > CMakeFiles/ane.dir/widget.cpp.i
+CMakeFiles/ane.dir/noisereply.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ane.dir/noisereply.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/salmonmoose/dev/accidentalnoise/editor/noisereply.cpp > CMakeFiles/ane.dir/noisereply.cpp.i
 
-editor/CMakeFiles/ane.dir/widget.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ane.dir/widget.cpp.s"
-	cd /home/salmonmoose/dev/git/accidentalnoise/editor && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/salmonmoose/dev/git/accidentalnoise/editor/widget.cpp -o CMakeFiles/ane.dir/widget.cpp.s
+CMakeFiles/ane.dir/noisereply.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ane.dir/noisereply.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/salmonmoose/dev/accidentalnoise/editor/noisereply.cpp -o CMakeFiles/ane.dir/noisereply.cpp.s
 
-editor/CMakeFiles/ane.dir/widget.cpp.o.requires:
-.PHONY : editor/CMakeFiles/ane.dir/widget.cpp.o.requires
+CMakeFiles/ane.dir/noisereply.cpp.o.requires:
+.PHONY : CMakeFiles/ane.dir/noisereply.cpp.o.requires
 
-editor/CMakeFiles/ane.dir/widget.cpp.o.provides: editor/CMakeFiles/ane.dir/widget.cpp.o.requires
-	$(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/widget.cpp.o.provides.build
-.PHONY : editor/CMakeFiles/ane.dir/widget.cpp.o.provides
+CMakeFiles/ane.dir/noisereply.cpp.o.provides: CMakeFiles/ane.dir/noisereply.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ane.dir/build.make CMakeFiles/ane.dir/noisereply.cpp.o.provides.build
+.PHONY : CMakeFiles/ane.dir/noisereply.cpp.o.provides
 
-editor/CMakeFiles/ane.dir/widget.cpp.o.provides.build: editor/CMakeFiles/ane.dir/widget.cpp.o
+CMakeFiles/ane.dir/noisereply.cpp.o.provides.build: CMakeFiles/ane.dir/noisereply.cpp.o
 
-editor/CMakeFiles/ane.dir/ane.cpp.o: editor/CMakeFiles/ane.dir/flags.make
-editor/CMakeFiles/ane.dir/ane.cpp.o: editor/ane.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/git/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_3)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object editor/CMakeFiles/ane.dir/ane.cpp.o"
-	cd /home/salmonmoose/dev/git/accidentalnoise/editor && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ane.dir/ane.cpp.o -c /home/salmonmoose/dev/git/accidentalnoise/editor/ane.cpp
+CMakeFiles/ane.dir/noiseview.cpp.o: CMakeFiles/ane.dir/flags.make
+CMakeFiles/ane.dir/noiseview.cpp.o: noiseview.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/editor/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ane.dir/noiseview.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ane.dir/noiseview.cpp.o -c /home/salmonmoose/dev/accidentalnoise/editor/noiseview.cpp
 
-editor/CMakeFiles/ane.dir/ane.cpp.i: cmake_force
+CMakeFiles/ane.dir/noiseview.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ane.dir/noiseview.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/salmonmoose/dev/accidentalnoise/editor/noiseview.cpp > CMakeFiles/ane.dir/noiseview.cpp.i
+
+CMakeFiles/ane.dir/noiseview.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ane.dir/noiseview.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/salmonmoose/dev/accidentalnoise/editor/noiseview.cpp -o CMakeFiles/ane.dir/noiseview.cpp.s
+
+CMakeFiles/ane.dir/noiseview.cpp.o.requires:
+.PHONY : CMakeFiles/ane.dir/noiseview.cpp.o.requires
+
+CMakeFiles/ane.dir/noiseview.cpp.o.provides: CMakeFiles/ane.dir/noiseview.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ane.dir/build.make CMakeFiles/ane.dir/noiseview.cpp.o.provides.build
+.PHONY : CMakeFiles/ane.dir/noiseview.cpp.o.provides
+
+CMakeFiles/ane.dir/noiseview.cpp.o.provides.build: CMakeFiles/ane.dir/noiseview.cpp.o
+
+CMakeFiles/ane.dir/ane.cpp.o: CMakeFiles/ane.dir/flags.make
+CMakeFiles/ane.dir/ane.cpp.o: ane.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/editor/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ane.dir/ane.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ane.dir/ane.cpp.o -c /home/salmonmoose/dev/accidentalnoise/editor/ane.cpp
+
+CMakeFiles/ane.dir/ane.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ane.dir/ane.cpp.i"
-	cd /home/salmonmoose/dev/git/accidentalnoise/editor && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/salmonmoose/dev/git/accidentalnoise/editor/ane.cpp > CMakeFiles/ane.dir/ane.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/salmonmoose/dev/accidentalnoise/editor/ane.cpp > CMakeFiles/ane.dir/ane.cpp.i
 
-editor/CMakeFiles/ane.dir/ane.cpp.s: cmake_force
+CMakeFiles/ane.dir/ane.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ane.dir/ane.cpp.s"
-	cd /home/salmonmoose/dev/git/accidentalnoise/editor && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/salmonmoose/dev/git/accidentalnoise/editor/ane.cpp -o CMakeFiles/ane.dir/ane.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/salmonmoose/dev/accidentalnoise/editor/ane.cpp -o CMakeFiles/ane.dir/ane.cpp.s
 
-editor/CMakeFiles/ane.dir/ane.cpp.o.requires:
-.PHONY : editor/CMakeFiles/ane.dir/ane.cpp.o.requires
+CMakeFiles/ane.dir/ane.cpp.o.requires:
+.PHONY : CMakeFiles/ane.dir/ane.cpp.o.requires
 
-editor/CMakeFiles/ane.dir/ane.cpp.o.provides: editor/CMakeFiles/ane.dir/ane.cpp.o.requires
-	$(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/ane.cpp.o.provides.build
-.PHONY : editor/CMakeFiles/ane.dir/ane.cpp.o.provides
+CMakeFiles/ane.dir/ane.cpp.o.provides: CMakeFiles/ane.dir/ane.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ane.dir/build.make CMakeFiles/ane.dir/ane.cpp.o.provides.build
+.PHONY : CMakeFiles/ane.dir/ane.cpp.o.provides
 
-editor/CMakeFiles/ane.dir/ane.cpp.o.provides.build: editor/CMakeFiles/ane.dir/ane.cpp.o
+CMakeFiles/ane.dir/ane.cpp.o.provides.build: CMakeFiles/ane.dir/ane.cpp.o
 
 # Object files for target ane
 ane_OBJECTS = \
-"CMakeFiles/ane.dir/editor.cpp.o" \
-"CMakeFiles/ane.dir/widget.cpp.o" \
+"CMakeFiles/ane.dir/networkaccessmanager.cpp.o" \
+"CMakeFiles/ane.dir/noisereply.cpp.o" \
+"CMakeFiles/ane.dir/noiseview.cpp.o" \
 "CMakeFiles/ane.dir/ane.cpp.o"
 
 # External object files for target ane
 ane_EXTERNAL_OBJECTS =
 
-bin/ane: editor/CMakeFiles/ane.dir/editor.cpp.o
-bin/ane: editor/CMakeFiles/ane.dir/widget.cpp.o
-bin/ane: editor/CMakeFiles/ane.dir/ane.cpp.o
-bin/ane: editor/CMakeFiles/ane.dir/build.make
-bin/ane: /usr/local/lib/libsfml-system.so
-bin/ane: /usr/local/lib/libsfml-window.so
-bin/ane: /usr/local/lib/libsfml-graphics.so
-bin/ane: /usr/local/lib/libsfml-network.so
-bin/ane: /usr/local/lib/libsfml-audio.so
-bin/ane: editor/CMakeFiles/ane.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../bin/ane"
-	cd /home/salmonmoose/dev/git/accidentalnoise/editor && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ane.dir/link.txt --verbose=$(VERBOSE)
+ane: CMakeFiles/ane.dir/networkaccessmanager.cpp.o
+ane: CMakeFiles/ane.dir/noisereply.cpp.o
+ane: CMakeFiles/ane.dir/noiseview.cpp.o
+ane: CMakeFiles/ane.dir/ane.cpp.o
+ane: CMakeFiles/ane.dir/build.make
+ane: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.0.2
+ane: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.0.2
+ane: /usr/lib/x86_64-linux-gnu/libQt5WebKit.so.5.1.1
+ane: /usr/lib/x86_64-linux-gnu/libQt5WebKitWidgets.so.5.1.1
+ane: /usr/lib/x86_64-linux-gnu/libQt5WebKit.so.5.1.1
+ane: /usr/lib/x86_64-linux-gnu/libQt5Quick.so.5.0.2
+ane: /usr/lib/x86_64-linux-gnu/libQt5Qml.so.5.0.2
+ane: /usr/lib/x86_64-linux-gnu/libQt5Network.so.5.0.2
+ane: /usr/lib/x86_64-linux-gnu/libQt5OpenGL.so.5.0.2
+ane: /usr/lib/x86_64-linux-gnu/libQt5PrintSupport.so.5.0.2
+ane: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.0.2
+ane: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.0.2
+ane: /usr/lib/x86_64-linux-gnu/libQt5Location.so.5.2.0
+ane: /usr/lib/x86_64-linux-gnu/libQt5Sensors.so.5.1.0
+ane: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.0.2
+ane: CMakeFiles/ane.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ane"
+	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ane.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-editor/CMakeFiles/ane.dir/build: bin/ane
-.PHONY : editor/CMakeFiles/ane.dir/build
+CMakeFiles/ane.dir/build: ane
+.PHONY : CMakeFiles/ane.dir/build
 
-editor/CMakeFiles/ane.dir/requires: editor/CMakeFiles/ane.dir/editor.cpp.o.requires
-editor/CMakeFiles/ane.dir/requires: editor/CMakeFiles/ane.dir/widget.cpp.o.requires
-editor/CMakeFiles/ane.dir/requires: editor/CMakeFiles/ane.dir/ane.cpp.o.requires
-.PHONY : editor/CMakeFiles/ane.dir/requires
+CMakeFiles/ane.dir/requires: CMakeFiles/ane.dir/networkaccessmanager.cpp.o.requires
+CMakeFiles/ane.dir/requires: CMakeFiles/ane.dir/noisereply.cpp.o.requires
+CMakeFiles/ane.dir/requires: CMakeFiles/ane.dir/noiseview.cpp.o.requires
+CMakeFiles/ane.dir/requires: CMakeFiles/ane.dir/ane.cpp.o.requires
+.PHONY : CMakeFiles/ane.dir/requires
 
-editor/CMakeFiles/ane.dir/clean:
-	cd /home/salmonmoose/dev/git/accidentalnoise/editor && $(CMAKE_COMMAND) -P CMakeFiles/ane.dir/cmake_clean.cmake
-.PHONY : editor/CMakeFiles/ane.dir/clean
+CMakeFiles/ane.dir/clean:
+	$(CMAKE_COMMAND) -P CMakeFiles/ane.dir/cmake_clean.cmake
+.PHONY : CMakeFiles/ane.dir/clean
 
-editor/CMakeFiles/ane.dir/depend:
-	cd /home/salmonmoose/dev/git/accidentalnoise && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/salmonmoose/dev/git/accidentalnoise /home/salmonmoose/dev/git/accidentalnoise/editor /home/salmonmoose/dev/git/accidentalnoise /home/salmonmoose/dev/git/accidentalnoise/editor /home/salmonmoose/dev/git/accidentalnoise/editor/CMakeFiles/ane.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : editor/CMakeFiles/ane.dir/depend
+CMakeFiles/ane.dir/depend:
+	cd /home/salmonmoose/dev/accidentalnoise/editor && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/salmonmoose/dev/accidentalnoise/editor /home/salmonmoose/dev/accidentalnoise/editor /home/salmonmoose/dev/accidentalnoise/editor /home/salmonmoose/dev/accidentalnoise/editor /home/salmonmoose/dev/accidentalnoise/editor/CMakeFiles/ane.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : CMakeFiles/ane.dir/depend
 
