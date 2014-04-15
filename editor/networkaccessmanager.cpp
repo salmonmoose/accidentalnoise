@@ -8,6 +8,13 @@ NetworkAccessManager::NetworkAccessManager(QNetworkAccessManager *manager, QObje
 	setCookieJar(manager->cookieJar());
 	setProxy(manager->proxy());
 	setProxyFactory(manager->proxyFactory());
+
+	mCImplicitSequence = new anl::CImplicitSequence();
+	mCImplicitSequence->RegisterTypes();
+
+	mCImplicitSequence->AddLayer("Sphere", "sphere01");
+	mCImplicitSequence->AddLayer("Fractal", "fractal01");
+	mCImplicitSequence->SetRenderNode("sphere01");
 }
 
 QNetworkReply *NetworkAccessManager::createRequest(
@@ -26,7 +33,7 @@ QNetworkReply *NetworkAccessManager::createRequest(
 	if (operation == GetOperation) {
 		qDebug("found noise request");
 
-		NoiseReply *response = new NoiseReply(request.url());
+		NoiseReply *response = new NoiseReply(request.url(), mCImplicitSequence);
 
 		if (response->isFinished()) {
 			qDebug("noise request finished");
@@ -47,7 +54,7 @@ QNetworkReply *NetworkAccessManager::createRequest(
 		QVariant sizeVar = response->header(QNetworkRequest::ContentLengthHeader);
 
 		QVariant typeVar = response->header(QNetworkRequest::ContentTypeHeader);
-		
+
 		qDebug(
 			"Size: %s Type: %s",
 			sizeVar.toString().toStdString().c_str(),

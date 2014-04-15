@@ -121,10 +121,10 @@ editor/preinstall:
 # Target rules for target editor/CMakeFiles/ane.dir
 
 # All Build rule for target.
-editor/CMakeFiles/ane.dir/all:
+editor/CMakeFiles/ane.dir/all: src/CMakeFiles/accidentalnoise.dir/all
 	$(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/depend
 	$(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles  47 48
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles  47 48 49 50
 	@echo "Built target ane"
 .PHONY : editor/CMakeFiles/ane.dir/all
 
@@ -134,7 +134,7 @@ all: editor/CMakeFiles/ane.dir/all
 
 # Build rule for subdir invocation for target.
 editor/CMakeFiles/ane.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/salmonmoose/dev/accidentalnoise/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/salmonmoose/dev/accidentalnoise/CMakeFiles 50
 	$(MAKE) -f CMakeFiles/Makefile2 editor/CMakeFiles/ane.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/salmonmoose/dev/accidentalnoise/CMakeFiles 0
 .PHONY : editor/CMakeFiles/ane.dir/rule

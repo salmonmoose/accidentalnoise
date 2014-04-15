@@ -4,7 +4,7 @@ namespace anl
 {
 	CImplicitSequence::CImplicitSequence()
 	{
-		
+
 	}
 
 	void CImplicitSequence::RegisterTypes()

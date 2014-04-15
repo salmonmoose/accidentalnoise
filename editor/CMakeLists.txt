@@ -8,6 +8,7 @@ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH})
 
 include_directories(
 	"."
+	"../include"
 )
 
 find_package(Qt5Widgets)
@@ -18,6 +19,11 @@ add_executable(
 	noisereply.cpp
 	noiseview.cpp
 	ane.cpp
+)
+
+target_link_libraries(
+	ane
+	accidentalnoise
 )
 
 qt5_use_modules(ane Gui Widgets WebKit WebKitWidgets)

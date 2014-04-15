@@ -54,7 +54,7 @@ add_library(
 	rgbargbatohsv.cpp
 	rgbarotatecolor.cpp
 	rgbaselect.cpp
-	pugixml.cpp 
+	pugixml.cpp
 )
 
 target_link_libraries(accidentalnoise)

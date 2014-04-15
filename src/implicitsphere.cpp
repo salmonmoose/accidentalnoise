@@ -22,7 +22,7 @@ namespace anl
         CImplicitModuleBase::registerNoiseInput("CenterV",[this] (CImplicitModuleBase *n) { this->setCenterV (n); });
         CImplicitModuleBase::registerNoiseInput("CenterW",[this] (CImplicitModuleBase *n) { this->setCenterW (n); });
     }
-    
+
     CImplicitSphere::~CImplicitSphere(){}
 
     void CImplicitSphere::setCenter(double cx,double cy,double cz,double cw,double cu,double cv)
@@ -41,9 +41,9 @@ namespace anl
     void CImplicitSphere::setCenterW(CImplicitModuleBase *cw){m_cw.set(cw);}
     void CImplicitSphere::setCenterU(CImplicitModuleBase *cu){m_cu.set(cu);}
     void CImplicitSphere::setCenterV(CImplicitModuleBase *cv){m_cv.set(cv);}
-    
+
     void CImplicitSphere::setRadius(double r)
-    {   
+    {
         m_radius.set(r);
     }
     void CImplicitSphere::setRadius(CImplicitModuleBase *r){m_radius.set(r);}

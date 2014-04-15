@@ -29,12 +29,14 @@ SET(CMAKE_TARGET_DEFINITIONS
 
 # Targets to which this target links.
 SET(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/salmonmoose/dev/accidentalnoise/src/CMakeFiles/accidentalnoise.dir/DependInfo.cmake"
   )
 
 # The include file search paths:
 SET(CMAKE_C_TARGET_INCLUDE_PATH
-  "."
-  "."
+  "editor"
+  "editor/."
+  "editor/../include"
   "/usr/include/qt5/QtGui"
   "/usr/include/qt5/QtCore"
   "/usr/include/qt5"

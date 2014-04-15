@@ -18,15 +18,15 @@ namespace anl
 		setupNoise();
         printf("Noise setup\n");
 	}
-                                                                                                                                                                            
+
 	void CImplicitXML::setupNoise() {
 		for(pugi::xml_node layer = data.child("Module"); layer; layer = layer.next_sibling("Module")) {
 			mCImplicitSequence->AddLayer(
-				layer.attribute("Type").value(), 
+				layer.attribute("Type").value(),
 				layer.attribute("Name").value()
 			);
 
-			for(pugi::xml_node function: layer.children()) 
+			for(pugi::xml_node function: layer.children())
 			{
 				mCImplicitSequence->SetAttribute(
 					layer.attribute("Name").value(),
@@ -35,7 +35,7 @@ namespace anl
 					function.child_value()
 				);
 			}
-			
+
 		}
 
 		mCImplicitSequence->SetRenderNode(data.child_value("Render"));
@@ -60,6 +60,4 @@ namespace anl
 	{
 		return mCImplicitSequence->get(x,y,z,w,u,v);
 	}
-
-
 };

@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/salmonmoose/dev/accidentalnoise/editor
+CMAKE_SOURCE_DIR = /home/salmonmoose/dev/accidentalnoise
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/salmonmoose/dev/accidentalnoise/editor
+CMAKE_BINARY_DIR = /home/salmonmoose/dev/accidentalnoise
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -69,14 +69,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/salmonmoose/dev/accidentalnoise/editor/CMakeFiles /home/salmonmoose/dev/accidentalnoise/editor/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/salmonmoose/dev/accidentalnoise/editor/CMakeFiles 0
+	cd /home/salmonmoose/dev/accidentalnoise && $(CMAKE_COMMAND) -E cmake_progress_start /home/salmonmoose/dev/accidentalnoise/CMakeFiles /home/salmonmoose/dev/accidentalnoise/editor/CMakeFiles/progress.marks
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f CMakeFiles/Makefile2 editor/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/salmonmoose/dev/accidentalnoise/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f CMakeFiles/Makefile2 editor/clean
 .PHONY : clean
 
 # The main clean target
@@ -85,30 +85,31 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f CMakeFiles/Makefile2 editor/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f CMakeFiles/Makefile2 editor/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/salmonmoose/dev/accidentalnoise && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named ane
+# Convenience name for target.
+editor/CMakeFiles/ane.dir/rule:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f CMakeFiles/Makefile2 editor/CMakeFiles/ane.dir/rule
+.PHONY : editor/CMakeFiles/ane.dir/rule
 
-# Build rule for target.
-ane: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ane
+# Convenience name for target.
+ane: editor/CMakeFiles/ane.dir/rule
 .PHONY : ane
 
 # fast build rule for target.
 ane/fast:
-	$(MAKE) -f CMakeFiles/ane.dir/build.make CMakeFiles/ane.dir/build
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/build
 .PHONY : ane/fast
 
 ane.o: ane.cpp.o
@@ -116,7 +117,7 @@ ane.o: ane.cpp.o
 
 # target to build an object file
 ane.cpp.o:
-	$(MAKE) -f CMakeFiles/ane.dir/build.make CMakeFiles/ane.dir/ane.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/ane.cpp.o
 .PHONY : ane.cpp.o
 
 ane.i: ane.cpp.i
@@ -124,7 +125,7 @@ ane.i: ane.cpp.i
 
 # target to preprocess a source file
 ane.cpp.i:
-	$(MAKE) -f CMakeFiles/ane.dir/build.make CMakeFiles/ane.dir/ane.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/ane.cpp.i
 .PHONY : ane.cpp.i
 
 ane.s: ane.cpp.s
@@ -132,7 +133,7 @@ ane.s: ane.cpp.s
 
 # target to generate assembly for a file
 ane.cpp.s:
-	$(MAKE) -f CMakeFiles/ane.dir/build.make CMakeFiles/ane.dir/ane.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/ane.cpp.s
 .PHONY : ane.cpp.s
 
 networkaccessmanager.o: networkaccessmanager.cpp.o
@@ -140,7 +141,7 @@ networkaccessmanager.o: networkaccessmanager.cpp.o
 
 # target to build an object file
 networkaccessmanager.cpp.o:
-	$(MAKE) -f CMakeFiles/ane.dir/build.make CMakeFiles/ane.dir/networkaccessmanager.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/networkaccessmanager.cpp.o
 .PHONY : networkaccessmanager.cpp.o
 
 networkaccessmanager.i: networkaccessmanager.cpp.i
@@ -148,7 +149,7 @@ networkaccessmanager.i: networkaccessmanager.cpp.i
 
 # target to preprocess a source file
 networkaccessmanager.cpp.i:
-	$(MAKE) -f CMakeFiles/ane.dir/build.make CMakeFiles/ane.dir/networkaccessmanager.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/networkaccessmanager.cpp.i
 .PHONY : networkaccessmanager.cpp.i
 
 networkaccessmanager.s: networkaccessmanager.cpp.s
@@ -156,7 +157,7 @@ networkaccessmanager.s: networkaccessmanager.cpp.s
 
 # target to generate assembly for a file
 networkaccessmanager.cpp.s:
-	$(MAKE) -f CMakeFiles/ane.dir/build.make CMakeFiles/ane.dir/networkaccessmanager.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/networkaccessmanager.cpp.s
 .PHONY : networkaccessmanager.cpp.s
 
 noisereply.o: noisereply.cpp.o
@@ -164,7 +165,7 @@ noisereply.o: noisereply.cpp.o
 
 # target to build an object file
 noisereply.cpp.o:
-	$(MAKE) -f CMakeFiles/ane.dir/build.make CMakeFiles/ane.dir/noisereply.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/noisereply.cpp.o
 .PHONY : noisereply.cpp.o
 
 noisereply.i: noisereply.cpp.i
@@ -172,7 +173,7 @@ noisereply.i: noisereply.cpp.i
 
 # target to preprocess a source file
 noisereply.cpp.i:
-	$(MAKE) -f CMakeFiles/ane.dir/build.make CMakeFiles/ane.dir/noisereply.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/noisereply.cpp.i
 .PHONY : noisereply.cpp.i
 
 noisereply.s: noisereply.cpp.s
@@ -180,7 +181,7 @@ noisereply.s: noisereply.cpp.s
 
 # target to generate assembly for a file
 noisereply.cpp.s:
-	$(MAKE) -f CMakeFiles/ane.dir/build.make CMakeFiles/ane.dir/noisereply.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/noisereply.cpp.s
 .PHONY : noisereply.cpp.s
 
 noiseview.o: noiseview.cpp.o
@@ -188,7 +189,7 @@ noiseview.o: noiseview.cpp.o
 
 # target to build an object file
 noiseview.cpp.o:
-	$(MAKE) -f CMakeFiles/ane.dir/build.make CMakeFiles/ane.dir/noiseview.cpp.o
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/noiseview.cpp.o
 .PHONY : noiseview.cpp.o
 
 noiseview.i: noiseview.cpp.i
@@ -196,7 +197,7 @@ noiseview.i: noiseview.cpp.i
 
 # target to preprocess a source file
 noiseview.cpp.i:
-	$(MAKE) -f CMakeFiles/ane.dir/build.make CMakeFiles/ane.dir/noiseview.cpp.i
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/noiseview.cpp.i
 .PHONY : noiseview.cpp.i
 
 noiseview.s: noiseview.cpp.s
@@ -204,7 +205,7 @@ noiseview.s: noiseview.cpp.s
 
 # target to generate assembly for a file
 noiseview.cpp.s:
-	$(MAKE) -f CMakeFiles/ane.dir/build.make CMakeFiles/ane.dir/noiseview.cpp.s
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/noiseview.cpp.s
 .PHONY : noiseview.cpp.s
 
 # Help Target
@@ -239,6 +240,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/salmonmoose/dev/accidentalnoise && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

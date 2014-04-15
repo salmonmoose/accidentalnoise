@@ -8,7 +8,7 @@
 namespace anl
 {
     class CImplicitSequence;
-    
+
     class CImplicitXML
     {
     	private:

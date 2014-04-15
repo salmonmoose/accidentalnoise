@@ -3,8 +3,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/ane.dir/noisereply.cpp.o"
   "CMakeFiles/ane.dir/noiseview.cpp.o"
   "CMakeFiles/ane.dir/ane.cpp.o"
-  "ane.pdb"
-  "ane"
+  "../bin/ane.pdb"
+  "../bin/ane"
 )
 
 # Per-language clean rules from dependency scanning.

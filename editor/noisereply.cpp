@@ -1,44 +1,44 @@
 #include "noisereply.h"
 
-NoiseReply::NoiseReply(const QUrl &url)
+NoiseReply::NoiseReply(const QUrl &url, anl::CImplicitSequence * pImplicitSequence)
 	: QNetworkReply()
 {
-	processData();
+	processData(url, pImplicitSequence);
 	setContent();
 }
 
-void NoiseReply::processData()
+void NoiseReply::processData(const QUrl &url, anl::CImplicitSequence * pImplicitSequence)
 {
 
 	qDebug("processData");
+
+	qDebug(url.host().toStdString().c_str());
+
+	pImplicitSequence->SetRenderNode(url.host().toStdString().c_str());
 
 	QImage image(256,256,QImage::Format_RGB32);
 
 	QRgb value;
 
-	value = qRgb(127,127,127);
-
-	image.fill(value);
-
 	QBuffer buffer(&content);
+
+	int depth;
+
+	for (int y = 0; y < 256; y++) {
+		for (int x = 0; x < 256; x++) {
+			depth = 127 + ((int)127 * pImplicitSequence->get(x / 255.0, y / 255.0));
+			value = qRgb(depth, depth, depth);
+			image.setPixel(x,y, value);
+		}
+	}
 
 	buffer.open(QIODevice::WriteOnly);
 	image.save(&buffer, "PNG");
-
-	//QFile file(QDir::currentPath() + "/test.png");
-
-	//if (!file.open(QIODevice::ReadOnly)) return;
-
-	//content = file.readAll();
-
-	qDebug("Content: %s", content.data());
 }
 
 void NoiseReply::setContent()
 {
 	offset = 0;
-
-	qDebug("Size: %d", content.size());
 
 	open(ReadOnly | Unbuffered);
 	setHeader(QNetworkRequest::ContentLengthHeader, QVariant(content.size()));
