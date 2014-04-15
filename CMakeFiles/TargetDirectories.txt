@@ -1,2 +1,0 @@
-/home/salmonmoose/dev/accidentalnoise/src/CMakeFiles/accidentalnoise.dir
-/home/salmonmoose/dev/accidentalnoise/editor/CMakeFiles/ane.dir
