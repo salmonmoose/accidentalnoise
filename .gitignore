@@ -2,4 +2,4 @@
 lib
 build
 .depend
-CMakeFiles
+*CMakeFiles*
