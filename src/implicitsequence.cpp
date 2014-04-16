@@ -4,40 +4,45 @@ namespace anl
 {
 	CImplicitSequence::CImplicitSequence()
 	{
-
+        RegisterTypes();
 	}
 
 	void CImplicitSequence::RegisterTypes()
 	{
 		renderNode = false;
-		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitAutoCorrect>("AutoCorrect");
-		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitBasisFunction>("BasisFunction");
-		//anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitBias>("Bias");
-		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitBlend>("Blend");
-		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitBrightContrast>("BrightContrast");
-		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitCache>("Cache");
-		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitCellular>("Cellular");
-		//bool Clamp_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitClamp>("Clamp");
-		//bool Combiner_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitCombiner>("Combiner");
-		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitConstant>("Constant");
-		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitCos>("Cos");
-		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitExtractRGBAChannel>("ExtractRGBAChannel");
-		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitFloor>("Floor");
-		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitFractal>("Fractal");
-		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitFunctionGradient>("FunctionGradient");
-		//bool Gain_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitGain>("Gain");
-		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitGradient>("Gradient");
-		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitInvert>("Invert");
-		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitPow>("Pow");
-		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitRGBADotProduct>("RGBADotProduct");
-		//bool RotateDomain_r = anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitRotateDomain>("RotateDomain");
-		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitScaleDomain>("ScaleDomain");
-		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitScaleOffset>("ScaleOffset");
-		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitSelect>("Select");
-		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitSin>("Sin");
-		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitSphere>("Sphere");
-		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitTiers>("Tiers");
-		anl::CImplicitModuleFactory::instance().register_type<anl::CImplicitTranslateDomain>("TranslateDomain");
+
+        mCImplicitModuleFactory = new generic_factory<std::string, anl::CImplicitModuleBase>();
+
+        mCImplicitModuleFactory->register_type<anl::CImplicitAutoCorrect>("AutoCorrect");
+        mCImplicitModuleFactory->register_type<anl::CImplicitBasisFunction>("BasisFunction");
+        mCImplicitModuleFactory->register_type<anl::CImplicitBlend>("Blend");
+        mCImplicitModuleFactory->register_type<anl::CImplicitBrightContrast>("BrightContrast");
+        mCImplicitModuleFactory->register_type<anl::CImplicitCache>("Cache");
+        mCImplicitModuleFactory->register_type<anl::CImplicitCellular>("Cellular");
+        mCImplicitModuleFactory->register_type<anl::CImplicitConstant>("Constant");
+        mCImplicitModuleFactory->register_type<anl::CImplicitCos>("Cos");
+        mCImplicitModuleFactory->register_type<anl::CImplicitExtractRGBAChannel>("ExtractRGBAChannel");
+        mCImplicitModuleFactory->register_type<anl::CImplicitFloor>("Floor");
+        mCImplicitModuleFactory->register_type<anl::CImplicitFractal>("Fractal");
+        mCImplicitModuleFactory->register_type<anl::CImplicitFunctionGradient>("FunctionGradient");
+        mCImplicitModuleFactory->register_type<anl::CImplicitGradient>("Gradient");
+        mCImplicitModuleFactory->register_type<anl::CImplicitInvert>("Invert");
+        mCImplicitModuleFactory->register_type<anl::CImplicitPow>("Pow");
+        mCImplicitModuleFactory->register_type<anl::CImplicitRGBADotProduct>("RGBADotProduct");
+		mCImplicitModuleFactory->register_type<anl::CImplicitScaleDomain>("ScaleDomain");
+		mCImplicitModuleFactory->register_type<anl::CImplicitScaleOffset>("ScaleOffset");
+		mCImplicitModuleFactory->register_type<anl::CImplicitSelect>("Select");
+		mCImplicitModuleFactory->register_type<anl::CImplicitSin>("Sin");
+		mCImplicitModuleFactory->register_type<anl::CImplicitSphere>("Sphere");
+		mCImplicitModuleFactory->register_type<anl::CImplicitTiers>("Tiers");
+		mCImplicitModuleFactory->register_type<anl::CImplicitTranslateDomain>("TranslateDomain");
+
+        //TODO:
+        //mCImplicitModuleFactory->register_type<anl::CImplicitBias>("Bias");
+        //mCImplicitModuleFactory->register_type<anl::CImplicitClamp>("Clamp");
+        //mCImplicitModuleFactory->register_type<anl::CImplicitCombiner>("Combiner");
+        //mCImplicitModuleFactory->register_type<anl::CImplicitGain>("Gain");
+        //mCImplicitModuleFactory->register_type<anl::CImplicitRotateDomain>("RotateDomain");
 	}
 
     std::map<std::string, EInputTypes> CImplicitSequence::InputMap = {
@@ -74,7 +79,9 @@ namespace anl
     	noiseTree.insert(
     		std::pair<std::string, std::unique_ptr<anl::CImplicitModuleBase>>(
 				name,
-				std::unique_ptr<anl::CImplicitModuleBase>(anl::CImplicitModuleFactory::instance().build_object(type))
+				std::unique_ptr<anl::CImplicitModuleBase>(
+                    mCImplicitModuleFactory->build_object(type)
+                )
 			)
 		);
     }
@@ -85,32 +92,37 @@ namespace anl
 
     	if(noiseTreeIterator != noiseTree.end())
     	{
-    		switch(InputMap.find(type)->second)
-    		{
-    			case INT:
-    			{
-    				(*noiseTreeIterator).second.get()->setIntInput(attribute, atoi(value.c_str()));
-    			}
-    			break;
-    			case ENUM:
-    			{
-    				(*noiseTreeIterator).second.get()->setIntInput(attribute, ENUMMap.find(value)->second);
-    			}
-    			break;
-    			case NOISE:
-    			{
-    				tmp = noiseTree.find(value)->second.get();
-    				(*noiseTreeIterator).second.get()->setNoiseInput(attribute, tmp);
-    			}
-    			break;
-    			case DOUBLE:
-    			default:
-    			{
-    				(*noiseTreeIterator).second.get()->setDoubleInput(attribute, atof(value.c_str()));
-    			}
-    			break;
-    		}
+            SetAttribute((*noiseTreeIterator).second.get(), attribute, InputMap.find(type)->second, value);
     	}
+    }
+
+    void CImplicitSequence::SetAttribute(anl::CImplicitModuleBase *node, std::string attribute, EInputTypes type, std::string value)
+    {
+        switch(type)
+        {
+            case INT:
+            {
+                node->setIntInput(attribute, atoi(value.c_str()));
+            }
+            break;
+            case ENUM:
+            {
+                node->setIntInput(attribute, ENUMMap.find(value)->second);
+            }
+            break;
+            case NOISE:
+            {
+                tmp = noiseTree.find(value)->second.get();
+                node->setNoiseInput(attribute, tmp);
+            }
+            break;
+            case DOUBLE:
+            default:
+            {
+                node->setDoubleInput(attribute, atof(value.c_str()));
+            }
+            break;
+        }
     }
 
     void CImplicitSequence::SetRenderNode(std::string layer)
@@ -122,35 +134,87 @@ namespace anl
     	}
     }
 
+    std::vector<std::string> CImplicitSequence::GetLayerOptions()
+    {
+        return mCImplicitModuleFactory->get_keys();
+    }
+
+    std::string CImplicitSequence::GetAttributes()
+    {
+        return "None";
+    }
+
 	double CImplicitSequence::get(double x, double y) {
 		if(renderNode) {
-			return render->get(x,y);
+			return get(render, x, y);
 		} else {
 			return 0.0;
 		}
 	}
+
+    double CImplicitSequence::get(std::string node, double x, double y) {
+        tmp = noiseTree.find(node)->second.get();
+
+        return get(tmp, x, y);
+    }
+
+    double CImplicitSequence::get(anl::CImplicitModuleBase *node, double x, double y) {
+        return node->get(x, y);
+    }
 
 	double CImplicitSequence::get(double x, double y, double z) {
 		if(renderNode) {
-			return render->get(x,y,z);
+			return get(render, x, y, z);
 		} else {
 			return 0.0;
 		}
 	}
+
+    double CImplicitSequence::get(std::string node, double x, double y, double z)
+    {
+        tmp = noiseTree.find(node)->second.get();
+
+        return get(tmp, x, y, z);
+    }
+
+    double CImplicitSequence::get(anl::CImplicitModuleBase *node, double x, double y, double z)
+    {
+        return node->get(x, y, z);
+    }
 
 	double CImplicitSequence::get(double x, double y, double z, double w) {
 		if(renderNode) {
-			return render->get(x,y,z,w);
+			return get(render, x, y, z, w);
 		} else {
 			return 0.0;
 		}
 	}
 
+    double CImplicitSequence::get(std::string node, double x, double y, double z, double w) {
+        tmp = noiseTree.find(node)->second.get();
+
+        return get(tmp, x, y, z, w);
+    }
+
+    double CImplicitSequence::get(anl::CImplicitModuleBase *node, double x, double y, double z, double w) {
+        return node->get(x, y, z, w);
+    }
+
 	double CImplicitSequence::get(double x, double y, double z, double w, double u, double v) {
 		if(renderNode) {
-			return render->get(x,y,z,w,u,v);
+			return get(render, x, y, z, w, u, v);
 		} else {
 			return 0.0;
 		}
 	}
+
+    double CImplicitSequence::get(std::string node, double x, double y, double z, double w, double u, double v) {
+        tmp = noiseTree.find(node)->second.get();
+
+        return get(tmp, x, y, z, w, u, v);
+    }
+
+    double CImplicitSequence::get(anl::CImplicitModuleBase *node, double x, double y, double z, double w, double u, double v) {
+        return node->get(x, y, z, w, u, v);
+    }
 }

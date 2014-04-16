@@ -3,7 +3,9 @@
 
 #include <iostream>
 #include <memory>
+#include <vector>
 #include "anl.h"
+#include "factory.h"
 
 #include "implicitmodulebase.h"
 
@@ -28,6 +30,8 @@ namespace anl
 			anl::CImplicitModuleBase * value;
 			anl::CImplicitModuleBase * render;
 
+			generic_factory<std::string, anl::CImplicitModuleBase> * mCImplicitModuleFactory;
+
 			static std::map<std::string, EInputTypes> InputMap;
 			static std::map<std::string, unsigned int> ENUMMap;
 
@@ -36,12 +40,26 @@ namespace anl
 			void RegisterTypes();
 			void AddLayer(std::string type, std::string name);
 			void SetAttribute(std::string layer, std::string attribute, std::string type, std::string value);
+			void SetAttribute(anl::CImplicitModuleBase *node, std::string attribute, EInputTypes type, std::string value);
 			void SetRenderNode(std::string layer);
+
+    		std::vector<std::string> GetLayerOptions();
+    		std::string GetAttributes();
 
 			double get(double x, double y);
 			double get(double x, double y, double z);
 			double get(double x, double y, double z, double w);
 			double get(double x, double y, double z, double w, double u, double v);
+
+			double get(std::string node, double x, double y);
+			double get(std::string node, double x, double y, double z);
+			double get(std::string node, double x, double y, double z, double w);
+			double get(std::string node, double x, double y, double z, double w, double u, double v);
+
+			double get(anl::CImplicitModuleBase *node, double x, double y);
+			double get(anl::CImplicitModuleBase *node, double x, double y, double z);
+			double get(anl::CImplicitModuleBase *node, double x, double y, double z, double w);
+			double get(anl::CImplicitModuleBase *node, double x, double y, double z, double w, double u, double v);
 
 			std::map<std::string, std::unique_ptr<CImplicitModuleBase>> noiseTree;
 			std::map<std::string, std::unique_ptr<CImplicitModuleBase>>::iterator noiseTreeIterator;

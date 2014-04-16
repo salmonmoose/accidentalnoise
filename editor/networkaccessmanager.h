@@ -10,6 +10,7 @@ class NetworkAccessManager : public QNetworkAccessManager
 {
 public:
 	NetworkAccessManager(QNetworkAccessManager *oldManager, QObject *parent = 0);
+	void setSequence(anl::CImplicitSequence * nCImplicitSequence);
 	anl::CImplicitSequence * mCImplicitSequence;
 protected:
 	QNetworkReply *createRequest(Operation operation, const QNetworkRequest &request, QIODevice *device);

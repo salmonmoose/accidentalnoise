@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/salmonmoose/dev/accidentalnoise/editor/networkaccessmanager.cpp
-networkaccessmanager.h
-/home/salmonmoose/dev/accidentalnoise/editor/networkaccessmanager.h
-
 /home/salmonmoose/dev/accidentalnoise/editor/networkaccessmanager.h
 QNetworkAccessManager
 -
@@ -35,6 +31,20 @@ QBuffer
 -
 anl.h
 -
+
+/home/salmonmoose/dev/accidentalnoise/editor/noiseview.cpp
+noiseview.h
+/home/salmonmoose/dev/accidentalnoise/editor/noiseview.h
+
+/home/salmonmoose/dev/accidentalnoise/editor/noiseview.h
+QWebView
+-
+algorithm
+-
+networkaccessmanager.h
+/home/salmonmoose/dev/accidentalnoise/editor/networkaccessmanager.h
+anl.h
+/home/salmonmoose/dev/accidentalnoise/editor/anl.h
 
 /usr/include/qt5/QtCore/QBuffer
 qbuffer.h
@@ -84,6 +94,10 @@ qshareddata.h
 qstring.h
 /usr/include/qt5/QtCore/qstring.h
 
+/usr/include/qt5/QtCore/QStringList
+qstringlist.h
+/usr/include/qt5/QtCore/qstringlist.h
+
 /usr/include/qt5/QtCore/QTimer
 qtimer.h
 /usr/include/qt5/QtCore/qtimer.h
@@ -97,6 +111,8 @@ qvariant.h
 /usr/include/qt5/QtCore/qvariant.h
 
 /usr/include/qt5/QtCore/QtCore
+QtCore/QtCoreDepends
+-
 qabstractanimation.h
 /usr/include/qt5/QtCore/qabstractanimation.h
 qanimationgroup.h
@@ -117,12 +133,12 @@ qcompilerdetection.h
 /usr/include/qt5/QtCore/qcompilerdetection.h
 qendian.h
 /usr/include/qt5/QtCore/qendian.h
-qfeatures.h
-/usr/include/qt5/QtCore/qfeatures.h
 qflags.h
 /usr/include/qt5/QtCore/qflags.h
 qglobal.h
 /usr/include/qt5/QtCore/qglobal.h
+qglobalstatic.h
+/usr/include/qt5/QtCore/qglobalstatic.h
 qisenum.h
 /usr/include/qt5/QtCore/qisenum.h
 qlibraryinfo.h
@@ -157,14 +173,22 @@ qfiledevice.h
 /usr/include/qt5/QtCore/qfiledevice.h
 qfileinfo.h
 /usr/include/qt5/QtCore/qfileinfo.h
+qfileselector.h
+/usr/include/qt5/QtCore/qfileselector.h
 qfilesystemwatcher.h
 /usr/include/qt5/QtCore/qfilesystemwatcher.h
 qiodevice.h
 /usr/include/qt5/QtCore/qiodevice.h
+qlockfile.h
+/usr/include/qt5/QtCore/qlockfile.h
+qloggingcategory.h
+/usr/include/qt5/QtCore/qloggingcategory.h
 qprocess.h
 /usr/include/qt5/QtCore/qprocess.h
 qresource.h
 /usr/include/qt5/QtCore/qresource.h
+qsavefile.h
+/usr/include/qt5/QtCore/qsavefile.h
 qsettings.h
 /usr/include/qt5/QtCore/qsettings.h
 qstandardpaths.h
@@ -323,6 +347,12 @@ qcache.h
 /usr/include/qt5/QtCore/qcache.h
 qchar.h
 /usr/include/qt5/QtCore/qchar.h
+qcollator.h
+/usr/include/qt5/QtCore/qcollator.h
+qcommandlineoption.h
+/usr/include/qt5/QtCore/qcommandlineoption.h
+qcommandlineparser.h
+/usr/include/qt5/QtCore/qcommandlineparser.h
 qcontainerfwd.h
 /usr/include/qt5/QtCore/qcontainerfwd.h
 qcontiguouscache.h
@@ -351,6 +381,8 @@ qmap.h
 /usr/include/qt5/QtCore/qmap.h
 qmargins.h
 /usr/include/qt5/QtCore/qmargins.h
+qmessageauthenticationcode.h
+/usr/include/qt5/QtCore/qmessageauthenticationcode.h
 qpair.h
 /usr/include/qt5/QtCore/qpair.h
 qpoint.h
@@ -391,6 +423,8 @@ qtextboundaryfinder.h
 /usr/include/qt5/QtCore/qtextboundaryfinder.h
 qtimeline.h
 /usr/include/qt5/QtCore/qtimeline.h
+qtimezone.h
+/usr/include/qt5/QtCore/qtimezone.h
 qvarlengtharray.h
 /usr/include/qt5/QtCore/qvarlengtharray.h
 qvector.h
@@ -399,6 +433,8 @@ qxmlstream.h
 /usr/include/qt5/QtCore/qxmlstream.h
 qtcoreversion.h
 /usr/include/qt5/QtCore/qtcoreversion.h
+
+/usr/include/qt5/QtCore/QtCoreDepends
 
 /usr/include/qt5/QtCore/qabstractanimation.h
 QtCore/qobject.h
@@ -469,8 +505,6 @@ QtCore/qglobal.h
 -
 QtCore/qbasicatomic.h
 -
-
-/usr/include/qt5/QtCore/qatomic_aarch64.h
 
 /usr/include/qt5/QtCore/qatomic_alpha.h
 QtCore/qoldbasicatomic.h
@@ -545,8 +579,8 @@ QtCore/qoldbasicatomic.h
 -
 
 /usr/include/qt5/QtCore/qatomic_sparc.h
-QtCore/qoldbasicatomic.h
--
+qatomic_gcc.h
+/usr/include/qt5/QtCore/qatomic_gcc.h
 
 /usr/include/qt5/QtCore/qatomic_unix.h
 QtCore/qgenericatomic.h
@@ -577,8 +611,6 @@ QtCore/qatomic_integrity.h
 /usr/include/qt5/QtCore/QtCore/qatomic_integrity.h
 QtCore/qatomic_vxworks.h
 /usr/include/qt5/QtCore/QtCore/qatomic_vxworks.h
-QtCore/qatomic_aarch64.h
-/usr/include/qt5/QtCore/QtCore/qatomic_aarch64.h
 QtCore/qatomic_alpha.h
 /usr/include/qt5/QtCore/QtCore/qatomic_alpha.h
 QtCore/qatomic_armv7.h
@@ -654,6 +686,28 @@ QtCore/qhash.h
 QtCore/qglobal.h
 -
 
+/usr/include/qt5/QtCore/qcollator.h
+QtCore/qstring.h
+-
+QtCore/qstringlist.h
+-
+QtCore/qlocale.h
+-
+
+/usr/include/qt5/QtCore/qcommandlineoption.h
+QtCore/qstringlist.h
+-
+QtCore/qshareddata.h
+-
+
+/usr/include/qt5/QtCore/qcommandlineparser.h
+QtCore/qstringlist.h
+-
+QtCore/qcoreapplication.h
+-
+QtCore/qcommandlineoption.h
+-
+
 /usr/include/qt5/QtCore/qcompilerdetection.h
 QtCore/qglobal.h
 -
@@ -675,11 +729,17 @@ new
 -
 
 /usr/include/qt5/QtCore/qcoreapplication.h
+QtCore/qglobal.h
+-
+QtCore/qstring.h
+-
 QtCore/qobject.h
 -
 QtCore/qcoreevent.h
 -
 QtCore/qeventloop.h
+-
+QtCore/qscopedpointer.h
 -
 
 /usr/include/qt5/QtCore/qcoreevent.h
@@ -826,6 +886,12 @@ QtCore/qshareddata.h
 QtCore/qmetatype.h
 -
 
+/usr/include/qt5/QtCore/qfileselector.h
+QtCore/QObject
+-
+QtCore/QStringList
+-
+
 /usr/include/qt5/QtCore/qfilesystemwatcher.h
 QtCore/qobject.h
 -
@@ -883,11 +949,13 @@ QtCore/qfeatures.h
 -
 QtCore/qsystemdetection.h
 -
-QtCore/qcompilerdetection.h
--
 QtCore/qprocessordetection.h
 -
+QtCore/qcompilerdetection.h
+-
 algorithm
+-
+QtCore/qglobalstatic.h
 -
 QtCore/qlogging.h
 -
@@ -896,6 +964,14 @@ QtCore/qflags.h
 QtCore/qsysinfo.h
 -
 QtCore/qtypeinfo.h
+-
+
+/usr/include/qt5/QtCore/qglobalstatic.h
+QtCore/qglobal.h
+-
+QtCore/qatomic.h
+-
+QtCore/qmutex.h
 -
 
 /usr/include/qt5/QtCore/qhash.h
@@ -909,6 +985,8 @@ QtCore/qpair.h
 -
 QtCore/qrefcount.h
 -
+initializer_list
+-
 
 /usr/include/qt5/QtCore/qhistorystate.h
 QtCore/qabstractstate.h
@@ -919,6 +997,8 @@ QtCore/qabstractproxymodel.h
 -
 
 /usr/include/qt5/QtCore/qiodevice.h
+QtCore/qglobal.h
+-
 QtCore/qobject.h
 -
 QtCore/qobjectdefs.h
@@ -993,6 +1073,10 @@ iterator
 -
 list
 -
+algorithm
+-
+initializer_list
+-
 
 /usr/include/qt5/QtCore/qlist.h
 QtCore/qalgorithms.h
@@ -1004,6 +1088,8 @@ QtCore/qrefcount.h
 iterator
 -
 list
+-
+algorithm
 -
 initializer_list
 -
@@ -1026,8 +1112,20 @@ QtCore/qobjectdefs.h
 QtCore/qshareddata.h
 -
 
+/usr/include/qt5/QtCore/qlockfile.h
+QtCore/qstring.h
+-
+QtCore/qscopedpointer.h
+-
+
 /usr/include/qt5/QtCore/qlogging.h
 QtCore/qglobal.h
+-
+
+/usr/include/qt5/QtCore/qloggingcategory.h
+QtCore/qglobal.h
+-
+QtCore/qdebug.h
 -
 
 /usr/include/qt5/QtCore/qmap.h
@@ -1045,15 +1143,21 @@ map
 -
 new
 -
+initializer_list
+-
 
 /usr/include/qt5/QtCore/qmargins.h
-QtCore/qnamespace.h
+QtCore/qrect.h
 -
 
 /usr/include/qt5/QtCore/qmath.h
 math.h
 -
 QtCore/qglobal.h
+-
+
+/usr/include/qt5/QtCore/qmessageauthenticationcode.h
+QtCore/qcryptographichash.h
 -
 
 /usr/include/qt5/QtCore/qmetaobject.h
@@ -1073,9 +1177,17 @@ QtCore/qvarlengtharray.h
 -
 QtCore/qisenum.h
 -
+QtCore/qtypetraits.h
+-
 QtCore/qobjectdefs.h
 -
 new
+-
+vector
+-
+list
+-
+map
 -
 
 /usr/include/qt5/QtCore/qmimedata.h
@@ -1165,9 +1277,13 @@ QtCore/qobject.h
 -
 QtCore/qpointer.h
 -
+QtCore/qjsonobject.h
+-
 
 /usr/include/qt5/QtCore/qpluginloader.h
 QtCore/qlibrary.h
+-
+QtCore/qplugin.h
 -
 
 /usr/include/qt5/QtCore/qpoint.h
@@ -1213,11 +1329,17 @@ QtCore/qatomic.h
 -
 
 /usr/include/qt5/QtCore/qregexp.h
+QtCore/qglobal.h
+-
 QtCore/qstring.h
 -
 
 /usr/include/qt5/QtCore/qregularexpression.h
+QtCore/qglobal.h
+-
 QtCore/qstring.h
+-
+QtCore/qstringlist.h
 -
 QtCore/qshareddata.h
 -
@@ -1246,6 +1368,14 @@ QtCore/qdebug.h
 QtCore/qglobal.h
 -
 
+/usr/include/qt5/QtCore/qsavefile.h
+QtCore/qglobal.h
+-
+QtCore/qfiledevice.h
+-
+QtCore/qstring.h
+-
+
 /usr/include/qt5/QtCore/qscopedpointer.h
 QtCore/qglobal.h
 -
@@ -1266,6 +1396,8 @@ QtCore/qanimationgroup.h
 
 /usr/include/qt5/QtCore/qset.h
 QtCore/qhash.h
+-
+initializer_list
 -
 
 /usr/include/qt5/QtCore/qsettings.h
@@ -1308,6 +1440,8 @@ QtCore/qatomic.h
 QtCore/qobject.h
 -
 QtCore/qhash.h
+-
+utility
 -
 
 /usr/include/qt5/QtCore/qsignalmapper.h
@@ -1415,6 +1549,10 @@ QtCore/qglobal.h
 /usr/include/qt5/QtCore/qsystemdetection.h
 QtCore/qglobal.h
 -
+TargetConditionals.h
+-
+Availability.h
+-
 AvailabilityMacros.h
 -
 
@@ -1422,12 +1560,6 @@ AvailabilityMacros.h
 QtCore/qstring.h
 -
 QtCore/qscopedpointer.h
--
-
-/usr/include/qt5/QtCore/qt_windows.h
-windows.h
--
-ceconfig.h
 -
 
 /usr/include/qt5/QtCore/qtcoreversion.h
@@ -1495,9 +1627,19 @@ QtCore/qobject.h
 -
 
 /usr/include/qt5/QtCore/qtimer.h
+QtCore/qglobal.h
+-
 QtCore/qbasictimer.h
 -
 QtCore/qobject.h
+-
+
+/usr/include/qt5/QtCore/qtimezone.h
+QtCore/qsharedpointer.h
+-
+QtCore/qlocale.h
+-
+QtCore/qdatetime.h
 -
 
 /usr/include/qt5/QtCore/qtranslator.h
@@ -1561,6 +1703,8 @@ QtCore/qhash.h
 -
 QtCore/qstring.h
 -
+QtCore/qstringlist.h
+-
 QtCore/qobject.h
 -
 
@@ -1589,6 +1733,8 @@ string.h
 -
 stdlib.h
 -
+algorithm
+-
 
 /usr/include/qt5/QtCore/qvector.h
 QtCore/qalgorithms.h
@@ -1611,6 +1757,8 @@ string.h
 -
 initializer_list
 -
+algorithm
+-
 QtCore/qpoint.h
 -
 
@@ -1623,8 +1771,6 @@ limits.h
 /usr/include/qt5/QtCore/qwineventnotifier.h
 QtCore/qobject.h
 /usr/include/qt5/QtCore/QtCore/qobject.h
-QtCore/qt_windows.h
-/usr/include/qt5/QtCore/QtCore/qt_windows.h
 
 /usr/include/qt5/QtCore/qxmlstream.h
 QtCore/qiodevice.h
@@ -1640,6 +1786,104 @@ QtCore/qscopedpointer.h
 qimage.h
 /usr/include/qt5/QtGui/qimage.h
 
+/usr/include/qt5/QtGui/qbrush.h
+QtCore/qpair.h
+-
+QtCore/qpoint.h
+-
+QtCore/qvector.h
+-
+QtCore/qscopedpointer.h
+-
+QtGui/qcolor.h
+-
+QtGui/qmatrix.h
+-
+QtGui/qtransform.h
+-
+QtGui/qimage.h
+-
+QtGui/qpixmap.h
+-
+
+/usr/include/qt5/QtGui/qcolor.h
+QtGui/qrgb.h
+-
+QtCore/qnamespace.h
+-
+QtCore/qstringlist.h
+-
+
+/usr/include/qt5/QtGui/qcursor.h
+QtCore/qpoint.h
+-
+QtGui/qwindowdefs.h
+-
+
+/usr/include/qt5/QtGui/qevent.h
+QtGui/qwindowdefs.h
+-
+QtCore/qobject.h
+-
+QtGui/qregion.h
+-
+QtCore/qnamespace.h
+-
+QtCore/qstring.h
+-
+QtGui/qkeysequence.h
+-
+QtCore/qcoreevent.h
+-
+QtCore/qvariant.h
+-
+QtCore/qmap.h
+-
+QtCore/qvector.h
+-
+QtCore/qset.h
+-
+QtCore/qurl.h
+-
+QtCore/qfile.h
+-
+QtGui/qvector2d.h
+-
+QtGui/qtouchdevice.h
+-
+
+/usr/include/qt5/QtGui/qfont.h
+QtGui/qwindowdefs.h
+-
+QtCore/qstring.h
+-
+QtCore/qsharedpointer.h
+-
+
+/usr/include/qt5/QtGui/qfontinfo.h
+QtGui/qfont.h
+-
+QtCore/qsharedpointer.h
+-
+
+/usr/include/qt5/QtGui/qfontmetrics.h
+QtGui/qfont.h
+-
+QtCore/qsharedpointer.h
+-
+QtCore/qrect.h
+-
+
+/usr/include/qt5/QtGui/qicon.h
+QtCore/qglobal.h
+-
+QtCore/qsize.h
+-
+QtCore/qlist.h
+-
+QtGui/qpixmap.h
+-
+
 /usr/include/qt5/QtGui/qimage.h
 QtGui/qtransform.h
 -
@@ -1654,6 +1898,14 @@ QtCore/qrect.h
 QtCore/qstring.h
 -
 QtCore/qstringlist.h
+-
+
+/usr/include/qt5/QtGui/qkeysequence.h
+QtCore/qnamespace.h
+-
+QtCore/qstring.h
+-
+QtCore/qobjectdefs.h
 -
 
 /usr/include/qt5/QtGui/qmatrix.h
@@ -1676,6 +1928,36 @@ QtGui/qwindowdefs.h
 QtCore/qrect.h
 -
 
+/usr/include/qt5/QtGui/qpainter.h
+QtCore/qnamespace.h
+-
+QtCore/qrect.h
+-
+QtCore/qpoint.h
+-
+QtCore/qscopedpointer.h
+-
+QtGui/qpixmap.h
+-
+QtGui/qimage.h
+-
+QtGui/qtextoption.h
+-
+QtGui/qpolygon.h
+-
+QtGui/qpen.h
+-
+QtGui/qbrush.h
+-
+QtGui/qmatrix.h
+-
+QtGui/qtransform.h
+-
+QtGui/qfontinfo.h
+-
+QtGui/qfontmetrics.h
+-
+
 /usr/include/qt5/QtGui/qpainterpath.h
 QtGui/qmatrix.h
 -
@@ -1688,6 +1970,36 @@ QtCore/qline.h
 QtCore/qvector.h
 -
 QtCore/qscopedpointer.h
+-
+
+/usr/include/qt5/QtGui/qpalette.h
+QtGui/qwindowdefs.h
+-
+QtGui/qcolor.h
+-
+QtGui/qbrush.h
+-
+
+/usr/include/qt5/QtGui/qpen.h
+QtGui/qcolor.h
+-
+QtGui/qbrush.h
+-
+
+/usr/include/qt5/QtGui/qpixmap.h
+QtGui/qpaintdevice.h
+-
+QtGui/qcolor.h
+-
+QtCore/qnamespace.h
+-
+QtCore/qstring.h
+-
+QtCore/qsharedpointer.h
+-
+QtGui/qimage.h
+-
+QtGui/qtransform.h
 -
 
 /usr/include/qt5/QtGui/qpolygon.h
@@ -1712,6 +2024,18 @@ QtCore/qdatastream.h
 QtCore/qglobal.h
 -
 
+/usr/include/qt5/QtGui/qtextoption.h
+QtCore/qnamespace.h
+-
+QtCore/qchar.h
+-
+QtCore/qmetatype.h
+-
+
+/usr/include/qt5/QtGui/qtouchdevice.h
+QtCore/qobject.h
+-
+
 /usr/include/qt5/QtGui/qtransform.h
 QtGui/qmatrix.h
 -
@@ -1728,6 +2052,12 @@ QtCore/qline.h
 QtCore/qpoint.h
 -
 QtCore/qrect.h
+-
+
+/usr/include/qt5/QtGui/qvector2d.h
+QtCore/qpoint.h
+-
+QtCore/qmetatype.h
 -
 
 /usr/include/qt5/QtGui/qwindowdefs.h
@@ -1756,8 +2086,12 @@ qnetworkreply.h
 qnetworkrequest.h
 /usr/include/qt5/QtNetwork/qnetworkrequest.h
 
+/usr/include/qt5/QtNetwork/QSslConfiguration
+qsslconfiguration.h
+/usr/include/qt5/QtNetwork/qsslconfiguration.h
+
 /usr/include/qt5/QtNetwork/QtNetwork
-QtCore/QtCore
+QtNetwork/QtNetworkDepends
 -
 qabstractnetworkcache.h
 /usr/include/qt5/QtNetwork/qabstractnetworkcache.h
@@ -1823,6 +2157,10 @@ qsslsocket.h
 /usr/include/qt5/QtNetwork/qsslsocket.h
 qtnetworkversion.h
 /usr/include/qt5/QtNetwork/qtnetworkversion.h
+
+/usr/include/qt5/QtNetwork/QtNetworkDepends
+QtCore/QtCore
+-
 
 /usr/include/qt5/QtNetwork/qabstractnetworkcache.h
 QtCore/qobject.h
@@ -1902,6 +2240,8 @@ QtCore/qdebug.h
 
 /usr/include/qt5/QtNetwork/qnetworkaccessmanager.h
 QtCore/QObject
+-
+QtNetwork/QSslConfiguration
 -
 
 /usr/include/qt5/QtNetwork/qnetworkconfigmanager.h
@@ -2092,6 +2432,90 @@ QtNetwork/qabstractsocket.h
 QtNetwork/qhostaddress.h
 -
 
+/usr/include/qt5/QtWebKit/qwebkitglobal.h
+QtCore/qglobal.h
+-
+QtCore/qstring.h
+-
+
+/usr/include/qt5/QtWebKit/qwebsettings.h
+qwebkitglobal.h
+/usr/include/qt5/QtWebKit/qwebkitglobal.h
+QtCore/qstring.h
+-
+QtGui/qpixmap.h
+-
+QtGui/qicon.h
+-
+QtCore/qshareddata.h
+-
+
+/usr/include/qt5/QtWebKitWidgets/QWebView
+qwebview.h
+/usr/include/qt5/QtWebKitWidgets/qwebview.h
+
+/usr/include/qt5/QtWebKitWidgets/qwebpage.h
+QtWebKit/qwebkitglobal.h
+-
+QtWebKit/qwebsettings.h
+-
+QtCore/qobject.h
+-
+QtCore/qurl.h
+-
+QtWidgets/qwidget.h
+-
+
+/usr/include/qt5/QtWebKitWidgets/qwebview.h
+QtWebKit/qwebkitglobal.h
+-
+QtWebKitWidgets/qwebpage.h
+-
+QtCore/qurl.h
+-
+QtGui/qicon.h
+-
+QtGui/qpainter.h
+-
+QtNetwork/qnetworkaccessmanager.h
+-
+QtWidgets/qwidget.h
+-
+
+/usr/include/qt5/QtWidgets/qsizepolicy.h
+QtCore/qobject.h
+-
+
+/usr/include/qt5/QtWidgets/qwidget.h
+QtGui/qwindowdefs.h
+-
+QtCore/qobject.h
+-
+QtCore/qmargins.h
+-
+QtGui/qpaintdevice.h
+-
+QtGui/qpalette.h
+-
+QtGui/qfont.h
+-
+QtGui/qfontmetrics.h
+-
+QtGui/qfontinfo.h
+-
+QtWidgets/qsizepolicy.h
+-
+QtGui/qregion.h
+-
+QtGui/qbrush.h
+-
+QtGui/qcursor.h
+-
+QtGui/qkeysequence.h
+-
+QtGui/qevent.h
+-
+
 editor/../include/anl.h
 cellulargen.h
 editor/../include/cellulargen.h
@@ -2184,6 +2608,8 @@ editor/../include/implicitmodulebase.h
 
 editor/../include/factory.h
 map
+-
+vector
 -
 functional
 -
@@ -2333,8 +2759,12 @@ iostream
 -
 memory
 -
+vector
+-
 anl.h
 editor/../include/anl.h
+factory.h
+editor/../include/factory.h
 implicitmodulebase.h
 editor/../include/implicitmodulebase.h
 

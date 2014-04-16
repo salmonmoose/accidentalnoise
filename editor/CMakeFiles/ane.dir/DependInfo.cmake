@@ -17,7 +17,9 @@ SET(CMAKE_TARGET_DEFINITIONS
   "QT_GUI_LIB"
   "QT_LOCATION_LIB"
   "QT_NETWORK_LIB"
+  "QT_NO_DEBUG"
   "QT_OPENGL_LIB"
+  "QT_POSITIONING_LIB"
   "QT_PRINTSUPPORT_LIB"
   "QT_QML_LIB"
   "QT_QUICK_LIB"
@@ -37,9 +39,9 @@ SET(CMAKE_C_TARGET_INCLUDE_PATH
   "editor"
   "editor/."
   "editor/../include"
+  "/usr/include/qt5"
   "/usr/include/qt5/QtGui"
   "/usr/include/qt5/QtCore"
-  "/usr/include/qt5"
   "/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64"
   "/usr/include/qt5/QtWidgets"
   "/usr/include/qt5/QtWebKit"
@@ -50,6 +52,7 @@ SET(CMAKE_C_TARGET_INCLUDE_PATH
   "/usr/include/qt5/QtOpenGL"
   "/usr/include/qt5/QtPrintSupport"
   "/usr/include/qt5/QtLocation"
+  "/usr/include/qt5/QtPositioning"
   "/usr/include/qt5/QtSensors"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

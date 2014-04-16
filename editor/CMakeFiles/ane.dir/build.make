@@ -157,21 +157,22 @@ bin/ane: editor/CMakeFiles/ane.dir/noiseview.cpp.o
 bin/ane: editor/CMakeFiles/ane.dir/ane.cpp.o
 bin/ane: editor/CMakeFiles/ane.dir/build.make
 bin/ane: src/libaccidentalnoise.a
-bin/ane: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.0.2
-bin/ane: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.0.2
+bin/ane: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.2.1
+bin/ane: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.2.1
 bin/ane: /usr/lib/x86_64-linux-gnu/libQt5WebKit.so.5.1.1
 bin/ane: /usr/lib/x86_64-linux-gnu/libQt5WebKitWidgets.so.5.1.1
 bin/ane: /usr/lib/x86_64-linux-gnu/libQt5WebKit.so.5.1.1
-bin/ane: /usr/lib/x86_64-linux-gnu/libQt5Quick.so.5.0.2
-bin/ane: /usr/lib/x86_64-linux-gnu/libQt5Qml.so.5.0.2
-bin/ane: /usr/lib/x86_64-linux-gnu/libQt5Network.so.5.0.2
-bin/ane: /usr/lib/x86_64-linux-gnu/libQt5OpenGL.so.5.0.2
-bin/ane: /usr/lib/x86_64-linux-gnu/libQt5PrintSupport.so.5.0.2
-bin/ane: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.0.2
-bin/ane: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.0.2
-bin/ane: /usr/lib/x86_64-linux-gnu/libQt5Location.so.5.2.0
-bin/ane: /usr/lib/x86_64-linux-gnu/libQt5Sensors.so.5.1.0
-bin/ane: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.0.2
+bin/ane: /usr/lib/x86_64-linux-gnu/libQt5Quick.so.5.2.1
+bin/ane: /usr/lib/x86_64-linux-gnu/libQt5Qml.so.5.2.1
+bin/ane: /usr/lib/x86_64-linux-gnu/libQt5Network.so.5.2.1
+bin/ane: /usr/lib/x86_64-linux-gnu/libQt5OpenGL.so.5.2.1
+bin/ane: /usr/lib/x86_64-linux-gnu/libQt5PrintSupport.so.5.2.1
+bin/ane: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.2.1
+bin/ane: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.2.1
+bin/ane: /usr/lib/x86_64-linux-gnu/libQt5Location.so.5.2.1
+bin/ane: /usr/lib/x86_64-linux-gnu/libQt5Positioning.so.5.2.1
+bin/ane: /usr/lib/x86_64-linux-gnu/libQt5Sensors.so.5.2.1
+bin/ane: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.2.1
 bin/ane: editor/CMakeFiles/ane.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../bin/ane"
 	cd /home/salmonmoose/dev/accidentalnoise/editor && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ane.dir/link.txt --verbose=$(VERBOSE)

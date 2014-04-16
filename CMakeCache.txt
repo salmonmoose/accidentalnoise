@@ -7,7 +7,7 @@
 # The syntax for the file is as follows:
 # KEY:TYPE=VALUE
 # KEY is the name of a variable in the cache.
-# TYPE is a hint to GUI's for the type of VALUE, DO NOT EDIT TYPE!.
+# TYPE is a hint to GUIs for the type of VALUE, DO NOT EDIT TYPE!.
 # VALUE is the current value for the KEY.
 
 ########################
@@ -155,6 +155,21 @@ CMAKE_SKIP_INSTALL_RPATH:BOOL=NO
 //If set, runtime paths are not added when using shared libraries.
 CMAKE_SKIP_RPATH:BOOL=NO
 
+//Flags used by the linker during the creation of static libraries.
+CMAKE_STATIC_LINKER_FLAGS:STRING=
+
+//Flags used by the linker during debug builds.
+CMAKE_STATIC_LINKER_FLAGS_DEBUG:STRING=
+
+//Flags used by the linker during release minsize builds.
+CMAKE_STATIC_LINKER_FLAGS_MINSIZEREL:STRING=
+
+//Flags used by the linker during release builds.
+CMAKE_STATIC_LINKER_FLAGS_RELEASE:STRING=
+
+//Flags used by the linker during Release with Debug Info builds.
+CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
+
 //Path to a program.
 CMAKE_STRIP:FILEPATH=/usr/bin/strip
 
@@ -181,6 +196,9 @@ Qt5Network_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Network
 
 //The directory containing a CMake configuration file for Qt5OpenGL.
 Qt5OpenGL_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5OpenGL
+
+//The directory containing a CMake configuration file for Qt5Positioning.
+Qt5Positioning_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Positioning
 
 //The directory containing a CMake configuration file for Qt5PrintSupport.
 Qt5PrintSupport_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5PrintSupport
@@ -224,7 +242,7 @@ CMAKE_CACHE_MAJOR_VERSION:INTERNAL=2
 //Minor version of cmake used to create the current loaded cache
 CMAKE_CACHE_MINOR_VERSION:INTERNAL=8
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=11
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=12
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
 CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.
@@ -320,6 +338,16 @@ CMAKE_SHARED_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 CMAKE_SKIP_INSTALL_RPATH-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_SKIP_RPATH
 CMAKE_SKIP_RPATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_STATIC_LINKER_FLAGS
+CMAKE_STATIC_LINKER_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_STATIC_LINKER_FLAGS_DEBUG
+CMAKE_STATIC_LINKER_FLAGS_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_STATIC_LINKER_FLAGS_MINSIZEREL
+CMAKE_STATIC_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_STATIC_LINKER_FLAGS_RELEASE
+CMAKE_STATIC_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO
+CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_STRIP
 CMAKE_STRIP-ADVANCED:INTERNAL=1
 //uname command

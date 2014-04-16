@@ -12,9 +12,7 @@ void NoiseReply::processData(const QUrl &url, anl::CImplicitSequence * pImplicit
 
 	qDebug("processData");
 
-	qDebug(url.host().toStdString().c_str());
-
-	pImplicitSequence->SetRenderNode(url.host().toStdString().c_str());
+	qDebug("Host: %s", url.host().toStdString().c_str());
 
 	QImage image(256,256,QImage::Format_RGB32);
 
@@ -26,7 +24,7 @@ void NoiseReply::processData(const QUrl &url, anl::CImplicitSequence * pImplicit
 
 	for (int y = 0; y < 256; y++) {
 		for (int x = 0; x < 256; x++) {
-			depth = 127 + ((int)127 * pImplicitSequence->get(x / 255.0, y / 255.0));
+			depth = ((int)127 * pImplicitSequence->get(url.host().toStdString().c_str(), x / 255.0, y / 255.0));
 			value = qRgb(depth, depth, depth);
 			image.setPixel(x,y, value);
 		}
@@ -62,7 +60,7 @@ qint64 NoiseReply::bytesAvailable() const
 {
 	qint64 available = content.size() - offset + QIODevice::bytesAvailable();
 
-	qDebug("Size: %d - Offset: %d + Available: %d = Bytes Available: %d", content.size(), offset, QIODevice::bytesAvailable(), available);
+	qDebug("Size: %d - Offset: %d + Available: %d = Bytes Available: %d", content.size(), (int)offset, (int)QIODevice::bytesAvailable(), (int)available);
 
 	return available;
 }

@@ -40,7 +40,7 @@ namespace anl
             intFunctions[key] = input;
             return true;
         }
-        
+
         bool registerNoiseInput(std::string const& key, noise_v const& input) {
             noiseFunctions[key] = input;
             return true;

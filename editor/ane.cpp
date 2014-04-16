@@ -14,17 +14,11 @@ int main(int argc, char* argv[]) {
 	QApplication app(argc, argv);
 	NoiseView *view = new NoiseView();
 
-	//view->load(QUrl("http://www.google.com"));
-
 	QString fileName = QDir::currentPath() + "/interface.html";
 
 	view->load(QUrl::fromLocalFile(fileName));
 
 	view->show();
-/*
-	QWebInspector * inspect = new QWebInspector();
-	inspect->setPage(view->page());
-	inspect->show();
-*/
+
 	return app.exec();
 }
