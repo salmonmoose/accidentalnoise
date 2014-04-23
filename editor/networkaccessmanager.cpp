@@ -1,16 +1,12 @@
 #include "networkaccessmanager.h"
 
-NetworkAccessManager::NetworkAccessManager(QNetworkAccessManager *manager, QObject *parent)
+NetworkAccessManager::NetworkAccessManager(QNetworkAccessManager *manager, anl::CImplicitSequence *nCImplicitSequence, QObject *parent)
 	: QNetworkAccessManager(parent)
 {
 	setCache(manager->cache());
 	setCookieJar(manager->cookieJar());
 	setProxy(manager->proxy());
 	setProxyFactory(manager->proxyFactory());
-}
-
-void NetworkAccessManager::setSequence(anl::CImplicitSequence * nCImplicitSequence)
-{
 	mCImplicitSequence = nCImplicitSequence;
 }
 

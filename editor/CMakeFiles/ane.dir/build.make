@@ -72,9 +72,32 @@ editor/CMakeFiles/ane.dir/networkaccessmanager.cpp.o.provides: editor/CMakeFiles
 
 editor/CMakeFiles/ane.dir/networkaccessmanager.cpp.o.provides.build: editor/CMakeFiles/ane.dir/networkaccessmanager.cpp.o
 
+editor/CMakeFiles/ane.dir/accidentalnoisesequence.cpp.o: editor/CMakeFiles/ane.dir/flags.make
+editor/CMakeFiles/ane.dir/accidentalnoisesequence.cpp.o: editor/accidentalnoisesequence.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object editor/CMakeFiles/ane.dir/accidentalnoisesequence.cpp.o"
+	cd /home/salmonmoose/dev/accidentalnoise/editor && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ane.dir/accidentalnoisesequence.cpp.o -c /home/salmonmoose/dev/accidentalnoise/editor/accidentalnoisesequence.cpp
+
+editor/CMakeFiles/ane.dir/accidentalnoisesequence.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ane.dir/accidentalnoisesequence.cpp.i"
+	cd /home/salmonmoose/dev/accidentalnoise/editor && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/salmonmoose/dev/accidentalnoise/editor/accidentalnoisesequence.cpp > CMakeFiles/ane.dir/accidentalnoisesequence.cpp.i
+
+editor/CMakeFiles/ane.dir/accidentalnoisesequence.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ane.dir/accidentalnoisesequence.cpp.s"
+	cd /home/salmonmoose/dev/accidentalnoise/editor && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/salmonmoose/dev/accidentalnoise/editor/accidentalnoisesequence.cpp -o CMakeFiles/ane.dir/accidentalnoisesequence.cpp.s
+
+editor/CMakeFiles/ane.dir/accidentalnoisesequence.cpp.o.requires:
+.PHONY : editor/CMakeFiles/ane.dir/accidentalnoisesequence.cpp.o.requires
+
+editor/CMakeFiles/ane.dir/accidentalnoisesequence.cpp.o.provides: editor/CMakeFiles/ane.dir/accidentalnoisesequence.cpp.o.requires
+	$(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/accidentalnoisesequence.cpp.o.provides.build
+.PHONY : editor/CMakeFiles/ane.dir/accidentalnoisesequence.cpp.o.provides
+
+editor/CMakeFiles/ane.dir/accidentalnoisesequence.cpp.o.provides.build: editor/CMakeFiles/ane.dir/accidentalnoisesequence.cpp.o
+
 editor/CMakeFiles/ane.dir/noisereply.cpp.o: editor/CMakeFiles/ane.dir/flags.make
 editor/CMakeFiles/ane.dir/noisereply.cpp.o: editor/noisereply.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object editor/CMakeFiles/ane.dir/noisereply.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/editor && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ane.dir/noisereply.cpp.o -c /home/salmonmoose/dev/accidentalnoise/editor/noisereply.cpp
 
@@ -97,7 +120,7 @@ editor/CMakeFiles/ane.dir/noisereply.cpp.o.provides.build: editor/CMakeFiles/ane
 
 editor/CMakeFiles/ane.dir/noiseview.cpp.o: editor/CMakeFiles/ane.dir/flags.make
 editor/CMakeFiles/ane.dir/noiseview.cpp.o: editor/noiseview.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object editor/CMakeFiles/ane.dir/noiseview.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/editor && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ane.dir/noiseview.cpp.o -c /home/salmonmoose/dev/accidentalnoise/editor/noiseview.cpp
 
@@ -120,7 +143,7 @@ editor/CMakeFiles/ane.dir/noiseview.cpp.o.provides.build: editor/CMakeFiles/ane.
 
 editor/CMakeFiles/ane.dir/ane.cpp.o: editor/CMakeFiles/ane.dir/flags.make
 editor/CMakeFiles/ane.dir/ane.cpp.o: editor/ane.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object editor/CMakeFiles/ane.dir/ane.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/editor && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ane.dir/ane.cpp.o -c /home/salmonmoose/dev/accidentalnoise/editor/ane.cpp
 
@@ -144,6 +167,7 @@ editor/CMakeFiles/ane.dir/ane.cpp.o.provides.build: editor/CMakeFiles/ane.dir/an
 # Object files for target ane
 ane_OBJECTS = \
 "CMakeFiles/ane.dir/networkaccessmanager.cpp.o" \
+"CMakeFiles/ane.dir/accidentalnoisesequence.cpp.o" \
 "CMakeFiles/ane.dir/noisereply.cpp.o" \
 "CMakeFiles/ane.dir/noiseview.cpp.o" \
 "CMakeFiles/ane.dir/ane.cpp.o"
@@ -152,6 +176,7 @@ ane_OBJECTS = \
 ane_EXTERNAL_OBJECTS =
 
 bin/ane: editor/CMakeFiles/ane.dir/networkaccessmanager.cpp.o
+bin/ane: editor/CMakeFiles/ane.dir/accidentalnoisesequence.cpp.o
 bin/ane: editor/CMakeFiles/ane.dir/noisereply.cpp.o
 bin/ane: editor/CMakeFiles/ane.dir/noiseview.cpp.o
 bin/ane: editor/CMakeFiles/ane.dir/ane.cpp.o
@@ -182,6 +207,7 @@ editor/CMakeFiles/ane.dir/build: bin/ane
 .PHONY : editor/CMakeFiles/ane.dir/build
 
 editor/CMakeFiles/ane.dir/requires: editor/CMakeFiles/ane.dir/networkaccessmanager.cpp.o.requires
+editor/CMakeFiles/ane.dir/requires: editor/CMakeFiles/ane.dir/accidentalnoisesequence.cpp.o.requires
 editor/CMakeFiles/ane.dir/requires: editor/CMakeFiles/ane.dir/noisereply.cpp.o.requires
 editor/CMakeFiles/ane.dir/requires: editor/CMakeFiles/ane.dir/noiseview.cpp.o.requires
 editor/CMakeFiles/ane.dir/requires: editor/CMakeFiles/ane.dir/ane.cpp.o.requires

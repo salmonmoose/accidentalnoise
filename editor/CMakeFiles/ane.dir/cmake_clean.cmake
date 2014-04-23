@@ -1,5 +1,6 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/ane.dir/networkaccessmanager.cpp.o"
+  "CMakeFiles/ane.dir/accidentalnoisesequence.cpp.o"
   "CMakeFiles/ane.dir/noisereply.cpp.o"
   "CMakeFiles/ane.dir/noiseview.cpp.o"
   "CMakeFiles/ane.dir/ane.cpp.o"

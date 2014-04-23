@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+/home/salmonmoose/dev/accidentalnoise/editor/accidentalnoisesequence.cpp
+accidentalnoisesequence.h
+/home/salmonmoose/dev/accidentalnoise/editor/accidentalnoisesequence.h
+
+/home/salmonmoose/dev/accidentalnoise/editor/accidentalnoisesequence.h
+anl.h
+/home/salmonmoose/dev/accidentalnoise/editor/anl.h
+vector
+-
+QObject
+-
+
 /home/salmonmoose/dev/accidentalnoise/editor/networkaccessmanager.h
 QNetworkAccessManager
 -
@@ -15,6 +27,8 @@ anl.h
 /home/salmonmoose/dev/accidentalnoise/editor/anl.h
 noisereply.h
 /home/salmonmoose/dev/accidentalnoise/editor/noisereply.h
+accidentalnoisesequence.h
+/home/salmonmoose/dev/accidentalnoise/editor/accidentalnoisesequence.h
 
 /home/salmonmoose/dev/accidentalnoise/editor/noisereply.h
 QNetworkReply
@@ -39,12 +53,14 @@ noiseview.h
 /home/salmonmoose/dev/accidentalnoise/editor/noiseview.h
 QWebView
 -
+QWebFrame
+-
 algorithm
 -
 networkaccessmanager.h
 /home/salmonmoose/dev/accidentalnoise/editor/networkaccessmanager.h
-anl.h
-/home/salmonmoose/dev/accidentalnoise/editor/anl.h
+accidentalnoisesequence.h
+/home/salmonmoose/dev/accidentalnoise/editor/accidentalnoisesequence.h
 
 /usr/include/qt5/QtCore/QBuffer
 qbuffer.h
@@ -2450,9 +2466,27 @@ QtGui/qicon.h
 QtCore/qshareddata.h
 -
 
+/usr/include/qt5/QtWebKitWidgets/QWebFrame
+qwebframe.h
+/usr/include/qt5/QtWebKitWidgets/qwebframe.h
+
 /usr/include/qt5/QtWebKitWidgets/QWebView
 qwebview.h
 /usr/include/qt5/QtWebKitWidgets/qwebview.h
+
+/usr/include/qt5/QtWebKitWidgets/qwebframe.h
+QtCore/qobject.h
+-
+QtCore/qurl.h
+-
+QtCore/qvariant.h
+-
+QtGui/qicon.h
+-
+QtNetwork/qnetworkaccessmanager.h
+-
+QtWebKit/qwebkitglobal.h
+-
 
 /usr/include/qt5/QtWebKitWidgets/qwebpage.h
 QtWebKit/qwebkitglobal.h

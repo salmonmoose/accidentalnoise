@@ -112,6 +112,30 @@ ane/fast:
 	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/build
 .PHONY : ane/fast
 
+accidentalnoisesequence.o: accidentalnoisesequence.cpp.o
+.PHONY : accidentalnoisesequence.o
+
+# target to build an object file
+accidentalnoisesequence.cpp.o:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/accidentalnoisesequence.cpp.o
+.PHONY : accidentalnoisesequence.cpp.o
+
+accidentalnoisesequence.i: accidentalnoisesequence.cpp.i
+.PHONY : accidentalnoisesequence.i
+
+# target to preprocess a source file
+accidentalnoisesequence.cpp.i:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/accidentalnoisesequence.cpp.i
+.PHONY : accidentalnoisesequence.cpp.i
+
+accidentalnoisesequence.s: accidentalnoisesequence.cpp.s
+.PHONY : accidentalnoisesequence.s
+
+# target to generate assembly for a file
+accidentalnoisesequence.cpp.s:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/accidentalnoisesequence.cpp.s
+.PHONY : accidentalnoisesequence.cpp.s
+
 ane.o: ane.cpp.o
 .PHONY : ane.o
 
@@ -217,6 +241,9 @@ help:
 	@echo "... ane"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... accidentalnoisesequence.o"
+	@echo "... accidentalnoisesequence.i"
+	@echo "... accidentalnoisesequence.s"
 	@echo "... ane.o"
 	@echo "... ane.i"
 	@echo "... ane.s"

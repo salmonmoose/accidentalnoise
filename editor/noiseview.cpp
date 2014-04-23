@@ -2,29 +2,21 @@
 
 NoiseView::NoiseView()
 {
-	mCImplicitSequence = new anl::CImplicitSequence();
+	mAccidentalNoiseSequence = new AccidentalNoiseSequence();
+	mAccidentalNoiseSequence->buildInterfaceNodes();
 
-	std::vector<std::string> layer_options = mCImplicitSequence->GetLayerOptions();
-
-	for(
-		std::vector<std::string>::iterator it = layer_options.begin();
-		it != layer_options.end();
-		++it
-		)
-	{
-		std::string name = *it;
-		std::transform(name.begin(), name.end(), name.begin(), ::tolower);
-		qDebug("Layer: %s", (*it).c_str());
-		qDebug("Name: %s", name.c_str());
-		mCImplicitSequence->AddLayer((*it), name);
-	}
+	QString fileName = QDir::currentPath() + "/interface.html";
 
 	QNetworkAccessManager *oldManager = page()->networkAccessManager();
-	NetworkAccessManager *newManager = new NetworkAccessManager(oldManager, this);
-
-	newManager->setSequence(mCImplicitSequence);
+	NetworkAccessManager *newManager = new NetworkAccessManager(oldManager, mAccidentalNoiseSequence->mCImplicitSequence, this);
 
 	page()->setNetworkAccessManager(newManager);
 
 	page()->setForwardUnsupportedContent(true);
+
+	load(QUrl::fromLocalFile(fileName));
+}
+
+void NoiseView::addJSObject() {
+	page()->mainFrame()->addToJavaScriptWindowObject(QString("AccidentalNoiseSequence"), mAccidentalNoiseSequence);
 }

@@ -16,6 +16,7 @@ find_package(Qt5Widgets)
 add_executable(
 	ane
 	networkaccessmanager.cpp
+	accidentalnoisesequence.cpp
 	noisereply.cpp
 	noiseview.cpp
 	ane.cpp
