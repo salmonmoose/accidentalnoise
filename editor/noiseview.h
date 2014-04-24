@@ -3,6 +3,8 @@
 
 #include <QWebView>
 #include <QWebFrame>
+#include <QWebInspector>
+#include <QWebSettings>
 #include <algorithm>
 #include "networkaccessmanager.h"
 #include "accidentalnoisesequence.h"

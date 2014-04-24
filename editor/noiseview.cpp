@@ -2,8 +2,11 @@
 
 NoiseView::NoiseView()
 {
+	QWebSettings::globalSettings()->setAttribute(QWebSettings::DeveloperExtrasEnabled, true);
 	mAccidentalNoiseSequence = new AccidentalNoiseSequence();
 	mAccidentalNoiseSequence->buildInterfaceNodes();
+
+	addJSObject();
 
 	QString fileName = QDir::currentPath() + "/interface.html";
 
@@ -15,6 +18,10 @@ NoiseView::NoiseView()
 	page()->setForwardUnsupportedContent(true);
 
 	load(QUrl::fromLocalFile(fileName));
+
+	QWebInspector *inspector = new QWebInspector;
+	inspector->setPage(page());
+	inspector->show();
 }
 
 void NoiseView::addJSObject() {

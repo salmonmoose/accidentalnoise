@@ -1,6 +1,26 @@
 <html>
 	<head>
 		<script type="text/javascript">
+			window.onload = function() {
+				optionslist = AccidentalNoiseSequence.getLayerOptions();
+
+				console.debug(optionslist);
+
+				optionslist.forEach(function(layer) {
+					console.log(layer);
+				});
+
+				toolbox = document.getElementById('toolbox');
+
+				optionslist.forEach(function(layer) {
+					newP = document.createElement("p");
+					text = document.createTextNode(layer);
+
+					newP.appendChild(text);
+
+					toolbox.insertBefore(newP);
+				});
+			}
 		</script>
 		<style>
 body {
@@ -9,7 +29,6 @@ body {
 		</style>
 	</head>
 	<body>
-		<h1>Accidental Noise Editor</h1>
 		<div id="menu">
 			<ul>
 				<li>Options</li>
@@ -17,20 +36,19 @@ body {
 		</div>
 		<div id="toolbox">
 			<ul>
-				<li>Perlin</li>
 			</ul>
 		</div>
 		<div>
 			<h4>noiseexample</h4>
-			<img src="noise://sphere_interface"/>
+			<img src="noise://sphere_interface?x=50&y=50"/>
 			<div class="noise_node">
 				<input type="text" name="noise_name"/>
-				<img src="noise://fractal_interface"/>
+				<img src="noise://fractal_interface?x=50&y=50"/>
 			</div>
 		</div>
-		<img src="noise://fractal_interface"/>
-		<img src="noise://sin_interface"/>
-		<img src="noise://cos_interface"/>
-		<img src="noise://gradient_interface"/>
+		<img src="noise://fractal_interface?x=50&y=50"/>
+		<img src="noise://sin_interface?x=50&y=50"/>
+		<img src="noise://cos_interface?x=50&y=50"/>
+		<img src="noise://gradient_interface?x=50&y=50"/>
 	</body>
 </html>

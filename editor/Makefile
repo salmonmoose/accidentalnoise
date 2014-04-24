@@ -112,6 +112,20 @@ ane/fast:
 	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/build
 .PHONY : ane/fast
 
+# Convenience name for target.
+editor/CMakeFiles/ane_automoc.dir/rule:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f CMakeFiles/Makefile2 editor/CMakeFiles/ane_automoc.dir/rule
+.PHONY : editor/CMakeFiles/ane_automoc.dir/rule
+
+# Convenience name for target.
+ane_automoc: editor/CMakeFiles/ane_automoc.dir/rule
+.PHONY : ane_automoc
+
+# fast build rule for target.
+ane_automoc/fast:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f editor/CMakeFiles/ane_automoc.dir/build.make editor/CMakeFiles/ane_automoc.dir/build
+.PHONY : ane_automoc/fast
+
 accidentalnoisesequence.o: accidentalnoisesequence.cpp.o
 .PHONY : accidentalnoisesequence.o
 
@@ -159,6 +173,30 @@ ane.s: ane.cpp.s
 ane.cpp.s:
 	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/ane.cpp.s
 .PHONY : ane.cpp.s
+
+ane_automoc.o: ane_automoc.cpp.o
+.PHONY : ane_automoc.o
+
+# target to build an object file
+ane_automoc.cpp.o:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/ane_automoc.cpp.o
+.PHONY : ane_automoc.cpp.o
+
+ane_automoc.i: ane_automoc.cpp.i
+.PHONY : ane_automoc.i
+
+# target to preprocess a source file
+ane_automoc.cpp.i:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/ane_automoc.cpp.i
+.PHONY : ane_automoc.cpp.i
+
+ane_automoc.s: ane_automoc.cpp.s
+.PHONY : ane_automoc.s
+
+# target to generate assembly for a file
+ane_automoc.cpp.s:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/ane_automoc.cpp.s
+.PHONY : ane_automoc.cpp.s
 
 networkaccessmanager.o: networkaccessmanager.cpp.o
 .PHONY : networkaccessmanager.o
@@ -239,6 +277,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... ane"
+	@echo "... ane_automoc"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... accidentalnoisesequence.o"
@@ -247,6 +286,9 @@ help:
 	@echo "... ane.o"
 	@echo "... ane.i"
 	@echo "... ane.s"
+	@echo "... ane_automoc.o"
+	@echo "... ane_automoc.i"
+	@echo "... ane_automoc.s"
 	@echo "... networkaccessmanager.o"
 	@echo "... networkaccessmanager.i"
 	@echo "... networkaccessmanager.s"

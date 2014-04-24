@@ -4,14 +4,18 @@
 #include "anl.h"
 #include <vector>
 #include <QObject>
+#include <QStringList>
 
 class AccidentalNoiseSequence : public QObject
 {
+	Q_OBJECT
+
 public:
 	AccidentalNoiseSequence();
 
+	Q_INVOKABLE QStringList getLayerOptions();
+
 	void buildInterfaceNodes();
-	std::vector<std::string> getLayerOptions();
 	anl::CImplicitSequence * mCImplicitSequence;
 };
 

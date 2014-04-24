@@ -2,6 +2,7 @@
 #define NOISEREPLY_H
 
 #include <QNetworkReply>
+#include <QUrlQuery>
 #include <QTimer>
 #include <QFile>
 #include <QDir>

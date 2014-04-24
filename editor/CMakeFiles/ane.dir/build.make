@@ -164,13 +164,37 @@ editor/CMakeFiles/ane.dir/ane.cpp.o.provides: editor/CMakeFiles/ane.dir/ane.cpp.
 
 editor/CMakeFiles/ane.dir/ane.cpp.o.provides.build: editor/CMakeFiles/ane.dir/ane.cpp.o
 
+editor/CMakeFiles/ane.dir/ane_automoc.cpp.o: editor/CMakeFiles/ane.dir/flags.make
+editor/CMakeFiles/ane.dir/ane_automoc.cpp.o: editor/ane_automoc.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_6)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object editor/CMakeFiles/ane.dir/ane_automoc.cpp.o"
+	cd /home/salmonmoose/dev/accidentalnoise/editor && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ane.dir/ane_automoc.cpp.o -c /home/salmonmoose/dev/accidentalnoise/editor/ane_automoc.cpp
+
+editor/CMakeFiles/ane.dir/ane_automoc.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ane.dir/ane_automoc.cpp.i"
+	cd /home/salmonmoose/dev/accidentalnoise/editor && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/salmonmoose/dev/accidentalnoise/editor/ane_automoc.cpp > CMakeFiles/ane.dir/ane_automoc.cpp.i
+
+editor/CMakeFiles/ane.dir/ane_automoc.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ane.dir/ane_automoc.cpp.s"
+	cd /home/salmonmoose/dev/accidentalnoise/editor && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/salmonmoose/dev/accidentalnoise/editor/ane_automoc.cpp -o CMakeFiles/ane.dir/ane_automoc.cpp.s
+
+editor/CMakeFiles/ane.dir/ane_automoc.cpp.o.requires:
+.PHONY : editor/CMakeFiles/ane.dir/ane_automoc.cpp.o.requires
+
+editor/CMakeFiles/ane.dir/ane_automoc.cpp.o.provides: editor/CMakeFiles/ane.dir/ane_automoc.cpp.o.requires
+	$(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/ane_automoc.cpp.o.provides.build
+.PHONY : editor/CMakeFiles/ane.dir/ane_automoc.cpp.o.provides
+
+editor/CMakeFiles/ane.dir/ane_automoc.cpp.o.provides.build: editor/CMakeFiles/ane.dir/ane_automoc.cpp.o
+
 # Object files for target ane
 ane_OBJECTS = \
 "CMakeFiles/ane.dir/networkaccessmanager.cpp.o" \
 "CMakeFiles/ane.dir/accidentalnoisesequence.cpp.o" \
 "CMakeFiles/ane.dir/noisereply.cpp.o" \
 "CMakeFiles/ane.dir/noiseview.cpp.o" \
-"CMakeFiles/ane.dir/ane.cpp.o"
+"CMakeFiles/ane.dir/ane.cpp.o" \
+"CMakeFiles/ane.dir/ane_automoc.cpp.o"
 
 # External object files for target ane
 ane_EXTERNAL_OBJECTS =
@@ -180,6 +204,7 @@ bin/ane: editor/CMakeFiles/ane.dir/accidentalnoisesequence.cpp.o
 bin/ane: editor/CMakeFiles/ane.dir/noisereply.cpp.o
 bin/ane: editor/CMakeFiles/ane.dir/noiseview.cpp.o
 bin/ane: editor/CMakeFiles/ane.dir/ane.cpp.o
+bin/ane: editor/CMakeFiles/ane.dir/ane_automoc.cpp.o
 bin/ane: editor/CMakeFiles/ane.dir/build.make
 bin/ane: src/libaccidentalnoise.a
 bin/ane: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.2.1
@@ -211,6 +236,7 @@ editor/CMakeFiles/ane.dir/requires: editor/CMakeFiles/ane.dir/accidentalnoiseseq
 editor/CMakeFiles/ane.dir/requires: editor/CMakeFiles/ane.dir/noisereply.cpp.o.requires
 editor/CMakeFiles/ane.dir/requires: editor/CMakeFiles/ane.dir/noiseview.cpp.o.requires
 editor/CMakeFiles/ane.dir/requires: editor/CMakeFiles/ane.dir/ane.cpp.o.requires
+editor/CMakeFiles/ane.dir/requires: editor/CMakeFiles/ane.dir/ane_automoc.cpp.o.requires
 .PHONY : editor/CMakeFiles/ane.dir/requires
 
 editor/CMakeFiles/ane.dir/clean:

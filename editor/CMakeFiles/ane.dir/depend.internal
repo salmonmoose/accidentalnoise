@@ -5,6 +5,7 @@ editor/CMakeFiles/ane.dir/accidentalnoisesequence.cpp.o
  /home/salmonmoose/dev/accidentalnoise/editor/accidentalnoisesequence.cpp
  /home/salmonmoose/dev/accidentalnoise/editor/accidentalnoisesequence.h
  /usr/include/qt5/QtCore/QObject
+ /usr/include/qt5/QtCore/QStringList
  /usr/include/qt5/QtCore/qalgorithms.h
  /usr/include/qt5/QtCore/qarraydata.h
  /usr/include/qt5/QtCore/qatomic.h
@@ -34,11 +35,13 @@ editor/CMakeFiles/ane.dir/accidentalnoisesequence.cpp.o
  /usr/include/qt5/QtCore/qconfig.h
  /usr/include/qt5/QtCore/qcontainerfwd.h
  /usr/include/qt5/QtCore/qcoreevent.h
+ /usr/include/qt5/QtCore/qdatastream.h
  /usr/include/qt5/QtCore/qfeatures.h
  /usr/include/qt5/QtCore/qflags.h
  /usr/include/qt5/QtCore/qgenericatomic.h
  /usr/include/qt5/QtCore/qglobal.h
  /usr/include/qt5/QtCore/qglobalstatic.h
+ /usr/include/qt5/QtCore/qiodevice.h
  /usr/include/qt5/QtCore/qisenum.h
  /usr/include/qt5/QtCore/qiterator.h
  /usr/include/qt5/QtCore/qlist.h
@@ -51,11 +54,15 @@ editor/CMakeFiles/ane.dir/accidentalnoisesequence.cpp.o
  /usr/include/qt5/QtCore/qobjectdefs.h
  /usr/include/qt5/QtCore/qobjectdefs_impl.h
  /usr/include/qt5/QtCore/qoldbasicatomic.h
+ /usr/include/qt5/QtCore/qpair.h
  /usr/include/qt5/QtCore/qprocessordetection.h
  /usr/include/qt5/QtCore/qrefcount.h
+ /usr/include/qt5/QtCore/qregexp.h
  /usr/include/qt5/QtCore/qscopedpointer.h
  /usr/include/qt5/QtCore/qstring.h
  /usr/include/qt5/QtCore/qstringbuilder.h
+ /usr/include/qt5/QtCore/qstringlist.h
+ /usr/include/qt5/QtCore/qstringmatcher.h
  /usr/include/qt5/QtCore/qsysinfo.h
  /usr/include/qt5/QtCore/qsystemdetection.h
  /usr/include/qt5/QtCore/qtypeinfo.h
@@ -132,6 +139,7 @@ editor/CMakeFiles/ane.dir/ane.cpp.o
  /usr/include/qt5/QtCore/QStringList
  /usr/include/qt5/QtCore/QTimer
  /usr/include/qt5/QtCore/QUrl
+ /usr/include/qt5/QtCore/QUrlQuery
  /usr/include/qt5/QtCore/QVariant
  /usr/include/qt5/QtCore/QtCore
  /usr/include/qt5/QtCore/QtCoreDepends
@@ -389,11 +397,14 @@ editor/CMakeFiles/ane.dir/ane.cpp.o
  /usr/include/qt5/QtNetwork/qtcpsocket.h
  /usr/include/qt5/QtNetwork/qtnetworkversion.h
  /usr/include/qt5/QtNetwork/qudpsocket.h
+ /usr/include/qt5/QtWebKit/QWebSettings
  /usr/include/qt5/QtWebKit/qwebkitglobal.h
  /usr/include/qt5/QtWebKit/qwebsettings.h
  /usr/include/qt5/QtWebKitWidgets/QWebFrame
+ /usr/include/qt5/QtWebKitWidgets/QWebInspector
  /usr/include/qt5/QtWebKitWidgets/QWebView
  /usr/include/qt5/QtWebKitWidgets/qwebframe.h
+ /usr/include/qt5/QtWebKitWidgets/qwebinspector.h
  /usr/include/qt5/QtWebKitWidgets/qwebpage.h
  /usr/include/qt5/QtWebKitWidgets/qwebview.h
  /usr/include/qt5/QtWidgets/QApplication
@@ -401,6 +412,124 @@ editor/CMakeFiles/ane.dir/ane.cpp.o
  /usr/include/qt5/QtWidgets/qdesktopwidget.h
  /usr/include/qt5/QtWidgets/qsizepolicy.h
  /usr/include/qt5/QtWidgets/qwidget.h
+ editor/../include/anl.h
+ editor/../include/cellulargen.h
+ editor/../include/factory.h
+ editor/../include/implicitautocorrect.h
+ editor/../include/implicitbasisfunction.h
+ editor/../include/implicitbias.h
+ editor/../include/implicitblend.h
+ editor/../include/implicitbrightcontrast.h
+ editor/../include/implicitcache.h
+ editor/../include/implicitcellular.h
+ editor/../include/implicitclamp.h
+ editor/../include/implicitcombiner.h
+ editor/../include/implicitconstant.h
+ editor/../include/implicitcos.h
+ editor/../include/implicitextractrgbachannel.h
+ editor/../include/implicitfloor.h
+ editor/../include/implicitfractal.h
+ editor/../include/implicitfunctiongradient.h
+ editor/../include/implicitgain.h
+ editor/../include/implicitgradient.h
+ editor/../include/implicitinvert.h
+ editor/../include/implicitmodulebase.h
+ editor/../include/implicitpow.h
+ editor/../include/implicitrgbadotproduct.h
+ editor/../include/implicitrotatedomain.h
+ editor/../include/implicitscaledomain.h
+ editor/../include/implicitscaleoffset.h
+ editor/../include/implicitselect.h
+ editor/../include/implicitsequence.h
+ editor/../include/implicitsin.h
+ editor/../include/implicitsphere.h
+ editor/../include/implicittiers.h
+ editor/../include/implicittranslatedomain.h
+ editor/../include/mapping.h
+ editor/../include/noise_gen.h
+ editor/../include/random_gen.h
+ editor/../include/rgba.h
+ editor/../include/rgbablend.h
+ editor/../include/rgbablendops.h
+ editor/../include/rgbacomposechannels.h
+ editor/../include/rgbaconstant.h
+ editor/../include/rgbahsvtorgba.h
+ editor/../include/rgbaimplicitgrayscale.h
+ editor/../include/rgbamodulebase.h
+ editor/../include/rgbanormalize.h
+ editor/../include/rgbargbatohsv.h
+ editor/../include/rgbarotatecolor.h
+ editor/../include/rgbaselect.h
+ editor/../include/templates/tarrays.h
+ editor/../include/utility.h
+editor/CMakeFiles/ane.dir/ane_automoc.cpp.o
+ /home/salmonmoose/dev/accidentalnoise/editor/accidentalnoisesequence.h
+ /home/salmonmoose/dev/accidentalnoise/editor/ane_automoc.cpp
+ /home/salmonmoose/dev/accidentalnoise/editor/moc_accidentalnoisesequence.cpp
+ /usr/include/qt5/QtCore/QObject
+ /usr/include/qt5/QtCore/QStringList
+ /usr/include/qt5/QtCore/qalgorithms.h
+ /usr/include/qt5/QtCore/qarraydata.h
+ /usr/include/qt5/QtCore/qatomic.h
+ /usr/include/qt5/QtCore/qatomic_alpha.h
+ /usr/include/qt5/QtCore/qatomic_armv5.h
+ /usr/include/qt5/QtCore/qatomic_armv6.h
+ /usr/include/qt5/QtCore/qatomic_armv7.h
+ /usr/include/qt5/QtCore/qatomic_bfin.h
+ /usr/include/qt5/QtCore/qatomic_bootstrap.h
+ /usr/include/qt5/QtCore/qatomic_cxx11.h
+ /usr/include/qt5/QtCore/qatomic_gcc.h
+ /usr/include/qt5/QtCore/qatomic_ia64.h
+ /usr/include/qt5/QtCore/qatomic_integrity.h
+ /usr/include/qt5/QtCore/qatomic_mips.h
+ /usr/include/qt5/QtCore/qatomic_msvc.h
+ /usr/include/qt5/QtCore/qatomic_power.h
+ /usr/include/qt5/QtCore/qatomic_s390.h
+ /usr/include/qt5/QtCore/qatomic_sh4a.h
+ /usr/include/qt5/QtCore/qatomic_sparc.h
+ /usr/include/qt5/QtCore/qatomic_unix.h
+ /usr/include/qt5/QtCore/qatomic_vxworks.h
+ /usr/include/qt5/QtCore/qatomic_x86.h
+ /usr/include/qt5/QtCore/qbasicatomic.h
+ /usr/include/qt5/QtCore/qbytearray.h
+ /usr/include/qt5/QtCore/qchar.h
+ /usr/include/qt5/QtCore/qcompilerdetection.h
+ /usr/include/qt5/QtCore/qconfig.h
+ /usr/include/qt5/QtCore/qcontainerfwd.h
+ /usr/include/qt5/QtCore/qcoreevent.h
+ /usr/include/qt5/QtCore/qdatastream.h
+ /usr/include/qt5/QtCore/qfeatures.h
+ /usr/include/qt5/QtCore/qflags.h
+ /usr/include/qt5/QtCore/qgenericatomic.h
+ /usr/include/qt5/QtCore/qglobal.h
+ /usr/include/qt5/QtCore/qglobalstatic.h
+ /usr/include/qt5/QtCore/qiodevice.h
+ /usr/include/qt5/QtCore/qisenum.h
+ /usr/include/qt5/QtCore/qiterator.h
+ /usr/include/qt5/QtCore/qlist.h
+ /usr/include/qt5/QtCore/qlogging.h
+ /usr/include/qt5/QtCore/qmetatype.h
+ /usr/include/qt5/QtCore/qmutex.h
+ /usr/include/qt5/QtCore/qnamespace.h
+ /usr/include/qt5/QtCore/qobject.h
+ /usr/include/qt5/QtCore/qobject_impl.h
+ /usr/include/qt5/QtCore/qobjectdefs.h
+ /usr/include/qt5/QtCore/qobjectdefs_impl.h
+ /usr/include/qt5/QtCore/qoldbasicatomic.h
+ /usr/include/qt5/QtCore/qpair.h
+ /usr/include/qt5/QtCore/qprocessordetection.h
+ /usr/include/qt5/QtCore/qrefcount.h
+ /usr/include/qt5/QtCore/qregexp.h
+ /usr/include/qt5/QtCore/qscopedpointer.h
+ /usr/include/qt5/QtCore/qstring.h
+ /usr/include/qt5/QtCore/qstringbuilder.h
+ /usr/include/qt5/QtCore/qstringlist.h
+ /usr/include/qt5/QtCore/qstringmatcher.h
+ /usr/include/qt5/QtCore/qsysinfo.h
+ /usr/include/qt5/QtCore/qsystemdetection.h
+ /usr/include/qt5/QtCore/qtypeinfo.h
+ /usr/include/qt5/QtCore/qtypetraits.h
+ /usr/include/qt5/QtCore/qvarlengtharray.h
  editor/../include/anl.h
  editor/../include/cellulargen.h
  editor/../include/factory.h
@@ -471,6 +600,7 @@ editor/CMakeFiles/ane.dir/networkaccessmanager.cpp.o
  /usr/include/qt5/QtCore/QStringList
  /usr/include/qt5/QtCore/QTimer
  /usr/include/qt5/QtCore/QUrl
+ /usr/include/qt5/QtCore/QUrlQuery
  /usr/include/qt5/QtCore/QVariant
  /usr/include/qt5/QtCore/QtCore
  /usr/include/qt5/QtCore/QtCoreDepends
@@ -773,6 +903,7 @@ editor/CMakeFiles/ane.dir/noisereply.cpp.o
  /usr/include/qt5/QtCore/QString
  /usr/include/qt5/QtCore/QTimer
  /usr/include/qt5/QtCore/QUrl
+ /usr/include/qt5/QtCore/QUrlQuery
  /usr/include/qt5/QtCore/QVariant
  /usr/include/qt5/QtCore/qalgorithms.h
  /usr/include/qt5/QtCore/qarraydata.h
@@ -959,6 +1090,7 @@ editor/CMakeFiles/ane.dir/noiseview.cpp.o
  /usr/include/qt5/QtCore/QStringList
  /usr/include/qt5/QtCore/QTimer
  /usr/include/qt5/QtCore/QUrl
+ /usr/include/qt5/QtCore/QUrlQuery
  /usr/include/qt5/QtCore/QVariant
  /usr/include/qt5/QtCore/QtCore
  /usr/include/qt5/QtCore/QtCoreDepends
@@ -1214,11 +1346,14 @@ editor/CMakeFiles/ane.dir/noiseview.cpp.o
  /usr/include/qt5/QtNetwork/qtcpsocket.h
  /usr/include/qt5/QtNetwork/qtnetworkversion.h
  /usr/include/qt5/QtNetwork/qudpsocket.h
+ /usr/include/qt5/QtWebKit/QWebSettings
  /usr/include/qt5/QtWebKit/qwebkitglobal.h
  /usr/include/qt5/QtWebKit/qwebsettings.h
  /usr/include/qt5/QtWebKitWidgets/QWebFrame
+ /usr/include/qt5/QtWebKitWidgets/QWebInspector
  /usr/include/qt5/QtWebKitWidgets/QWebView
  /usr/include/qt5/QtWebKitWidgets/qwebframe.h
+ /usr/include/qt5/QtWebKitWidgets/qwebinspector.h
  /usr/include/qt5/QtWebKitWidgets/qwebpage.h
  /usr/include/qt5/QtWebKitWidgets/qwebview.h
  /usr/include/qt5/QtWidgets/qsizepolicy.h

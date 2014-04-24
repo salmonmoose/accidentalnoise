@@ -6,6 +6,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
 SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/salmonmoose/dev/accidentalnoise/editor/accidentalnoisesequence.cpp" "/home/salmonmoose/dev/accidentalnoise/editor/CMakeFiles/ane.dir/accidentalnoisesequence.cpp.o"
   "/home/salmonmoose/dev/accidentalnoise/editor/ane.cpp" "/home/salmonmoose/dev/accidentalnoise/editor/CMakeFiles/ane.dir/ane.cpp.o"
+  "/home/salmonmoose/dev/accidentalnoise/editor/ane_automoc.cpp" "/home/salmonmoose/dev/accidentalnoise/editor/CMakeFiles/ane.dir/ane_automoc.cpp.o"
   "/home/salmonmoose/dev/accidentalnoise/editor/networkaccessmanager.cpp" "/home/salmonmoose/dev/accidentalnoise/editor/CMakeFiles/ane.dir/networkaccessmanager.cpp.o"
   "/home/salmonmoose/dev/accidentalnoise/editor/noisereply.cpp" "/home/salmonmoose/dev/accidentalnoise/editor/CMakeFiles/ane.dir/noisereply.cpp.o"
   "/home/salmonmoose/dev/accidentalnoise/editor/noiseview.cpp" "/home/salmonmoose/dev/accidentalnoise/editor/CMakeFiles/ane.dir/noiseview.cpp.o"

@@ -124,6 +124,19 @@ ane/fast:
 	$(MAKE) -f editor/CMakeFiles/ane.dir/build.make editor/CMakeFiles/ane.dir/build
 .PHONY : ane/fast
 
+#=============================================================================
+# Target rules for targets named ane_automoc
+
+# Build rule for target.
+ane_automoc: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ane_automoc
+.PHONY : ane_automoc
+
+# fast build rule for target.
+ane_automoc/fast:
+	$(MAKE) -f editor/CMakeFiles/ane_automoc.dir/build.make editor/CMakeFiles/ane_automoc.dir/build
+.PHONY : ane_automoc/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -134,6 +147,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... accidentalnoise"
 	@echo "... ane"
+	@echo "... ane_automoc"
 .PHONY : help
 
 

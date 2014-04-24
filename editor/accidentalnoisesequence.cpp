@@ -2,6 +2,7 @@
 
 AccidentalNoiseSequence::AccidentalNoiseSequence()
 {
+	setObjectName("cppAccidentalNoiseSequence");
 	mCImplicitSequence = new anl::CImplicitSequence();
 }
 
@@ -17,4 +18,20 @@ void AccidentalNoiseSequence::buildInterfaceNodes()
 		qDebug("Name: %s", (name + "_interface").c_str());
 		mCImplicitSequence->AddLayer((*it), (name + "_interface").c_str());
 	}
+}
+
+QStringList AccidentalNoiseSequence::getLayerOptions()
+{
+	qDebug("getLayerOptions called");
+
+	std::vector<std::string> layerOptions = mCImplicitSequence->GetLayerOptions();
+
+	QStringList options = QStringList();
+
+	for (std::vector<std::string>::iterator it = layerOptions.begin(); it != layerOptions.end(); ++it)
+	{
+		options.append((*it).c_str());
+	}
+
+	return options;
 }

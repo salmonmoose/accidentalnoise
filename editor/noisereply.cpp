@@ -9,12 +9,24 @@ NoiseReply::NoiseReply(const QUrl &url, anl::CImplicitSequence * pImplicitSequen
 
 void NoiseReply::processData(const QUrl &url, anl::CImplicitSequence * pImplicitSequence)
 {
+	int x_size = 256;
+	int y_size = 256;
 
-	qDebug("processData");
+	if (url.hasQuery()) {
+		QUrlQuery query(url);
 
-	qDebug("Host: %s", url.host().toStdString().c_str());
+		if (query.hasQueryItem("x")) {
+			x_size = query.queryItemValue("x").toInt();
+		}
 
-	QImage image(256,256,QImage::Format_RGB32);
+		if (query.hasQueryItem("y")) {
+			y_size = query.queryItemValue("y").toInt();
+		}
+	}
+
+	qDebug() << QString("Generating Layer: %1 X: %2, Y: %3").arg(url.host()).arg(x_size).arg(y_size).toStdString().c_str();
+
+	QImage image(x_size, y_size,QImage::Format_RGB32);
 
 	QRgb value;
 
@@ -22,9 +34,15 @@ void NoiseReply::processData(const QUrl &url, anl::CImplicitSequence * pImplicit
 
 	int depth;
 
-	for (int y = 0; y < 256; y++) {
-		for (int x = 0; x < 256; x++) {
-			depth = ((int)127 * pImplicitSequence->get(url.host().toStdString().c_str(), x / 255.0, y / 255.0));
+	for (int y = 0; y < y_size; y++) {
+		for (int x = 0; x < x_size; x++) {
+
+			depth = ((int)127 * pImplicitSequence->get(
+				url.host().toStdString().c_str(),
+				x / (float)x_size,
+				y / (float)y_size
+			));
+
 			value = qRgb(depth, depth, depth);
 			image.setPixel(x,y, value);
 		}
@@ -60,15 +78,11 @@ qint64 NoiseReply::bytesAvailable() const
 {
 	qint64 available = content.size() - offset + QIODevice::bytesAvailable();
 
-	qDebug("Size: %d - Offset: %d + Available: %d = Bytes Available: %d", content.size(), (int)offset, (int)QIODevice::bytesAvailable(), (int)available);
-
 	return available;
 }
 
 qint64 NoiseReply::readData(char *data, qint64 maxSize)
 {
-	qDebug("reading data");
-
 	if (offset < content.size()) {
 		qint64 number = qMin(maxSize, content.size() - offset);
 		memcpy(data, content.constData() + offset, number);
