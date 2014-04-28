@@ -13,18 +13,44 @@
 				toolbox = document.getElementById('toolbox');
 
 				optionslist.forEach(function(layer) {
-					newP = document.createElement("p");
-					text = document.createTextNode(layer);
+					new_li = document.createElement("li");
+					button = document.getElementById("tool_button").cloneNode(true);
 
-					newP.appendChild(text);
+					button.setAttribute('id', layer+'_interface');
 
-					toolbox.insertBefore(newP);
+					button.querySelector('img').src = 'noise://'+layer+'_interface?x=50&y=50';
+
+					new_li.appendChild(button);
+
+					toolbox.querySelector('ul').insertBefore(new_li);
 				});
 			}
 		</script>
 		<style>
 body {
 	background-color: rgb(127,127,127);
+}
+
+#toolbox:
+{
+
+}
+
+#toolbox ul:
+{
+
+}
+
+#toolbox ul li
+{
+	display: inline;
+}
+
+#toolbox ul li a
+{
+	text-decoration: none;
+	padding: 0;
+	background-color: rgb(95,95,95);
 }
 		</style>
 	</head>
@@ -38,17 +64,12 @@ body {
 			<ul>
 			</ul>
 		</div>
-		<div>
-			<h4>noiseexample</h4>
-			<img src="noise://sphere_interface?x=50&y=50"/>
-			<div class="noise_node">
-				<input type="text" name="noise_name"/>
-				<img src="noise://fractal_interface?x=50&y=50"/>
-			</div>
+		<div id="tool_button">
+			<a href="#">
+				<img/>
+			</a>
 		</div>
-		<img src="noise://fractal_interface?x=50&y=50"/>
-		<img src="noise://sin_interface?x=50&y=50"/>
-		<img src="noise://cos_interface?x=50&y=50"/>
-		<img src="noise://gradient_interface?x=50&y=50"/>
+		<div>
+		</div>
 	</body>
 </html>
