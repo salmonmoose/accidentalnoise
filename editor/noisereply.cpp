@@ -37,7 +37,7 @@ void NoiseReply::processData(const QUrl &url, anl::CImplicitSequence * pImplicit
 	for (int y = 0; y < y_size; y++) {
 		for (int x = 0; x < x_size; x++) {
 
-			depth = ((int)127 * pImplicitSequence->get(
+			depth = ((int)255 * pImplicitSequence->get(
 				url.host().toStdString().c_str(),
 				x / (float)x_size,
 				y / (float)y_size

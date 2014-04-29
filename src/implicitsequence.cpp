@@ -26,6 +26,7 @@ namespace anl
         mCImplicitModuleFactory->register_type<anl::CImplicitFractal>("Fractal");
         mCImplicitModuleFactory->register_type<anl::CImplicitFunctionGradient>("FunctionGradient");
         mCImplicitModuleFactory->register_type<anl::CImplicitGradient>("Gradient");
+        mCImplicitModuleFactory->register_type<anl::CImplicitGrid>("Grid");
         mCImplicitModuleFactory->register_type<anl::CImplicitInvert>("Invert");
         mCImplicitModuleFactory->register_type<anl::CImplicitPow>("Pow");
         mCImplicitModuleFactory->register_type<anl::CImplicitRGBADotProduct>("RGBADotProduct");

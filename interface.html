@@ -17,8 +17,10 @@
 					button = document.getElementById("tool_button").cloneNode(true);
 
 					button.setAttribute('id', layer+'_interface');
+					button.style.display='inline';
 
 					button.querySelector('img').src = 'noise://'+layer+'_interface?x=50&y=50';
+					button.querySelector('h2').innerHTML = layer;
 
 					new_li.appendChild(button);
 
@@ -27,18 +29,22 @@
 			}
 		</script>
 		<style>
-body {
+body
+{
 	background-color: rgb(127,127,127);
 }
 
-#toolbox:
+#toolbox
 {
 
 }
 
-#toolbox ul:
+#toolbox ul
 {
-
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-align: center;
 }
 
 #toolbox ul li
@@ -52,24 +58,32 @@ body {
 	padding: 0;
 	background-color: rgb(95,95,95);
 }
+
+#toolbox h2
+{
+	display: inline;
+	font-size: 12;
+}
 		</style>
 	</head>
 	<body>
-		<div id="menu">
-			<ul>
-				<li>Options</li>
-			</ul>
-		</div>
 		<div id="toolbox">
 			<ul>
 			</ul>
 		</div>
-		<div id="tool_button">
+		<div id="tool_button" style="display: none;">
 			<a href="#">
 				<img/>
+				<h2></h2>
 			</a>
 		</div>
-		<div>
+		<div id="noise_node">
+			<div class="handle">
+				<p></p>
+			</div>
+			<div class="node">
+
+			</div>
 		</div>
 	</body>
 </html>

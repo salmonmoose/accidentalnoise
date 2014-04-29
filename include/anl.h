@@ -20,6 +20,7 @@
 #include "implicitfunctiongradient.h"
 #include "implicitgain.h"
 #include "implicitgradient.h"
+#include "implicitgrid.h"
 #include "implicitinvert.h"
 #include "implicitpow.h"
 #include "implicitrgbadotproduct.h"

@@ -28,6 +28,7 @@ add_library(
 	implicitfunctiongradient.cpp
 	implicitgain.cpp
 	implicitgradient.cpp
+	implicitgrid.cpp
 	implicitinvert.cpp
 	implicitpow.cpp
 	implicitrgbadotproduct.cpp
