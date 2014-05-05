@@ -120,6 +120,11 @@ src/CMakeFiles/accidentalnoise.dir/implicitinvert.cpp.o
  src/../include/factory.h
  src/../include/implicitinvert.h
  src/../include/implicitmodulebase.h
+src/CMakeFiles/accidentalnoise.dir/implicitjulia.cpp.o
+ /home/salmonmoose/dev/accidentalnoise/src/implicitjulia.cpp
+ src/../include/factory.h
+ src/../include/implicitjulia.h
+ src/../include/implicitmodulebase.h
 src/CMakeFiles/accidentalnoise.dir/implicitpow.cpp.o
  /home/salmonmoose/dev/accidentalnoise/src/implicitpow.cpp
  src/../include/factory.h
@@ -177,6 +182,7 @@ src/CMakeFiles/accidentalnoise.dir/implicitsequence.cpp.o
  src/../include/implicitgradient.h
  src/../include/implicitgrid.h
  src/../include/implicitinvert.h
+ src/../include/implicitjulia.h
  src/../include/implicitmodulebase.h
  src/../include/implicitpow.h
  src/../include/implicitrgbadotproduct.h
@@ -251,6 +257,7 @@ src/CMakeFiles/accidentalnoise.dir/implicitxml.cpp.o
  src/../include/implicitgradient.h
  src/../include/implicitgrid.h
  src/../include/implicitinvert.h
+ src/../include/implicitjulia.h
  src/../include/implicitmodulebase.h
  src/../include/implicitpow.h
  src/../include/implicitrgbadotproduct.h

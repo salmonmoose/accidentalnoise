@@ -90,6 +90,7 @@ editor/CMakeFiles/ane.dir/accidentalnoisesequence.cpp.o
  editor/../include/implicitgradient.h
  editor/../include/implicitgrid.h
  editor/../include/implicitinvert.h
+ editor/../include/implicitjulia.h
  editor/../include/implicitmodulebase.h
  editor/../include/implicitpow.h
  editor/../include/implicitrgbadotproduct.h
@@ -435,6 +436,7 @@ editor/CMakeFiles/ane.dir/ane.cpp.o
  editor/../include/implicitgradient.h
  editor/../include/implicitgrid.h
  editor/../include/implicitinvert.h
+ editor/../include/implicitjulia.h
  editor/../include/implicitmodulebase.h
  editor/../include/implicitpow.h
  editor/../include/implicitrgbadotproduct.h
@@ -554,6 +556,7 @@ editor/CMakeFiles/ane.dir/ane_automoc.cpp.o
  editor/../include/implicitgradient.h
  editor/../include/implicitgrid.h
  editor/../include/implicitinvert.h
+ editor/../include/implicitjulia.h
  editor/../include/implicitmodulebase.h
  editor/../include/implicitpow.h
  editor/../include/implicitrgbadotproduct.h
@@ -865,6 +868,7 @@ editor/CMakeFiles/ane.dir/networkaccessmanager.cpp.o
  editor/../include/implicitgradient.h
  editor/../include/implicitgrid.h
  editor/../include/implicitinvert.h
+ editor/../include/implicitjulia.h
  editor/../include/implicitmodulebase.h
  editor/../include/implicitpow.h
  editor/../include/implicitrgbadotproduct.h
@@ -1045,6 +1049,7 @@ editor/CMakeFiles/ane.dir/noisereply.cpp.o
  editor/../include/implicitgradient.h
  editor/../include/implicitgrid.h
  editor/../include/implicitinvert.h
+ editor/../include/implicitjulia.h
  editor/../include/implicitmodulebase.h
  editor/../include/implicitpow.h
  editor/../include/implicitrgbadotproduct.h
@@ -1385,6 +1390,7 @@ editor/CMakeFiles/ane.dir/noiseview.cpp.o
  editor/../include/implicitgradient.h
  editor/../include/implicitgrid.h
  editor/../include/implicitinvert.h
+ editor/../include/implicitjulia.h
  editor/../include/implicitmodulebase.h
  editor/../include/implicitpow.h
  editor/../include/implicitrgbadotproduct.h

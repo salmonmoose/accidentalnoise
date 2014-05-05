@@ -36,12 +36,11 @@ namespace anl
         CImplicitModuleBase::registerDoubleInput("Gain",[this] (double d) { this->setGain (d); });
         CImplicitModuleBase::registerDoubleInput("Offset",[this] (double d) { this->setOffset (d); });
         CImplicitModuleBase::registerDoubleInput("H",[this] (double d) { this->setH (d); });
-        
         CImplicitModuleBase::registerIntInput("Fractal",[this] (int i) { this->setType (i); });
         CImplicitModuleBase::registerIntInput("Basis",[this] (int i) { this->setAllBasisTypes (i); });
         CImplicitModuleBase::registerIntInput("Interpolation",[this] (int i) { this->setAllInterpolationTypes (i); });
 
-        CImplicitModuleBase::registerIntInput("Seed",[this] (int i) { this->setSeed (i); });   
+        CImplicitModuleBase::registerIntInput("Seed",[this] (int i) { this->setSeed (i); });
     }
 
     CImplicitFractal::~CImplicitFractal(){};

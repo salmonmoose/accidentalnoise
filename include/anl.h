@@ -22,6 +22,7 @@
 #include "implicitgradient.h"
 #include "implicitgrid.h"
 #include "implicitinvert.h"
+#include "implicitjulia.h"
 #include "implicitpow.h"
 #include "implicitrgbadotproduct.h"
 #include "implicitrotatedomain.h"

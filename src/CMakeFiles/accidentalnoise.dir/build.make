@@ -532,9 +532,32 @@ src/CMakeFiles/accidentalnoise.dir/implicitinvert.cpp.o.provides: src/CMakeFiles
 
 src/CMakeFiles/accidentalnoise.dir/implicitinvert.cpp.o.provides.build: src/CMakeFiles/accidentalnoise.dir/implicitinvert.cpp.o
 
+src/CMakeFiles/accidentalnoise.dir/implicitjulia.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
+src/CMakeFiles/accidentalnoise.dir/implicitjulia.cpp.o: src/implicitjulia.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_22)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/implicitjulia.cpp.o"
+	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/implicitjulia.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/implicitjulia.cpp
+
+src/CMakeFiles/accidentalnoise.dir/implicitjulia.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/accidentalnoise.dir/implicitjulia.cpp.i"
+	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/salmonmoose/dev/accidentalnoise/src/implicitjulia.cpp > CMakeFiles/accidentalnoise.dir/implicitjulia.cpp.i
+
+src/CMakeFiles/accidentalnoise.dir/implicitjulia.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/accidentalnoise.dir/implicitjulia.cpp.s"
+	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/salmonmoose/dev/accidentalnoise/src/implicitjulia.cpp -o CMakeFiles/accidentalnoise.dir/implicitjulia.cpp.s
+
+src/CMakeFiles/accidentalnoise.dir/implicitjulia.cpp.o.requires:
+.PHONY : src/CMakeFiles/accidentalnoise.dir/implicitjulia.cpp.o.requires
+
+src/CMakeFiles/accidentalnoise.dir/implicitjulia.cpp.o.provides: src/CMakeFiles/accidentalnoise.dir/implicitjulia.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitjulia.cpp.o.provides.build
+.PHONY : src/CMakeFiles/accidentalnoise.dir/implicitjulia.cpp.o.provides
+
+src/CMakeFiles/accidentalnoise.dir/implicitjulia.cpp.o.provides.build: src/CMakeFiles/accidentalnoise.dir/implicitjulia.cpp.o
+
 src/CMakeFiles/accidentalnoise.dir/implicitpow.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
 src/CMakeFiles/accidentalnoise.dir/implicitpow.cpp.o: src/implicitpow.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_22)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_23)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/implicitpow.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/implicitpow.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/implicitpow.cpp
 
@@ -557,7 +580,7 @@ src/CMakeFiles/accidentalnoise.dir/implicitpow.cpp.o.provides.build: src/CMakeFi
 
 src/CMakeFiles/accidentalnoise.dir/implicitrgbadotproduct.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
 src/CMakeFiles/accidentalnoise.dir/implicitrgbadotproduct.cpp.o: src/implicitrgbadotproduct.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_23)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_24)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/implicitrgbadotproduct.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/implicitrgbadotproduct.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/implicitrgbadotproduct.cpp
 
@@ -580,7 +603,7 @@ src/CMakeFiles/accidentalnoise.dir/implicitrgbadotproduct.cpp.o.provides.build: 
 
 src/CMakeFiles/accidentalnoise.dir/implicitrotatedomain.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
 src/CMakeFiles/accidentalnoise.dir/implicitrotatedomain.cpp.o: src/implicitrotatedomain.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_24)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_25)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/implicitrotatedomain.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/implicitrotatedomain.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/implicitrotatedomain.cpp
 
@@ -603,7 +626,7 @@ src/CMakeFiles/accidentalnoise.dir/implicitrotatedomain.cpp.o.provides.build: sr
 
 src/CMakeFiles/accidentalnoise.dir/implicitscaledomain.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
 src/CMakeFiles/accidentalnoise.dir/implicitscaledomain.cpp.o: src/implicitscaledomain.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_25)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_26)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/implicitscaledomain.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/implicitscaledomain.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/implicitscaledomain.cpp
 
@@ -626,7 +649,7 @@ src/CMakeFiles/accidentalnoise.dir/implicitscaledomain.cpp.o.provides.build: src
 
 src/CMakeFiles/accidentalnoise.dir/implicitscaleoffset.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
 src/CMakeFiles/accidentalnoise.dir/implicitscaleoffset.cpp.o: src/implicitscaleoffset.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_26)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_27)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/implicitscaleoffset.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/implicitscaleoffset.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/implicitscaleoffset.cpp
 
@@ -649,7 +672,7 @@ src/CMakeFiles/accidentalnoise.dir/implicitscaleoffset.cpp.o.provides.build: src
 
 src/CMakeFiles/accidentalnoise.dir/implicitselect.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
 src/CMakeFiles/accidentalnoise.dir/implicitselect.cpp.o: src/implicitselect.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_27)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_28)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/implicitselect.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/implicitselect.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/implicitselect.cpp
 
@@ -672,7 +695,7 @@ src/CMakeFiles/accidentalnoise.dir/implicitselect.cpp.o.provides.build: src/CMak
 
 src/CMakeFiles/accidentalnoise.dir/implicitsequence.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
 src/CMakeFiles/accidentalnoise.dir/implicitsequence.cpp.o: src/implicitsequence.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_28)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_29)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/implicitsequence.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/implicitsequence.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/implicitsequence.cpp
 
@@ -695,7 +718,7 @@ src/CMakeFiles/accidentalnoise.dir/implicitsequence.cpp.o.provides.build: src/CM
 
 src/CMakeFiles/accidentalnoise.dir/implicitsin.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
 src/CMakeFiles/accidentalnoise.dir/implicitsin.cpp.o: src/implicitsin.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_29)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_30)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/implicitsin.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/implicitsin.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/implicitsin.cpp
 
@@ -718,7 +741,7 @@ src/CMakeFiles/accidentalnoise.dir/implicitsin.cpp.o.provides.build: src/CMakeFi
 
 src/CMakeFiles/accidentalnoise.dir/implicitsphere.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
 src/CMakeFiles/accidentalnoise.dir/implicitsphere.cpp.o: src/implicitsphere.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_30)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_31)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/implicitsphere.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/implicitsphere.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/implicitsphere.cpp
 
@@ -741,7 +764,7 @@ src/CMakeFiles/accidentalnoise.dir/implicitsphere.cpp.o.provides.build: src/CMak
 
 src/CMakeFiles/accidentalnoise.dir/implicittiers.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
 src/CMakeFiles/accidentalnoise.dir/implicittiers.cpp.o: src/implicittiers.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_31)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_32)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/implicittiers.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/implicittiers.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/implicittiers.cpp
 
@@ -764,7 +787,7 @@ src/CMakeFiles/accidentalnoise.dir/implicittiers.cpp.o.provides.build: src/CMake
 
 src/CMakeFiles/accidentalnoise.dir/implicittranslatedomain.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
 src/CMakeFiles/accidentalnoise.dir/implicittranslatedomain.cpp.o: src/implicittranslatedomain.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_32)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_33)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/implicittranslatedomain.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/implicittranslatedomain.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/implicittranslatedomain.cpp
 
@@ -787,7 +810,7 @@ src/CMakeFiles/accidentalnoise.dir/implicittranslatedomain.cpp.o.provides.build:
 
 src/CMakeFiles/accidentalnoise.dir/implicitxml.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
 src/CMakeFiles/accidentalnoise.dir/implicitxml.cpp.o: src/implicitxml.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_33)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_34)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/implicitxml.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/implicitxml.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/implicitxml.cpp
 
@@ -810,7 +833,7 @@ src/CMakeFiles/accidentalnoise.dir/implicitxml.cpp.o.provides.build: src/CMakeFi
 
 src/CMakeFiles/accidentalnoise.dir/mapping.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
 src/CMakeFiles/accidentalnoise.dir/mapping.cpp.o: src/mapping.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_34)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_35)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/mapping.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/mapping.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/mapping.cpp
 
@@ -833,7 +856,7 @@ src/CMakeFiles/accidentalnoise.dir/mapping.cpp.o.provides.build: src/CMakeFiles/
 
 src/CMakeFiles/accidentalnoise.dir/noise_gen.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
 src/CMakeFiles/accidentalnoise.dir/noise_gen.cpp.o: src/noise_gen.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_35)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_36)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/noise_gen.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/noise_gen.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/noise_gen.cpp
 
@@ -856,7 +879,7 @@ src/CMakeFiles/accidentalnoise.dir/noise_gen.cpp.o.provides.build: src/CMakeFile
 
 src/CMakeFiles/accidentalnoise.dir/noise_lut.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
 src/CMakeFiles/accidentalnoise.dir/noise_lut.cpp.o: src/noise_lut.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_36)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_37)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/noise_lut.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/noise_lut.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/noise_lut.cpp
 
@@ -879,7 +902,7 @@ src/CMakeFiles/accidentalnoise.dir/noise_lut.cpp.o.provides.build: src/CMakeFile
 
 src/CMakeFiles/accidentalnoise.dir/rgbablend.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
 src/CMakeFiles/accidentalnoise.dir/rgbablend.cpp.o: src/rgbablend.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_37)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_38)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/rgbablend.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/rgbablend.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/rgbablend.cpp
 
@@ -902,7 +925,7 @@ src/CMakeFiles/accidentalnoise.dir/rgbablend.cpp.o.provides.build: src/CMakeFile
 
 src/CMakeFiles/accidentalnoise.dir/rgbablendops.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
 src/CMakeFiles/accidentalnoise.dir/rgbablendops.cpp.o: src/rgbablendops.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_38)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_39)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/rgbablendops.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/rgbablendops.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/rgbablendops.cpp
 
@@ -925,7 +948,7 @@ src/CMakeFiles/accidentalnoise.dir/rgbablendops.cpp.o.provides.build: src/CMakeF
 
 src/CMakeFiles/accidentalnoise.dir/rgbacomposechannels.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
 src/CMakeFiles/accidentalnoise.dir/rgbacomposechannels.cpp.o: src/rgbacomposechannels.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_39)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_40)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/rgbacomposechannels.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/rgbacomposechannels.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/rgbacomposechannels.cpp
 
@@ -948,7 +971,7 @@ src/CMakeFiles/accidentalnoise.dir/rgbacomposechannels.cpp.o.provides.build: src
 
 src/CMakeFiles/accidentalnoise.dir/rgbaconstant.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
 src/CMakeFiles/accidentalnoise.dir/rgbaconstant.cpp.o: src/rgbaconstant.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_40)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_41)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/rgbaconstant.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/rgbaconstant.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/rgbaconstant.cpp
 
@@ -971,7 +994,7 @@ src/CMakeFiles/accidentalnoise.dir/rgbaconstant.cpp.o.provides.build: src/CMakeF
 
 src/CMakeFiles/accidentalnoise.dir/rgbahsvtorgba.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
 src/CMakeFiles/accidentalnoise.dir/rgbahsvtorgba.cpp.o: src/rgbahsvtorgba.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_41)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_42)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/rgbahsvtorgba.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/rgbahsvtorgba.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/rgbahsvtorgba.cpp
 
@@ -994,7 +1017,7 @@ src/CMakeFiles/accidentalnoise.dir/rgbahsvtorgba.cpp.o.provides.build: src/CMake
 
 src/CMakeFiles/accidentalnoise.dir/rgbaimplicitgrayscale.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
 src/CMakeFiles/accidentalnoise.dir/rgbaimplicitgrayscale.cpp.o: src/rgbaimplicitgrayscale.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_42)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_43)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/rgbaimplicitgrayscale.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/rgbaimplicitgrayscale.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/rgbaimplicitgrayscale.cpp
 
@@ -1017,7 +1040,7 @@ src/CMakeFiles/accidentalnoise.dir/rgbaimplicitgrayscale.cpp.o.provides.build: s
 
 src/CMakeFiles/accidentalnoise.dir/rgbanormalize.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
 src/CMakeFiles/accidentalnoise.dir/rgbanormalize.cpp.o: src/rgbanormalize.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_43)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_44)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/rgbanormalize.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/rgbanormalize.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/rgbanormalize.cpp
 
@@ -1040,7 +1063,7 @@ src/CMakeFiles/accidentalnoise.dir/rgbanormalize.cpp.o.provides.build: src/CMake
 
 src/CMakeFiles/accidentalnoise.dir/rgbargbatohsv.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
 src/CMakeFiles/accidentalnoise.dir/rgbargbatohsv.cpp.o: src/rgbargbatohsv.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_44)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_45)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/rgbargbatohsv.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/rgbargbatohsv.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/rgbargbatohsv.cpp
 
@@ -1063,7 +1086,7 @@ src/CMakeFiles/accidentalnoise.dir/rgbargbatohsv.cpp.o.provides.build: src/CMake
 
 src/CMakeFiles/accidentalnoise.dir/rgbarotatecolor.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
 src/CMakeFiles/accidentalnoise.dir/rgbarotatecolor.cpp.o: src/rgbarotatecolor.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_45)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_46)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/rgbarotatecolor.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/rgbarotatecolor.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/rgbarotatecolor.cpp
 
@@ -1086,7 +1109,7 @@ src/CMakeFiles/accidentalnoise.dir/rgbarotatecolor.cpp.o.provides.build: src/CMa
 
 src/CMakeFiles/accidentalnoise.dir/rgbaselect.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
 src/CMakeFiles/accidentalnoise.dir/rgbaselect.cpp.o: src/rgbaselect.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_46)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_47)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/rgbaselect.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/rgbaselect.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/rgbaselect.cpp
 
@@ -1109,7 +1132,7 @@ src/CMakeFiles/accidentalnoise.dir/rgbaselect.cpp.o.provides.build: src/CMakeFil
 
 src/CMakeFiles/accidentalnoise.dir/pugixml.cpp.o: src/CMakeFiles/accidentalnoise.dir/flags.make
 src/CMakeFiles/accidentalnoise.dir/pugixml.cpp.o: src/pugixml.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_47)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/salmonmoose/dev/accidentalnoise/CMakeFiles $(CMAKE_PROGRESS_48)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/accidentalnoise.dir/pugixml.cpp.o"
 	cd /home/salmonmoose/dev/accidentalnoise/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/accidentalnoise.dir/pugixml.cpp.o -c /home/salmonmoose/dev/accidentalnoise/src/pugixml.cpp
 
@@ -1153,6 +1176,7 @@ accidentalnoise_OBJECTS = \
 "CMakeFiles/accidentalnoise.dir/implicitgradient.cpp.o" \
 "CMakeFiles/accidentalnoise.dir/implicitgrid.cpp.o" \
 "CMakeFiles/accidentalnoise.dir/implicitinvert.cpp.o" \
+"CMakeFiles/accidentalnoise.dir/implicitjulia.cpp.o" \
 "CMakeFiles/accidentalnoise.dir/implicitpow.cpp.o" \
 "CMakeFiles/accidentalnoise.dir/implicitrgbadotproduct.cpp.o" \
 "CMakeFiles/accidentalnoise.dir/implicitrotatedomain.cpp.o" \
@@ -1204,6 +1228,7 @@ src/libaccidentalnoise.a: src/CMakeFiles/accidentalnoise.dir/implicitgain.cpp.o
 src/libaccidentalnoise.a: src/CMakeFiles/accidentalnoise.dir/implicitgradient.cpp.o
 src/libaccidentalnoise.a: src/CMakeFiles/accidentalnoise.dir/implicitgrid.cpp.o
 src/libaccidentalnoise.a: src/CMakeFiles/accidentalnoise.dir/implicitinvert.cpp.o
+src/libaccidentalnoise.a: src/CMakeFiles/accidentalnoise.dir/implicitjulia.cpp.o
 src/libaccidentalnoise.a: src/CMakeFiles/accidentalnoise.dir/implicitpow.cpp.o
 src/libaccidentalnoise.a: src/CMakeFiles/accidentalnoise.dir/implicitrgbadotproduct.cpp.o
 src/libaccidentalnoise.a: src/CMakeFiles/accidentalnoise.dir/implicitrotatedomain.cpp.o
@@ -1261,6 +1286,7 @@ src/CMakeFiles/accidentalnoise.dir/requires: src/CMakeFiles/accidentalnoise.dir/
 src/CMakeFiles/accidentalnoise.dir/requires: src/CMakeFiles/accidentalnoise.dir/implicitgradient.cpp.o.requires
 src/CMakeFiles/accidentalnoise.dir/requires: src/CMakeFiles/accidentalnoise.dir/implicitgrid.cpp.o.requires
 src/CMakeFiles/accidentalnoise.dir/requires: src/CMakeFiles/accidentalnoise.dir/implicitinvert.cpp.o.requires
+src/CMakeFiles/accidentalnoise.dir/requires: src/CMakeFiles/accidentalnoise.dir/implicitjulia.cpp.o.requires
 src/CMakeFiles/accidentalnoise.dir/requires: src/CMakeFiles/accidentalnoise.dir/implicitpow.cpp.o.requires
 src/CMakeFiles/accidentalnoise.dir/requires: src/CMakeFiles/accidentalnoise.dir/implicitrgbadotproduct.cpp.o.requires
 src/CMakeFiles/accidentalnoise.dir/requires: src/CMakeFiles/accidentalnoise.dir/implicitrotatedomain.cpp.o.requires

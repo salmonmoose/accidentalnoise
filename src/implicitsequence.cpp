@@ -28,6 +28,7 @@ namespace anl
         mCImplicitModuleFactory->register_type<anl::CImplicitGradient>("Gradient");
         mCImplicitModuleFactory->register_type<anl::CImplicitGrid>("Grid");
         mCImplicitModuleFactory->register_type<anl::CImplicitInvert>("Invert");
+        mCImplicitModuleFactory->register_type<anl::CImplicitJulia>("Julia");
         mCImplicitModuleFactory->register_type<anl::CImplicitPow>("Pow");
         mCImplicitModuleFactory->register_type<anl::CImplicitRGBADotProduct>("RGBADotProduct");
 		mCImplicitModuleFactory->register_type<anl::CImplicitScaleDomain>("ScaleDomain");
