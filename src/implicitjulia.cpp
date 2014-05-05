@@ -2,10 +2,10 @@
 
 namespace anl
 {
-	CImplicitJulia::CImplicitJulia() : CImplicitModuleBase(), m_vx(0), m_vy(0), m_vz(0), m_vw(0), m_vu(0), m_vv(0)
+	CImplicitJulia::CImplicitJulia() : CImplicitModuleBase(), m_vx(-0.6), m_vy(0.6), m_vz(0.0), m_vw(0.0), m_vu(0.5), m_vv(0.6)
 	{
 		setIterations(20);
-		setPlot(14);
+		setPlot(10);
 	}
 	CImplicitJulia::~CImplicitJulia(){}
 
@@ -47,16 +47,18 @@ namespace anl
 
 		while (distance < 4 && iteration < m_iterations)
 		{
-			double tem = x + x;
-			x = x * x - y * y  + m_vx.get(x,y);
-			y = tem * y + m_vy.get(x,y);
+			double temp = x + x;
+			x = x * x - y * y + m_vx.get(x,y);
+			y = temp * y + m_vy.get(x,y);
 
 			iteration ++;
 
-			distance = x*x+y*y;
+			distance = x * x + y * y;
 		}
 
-		if (iteration >= m_plot && iteration <= m_iterations) {
+		if (distance >= 4) {
+			return 1.0 - iteration * 0.0625;
+		} else if (iteration >= m_plot && iteration <= m_iterations - 1) {
 			return 1.0;
 		} else {
 			return 0.0;
@@ -65,16 +67,83 @@ namespace anl
 
 	double CImplicitJulia::get(double x, double y, double z)
 	{
-		return 0.0;
+		double distance = 0;
+		unsigned int iteration = 0;
+
+		while (distance < 4 && iteration < m_iterations)
+		{
+			double temp = x + x;
+			x = x * x - y * y - z * z + m_vx.get(x, y, z);
+			y = temp * y + m_vy.get(x, y, z);
+			z = temp * z + m_vz.get(x, y, z);
+
+			iteration ++;
+
+			distance = x * x + y * y + z * z;
+		}
+
+		if (distance >= 4) {
+			return 1.0 - iteration * 0.0625;
+		} else if (iteration >= m_plot && iteration <= m_iterations - 1) {
+			return 1.0;
+		} else {
+			return 0.0;
+		}
 	}
 
 	double CImplicitJulia::get(double x, double y, double z, double w)
 	{
-		return 0.0;
+		double distance = 0;
+		unsigned int iteration = 0;
+
+		while (distance < 4 && iteration < m_iterations)
+		{
+			double temp = x + x;
+			x = x * x - y * y - z * z + m_vx.get(x, y, z, w);
+			y = temp * y + m_vy.get(x, y, z, w);
+			z = temp * z + m_vz.get(x, y, z, w);
+			w = temp * w + m_vw.get(x, y, z, w);
+
+			iteration ++;
+
+			distance = x * x + y * y + z * z + w * w;
+		}
+
+		if (distance >= 4) {
+			return 1.0 - iteration * 0.0625;
+		} else if (iteration >= m_plot && iteration <= m_iterations - 1) {
+			return 1.0;
+		} else {
+			return 0.0;
+		}
 	}
 
 	double CImplicitJulia::get(double x, double y, double z, double w, double u, double v)
 	{
-		return 0.0;
+		double distance = 0;
+		unsigned int iteration = 0;
+
+		while (distance < 4 && iteration < m_iterations)
+		{
+			double temp = x + x;
+			x = x * x - y * y - z * z + m_vx.get(x, y, z, w, u, v);
+			y = temp * y + m_vy.get(x, y, z, w, u, v);
+			z = temp * z + m_vz.get(x, y, z, w, u, v);
+			w = temp * w + m_vw.get(x, y, z, w, u, v);
+			u = temp * u + m_vu.get(x, y, z, w, u, v);
+			v = temp * v + m_vv.get(x, y, z, w, u, v);
+
+			iteration ++;
+
+			distance = x * x + y * y + z * z + w * w + u * u + v * v;
+		}
+
+		if (distance >= 4) {
+			return 1.0 - iteration * 0.0625;
+		} else if (iteration >= m_plot && iteration <= m_iterations - 1) {
+			return 1.0;
+		} else {
+			return 0.0;
+		}
 	}
 }

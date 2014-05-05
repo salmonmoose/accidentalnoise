@@ -11,8 +11,8 @@ namespace anl
 		double draw = -1.0;
 		double intpart;
 
-		if (modf(x, &intpart) > 0.5) draw *= -1.0;
-		if (modf(y, &intpart) > 0.5) draw *= -1.0;
+		if (fabs(modf(x, &intpart)) > 0.5) draw *= -1.0;
+		if (fabs(modf(y, &intpart)) > 0.5) draw *= -1.0;
 
 		if (draw > 0) {
 			return 1.0;
@@ -26,9 +26,9 @@ namespace anl
 		double draw = -1.0;
 		double intpart;
 
-		if (modf(x, &intpart) > 0.5) draw *= -1.0;
-		if (modf(y, &intpart) > 0.5) draw *= -1.0;
-		if (modf(z, &intpart) > 0.5) draw *= -1.0;
+		if (fabs(modf(x, &intpart)) > 0.5) draw *= -1.0;
+		if (fabs(modf(y, &intpart)) > 0.5) draw *= -1.0;
+		if (fabs(modf(z, &intpart)) > 0.5) draw *= -1.0;
 
 		if (draw > 0) {
 			return 1.0;
@@ -42,10 +42,10 @@ namespace anl
 		double draw = -1.0;
 		double intpart;
 
-		if (modf(x, &intpart) > 0.5) draw *= -1.0;
-		if (modf(y, &intpart) > 0.5) draw *= -1.0;
-		if (modf(z, &intpart) > 0.5) draw *= -1.0;
-		if (modf(w, &intpart) > 0.5) draw *= -1.0;
+		if (fabs(modf(x, &intpart)) > 0.5) draw *= -1.0;
+		if (fabs(modf(y, &intpart)) > 0.5) draw *= -1.0;
+		if (fabs(modf(z, &intpart)) > 0.5) draw *= -1.0;
+		if (fabs(modf(w, &intpart)) > 0.5) draw *= -1.0;
 
 		if (draw > 0) {
 			return 1.0;
@@ -59,12 +59,12 @@ namespace anl
 		double draw = -1.0;
 		double intpart;
 
-		if (modf(x, &intpart) > 0.5) draw *= -1.0;
-		if (modf(y, &intpart) > 0.5) draw *= -1.0;
-		if (modf(z, &intpart) > 0.5) draw *= -1.0;
-		if (modf(w, &intpart) > 0.5) draw *= -1.0;
-		if (modf(u, &intpart) > 0.5) draw *= -1.0;
-		if (modf(v, &intpart) > 0.5) draw *= -1.0;
+		if (fabs(modf(x, &intpart)) > 0.5) draw *= -1.0;
+		if (fabs(modf(y, &intpart)) > 0.5) draw *= -1.0;
+		if (fabs(modf(z, &intpart)) > 0.5) draw *= -1.0;
+		if (fabs(modf(w, &intpart)) > 0.5) draw *= -1.0;
+		if (fabs(modf(u, &intpart)) > 0.5) draw *= -1.0;
+		if (fabs(modf(v, &intpart)) > 0.5) draw *= -1.0;
 
 		if (draw > 0) {
 			return 1.0;

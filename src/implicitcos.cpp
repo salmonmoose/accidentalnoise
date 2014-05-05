@@ -17,7 +17,7 @@ namespace anl
 //            return cos((x + y) / 2);
 //        }
 
-        return cos((x + y) / 2);
+        return cos(x * y);
     }
     double CImplicitCos::get(double x, double y, double z)
     {

@@ -39,12 +39,12 @@ void NoiseReply::processData(const QUrl &url, anl::CImplicitSequence * pImplicit
 
 			depth = ((int)255 * pImplicitSequence->get(
 				url.host().toStdString().c_str(),
-				x / (float)x_size,
-				y / (float)y_size
+				(-x_size + (x * 2)) / (float)x_size,
+				(-y_size + (y * 2)) / (float)y_size
 			));
 
 			value = qRgb(depth, depth, depth);
-			image.setPixel(x,y, value);
+			image.setPixel( x, y, value);
 		}
 	}
 
