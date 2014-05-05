@@ -6,7 +6,25 @@ namespace anl
 	{
 		setIterations(20);
 		setPlot(10);
+
+		CImplicitModuleBase::registerDoubleInput("VectorX", [this] (double d) { this->setVectorX (d); });
+		CImplicitModuleBase::registerDoubleInput("VectorY", [this] (double d) { this->setVectorY (d); });
+		CImplicitModuleBase::registerDoubleInput("VectorZ", [this] (double d) { this->setVectorZ (d); });
+		CImplicitModuleBase::registerDoubleInput("VectorW", [this] (double d) { this->setVectorW (d); });
+		CImplicitModuleBase::registerDoubleInput("VectorU", [this] (double d) { this->setVectorU (d); });
+		CImplicitModuleBase::registerDoubleInput("VectorV", [this] (double d) { this->setVectorV (d); });
+
+		CImplicitModuleBase::registerNoiseInput("VectorX", [this] (CImplicitModuleBase *n) { this->setVectorX (n); });
+		CImplicitModuleBase::registerNoiseInput("VectorY", [this] (CImplicitModuleBase *n) { this->setVectorY (n); });
+		CImplicitModuleBase::registerNoiseInput("VectorZ", [this] (CImplicitModuleBase *n) { this->setVectorZ (n); });
+		CImplicitModuleBase::registerNoiseInput("VectorW", [this] (CImplicitModuleBase *n) { this->setVectorW (n); });
+		CImplicitModuleBase::registerNoiseInput("VectorU", [this] (CImplicitModuleBase *n) { this->setVectorU (n); });
+		CImplicitModuleBase::registerNoiseInput("VectorV", [this] (CImplicitModuleBase *n) { this->setVectorV (n); });
+
+		CImplicitModuleBase::registerIntInput("Iterations", [this] (int i) { this->setIterations(i); });
+		CImplicitModuleBase::registerIntInput("Plot", [this] (int i) { this->setPlot(i); });
 	}
+
 	CImplicitJulia::~CImplicitJulia(){}
 
 	void CImplicitJulia::setVectorX(double vx) {m_vx.set(vx);}
