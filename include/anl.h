@@ -23,6 +23,7 @@
 #include "implicitgrid.h"
 #include "implicitinvert.h"
 #include "implicitjulia.h"
+#include "implicitlog.h"
 #include "implicitpow.h"
 #include "implicitrgbadotproduct.h"
 #include "implicitrotatedomain.h"
@@ -32,6 +33,7 @@
 #include "implicitsin.h"
 #include "implicitsphere.h"
 #include "implicitsequence.h"
+#include "implicittan.h"
 #include "implicittiers.h"
 #include "implicittranslatedomain.h"
 

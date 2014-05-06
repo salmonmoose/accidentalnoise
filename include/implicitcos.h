@@ -10,7 +10,6 @@ namespace anl
         CImplicitCos();
         ~CImplicitCos();
 
-        void setSource(double v);
         void setSource(CImplicitModuleBase *m);
 
         double get(double x, double y);
@@ -19,7 +18,7 @@ namespace anl
         double get(double x, double y, double z, double w, double u, double v);
 
         protected:
-        CScalarParameter m_source;
+        CImplicitModuleBase *m_source;
     };
 };
 

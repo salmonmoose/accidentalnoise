@@ -10,9 +10,7 @@ namespace anl
         CImplicitPow();
         ~CImplicitPow();
 
-        void setSource(double v);
         void setSource(CImplicitModuleBase *m);
-        void setPower(double v);
         void setPower(CImplicitModuleBase *m);
 
         double get(double x, double y);
@@ -22,7 +20,8 @@ namespace anl
 
 
         protected:
-        CScalarParameter m_source, m_power;
+        CImplicitModuleBase *m_source;
+        CImplicitModuleBase *m_power;
     };
 };
 

@@ -125,6 +125,11 @@ src/CMakeFiles/accidentalnoise.dir/implicitjulia.cpp.o
  src/../include/factory.h
  src/../include/implicitjulia.h
  src/../include/implicitmodulebase.h
+src/CMakeFiles/accidentalnoise.dir/implicitlog.cpp.o
+ /home/salmonmoose/dev/accidentalnoise/src/implicitlog.cpp
+ src/../include/factory.h
+ src/../include/implicitlog.h
+ src/../include/implicitmodulebase.h
 src/CMakeFiles/accidentalnoise.dir/implicitpow.cpp.o
  /home/salmonmoose/dev/accidentalnoise/src/implicitpow.cpp
  src/../include/factory.h
@@ -183,6 +188,7 @@ src/CMakeFiles/accidentalnoise.dir/implicitsequence.cpp.o
  src/../include/implicitgrid.h
  src/../include/implicitinvert.h
  src/../include/implicitjulia.h
+ src/../include/implicitlog.h
  src/../include/implicitmodulebase.h
  src/../include/implicitpow.h
  src/../include/implicitrgbadotproduct.h
@@ -193,6 +199,7 @@ src/CMakeFiles/accidentalnoise.dir/implicitsequence.cpp.o
  src/../include/implicitsequence.h
  src/../include/implicitsin.h
  src/../include/implicitsphere.h
+ src/../include/implicittan.h
  src/../include/implicittiers.h
  src/../include/implicittranslatedomain.h
  src/../include/mapping.h
@@ -222,6 +229,11 @@ src/CMakeFiles/accidentalnoise.dir/implicitsphere.cpp.o
  src/../include/factory.h
  src/../include/implicitmodulebase.h
  src/../include/implicitsphere.h
+src/CMakeFiles/accidentalnoise.dir/implicittan.cpp.o
+ /home/salmonmoose/dev/accidentalnoise/src/implicittan.cpp
+ src/../include/factory.h
+ src/../include/implicitmodulebase.h
+ src/../include/implicittan.h
 src/CMakeFiles/accidentalnoise.dir/implicittiers.cpp.o
  /home/salmonmoose/dev/accidentalnoise/src/implicittiers.cpp
  src/../include/factory.h
@@ -258,6 +270,7 @@ src/CMakeFiles/accidentalnoise.dir/implicitxml.cpp.o
  src/../include/implicitgrid.h
  src/../include/implicitinvert.h
  src/../include/implicitjulia.h
+ src/../include/implicitlog.h
  src/../include/implicitmodulebase.h
  src/../include/implicitpow.h
  src/../include/implicitrgbadotproduct.h
@@ -268,6 +281,7 @@ src/CMakeFiles/accidentalnoise.dir/implicitxml.cpp.o
  src/../include/implicitsequence.h
  src/../include/implicitsin.h
  src/../include/implicitsphere.h
+ src/../include/implicittan.h
  src/../include/implicittiers.h
  src/../include/implicittranslatedomain.h
  src/../include/implicitxml.h

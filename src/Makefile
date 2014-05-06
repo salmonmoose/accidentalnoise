@@ -640,6 +640,30 @@ implicitjulia.cpp.s:
 	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitjulia.cpp.s
 .PHONY : implicitjulia.cpp.s
 
+implicitlog.o: implicitlog.cpp.o
+.PHONY : implicitlog.o
+
+# target to build an object file
+implicitlog.cpp.o:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitlog.cpp.o
+.PHONY : implicitlog.cpp.o
+
+implicitlog.i: implicitlog.cpp.i
+.PHONY : implicitlog.i
+
+# target to preprocess a source file
+implicitlog.cpp.i:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitlog.cpp.i
+.PHONY : implicitlog.cpp.i
+
+implicitlog.s: implicitlog.cpp.s
+.PHONY : implicitlog.s
+
+# target to generate assembly for a file
+implicitlog.cpp.s:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitlog.cpp.s
+.PHONY : implicitlog.cpp.s
+
 implicitpow.o: implicitpow.cpp.o
 .PHONY : implicitpow.o
 
@@ -855,6 +879,30 @@ implicitsphere.s: implicitsphere.cpp.s
 implicitsphere.cpp.s:
 	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitsphere.cpp.s
 .PHONY : implicitsphere.cpp.s
+
+implicittan.o: implicittan.cpp.o
+.PHONY : implicittan.o
+
+# target to build an object file
+implicittan.cpp.o:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicittan.cpp.o
+.PHONY : implicittan.cpp.o
+
+implicittan.i: implicittan.cpp.i
+.PHONY : implicittan.i
+
+# target to preprocess a source file
+implicittan.cpp.i:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicittan.cpp.i
+.PHONY : implicittan.cpp.i
+
+implicittan.s: implicittan.cpp.s
+.PHONY : implicittan.s
+
+# target to generate assembly for a file
+implicittan.cpp.s:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicittan.cpp.s
+.PHONY : implicittan.cpp.s
 
 implicittiers.o: implicittiers.cpp.o
 .PHONY : implicittiers.o
@@ -1339,6 +1387,9 @@ help:
 	@echo "... implicitjulia.o"
 	@echo "... implicitjulia.i"
 	@echo "... implicitjulia.s"
+	@echo "... implicitlog.o"
+	@echo "... implicitlog.i"
+	@echo "... implicitlog.s"
 	@echo "... implicitpow.o"
 	@echo "... implicitpow.i"
 	@echo "... implicitpow.s"
@@ -1366,6 +1417,9 @@ help:
 	@echo "... implicitsphere.o"
 	@echo "... implicitsphere.i"
 	@echo "... implicitsphere.s"
+	@echo "... implicittan.o"
+	@echo "... implicittan.i"
+	@echo "... implicittan.s"
 	@echo "... implicittiers.o"
 	@echo "... implicittiers.i"
 	@echo "... implicittiers.s"

@@ -31,6 +31,7 @@ add_library(
 	implicitgrid.cpp
 	implicitinvert.cpp
 	implicitjulia.cpp
+	implicitlog.cpp
 	implicitpow.cpp
 	implicitrgbadotproduct.cpp
 	implicitrotatedomain.cpp
@@ -40,6 +41,7 @@ add_library(
 	implicitsequence.cpp
 	implicitsin.cpp
 	implicitsphere.cpp
+	implicittan.cpp
 	implicittiers.cpp
 	implicittranslatedomain.cpp
 	implicitxml.cpp
