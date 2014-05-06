@@ -143,9 +143,34 @@ namespace anl
         return mCImplicitModuleFactory->get_keys();
     }
 
-    std::string CImplicitSequence::GetAttributes()
-    {
-        return "None";
+    std::vector<std::string> CImplicitSequence::GetLayerDoubleInputs(std::string node) {
+        noiseTreeIterator = noiseTree.find(node);
+
+        if(noiseTreeIterator == noiseTree.end()) {
+            return std::vector<std::string>();
+        } else {
+            return noiseTreeIterator->second->getDoubleInputs();
+        }
+    }
+
+    std::vector<std::string> CImplicitSequence::GetLayerIntInputs(std::string node) {
+        noiseTreeIterator = noiseTree.find(node);
+
+        if(noiseTreeIterator == noiseTree.end()) {
+            return std::vector<std::string>();
+        } else {
+            return noiseTreeIterator->second->getIntInputs();
+        }
+    }
+
+    std::vector<std::string> CImplicitSequence::GetLayerNoiseInputs(std::string node) {
+        noiseTreeIterator = noiseTree.find(node);
+
+        if(noiseTreeIterator == noiseTree.end()) {
+            return std::vector<std::string>();
+        } else {
+            return noiseTreeIterator->second->getIntInputs();
+        }
     }
 
 	double CImplicitSequence::get(double x, double y) {

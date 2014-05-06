@@ -14,6 +14,9 @@ public:
 	AccidentalNoiseSequence();
 
 	Q_INVOKABLE QStringList getLayerOptions();
+	QStringList getLayerDoubleInputs(std::string layer);
+	QStringList getLayerIntInputs(std::string layer);
+	QStringList getLayerNoiseInputs(std::string layer);
 
 	void buildInterfaceNodes();
 	anl::CImplicitSequence * mCImplicitSequence;

@@ -16,10 +16,10 @@ namespace anl
     	CImplicitModuleBase(){}
     	virtual ~CImplicitModuleBase(){}
 
-        typedef std::function<void(int)> int_v;
-        typedef std::function<void(double)> double_v;
+        typedef std::function<void(int)> int_function;
+        typedef std::function<void(double)> double_function;
 
-        typedef std::function<void(anl::CImplicitModuleBase*)> noise_v;
+        typedef std::function<void(anl::CImplicitModuleBase*)> noise_function;
 
 
     	virtual void setSeed(unsigned int seed){}
@@ -31,17 +31,17 @@ namespace anl
 
 
         //TODO: these could all realistically be templated;
-        bool registerDoubleInput(std::string const& key, double_v const& input) {
+        bool registerDoubleInput(std::string const& key, double_function const& input) {
             doubleFunctions[key] = input;
             return true;
         }
 
-        bool registerIntInput(std::string const& key, int_v const& input) {
+        bool registerIntInput(std::string const& key, int_function const& input) {
             intFunctions[key] = input;
             return true;
         }
 
-        bool registerNoiseInput(std::string const& key, noise_v const& input) {
+        bool registerNoiseInput(std::string const& key, noise_function const& input) {
             noiseFunctions[key] = input;
             return true;
         }
@@ -67,12 +67,45 @@ namespace anl
             fit->second(value);
         }
 
+        std::vector<std::string> getDoubleInputs() {
+            std::vector<std::string> key_list;
+
+            for(typename std::map<std::string, double_function>::iterator it = doubleFunctions.begin(); it != doubleFunctions.end(); ++it)
+            {
+                key_list.push_back(it->first);
+            }
+
+            return key_list;
+        }
+
+        std::vector<std::string> getIntInputs() {
+            std::vector<std::string> key_list;
+
+            for(typename std::map<std::string, int_function>::iterator it = intFunctions.begin(); it != intFunctions.end(); ++it)
+            {
+                key_list.push_back(it->first);
+            }
+
+            return key_list;
+        }
+
+        std::vector<std::string> getNoiseInputs() {
+            std::vector<std::string> key_list;
+
+            for(typename std::map<std::string, noise_function>::iterator it = noiseFunctions.begin(); it != noiseFunctions.end(); ++it)
+            {
+                key_list.push_back(it->first);
+            }
+
+            return key_list;
+        }
+
     protected:
 
     private:
-        std::map<std::string, double_v> doubleFunctions;
-        std::map<std::string, int_v> intFunctions;
-        std::map<std::string, noise_v> noiseFunctions;
+        std::map<std::string, double_function> doubleFunctions;
+        std::map<std::string, int_function> intFunctions;
+        std::map<std::string, noise_function> noiseFunctions;
     };
 
     // Scalar parameter class

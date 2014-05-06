@@ -35,3 +35,51 @@ QStringList AccidentalNoiseSequence::getLayerOptions()
 
 	return options;
 }
+
+QStringList AccidentalNoiseSequence::getLayerDoubleInputs(std::string layer)
+{
+	qDebug("getLayerDoubleInputs called");
+
+	QStringList inputs = QStringList();
+
+	std::vector<std::string> layerInputs = mCImplicitSequence->GetLayerDoubleInputs(layer);
+
+	for (std::vector<std::string>::iterator it = layerInputs.begin(); it != layerInputs.end(); ++it)
+	{
+		inputs.append((*it).c_str());
+	}
+
+	return inputs;
+}
+
+QStringList AccidentalNoiseSequence::getLayerIntInputs(std::string layer)
+{
+	qDebug("getLayerInputs called");
+
+	QStringList inputs = QStringList();
+
+	std::vector<std::string> layerInputs = mCImplicitSequence->GetLayerIntInputs(layer);
+
+	for (std::vector<std::string>::iterator it = layerInputs.begin(); it != layerInputs.end(); ++it)
+	{
+		inputs.append((*it).c_str());
+	}
+
+	return inputs;
+}
+
+QStringList AccidentalNoiseSequence::getLayerNoiseInputs(std::string layer)
+{
+	qDebug("getLayerInputs called");
+
+	QStringList inputs = QStringList();
+
+	std::vector<std::string> layerInputs = mCImplicitSequence->GetLayerNoiseInputs(layer);
+
+	for (std::vector<std::string>::iterator it = layerInputs.begin(); it != layerInputs.end(); ++it)
+	{
+		inputs.append((*it).c_str());
+	}
+
+	return inputs;
+}

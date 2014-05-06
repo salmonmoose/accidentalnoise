@@ -44,7 +44,9 @@ namespace anl
 			void SetRenderNode(std::string layer);
 
     		std::vector<std::string> GetLayerOptions();
-    		std::string GetAttributes();
+    		std::vector<std::string> GetLayerDoubleInputs(std::string node);
+    		std::vector<std::string> GetLayerIntInputs(std::string node);
+    		std::vector<std::string> GetLayerNoiseInputs(std::string node);
 
 			double get(double x, double y);
 			double get(double x, double y, double z);
