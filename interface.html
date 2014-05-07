@@ -13,6 +13,11 @@
 				toolbox = document.getElementById('toolbox');
 
 				optionslist.forEach(function(layer) {
+
+					layerDoubleInputList = AccidentalNoiseSequence.getLayerDoubleInputs((layer+'_interface').toLowerCase());
+					layerIntInputList = AccidentalNoiseSequence.getLayerIntInputs((layer+'_interface').toLowerCase());
+					layerNoiseInputList = AccidentalNoiseSequence.getLayerNoiseInputs((layer+'_interface').toLowerCase());
+
 					new_li = document.createElement("li");
 					button = document.getElementById("tool_button").cloneNode(true);
 
@@ -24,8 +29,24 @@
 
 					new_li.appendChild(button);
 
+					new_li.appendChild(inputList(layerDoubleInputList));
+					new_li.appendChild(inputList(layerIntInputList));
+					new_li.appendChild(inputList(layerNoiseInputList));
+
 					toolbox.querySelector('ul').insertBefore(new_li);
 				});
+			}
+
+			inputList = function(list) {
+				new_ul = document.createElement("ul");
+
+				list.forEach(function(input) {
+					new_li = document.createElement("li");
+					new_li.innerHTML = input;
+					new_ul.appendChild(new_li);
+				})
+
+				return new_ul;
 			}
 		</script>
 		<style>
@@ -77,7 +98,6 @@ body
 				<h2></h2>
 			</a>
 		</div>
-		<img src="noise://julia_interface?x=500&y=500"/>
 		<div id="noise_node">
 			<div class="handle">
 				<p></p>

@@ -36,48 +36,51 @@ QStringList AccidentalNoiseSequence::getLayerOptions()
 	return options;
 }
 
-QStringList AccidentalNoiseSequence::getLayerDoubleInputs(std::string layer)
+QStringList AccidentalNoiseSequence::getLayerDoubleInputs(QString layer)
 {
-	qDebug("getLayerDoubleInputs called");
+	qDebug("getLayerDoubleInputs called: %s", layer.toStdString().c_str());
 
 	QStringList inputs = QStringList();
 
-	std::vector<std::string> layerInputs = mCImplicitSequence->GetLayerDoubleInputs(layer);
+	std::vector<std::string> layerInputs = mCImplicitSequence->GetLayerDoubleInputs(layer.toUtf8().constData());
 
 	for (std::vector<std::string>::iterator it = layerInputs.begin(); it != layerInputs.end(); ++it)
 	{
+		qDebug("adding %s", (*it).c_str());
 		inputs.append((*it).c_str());
 	}
 
 	return inputs;
 }
 
-QStringList AccidentalNoiseSequence::getLayerIntInputs(std::string layer)
+QStringList AccidentalNoiseSequence::getLayerIntInputs(QString layer)
 {
-	qDebug("getLayerInputs called");
+	qDebug("getIntLayerInputs called %s", layer.toStdString().c_str());
 
 	QStringList inputs = QStringList();
 
-	std::vector<std::string> layerInputs = mCImplicitSequence->GetLayerIntInputs(layer);
+	std::vector<std::string> layerInputs = mCImplicitSequence->GetLayerIntInputs(layer.toUtf8().constData());
 
 	for (std::vector<std::string>::iterator it = layerInputs.begin(); it != layerInputs.end(); ++it)
 	{
+		qDebug("adding %s", (*it).c_str());
 		inputs.append((*it).c_str());
 	}
 
 	return inputs;
 }
 
-QStringList AccidentalNoiseSequence::getLayerNoiseInputs(std::string layer)
+QStringList AccidentalNoiseSequence::getLayerNoiseInputs(QString layer)
 {
-	qDebug("getLayerInputs called");
+	qDebug("getNoiseLayerInputs called %s", layer.toStdString().c_str());
 
 	QStringList inputs = QStringList();
 
-	std::vector<std::string> layerInputs = mCImplicitSequence->GetLayerNoiseInputs(layer);
+	std::vector<std::string> layerInputs = mCImplicitSequence->GetLayerNoiseInputs(layer.toUtf8().constData());
 
 	for (std::vector<std::string>::iterator it = layerInputs.begin(); it != layerInputs.end(); ++it)
 	{
+		qDebug("adding %s", (*it).c_str());
 		inputs.append((*it).c_str());
 	}
 
