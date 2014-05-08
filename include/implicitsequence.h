@@ -39,6 +39,7 @@ namespace anl
 
 			void RegisterTypes();
 			void AddLayer(std::string type, std::string name);
+			void AddLayer(std::string type);
 			void SetAttribute(std::string layer, std::string attribute, std::string type, std::string value);
 			void SetAttribute(anl::CImplicitModuleBase *node, std::string attribute, EInputTypes type, std::string value);
 			void SetRenderNode(std::string layer);

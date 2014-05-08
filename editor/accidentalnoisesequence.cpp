@@ -55,7 +55,7 @@ QStringList AccidentalNoiseSequence::getLayerDoubleInputs(QString layer)
 
 QStringList AccidentalNoiseSequence::getLayerIntInputs(QString layer)
 {
-	qDebug("getIntLayerInputs called %s", layer.toStdString().c_str());
+	qDebug("getIntLayerInputs called: %s", layer.toStdString().c_str());
 
 	QStringList inputs = QStringList();
 
@@ -72,7 +72,7 @@ QStringList AccidentalNoiseSequence::getLayerIntInputs(QString layer)
 
 QStringList AccidentalNoiseSequence::getLayerNoiseInputs(QString layer)
 {
-	qDebug("getNoiseLayerInputs called %s", layer.toStdString().c_str());
+	qDebug("getNoiseLayerInputs called: %s", layer.toStdString().c_str());
 
 	QStringList inputs = QStringList();
 
@@ -85,4 +85,9 @@ QStringList AccidentalNoiseSequence::getLayerNoiseInputs(QString layer)
 	}
 
 	return inputs;
+}
+
+void AccidentalNoiseSequence::createLayer(QString type, QString name)
+{
+	mCImplicitSequence->AddLayer(type.c_str(), name.c_str());
 }

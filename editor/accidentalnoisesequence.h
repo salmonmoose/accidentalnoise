@@ -18,6 +18,8 @@ public:
 	Q_INVOKABLE QStringList getLayerIntInputs(QString layer);
 	Q_INVOKABLE QStringList getLayerNoiseInputs(QString layer);
 
+	Q_INVOKABLE void createLayer(QString type, QString name);
+
 	void buildInterfaceNodes();
 	anl::CImplicitSequence * mCImplicitSequence;
 };

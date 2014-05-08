@@ -90,6 +90,21 @@ namespace anl
 		);
     }
 
+    void CImplicitSequence::AddLayer(std::string type)
+    {
+        static const char alphanum[] =
+        "0123456789"
+        "abcdef";
+
+        std::string name (8, 42);
+
+        for (int i = 0; i < 8; ++i) {
+            name[i] = alphanum[rand() % (sizeof(alphanum) - 1)];
+        }
+
+        AddLayer(type, name);
+    }
+
     void CImplicitSequence::SetAttribute(std::string node, std::string attribute, std::string type, std::string value)
     {
     	noiseTreeIterator = noiseTree.find(node);
@@ -169,7 +184,7 @@ namespace anl
         if(noiseTreeIterator == noiseTree.end()) {
             return std::vector<std::string>();
         } else {
-            return noiseTreeIterator->second->getIntInputs();
+            return noiseTreeIterator->second->getNoiseInputs();
         }
     }
 

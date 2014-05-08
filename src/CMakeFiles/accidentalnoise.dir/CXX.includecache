@@ -10,6 +10,10 @@
 implicitsequence.h
 /home/salmonmoose/dev/accidentalnoise/src/implicitsequence.h
 
+/home/salmonmoose/dev/accidentalnoise/src/implicitxml.cpp
+implicitxml.h
+/home/salmonmoose/dev/accidentalnoise/src/implicitxml.h
+
 src/../include/anl.h
 cellulargen.h
 src/../include/cellulargen.h
@@ -304,6 +308,16 @@ src/../include/implicittranslatedomain.h
 implicitmodulebase.h
 src/../include/implicitmodulebase.h
 
+src/../include/implicitxml.h
+anl.h
+src/../include/anl.h
+iostream
+-
+memory
+-
+pugixml.hpp
+src/../include/pugixml.hpp
+
 src/../include/mapping.h
 templates/tarrays.h
 src/../include/templates/tarrays.h
@@ -317,6 +331,22 @@ string
 -
 
 src/../include/noise_gen.h
+
+src/../include/pugiconfig.hpp
+
+src/../include/pugixml.hpp
+pugiconfig.hpp
+src/../include/pugiconfig.hpp
+stddef.h
+-
+exception
+-
+iterator
+-
+iosfwd
+-
+string
+-
 
 src/../include/random_gen.h
 ctime
