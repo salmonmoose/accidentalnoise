@@ -54,6 +54,8 @@
 			createLayer = function(type) {
 				name = type+"_"+makeid;
 
+				workspace.push(name);
+
 				AccidentalNoiseSequence.createLayer(type, name);
 			}
 
