@@ -89,5 +89,5 @@ QStringList AccidentalNoiseSequence::getLayerNoiseInputs(QString layer)
 
 void AccidentalNoiseSequence::createLayer(QString type, QString name)
 {
-	mCImplicitSequence->AddLayer(type.c_str(), name.c_str());
+	mCImplicitSequence->AddLayer(type.toUtf8().constData(), name.toUtf8().constData());
 }
