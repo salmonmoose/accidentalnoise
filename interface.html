@@ -35,8 +35,14 @@
 				new_ul = document.createElement("ul");
 
 				list.forEach(function(input) {
+					split = input.split(':');
 					new_li = document.createElement("li");
-					new_li.innerHTML = input+':<input type="text">';
+
+					value = AccidentalNoiseSequence.getLayerInputValue(split[0], split[1], split[2]);
+
+					new_li.innerHTML = 
+						'<span>'+split[2]+':</span>'+
+						'<input type="text" value="'+value+'">';
 					new_ul.appendChild(new_li);
 				})
 

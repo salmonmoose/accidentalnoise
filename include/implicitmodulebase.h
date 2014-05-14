@@ -52,6 +52,14 @@ namespace anl
             return true;
         }
 
+        void setName(std::string nName) {
+            name = nName;
+        }
+
+        std::string getName() {
+            return name;
+        }
+
         void setDoubleInput(std::string key, double value) {
             auto fit = doubleSetFunctions.find(key);
             if (fit == doubleSetFunctions.end()) return;
@@ -130,6 +138,8 @@ namespace anl
     protected:
 
     private:
+        std::string name;
+
         std::map<std::string, double_set_function> doubleSetFunctions;
         std::map<std::string, int_set_function> intSetFunctions;
         std::map<std::string, noise_set_function> noiseSetFunctions;

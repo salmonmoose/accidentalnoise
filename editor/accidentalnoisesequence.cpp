@@ -46,8 +46,8 @@ QStringList AccidentalNoiseSequence::getLayerDoubleInputs(QString layer)
 
 	for (std::vector<std::string>::iterator it = layerInputs.begin(); it != layerInputs.end(); ++it)
 	{
-		qDebug("adding %s", (*it).c_str());
-		inputs.append((*it).c_str());
+		qDebug("adding %s:DOUBLE:%s", layer.toUtf8().constData(), (*it).c_str());
+		inputs.append(QString("%1:DOUBLE:%2").arg(layer.toUtf8().constData(), (*it).c_str()));
 	}
 
 	return inputs;
@@ -63,8 +63,8 @@ QStringList AccidentalNoiseSequence::getLayerIntInputs(QString layer)
 
 	for (std::vector<std::string>::iterator it = layerInputs.begin(); it != layerInputs.end(); ++it)
 	{
-		qDebug("adding %s", (*it).c_str());
-		inputs.append((*it).c_str());
+		qDebug("adding %s:INT:%s", layer.toUtf8().constData(), (*it).c_str());
+		inputs.append(QString("%1:INT:%2").arg(layer.toUtf8().constData(), (*it).c_str()));
 	}
 
 	return inputs;
@@ -80,11 +80,29 @@ QStringList AccidentalNoiseSequence::getLayerNoiseInputs(QString layer)
 
 	for (std::vector<std::string>::iterator it = layerInputs.begin(); it != layerInputs.end(); ++it)
 	{
-		qDebug("adding %s", (*it).c_str());
-		inputs.append((*it).c_str());
+		qDebug("adding %s:NOISE:%s", layer.toUtf8().constData(), (*it).c_str());
+		inputs.append(QString("%1:NOISE:%2").arg(layer.toUtf8().constData(), (*it).c_str()));
 	}
 
 	return inputs;
+}
+
+QString AccidentalNoiseSequence::getLayerInputValue(QString layer, QString type, QString input)
+{
+	qDebug(
+		"getLayerInputValue called: %s, %s, %s",
+		layer.toStdString().c_str(),
+		type.toStdString().c_str(),
+		input.toStdString().c_str()
+	);
+
+	std::string value = mCImplicitSequence->GetAttribute(
+		layer.toUtf8().constData(),
+		type.toUtf8().constData(),
+		input.toUtf8().constData()
+	);
+
+	return QString::fromStdString(value);
 }
 
 void AccidentalNoiseSequence::createLayer(QString type, QString name)

@@ -44,6 +44,8 @@ namespace anl
 			void SetAttribute(std::string layer, std::string attribute, std::string type, std::string value);
 			void SetAttribute(anl::CImplicitModuleBase *node, std::string attribute, EInputTypes type, std::string value);
 
+			std::string GetAttribute(std::string node, std::string type, std::string attribute);
+
 			double GetDoubleAttribute(anl::CImplicitModuleBase *node, std::string attribute);
 			int GetIntAttribute(anl::CImplicitModuleBase *node, std::string attribute);
 			anl::CImplicitModuleBase *GetNoiseAttribute(anl::CImplicitModuleBase *node, std::string attribute);

@@ -30,7 +30,7 @@ add_library(
 #	implicitgradient.cpp
 #	implicitgrid.cpp
 #	implicitinvert.cpp
-#	implicitjulia.cpp
+	implicitjulia.cpp
 #	implicitlog.cpp
 #	implicitpow.cpp
 #	implicitrgbadotproduct.cpp

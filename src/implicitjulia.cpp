@@ -102,12 +102,12 @@ namespace anl
 	void CImplicitJulia::setVectorU(double vu) { m_vu.set(vu); }
 	void CImplicitJulia::setVectorV(double vv) { m_vv.set(vv); }
 
-	double CImplicitJulia::getVectorX() { return m_vx.getDouble(); }
-	double CImplicitJulia::getVectorY() { return m_vy.getDouble(); }
-	double CImplicitJulia::getVectorZ() { return m_vz.getDouble(); }
-	double CImplicitJulia::getVectorW() { return m_vw.getDouble(); }
-	double CImplicitJulia::getVectorU() { return m_vu.getDouble(); }
-	double CImplicitJulia::getVectorV() { return m_vv.getDouble(); }
+	double CImplicitJulia::getDoubleVectorX() { return m_vx.getDouble(); }
+	double CImplicitJulia::getDoubleVectorY() { return m_vy.getDouble(); }
+	double CImplicitJulia::getDoubleVectorZ() { return m_vz.getDouble(); }
+	double CImplicitJulia::getDoubleVectorW() { return m_vw.getDouble(); }
+	double CImplicitJulia::getDoubleVectorU() { return m_vu.getDouble(); }
+	double CImplicitJulia::getDoubleVectorV() { return m_vv.getDouble(); }
 
 	void CImplicitJulia::setVectorX(CImplicitModuleBase *vx) {m_vx.set(vx); }
 	void CImplicitJulia::setVectorY(CImplicitModuleBase *vy) {m_vy.set(vy); }
@@ -132,6 +132,11 @@ namespace anl
 		}
 	}
 
+	int CImplicitJulia::getIterations()
+	{
+		return m_iterations;
+	}
+
 	void CImplicitJulia::setPlot(unsigned int n)
 	{
 		if (n > m_iterations) {
@@ -139,6 +144,11 @@ namespace anl
 		} else {
 			m_plot = n;
 		}
+	}
+
+	int CImplicitJulia::getPlot()
+	{
+		return m_plot;
 	}
 
 	double CImplicitJulia::get(double x, double y)

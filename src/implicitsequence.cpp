@@ -28,7 +28,7 @@ namespace anl
         //mCImplicitModuleFactory->register_type<anl::CImplicitGradient>("Gradient");
         //mCImplicitModuleFactory->register_type<anl::CImplicitGrid>("Grid");
         //mCImplicitModuleFactory->register_type<anl::CImplicitInvert>("Invert");
-        //mCImplicitModuleFactory->register_type<anl::CImplicitJulia>("Julia");
+        mCImplicitModuleFactory->register_type<anl::CImplicitJulia>("Julia");
         //mCImplicitModuleFactory->register_type<anl::CImplicitLog>("Log");
         //mCImplicitModuleFactory->register_type<anl::CImplicitPow>("Pow");
         //mCImplicitModuleFactory->register_type<anl::CImplicitRGBADotProduct>("RGBADotProduct");
@@ -80,13 +80,15 @@ namespace anl
 
     void CImplicitSequence::AddLayer(std::string type, std::string name)
     {
+        CImplicitModuleBase *layer = mCImplicitModuleFactory->build_object(type);
+
+        layer->setName(name);
+
     	noiseTree.insert(
     		std::pair<std::string, std::unique_ptr<anl::CImplicitModuleBase>>(
-				name,
-				std::unique_ptr<anl::CImplicitModuleBase>(
-                    mCImplicitModuleFactory->build_object(type)
-                )
-			)
+                name,
+                std::unique_ptr<anl::CImplicitModuleBase>(layer)
+            )
 		);
     }
 
@@ -141,6 +143,28 @@ namespace anl
                 node->setDoubleInput(attribute, atof(value.c_str()));
             }
             break;
+        }
+    }
+
+    std::string CImplicitSequence::GetAttribute(std::string node, std::string type, std::string attribute)
+    {
+        noiseTreeIterator = noiseTree.find(node);
+
+        if(noiseTreeIterator != noiseTree.end())
+        {
+            if (type == "INT") {
+                return std::to_string(noiseTreeIterator->second->getIntInput(attribute));
+            } else if (type == "DOUBLE") {
+                return std::to_string(noiseTreeIterator->second->getDoubleInput(attribute));
+            } else {
+                if(noiseTreeIterator->second->getNoiseInput(attribute)) {
+                    return noiseTreeIterator->second->getNoiseInput(attribute)->getName();
+                } else {
+                    return std::string();
+                }
+            }
+        } else {
+            return std::string();
         }
     }
 
