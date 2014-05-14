@@ -5,22 +5,90 @@
 namespace anl
 {
     CImplicitSphere::CImplicitSphere() : CImplicitModuleBase(),m_source(0), m_cx(0), m_cy(0), m_cz(0), m_cw(0), m_cu(0), m_cv(0), m_radius(1) {
-        CImplicitModuleBase::registerDoubleInput("Radius",[this] (double d) { this->setRadius (d); });
-        CImplicitModuleBase::registerNoiseInput("Radius", [this] (CImplicitModuleBase *n) { this->setRadius (n); });
+        CImplicitModuleBase::registerDoubleInput(
+            "Radius",
+            [this] (double d) { this->setRadius(d); },
+            [this] () -> double { return this->getDoubleRadius(); }
+        );
 
-        CImplicitModuleBase::registerDoubleInput("CenterX",[this] (double v) { this->setCenterX (v); });
-        CImplicitModuleBase::registerDoubleInput("CenterY",[this] (double v) { this->setCenterY (v); });
-        CImplicitModuleBase::registerDoubleInput("CenterZ",[this] (double v) { this->setCenterZ (v); });
-        CImplicitModuleBase::registerDoubleInput("CenterU",[this] (double v) { this->setCenterU (v); });
-        CImplicitModuleBase::registerDoubleInput("CenterV",[this] (double v) { this->setCenterV (v); });
-        CImplicitModuleBase::registerDoubleInput("CenterW",[this] (double v) { this->setCenterW (v); });
+        CImplicitModuleBase::registerNoiseInput(
+            "Radius",
+            [this] (CImplicitModuleBase *n) { this->setRadius (n); },
+            [this] () -> CImplicitModuleBase* { return this->getNoiseRadius(); }
+        );
 
-        CImplicitModuleBase::registerNoiseInput("CenterX",[this] (CImplicitModuleBase *n) { this->setCenterX (n); });
-        CImplicitModuleBase::registerNoiseInput("CenterY",[this] (CImplicitModuleBase *n) { this->setCenterY (n); });
-        CImplicitModuleBase::registerNoiseInput("CenterZ",[this] (CImplicitModuleBase *n) { this->setCenterZ (n); });
-        CImplicitModuleBase::registerNoiseInput("CenterU",[this] (CImplicitModuleBase *n) { this->setCenterU (n); });
-        CImplicitModuleBase::registerNoiseInput("CenterV",[this] (CImplicitModuleBase *n) { this->setCenterV (n); });
-        CImplicitModuleBase::registerNoiseInput("CenterW",[this] (CImplicitModuleBase *n) { this->setCenterW (n); });
+        CImplicitModuleBase::registerDoubleInput(
+            "CenterX",
+            [this] (double v) { this->setCenterX (v); },
+            [this] () -> double { return this->getDoubleCenterX(); }
+        );
+
+        CImplicitModuleBase::registerDoubleInput(
+            "CenterY",
+            [this] (double v) { this->setCenterY (v); },
+            [this] () -> double { return this->getDoubleCenterY(); }
+        );
+
+        CImplicitModuleBase::registerDoubleInput(
+            "CenterZ",
+            [this] (double v) { this->setCenterZ (v); },
+            [this] () -> double { return this->getDoubleCenterZ(); }
+        );
+
+        CImplicitModuleBase::registerDoubleInput(
+            "CenterU",
+            [this] (double v) { this->setCenterU (v); },
+            [this] () -> double { return this->getDoubleCenterU(); }
+        );
+
+        CImplicitModuleBase::registerDoubleInput(
+            "CenterV",
+            [this] (double v) { this->setCenterV (v); },
+            [this] () -> double { return this->getDoubleCenterV(); }
+        );
+
+        CImplicitModuleBase::registerDoubleInput(
+            "CenterW",
+            [this] (double v) { this->setCenterW (v); },
+            [this] () -> double { return this->getDoubleCenterW(); }
+        );
+
+        CImplicitModuleBase::registerNoiseInput(
+            "CenterX",
+            [this] (CImplicitModuleBase *n) { this->setCenterX (n); },
+            [this] () -> CImplicitModuleBase* { return this->getNoiseCenterX(); }
+        );
+
+        CImplicitModuleBase::registerNoiseInput(
+            "CenterY",
+            [this] (CImplicitModuleBase *n) { this->setCenterY (n); },
+            [this] () -> CImplicitModuleBase* { return this->getNoiseCenterY(); }
+        );
+
+        CImplicitModuleBase::registerNoiseInput(
+            "CenterZ",
+            [this] (CImplicitModuleBase *n) { this->setCenterZ (n); },
+            [this] () -> CImplicitModuleBase* { return this->getNoiseCenterZ(); }
+        );
+
+        CImplicitModuleBase::registerNoiseInput(
+            "CenterU",
+            [this] (CImplicitModuleBase *n) { this->setCenterU (n); },
+            [this] () -> CImplicitModuleBase* { return this->getNoiseCenterU(); }
+        );
+
+        CImplicitModuleBase::registerNoiseInput(
+            "CenterV",
+            [this] (CImplicitModuleBase *n) { this->setCenterV (n); },
+            [this] () -> CImplicitModuleBase* { return this->getNoiseCenterV(); }
+        );
+
+        CImplicitModuleBase::registerNoiseInput(
+            "CenterW",
+            [this] (CImplicitModuleBase *n) { this->setCenterW (n); },
+            [this] () -> CImplicitModuleBase* { return this->getNoiseCenterW(); }
+        );
+
     }
 
     CImplicitSphere::~CImplicitSphere(){}
@@ -29,12 +97,20 @@ namespace anl
     {
         m_cx=cx; m_cy=cy; m_cz=cz; m_cw=cw; m_cu=cu; m_cv=cv;
     }
-    void CImplicitSphere::setCenterX(double cx){m_cx.set(cx);}
-    void CImplicitSphere::setCenterY(double cy){m_cy.set(cy);}
-    void CImplicitSphere::setCenterZ(double cz){m_cz.set(cz);}
-    void CImplicitSphere::setCenterW(double cw){m_cw.set(cw);}
-    void CImplicitSphere::setCenterU(double cu){m_cu.set(cu);}
-    void CImplicitSphere::setCenterV(double cv){m_cv.set(cv);}
+    void CImplicitSphere::setCenterX(double cx){ m_cx.set(cx); }
+    void CImplicitSphere::setCenterY(double cy){ m_cy.set(cy); }
+    void CImplicitSphere::setCenterZ(double cz){ m_cz.set(cz); }
+    void CImplicitSphere::setCenterW(double cw){ m_cw.set(cw); }
+    void CImplicitSphere::setCenterU(double cu){ m_cu.set(cu); }
+    void CImplicitSphere::setCenterV(double cv){ m_cv.set(cv); }
+
+    double CImplicitSphere::getDoubleCenterX() { return m_cx.getDouble(); }
+    double CImplicitSphere::getDoubleCenterY() { return m_cy.getDouble(); }
+    double CImplicitSphere::getDoubleCenterZ() { return m_cz.getDouble(); }
+    double CImplicitSphere::getDoubleCenterW() { return m_cw.getDouble(); }
+    double CImplicitSphere::getDoubleCenterU() { return m_cu.getDouble(); }
+    double CImplicitSphere::getDoubleCenterV() { return m_cv.getDouble(); }
+
     void CImplicitSphere::setCenterX(CImplicitModuleBase *cx){m_cx.set(cx);}
     void CImplicitSphere::setCenterY(CImplicitModuleBase *cy){m_cy.set(cy);}
     void CImplicitSphere::setCenterZ(CImplicitModuleBase *cz){m_cz.set(cz);}
@@ -42,11 +118,20 @@ namespace anl
     void CImplicitSphere::setCenterU(CImplicitModuleBase *cu){m_cu.set(cu);}
     void CImplicitSphere::setCenterV(CImplicitModuleBase *cv){m_cv.set(cv);}
 
-    void CImplicitSphere::setRadius(double r)
-    {
-        m_radius.set(r);
-    }
-    void CImplicitSphere::setRadius(CImplicitModuleBase *r){m_radius.set(r);}
+    CImplicitModuleBase *CImplicitSphere::getNoiseCenterX() { return m_cx.getNoise(); }
+    CImplicitModuleBase *CImplicitSphere::getNoiseCenterY() { return m_cy.getNoise(); }
+    CImplicitModuleBase *CImplicitSphere::getNoiseCenterZ() { return m_cz.getNoise(); }
+    CImplicitModuleBase *CImplicitSphere::getNoiseCenterW() { return m_cw.getNoise(); }
+    CImplicitModuleBase *CImplicitSphere::getNoiseCenterU() { return m_cu.getNoise(); }
+    CImplicitModuleBase *CImplicitSphere::getNoiseCenterV() { return m_cv.getNoise(); }
+
+    void CImplicitSphere::setRadius(double r) { m_radius.set(r); }
+
+    double CImplicitSphere::getDoubleRadius() { return m_radius.getDouble(); }
+
+    void CImplicitSphere::setRadius(CImplicitModuleBase *r) { m_radius.set(r); }
+
+    CImplicitModuleBase *CImplicitSphere::getNoiseRadius() { return m_radius.getNoise(); }
 
     double CImplicitSphere::get(double x, double y)
     {

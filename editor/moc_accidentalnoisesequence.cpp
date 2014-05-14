@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_AccidentalNoiseSequence_t {
-    QByteArrayData data[9];
-    char stringdata[124];
+    QByteArrayData data[10];
+    char stringdata[129];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -37,12 +37,13 @@ QT_MOC_LITERAL(4, 62, 5),
 QT_MOC_LITERAL(5, 68, 17),
 QT_MOC_LITERAL(6, 86, 19),
 QT_MOC_LITERAL(7, 106, 11),
-QT_MOC_LITERAL(8, 118, 4)
+QT_MOC_LITERAL(8, 118, 4),
+QT_MOC_LITERAL(9, 123, 4)
     },
     "AccidentalNoiseSequence\0getLayerOptions\0"
     "\0getLayerDoubleInputs\0layer\0"
     "getLayerIntInputs\0getLayerNoiseInputs\0"
-    "createLayer\0type\0"
+    "createLayer\0type\0name\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -64,14 +65,14 @@ static const uint qt_meta_data_AccidentalNoiseSequence[] = {
        3,    1,   40,    2, 0x02,
        5,    1,   43,    2, 0x02,
        6,    1,   46,    2, 0x02,
-       7,    1,   49,    2, 0x02,
+       7,    2,   49,    2, 0x02,
 
  // methods: parameters
     QMetaType::QStringList,
     QMetaType::QStringList, QMetaType::QString,    4,
     QMetaType::QStringList, QMetaType::QString,    4,
     QMetaType::QStringList, QMetaType::QString,    4,
-    QMetaType::QString, QMetaType::QString,    8,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString,    8,    9,
 
        0        // eod
 };
@@ -89,8 +90,7 @@ void AccidentalNoiseSequence::qt_static_metacall(QObject *_o, QMetaObject::Call 
             if (_a[0]) *reinterpret_cast< QStringList*>(_a[0]) = _r; }  break;
         case 3: { QStringList _r = _t->getLayerNoiseInputs((*reinterpret_cast< QString(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< QStringList*>(_a[0]) = _r; }  break;
-        case 4: { QString _r = _t->createLayer((*reinterpret_cast< QString(*)>(_a[1])));
-            if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
+        case 4: _t->createLayer((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
         default: ;
         }
     }

@@ -13,33 +13,33 @@ namespace anl
 
         mCImplicitModuleFactory = new generic_factory<std::string, anl::CImplicitModuleBase>();
 
-        mCImplicitModuleFactory->register_type<anl::CImplicitAutoCorrect>("AutoCorrect");
-        mCImplicitModuleFactory->register_type<anl::CImplicitBasisFunction>("BasisFunction");
-        mCImplicitModuleFactory->register_type<anl::CImplicitBlend>("Blend");
-        mCImplicitModuleFactory->register_type<anl::CImplicitBrightContrast>("BrightContrast");
-        mCImplicitModuleFactory->register_type<anl::CImplicitCache>("Cache");
-        mCImplicitModuleFactory->register_type<anl::CImplicitCellular>("Cellular");
-        mCImplicitModuleFactory->register_type<anl::CImplicitConstant>("Constant");
-        mCImplicitModuleFactory->register_type<anl::CImplicitCos>("Cos");
-        mCImplicitModuleFactory->register_type<anl::CImplicitExtractRGBAChannel>("ExtractRGBAChannel");
-        mCImplicitModuleFactory->register_type<anl::CImplicitFloor>("Floor");
-        mCImplicitModuleFactory->register_type<anl::CImplicitFractal>("Fractal");
-        mCImplicitModuleFactory->register_type<anl::CImplicitFunctionGradient>("FunctionGradient");
-        mCImplicitModuleFactory->register_type<anl::CImplicitGradient>("Gradient");
-        mCImplicitModuleFactory->register_type<anl::CImplicitGrid>("Grid");
-        mCImplicitModuleFactory->register_type<anl::CImplicitInvert>("Invert");
-        mCImplicitModuleFactory->register_type<anl::CImplicitJulia>("Julia");
-        mCImplicitModuleFactory->register_type<anl::CImplicitLog>("Log");
-        mCImplicitModuleFactory->register_type<anl::CImplicitPow>("Pow");
-        mCImplicitModuleFactory->register_type<anl::CImplicitRGBADotProduct>("RGBADotProduct");
-		mCImplicitModuleFactory->register_type<anl::CImplicitScaleDomain>("ScaleDomain");
-		mCImplicitModuleFactory->register_type<anl::CImplicitScaleOffset>("ScaleOffset");
-		mCImplicitModuleFactory->register_type<anl::CImplicitSelect>("Select");
-		mCImplicitModuleFactory->register_type<anl::CImplicitSin>("Sin");
+        //mCImplicitModuleFactory->register_type<anl::CImplicitAutoCorrect>("AutoCorrect");
+        //mCImplicitModuleFactory->register_type<anl::CImplicitBasisFunction>("BasisFunction");
+        //mCImplicitModuleFactory->register_type<anl::CImplicitBlend>("Blend");
+        //mCImplicitModuleFactory->register_type<anl::CImplicitBrightContrast>("BrightContrast");
+        //mCImplicitModuleFactory->register_type<anl::CImplicitCache>("Cache");
+        //mCImplicitModuleFactory->register_type<anl::CImplicitCellular>("Cellular");
+        //mCImplicitModuleFactory->register_type<anl::CImplicitConstant>("Constant");
+        //mCImplicitModuleFactory->register_type<anl::CImplicitCos>("Cos");
+        //mCImplicitModuleFactory->register_type<anl::CImplicitExtractRGBAChannel>("ExtractRGBAChannel");
+        //mCImplicitModuleFactory->register_type<anl::CImplicitFloor>("Floor");
+        //mCImplicitModuleFactory->register_type<anl::CImplicitFractal>("Fractal");
+        //mCImplicitModuleFactory->register_type<anl::CImplicitFunctionGradient>("FunctionGradient");
+        //mCImplicitModuleFactory->register_type<anl::CImplicitGradient>("Gradient");
+        //mCImplicitModuleFactory->register_type<anl::CImplicitGrid>("Grid");
+        //mCImplicitModuleFactory->register_type<anl::CImplicitInvert>("Invert");
+        //mCImplicitModuleFactory->register_type<anl::CImplicitJulia>("Julia");
+        //mCImplicitModuleFactory->register_type<anl::CImplicitLog>("Log");
+        //mCImplicitModuleFactory->register_type<anl::CImplicitPow>("Pow");
+        //mCImplicitModuleFactory->register_type<anl::CImplicitRGBADotProduct>("RGBADotProduct");
+		//mCImplicitModuleFactory->register_type<anl::CImplicitScaleDomain>("ScaleDomain");
+		//mCImplicitModuleFactory->register_type<anl::CImplicitScaleOffset>("ScaleOffset");
+		//mCImplicitModuleFactory->register_type<anl::CImplicitSelect>("Select");
+		//mCImplicitModuleFactory->register_type<anl::CImplicitSin>("Sin");
 		mCImplicitModuleFactory->register_type<anl::CImplicitSphere>("Sphere");
-        mCImplicitModuleFactory->register_type<anl::CImplicitTan>("Tan");
-		mCImplicitModuleFactory->register_type<anl::CImplicitTiers>("Tiers");
-		mCImplicitModuleFactory->register_type<anl::CImplicitTranslateDomain>("TranslateDomain");
+        //mCImplicitModuleFactory->register_type<anl::CImplicitTan>("Tan");
+		//mCImplicitModuleFactory->register_type<anl::CImplicitTiers>("Tiers");
+		//mCImplicitModuleFactory->register_type<anl::CImplicitTranslateDomain>("TranslateDomain");
 
         //TODO:
         //mCImplicitModuleFactory->register_type<anl::CImplicitBias>("Bias");
@@ -142,6 +142,21 @@ namespace anl
             }
             break;
         }
+    }
+
+    double CImplicitSequence::GetDoubleAttribute(anl::CImplicitModuleBase *node, std::string attribute)
+    {
+        return node->getDoubleInput(attribute);
+    }
+
+    int CImplicitSequence::GetIntAttribute(anl::CImplicitModuleBase *node, std::string attribute)
+    {
+        return node->getIntInput(attribute);
+    }
+
+    anl::CImplicitModuleBase * CImplicitSequence::GetNoiseAttribute(anl::CImplicitModuleBase *node, std::string attribute)
+    {
+        return node->getNoiseInput(attribute);
     }
 
     void CImplicitSequence::SetRenderNode(std::string node)

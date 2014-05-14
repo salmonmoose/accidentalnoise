@@ -17,6 +17,14 @@ class CImplicitSphere : public CImplicitModuleBase
     void setCenterW(double cw);
     void setCenterU(double cu);
     void setCenterV(double cv);
+
+    double getDoubleCenterX();
+    double getDoubleCenterY();
+    double getDoubleCenterZ();
+    double getDoubleCenterW();
+    double getDoubleCenterU();
+    double getDoubleCenterV();
+
     void setCenterX(CImplicitModuleBase *cx);
     void setCenterY(CImplicitModuleBase *cy);
     void setCenterZ(CImplicitModuleBase *cz);
@@ -24,8 +32,20 @@ class CImplicitSphere : public CImplicitModuleBase
     void setCenterU(CImplicitModuleBase *cu);
     void setCenterV(CImplicitModuleBase *cv);
 
+    CImplicitModuleBase *getNoiseCenterX();
+    CImplicitModuleBase *getNoiseCenterY();
+    CImplicitModuleBase *getNoiseCenterZ();
+    CImplicitModuleBase *getNoiseCenterW();
+    CImplicitModuleBase *getNoiseCenterU();
+    CImplicitModuleBase *getNoiseCenterV();
+
     void setRadius(double r);
+
+    double getDoubleRadius();
+
     void setRadius(CImplicitModuleBase *r);
+
+    CImplicitModuleBase *getNoiseRadius();
 
     virtual double get(double x, double y);
     virtual double get(double x, double y, double z);

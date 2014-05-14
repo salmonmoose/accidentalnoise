@@ -15,11 +15,6 @@
 				toolbox = document.getElementById('toolbox');
 
 				optionslist.forEach(function(layer) {
-
-					layerDoubleInputList = AccidentalNoiseSequence.getLayerDoubleInputs((layer+'_interface').toLowerCase());
-					layerIntInputList = AccidentalNoiseSequence.getLayerIntInputs((layer+'_interface').toLowerCase());
-					layerNoiseInputList = AccidentalNoiseSequence.getLayerNoiseInputs((layer+'_interface').toLowerCase());
-
 					new_li = document.createElement("li");
 					button = document.getElementById("tool_button").cloneNode(true);
 
@@ -27,13 +22,10 @@
 					button.style.display='inline';
 
 					button.querySelector('img').src = 'noise://'+layer+'_interface?x=50&y=50';
+					button.onclick = function() {createLayer(layer)};
 					button.querySelector('h2').innerHTML = layer;
 
 					new_li.appendChild(button);
-
-					new_li.appendChild(inputList(layerDoubleInputList));
-					new_li.appendChild(inputList(layerIntInputList));
-					new_li.appendChild(inputList(layerNoiseInputList));
 
 					toolbox.querySelector('ul').insertBefore(new_li);
 				});
@@ -44,7 +36,7 @@
 
 				list.forEach(function(input) {
 					new_li = document.createElement("li");
-					new_li.innerHTML = input;
+					new_li.innerHTML = input+':<input type="text">';
 					new_ul.appendChild(new_li);
 				})
 
@@ -52,11 +44,31 @@
 			}
 
 			createLayer = function(type) {
-				name = type+"_"+makeid;
+
+				name = (type+"_"+makeid()).toLowerCase();
+
+				console.debug(type, name);
 
 				workspace.push(name);
 
 				AccidentalNoiseSequence.createLayer(type, name);
+
+				node = document.getElementById("noise_node").cloneNode(true);
+
+				node.setAttribute('id', name);
+
+				node.querySelector('img').src = 'noise://'+name+'?x=250&y=250';
+				node.querySelector('p').innerHTML = type+"["+name+"]";
+
+				nodeDoubleInputList = AccidentalNoiseSequence.getLayerDoubleInputs(name);
+				nodeIntInputList = AccidentalNoiseSequence.getLayerIntInputs(name);
+				nodeNoiseInputList = AccidentalNoiseSequence.getLayerNoiseInputs(name);
+
+				node.querySelector('.inputs').appendChild(inputList(nodeDoubleInputList));
+				node.querySelector('.inputs').appendChild(inputList(nodeIntInputList));
+				node.querySelector('.inputs').appendChild(inputList(nodeNoiseInputList));
+
+				document.getElementById('workspace').appendChild(node);
 			}
 
 			makeid = function() {
@@ -113,6 +125,9 @@ body
 			<ul>
 			</ul>
 		</div>
+		<div id="workspace">
+
+		</div>
 		<div id="tool_button" style="display: none;">
 			<a href="#">
 				<img/>
@@ -124,6 +139,9 @@ body
 				<p></p>
 			</div>
 			<div class="node">
+				<img/>
+			</div>
+			<div class="inputs">
 
 			</div>
 		</div>

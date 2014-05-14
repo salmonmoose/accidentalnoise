@@ -16,10 +16,13 @@ namespace anl
     	CImplicitModuleBase(){}
     	virtual ~CImplicitModuleBase(){}
 
-        typedef std::function<void(int)> int_function;
-        typedef std::function<void(double)> double_function;
+        typedef std::function<void(int)> int_set_function;
+        typedef std::function<void(double)> double_set_function;
+        typedef std::function<void(anl::CImplicitModuleBase*)> noise_set_function;
 
-        typedef std::function<void(anl::CImplicitModuleBase*)> noise_function;
+        typedef std::function<int()> int_get_function;
+        typedef std::function<double()> double_get_function;
+        typedef std::function<anl::CImplicitModuleBase*()> noise_get_function;
 
 
     	virtual void setSeed(unsigned int seed){}
@@ -31,46 +34,70 @@ namespace anl
 
 
         //TODO: these could all realistically be templated;
-        bool registerDoubleInput(std::string const& key, double_function const& input) {
-            doubleFunctions[key] = input;
+        bool registerDoubleInput(std::string const& key, double_set_function const& input, double_get_function const& output) {
+            doubleSetFunctions[key] = input;
+            doubleGetFunctions[key] = output;
             return true;
         }
 
-        bool registerIntInput(std::string const& key, int_function const& input) {
-            intFunctions[key] = input;
+        bool registerIntInput(std::string const& key, int_set_function const& input, int_get_function const& output) {
+            intSetFunctions[key] = input;
+            intGetFunctions[key] = output;
             return true;
         }
 
-        bool registerNoiseInput(std::string const& key, noise_function const& input) {
-            noiseFunctions[key] = input;
+        bool registerNoiseInput(std::string const& key, noise_set_function const& input, noise_get_function const& output) {
+            noiseSetFunctions[key] = input;
+            noiseGetFunctions[key] = output;
             return true;
         }
 
         void setDoubleInput(std::string key, double value) {
-            auto fit = doubleFunctions.find(key);
-            if (fit == doubleFunctions.end()) return;
+            auto fit = doubleSetFunctions.find(key);
+            if (fit == doubleSetFunctions.end()) return;
 
             fit->second(value);
+        }
+
+        double getDoubleInput(std::string key) {
+            auto fit = doubleGetFunctions.find(key);
+            if (fit == doubleGetFunctions.end()) return 0;
+
+            return fit->second();
         }
 
         void setIntInput(std::string key, int value) {
-            auto fit = intFunctions.find(key);
-            if (fit == intFunctions.end()) return;
+            auto fit = intSetFunctions.find(key);
+            if (fit == intSetFunctions.end()) return;
 
             fit->second(value);
         }
 
+        int getIntInput(std::string key) {
+            auto fit = intGetFunctions.find(key);
+            if (fit == intGetFunctions.end()) return 0;
+
+            return fit->second();
+        }
+
         void setNoiseInput(std::string key, anl::CImplicitModuleBase* value) {
-            auto fit = noiseFunctions.find(key);
-            if(fit == noiseFunctions.end()) return;
+            auto fit = noiseSetFunctions.find(key);
+            if(fit == noiseSetFunctions.end()) return;
 
             fit->second(value);
+        }
+
+        anl::CImplicitModuleBase * getNoiseInput(std::string key) {
+            auto fit = noiseGetFunctions.find(key);
+            if (fit == noiseGetFunctions.end()) return 0;
+
+            return fit->second();
         }
 
         std::vector<std::string> getDoubleInputs() {
             std::vector<std::string> key_list;
 
-            for(typename std::map<std::string, double_function>::iterator it = doubleFunctions.begin(); it != doubleFunctions.end(); ++it)
+            for(typename std::map<std::string, double_set_function>::iterator it = doubleSetFunctions.begin(); it != doubleSetFunctions.end(); ++it)
             {
                 key_list.push_back(it->first);
             }
@@ -81,7 +108,7 @@ namespace anl
         std::vector<std::string> getIntInputs() {
             std::vector<std::string> key_list;
 
-            for(typename std::map<std::string, int_function>::iterator it = intFunctions.begin(); it != intFunctions.end(); ++it)
+            for(typename std::map<std::string, int_set_function>::iterator it = intSetFunctions.begin(); it != intSetFunctions.end(); ++it)
             {
                 key_list.push_back(it->first);
             }
@@ -92,7 +119,7 @@ namespace anl
         std::vector<std::string> getNoiseInputs() {
             std::vector<std::string> key_list;
 
-            for(typename std::map<std::string, noise_function>::iterator it = noiseFunctions.begin(); it != noiseFunctions.end(); ++it)
+            for(typename std::map<std::string, noise_set_function>::iterator it = noiseSetFunctions.begin(); it != noiseSetFunctions.end(); ++it)
             {
                 key_list.push_back(it->first);
             }
@@ -103,9 +130,13 @@ namespace anl
     protected:
 
     private:
-        std::map<std::string, double_function> doubleFunctions;
-        std::map<std::string, int_function> intFunctions;
-        std::map<std::string, noise_function> noiseFunctions;
+        std::map<std::string, double_set_function> doubleSetFunctions;
+        std::map<std::string, int_set_function> intSetFunctions;
+        std::map<std::string, noise_set_function> noiseSetFunctions;
+
+        std::map<std::string, double_get_function> doubleGetFunctions;
+        std::map<std::string, int_get_function> intGetFunctions;
+        std::map<std::string, noise_get_function> noiseGetFunctions;
     };
 
     // Scalar parameter class
@@ -124,6 +155,16 @@ namespace anl
         void set(CImplicitModuleBase *m)
         {
             m_source=m;
+        }
+
+        double getDouble()
+        {
+            return m_val;
+        }
+
+        CImplicitModuleBase * getNoise()
+        {
+            return m_source;
         }
 
         double get(double x, double y)
