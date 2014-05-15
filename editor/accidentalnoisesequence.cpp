@@ -105,6 +105,24 @@ QString AccidentalNoiseSequence::getLayerInputValue(QString layer, QString type,
 	return QString::fromStdString(value);
 }
 
+void AccidentalNoiseSequence::setLayerInputValue(QString layer, QString type, QString input, QString value)
+{
+	qDebug(
+		"setLayerInputValue called: %s %s %s %s",
+		layer.toStdString().c_str(),
+		type.toStdString().c_str(),
+		input.toStdString().c_str(),
+		value.toStdString().c_str()
+	);
+
+	mCImplicitSequence->SetAttribute(
+		layer.toUtf8().constData(),
+		type.toUtf8().constData(),
+		input.toUtf8().constData(),
+		value.toUtf8().constData()
+	);
+}
+
 void AccidentalNoiseSequence::createLayer(QString type, QString name)
 {
 	qDebug("createLayer: %s [%s]", type.toStdString().c_str(), name.toStdString().c_str());
