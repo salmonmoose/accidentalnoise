@@ -81,7 +81,7 @@ static const uint qt_meta_data_AccidentalNoiseSequence[] = {
     QMetaType::QStringList, QMetaType::QString,    4,
     QMetaType::QStringList, QMetaType::QString,    4,
     QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,    4,    8,    9,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,    4,    8,    9,   11,
+    QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,    4,    8,    9,   11,
     QMetaType::Void, QMetaType::QString, QMetaType::QString,    8,   13,
 
        0        // eod
@@ -102,7 +102,8 @@ void AccidentalNoiseSequence::qt_static_metacall(QObject *_o, QMetaObject::Call 
             if (_a[0]) *reinterpret_cast< QStringList*>(_a[0]) = _r; }  break;
         case 4: { QString _r = _t->getLayerInputValue((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])));
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 5: _t->setLayerInputValue((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])),(*reinterpret_cast< QString(*)>(_a[4]))); break;
+        case 5: { QString _r = _t->setLayerInputValue((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])),(*reinterpret_cast< QString(*)>(_a[4])));
+            if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
         case 6: _t->createLayer((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
         default: ;
         }

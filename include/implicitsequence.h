@@ -41,8 +41,8 @@ namespace anl
 			void AddLayer(std::string type, std::string name);
 			void AddLayer(std::string type);
 
-			void SetAttribute(std::string layer, std::string attribute, std::string type, std::string value);
-			void SetAttribute(anl::CImplicitModuleBase *node, std::string attribute, EInputTypes type, std::string value);
+			bool SetAttribute(std::string layer, std::string type, std::string attribute, std::string value);
+			bool SetAttribute(anl::CImplicitModuleBase *node, EInputTypes type, std::string attribute, std::string value);
 
 			std::string GetAttribute(std::string node, std::string type, std::string attribute);
 

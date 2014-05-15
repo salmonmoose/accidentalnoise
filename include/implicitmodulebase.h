@@ -60,11 +60,15 @@ namespace anl
             return name;
         }
 
-        void setDoubleInput(std::string key, double value) {
+        bool setDoubleInput(std::string key, double value) {
             auto fit = doubleSetFunctions.find(key);
-            if (fit == doubleSetFunctions.end()) return;
 
-            fit->second(value);
+            if (fit == doubleSetFunctions.end()) {
+                return false;
+            } else {
+                fit->second(value);
+                return true;
+            }
         }
 
         double getDoubleInput(std::string key) {
@@ -74,11 +78,15 @@ namespace anl
             return fit->second();
         }
 
-        void setIntInput(std::string key, int value) {
+        bool setIntInput(std::string key, int value) {
             auto fit = intSetFunctions.find(key);
-            if (fit == intSetFunctions.end()) return;
 
-            fit->second(value);
+            if (fit == intSetFunctions.end()) {
+                return false;
+            } else {
+                fit->second(value);
+                return true;
+            }
         }
 
         int getIntInput(std::string key) {
@@ -88,11 +96,15 @@ namespace anl
             return fit->second();
         }
 
-        void setNoiseInput(std::string key, anl::CImplicitModuleBase* value) {
+        bool setNoiseInput(std::string key, anl::CImplicitModuleBase* value) {
             auto fit = noiseSetFunctions.find(key);
-            if(fit == noiseSetFunctions.end()) return;
 
-            fit->second(value);
+            if(fit == noiseSetFunctions.end()) {
+                return false;
+            } else {
+                fit->second(value);
+                return true;
+            }
         }
 
         anl::CImplicitModuleBase * getNoiseInput(std::string key) {

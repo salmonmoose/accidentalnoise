@@ -107,42 +107,47 @@ namespace anl
         AddLayer(type, name);
     }
 
-    void CImplicitSequence::SetAttribute(std::string node, std::string attribute, std::string type, std::string value)
+    bool CImplicitSequence::SetAttribute(std::string node, std::string type, std::string attribute, std::string value)
     {
     	noiseTreeIterator = noiseTree.find(node);
 
     	if(noiseTreeIterator != noiseTree.end())
     	{
-            SetAttribute((*noiseTreeIterator).second.get(), attribute, InputMap.find(type)->second, value);
-    	}
+            return SetAttribute(noiseTreeIterator->second.get(), InputMap.find(type)->second, attribute, value);
+    	} else {
+            return false;
+        }
     }
 
-    void CImplicitSequence::SetAttribute(anl::CImplicitModuleBase *node, std::string attribute, EInputTypes type, std::string value)
+    bool CImplicitSequence::SetAttribute(anl::CImplicitModuleBase *node, EInputTypes type, std::string attribute, std::string value)
     {
         switch(type)
         {
             case INT:
             {
-                node->setIntInput(attribute, atoi(value.c_str()));
+                return node->setIntInput(attribute, atoi(value.c_str()));
             }
             break;
             case ENUM:
             {
-                node->setIntInput(attribute, ENUMMap.find(value)->second);
+                return node->setIntInput(attribute, ENUMMap.find(value)->second);
             }
             break;
             case NOISE:
             {
                 tmp = noiseTree.find(value)->second.get();
-                node->setNoiseInput(attribute, tmp);
+                return node->setNoiseInput(attribute, tmp);
             }
             break;
             case DOUBLE:
-            default:
             {
-                node->setDoubleInput(attribute, atof(value.c_str()));
+                return node->setDoubleInput(attribute, atof(value.c_str()));
             }
             break;
+            default:
+            {
+                return true;
+            }
         }
     }
 
@@ -152,9 +157,9 @@ namespace anl
 
         if(noiseTreeIterator != noiseTree.end())
         {
-            if (type == "INT") {
+            if (type == "Int") {
                 return std::to_string(noiseTreeIterator->second->getIntInput(attribute));
-            } else if (type == "DOUBLE") {
+            } else if (type == "Double") {
                 return std::to_string(noiseTreeIterator->second->getDoubleInput(attribute));
             } else {
                 if(noiseTreeIterator->second->getNoiseInput(attribute)) {
