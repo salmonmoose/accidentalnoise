@@ -21,10 +21,16 @@ namespace anl
         ~CImplicitAutoCorrect(){}
 
         void setSource(CImplicitModuleBase *m);
+        CImplicitModuleBase *getSource();
+
         void setRange(double low, double high);
+
         void setLow(double low);
+        double getLow();
+
         void setHigh(double high);
-    
+        double getHigh();
+
         void calculate();
 
         double get(double x, double y);

@@ -3,11 +3,26 @@
 
 namespace anl
 {
-    CImplicitPow::CImplicitPow() : m_source(0), m_power(0){}
+    CImplicitPow::CImplicitPow() : m_source(0), m_power(0){
+        CImplicitModuleBase::registerNoiseInput(
+            "Source",
+            [this] (CImplicitModuleBase *n) { this->setSource (n); },
+            [this] () -> CImplicitModuleBase* { return this->getSource(); }
+        );
+
+        CImplicitModuleBase::registerNoiseInput(
+            "Power",
+            [this] (CImplicitModuleBase *n) { this->setSource (n); },
+            [this] () -> CImplicitModuleBase* { return this->getSource(); }
+        );
+    }
     CImplicitPow::~CImplicitPow(){}
 
     void CImplicitPow::setSource(CImplicitModuleBase *m){ m_source = m; }
+    CImplicitModuleBase *CImplicitPow::getSource() { return m_source; }
+
     void CImplicitPow::setPower(CImplicitModuleBase *m){ m_power = m; }
+    CImplicitModuleBase *CImplicitPow::getPower() { return m_power; }
 
     double CImplicitPow::get(double x, double y)
     {

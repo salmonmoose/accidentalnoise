@@ -3,10 +3,17 @@
 
 namespace anl
 {
-    CImplicitLog::CImplicitLog() : m_source(0){}
+    CImplicitLog::CImplicitLog() : m_source(0){
+        CImplicitModuleBase::registerNoiseInput(
+            "Source",
+            [this] (CImplicitModuleBase *n) { this->setSource (n); },
+            [this] () -> CImplicitModuleBase* { return this->getSource(); }
+        );
+    }
     CImplicitLog::~CImplicitLog(){}
 
     void CImplicitLog::setSource(CImplicitModuleBase *m){ m_source = m; }
+    CImplicitModuleBase *CImplicitLog::getSource() { return m_source; }
 
     double CImplicitLog::get(double x, double y)
     {

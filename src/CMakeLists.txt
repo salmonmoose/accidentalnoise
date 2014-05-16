@@ -11,9 +11,9 @@ add_library(
 	accidentalnoise
 	cellulargen.cpp
 #	hsv.cpp
-#	implicitautocorrect.cpp
+	implicitautocorrect.cpp
 	implicitbasisfunction.cpp
-#	implicitbias.cpp
+	implicitbias.cpp
 #	implicitblend.cpp
 #	implicitbrightcontrast.cpp
 #	implicitcache.cpp
@@ -21,7 +21,7 @@ add_library(
 #	implicitclamp.cpp
 #	implicitcombiner.cpp
 #	implicitconstant.cpp
-#	implicitcos.cpp
+	implicitcos.cpp
 #	implicitextractrgbachannel.cpp
 #	implicitfloor.cpp
 	implicitfractal.cpp
@@ -31,17 +31,17 @@ add_library(
 #	implicitgrid.cpp
 #	implicitinvert.cpp
 	implicitjulia.cpp
-#	implicitlog.cpp
-#	implicitpow.cpp
+	implicitlog.cpp
+	implicitpow.cpp
 #	implicitrgbadotproduct.cpp
 #	implicitrotatedomain.cpp
 #	implicitscaledomain.cpp
 #	implicitscaleoffset.cpp
 #	implicitselect.cpp
 	implicitsequence.cpp
-#	implicitsin.cpp
+	implicitsin.cpp
 	implicitsphere.cpp
-#	implicittan.cpp
+	implicittan.cpp
 #	implicittiers.cpp
 #	implicittranslatedomain.cpp
 #	implicitxml.cpp
@@ -58,7 +58,6 @@ add_library(
 #	rgbargbatohsv.cpp
 #	rgbarotatecolor.cpp
 #	rgbaselect.cpp
-#	pugixml.cpp
 )
 
 target_link_libraries(accidentalnoise)

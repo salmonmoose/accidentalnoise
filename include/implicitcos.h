@@ -11,6 +11,7 @@ namespace anl
         ~CImplicitCos();
 
         void setSource(CImplicitModuleBase *m);
+        CImplicitModuleBase *getSource();
 
         double get(double x, double y);
         double get(double x, double y, double z);

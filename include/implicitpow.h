@@ -11,7 +11,10 @@ namespace anl
         ~CImplicitPow();
 
         void setSource(CImplicitModuleBase *m);
+        CImplicitModuleBase *getSource();
+
         void setPower(CImplicitModuleBase *m);
+        CImplicitModuleBase *getPower();
 
         double get(double x, double y);
         double get(double x, double y, double z);

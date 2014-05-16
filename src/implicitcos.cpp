@@ -3,10 +3,18 @@
 
 namespace anl
 {
-    CImplicitCos::CImplicitCos() : m_source(0){}
+    CImplicitCos::CImplicitCos() : m_source(0){
+        CImplicitModuleBase::registerNoiseInput(
+            "Source",
+            [this] (CImplicitModuleBase *n) { this->setSource (n); },
+            [this] () -> CImplicitModuleBase* { return this->getSource(); }
+        );
+    }
+
     CImplicitCos::~CImplicitCos(){}
 
     void CImplicitCos::setSource(CImplicitModuleBase *m){ m_source = m; }
+    CImplicitModuleBase *CImplicitCos::getSource() { return m_source; }
 
     double CImplicitCos::get(double x, double y)
     {

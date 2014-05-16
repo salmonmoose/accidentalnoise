@@ -3,10 +3,17 @@
 
 namespace anl
 {
-    CImplicitSin::CImplicitSin() : m_source(0){}
+    CImplicitSin::CImplicitSin() : m_source(0){
+        CImplicitModuleBase::registerNoiseInput(
+            "Source",
+            [this] (CImplicitModuleBase *n) { this->setSource (n); },
+            [this] () -> CImplicitModuleBase* { return this->getSource(); }
+        );
+    }
     CImplicitSin::~CImplicitSin(){}
 
     void CImplicitSin::setSource(CImplicitModuleBase *m){ m_source = m; }
+    CImplicitModuleBase *CImplicitSin::getSource() { return m_source; }
 
     double CImplicitSin::get(double x, double y)
     {

@@ -23,7 +23,7 @@
 
 					button.querySelector('img').src = 'noise://'+layer+'_interface?x=50&y=50';
 					button.onclick = function() { createLayer(layer); };
-					button.querySelector('h2').innerHTML = layer;
+					button.querySelector('h3').innerHTML = layer;
 
 					new_li.appendChild(button);
 
@@ -75,9 +75,9 @@
 				node = document.getElementById("noise_node").cloneNode(true);
 
 				node.setAttribute('id', name);
+				node.querySelector('.title').innerHTML = type+"["+name+"]";
 
 				node.querySelector('img').src = 'noise://'+name+'?x=100&y=100&' + new Date().getTime();
-				node.querySelector('p').innerHTML = type+"["+name+"]";
 
 				nodeDoubleInputList = AccidentalNoiseSequence.getLayerDoubleInputs(name);
 				nodeIntInputList = AccidentalNoiseSequence.getLayerIntInputs(name);
@@ -150,12 +150,12 @@ body
 		<div id="tool_button" style="display: none;">
 			<a href="#">
 				<img/>
-				<h2></h2>
+				<h3></h3>
 			</a>
 		</div>
 		<div id="noise_node">
 			<div class="handle">
-				<p></p>
+				<h2 class="title"></h2>
 			</div>
 			<div class="node">
 				<img/>

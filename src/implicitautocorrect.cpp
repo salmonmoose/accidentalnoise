@@ -5,10 +5,23 @@ namespace anl
 {
     CImplicitAutoCorrect::CImplicitAutoCorrect() : m_source(0), m_low(-1.0), m_high(1.0)
     {
-        CImplicitModuleBase::registerDoubleInput("Low", [this] (double d) { this->setLow (d); });
-        CImplicitModuleBase::registerDoubleInput("High", [this] (double d) { this->setHigh (d); });
+        CImplicitModuleBase::registerDoubleInput(
+            "Low",
+            [this] (double d) { this->setLow (d); },
+            [this] () -> double { return this->getLow(); }
+        );
 
-        CImplicitModuleBase::registerNoiseInput("Source", [this] (CImplicitModuleBase *n) { this->setSource (n); });
+        CImplicitModuleBase::registerDoubleInput(
+            "High",
+            [this] (double d) { this->setHigh (d); },
+            [this] () -> double { return this->getLow(); }
+        );
+
+        CImplicitModuleBase::registerNoiseInput(
+            "Source",
+            [this] (CImplicitModuleBase *n) { this->setSource (n); },
+            [this] () -> CImplicitModuleBase* { return this->getSource(); }
+        );
     }
 
     void CImplicitAutoCorrect::setSource(CImplicitModuleBase *m)
@@ -16,6 +29,8 @@ namespace anl
         m_source=m;
         calculate();
     }
+
+    CImplicitModuleBase * CImplicitAutoCorrect::getSource() { return m_source; }
 
     void CImplicitAutoCorrect::setRange(double low, double high)
     {
@@ -29,11 +44,15 @@ namespace anl
         calculate();
     }
 
+    double CImplicitAutoCorrect::getLow() { return m_low; }
+
     void CImplicitAutoCorrect::setHigh(double high)
     {
         m_high=high;
         calculate();
     }
+
+    double CImplicitAutoCorrect::getHigh() { return m_high; }
 
     void CImplicitAutoCorrect::calculate()
     {

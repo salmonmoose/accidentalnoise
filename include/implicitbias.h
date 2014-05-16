@@ -1,19 +1,20 @@
 #ifndef IMPLICIT_BIAS_H
 #define IMPLICIT_BIAS_H
 #include "implicitmodulebase.h"
+#include "utility.h"
 
 namespace anl
 {
     class CImplicitBias : public CImplicitModuleBase
 {
     public:
-    CImplicitBias(double b);
+    CImplicitBias();
     ~CImplicitBias();
 
-    void setSource(CImplicitModuleBase *b);
-    void setSource(double s);
-    void setBias(double b);
-    void setBias(CImplicitModuleBase *m);
+    void setSource(CImplicitModuleBase *m);
+    CImplicitModuleBase *getSource();
+    void setOffset(CImplicitModuleBase *m);
+    CImplicitModuleBase *getOffset();
 
     double get(double x, double y);
     double get(double x, double y, double z);
@@ -21,8 +22,8 @@ namespace anl
     double get(double x, double y, double z, double w, double u, double v);
 
     protected:
-    CScalarParameter m_source;
-    CScalarParameter m_bias;
+    CImplicitModuleBase *m_source;
+    CImplicitModuleBase *m_offset;
 };
 };
 

@@ -3,10 +3,17 @@
 
 namespace anl
 {
-    CImplicitTan::CImplicitTan() : m_source(0){}
+    CImplicitTan::CImplicitTan() : m_source(0){
+        CImplicitModuleBase::registerNoiseInput(
+            "Source",
+            [this] (CImplicitModuleBase *n) { this->setSource (n); },
+            [this] () -> CImplicitModuleBase* { return this->getSource(); }
+        );
+    }
     CImplicitTan::~CImplicitTan(){}
 
     void CImplicitTan::setSource(CImplicitModuleBase *m){ m_source = m; }
+    CImplicitModuleBase *CImplicitTan::getSource() { return m_source; }
 
     double CImplicitTan::get(double x, double y)
     {
