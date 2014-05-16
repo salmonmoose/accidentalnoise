@@ -20,7 +20,7 @@ namespace anl
         //mCImplicitModuleFactory->register_type<anl::CImplicitBrightContrast>("BrightContrast");
         //mCImplicitModuleFactory->register_type<anl::CImplicitCache>("Cache");
         //mCImplicitModuleFactory->register_type<anl::CImplicitCellular>("Cellular");
-        //mCImplicitModuleFactory->register_type<anl::CImplicitClamp>("Clamp");
+        mCImplicitModuleFactory->register_type<anl::CImplicitClamp>("Clamp");
         //mCImplicitModuleFactory->register_type<anl::CImplicitCombiner>("Combiner");
         //mCImplicitModuleFactory->register_type<anl::CImplicitConstant>("Constant");
         mCImplicitModuleFactory->register_type<anl::CImplicitCos>("Cos");

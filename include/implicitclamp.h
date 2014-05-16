@@ -1,17 +1,26 @@
 #ifndef IMPLICIT_CLAMP_H
 #define IMPLICIT_CLAMP_H
 #include "implicitmodulebase.h"
+#include "utility.h"
 
 namespace anl
 {
     class CImplicitClamp : public CImplicitModuleBase
     {
         public:
-        CImplicitClamp(double low, double high);
+        CImplicitClamp();
         ~CImplicitClamp();
 
         void setRange(double low, double high);
+
+        void setHigh(double high);
+        double getHigh();
+
+        void setLow(double low);
+        double getLow();
+
         void setSource(CImplicitModuleBase *b);
+        CImplicitModuleBase *getSource();
 
         double get(double x, double y);
         double get(double x, double y, double z);

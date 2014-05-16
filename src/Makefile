@@ -208,6 +208,30 @@ implicitbias.cpp.s:
 	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitbias.cpp.s
 .PHONY : implicitbias.cpp.s
 
+implicitclamp.o: implicitclamp.cpp.o
+.PHONY : implicitclamp.o
+
+# target to build an object file
+implicitclamp.cpp.o:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitclamp.cpp.o
+.PHONY : implicitclamp.cpp.o
+
+implicitclamp.i: implicitclamp.cpp.i
+.PHONY : implicitclamp.i
+
+# target to preprocess a source file
+implicitclamp.cpp.i:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitclamp.cpp.i
+.PHONY : implicitclamp.cpp.i
+
+implicitclamp.s: implicitclamp.cpp.s
+.PHONY : implicitclamp.s
+
+# target to generate assembly for a file
+implicitclamp.cpp.s:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitclamp.cpp.s
+.PHONY : implicitclamp.cpp.s
+
 implicitcos.o: implicitcos.cpp.o
 .PHONY : implicitcos.o
 
@@ -493,6 +517,9 @@ help:
 	@echo "... implicitbias.o"
 	@echo "... implicitbias.i"
 	@echo "... implicitbias.s"
+	@echo "... implicitclamp.o"
+	@echo "... implicitclamp.i"
+	@echo "... implicitclamp.s"
 	@echo "... implicitcos.o"
 	@echo "... implicitcos.i"
 	@echo "... implicitcos.s"

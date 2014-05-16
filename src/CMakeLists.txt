@@ -18,7 +18,7 @@ add_library(
 #	implicitbrightcontrast.cpp
 #	implicitcache.cpp
 #	implicitcellular.cpp
-#	implicitclamp.cpp
+	implicitclamp.cpp
 #	implicitcombiner.cpp
 #	implicitconstant.cpp
 	implicitcos.cpp
