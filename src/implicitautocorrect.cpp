@@ -3,7 +3,7 @@
 
 namespace anl
 {
-    CImplicitAutoCorrect::CImplicitAutoCorrect() : m_source(0), m_low(-1.0), m_high(1.0)
+    CImplicitAutoCorrect::CImplicitAutoCorrect() : m_source(0), m_low(0.25), m_high(0.75)
     {
         CImplicitModuleBase::registerDoubleInput(
             "Low",
@@ -22,6 +22,8 @@ namespace anl
             [this] (CImplicitModuleBase *n) { this->setSource (n); },
             [this] () -> CImplicitModuleBase* { return this->getSource(); }
         );
+
+        calculate();
     }
 
     void CImplicitAutoCorrect::setSource(CImplicitModuleBase *m)
@@ -56,8 +58,8 @@ namespace anl
 
     void CImplicitAutoCorrect::calculate()
     {
-        if(!m_source) return;
         double mn,mx;
+        double value;
         LCG lcg;
         lcg.setSeedTime();
 
@@ -69,9 +71,13 @@ namespace anl
             double nx=lcg.get01()*4.0-2.0;
             double ny=lcg.get01()*4.0-2.0;
 
-            double v=m_source->get(nx,ny);
-            if(v<mn) mn=v;
-            if(v>mx) mx=v;
+            if(m_source) {
+                value = m_source->get(nx,ny);
+            } else {
+                value = sqrt(nx * nx + ny * ny);
+            }
+            if(value < mn) mn = value;
+            if(value > mx) mx = value;
         }
         m_scale2=(m_high-m_low) / (mx-mn);
         m_offset2=m_low-mn*m_scale2;
@@ -85,9 +91,13 @@ namespace anl
             double ny=lcg.get01()*4.0-2.0;
             double nz=lcg.get01()*4.0-2.0;
 
-            double v=m_source->get(nx,ny,nz);
-            if(v<mn) mn=v;
-            if(v>mx) mx=v;
+            if(m_source) {
+                value = m_source->get(nx,ny,nz);
+            } else {
+                value = sqrt(nx * nx + ny * ny + nz * nz);
+            }
+            if(value < mn) mn = value;
+            if(value > mx) mx = value;
         }
         m_scale3=(m_high-m_low) / (mx-mn);
         m_offset3=m_low-mn*m_scale3;
@@ -102,9 +112,13 @@ namespace anl
             double nz=lcg.get01()*4.0-2.0;
             double nw=lcg.get01()*4.0-2.0;
 
-            double v=m_source->get(nx,ny,nz,nw);
-            if(v<mn) mn=v;
-            if(v>mx) mx=v;
+            if(m_source) {
+                value = m_source->get(nx,ny,nz,nw);
+            } else {
+                value = sqrt(nx * nx + ny * ny + nz * nz + nw * nw);
+            }
+            if(value < mn) mn = value;
+            if(value > mx) mx = value;
         }
         m_scale4=(m_high-m_low) / (mx-mn);
         m_offset4=m_low-mn*m_scale4;
@@ -121,9 +135,13 @@ namespace anl
             double nu=lcg.get01()*4.0-2.0;
             double nv=lcg.get01()*4.0-2.0;
 
-            double v=m_source->get(nx,ny,nz,nw,nu,nv);
-            if(v<mn) mn=v;
-            if(v>mx) mx=v;
+            if(m_source) {
+                value = m_source->get(nx,ny,nz,nw,nu,nv);
+            } else {
+                value = sqrt(nx * nx + ny * ny + nz * nz + nw * nw + nu * nu + nv * nv);
+            }
+            if(value < mn) mn = value;
+            if(value > mx) mx = value;
         }
         m_scale6=(m_high-m_low) / (mx-mn);
         m_offset6=m_low-mn*m_scale6;
@@ -132,32 +150,52 @@ namespace anl
 
     double CImplicitAutoCorrect::get(double x, double y)
     {
-        if(!m_source) return 0.0;
+        double value;
 
-        double v=m_source->get(x,y);
-        return std::max(m_low, std::min(m_high, v*m_scale2+m_offset2));
+        if(m_source) {
+            value = m_source->get(x,y);
+        } else {
+            value = sqrt(x * x + y * y);
+        }
+
+        return std::max(m_low, std::min(m_high, value * m_scale2 + m_offset2));
     }
 
     double CImplicitAutoCorrect::get(double x, double y, double z)
     {
-        if(!m_source) return 0.0;
+        double value;
 
-        double v=m_source->get(x,y,z);
-        return std::max(m_low, std::min(m_high, v*m_scale3+m_offset3));
+        if(m_source) {
+            value = m_source->get(x,y);
+        } else {
+            value = sqrt(x * x + y * y + z * z);
+        }
+
+        return std::max(m_low, std::min(m_high, value * m_scale3 + m_offset3));
     }
     double CImplicitAutoCorrect::get(double x, double y, double z, double w)
     {
-        if(!m_source) return 0.0;
+        double value;
 
-        double v=m_source->get(x,y,z,w);
-        return std::max(m_low, std::min(m_high, v*m_scale4+m_offset4));
+        if(m_source) {
+            value = m_source->get(x,y);
+        } else {
+            value = sqrt(x * x + y * y + z * z + w * w);
+        }
+
+        return std::max(m_low, std::min(m_high, value * m_scale4 + m_offset4));
     }
 
     double CImplicitAutoCorrect::get(double x, double y, double z, double w, double u, double v)
     {
-        if(!m_source) return 0.0;
+        double value;
 
-        double val=m_source->get(x,y,z,w,u,v);
-        return std::max(m_low, std::min(m_high, val*m_scale6+m_offset6));
+        if(m_source) {
+            value = m_source->get(x,y);
+        } else {
+            value = sqrt(x * x + y * y + z * z + w * w + u * u + v * v);
+        }
+
+        return std::max(m_low, std::min(m_high, value * m_scale6 + m_offset6));
     }
 };
