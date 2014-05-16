@@ -30,13 +30,26 @@ namespace anl
         void RegisterInputs();
 
         void setNumOctaves(int n);
+        int getNumOctaves();
+
         void setFrequency(double f);
+        double getFrequency();
+
         void setLacunarity(double l);
+        double getLacunarity();
+
         void setGain(double g);
+        double getGain();
+
         void setOffset(double o);
+        double getOffset();
+
         void setH(double h);
+        double getH();
 
         void setType(unsigned int t);
+        unsigned int getType();
+
         void setAllSourceTypes(unsigned int basis_type, unsigned int interp);
         void setAllBasisTypes(unsigned int basis_type);
         void setAllInterpolationTypes(unsigned int interp);
@@ -44,7 +57,10 @@ namespace anl
         void overrideSource(int which, CImplicitModuleBase *b);
         void resetSource(int which);
         void resetAllSources();
+
         void setSeed(unsigned int seed);
+        unsigned int getSeed();
+
         CImplicitBasisFunction *getBasis(int which);
         double get(double x, double y);
         double get(double x, double y, double z);

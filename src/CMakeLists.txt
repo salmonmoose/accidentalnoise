@@ -12,7 +12,7 @@ add_library(
 	cellulargen.cpp
 #	hsv.cpp
 #	implicitautocorrect.cpp
-#	implicitbasisfunction.cpp
+	implicitbasisfunction.cpp
 #	implicitbias.cpp
 #	implicitblend.cpp
 #	implicitbrightcontrast.cpp
@@ -24,7 +24,7 @@ add_library(
 #	implicitcos.cpp
 #	implicitextractrgbachannel.cpp
 #	implicitfloor.cpp
-#	implicitfractal.cpp
+	implicitfractal.cpp
 #	implicitfunctiongradient.cpp
 #	implicitgain.cpp
 #	implicitgradient.cpp
