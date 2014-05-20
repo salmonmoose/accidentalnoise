@@ -19,11 +19,10 @@
 					button = document.getElementById("tool_button").cloneNode(true);
 
 					button.setAttribute('id', layer+'_interface');
-					button.style.display='inline';
 
 					button.querySelector('img').src = 'noise://'+layer+'_interface?x=50&y=50';
 					button.onclick = function() { createLayer(layer); };
-					button.querySelector('h3').innerHTML = layer;
+					button.querySelector('figcaption').innerHTML = layer;
 
 					new_li.appendChild(button);
 
@@ -107,6 +106,11 @@ body
 	background-color: rgb(127,127,127);
 }
 
+figure
+{
+	display: none;
+}
+
 #toolbox
 {
 
@@ -118,6 +122,7 @@ body
 	padding: 0;
 	list-style-type: none;
 	text-align: center;
+
 }
 
 #toolbox ul li
@@ -125,17 +130,21 @@ body
 	display: inline;
 }
 
-#toolbox ul li a
+#toolbox figure
 {
-	text-decoration: none;
-	padding: 0;
-	background-color: rgb(95,95,95);
+	display: inline-block;
+	padding: 0px;
+	margin: 0px;
 }
 
-#toolbox h2
+#toolbox figcaption
 {
-	display: inline;
-	font-size: 12;
+	margin: 0 0 0 0;
+	font-variant: small-caps;
+	font-family: sans-serif;
+	font-weight: normal;
+	color: rgb(0,0,0);
+	background-color: rgb(95,95,95);
 }
 		</style>
 	</head>
@@ -147,12 +156,10 @@ body
 		<div id="workspace">
 
 		</div>
-		<div id="tool_button" style="display: none;">
-			<a href="#">
-				<img/>
-				<h3></h3>
-			</a>
-		</div>
+		<figure id="tool_button">
+			<img width="50px" height="50px"/>
+			<figcaption></figcaption>
+		</figure>
 		<div id="noise_node">
 			<div class="handle">
 				<h2 class="title"></h2>

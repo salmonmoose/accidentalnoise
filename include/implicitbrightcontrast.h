@@ -11,14 +11,24 @@ namespace anl
         ~CImplicitBrightContrast();
 
         void setSource(CImplicitModuleBase *m);
-        void setSource(double v);
-
-        void setBrightness(double b);
-        void setContrastThreshold(double t);
-        void setContrastFactor(double t);
         void setBrightness(CImplicitModuleBase *m);
         void setContrastThreshold(CImplicitModuleBase *m);
         void setContrastFactor(CImplicitModuleBase *m);
+
+        CImplicitModuleBase *getNoiseSource();
+        CImplicitModuleBase *getNoiseBrightness();
+        CImplicitModuleBase *getNoiseContrastThreshold();
+        CImplicitModuleBase *getNoiseContrastFactor();
+
+        void setSource(double v);
+        void setBrightness(double b);
+        void setContrastThreshold(double t);
+        void setContrastFactor(double t);
+
+        double getDoubleSource();
+        double getDoubleBrightness();
+        double getDoubleContrastThreshold();
+        double getDoubleContrastFactor();
 
         double get(double x, double y);
         double get(double x, double y, double z);

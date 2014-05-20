@@ -17,7 +17,7 @@ namespace anl
         mCImplicitModuleFactory->register_type<anl::CImplicitBasisFunction>("BasisFunction");
         mCImplicitModuleFactory->register_type<anl::CImplicitBias>("Bias");
         mCImplicitModuleFactory->register_type<anl::CImplicitBlend>("Blend");
-        //mCImplicitModuleFactory->register_type<anl::CImplicitBrightContrast>("BrightContrast");
+        mCImplicitModuleFactory->register_type<anl::CImplicitBrightContrast>("BrightContrast");
         //mCImplicitModuleFactory->register_type<anl::CImplicitCache>("Cache");
         //mCImplicitModuleFactory->register_type<anl::CImplicitCellular>("Cellular");
         mCImplicitModuleFactory->register_type<anl::CImplicitClamp>("Clamp");
@@ -25,7 +25,7 @@ namespace anl
         //mCImplicitModuleFactory->register_type<anl::CImplicitConstant>("Constant");
         mCImplicitModuleFactory->register_type<anl::CImplicitCos>("Cos");
         //mCImplicitModuleFactory->register_type<anl::CImplicitExtractRGBAChannel>("ExtractRGBAChannel");
-        //mCImplicitModuleFactory->register_type<anl::CImplicitFloor>("Floor");
+        mCImplicitModuleFactory->register_type<anl::CImplicitFloor>("Floor");
         mCImplicitModuleFactory->register_type<anl::CImplicitFractal>("Fractal");
         //mCImplicitModuleFactory->register_type<anl::CImplicitFunctionGradient>("FunctionGradient");
         //mCImplicitModuleFactory->register_type<anl::CImplicitGain>("Gain");

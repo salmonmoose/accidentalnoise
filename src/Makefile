@@ -232,6 +232,30 @@ implicitblend.cpp.s:
 	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitblend.cpp.s
 .PHONY : implicitblend.cpp.s
 
+implicitbrightcontrast.o: implicitbrightcontrast.cpp.o
+.PHONY : implicitbrightcontrast.o
+
+# target to build an object file
+implicitbrightcontrast.cpp.o:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitbrightcontrast.cpp.o
+.PHONY : implicitbrightcontrast.cpp.o
+
+implicitbrightcontrast.i: implicitbrightcontrast.cpp.i
+.PHONY : implicitbrightcontrast.i
+
+# target to preprocess a source file
+implicitbrightcontrast.cpp.i:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitbrightcontrast.cpp.i
+.PHONY : implicitbrightcontrast.cpp.i
+
+implicitbrightcontrast.s: implicitbrightcontrast.cpp.s
+.PHONY : implicitbrightcontrast.s
+
+# target to generate assembly for a file
+implicitbrightcontrast.cpp.s:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitbrightcontrast.cpp.s
+.PHONY : implicitbrightcontrast.cpp.s
+
 implicitclamp.o: implicitclamp.cpp.o
 .PHONY : implicitclamp.o
 
@@ -279,6 +303,30 @@ implicitcos.s: implicitcos.cpp.s
 implicitcos.cpp.s:
 	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitcos.cpp.s
 .PHONY : implicitcos.cpp.s
+
+implicitfloor.o: implicitfloor.cpp.o
+.PHONY : implicitfloor.o
+
+# target to build an object file
+implicitfloor.cpp.o:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitfloor.cpp.o
+.PHONY : implicitfloor.cpp.o
+
+implicitfloor.i: implicitfloor.cpp.i
+.PHONY : implicitfloor.i
+
+# target to preprocess a source file
+implicitfloor.cpp.i:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitfloor.cpp.i
+.PHONY : implicitfloor.cpp.i
+
+implicitfloor.s: implicitfloor.cpp.s
+.PHONY : implicitfloor.s
+
+# target to generate assembly for a file
+implicitfloor.cpp.s:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/implicitfloor.cpp.s
+.PHONY : implicitfloor.cpp.s
 
 implicitfractal.o: implicitfractal.cpp.o
 .PHONY : implicitfractal.o
@@ -640,12 +688,18 @@ help:
 	@echo "... implicitblend.o"
 	@echo "... implicitblend.i"
 	@echo "... implicitblend.s"
+	@echo "... implicitbrightcontrast.o"
+	@echo "... implicitbrightcontrast.i"
+	@echo "... implicitbrightcontrast.s"
 	@echo "... implicitclamp.o"
 	@echo "... implicitclamp.i"
 	@echo "... implicitclamp.s"
 	@echo "... implicitcos.o"
 	@echo "... implicitcos.i"
 	@echo "... implicitcos.s"
+	@echo "... implicitfloor.o"
+	@echo "... implicitfloor.i"
+	@echo "... implicitfloor.s"
 	@echo "... implicitfractal.o"
 	@echo "... implicitfractal.i"
 	@echo "... implicitfractal.s"

@@ -15,7 +15,7 @@ add_library(
 	implicitbasisfunction.cpp
 	implicitbias.cpp
 	implicitblend.cpp
-#	implicitbrightcontrast.cpp
+	implicitbrightcontrast.cpp
 #	implicitcache.cpp
 #	implicitcellular.cpp
 	implicitclamp.cpp
@@ -23,7 +23,7 @@ add_library(
 #	implicitconstant.cpp
 	implicitcos.cpp
 #	implicitextractrgbachannel.cpp
-#	implicitfloor.cpp
+	implicitfloor.cpp
 	implicitfractal.cpp
 #	implicitfunctiongradient.cpp
 #	implicitgain.cpp

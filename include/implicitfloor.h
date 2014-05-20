@@ -12,6 +12,8 @@ namespace anl
 
         void setSource(double v);
         void setSource(CImplicitModuleBase *m);
+        double getDoubleSource();
+        CImplicitModuleBase *getNoiseSource();
 
         double get(double x, double y);
         double get(double x, double y, double z);
