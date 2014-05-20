@@ -4,38 +4,63 @@
 namespace anl
 {
 
-    CImplicitBlend::CImplicitBlend(): m_low(0), m_high(0), m_control(0){}
+    CImplicitBlend::CImplicitBlend(): m_low(0), m_high(0), m_control(0)
+    {
+    	CImplicitModuleBase::registerDoubleInput(
+    		"LowSource",
+    		[this] (double d) { this->setLowSource(d); },
+    		[this] () -> double { return this->getDoubleLowSource(); }
+		);
+
+		CImplicitModuleBase::registerDoubleInput(
+			"ControlSource",
+			[this] (double d) { this->setControlSource(d); },
+			[this] () -> double { return this->getDoubleControlSource(); }
+		);
+
+		CImplicitModuleBase::registerDoubleInput(
+			"HighSource",
+			[this] (double d) { this->setHighSource(d); },
+			[this] () -> double { return this->getDoubleHighSource(); }
+		);
+
+    	CImplicitModuleBase::registerNoiseInput(
+    		"LowSource",
+    		[this] (CImplicitModuleBase *n) { this->setLowSource(n); },
+    		[this] () -> CImplicitModuleBase *{ return this->getNoiseLowSource(); }
+		);
+
+		CImplicitModuleBase::registerNoiseInput(
+			"ControlSource",
+			[this] (CImplicitModuleBase *n) { this->setControlSource(n); },
+			[this] () -> CImplicitModuleBase *{ return this->getNoiseControlSource(); }
+		);
+
+		CImplicitModuleBase::registerNoiseInput(
+			"HighSource",
+			[this] (CImplicitModuleBase *n) { this->setHighSource(n); },
+			[this] () -> CImplicitModuleBase *{ return this->getNoiseHighSource(); }
+		);
+    }
 	CImplicitBlend::~CImplicitBlend(){}
 
-	void CImplicitBlend::setLowSource(CImplicitModuleBase *b)
-	{
-		m_low.set(b);
-	}
+	void CImplicitBlend::setLowSource(CImplicitModuleBase *b) { m_low.set(b); }
+	CImplicitModuleBase *CImplicitBlend::getNoiseLowSource() { return m_low.getNoise(); }
 
-	void CImplicitBlend::setHighSource(CImplicitModuleBase *b)
-	{
-	    m_high.set(b);
-	}
+	void CImplicitBlend::setHighSource(CImplicitModuleBase *b) { m_high.set(b); }
+	CImplicitModuleBase *CImplicitBlend::getNoiseHighSource() { return m_high.getNoise(); }
 
-	void CImplicitBlend::setControlSource(CImplicitModuleBase *b)
-	{
-	    m_control.set(b);
-	}
+	void CImplicitBlend::setControlSource(CImplicitModuleBase *b) { m_control.set(b); }
+	CImplicitModuleBase *CImplicitBlend::getNoiseControlSource() { return m_control.getNoise(); }
 
-	void CImplicitBlend::setLowSource(double v)
-	{
-		m_low.set(v);
-	}
+	void CImplicitBlend::setLowSource(double v) { m_low.set(v); }
+	double CImplicitBlend::getDoubleLowSource() { return m_low.getDouble(); }
 
-	void CImplicitBlend::setHighSource(double v)
-	{
-	    m_high.set(v);
-	}
+	void CImplicitBlend::setHighSource(double v) { m_high.set(v); }
+	double CImplicitBlend::getDoubleHighSource() { return m_high.getDouble(); }
 
-	void CImplicitBlend::setControlSource(double v)
-	{
-	    m_control.set(v);
-	}
+	void CImplicitBlend::setControlSource(double v) { m_control.set(v); }
+	double CImplicitBlend::getDoubleControlSource() { return m_control.getDouble(); }
 
 	double CImplicitBlend::get(double x, double y)
 	{

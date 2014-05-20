@@ -14,7 +14,7 @@ add_library(
 	implicitautocorrect.cpp
 	implicitbasisfunction.cpp
 	implicitbias.cpp
-#	implicitblend.cpp
+	implicitblend.cpp
 #	implicitbrightcontrast.cpp
 #	implicitcache.cpp
 #	implicitcellular.cpp

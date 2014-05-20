@@ -21,6 +21,23 @@ std::map<std::string, EBasisTypes> CImplicitBasisFunction::BasisMap = {
 
 CImplicitBasisFunction::CImplicitBasisFunction() : CImplicitModuleBase()
 {
+    CImplicitModuleBase::registerIntInput(
+        "Seed",
+        [this] (int i) { this->setSeed(i); },
+        [this] () -> int { return this->getSeed(); }
+    );
+
+    CImplicitModuleBase::registerIntInput(
+        "Type",
+        [this] (int i) { this->setType(i); },
+        [this] () -> int { return this->getType(); }
+    );
+
+    CImplicitModuleBase::registerIntInput(
+        "Interpolation", 
+        [this] (int i) { this->setInterp(i); },
+        [this] () -> int { return this->getInterp(); }
+    );
 	setType(GRADIENT);
 	setInterp(QUINTIC);
 	setSeed(1000);
@@ -54,92 +71,76 @@ void CImplicitBasisFunction::setSeed(unsigned int seed)
 	sin2d=sin(angle);
 }
 
+int CImplicitBasisFunction::getSeed() { return m_seed; }
+
 void CImplicitBasisFunction::setType(int type)
 {
+    m_type = type;
 	switch(type)
 	{
-	case VALUE: 
-        m_2d=value_noise2D; 
-        m_3d=value_noise3D; 
-        m_4d=value_noise4D; 
-        m_6d=value_noise6D; 
+	case VALUE:
+        m_2d=value_noise2D;
+        m_3d=value_noise3D;
+        m_4d=value_noise4D;
+        m_6d=value_noise6D;
         break;
-	case GRADIENT: 
-        m_2d=gradient_noise2D; 
-        m_3d=gradient_noise3D; 
-        m_4d=gradient_noise4D; 
-        m_6d=gradient_noise6D; 
+	case GRADIENT:
+        m_2d=gradient_noise2D;
+        m_3d=gradient_noise3D;
+        m_4d=gradient_noise4D;
+        m_6d=gradient_noise6D;
         break;
-	case GRADVAL: 
-        m_2d=gradval_noise2D; 
-        m_3d=gradval_noise3D; 
-        m_4d=gradval_noise4D; 
-        m_6d=gradval_noise6D; 
+	case GRADVAL:
+        m_2d=gradval_noise2D;
+        m_3d=gradval_noise3D;
+        m_4d=gradval_noise4D;
+        m_6d=gradval_noise6D;
         break;
-	case WHITE: 
-        m_2d=white_noise2D; 
-        m_3d=white_noise3D; 
-        m_4d=white_noise4D; 
-        m_6d=white_noise6D; 
+	case WHITE:
+        m_2d=white_noise2D;
+        m_3d=white_noise3D;
+        m_4d=white_noise4D;
+        m_6d=white_noise6D;
         break;
-	case SIMPLEX: 
-        m_2d=simplex_noise2D; 
-        m_3d=simplex_noise3D; 
-        m_4d=simplex_noise4D; 
-        m_6d=simplex_noise6D; 
+	case SIMPLEX:
+        m_2d=simplex_noise2D;
+        m_3d=simplex_noise3D;
+        m_4d=simplex_noise4D;
+        m_6d=simplex_noise6D;
         break;
-	default: 
-        m_2d=gradient_noise2D; 
-        m_3d=gradient_noise3D; 
-        m_4d=gradient_noise4D; 
-        m_6d=gradient_noise6D; 
+	default:
+        m_2d=gradient_noise2D;
+        m_3d=gradient_noise3D;
+        m_4d=gradient_noise4D;
+        m_6d=gradient_noise6D;
         break;
 	}
 	setMagicNumbers(type);
 }
 
+int CImplicitBasisFunction::getType() { return m_type; }
+
 void CImplicitBasisFunction::setInterp(int interp)
 {
+    m_interpolation = interp;
 	switch(interp)
 	{
-	case NONE: m_interp=noInterp; break;
-	case LINEAR: m_interp=linearInterp; break;
-	case CUBIC: m_interp=hermiteInterp; break;
-	default: m_interp=quinticInterp; break;
+	case NONE:
+        m_interp=noInterp;
+        break;
+	case LINEAR:
+        m_interp=linearInterp;
+        break;
+	case CUBIC:
+        m_interp=hermiteInterp;
+        break;
+	default:
+        m_interp=quinticInterp;
+        break;
 	}
 }
 
-double CImplicitBasisFunction::get(double x, double y)
-{
-	double nx,ny;
-    nx = x*cos2d-y*sin2d;
-    ny = y*cos2d+x*sin2d;
-	return m_2d(nx,ny,m_seed,m_interp);
-}
-double CImplicitBasisFunction::get(double x, double y, double z)
-{
-    double nx, ny, nz;
-    nx = (m_rotmatrix[0][0]*x) + (m_rotmatrix[1][0]*y) + (m_rotmatrix[2][0]*z);
-    ny = (m_rotmatrix[0][1]*x) + (m_rotmatrix[1][1]*y) + (m_rotmatrix[2][1]*z);
-    nz = (m_rotmatrix[0][2]*x) + (m_rotmatrix[1][2]*y) + (m_rotmatrix[2][2]*z);
-    return m_3d(nx,ny,nz,m_seed,m_interp);
-}
-double CImplicitBasisFunction::get(double x, double y, double z, double w)
-{
-	double nx, ny, nz;
-    nx = (m_rotmatrix[0][0]*x) + (m_rotmatrix[1][0]*y) + (m_rotmatrix[2][0]*z);
-    ny = (m_rotmatrix[0][1]*x) + (m_rotmatrix[1][1]*y) + (m_rotmatrix[2][1]*z);
-    nz = (m_rotmatrix[0][2]*x) + (m_rotmatrix[1][2]*y) + (m_rotmatrix[2][2]*z);
-	return m_4d(nx,ny,nz,w,m_seed,m_interp);
-}
-double CImplicitBasisFunction::get(double x, double y, double z, double w, double u, double v)
-{
-	double nx, ny, nz;
-    nx = (m_rotmatrix[0][0]*x) + (m_rotmatrix[1][0]*y) + (m_rotmatrix[2][0]*z);
-    ny = (m_rotmatrix[0][1]*x) + (m_rotmatrix[1][1]*y) + (m_rotmatrix[2][1]*z);
-    nz = (m_rotmatrix[0][2]*x) + (m_rotmatrix[1][2]*y) + (m_rotmatrix[2][2]*z);
-	return m_6d(nx,ny,nz,w,u,v,m_seed,m_interp);
-}
+int CImplicitBasisFunction::getInterp() { return m_interpolation; }
 
 void CImplicitBasisFunction::setRotationAngle(double x, double y, double z, double angle)
 {
@@ -158,6 +159,7 @@ void CImplicitBasisFunction::setRotationAngle(double x, double y, double z, doub
 
 void CImplicitBasisFunction::setMagicNumbers(int type)
 {
+    //TODO:
     // This function is a damned hack.
     // The underlying noise functions don't return values in the range [-1,1] cleanly, and the ranges vary depending
     // on basis type and dimensionality. There's probably a better way to correct the ranges, but for now I'm just
@@ -205,3 +207,40 @@ void CImplicitBasisFunction::setMagicNumbers(int type)
         } break;
     };
 }
+
+double CImplicitBasisFunction::get(double x, double y)
+{
+	double nx,ny;
+    nx = x*cos2d-y*sin2d;
+    ny = y*cos2d+x*sin2d;
+	return m_2d(nx,ny,m_seed,m_interp);
+}
+
+double CImplicitBasisFunction::get(double x, double y, double z)
+{
+    double nx, ny, nz;
+    nx = (m_rotmatrix[0][0]*x) + (m_rotmatrix[1][0]*y) + (m_rotmatrix[2][0]*z);
+    ny = (m_rotmatrix[0][1]*x) + (m_rotmatrix[1][1]*y) + (m_rotmatrix[2][1]*z);
+    nz = (m_rotmatrix[0][2]*x) + (m_rotmatrix[1][2]*y) + (m_rotmatrix[2][2]*z);
+    return m_3d(nx,ny,nz,m_seed,m_interp);
+}
+
+double CImplicitBasisFunction::get(double x, double y, double z, double w)
+{
+	double nx, ny, nz;
+    nx = (m_rotmatrix[0][0]*x) + (m_rotmatrix[1][0]*y) + (m_rotmatrix[2][0]*z);
+    ny = (m_rotmatrix[0][1]*x) + (m_rotmatrix[1][1]*y) + (m_rotmatrix[2][1]*z);
+    nz = (m_rotmatrix[0][2]*x) + (m_rotmatrix[1][2]*y) + (m_rotmatrix[2][2]*z);
+	return m_4d(nx,ny,nz,w,m_seed,m_interp);
+}
+
+double CImplicitBasisFunction::get(double x, double y, double z, double w, double u, double v)
+{
+	double nx, ny, nz;
+    nx = (m_rotmatrix[0][0]*x) + (m_rotmatrix[1][0]*y) + (m_rotmatrix[2][0]*z);
+    ny = (m_rotmatrix[0][1]*x) + (m_rotmatrix[1][1]*y) + (m_rotmatrix[2][1]*z);
+    nz = (m_rotmatrix[0][2]*x) + (m_rotmatrix[1][2]*y) + (m_rotmatrix[2][2]*z);
+	return m_6d(nx,ny,nz,w,u,v,m_seed,m_interp);
+}
+
+

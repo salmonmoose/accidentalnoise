@@ -34,11 +34,16 @@ namespace anl
         static std::map<std::string, EBasisTypes> BasisMap;
         static std::map<std::string, EInterpTypes> InterpMap;
 
-        void setType(int type);
-        void setInterp(int interp);
+        void setType(int i);
+        int getType();
+
+        void setInterp(int i);
+        int getInterp();
+
         void setRotationAngle(double ax, double ay, double az, double angle);
 
         void setSeed(unsigned int seed);
+        int getSeed();
 
         double get(double x, double y);
         double get(double x, double y, double z);
@@ -55,6 +60,8 @@ namespace anl
         noise_func4 m_4d;
         noise_func6 m_6d;
         unsigned int m_seed;
+        int m_interpolation;
+        int m_type;
 
         double m_rotmatrix[3][3];
         double cos2d,sin2d;

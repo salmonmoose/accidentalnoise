@@ -125,22 +125,56 @@ namespace anl
 
     double CImplicitScaleDomain::get(double x, double y)
     {
-        return m_source->get(x*m_sx.get(x,y), y*m_sy.get(x,y));
+        if (m_source) {
+            return m_source->get(
+                x*m_sx.get(x,y),
+                y*m_sy.get(x,y)
+            );
+        } else {
+            return 0.0;
+        }
     }
 
     double CImplicitScaleDomain::get(double x, double y, double z)
     {
-        return m_source->get(x*m_sx.get(x,y,z), y*m_sy.get(x,y,z), z*m_sz.get(x,y,z));
+        if (m_source) {
+            return m_source->get(
+                x*m_sx.get(x,y,z),
+                y*m_sy.get(x,y,z),
+                z*m_sz.get(x,y,z)
+            );
+        } else {
+            return 0.0;
+        }
     }
 
     double CImplicitScaleDomain::get(double x, double y, double z, double w)
     {
-        return m_source->get(x*m_sx.get(x,y,z,w), y*m_sy.get(x,y,z,w), z*m_sz.get(x,y,z,w), w*m_sw.get(x,y,z,w));
+        if (m_source) {
+            return m_source->get(
+                x*m_sx.get(x,y,z,w),
+                y*m_sy.get(x,y,z,w),
+                z*m_sz.get(x,y,z,w),
+                w*m_sw.get(x,y,z,w)
+            );
+        } else {
+            return 0.0;
+        }
     }
 
     double CImplicitScaleDomain::get(double x, double y, double z, double w, double u, double v)
     {
-        return m_source->get(x*m_sx.get(x,y,z,w,u,v), y*m_sy.get(x,y,z,w,u,v), z*m_sz.get(x,y,z,w,u,v),
-            w*m_sw.get(x,y,z,w,u,v), u*m_su.get(x,y,z,w,u,v), v*m_sv.get(x,y,z,w,u,v));
+        if (m_source) {
+            return m_source->get(
+                x*m_sx.get(x,y,z,w,u,v),
+                y*m_sy.get(x,y,z,w,u,v),
+                z*m_sz.get(x,y,z,w,u,v),
+                w*m_sw.get(x,y,z,w,u,v),
+                u*m_su.get(x,y,z,w,u,v),
+                v*m_sv.get(x,y,z,w,u,v)
+            );
+        } else {
+            return 0.0;
+        }
     }
 };

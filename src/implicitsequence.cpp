@@ -14,9 +14,9 @@ namespace anl
         mCImplicitModuleFactory = new generic_factory<std::string, anl::CImplicitModuleBase>();
 
         mCImplicitModuleFactory->register_type<anl::CImplicitAutoCorrect>("AutoCorrect");
-        //mCImplicitModuleFactory->register_type<anl::CImplicitBasisFunction>("BasisFunction");
+        mCImplicitModuleFactory->register_type<anl::CImplicitBasisFunction>("BasisFunction");
         mCImplicitModuleFactory->register_type<anl::CImplicitBias>("Bias");
-        //mCImplicitModuleFactory->register_type<anl::CImplicitBlend>("Blend");
+        mCImplicitModuleFactory->register_type<anl::CImplicitBlend>("Blend");
         //mCImplicitModuleFactory->register_type<anl::CImplicitBrightContrast>("BrightContrast");
         //mCImplicitModuleFactory->register_type<anl::CImplicitCache>("Cache");
         //mCImplicitModuleFactory->register_type<anl::CImplicitCellular>("Cellular");

@@ -14,9 +14,16 @@ namespace anl
         void setLowSource(CImplicitModuleBase *b);
         void setHighSource(CImplicitModuleBase *b);
         void setControlSource(CImplicitModuleBase *b);
+        CImplicitModuleBase *getNoiseLowSource();
+        CImplicitModuleBase *getNoiseHighSource();
+        CImplicitModuleBase *getNoiseControlSource();
+
         void setLowSource(double v);
         void setHighSource(double v);
         void setControlSource(double v);
+        double getDoubleLowSource();
+        double getDoubleHighSource();
+        double getDoubleControlSource();
 
         double get(double x, double y);
         double get(double x, double y, double z);
