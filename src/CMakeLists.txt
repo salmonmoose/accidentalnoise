@@ -27,15 +27,15 @@ add_library(
 	implicitfractal.cpp
 #	implicitfunctiongradient.cpp
 #	implicitgain.cpp
-#	implicitgradient.cpp
-#	implicitgrid.cpp
-#	implicitinvert.cpp
+	implicitgradient.cpp
+	implicitgrid.cpp
+	implicitinvert.cpp
 	implicitjulia.cpp
 	implicitlog.cpp
 	implicitpow.cpp
 #	implicitrgbadotproduct.cpp
 #	implicitrotatedomain.cpp
-#	implicitscaledomain.cpp
+	implicitscaledomain.cpp
 #	implicitscaleoffset.cpp
 #	implicitselect.cpp
 	implicitsequence.cpp

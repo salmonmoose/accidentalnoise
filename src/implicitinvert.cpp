@@ -2,10 +2,19 @@
 
 namespace anl
 {
-    CImplicitInvert::CImplicitInvert():m_source(0){}
+    CImplicitInvert::CImplicitInvert():m_source(0)
+    {
+        CImplicitModuleBase::registerNoiseInput(
+            "Source",
+            [this] (CImplicitModuleBase *n) { this->setSource(n); },
+            [this] () -> CImplicitModuleBase* { return this->getSource(); }
+        );
+    }
+    
     CImplicitInvert::~CImplicitInvert(){}
 
-    void CImplicitInvert::setSource(CImplicitModuleBase *m){m_source=m;}
+    void CImplicitInvert::setSource(CImplicitModuleBase *m){ m_source=m; }
+    CImplicitModuleBase *CImplicitInvert::getSource() { return m_source; }
 
     double CImplicitInvert::get(double x, double y)
     {

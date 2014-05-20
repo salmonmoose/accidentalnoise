@@ -6,19 +6,79 @@ namespace anl
 {
 CImplicitGradient::CImplicitGradient()
 {
-    CImplicitModuleBase::registerDoubleInput("X1",[this] (double d) { this->setX1 (d); });
-    CImplicitModuleBase::registerDoubleInput("X2",[this] (double d) { this->setX2 (d); });
-    CImplicitModuleBase::registerDoubleInput("Y1",[this] (double d) { this->setY1 (d); });
-    CImplicitModuleBase::registerDoubleInput("Y2",[this] (double d) { this->setY2 (d); });
-    CImplicitModuleBase::registerDoubleInput("Z1",[this] (double d) { this->setZ1 (d); });
-    CImplicitModuleBase::registerDoubleInput("Z2",[this] (double d) { this->setZ2 (d); });
-    CImplicitModuleBase::registerDoubleInput("W1",[this] (double d) { this->setW1 (d); });
-    CImplicitModuleBase::registerDoubleInput("W2",[this] (double d) { this->setW2 (d); });
-    CImplicitModuleBase::registerDoubleInput("U1",[this] (double d) { this->setU1 (d); });
-    CImplicitModuleBase::registerDoubleInput("U2",[this] (double d) { this->setU2 (d); });
-    CImplicitModuleBase::registerDoubleInput("V1",[this] (double d) { this->setV1 (d); });
-    CImplicitModuleBase::registerDoubleInput("V2",[this] (double d) { this->setV2 (d); });
-    
+    CImplicitModuleBase::registerDoubleInput(
+        "X1",
+        [this] (double d) { this->setX1 (d); },
+        [this] () -> double { return this->getX1(); }
+    );
+
+    CImplicitModuleBase::registerDoubleInput(
+        "X2",
+        [this] (double d) { this->setX2 (d); },
+        [this] () -> double { return this->getX2(); }
+    );
+
+    CImplicitModuleBase::registerDoubleInput(
+        "Y1",
+        [this] (double d) { this->setY1 (d); },
+        [this] () -> double { return this->getY1(); }
+    );
+
+    CImplicitModuleBase::registerDoubleInput(
+        "Y2",
+        [this] (double d) { this->setY2 (d); },
+        [this] () -> double { return this->getY2(); }
+    );
+
+    CImplicitModuleBase::registerDoubleInput(
+        "Z1",
+        [this] (double d) { this->setZ1 (d); },
+        [this] () -> double { return this->getZ1(); }
+    );
+
+    CImplicitModuleBase::registerDoubleInput(
+        "Z2",
+        [this] (double d) { this->setZ2 (d); },
+        [this] () -> double { return this->getZ2(); }
+    );
+
+    CImplicitModuleBase::registerDoubleInput(
+        "W1",
+        [this] (double d) { this->setW1 (d); },
+        [this] () -> double { return this->getW1(); }
+    );
+
+    CImplicitModuleBase::registerDoubleInput(
+        "W2",
+        [this] (double d) { this->setW2 (d); },
+        [this] () -> double { return this->getW2(); }
+    );
+
+    CImplicitModuleBase::registerDoubleInput(
+        "U1",
+        [this] (double d) { this->setU1 (d); },
+        [this] () -> double { return this->getU1(); }
+    );
+
+    CImplicitModuleBase::registerDoubleInput(
+        "U2",
+        [this] (double d) { this->setU2 (d); },
+        [this] () -> double { return this->getU2(); }
+    );
+
+    CImplicitModuleBase::registerDoubleInput(
+        "V1",
+        [this] (double d) { this->setV1 (d); },
+        [this] () -> double { return this->getV1(); }
+    );
+
+    CImplicitModuleBase::registerDoubleInput(
+        "V2",
+        [this] (double d) { this->setV2 (d); },
+        [this] () -> double { return this->getV2(); }
+    );
+
+
     setGradient(0,1,0,1,0,0,0,0,0,0,0,0);
 }
 CImplicitGradient::~CImplicitGradient(){}
@@ -49,6 +109,19 @@ void CImplicitGradient::setU2(double u2){ m_gu2 = u2; updateGradient(); }
 void CImplicitGradient::setV1(double v1){ m_gv1 = v1; updateGradient(); }
 void CImplicitGradient::setV2(double v2){ m_gv2 = v2; updateGradient(); }
 
+double CImplicitGradient::getX1(){ return m_gx1; }
+double CImplicitGradient::getX2(){ return m_gx2; }
+double CImplicitGradient::getY1(){ return m_gy1; }
+double CImplicitGradient::getY2(){ return m_gy2; }
+double CImplicitGradient::getZ1(){ return m_gz1; }
+double CImplicitGradient::getZ2(){ return m_gz2; }
+double CImplicitGradient::getW1(){ return m_gw1; }
+double CImplicitGradient::getW2(){ return m_gw2; }
+double CImplicitGradient::getU1(){ return m_gu1; }
+double CImplicitGradient::getU2(){ return m_gu2; }
+double CImplicitGradient::getV1(){ return m_gv1; }
+double CImplicitGradient::getV2(){ return m_gv2; }
+
 void CImplicitGradient::updateGradient(){
     m_x = m_gx2 - m_gx1;
     m_y = m_gy2 - m_gy1;
@@ -62,13 +135,11 @@ void CImplicitGradient::updateGradient(){
 
 double CImplicitGradient::get(double x, double y)
 {
-    // Subtract from (1) and take dotprod
     double dx=x-m_gx1;
     double dy=y-m_gy1;
     double dp=dx*m_x+dy*m_y;
     dp/=m_vlen;
-    //dp=clamp(dp/m_vlen,0.0,1.0);
-    //return lerp(dp,1.0,-1.0);
+
     return dp;
 }
 
@@ -79,8 +150,7 @@ double CImplicitGradient::get(double x, double y, double z)
     double dz=z-m_gz1;
     double dp=dx*m_x+dy*m_y+dz*m_z;
     dp/=m_vlen;
-    //dp=clamp(dp/m_vlen,0.0,1.0);
-    //return lerp(dp,1.0,-1.0);
+
     return dp;
 }
 
@@ -92,8 +162,7 @@ double CImplicitGradient::get(double x, double y, double z, double w)
     double dw=w-m_gw1;
     double dp=dx*m_x+dy*m_y+dz*m_z+dw*m_w;
     dp/=m_vlen;
-    //dp=clamp(dp/m_vlen,0.0,1.0);
-    //return lerp(dp,1.0,-1.0);
+
     return dp;
 }
 
@@ -107,8 +176,7 @@ double CImplicitGradient::get(double x, double y, double z, double w, double u, 
     double dv=v-m_gv1;
     double dp=dx*m_x+dy*m_y+dz*m_z+dw*m_w+du*m_u+dv*m_v;
     dp/=m_vlen;
-    //dp=clamp(dp/m_vlen,0.0,1.0);
-    //return lerp(clamp(dp,0.0,1.0),1.0,-1.0);
+
     return dp;
 }
 };

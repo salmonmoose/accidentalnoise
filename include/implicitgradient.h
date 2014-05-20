@@ -28,6 +28,19 @@ namespace anl
         void setV1(double V1);
         void setV2(double v2);
 
+        double getX1();
+        double getX2();
+        double getY1();
+        double getY2();
+        double getZ1();
+        double getZ2();
+        double getW1();
+        double getW2();
+        double getU1();
+        double getU2();
+        double getV1();
+        double getV2();
+
         double get(double x, double y);
         double get(double x, double y, double z);
         double get(double x, double y, double z, double w);
