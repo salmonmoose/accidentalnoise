@@ -19,7 +19,13 @@ class CImplicitCellular : public CImplicitModuleBase
     void setCoefficientC(double c);
     void setCoefficientD(double d);
 
+    double getDoubleCoefficientA();
+    double getDoubleCoefficientB();
+    double getDoubleCoefficientC();
+    double getDoubleCoefficientD();
+
     void setCellularSource(CCellularGenerator *m);
+    CCellularGenerator *getCellularSource();
 
     double get(double x, double y);
     double get(double x, double y, double z);
@@ -28,7 +34,7 @@ class CImplicitCellular : public CImplicitModuleBase
 
     protected:
     CCellularGenerator *m_generator;
-    double m_coefficients[4];
+    double m_coefficients_a, m_coefficients_b, m_coefficients_c, m_coefficients_d;
 };
 };
 

@@ -10,6 +10,42 @@
 #define MaxSources 20
 namespace anl
 {
+    struct SCellularCache
+    {
+        double f[4]={};
+        double d[4]={};
+        double x,y,z,w,u,v=0;
+        bool valid;
+
+        SCellularCache()
+        {
+            valid=false;
+        }
+    };
+
+    class CCellularGenerator
+    {
+        public:
+        CCellularGenerator();
+        ~CCellularGenerator();
+
+        void setName(std::string nName) { name = nName; }
+        std::string getName() { return name; }
+
+        SCellularCache &get(double x, double y);
+        SCellularCache &get(double x, double y, double z);
+        SCellularCache &get(double x, double y, double z, double w);
+        SCellularCache &get(double x, double y, double z, double w, double u, double v);
+
+        void setSeed(unsigned int seed);
+
+        protected:
+        unsigned int m_seed;
+
+        std::string name;
+        SCellularCache m_cache2, m_cache3, m_cache4, m_cache6;
+    };
+
     class CImplicitModuleBase
     {
     public:
@@ -19,11 +55,12 @@ namespace anl
         typedef std::function<void(int)> int_set_function;
         typedef std::function<void(double)> double_set_function;
         typedef std::function<void(anl::CImplicitModuleBase*)> noise_set_function;
+        typedef std::function<void(anl::CCellularGenerator*)> cellgen_set_function;
 
         typedef std::function<int()> int_get_function;
         typedef std::function<double()> double_get_function;
         typedef std::function<anl::CImplicitModuleBase*()> noise_get_function;
-
+        typedef std::function<anl::CCellularGenerator*()> cellgen_get_function;
 
     	virtual void setSeed(unsigned int seed){}
 
@@ -31,7 +68,6 @@ namespace anl
     	virtual double get(double x, double y, double z)=0;
     	virtual double get(double x, double y, double z, double w)=0;
     	virtual double get(double x, double y, double z, double w, double u, double v)=0;
-
 
         //TODO: these could all realistically be templated;
         bool registerDoubleInput(std::string const& key, double_set_function const& input, double_get_function const& output) {
@@ -49,6 +85,12 @@ namespace anl
         bool registerNoiseInput(std::string const& key, noise_set_function const& input, noise_get_function const& output) {
             noiseSetFunctions[key] = input;
             noiseGetFunctions[key] = output;
+            return true;
+        }
+
+        bool registerCellgenInput(std::string const& key, cellgen_set_function const& input, cellgen_get_function const& output) {
+            cellgenSetFunctions[key] = input;
+            cellgenGetFunctions[key] = output;
             return true;
         }
 
@@ -114,6 +156,27 @@ namespace anl
             return fit->second();
         }
 
+        bool setCellgenInput(std::string key, anl::CCellularGenerator* value) {
+            auto fit = cellgenSetFunctions.find(key);
+
+            if (fit == cellgenSetFunctions.end()) {
+                return false;
+            } else {
+                fit->second(value);
+                return true;
+            }
+        }
+
+        anl::CCellularGenerator *getCellgenInput(std::string key) {
+            auto fit = cellgenGetFunctions.find(key);
+
+            if (fit == cellgenGetFunctions.end()) {
+                return 0;
+            } else {
+                return fit->second();
+            }
+        }
+
         std::vector<std::string> getDoubleInputs() {
             std::vector<std::string> key_list;
 
@@ -147,7 +210,20 @@ namespace anl
             return key_list;
         }
 
+        std::vector<std::string> getCellgenInputs() {
+            std::vector<std::string> key_list;
+
+            for(typename std::map<std::string, cellgen_set_function>::iterator it = cellgenSetFunctions.begin(); it != cellgenSetFunctions.end(); ++it)
+            {
+                key_list.push_back(it->first);
+            }
+
+            return key_list;
+        }
+
     protected:
+        CImplicitModuleBase * mCImplicitModuleBaseDefault;
+        CCellularGenerator * mCellgenDefault;
 
     private:
         std::string name;
@@ -155,10 +231,12 @@ namespace anl
         std::map<std::string, double_set_function> doubleSetFunctions;
         std::map<std::string, int_set_function> intSetFunctions;
         std::map<std::string, noise_set_function> noiseSetFunctions;
+        std::map<std::string, cellgen_set_function> cellgenSetFunctions;
 
         std::map<std::string, double_get_function> doubleGetFunctions;
         std::map<std::string, int_get_function> intGetFunctions;
         std::map<std::string, noise_get_function> noiseGetFunctions;
+        std::map<std::string, cellgen_get_function> cellgenGetFunctions;
     };
 
     // Scalar parameter class
@@ -220,6 +298,8 @@ namespace anl
         double m_val;
         CImplicitModuleBase *m_source;
     };
+
+
 
     struct CImplicitModuleFactory : generic_factory<std::string, anl::CImplicitModuleBase> {
         static CImplicitModuleFactory & instance()

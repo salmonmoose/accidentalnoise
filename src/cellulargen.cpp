@@ -1,4 +1,4 @@
-#include "cellulargen.h"
+#include "implicitmodulebase.h"
 #include "noise_gen.h"
 namespace anl
 {

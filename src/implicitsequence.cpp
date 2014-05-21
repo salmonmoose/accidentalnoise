@@ -12,6 +12,8 @@ namespace anl
 		renderNode = false;
 
         mCImplicitModuleFactory = new generic_factory<std::string, anl::CImplicitModuleBase>();
+        mCellgenDefault = new CCellularGenerator();
+        mCImplicitModuleBaseDefault = new CImplicitSphere();
 
         mCImplicitModuleFactory->register_type<anl::CImplicitAutoCorrect>("AutoCorrect");
         mCImplicitModuleFactory->register_type<anl::CImplicitBasisFunction>("BasisFunction");
@@ -19,7 +21,7 @@ namespace anl
         mCImplicitModuleFactory->register_type<anl::CImplicitBlend>("Blend");
         mCImplicitModuleFactory->register_type<anl::CImplicitBrightContrast>("BrightContrast");
         //mCImplicitModuleFactory->register_type<anl::CImplicitCache>("Cache");
-        //mCImplicitModuleFactory->register_type<anl::CImplicitCellular>("Cellular");
+        mCImplicitModuleFactory->register_type<anl::CImplicitCellular>("Cellular");
         mCImplicitModuleFactory->register_type<anl::CImplicitClamp>("Clamp");
         //mCImplicitModuleFactory->register_type<anl::CImplicitCombiner>("Combiner");
         //mCImplicitModuleFactory->register_type<anl::CImplicitConstant>("Constant");
@@ -46,13 +48,16 @@ namespace anl
         //mCImplicitModuleFactory->register_type<anl::CImplicitTiers>("Tiers");
         //mCImplicitModuleFactory->register_type<anl::CImplicitTranslateDomain>("TranslateDomain");
 
+        mCImplicitCellularGeneratorFactory = new generic_factory<std::string, anl::CCellularGenerator>();
+        mCImplicitCellularGeneratorFactory->register_type<anl::CCellularGenerator>("CellularGenerator");
 	}
 
     std::map<std::string, EInputTypes> CImplicitSequence::InputMap = {
     	{"Int", INT},
     	{"Enum", ENUM},
     	{"Double", DOUBLE},
-    	{"Noise", NOISE}
+    	{"Noise", NOISE},
+        {"Cellgen", CELLGEN}
     };
 
     std::map<std::string, unsigned int> CImplicitSequence::ENUMMap = {
@@ -66,7 +71,7 @@ namespace anl
     	{"MAX", MAX},
     	{"MIN", MIN},
     	{"AVG", AVG},
-    	{"VALUE", VALUE},
+    	{"NOISE", NOISE},
     	{"GRADIENT", GRADIENT},
     	{"GRADVAL", GRADVAL},
     	{"SIMPLEX", SIMPLEX},
@@ -106,13 +111,27 @@ namespace anl
         AddLayer(type, name);
     }
 
-    bool CImplicitSequence::SetAttribute(std::string node, std::string type, std::string attribute, std::string value)
+    void CImplicitSequence::AddCellGenerator(std::string name)
+    {
+        CCellularGenerator *cellgen = mCImplicitCellularGeneratorFactory->build_object("CellularGenerator");
+
+        cellgen->setName(name);
+
+        cellgenTree.insert(
+            std::pair<std::string, std::unique_ptr<anl::CCellularGenerator>>(
+                name,
+                std::unique_ptr<anl::CCellularGenerator>(cellgen)
+            )
+        );
+    }
+
+    bool CImplicitSequence::SetAttribute(std::string node, std::string type, std::string attribute, std::string valueNoise)
     {
     	noiseTreeIterator = noiseTree.find(node);
 
     	if(noiseTreeIterator != noiseTree.end())
     	{
-            return SetAttribute(noiseTreeIterator->second.get(), InputMap.find(type)->second, attribute, value);
+            return SetAttribute(noiseTreeIterator->second.get(), InputMap.find(type)->second, attribute, valueNoise);
     	} else {
             return false;
         }
@@ -134,10 +153,15 @@ namespace anl
             break;
             case NOISE:
             {
-                tmp = noiseTree.find(value)->second.get();
-                return node->setNoiseInput(attribute, tmp);
+                tempNoise = noiseTree.find(value)->second.get();
+                return node->setNoiseInput(attribute, tempNoise);
             }
             break;
+            case CELLGEN:
+            {
+                tempCellgen = cellgenTree.find(value)->second.get();
+                return node->setCellgenInput(attribute, tempCellgen);
+            }
             case DOUBLE:
             {
                 return node->setDoubleInput(attribute, atof(value.c_str()));
@@ -160,12 +184,20 @@ namespace anl
                 return std::to_string(noiseTreeIterator->second->getIntInput(attribute));
             } else if (type == "Double") {
                 return std::to_string(noiseTreeIterator->second->getDoubleInput(attribute));
-            } else {
+            } else if (type == "Noise") {
                 if(noiseTreeIterator->second->getNoiseInput(attribute)) {
                     return noiseTreeIterator->second->getNoiseInput(attribute)->getName();
                 } else {
                     return std::string();
                 }
+            } else if (type == "Cellgen") {
+                if(noiseTreeIterator->second->getCellgenInput(attribute)) {
+                    return noiseTreeIterator->second->getCellgenInput(attribute)->getName();
+                } else {
+                    return std::string();
+                }
+            } else {
+                return std::string();
             }
         } else {
             return std::string();

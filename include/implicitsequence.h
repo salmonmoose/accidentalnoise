@@ -16,7 +16,8 @@ namespace anl
 		INT,
 		ENUM,
 		DOUBLE,
-		NOISE
+		NOISE,
+		CELLGEN
 	};
 
 	class CImplicitSequence : public CImplicitModuleBase
@@ -26,11 +27,18 @@ namespace anl
 			CImplicitSequence();
 			~CImplicitSequence(){};
 
-			anl::CImplicitModuleBase * tmp;
-			anl::CImplicitModuleBase * value;
+			anl::CImplicitModuleBase * tempNoise;
+			anl::CImplicitModuleBase * valueNoise;
 			anl::CImplicitModuleBase * render;
+			anl::CImplicitModuleBase * mCImplicitModuleBaseDefault;
+
+			anl::CCellularGenerator * tempCellgen;
+			anl::CCellularGenerator * valueCellgen;
+			anl::CCellularGenerator * mCellgenDefault;
 
 			generic_factory<std::string, anl::CImplicitModuleBase> * mCImplicitModuleFactory;
+			generic_factory<std::string, anl::CCellularGenerator> * mCImplicitCellularGeneratorFactory;
+
 
 			static std::map<std::string, EInputTypes> InputMap;
 			static std::map<std::string, unsigned int> ENUMMap;
@@ -40,6 +48,8 @@ namespace anl
 			void RegisterTypes();
 			void AddLayer(std::string type, std::string name);
 			void AddLayer(std::string type);
+
+			void AddCellGenerator(std::string);
 
 			bool SetAttribute(std::string layer, std::string type, std::string attribute, std::string value);
 			bool SetAttribute(anl::CImplicitModuleBase *node, EInputTypes type, std::string attribute, std::string value);
@@ -75,7 +85,8 @@ namespace anl
 			std::map<std::string, std::unique_ptr<CImplicitModuleBase>> noiseTree;
 			std::map<std::string, std::unique_ptr<CImplicitModuleBase>>::iterator noiseTreeIterator;
 
-			std::map<std::string, CCellularGenerator> cellularTree;
+			std::map<std::string, std::unique_ptr<CCellularGenerator>> cellgenTree;
+			std::map<std::string, std::unique_ptr<CCellularGenerator>>::iterator cellgenTreeIterator;
 	};
 };
 
