@@ -98,6 +98,9 @@ namespace anl
             name = nName;
         }
 
+        void setDefaultNoise(CImplicitModuleBase * n) { mCImplicitModuleBaseDefault = n; }
+        void setDefaultCellgen(CCellularGenerator * n) { mCCellgenDefault = n; }
+
         std::string getName() {
             return name;
         }
@@ -223,7 +226,7 @@ namespace anl
 
     protected:
         CImplicitModuleBase * mCImplicitModuleBaseDefault;
-        CCellularGenerator * mCellgenDefault;
+        CCellularGenerator * mCCellgenDefault;
 
     private:
         std::string name;

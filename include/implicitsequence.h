@@ -34,7 +34,7 @@ namespace anl
 
 			anl::CCellularGenerator * tempCellgen;
 			anl::CCellularGenerator * valueCellgen;
-			anl::CCellularGenerator * mCellgenDefault;
+			anl::CCellularGenerator * mCCellgenDefault;
 
 			generic_factory<std::string, anl::CImplicitModuleBase> * mCImplicitModuleFactory;
 			generic_factory<std::string, anl::CCellularGenerator> * mCImplicitCellularGeneratorFactory;

@@ -65,31 +65,27 @@ namespace anl
 
     double CImplicitCellular::get(double x, double y)
     {
-        if(!m_generator) return 0.0;
+        SCellularCache &c = (m_generator) ? m_generator->get(x,y) : mCCellgenDefault->get(x,y);
 
-        SCellularCache &c=m_generator->get(x,y);
         return c.f[0]*m_coefficients_a + c.f[1]*m_coefficients_b + c.f[2]*m_coefficients_c + c.f[3]*m_coefficients_d;
     }
 
     double CImplicitCellular::get(double x, double y, double z)
     {
-        if(!m_generator) return 0.0;
+        SCellularCache &c = (m_generator) ? m_generator->get(x,y,z) : mCCellgenDefault->get(x,y,z);
 
-        SCellularCache &c=m_generator->get(x,y,z);
         return c.f[0]*m_coefficients_a + c.f[1]*m_coefficients_b + c.f[2]*m_coefficients_c + c.f[3]*m_coefficients_d;
     }
     double CImplicitCellular::get(double x, double y, double z, double w)
     {
-        if(!m_generator) return 0.0;
+        SCellularCache &c = (m_generator) ? m_generator->get(x,y,z,w) : mCCellgenDefault->get(x,y,z,w);
 
-        SCellularCache &c=m_generator->get(x,y,z,w);
         return c.f[0]*m_coefficients_a + c.f[1]*m_coefficients_b + c.f[2]*m_coefficients_c + c.f[3]*m_coefficients_d;
     }
     double CImplicitCellular::get(double x, double y, double z, double w, double u, double v)
     {
-        if(!m_generator) return 0.0;
+        SCellularCache &c = (m_generator) ? m_generator->get(x,y,z,w,u,v) : mCCellgenDefault->get(x,y,z,w,u,v);
 
-        SCellularCache &c=m_generator->get(x,y,z,w,u,v);
         return c.f[0]*m_coefficients_a + c.f[1]*m_coefficients_b + c.f[2]*m_coefficients_c + c.f[3]*m_coefficients_d;
     }
 

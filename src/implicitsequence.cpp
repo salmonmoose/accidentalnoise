@@ -12,7 +12,7 @@ namespace anl
 		renderNode = false;
 
         mCImplicitModuleFactory = new generic_factory<std::string, anl::CImplicitModuleBase>();
-        mCellgenDefault = new CCellularGenerator();
+        mCCellgenDefault = new CCellularGenerator();
         mCImplicitModuleBaseDefault = new CImplicitSphere();
 
         mCImplicitModuleFactory->register_type<anl::CImplicitAutoCorrect>("AutoCorrect");
@@ -87,6 +87,8 @@ namespace anl
         CImplicitModuleBase *layer = mCImplicitModuleFactory->build_object(type);
 
         layer->setName(name);
+        layer->setDefaultNoise(mCImplicitModuleBaseDefault);
+        layer->setDefaultCellgen(mCCellgenDefault);
 
     	noiseTree.insert(
     		std::pair<std::string, std::unique_ptr<anl::CImplicitModuleBase>>(
