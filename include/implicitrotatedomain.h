@@ -24,32 +24,42 @@ Q u = u
 
 class CImplicitRotateDomain : public CImplicitModuleBase
 {
-    public:
-    CImplicitRotateDomain(double ax, double ay, double az, double angle_deg);
+public:
+    CImplicitRotateDomain();
     ~CImplicitRotateDomain();
+
     void setSource(CImplicitModuleBase *m);
-    void setSource(double v);
-    void setAxis(double ax, double ay, double az);
-    void setAxis(CImplicitModuleBase *ax, CImplicitModuleBase *ay, CImplicitModuleBase *az);
+    CImplicitModuleBase *getSource();
+
     void setAxisX(double ax);
     void setAxisY(double ay);
     void setAxisZ(double az);
+    double getDoubleAxisX();
+    double getDoubleAxisY();
+    double getDoubleAxisZ();
+
     void setAxisX(CImplicitModuleBase *ax);
     void setAxisY(CImplicitModuleBase *ay);
     void setAxisZ(CImplicitModuleBase *az);
+    CImplicitModuleBase *getNoiseAxisX();
+    CImplicitModuleBase *getNoiseAxisY();
+    CImplicitModuleBase *getNoiseAxisZ();
 
     void setAngle(double a);
+    double getDoubleAngle();
+
     void setAngle(CImplicitModuleBase *a);
+    CImplicitModuleBase *getNoiseAngle();
 
     double get(double x, double y);
     double get(double x, double y, double z);
     double get(double x, double y, double z, double w);
     double get(double x, double y, double z, double w, double u, double v);
 
-    protected:
+protected:
     double m_rotmatrix[3][3];
     CScalarParameter m_ax,m_ay,m_az, m_angledeg;
-    CScalarParameter m_source;
+    CImplicitModuleBase *m_source;
 
     void calculateRotMatrix(double x, double y);
     void calculateRotMatrix(double x, double y, double z);

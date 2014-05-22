@@ -16,16 +16,16 @@ add_library(
 	implicitbias.cpp
 	implicitblend.cpp
 	implicitbrightcontrast.cpp
-#	implicitcache.cpp
+	implicitcache.cpp
 	implicitcellular.cpp
 	implicitclamp.cpp
 #	implicitcombiner.cpp
-#	implicitconstant.cpp
+	implicitconstant.cpp
 	implicitcos.cpp
 #	implicitextractrgbachannel.cpp
 	implicitfloor.cpp
 	implicitfractal.cpp
-#	implicitfunctiongradient.cpp
+	implicitfunctiongradient.cpp
 #	implicitgain.cpp
 	implicitgradient.cpp
 	implicitgrid.cpp
@@ -34,7 +34,7 @@ add_library(
 	implicitlog.cpp
 	implicitpow.cpp
 #	implicitrgbadotproduct.cpp
-#	implicitrotatedomain.cpp
+	implicitrotatedomain.cpp
 	implicitscaledomain.cpp
 #	implicitscaleoffset.cpp
 #	implicitselect.cpp

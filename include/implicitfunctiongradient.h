@@ -24,10 +24,12 @@ namespace anl
 
         static std::map<std::string, EFunctionGradientAxis> FunctionGradientAxisMap;
 
-        void setSource(double v);
         void setSource(CImplicitModuleBase *m);
+        CImplicitModuleBase *getSource();
         void setAxis(int axis);
+        int getAxis();
         void setSpacing(double s);
+        double getSpacing();
 
         double get(double x, double y);
         double get(double x, double y, double z);
@@ -35,10 +37,9 @@ namespace anl
         double get(double x, double y, double z, double w, double u, double v);
 
         protected:
-        CScalarParameter m_source;
+        CImplicitModuleBase *m_source;
         int m_axis;
         double m_spacing;
-
     };
 };
 

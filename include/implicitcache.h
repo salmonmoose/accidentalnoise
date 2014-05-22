@@ -19,7 +19,7 @@ namespace anl
         ~CImplicitCache();
 
         void setSource(CImplicitModuleBase *m);
-        void setSource(double v);
+        CImplicitModuleBase *getNoiseSource();
 
         double get(double x, double y);
         double get(double x, double y, double z);
@@ -27,8 +27,8 @@ namespace anl
         double get(double x, double y, double z, double w, double u, double v);
 
         protected:
-        //CImplicitModuleBase *m_source;
-        CScalarParameter m_source;
+        CImplicitModuleBase *m_source;
+
         SCache m_c2, m_c3, m_c4, m_c6;
     };
 };

@@ -12,6 +12,7 @@ namespace anl
         ~CImplicitConstant();
 
         void setConstant(double c);
+        double getConstant();
 
         double get(double x, double y);
         double get(double x, double y, double z);
