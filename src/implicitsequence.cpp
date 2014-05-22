@@ -40,12 +40,12 @@ namespace anl
         //mCImplicitModuleFactory->register_type<anl::CImplicitRGBADotProduct>("RGBADotProduct");
         mCImplicitModuleFactory->register_type<anl::CImplicitRotateDomain>("RotateDomain");
         mCImplicitModuleFactory->register_type<anl::CImplicitScaleDomain>("ScaleDomain");
-        //mCImplicitModuleFactory->register_type<anl::CImplicitScaleOffset>("ScaleOffset");
-        //mCImplicitModuleFactory->register_type<anl::CImplicitSelect>("Select");
+        mCImplicitModuleFactory->register_type<anl::CImplicitScaleOffset>("ScaleOffset");
+        mCImplicitModuleFactory->register_type<anl::CImplicitSelect>("Select");
         mCImplicitModuleFactory->register_type<anl::CImplicitSin>("Sin");
         mCImplicitModuleFactory->register_type<anl::CImplicitSphere>("Sphere");
         mCImplicitModuleFactory->register_type<anl::CImplicitTan>("Tan");
-        //mCImplicitModuleFactory->register_type<anl::CImplicitTiers>("Tiers");
+        mCImplicitModuleFactory->register_type<anl::CImplicitTiers>("Tiers");
         //mCImplicitModuleFactory->register_type<anl::CImplicitTranslateDomain>("TranslateDomain");
 
         mCImplicitCellularGeneratorFactory = new generic_factory<std::string, anl::CCellularGenerator>();

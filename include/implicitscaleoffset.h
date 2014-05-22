@@ -11,11 +11,17 @@ namespace anl
     ~CImplicitScaleOffset();
 
     void setSource(CImplicitModuleBase *b);
-    void setSource(double v);
+    CImplicitModuleBase *getSource();
+
     void setScale(double scale);
+    double getDoubleScale();
     void setOffset(double offset);
+    double getDoubleOffset();
+    
     void setScale(CImplicitModuleBase *scale);
+    CImplicitModuleBase *getNoiseScale();
     void setOffset(CImplicitModuleBase *offset);
+    CImplicitModuleBase *getNoiseOffset();
 
     double get(double x, double y);
     double get(double x, double y, double z);
@@ -23,12 +29,9 @@ namespace anl
     double get(double x, double y, double z, double w, double u, double v);
 
     protected:
-    //CImplicitModuleBase *m_source;
-    CScalarParameter m_source;
-    //double m_scale, m_offset;
+    CImplicitModuleBase *m_source;
     CScalarParameter m_scale, m_offset;
 };
 };
 
 #endif
-

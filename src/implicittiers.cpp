@@ -4,20 +4,42 @@
 
 namespace anl
 {
-    CImplicitTiers::CImplicitTiers() : m_source(0), m_numtiers(0), m_smooth(true){}
+    CImplicitTiers::CImplicitTiers() : m_source(0), m_numtiers(0), m_smooth(true) 
+    {
+        CImplicitModuleBase::registerNoiseInput(
+            "Source",
+            [this] (CImplicitModuleBase *n) { this->setSource(n); },
+            [this] () -> CImplicitModuleBase *{ return this->getSource(); }
+        );
+
+        CImplicitModuleBase::registerIntInput(
+            "Tiers",
+            [this] (int i) { this->setNumTiers(i); },
+            [this] () -> int { return this->getNumTiers(); }
+        );
+
+        //TODO Need Bool Type
+    }
+
     CImplicitTiers::CImplicitTiers(int numtiers, bool smooth) : m_source(0), m_numtiers(numtiers), m_smooth(smooth){}
     CImplicitTiers::~CImplicitTiers(){}
 
-    void CImplicitTiers::setSource(double v){m_source.set(v);}
-    void CImplicitTiers::setSource(CImplicitModuleBase *m){m_source.set(m);}
-    void CImplicitTiers::setNumTiers(int numtiers){m_numtiers=numtiers;}
-    void CImplicitTiers::setSmooth(bool smooth){m_smooth=smooth;}
+    void CImplicitTiers::setSource(CImplicitModuleBase *m) { m_source = m; }
+    CImplicitModuleBase *CImplicitTiers::getSource() { return m_source; }
+
+    void CImplicitTiers::setNumTiers(int numtiers) { m_numtiers = numtiers; }
+    int CImplicitTiers::getNumTiers() { return m_numtiers; }
+
+    void CImplicitTiers::setSmooth(bool smooth) { m_smooth = smooth; }
+    bool CImplicitTiers::getSmooth() { return m_smooth; }
 
     double CImplicitTiers::get(double x, double y)
     {
+        CImplicitModuleBase *source = (m_source) ? m_source : mCImplicitModuleBaseDefault;
+
         int numsteps=m_numtiers;
         if(m_smooth) --numsteps;
-        double val=m_source.get(x,y);
+        double val=source->get(x,y);
         double Tb=floor(val*(double)(numsteps));
         double Tt=Tb+1.0;
         double t=val*(double)(numsteps)-Tb;
@@ -30,9 +52,11 @@ namespace anl
     }
     double CImplicitTiers::get(double x, double y, double z)
     {
+        CImplicitModuleBase *source = (m_source) ? m_source : mCImplicitModuleBaseDefault;
+
         int numsteps=m_numtiers;
         if(m_smooth) --numsteps;
-        double val=m_source.get(x,y,z);
+        double val=source->get(x,y,z);
         double Tb=floor(val*(double)(numsteps));
         double Tt=Tb+1.0;
         double t=val*(double)(numsteps)-Tb;
@@ -45,9 +69,11 @@ namespace anl
     }
     double CImplicitTiers::get(double x, double y, double z, double w)
     {
+        CImplicitModuleBase *source = (m_source) ? m_source : mCImplicitModuleBaseDefault;
+
         int numsteps=m_numtiers;
         if(m_smooth) --numsteps;
-        double val=m_source.get(x,y,z,w);
+        double val=source->get(x,y,z,w);
         double Tb=floor(val*(double)(numsteps));
         double Tt=Tb+1.0;
         double t=val*(double)(numsteps)-Tb;
@@ -61,9 +87,11 @@ namespace anl
 
     double CImplicitTiers::get(double x, double y, double z, double w, double u, double v)
     {
+        CImplicitModuleBase *source = (m_source) ? m_source : mCImplicitModuleBaseDefault;
+
         int numsteps=m_numtiers;
         if(m_smooth) --numsteps;
-        double val=m_source.get(x,y,z,w,u,v);
+        double val=source->get(x,y,z,w,u,v);
         double Tb=floor(val*(double)(numsteps));
         double Tt=Tb+1.0;
         double t=val*(double)(numsteps)-Tb;

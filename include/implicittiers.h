@@ -11,10 +11,13 @@ namespace anl
         CImplicitTiers(int numtiers, bool smooth);
         ~CImplicitTiers();
 
-        void setSource(double v);
         void setSource(CImplicitModuleBase *m);
         void setNumTiers(int numtiers);
         void setSmooth(bool smooth);
+
+        CImplicitModuleBase *getSource();
+        int getNumTiers();
+        bool getSmooth();
 
         double get(double x, double y);
         double get(double x, double y, double z);
@@ -22,7 +25,7 @@ namespace anl
         double get(double x, double y, double z, double w, double u, double v);
 
         protected:
-        CScalarParameter m_source;
+        CImplicitModuleBase *m_source;
         int m_numtiers;
         bool m_smooth;
     };

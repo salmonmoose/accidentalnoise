@@ -36,15 +36,14 @@ add_library(
 #	implicitrgbadotproduct.cpp
 	implicitrotatedomain.cpp
 	implicitscaledomain.cpp
-#	implicitscaleoffset.cpp
-#	implicitselect.cpp
+	implicitscaleoffset.cpp
+	implicitselect.cpp
 	implicitsequence.cpp
 	implicitsin.cpp
 	implicitsphere.cpp
 	implicittan.cpp
-#	implicittiers.cpp
+	implicittiers.cpp
 #	implicittranslatedomain.cpp
-#	implicitxml.cpp
 #	mapping.cpp
 	noise_gen.cpp
 	noise_lut.cpp
