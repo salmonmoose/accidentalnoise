@@ -20,7 +20,7 @@ namespace anl
 		CELLGEN
 	};
 
-	class CImplicitSequence : public CImplicitModuleBase
+	class CImplicitSequence
 	{
 		private:
 		public:
@@ -54,33 +54,33 @@ namespace anl
 			bool SetAttribute(std::string layer, std::string type, std::string attribute, std::string value);
 			bool SetAttribute(anl::CImplicitModuleBase *node, EInputTypes type, std::string attribute, std::string value);
 
-			std::string GetAttribute(std::string node, std::string type, std::string attribute);
+			std::string getAttribute(std::string node, std::string type, std::string attribute);
 
-			double GetDoubleAttribute(anl::CImplicitModuleBase *node, std::string attribute);
-			int GetIntAttribute(anl::CImplicitModuleBase *node, std::string attribute);
-			anl::CImplicitModuleBase *GetNoiseAttribute(anl::CImplicitModuleBase *node, std::string attribute);
+			double getDoubleAttribute(anl::CImplicitModuleBase *node, std::string attribute);
+			int getIntAttribute(anl::CImplicitModuleBase *node, std::string attribute);
+			anl::CImplicitModuleBase *getNoiseAttribute(anl::CImplicitModuleBase *node, std::string attribute);
 
 			void SetRenderNode(std::string layer);
 
-    		std::vector<std::string> GetLayerOptions();
-    		std::vector<std::string> GetLayerDoubleInputs(std::string node);
-    		std::vector<std::string> GetLayerIntInputs(std::string node);
-    		std::vector<std::string> GetLayerNoiseInputs(std::string node);
+    		std::vector<std::string> getLayerOptions();
+    		std::vector<std::string> getLayerDoubleInputs(std::string node);
+    		std::vector<std::string> getLayerIntInputs(std::string node);
+    		std::vector<std::string> getLayerNoiseInputs(std::string node);
 
-			double get(double x, double y);
-			double get(double x, double y, double z);
-			double get(double x, double y, double z, double w);
-			double get(double x, double y, double z, double w, double u, double v);
+			double getValue(double x, double y);
+			double getValue(double x, double y, double z);
+			double getValue(double x, double y, double z, double w);
+			double getValue(double x, double y, double z, double w, double u, double v);
 
-			double get(std::string node, double x, double y);
-			double get(std::string node, double x, double y, double z);
-			double get(std::string node, double x, double y, double z, double w);
-			double get(std::string node, double x, double y, double z, double w, double u, double v);
+			double getValue(std::string node, double x, double y);
+			double getValue(std::string node, double x, double y, double z);
+			double getValue(std::string node, double x, double y, double z, double w);
+			double getValue(std::string node, double x, double y, double z, double w, double u, double v);
 
-			double get(anl::CImplicitModuleBase *node, double x, double y);
-			double get(anl::CImplicitModuleBase *node, double x, double y, double z);
-			double get(anl::CImplicitModuleBase *node, double x, double y, double z, double w);
-			double get(anl::CImplicitModuleBase *node, double x, double y, double z, double w, double u, double v);
+			double getValue(anl::CImplicitModuleBase *node, double x, double y);
+			double getValue(anl::CImplicitModuleBase *node, double x, double y, double z);
+			double getValue(anl::CImplicitModuleBase *node, double x, double y, double z, double w);
+			double getValue(anl::CImplicitModuleBase *node, double x, double y, double z, double w, double u, double v);
 
 			std::map<std::string, std::unique_ptr<CImplicitModuleBase>> noiseTree;
 			std::map<std::string, std::unique_ptr<CImplicitModuleBase>>::iterator noiseTreeIterator;

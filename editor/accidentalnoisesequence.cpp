@@ -8,7 +8,7 @@ AccidentalNoiseSequence::AccidentalNoiseSequence()
 
 void AccidentalNoiseSequence::buildInterfaceNodes()
 {
-	std::vector<std::string> layerOptions = mCImplicitSequence->GetLayerOptions();
+	std::vector<std::string> layerOptions = mCImplicitSequence->getLayerOptions();
 
 	for(std::vector<std::string>::iterator it = layerOptions.begin(); it != layerOptions.end(); ++it)
 	{
@@ -24,7 +24,7 @@ QStringList AccidentalNoiseSequence::getLayerOptions()
 {
 	qDebug("getLayerOptions called");
 
-	std::vector<std::string> layerOptions = mCImplicitSequence->GetLayerOptions();
+	std::vector<std::string> layerOptions = mCImplicitSequence->getLayerOptions();
 
 	QStringList options = QStringList();
 
@@ -42,7 +42,7 @@ QStringList AccidentalNoiseSequence::getLayerDoubleInputs(QString layer)
 
 	QStringList inputs = QStringList();
 
-	std::vector<std::string> layerInputs = mCImplicitSequence->GetLayerDoubleInputs(layer.toUtf8().constData());
+	std::vector<std::string> layerInputs = mCImplicitSequence->getLayerDoubleInputs(layer.toUtf8().constData());
 
 	for (std::vector<std::string>::iterator it = layerInputs.begin(); it != layerInputs.end(); ++it)
 	{
@@ -59,7 +59,7 @@ QStringList AccidentalNoiseSequence::getLayerIntInputs(QString layer)
 
 	QStringList inputs = QStringList();
 
-	std::vector<std::string> layerInputs = mCImplicitSequence->GetLayerIntInputs(layer.toUtf8().constData());
+	std::vector<std::string> layerInputs = mCImplicitSequence->getLayerIntInputs(layer.toUtf8().constData());
 
 	for (std::vector<std::string>::iterator it = layerInputs.begin(); it != layerInputs.end(); ++it)
 	{
@@ -76,7 +76,7 @@ QStringList AccidentalNoiseSequence::getLayerNoiseInputs(QString layer)
 
 	QStringList inputs = QStringList();
 
-	std::vector<std::string> layerInputs = mCImplicitSequence->GetLayerNoiseInputs(layer.toUtf8().constData());
+	std::vector<std::string> layerInputs = mCImplicitSequence->getLayerNoiseInputs(layer.toUtf8().constData());
 
 	for (std::vector<std::string>::iterator it = layerInputs.begin(); it != layerInputs.end(); ++it)
 	{
@@ -96,7 +96,7 @@ QString AccidentalNoiseSequence::getLayerInputValue(QString layer, QString type,
 		input.toStdString().c_str()
 	);
 
-	std::string value = mCImplicitSequence->GetAttribute(
+	std::string value = mCImplicitSequence->getAttribute(
 		layer.toUtf8().constData(),
 		type.toUtf8().constData(),
 		input.toUtf8().constData()
@@ -116,7 +116,7 @@ QString AccidentalNoiseSequence::setLayerInputValue(QString layer, QString type,
 	);
 
 	if (mCImplicitSequence->SetAttribute(layer.toUtf8().constData(),type.toUtf8().constData(),input.toUtf8().constData(),value.toUtf8().constData())) {
-		qDebug("Result: %s", mCImplicitSequence->GetAttribute(layer.toUtf8().constData(),type.toUtf8().constData(),input.toUtf8().constData()).c_str());
+		qDebug("Result: %s", mCImplicitSequence->getAttribute(layer.toUtf8().constData(),type.toUtf8().constData(),input.toUtf8().constData()).c_str());
 		qDebug("OK");
 		return QString("OK");
 	} else {

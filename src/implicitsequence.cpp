@@ -176,7 +176,7 @@ namespace anl
         }
     }
 
-    std::string CImplicitSequence::GetAttribute(std::string node, std::string type, std::string attribute)
+    std::string CImplicitSequence::getAttribute(std::string node, std::string type, std::string attribute)
     {
         noiseTreeIterator = noiseTree.find(node);
 
@@ -206,17 +206,17 @@ namespace anl
         }
     }
 
-    double CImplicitSequence::GetDoubleAttribute(anl::CImplicitModuleBase *node, std::string attribute)
+    double CImplicitSequence::getDoubleAttribute(anl::CImplicitModuleBase *node, std::string attribute)
     {
         return node->getDoubleInput(attribute);
     }
 
-    int CImplicitSequence::GetIntAttribute(anl::CImplicitModuleBase *node, std::string attribute)
+    int CImplicitSequence::getIntAttribute(anl::CImplicitModuleBase *node, std::string attribute)
     {
         return node->getIntInput(attribute);
     }
 
-    anl::CImplicitModuleBase * CImplicitSequence::GetNoiseAttribute(anl::CImplicitModuleBase *node, std::string attribute)
+    anl::CImplicitModuleBase * CImplicitSequence::getNoiseAttribute(anl::CImplicitModuleBase *node, std::string attribute)
     {
         return node->getNoiseInput(attribute);
     }
@@ -230,12 +230,12 @@ namespace anl
     	}
     }
 
-    std::vector<std::string> CImplicitSequence::GetLayerOptions()
+    std::vector<std::string> CImplicitSequence::getLayerOptions()
     {
         return mCImplicitModuleFactory->get_keys();
     }
 
-    std::vector<std::string> CImplicitSequence::GetLayerDoubleInputs(std::string node) {
+    std::vector<std::string> CImplicitSequence::getLayerDoubleInputs(std::string node) {
         noiseTreeIterator = noiseTree.find(node);
 
         if(noiseTreeIterator == noiseTree.end()) {
@@ -245,7 +245,7 @@ namespace anl
         }
     }
 
-    std::vector<std::string> CImplicitSequence::GetLayerIntInputs(std::string node) {
+    std::vector<std::string> CImplicitSequence::getLayerIntInputs(std::string node) {
         noiseTreeIterator = noiseTree.find(node);
 
         if(noiseTreeIterator == noiseTree.end()) {
@@ -255,7 +255,7 @@ namespace anl
         }
     }
 
-    std::vector<std::string> CImplicitSequence::GetLayerNoiseInputs(std::string node) {
+    std::vector<std::string> CImplicitSequence::getLayerNoiseInputs(std::string node) {
         noiseTreeIterator = noiseTree.find(node);
 
         if(noiseTreeIterator == noiseTree.end()) {
@@ -265,93 +265,93 @@ namespace anl
         }
     }
 
-	double CImplicitSequence::get(double x, double y) {
+	double CImplicitSequence::getValue(double x, double y) {
 		if(renderNode) {
-			return get(render, x, y);
+			return getValue(render, x, y);
 		} else {
 			return 0.0;
 		}
 	}
 
-    double CImplicitSequence::get(std::string node, double x, double y) {
+    double CImplicitSequence::getValue(std::string node, double x, double y) {
         noiseTreeIterator = noiseTree.find(node);
 
         if (noiseTreeIterator == noiseTree.end()) {
             return 0.0;
         } else {
-            return get(noiseTreeIterator->second.get(), x, y);
+            return getValue(noiseTreeIterator->second.get(), x, y);
         }
     }
 
-    double CImplicitSequence::get(anl::CImplicitModuleBase *node, double x, double y) {
+    double CImplicitSequence::getValue(anl::CImplicitModuleBase *node, double x, double y) {
         return node->get(x, y);
     }
 
-	double CImplicitSequence::get(double x, double y, double z) {
+	double CImplicitSequence::getValue(double x, double y, double z) {
 		if(renderNode) {
-			return get(render, x, y, z);
+			return getValue(render, x, y, z);
 		} else {
 			return 0.0;
 		}
 	}
 
-    double CImplicitSequence::get(std::string node, double x, double y, double z)
+    double CImplicitSequence::getValue(std::string node, double x, double y, double z)
     {
         noiseTreeIterator = noiseTree.find(node);
 
         if (noiseTreeIterator == noiseTree.end()) {
             return 0.0;
         } else {
-            return get(noiseTreeIterator->second.get(), x, y, z);
+            return getValue(noiseTreeIterator->second.get(), x, y, z);
         }
     }
 
-    double CImplicitSequence::get(anl::CImplicitModuleBase *node, double x, double y, double z)
+    double CImplicitSequence::getValue(anl::CImplicitModuleBase *node, double x, double y, double z)
     {
         return node->get(x, y, z);
     }
 
-	double CImplicitSequence::get(double x, double y, double z, double w) {
+	double CImplicitSequence::getValue(double x, double y, double z, double w) {
 		if(renderNode) {
-			return get(render, x, y, z, w);
+			return getValue(render, x, y, z, w);
 		} else {
 			return 0.0;
 		}
 	}
 
-    double CImplicitSequence::get(std::string node, double x, double y, double z, double w) {
+    double CImplicitSequence::getValue(std::string node, double x, double y, double z, double w) {
         noiseTreeIterator = noiseTree.find(node);
 
         if (noiseTreeIterator == noiseTree.end()) {
             return 0.0;
         } else {
-            return get(noiseTreeIterator->second.get(), x, y, z, w);
+            return getValue(noiseTreeIterator->second.get(), x, y, z, w);
         }
     }
 
-    double CImplicitSequence::get(anl::CImplicitModuleBase *node, double x, double y, double z, double w) {
+    double CImplicitSequence::getValue(anl::CImplicitModuleBase *node, double x, double y, double z, double w) {
         return node->get(x, y, z, w);
     }
 
-	double CImplicitSequence::get(double x, double y, double z, double w, double u, double v) {
+	double CImplicitSequence::getValue(double x, double y, double z, double w, double u, double v) {
 		if(renderNode) {
-			return get(render, x, y, z, w, u, v);
+			return getValue(render, x, y, z, w, u, v);
 		} else {
 			return 0.0;
 		}
 	}
 
-    double CImplicitSequence::get(std::string node, double x, double y, double z, double w, double u, double v) {
+    double CImplicitSequence::getValue(std::string node, double x, double y, double z, double w, double u, double v) {
         noiseTreeIterator = noiseTree.find(node);
 
         if (noiseTreeIterator == noiseTree.end()) {
             return 0.0;
         } else {
-            return get(noiseTreeIterator->second.get(), x, y, z, w, u, v);
+            return getValue(noiseTreeIterator->second.get(), x, y, z, w, u, v);
         }
     }
 
-    double CImplicitSequence::get(anl::CImplicitModuleBase *node, double x, double y, double z, double w, double u, double v) {
+    double CImplicitSequence::getValue(anl::CImplicitModuleBase *node, double x, double y, double z, double w, double u, double v) {
         return node->get(x, y, z, w, u, v);
     }
 }
