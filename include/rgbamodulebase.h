@@ -1,10 +1,11 @@
 #ifndef RGBA_MODULE_BASE_H
 #define RGBA_MODULE_BASE_H
+#include "modulebase.h"
 #include "rgba.h"
 
 namespace anl
 {
-    class CRGBAModuleBase
+    class CRGBAModuleBase : ModuleBase
     {
         public:
         CRGBAModuleBase(){}
