@@ -50,8 +50,6 @@ namespace anl
     	CImplicitModuleBase(){}
     	virtual ~CImplicitModuleBase(){}
 
-
-
     	virtual void setSeed(unsigned int seed){}
 
     	virtual double get(double x, double y)=0;

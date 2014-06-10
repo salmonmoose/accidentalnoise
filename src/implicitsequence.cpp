@@ -12,6 +12,8 @@ namespace anl
 		renderNode = false;
 
         mCImplicitModuleFactory = new generic_factory<std::string, anl::CImplicitModuleBase>();
+        mCRGBAModuleFactory = new generic_factory<std::string, anl::CRGBAModuleBase>();
+
         mCCellgenDefault = new CCellularGenerator();
         mCImplicitModuleBaseDefault = new CImplicitSphere();
 
@@ -47,6 +49,8 @@ namespace anl
         mCImplicitModuleFactory->register_type<anl::CImplicitTan>("Tan");
         mCImplicitModuleFactory->register_type<anl::CImplicitTiers>("Tiers");
         //mCImplicitModuleFactory->register_type<anl::CImplicitTranslateDomain>("TranslateDomain");
+
+        mCRGBAModuleFactory->register_type<anl::CRGBAConstant>("Constant");
 
         mCImplicitCellularGeneratorFactory = new generic_factory<std::string, anl::CCellularGenerator>();
         mCImplicitCellularGeneratorFactory->register_type<anl::CCellularGenerator>("CellularGenerator");
@@ -206,17 +210,17 @@ namespace anl
         }
     }
 
-    double CImplicitSequence::getDoubleAttribute(anl::CImplicitModuleBase *node, std::string attribute)
+    double CImplicitSequence::getDoubleAttribute(anl::ModuleBase *node, std::string attribute)
     {
         return node->getDoubleInput(attribute);
     }
 
-    int CImplicitSequence::getIntAttribute(anl::CImplicitModuleBase *node, std::string attribute)
+    int CImplicitSequence::getIntAttribute(anl::ModuleBase *node, std::string attribute)
     {
         return node->getIntInput(attribute);
     }
 
-    anl::CImplicitModuleBase * CImplicitSequence::getNoiseAttribute(anl::CImplicitModuleBase *node, std::string attribute)
+    anl::ModuleBase * CImplicitSequence::getNoiseAttribute(anl::ModuleBase *node, std::string attribute)
     {
         return node->getNoiseInput(attribute);
     }

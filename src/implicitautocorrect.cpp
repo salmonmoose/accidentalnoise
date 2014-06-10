@@ -5,19 +5,19 @@ namespace anl
 {
     CImplicitAutoCorrect::CImplicitAutoCorrect() : m_source(0), m_low(0.25), m_high(0.75)
     {
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "Low",
             [this] (double d) { this->setLow (d); },
             [this] () -> double { return this->getLow(); }
         );
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "High",
             [this] (double d) { this->setHigh (d); },
             [this] () -> double { return this->getLow(); }
         );
 
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "Source",
             [this] (CImplicitModuleBase *n) { this->setSource (n); },
             [this] () -> CImplicitModuleBase* { return this->getSource(); }
