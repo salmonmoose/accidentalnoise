@@ -21,23 +21,24 @@ std::map<std::string, EBasisTypes> CImplicitBasisFunction::BasisMap = {
 
 CImplicitBasisFunction::CImplicitBasisFunction() : CImplicitModuleBase()
 {
-    CImplicitModuleBase::registerIntInput(
+    CImplicitModuleBase::IntInputs.create(
         "Seed",
         [this] (int i) { this->setSeed(i); },
         [this] () -> int { return this->getSeed(); }
     );
 
-    CImplicitModuleBase::registerIntInput(
+    CImplicitModuleBase::IntInputs.create(
         "Type",
         [this] (int i) { this->setType(i); },
         [this] () -> int { return this->getType(); }
     );
 
-    CImplicitModuleBase::registerIntInput(
+    CImplicitModuleBase::IntInputs.create(
         "Interpolation", 
         [this] (int i) { this->setInterp(i); },
         [this] () -> int { return this->getInterp(); }
     );
+
 	setType(GRADIENT);
 	setInterp(QUINTIC);
 	setSeed(1000);

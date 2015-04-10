@@ -4,19 +4,19 @@ namespace anl
 {
     CImplicitFunctionGradient::CImplicitFunctionGradient() : m_source(0), m_axis(X_AXIS), m_spacing(0.01)
     {
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "Spacing",
             [this] (double d) { this->setSpacing(d); },
             [this] () -> double { return this->getSpacing(); }
         );
 
-        CImplicitModuleBase::registerIntInput(
+        CImplicitModuleBase::IntInputs.create(
             "Axis",
             [this] (int i) { this->setAxis(i); },
             [this] () -> int { return this->getAxis(); }
         );
 
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "Source",
             [this] (CImplicitModuleBase *n) { this->setSource(n); },
             [this] () -> CImplicitModuleBase *{ return this->getSource(); }

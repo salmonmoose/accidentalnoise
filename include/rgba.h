@@ -9,6 +9,7 @@ namespace anl
         {
             for(int c=0; c<4; ++c) rgba[c]=0.0;
         }
+
         SRGBA(float r, float g, float b, float a)
         {
             rgba[0]=r;
@@ -16,6 +17,7 @@ namespace anl
             rgba[2]=b;
             rgba[3]=a;
         }
+        
         SRGBA(float v)
         {
             rgba[0]=v;
@@ -23,7 +25,6 @@ namespace anl
             rgba[2]=v;
             rgba[3]=v;
         }
-
 
         float rgba[4];
     };

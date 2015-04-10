@@ -6,31 +6,31 @@ namespace anl
     {
         setCoefficients(1,0,0,0);
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "CoefficientA",
             [this] (double d) { this->setCoefficientA(d); },
             [this] () -> double { return this->getDoubleCoefficientA(); }
         );
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "CoefficientB",
             [this] (double d) { this->setCoefficientB(d); },
             [this] () -> double { return this->getDoubleCoefficientB(); }
         );
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "CoefficientC",
             [this] (double d) { this->setCoefficientC(d); },
             [this] () -> double { return this->getDoubleCoefficientC(); }
         );
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "CoefficientD",
             [this] (double d) { this->setCoefficientD(d); },
             [this] () -> double { return this->getDoubleCoefficientD(); }
         );
 
-        CImplicitModuleBase::registerCellgenInput(
+        CImplicitModuleBase::CellgenInputs.create(
             "Generator",
             [this] (CCellularGenerator *m) { this->setCellularSource(m); },
             [this] () -> CCellularGenerator *{ return this->getCellularSource(); }

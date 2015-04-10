@@ -856,6 +856,30 @@ noise_lut.cpp.s:
 	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/noise_lut.cpp.s
 .PHONY : noise_lut.cpp.s
 
+rgbaconstant.o: rgbaconstant.cpp.o
+.PHONY : rgbaconstant.o
+
+# target to build an object file
+rgbaconstant.cpp.o:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbaconstant.cpp.o
+.PHONY : rgbaconstant.cpp.o
+
+rgbaconstant.i: rgbaconstant.cpp.i
+.PHONY : rgbaconstant.i
+
+# target to preprocess a source file
+rgbaconstant.cpp.i:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbaconstant.cpp.i
+.PHONY : rgbaconstant.cpp.i
+
+rgbaconstant.s: rgbaconstant.cpp.s
+.PHONY : rgbaconstant.s
+
+# target to generate assembly for a file
+rgbaconstant.cpp.s:
+	cd /home/salmonmoose/dev/accidentalnoise && $(MAKE) -f src/CMakeFiles/accidentalnoise.dir/build.make src/CMakeFiles/accidentalnoise.dir/rgbaconstant.cpp.s
+.PHONY : rgbaconstant.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -958,6 +982,9 @@ help:
 	@echo "... noise_lut.o"
 	@echo "... noise_lut.i"
 	@echo "... noise_lut.s"
+	@echo "... rgbaconstant.o"
+	@echo "... rgbaconstant.i"
+	@echo "... rgbaconstant.s"
 .PHONY : help
 
 

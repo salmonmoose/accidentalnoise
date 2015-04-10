@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'accidentalnoisesequence.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.2.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.3.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'accidentalnoisesequence.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.2.1. It"
+#error "This file was generated using the moc from 5.3.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -20,12 +20,12 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_AccidentalNoiseSequence_t {
     QByteArrayData data[14];
-    char stringdata[179];
+    char stringdata[178];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    offsetof(qt_meta_stringdata_AccidentalNoiseSequence_t, stringdata) + ofs \
-        - idx * sizeof(QByteArrayData) \
+    qptrdiff(offsetof(qt_meta_stringdata_AccidentalNoiseSequence_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData)) \
     )
 static const qt_meta_stringdata_AccidentalNoiseSequence_t qt_meta_stringdata_AccidentalNoiseSequence = {
     {
@@ -49,7 +49,7 @@ QT_MOC_LITERAL(13, 173, 4)
     "getLayerIntInputs\0getLayerNoiseInputs\0"
     "getLayerInputValue\0type\0input\0"
     "setLayerInputValue\0value\0createLayer\0"
-    "name\0"
+    "name"
 };
 #undef QT_MOC_LITERAL
 
@@ -67,13 +67,13 @@ static const uint qt_meta_data_AccidentalNoiseSequence[] = {
        0,       // signalCount
 
  // methods: name, argc, parameters, tag, flags
-       1,    0,   49,    2, 0x02,
-       3,    1,   50,    2, 0x02,
-       5,    1,   53,    2, 0x02,
-       6,    1,   56,    2, 0x02,
-       7,    3,   59,    2, 0x02,
-      10,    4,   66,    2, 0x02,
-      12,    2,   75,    2, 0x02,
+       1,    0,   49,    2, 0x02 /* Public */,
+       3,    1,   50,    2, 0x02 /* Public */,
+       5,    1,   53,    2, 0x02 /* Public */,
+       6,    1,   56,    2, 0x02 /* Public */,
+       7,    3,   59,    2, 0x02 /* Public */,
+      10,    4,   66,    2, 0x02 /* Public */,
+      12,    2,   75,    2, 0x02 /* Public */,
 
  // methods: parameters
     QMetaType::QStringList,

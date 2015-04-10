@@ -4,79 +4,79 @@ namespace anl
 {
     CImplicitScaleDomain::CImplicitScaleDomain() : m_source(0),m_sx(1),m_sy(1),m_sz(1),m_sw(1),m_su(1),m_sv(1)
     {
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "ScaleX",
             [this] (double d) { this->setXScale (d); },
             [this] () -> double { return this->getDoubleXScale(); }
         );
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "ScaleY",
             [this] (double d) { this->setYScale (d); },
             [this] () -> double { return this->getDoubleYScale(); }
         );
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "ScaleZ",
             [this] (double d) { this->setZScale (d); },
             [this] () -> double { return this->getDoubleZScale(); }
         );
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "ScaleW",
             [this] (double d) { this->setWScale (d); },
             [this] () -> double { return this->getDoubleWScale(); }
         );
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "ScaleU",
             [this] (double d) { this->setUScale (d); },
             [this] () -> double { return this->getDoubleUScale(); }
         );
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "ScaleV",
             [this] (double d) { this->setVScale (d); },
             [this] () -> double { return this->getDoubleVScale(); }
         );
 
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "ScaleX",
             [this] (CImplicitModuleBase *n) { this->setXScale (n); },
             [this] () -> CImplicitModuleBase * { return this->getNoiseXScale(); }
         );
 
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "ScaleY",
             [this] (CImplicitModuleBase *n) { this->setYScale (n); },
             [this] () -> CImplicitModuleBase * { return this->getNoiseYScale(); }
         );
 
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "ScaleZ",
             [this] (CImplicitModuleBase *n) { this->setZScale (n); },
             [this] () -> CImplicitModuleBase * { return this->getNoiseZScale(); }
         );
 
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "ScaleW",
             [this] (CImplicitModuleBase *n) { this->setWScale (n); },
             [this] () -> CImplicitModuleBase * { return this->getNoiseWScale(); }
         );
 
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "ScaleU",
             [this] (CImplicitModuleBase *n) { this->setUScale (n); },
             [this] () -> CImplicitModuleBase * { return this->getNoiseUScale(); }
         );
 
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "ScaleV",
             [this] (CImplicitModuleBase *n) { this->setVScale (n); },
             [this] () -> CImplicitModuleBase * { return this->getNoiseVScale(); }
         );
 
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "Source",
             [this] (CImplicitModuleBase *n) { this->setSource (n); },
             [this] () -> CImplicitModuleBase * { return this->getSource(); }

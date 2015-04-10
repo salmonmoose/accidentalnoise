@@ -6,73 +6,73 @@ namespace anl
 {
 CImplicitGradient::CImplicitGradient()
 {
-    CImplicitModuleBase::registerDoubleInput(
+    CImplicitModuleBase::DoubleInputs.create(
         "X1",
         [this] (double d) { this->setX1 (d); },
         [this] () -> double { return this->getX1(); }
     );
 
-    CImplicitModuleBase::registerDoubleInput(
+    CImplicitModuleBase::DoubleInputs.create(
         "X2",
         [this] (double d) { this->setX2 (d); },
         [this] () -> double { return this->getX2(); }
     );
 
-    CImplicitModuleBase::registerDoubleInput(
+    CImplicitModuleBase::DoubleInputs.create(
         "Y1",
         [this] (double d) { this->setY1 (d); },
         [this] () -> double { return this->getY1(); }
     );
 
-    CImplicitModuleBase::registerDoubleInput(
+    CImplicitModuleBase::DoubleInputs.create(
         "Y2",
         [this] (double d) { this->setY2 (d); },
         [this] () -> double { return this->getY2(); }
     );
 
-    CImplicitModuleBase::registerDoubleInput(
+    CImplicitModuleBase::DoubleInputs.create(
         "Z1",
         [this] (double d) { this->setZ1 (d); },
         [this] () -> double { return this->getZ1(); }
     );
 
-    CImplicitModuleBase::registerDoubleInput(
+    CImplicitModuleBase::DoubleInputs.create(
         "Z2",
         [this] (double d) { this->setZ2 (d); },
         [this] () -> double { return this->getZ2(); }
     );
 
-    CImplicitModuleBase::registerDoubleInput(
+    CImplicitModuleBase::DoubleInputs.create(
         "W1",
         [this] (double d) { this->setW1 (d); },
         [this] () -> double { return this->getW1(); }
     );
 
-    CImplicitModuleBase::registerDoubleInput(
+    CImplicitModuleBase::DoubleInputs.create(
         "W2",
         [this] (double d) { this->setW2 (d); },
         [this] () -> double { return this->getW2(); }
     );
 
-    CImplicitModuleBase::registerDoubleInput(
+    CImplicitModuleBase::DoubleInputs.create(
         "U1",
         [this] (double d) { this->setU1 (d); },
         [this] () -> double { return this->getU1(); }
     );
 
-    CImplicitModuleBase::registerDoubleInput(
+    CImplicitModuleBase::DoubleInputs.create(
         "U2",
         [this] (double d) { this->setU2 (d); },
         [this] () -> double { return this->getU2(); }
     );
 
-    CImplicitModuleBase::registerDoubleInput(
+    CImplicitModuleBase::DoubleInputs.create(
         "V1",
         [this] (double d) { this->setV1 (d); },
         [this] () -> double { return this->getV1(); }
     );
 
-    CImplicitModuleBase::registerDoubleInput(
+    CImplicitModuleBase::DoubleInputs.create(
         "V2",
         [this] (double d) { this->setV2 (d); },
         [this] () -> double { return this->getV2(); }

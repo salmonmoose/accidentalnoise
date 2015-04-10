@@ -26,6 +26,9 @@ ACCIDENTAL_NOISE_EDITOR_BINARY_DIR:STATIC=/home/salmonmoose/dev/accidentalnoise
 //Value Computed by CMake
 ACCIDENTAL_NOISE_EDITOR_SOURCE_DIR:STATIC=/home/salmonmoose/dev/accidentalnoise
 
+//Path to a program.
+CMAKE_AR:FILEPATH=/usr/bin/ar
+
 //Choose the type of build, options are: None(CMAKE_CXX_FLAGS or
 // CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.
 CMAKE_BUILD_TYPE:STRING=
@@ -95,6 +98,9 @@ CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=OFF
 CMAKE_INSTALL_PREFIX:PATH=/usr/local
 
 //Path to a program.
+CMAKE_LINKER:FILEPATH=/usr/bin/ld
+
+//Path to a program.
 CMAKE_MAKE_PROGRAM:FILEPATH=/usr/bin/make
 
 //Flags used by the linker during the creation of modules.
@@ -112,8 +118,20 @@ CMAKE_MODULE_LINKER_FLAGS_RELEASE:STRING=
 //Flags used by the linker during Release with Debug Info builds.
 CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
+//Path to a program.
+CMAKE_NM:FILEPATH=/usr/bin/nm
+
+//Path to a program.
+CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
+
+//Path to a program.
+CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
+
 //Value Computed by CMake
 CMAKE_PROJECT_NAME:STATIC=ACCIDENTAL_NOISE_EDITOR
+
+//Path to a program.
+CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
 
 //Flags used by the linker during the creation of dll's.
 CMAKE_SHARED_LINKER_FLAGS:STRING=' '
@@ -152,6 +170,9 @@ CMAKE_STATIC_LINKER_FLAGS_RELEASE:STRING=
 //Flags used by the linker during Release with Debug Info builds.
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
+//Path to a program.
+CMAKE_STRIP:FILEPATH=/usr/bin/strip
+
 //If true, cmake will use relative paths in makefiles and projects.
 CMAKE_USE_RELATIVE_PATHS:BOOL=OFF
 
@@ -167,17 +188,11 @@ Qt5Core_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Core
 //The directory containing a CMake configuration file for Qt5Gui.
 Qt5Gui_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui
 
-//The directory containing a CMake configuration file for Qt5Location.
-Qt5Location_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Location
-
 //The directory containing a CMake configuration file for Qt5Network.
 Qt5Network_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Network
 
 //The directory containing a CMake configuration file for Qt5OpenGL.
 Qt5OpenGL_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5OpenGL
-
-//The directory containing a CMake configuration file for Qt5Positioning.
-Qt5Positioning_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Positioning
 
 //The directory containing a CMake configuration file for Qt5PrintSupport.
 Qt5PrintSupport_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5PrintSupport
@@ -187,9 +202,6 @@ Qt5Qml_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Qml
 
 //The directory containing a CMake configuration file for Qt5Quick.
 Qt5Quick_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Quick
-
-//The directory containing a CMake configuration file for Qt5Sensors.
-Qt5Sensors_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Sensors
 
 //The directory containing a CMake configuration file for Qt5WebKitWidgets.
 Qt5WebKitWidgets_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5WebKitWidgets
@@ -208,6 +220,8 @@ accidentalnoise_LIB_DEPENDS:STATIC=
 # INTERNAL cache entries
 ########################
 
+//ADVANCED property for variable: CMAKE_AR
+CMAKE_AR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_BUILD_TOOL
 CMAKE_BUILD_TOOL-ADVANCED:INTERNAL=1
 //What is the target build tool cmake is generating for.
@@ -228,6 +242,8 @@ CMAKE_COMMAND:INTERNAL=/usr/bin/cmake
 CMAKE_CPACK_COMMAND:INTERNAL=/usr/bin/cpack
 //Path to ctest program executable.
 CMAKE_CTEST_COMMAND:INTERNAL=/usr/bin/ctest
+//ADVANCED property for variable: CMAKE_CXX_COMPILER
+CMAKE_CXX_COMPILER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_FLAGS
 CMAKE_CXX_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_FLAGS_DEBUG
@@ -238,6 +254,8 @@ CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_FLAGS_RELWITHDEBINFO
 CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_COMPILER
+CMAKE_C_COMPILER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS
 CMAKE_C_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS_DEBUG
@@ -248,6 +266,8 @@ CMAKE_C_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_C_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS_RELWITHDEBINFO
 CMAKE_C_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//Executable file format
+CMAKE_EXECUTABLE_FORMAT:INTERNAL=ELF
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS
 CMAKE_EXE_LINKER_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_DEBUG
@@ -269,6 +289,8 @@ CMAKE_GENERATOR_TOOLSET:INTERNAL=
 CMAKE_HOME_DIRECTORY:INTERNAL=/home/salmonmoose/dev/accidentalnoise
 //Install .so files without execute permission.
 CMAKE_INSTALL_SO_NO_EXE:INTERNAL=1
+//ADVANCED property for variable: CMAKE_LINKER
+CMAKE_LINKER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MAKE_PROGRAM
 CMAKE_MAKE_PROGRAM-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MODULE_LINKER_FLAGS
@@ -281,8 +303,16 @@ CMAKE_MODULE_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_MODULE_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO
 CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_NM
+CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
 CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=3
+//ADVANCED property for variable: CMAKE_OBJCOPY
+CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_OBJDUMP
+CMAKE_OBJDUMP-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_RANLIB
+CMAKE_RANLIB-ADVANCED:INTERNAL=1
 //Path to CMake installation.
 CMAKE_ROOT:INTERNAL=/usr/share/cmake-2.8
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS
@@ -309,6 +339,10 @@ CMAKE_STATIC_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_STATIC_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_STRIP
+CMAKE_STRIP-ADVANCED:INTERNAL=1
+//uname command
+CMAKE_UNAME:INTERNAL=/bin/uname
 //ADVANCED property for variable: CMAKE_USE_RELATIVE_PATHS
 CMAKE_USE_RELATIVE_PATHS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE

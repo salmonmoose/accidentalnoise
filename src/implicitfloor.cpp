@@ -4,13 +4,13 @@
 namespace anl
 {
     CImplicitFloor::CImplicitFloor() : m_source(0){
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "Source",
             [this] (double d) { this->setSource(d); },
             [this] () -> double { return this->getDoubleSource(); }
         );
 
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "Source",
             [this] (CImplicitModuleBase *n) { this->setSource(n); },
             [this] () -> CImplicitModuleBase *{ return this->getNoiseSource(); }

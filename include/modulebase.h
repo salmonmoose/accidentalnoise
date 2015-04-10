@@ -60,13 +60,17 @@ namespace anl
 	class ModuleBase
 	{
 	public:
-        ModuleFunction<double>  				 DoubleInputs;
-        ModuleFunction<int> 					 IntInputs;
+        ModuleFunction<double>                     DoubleInputs;
+        ModuleFunction<int>                        IntInputs;
         ModuleFunction<anl::CImplicitModuleBase *> NoiseInputs;
         ModuleFunction<anl::CCellularGenerator *>  CellgenInputs;
 
         void setName(std::string nName) {
             name = nName;
+        }
+
+        std::string getName() {
+            return name;
         }
 
         void setDefaultNoise(CImplicitModuleBase * n) { mCImplicitModuleBaseDefault = n; }

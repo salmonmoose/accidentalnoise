@@ -5,53 +5,53 @@ namespace anl
 {
     CImplicitSelect::CImplicitSelect() : CImplicitModuleBase(), m_low(0), m_high(0), m_control(0), m_threshold(0.0), m_falloff(0.0)
     {
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "Low",
             [this] (CImplicitModuleBase *n) { this->setLowSource (n); },
             [this] () -> CImplicitModuleBase *{ return this->getNoiseLowSource(); }
         );
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "High",
             [this] (CImplicitModuleBase *n) { this->setHighSource (n); },
             [this] () -> CImplicitModuleBase *{ return this->getNoiseHighSource(); }
         );
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "Control",
             [this] (CImplicitModuleBase *n) { this->setControlSource (n); },
             [this] () -> CImplicitModuleBase *{ return this->getNoiseControlSource(); }
         );
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "Threshold",
             [this] (CImplicitModuleBase *n) { this->setThreshold (n); },
             [this] () -> CImplicitModuleBase *{ return this->getNoiseThreshold(); }
         );
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "Falloff",
             [this] (CImplicitModuleBase *n) { this->setFalloff (n); },
             [this] () -> CImplicitModuleBase *{ return this->getNoiseFalloff(); }
         );
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "Low",
             [this] (double d) { this->setLowSource (d); },
             [this] () -> double { return this->getDoubleLowSource(); }
         );
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "High",
             [this] (double d) { this->setHighSource (d); },
             [this] () -> double { return this->getDoubleHighSource(); }
         );
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "Control",
             [this] (double d) { this->setControlSource (d); },
             [this] () -> double { return this->getDoubleControlSource(); }
         );
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "Threshold",
             [this] (double d) { this->setThreshold (d); },
             [this] () -> double { return this->getDoubleThreshold(); }
         );
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "Falloff",
             [this] (double d) { this->setFalloff (d); },
             [this] () -> double { return this->getDoubleFalloff(); }

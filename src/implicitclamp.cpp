@@ -3,19 +3,19 @@
 namespace anl
 {
     CImplicitClamp::CImplicitClamp() : m_source(0), m_low(0.25), m_high(0.75){
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "Source",
             [this] (CImplicitModuleBase *n) { this->setSource(n); },
             [this] () -> CImplicitModuleBase* { return this->getSource(); }
         );
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "High",
             [this] (double n) { this->setHigh(n); },
             [this] () -> double { return this->getHigh(); }
         );
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "Low",
             [this] (double n) { this->setLow(n); },
             [this] () -> double { return this->getLow(); }

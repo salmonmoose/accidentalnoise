@@ -6,37 +6,37 @@ namespace anl
 
     CImplicitBlend::CImplicitBlend(): m_low(0), m_high(0), m_control(0)
     {
-    	CImplicitModuleBase::registerDoubleInput(
+    	CImplicitModuleBase::DoubleInputs.create(
     		"LowSource",
     		[this] (double d) { this->setLowSource(d); },
     		[this] () -> double { return this->getDoubleLowSource(); }
 		);
 
-		CImplicitModuleBase::registerDoubleInput(
+		CImplicitModuleBase::DoubleInputs.create(
 			"ControlSource",
 			[this] (double d) { this->setControlSource(d); },
 			[this] () -> double { return this->getDoubleControlSource(); }
 		);
 
-		CImplicitModuleBase::registerDoubleInput(
+		CImplicitModuleBase::DoubleInputs.create(
 			"HighSource",
 			[this] (double d) { this->setHighSource(d); },
 			[this] () -> double { return this->getDoubleHighSource(); }
 		);
 
-    	CImplicitModuleBase::registerNoiseInput(
+    	CImplicitModuleBase::NoiseInputs.create(
     		"LowSource",
     		[this] (CImplicitModuleBase *n) { this->setLowSource(n); },
     		[this] () -> CImplicitModuleBase *{ return this->getNoiseLowSource(); }
 		);
 
-		CImplicitModuleBase::registerNoiseInput(
+		CImplicitModuleBase::NoiseInputs.create(
 			"ControlSource",
 			[this] (CImplicitModuleBase *n) { this->setControlSource(n); },
 			[this] () -> CImplicitModuleBase *{ return this->getNoiseControlSource(); }
 		);
 
-		CImplicitModuleBase::registerNoiseInput(
+		CImplicitModuleBase::NoiseInputs.create(
 			"HighSource",
 			[this] (CImplicitModuleBase *n) { this->setHighSource(n); },
 			[this] () -> CImplicitModuleBase *{ return this->getNoiseHighSource(); }

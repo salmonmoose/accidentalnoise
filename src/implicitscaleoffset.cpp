@@ -4,29 +4,29 @@ namespace anl
 {
     CImplicitScaleOffset::CImplicitScaleOffset():m_source(0), m_scale(1), m_offset(0)
     {
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "Source",
             [this] (CImplicitModuleBase *n) { this->setSource (n); },
             [this] () -> CImplicitModuleBase *{ return this->getSource(); }
         );
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "Scale",
             [this] (double d) { this->setScale (d); },
             [this] () -> double { return this->getDoubleScale(); }
         );
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "Offset",
             [this] (double d) { this->setOffset (d); },
             [this] () -> double { return this->getDoubleOffset(); }
         );
 
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "Scale",
             [this] (CImplicitModuleBase *n) { this->setScale (n); },
             [this] () -> CImplicitModuleBase *{ return this->getNoiseScale(); }
         );
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "Offset",
             [this] (CImplicitModuleBase *n) { this->setOffset (n); },
             [this] () -> CImplicitModuleBase *{ return this->getNoiseOffset(); }

@@ -4,21 +4,75 @@ namespace anl
 {
     CImplicitTranslateDomain::CImplicitTranslateDomain() : m_source(0), m_ax(0), m_ay(0), m_az(0), m_aw(0), m_au(0), m_av(0)
     {
-        CImplicitModuleBase::registerDoubleInput("TranslateX",[this] (double d) { this->setXAxisSource (d); });
-        CImplicitModuleBase::registerDoubleInput("TranslateY",[this] (double d) { this->setYAxisSource (d); });
-        CImplicitModuleBase::registerDoubleInput("TranslateZ",[this] (double d) { this->setZAxisSource (d); });
-        CImplicitModuleBase::registerDoubleInput("TranslateW",[this] (double d) { this->setWAxisSource (d); });
-        CImplicitModuleBase::registerDoubleInput("TranslateU",[this] (double d) { this->setUAxisSource (d); });
-        CImplicitModuleBase::registerDoubleInput("TranslateV",[this] (double d) { this->setVAxisSource (d); });
-        CImplicitModuleBase::registerDoubleInput("Source",[this] (double d) { this->setSource (d); });
+        CImplicitModuleBase::DoubleInputs.create(
+            "TranslateX",
+            [this] (double d) { this->setXAxisSource (d); }
+        );
 
-        CImplicitModuleBase::registerNoiseInput("TranslateX",[this] (CImplicitModuleBase *n) { this->setXAxisSource (n); });
-        CImplicitModuleBase::registerNoiseInput("TranslateY",[this] (CImplicitModuleBase *n) { this->setYAxisSource (n); });
-        CImplicitModuleBase::registerNoiseInput("TranslateZ",[this] (CImplicitModuleBase *n) { this->setZAxisSource (n); });
-        CImplicitModuleBase::registerNoiseInput("TranslateW",[this] (CImplicitModuleBase *n) { this->setWAxisSource (n); });
-        CImplicitModuleBase::registerNoiseInput("TranslateU",[this] (CImplicitModuleBase *n) { this->setUAxisSource (n); });
-        CImplicitModuleBase::registerNoiseInput("TranslateV",[this] (CImplicitModuleBase *n) { this->setVAxisSource (n); });
-        CImplicitModuleBase::registerNoiseInput("Source",[this] (CImplicitModuleBase *n) { this->setSource (n); });
+        CImplicitModuleBase::DoubleInputs.create(
+            "TranslateY",
+            [this] (double d) { this->setYAxisSource (d); }
+        );
+
+        CImplicitModuleBase::DoubleInputs.create(
+            "TranslateZ",
+            [this] (double d) { this->setZAxisSource (d); }
+        );
+
+        CImplicitModuleBase::DoubleInputs.create(
+            "TranslateW",
+            [this] (double d) { this->setWAxisSource (d); }
+        );
+
+        CImplicitModuleBase::DoubleInputs.create(
+            "TranslateU",
+            [this] (double d) { this->setUAxisSource (d); }
+        );
+
+        CImplicitModuleBase::DoubleInputs.create(
+            "TranslateV",
+            [this] (double d) { this->setVAxisSource (d); }
+        );
+
+        CImplicitModuleBase::DoubleInputs.create(
+            "Source",
+            [this] (double d) { this->setSource (d); }
+        );
+
+        CImplicitModuleBase::NoiseInputs.create(
+            "TranslateX",
+            [this] (CImplicitModuleBase *n) { this->setXAxisSource (n); }
+        );
+
+        CImplicitModuleBase::NoiseInputs.create(
+            "TranslateY",
+            [this] (CImplicitModuleBase *n) { this->setYAxisSource (n); }
+        );
+
+        CImplicitModuleBase::NoiseInputs.create(
+            "TranslateZ",
+            [this] (CImplicitModuleBase *n) { this->setZAxisSource (n); }
+        );
+
+        CImplicitModuleBase::NoiseInputs.create(
+            "TranslateW",
+            [this] (CImplicitModuleBase *n) { this->setWAxisSource (n); }
+        );
+
+        CImplicitModuleBase::NoiseInputs.create(
+            "TranslateU",
+            [this] (CImplicitModuleBase *n) { this->setUAxisSource (n); }
+        );
+
+        CImplicitModuleBase::NoiseInputs.create(
+            "TranslateV",
+            [this] (CImplicitModuleBase *n) { this->setVAxisSource (n); }
+        );
+
+        CImplicitModuleBase::NoiseInputs.create(
+            "Source",
+            [this] (CImplicitModuleBase *n) { this->setSource (n); }
+        );
     }
     CImplicitTranslateDomain::~CImplicitTranslateDomain(){}
 

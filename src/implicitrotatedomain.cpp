@@ -5,52 +5,52 @@ namespace anl
 {
     CImplicitRotateDomain::CImplicitRotateDomain() : m_ax(0), m_ay(0), m_az(0), m_angledeg(0), m_source(0)
     {
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "Source",
             [this] (CImplicitModuleBase *n) { this->setSource(n); },
             [this] () -> CImplicitModuleBase *{ return this->getSource(); }
         );
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "AxisX",
             [this] (double d) { this->setAxisX(d); },
             [this] () -> double { return this->getDoubleAxisX(); }
         );
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "AxisY",
             [this] (double d) { this->setAxisY(d); },
             [this] () -> double { return this->getDoubleAxisY(); }
         );
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "AxisZ",
             [this] (double d) { this->setAxisZ(d); },
             [this] () -> double { return this->getDoubleAxisZ(); }
         );
 
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "AxisX",
             [this] (CImplicitModuleBase *n) { this->setAxisX(n); },
             [this] () -> CImplicitModuleBase *{ return this->getNoiseAxisX(); }
         );
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "AxisY",
             [this] (CImplicitModuleBase *n) { this->setAxisY(n); },
             [this] () -> CImplicitModuleBase *{ return this->getNoiseAxisY(); }
         );
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "AxisZ",
             [this] (CImplicitModuleBase *n) { this->setAxisZ(n); },
             [this] () -> CImplicitModuleBase *{ return this->getNoiseAxisZ(); }
         );
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "Angle",
             [this] (double d) { this->setAngle(d); },
             [this] () -> double { return this->getDoubleAngle(); }
         );
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "Angle",
             [this] (CImplicitModuleBase *n) { this->setAngle(n); },
             [this] () -> CImplicitModuleBase *{ return this->getNoiseAngle(); }

@@ -30,43 +30,43 @@ namespace anl
 
     void CImplicitFractal::RegisterInputs()
     {
-        CImplicitModuleBase::registerIntInput(
+        CImplicitModuleBase::IntInputs.create(
             "Octaves",
             [this] (int i) { this->setNumOctaves (i); },
             [this] () -> int { return this->getNumOctaves(); }
         );
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "Frequency",
             [this] (double d) { this->setFrequency (d); },
             [this] () -> double { return this->getFrequency(); }
         );
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "Lacunarity",
             [this] (double d) { this->setLacunarity (d); },
             [this] () -> double {return this->getLacunarity(); }
         );
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "Gain",
             [this] (double d) { this->setGain (d); },
             [this] () -> double { return this->getGain(); }
         );
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "Offset",
             [this] (double d) { this->setOffset (d); },
             [this] () -> double { return this->getOffset(); }
         );
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "H",
             [this] (double d) { this->setH (d); },
             [this] () -> double { return this->getH(); }
         );
 
-        CImplicitModuleBase::registerIntInput(
+        CImplicitModuleBase::IntInputs.create(
             "Fractal",
             [this] (int i) { this->setType (i); },
             [this] () -> int { return this->getType(); }

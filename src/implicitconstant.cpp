@@ -3,7 +3,7 @@
 namespace anl
 {
     CImplicitConstant::CImplicitConstant() : m_constant(0){
-    	CImplicitModuleBase::registerDoubleInput(
+    	CImplicitModuleBase::DoubleInputs.create(
     		"Value",
     		[this] (double d) { this->setConstant(d); },
     		[this] () -> double { return this->getConstant(); }

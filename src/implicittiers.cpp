@@ -6,13 +6,13 @@ namespace anl
 {
     CImplicitTiers::CImplicitTiers() : m_source(0), m_numtiers(0), m_smooth(true) 
     {
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "Source",
             [this] (CImplicitModuleBase *n) { this->setSource(n); },
             [this] () -> CImplicitModuleBase *{ return this->getSource(); }
         );
 
-        CImplicitModuleBase::registerIntInput(
+        CImplicitModuleBase::IntInputs.create(
             "Tiers",
             [this] (int i) { this->setNumTiers(i); },
             [this] () -> int { return this->getNumTiers(); }

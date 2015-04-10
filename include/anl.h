@@ -3,6 +3,17 @@
 
 #include "cellulargen.h"
 
+#include "rgbablend.h"
+#include "rgbablendops.h"
+#include "rgbaconstant.h"
+#include "rgbacomposechannels.h"
+#include "rgbahsvtorgba.h"
+#include "rgbaimplicitgrayscale.h"
+#include "rgbanormalize.h"
+#include "rgbargbatohsv.h"
+#include "rgbarotatecolor.h"
+#include "rgbaselect.h"
+
 #include "implicitautocorrect.h"
 #include "implicitbasisfunction.h"
 #include "implicitbias.h"
@@ -30,26 +41,19 @@
 #include "implicitscaledomain.h"
 #include "implicitscaleoffset.h"
 #include "implicitselect.h"
+#include "implicitsequence.h"
 #include "implicitsin.h"
 #include "implicitsphere.h"
-#include "implicitsequence.h"
 #include "implicittan.h"
 #include "implicittiers.h"
 #include "implicittranslatedomain.h"
 
-#include "rgbablend.h"
-#include "rgbablendops.h"
-#include "rgbaconstant.h"
-#include "rgbacomposechannels.h"
-#include "rgbahsvtorgba.h"
-#include "rgbaimplicitgrayscale.h"
-#include "rgbanormalize.h"
-#include "rgbargbatohsv.h"
-#include "rgbarotatecolor.h"
-#include "rgbaselect.h"
+
 
 #include "random_gen.h"
 #include "mapping.h"
+
+
 
 #endif
 

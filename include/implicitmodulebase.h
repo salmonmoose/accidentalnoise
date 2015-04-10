@@ -90,8 +90,11 @@ namespace anl
 
         double get(double x, double y)
         {
-            if(m_source) return m_source->get(x,y);
-            else return m_val;
+            if(m_source) {
+                return m_source->get(x,y);
+            } else {
+                return m_val;
+            }
         }
 
         double get(double x, double y, double z)
@@ -105,19 +108,25 @@ namespace anl
 
         double get(double x, double y, double z, double w)
         {
-            if(m_source) return m_source->get(x,y,z,w);
-            else return m_val;
+            if(m_source) {
+                return m_source->get(x,y,z,w);
+            } else {
+                return m_val;
+            }
         }
 
         double get(double x, double y, double z, double w, double u, double v)
         {
-            if(m_source) return m_source->get(x,y,z,w,u,v);
-            else return m_val;
+            if(m_source) {
+                return m_source->get(x,y,z,w,u,v);
+            } else {
+                return m_val;
+            }
         }
 
         protected:
-        double m_val;
-        CImplicitModuleBase *m_source;
+            double m_val;
+            CImplicitModuleBase *m_source;
     };
 
 

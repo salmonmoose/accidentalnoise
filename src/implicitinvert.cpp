@@ -4,7 +4,7 @@ namespace anl
 {
     CImplicitInvert::CImplicitInvert():m_source(0)
     {
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "Source",
             [this] (CImplicitModuleBase *n) { this->setSource(n); },
             [this] () -> CImplicitModuleBase* { return this->getSource(); }

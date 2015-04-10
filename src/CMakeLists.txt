@@ -50,7 +50,7 @@ add_library(
 #	rgbablend.cpp
 #	rgbablendops.cpp
 #	rgbacomposechannels.cpp
-#	rgbaconstant.cpp
+	rgbaconstant.cpp
 #	rgbahsvtorgba.cpp
 #	rgbaimplicitgrayscale.cpp
 #	rgbanormalize.cpp

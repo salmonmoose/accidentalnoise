@@ -8,7 +8,11 @@ namespace anl
 
     CImplicitCombiner::CImplicitCombiner(unsigned int type)
 	{
-		CImplicitModuleBase::registerIntInput("Type",[this] (unsigned int v) { this->setType (v); });
+		CImplicitModuleBase::IntInputs.create(
+			"Type",
+			[this] (unsigned int v) { this->setType (v); }
+		);
+		
 		m_type=type;
 		clearAllSources();
 	}

@@ -5,9 +5,12 @@
 #include <memory>
 #include <vector>
 #include "anl.h"
-#include "factory.h"
 
 #include "implicitmodulebase.h"
+#include "rgbamodulebase.h"
+
+#include "factory.h"
+
 
 namespace anl
 {
@@ -38,7 +41,7 @@ namespace anl
 
 			generic_factory<std::string, anl::CImplicitModuleBase> * mCImplicitModuleFactory;
 			generic_factory<std::string, anl::CCellularGenerator> * mCImplicitCellularGeneratorFactory;
-
+			generic_factory<std::string, anl::CRGBAModuleBase> * mCRGBAModuleFactory;
 
 			static std::map<std::string, EInputTypes> InputMap;
 			static std::map<std::string, unsigned int> ENUMMap;
@@ -52,13 +55,13 @@ namespace anl
 			void AddCellGenerator(std::string);
 
 			bool SetAttribute(std::string layer, std::string type, std::string attribute, std::string value);
-			bool SetAttribute(anl::CImplicitModuleBase *node, EInputTypes type, std::string attribute, std::string value);
+			bool SetAttribute(anl::ModuleBase *node, EInputTypes type, std::string attribute, std::string value);
 
 			std::string getAttribute(std::string node, std::string type, std::string attribute);
 
-			double getDoubleAttribute(anl::CImplicitModuleBase *node, std::string attribute);
-			int getIntAttribute(anl::CImplicitModuleBase *node, std::string attribute);
-			anl::CImplicitModuleBase *getNoiseAttribute(anl::CImplicitModuleBase *node, std::string attribute);
+			double getDoubleAttribute(anl::ModuleBase *node, std::string attribute);
+			int getIntAttribute(anl::ModuleBase *node, std::string attribute);
+			anl::ModuleBase *getNoiseAttribute(anl::ModuleBase *node, std::string attribute);
 
 			void SetRenderNode(std::string layer);
 

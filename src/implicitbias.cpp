@@ -3,13 +3,13 @@
 namespace anl
 {
     CImplicitBias::CImplicitBias() : m_source(0), m_offset(0){
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "Source",
             [this] (CImplicitModuleBase *n) { this->setSource(n); },
             [this] () -> CImplicitModuleBase* { return this->getSource(); }
         );
 
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "Offset",
             [this] (CImplicitModuleBase *n) { this->setOffset(n); },
             [this] () -> CImplicitModuleBase* { return this->getOffset(); }

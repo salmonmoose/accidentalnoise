@@ -3,49 +3,49 @@
 namespace anl
 {
     CImplicitBrightContrast::CImplicitBrightContrast() : m_source(0), m_bright(0), m_threshold(0), m_factor(0){
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "Source",
             [this] (CImplicitModuleBase *n) { this->setSource(n); },
             [this] () -> CImplicitModuleBase *{ return this->getNoiseSource(); }
         );
 
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "Brightness",
             [this] (CImplicitModuleBase *n) { this->setBrightness(n); },
             [this] () -> CImplicitModuleBase *{ return this->getNoiseBrightness(); }
         );
 
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "ContrastThreshold",
             [this] (CImplicitModuleBase *n) { this->setContrastThreshold(n); },
             [this] () -> CImplicitModuleBase *{ return this->getNoiseContrastThreshold(); }
         );
 
-        CImplicitModuleBase::registerNoiseInput(
+        CImplicitModuleBase::NoiseInputs.create(
             "ContrastFactor",
             [this] (CImplicitModuleBase *n) { this->setContrastFactor(n); },
             [this] () -> CImplicitModuleBase *{ return this->getNoiseContrastFactor(); }
         );
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "Source",
             [this] (double d) { this->setSource(d); },
             [this] () -> double { return this->getDoubleSource(); }
         );
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "Brightness",
             [this] (double d) { this->setBrightness(d); },
             [this] () -> double { return this->getDoubleBrightness(); }
         );
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "ContrastThreshold",
             [this] (double d) { this->setContrastThreshold(d); },
             [this] () -> double { return this->getDoubleContrastThreshold(); }
         );
 
-        CImplicitModuleBase::registerDoubleInput(
+        CImplicitModuleBase::DoubleInputs.create(
             "ContrastFactor",
             [this] (double d) { this->setContrastFactor(d); },
             [this] () -> double { return this->getDoubleContrastFactor(); }
